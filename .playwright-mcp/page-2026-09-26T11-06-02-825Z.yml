@@ -1,0 +1,288 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "ETripleSoft home" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f6e6]
+      - generic [ref=f6e7]:
+        - button "Search website" [ref=f6e8] [cursor=pointer]
+        - button "Open navigation" [ref=f6e12] [cursor=pointer]
+  - main [ref=f6e14]:
+    - generic [ref=f6e15]:
+      - img "Odoo ERP Implementation — ETripleSoft solutions" [ref=f6e17]
+      - generic [ref=f6e19]:
+        - generic [ref=f6e20]: ODOO ERP IN EGYPT | LICENSED PARTNER | LOCAL EXPERTS
+        - heading [level=1] [ref=f6e21]:
+          - text: Odoo ERP Implementation
+          - emphasis [ref=f6e22]: in Egypt
+        - paragraph [ref=f6e23]: Transform your business with Odoo, the all-in-one ERP solution. ETripleSoft helps Egyptian businesses implement, customize and scale Odoo for sustainable growth.
+        - generic [ref=f6e24]:
+          - generic [ref=f6e25]: Official Odoo Partner
+          - generic [ref=f6e29]: Local Egyptian Team
+          - generic [ref=f6e33]: End-to-End Support
+        - generic [ref=f6e37]:
+          - link "Book a Free Demo" [ref=f6e38] [cursor=pointer]:
+            - /url: /contact?service=Odoo%20ERP%20Implementation
+          - link "Talk to an Odoo Expert" [ref=f6e41] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f6e42]:
+          - img "Odoo" [ref=f6e43]
+          - generic [ref=f6e44]: Gold Partner
+    - generic [ref=f6e46]:
+      - generic [ref=f6e47]: Trusted by forward-thinking companies
+      - img "Orascom, Elsewedy Electric, CIB, Vodafone, Samsung and Etisalat" [ref=f6e48]
+    - generic [ref=f6e50]:
+      - generic [ref=f6e52]:
+        - heading "A Complete ERP Solution for Your Business" [level=2] [ref=f6e53]
+        - paragraph [ref=f6e54]: Odoo integrates all your business processes in one platform, helping you work smarter, faster and more efficiently.
+      - generic [ref=f6e55]:
+        - article [ref=f6e56]:
+          - heading "Accounting" [level=3] [ref=f6e63]
+          - paragraph [ref=f6e64]: Full financial management with real-time reporting.
+          - link "Learn More" [ref=f6e65] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Accounting
+        - article [ref=f6e68]:
+          - heading "CRM" [level=3] [ref=f6e75]
+          - paragraph [ref=f6e76]: Turn leads into loyal customers.
+          - link "Learn More" [ref=f6e77] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=CRM
+        - article [ref=f6e80]:
+          - heading "Inventory" [level=3] [ref=f6e85]
+          - paragraph [ref=f6e86]: Optimize your stock and supply chain.
+          - link "Learn More" [ref=f6e87] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Inventory
+        - article [ref=f6e90]:
+          - heading "Sales" [level=3] [ref=f6e94]
+          - paragraph [ref=f6e95]: Boost your revenue with a modern sales flow.
+          - link "Learn More" [ref=f6e96] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Sales
+        - article [ref=f6e99]:
+          - heading "Manufacturing" [level=3] [ref=f6e103]
+          - paragraph [ref=f6e104]: Streamline production and operations.
+          - link "Learn More" [ref=f6e105] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Manufacturing
+        - article [ref=f6e108]:
+          - heading "HR" [level=3] [ref=f6e115]
+          - paragraph [ref=f6e116]: Manage your people and grow your team.
+          - link "Learn More" [ref=f6e117] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=HR
+        - article [ref=f6e120]:
+          - heading "Projects" [level=3] [ref=f6e125]
+          - paragraph [ref=f6e126]: Deliver projects on time and within budget.
+          - link "Learn More" [ref=f6e127] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Projects
+    - generic [ref=f6e132]:
+      - generic [ref=f6e134]:
+        - generic [ref=f6e135]: Our Process
+        - heading "Our Implementation Process" [level=2] [ref=f6e136]
+        - paragraph [ref=f6e137]: We follow a proven approach to deliver real results.
+      - generic [ref=f6e138]:
+        - generic [ref=f6e139]:
+          - generic [ref=f6e140]: "01"
+          - heading "Discovery" [level=3] [ref=f6e141]
+          - paragraph [ref=f6e142]: Understand your business needs.
+        - generic [ref=f6e143]:
+          - generic [ref=f6e144]: "02"
+          - heading "Solution Design" [level=3] [ref=f6e145]
+          - paragraph [ref=f6e146]: Plan and customize your Odoo solution.
+        - generic [ref=f6e147]:
+          - generic [ref=f6e148]: "03"
+          - heading "Implementation" [level=3] [ref=f6e149]
+          - paragraph [ref=f6e150]: Configure, develop and migrate data.
+        - generic [ref=f6e151]:
+          - generic [ref=f6e152]: "04"
+          - heading "Training" [level=3] [ref=f6e153]
+          - paragraph [ref=f6e154]: Empower your team for success.
+        - generic [ref=f6e155]:
+          - generic [ref=f6e156]: "05"
+          - heading "Go Live" [level=3] [ref=f6e157]
+          - paragraph [ref=f6e158]: Launch and ensure a smooth transition.
+        - generic [ref=f6e159]:
+          - generic [ref=f6e160]: "06"
+          - heading "Ongoing Support" [level=3] [ref=f6e161]
+          - paragraph [ref=f6e162]: Continuous improvement.
+    - generic [ref=f6e164]:
+      - generic [ref=f6e165]:
+        - generic [ref=f6e166]:
+          - heading "Industry Solutions" [level=2] [ref=f6e167]
+          - paragraph [ref=f6e168]: We understand your industry. Our solutions are tailored to your sector’s unique needs.
+        - link "Explore All Industries" [ref=f6e169] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f6e172]:
+        - link [ref=f6e173] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Construction" [ref=f6e174]
+          - strong [ref=f6e176]: Construction
+        - link [ref=f6e177] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Retail" [ref=f6e178]
+          - strong [ref=f6e180]: Retail
+        - link [ref=f6e181] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Education" [ref=f6e182]
+          - strong [ref=f6e184]: Education
+        - link [ref=f6e185] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Real Estate" [ref=f6e186]
+          - strong [ref=f6e188]: Real Estate
+        - link [ref=f6e189] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Healthcare" [ref=f6e190]
+          - strong [ref=f6e192]: Healthcare
+        - link [ref=f6e193] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Logistics" [ref=f6e194]
+          - strong [ref=f6e196]: Logistics
+      - generic [ref=f6e198]:
+        - article [ref=f6e199]:
+          - heading "Customization & Integration" [level=3] [ref=f6e204]
+          - paragraph [ref=f6e205]: Tailor Odoo to fit your unique business processes. Integrate with your existing systems and third-party applications.
+          - link "Learn More" [ref=f6e206] [cursor=pointer]:
+            - /url: /contact?service=Customization%20%26%20Integration
+        - article [ref=f6e209]:
+          - heading "Local Support in Egypt" [level=3] [ref=f6e213]
+          - paragraph [ref=f6e214]: Our Cairo-based team provides on-site and remote support, training and consultation in Arabic and English.
+          - link "Learn More" [ref=f6e215] [cursor=pointer]:
+            - /url: /contact?service=Local%20Support%20in%20Egypt
+        - article [ref=f6e218]:
+          - heading "Ongoing Growth" [level=3] [ref=f6e222]
+          - paragraph [ref=f6e223]: We stay with you. Continuous support, upgrades and new features to help you grow.
+          - link "Learn More" [ref=f6e224] [cursor=pointer]:
+            - /url: /contact?service=Ongoing%20Growth
+    - generic [ref=f6e228]:
+      - generic [ref=f6e229]: Our Impact
+      - heading "Trusted Across Egypt and the Region" [level=2] [ref=f6e233]
+      - generic [ref=f6e234]:
+        - generic [ref=f6e235]:
+          - strong [ref=f6e240]: 250+
+          - generic [ref=f6e241]: Projects Delivered
+          - paragraph [ref=f6e242]: Real work, real outcomes.
+        - generic [ref=f6e243]:
+          - strong [ref=f6e248]: "3"
+          - generic [ref=f6e249]: Countries
+          - paragraph [ref=f6e250]: Egypt, UAE & Saudi Arabia.
+        - generic [ref=f6e251]:
+          - strong [ref=f6e256]: 10+
+          - generic [ref=f6e257]: Years of Experience
+          - paragraph [ref=f6e258]: Building since day one.
+        - generic [ref=f6e259]:
+          - strong [ref=f6e264]: 9+
+          - generic [ref=f6e265]: Industries Served
+          - paragraph [ref=f6e266]: Deep sector expertise.
+      - generic [ref=f6e267]:
+        - generic [ref=f6e268]: Cairo, Egypt
+        - generic [ref=f6e273]: Riyadh, Saudi Arabia
+        - generic [ref=f6e278]: Dubai, UAE
+    - generic [ref=f6e284]:
+      - generic [ref=f6e285]:
+        - generic [ref=f6e286]:
+          - generic [ref=f6e288]:
+            - generic [ref=f6e289]: Testimonials
+            - heading "What Our Clients Say" [level=2] [ref=f6e290]
+            - paragraph [ref=f6e291]: Real results. Real partnerships.
+          - generic [ref=f6e292]:
+            - button "Previous testimonial" [ref=f6e293] [cursor=pointer]
+            - button "Next testimonial" [ref=f6e296] [cursor=pointer]
+        - article [ref=f6e300]:
+          - paragraph [ref=f6e301]: “The ETripleSoft team delivered an outstanding Odoo implementation. Professional, responsive and truly focused on our success.”
+          - generic [ref=f6e309]:
+            - strong [ref=f6e310]: Ahmed El Said
+            - generic [ref=f6e311]: CFO, Retail Group
+      - generic [ref=f6e312]:
+        - generic [ref=f6e314]:
+          - generic [ref=f6e315]: Frequently Asked Questions
+          - heading "Your Questions, Answered" [level=2] [ref=f6e316]
+        - generic [ref=f6e317]:
+          - group [ref=f6e318]:
+            - generic "How long does an Odoo implementation take?" [ref=f6e319] [cursor=pointer]
+          - group [ref=f6e322]:
+            - generic "Is Odoo suitable for small and medium businesses in Egypt?" [ref=f6e323] [cursor=pointer]
+          - group [ref=f6e326]:
+            - generic "Do you provide training for our team?" [ref=f6e327] [cursor=pointer]
+          - group [ref=f6e330]:
+            - generic "Can you integrate Odoo with our existing systems?" [ref=f6e331] [cursor=pointer]
+          - group [ref=f6e334]:
+            - generic "Do you offer ongoing support after go-live?" [ref=f6e335] [cursor=pointer]
+    - generic [ref=f6e339]:
+      - generic [ref=f6e340]:
+        - heading "Book Your Free Odoo Demo Today" [level=2] [ref=f6e341]
+        - paragraph [ref=f6e342]: Talk to our experts and discover how the right technology can move your business forward.
+      - link "Book a Free Demo" [ref=f6e343] [cursor=pointer]:
+        - /url: /contact?service=Odoo%20ERP%20Implementation
+  - contentinfo [ref=f6e346]:
+    - generic [ref=f6e347]:
+      - generic [ref=f6e348]:
+        - link [ref=f6e349] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f6e350]
+        - paragraph [ref=f6e351]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f6e352]:
+          - link "Email ETripleSoft" [ref=f6e353] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f6e357] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f6e361] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f6e364]:
+        - heading "Solutions" [level=4] [ref=f6e365]
+        - link "Odoo ERP" [ref=f6e366] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f6e367] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI Automation" [ref=f6e368] [cursor=pointer]:
+          - /url: /ai
+        - link "Web & Mobile Development" [ref=f6e369] [cursor=pointer]:
+          - /url: /web
+        - link "Digital Marketing" [ref=f6e370] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f6e371]:
+        - heading "Industries" [level=4] [ref=f6e372]
+        - link "Construction" [ref=f6e373] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f6e374] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f6e375] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f6e376] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f6e377] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f6e378] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f6e379]:
+        - heading "Company" [level=4] [ref=f6e380]
+        - link "About Us" [ref=f6e381] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f6e382] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f6e383] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f6e384] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f6e385] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f6e386]:
+        - heading "Resources" [level=4] [ref=f6e387]
+        - link "Blog" [ref=f6e388] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f6e389] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f6e390] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f6e391] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f6e392] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f6e393]:
+        - heading "Our Offices" [level=4] [ref=f6e394]
+        - link "🇪🇬 Cairo, Egypt" [ref=f6e395] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f6e396] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f6e397] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f6e398]:
+      - generic [ref=f6e399]: © 2026 ETripleSoft. All rights reserved.
+      - button "Back to top" [ref=f6e400] [cursor=pointer]

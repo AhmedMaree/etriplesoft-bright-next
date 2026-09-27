@@ -1,0 +1,268 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link "ETripleSoft home" [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f3e6]
+      - navigation "Main navigation" [ref=f3e7]:
+        - link "Home" [ref=f3e8] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=f3e9] [cursor=pointer]:
+          - /url: /about
+        - group [ref=f3e10]:
+          - generic "Services" [ref=f3e11] [cursor=pointer]
+        - group [ref=f3e14]:
+          - generic "Industries" [ref=f3e15] [cursor=pointer]
+        - group [ref=f3e18]:
+          - generic "Resources" [ref=f3e19] [cursor=pointer]
+        - link "Careers" [ref=f3e22] [cursor=pointer]:
+          - /url: /careers
+      - generic [ref=f3e23]:
+        - button "Search website" [ref=f3e24] [cursor=pointer]
+        - generic [ref=f3e28]: EN
+        - link "Book a Demo" [ref=f3e32] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f3e35]:
+    - generic [ref=f3e36]:
+      - img "AI Automation — ETripleSoft solutions" [ref=f3e38]
+      - generic [ref=f3e39]:
+        - generic [ref=f3e40]:
+          - generic [ref=f3e41]: AUTOMATE TODAY. A SMARTER TOMORROW.
+          - heading [level=1] [ref=f3e42]:
+            - text: AI Automation
+            - emphasis [ref=f3e43]: Services
+          - paragraph [ref=f3e44]: Streamline operations, reduce manual work, and unlock new possibilities with intelligent automation. ETripleSoft helps businesses design, build, and scale AI-powered solutions that drive real results.
+          - generic [ref=f3e45]:
+            - link "Start Your Automation Journey" [ref=f3e46] [cursor=pointer]:
+              - /url: /contact?service=AI%20Automation
+            - link "Talk to an Expert" [ref=f3e49] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f3e52]:
+            - generic [ref=f3e53]: Increase Productivity
+            - generic [ref=f3e57]: Reduce Operational Costs
+            - generic [ref=f3e64]: Focus on What Matters
+        - generic [ref=f3e69]: Turn ideas into automation
+    - generic [ref=f3e73]:
+      - generic [ref=f3e74]: Trusted by growing businesses
+      - img "Odoo, Microsoft, AWS, Google Cloud, SAP, Salesforce, OpenAI and UiPath" [ref=f3e75]
+    - generic [ref=f3e77]:
+      - generic [ref=f3e79]:
+        - generic [ref=f3e80]: Intelligent solutions for real business impact
+        - heading "Key AI Automation Use Cases" [level=2] [ref=f3e81]
+        - paragraph [ref=f3e82]: From simple task automation to complex intelligent workflows, we help you use AI to work smarter, faster and better.
+      - generic [ref=f3e83]:
+        - article [ref=f3e84]:
+          - heading "Workflow Automation" [level=3] [ref=f3e89]
+          - paragraph [ref=f3e90]: Automate repetitive business processes and reduce manual effort.
+          - link "Learn More" [ref=f3e91] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Workflow%20Automation
+        - article [ref=f3e94]:
+          - heading "AI Chatbots & Customer Support" [level=3] [ref=f3e98]
+          - paragraph [ref=f3e99]: Deliver 24/7 intelligent support and improve customer satisfaction.
+          - link "Learn More" [ref=f3e100] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=AI%20Chatbots%20%26%20Customer%20Support
+        - article [ref=f3e103]:
+          - heading "Document Processing" [level=3] [ref=f3e108]
+          - paragraph [ref=f3e109]: Extract, classify and process documents using AI.
+          - link "Learn More" [ref=f3e110] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Document%20Processing
+        - article [ref=f3e113]:
+          - heading "Reporting & Analytics" [level=3] [ref=f3e117]
+          - paragraph [ref=f3e118]: Automatically generate insights and reports from your business data.
+          - link "Learn More" [ref=f3e119] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Reporting%20%26%20Analytics
+        - article [ref=f3e122]:
+          - heading "System Integrations" [level=3] [ref=f3e126]
+          - paragraph [ref=f3e127]: Connect your tools and data for seamless automation across platforms.
+          - link "Learn More" [ref=f3e128] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=System%20Integrations
+        - article [ref=f3e131]:
+          - heading "AI Assistants" [level=3] [ref=f3e135]
+          - paragraph [ref=f3e136]: Custom AI assistants for internal teams to answer, find and act on information.
+          - link "Learn More" [ref=f3e137] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=AI%20Assistants
+    - generic [ref=f3e141]:
+      - generic [ref=f3e142]:
+        - generic [ref=f3e144]:
+          - generic [ref=f3e145]: Real Business Outcomes
+          - heading "Why Automate with ETripleSoft?" [level=2] [ref=f3e146]
+          - paragraph [ref=f3e147]: We combine deep technical expertise with a real business understanding to deliver AI automation solutions that create measurable value.
+        - generic [ref=f3e148]:
+          - generic [ref=f3e154]:
+            - heading "Higher Productivity" [level=3] [ref=f3e155]
+            - paragraph [ref=f3e156]: Automate repetitive tasks and empower your teams.
+          - generic [ref=f3e164]:
+            - heading "Cost Reduction" [level=3] [ref=f3e165]
+            - paragraph [ref=f3e166]: Minimize manual work and operational costs.
+          - generic [ref=f3e172]:
+            - heading "Improved Accuracy" [level=3] [ref=f3e173]
+            - paragraph [ref=f3e174]: Reduce human error with AI precision.
+          - generic [ref=f3e180]:
+            - heading "Scalable Solutions" [level=3] [ref=f3e181]
+            - paragraph [ref=f3e182]: Grow your automation as your business grows.
+      - generic [ref=f3e183]:
+        - img "AI assistant automating, analyzing and integrating business workflows" [ref=f3e184]
+        - generic [ref=f3e185]:
+          - generic [ref=f3e186]: Work smarter, faster, together
+          - heading "AI + Human Expertise = Greater Possibilities" [level=2] [ref=f3e187]: AI + Human Expertise= Greater Possibilities
+          - paragraph [ref=f3e188]: We help you identify the right opportunities, implement the right solutions, and achieve lasting results.
+          - link "Discuss Your Use Case" [ref=f3e189] [cursor=pointer]:
+            - /url: /contact?service=AI
+    - generic [ref=f3e194]:
+      - generic [ref=f3e196]:
+        - generic [ref=f3e197]: Our Process
+        - heading "A Clear Path to AI Success" [level=2] [ref=f3e198]
+        - paragraph [ref=f3e199]: We follow a proven approach to deliver real results.
+      - generic [ref=f3e200]:
+        - generic [ref=f3e201]:
+          - generic [ref=f3e202]: "01"
+          - heading "Discover" [level=3] [ref=f3e203]
+          - paragraph [ref=f3e204]: Understand your business goals and opportunities.
+        - generic [ref=f3e205]:
+          - generic [ref=f3e206]: "02"
+          - heading "Design" [level=3] [ref=f3e207]
+          - paragraph [ref=f3e208]: Create the right solution for your needs.
+        - generic [ref=f3e209]:
+          - generic [ref=f3e210]: "03"
+          - heading "Build" [level=3] [ref=f3e211]
+          - paragraph [ref=f3e212]: Develop, integrate and test your solution.
+        - generic [ref=f3e213]:
+          - generic [ref=f3e214]: "04"
+          - heading "Deploy" [level=3] [ref=f3e215]
+          - paragraph [ref=f3e216]: Launch and train your team for success.
+        - generic [ref=f3e217]:
+          - generic [ref=f3e218]: "05"
+          - heading "Optimize" [level=3] [ref=f3e219]
+          - paragraph [ref=f3e220]: Monitor, improve and scale for greater impact.
+    - generic [ref=f3e222]:
+      - generic [ref=f3e223]:
+        - generic [ref=f3e225]:
+          - generic [ref=f3e226]: Example Workflows
+          - heading "Automation in Action" [level=2] [ref=f3e227]
+          - paragraph [ref=f3e228]: Here are a few examples of how our AI automation solutions work in real business scenarios.
+        - generic [ref=f3e229]:
+          - tablist "Automation examples" [ref=f3e230]:
+            - tab "Invoice Processing" [selected] [ref=f3e231] [cursor=pointer]
+            - tab "Customer Support" [ref=f3e232] [cursor=pointer]
+            - tab "HR Onboarding" [ref=f3e233] [cursor=pointer]
+            - tab "Sales Reporting" [ref=f3e234] [cursor=pointer]
+          - tabpanel [ref=f3e235]:
+            - generic [ref=f3e236]: Invoice Received
+            - generic [ref=f3e244]: AI Extracts Data
+            - generic [ref=f3e259]: Validates & Checks
+            - generic [ref=f3e267]: Sends to ERP
+            - generic [ref=f3e276]: Notifies Team
+      - article [ref=f3e282]:
+        - generic [ref=f3e283]: Real Results
+        - heading "Case Study" [level=2] [ref=f3e284]
+        - heading "70% Reduction in Manual Invoice Processing" [level=3] [ref=f3e285]
+        - paragraph [ref=f3e286]: A leading manufacturing company partnered with ETripleSoft to automate their accounts payable process using AI. The solution reduced manual work by 70%, improved accuracy to 99.9%, and saved 500+ hours per month.
+        - generic [ref=f3e287]:
+          - generic [ref=f3e288]:
+            - strong [ref=f3e289]: 70%
+            - generic [ref=f3e290]: Less Manual Work
+          - generic [ref=f3e291]:
+            - strong [ref=f3e292]: 99.9%
+            - generic [ref=f3e293]: Accuracy Rate
+          - generic [ref=f3e294]:
+            - strong [ref=f3e295]: 500+
+            - generic [ref=f3e296]: Hours Saved / Month
+        - link "Read Full Case Study" [ref=f3e297] [cursor=pointer]:
+          - /url: /portfolio/ai-document-automation
+    - generic [ref=f3e302]:
+      - generic [ref=f3e304]:
+        - generic [ref=f3e305]: Frequently Asked Questions
+        - heading "Your Questions, Answered" [level=2] [ref=f3e306]
+      - generic [ref=f3e307]:
+        - group [ref=f3e308]:
+          - generic "What types of businesses can benefit from AI automation?" [ref=f3e309] [cursor=pointer]
+        - group [ref=f3e312]:
+          - generic "Do you work with our existing tools and systems?" [ref=f3e313] [cursor=pointer]
+        - group [ref=f3e316]:
+          - generic "How long does it take to implement an automation solution?" [ref=f3e317] [cursor=pointer]
+        - group [ref=f3e320]:
+          - generic "What kind of support do you provide after deployment?" [ref=f3e321] [cursor=pointer]
+    - generic [ref=f3e325]:
+      - generic [ref=f3e326]:
+        - heading "Let’s Build a Smarter, More Efficient Business Together" [level=2] [ref=f3e327]
+        - paragraph [ref=f3e328]: Talk to our experts and discover how the right technology can move your business forward.
+      - link "Start Your Automation Journey" [ref=f3e329] [cursor=pointer]:
+        - /url: /contact?service=AI%20Automation
+  - contentinfo [ref=f3e332]:
+    - generic [ref=f3e333]:
+      - generic [ref=f3e334]:
+        - link [ref=f3e335] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f3e336]
+        - paragraph [ref=f3e337]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f3e338]:
+          - link "Email ETripleSoft" [ref=f3e339] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f3e343] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f3e347] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f3e350]:
+        - heading "Solutions" [level=4] [ref=f3e351]
+        - link "Odoo ERP" [ref=f3e352] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f3e353] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI Automation" [ref=f3e354] [cursor=pointer]:
+          - /url: /ai
+        - link "Web & Mobile Development" [ref=f3e355] [cursor=pointer]:
+          - /url: /web
+        - link "Digital Marketing" [ref=f3e356] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f3e357]:
+        - heading "Industries" [level=4] [ref=f3e358]
+        - link "Construction" [ref=f3e359] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f3e360] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f3e361] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f3e362] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f3e363] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f3e364] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f3e365]:
+        - heading "Company" [level=4] [ref=f3e366]
+        - link "About Us" [ref=f3e367] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f3e368] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f3e369] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f3e370] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f3e371] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f3e372]:
+        - heading "Resources" [level=4] [ref=f3e373]
+        - link "Blog" [ref=f3e374] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f3e375] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f3e376] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f3e377] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f3e378] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f3e379]:
+        - heading "Our Offices" [level=4] [ref=f3e380]
+        - link "🇪🇬 Cairo, Egypt" [ref=f3e381] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f3e382] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f3e383] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f3e384]:
+      - generic [ref=f3e385]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f3e386]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f3e387] [cursor=pointer]

@@ -1,0 +1,274 @@
+import {
+  Hero,
+  PartnerBadges,
+  Partners,
+  SectionHeading,
+  Cards,
+  IndustryBento,
+  Process,
+  CTA,
+  FAQ,
+  Photo,
+  Icon,
+} from "./site";
+import { servicePages, industries } from "@/lib/data";
+
+const serviceContext: Record<
+  string,
+  {
+    title: string;
+    description: string;
+    points: [string, string, string][];
+    image: string;
+  }
+> = {
+  odoo: {
+    title: "An ERP implementation should connect work, not copy old silos.",
+    description:
+      "We map the flow between teams before configuration begins, then shape Odoo around the information, approvals and responsibilities that keep the business moving.",
+    image: "odoo-expert",
+    points: [
+      [
+        "Process first",
+        "Define the workflow, owners and decisions before configuring modules.",
+        "target",
+      ],
+      [
+        "Connected delivery",
+        "Coordinate configuration, migration, integrations and testing as one program.",
+        "plug",
+      ],
+      [
+        "Adoption built in",
+        "Prepare users with practical testing, training and post-launch support.",
+        "users",
+      ],
+    ],
+  },
+  cloud: {
+    title: "Security works best when ownership and recovery are clear.",
+    description:
+      "We connect infrastructure, identity, devices, backup and support into an operating model your team can understand and maintain.",
+    image: "professional",
+    points: [
+      [
+        "Know the environment",
+        "Assess systems, access, dependencies and operational risks.",
+        "eye",
+      ],
+      [
+        "Prioritize controls",
+        "Apply the protections that matter most to the way your business works.",
+        "shield",
+      ],
+      [
+        "Plan recovery",
+        "Document practical backup, recovery and support responsibilities.",
+        "database",
+      ],
+    ],
+  },
+  ai: {
+    title: "Useful automation starts with a specific operational problem.",
+    description:
+      "We begin with the task, data and exceptions—not a generic AI feature—then define where people review, approve or intervene.",
+    image: "ai-robot",
+    points: [
+      [
+        "Grounded use case",
+        "Choose a workflow with clear inputs, outputs and owners.",
+        "target",
+      ],
+      [
+        "Human control",
+        "Design review points for uncertainty, exceptions and sensitive actions.",
+        "users",
+      ],
+      [
+        "Measured operation",
+        "Track quality, cycle time and adoption after release.",
+        "chart",
+      ],
+    ],
+  },
+  web: {
+    title: "The website should support the operation behind the screen.",
+    description:
+      "Content, commerce, enquiries and customer service work better when the website is designed with the systems and people responsible for the next step.",
+    image: "developer",
+    points: [
+      [
+        "Content clarity",
+        "Structure pages around customer questions and decisions.",
+        "file",
+      ],
+      [
+        "Accessible delivery",
+        "Design responsive Arabic and English journeys for real devices.",
+        "globe",
+      ],
+      [
+        "Connected systems",
+        "Send enquiries, orders and customer data to the right tools.",
+        "plug",
+      ],
+    ],
+  },
+  mobile: {
+    title: "A mobile product should make one important journey easier.",
+    description:
+      "We define the user, environment and system dependencies before choosing the platform or implementation approach.",
+    image: "web-shop",
+    points: [
+      [
+        "Journey definition",
+        "Focus the product on the tasks users need to complete.",
+        "target",
+      ],
+      [
+        "Secure integration",
+        "Connect the app to approved APIs and business systems.",
+        "shield",
+      ],
+      [
+        "Supported release",
+        "Prepare testing, store delivery, monitoring and iteration.",
+        "rocket",
+      ],
+    ],
+  },
+  "digital-marketing": {
+    title: "Marketing becomes more useful when campaigns connect to follow-up.",
+    description:
+      "We align channels, content and measurement with the enquiries your team can qualify, respond to and learn from.",
+    image: "growth-chart",
+    points: [
+      [
+        "Audience context",
+        "Use research to understand the market and buying journey.",
+        "eye",
+      ],
+      [
+        "Coordinated execution",
+        "Connect search, paid media, social and content priorities.",
+        "megaphone",
+      ],
+      [
+        "Sales handoff",
+        "Make campaign reporting useful beyond clicks and impressions.",
+        "chart",
+      ],
+    ],
+  },
+};
+
+export default function ServicePage({ slug }: { slug: string }) {
+  const service = servicePages[slug];
+  const context = serviceContext[slug];
+  const partnerType =
+    slug === "ai"
+      ? "ai"
+      : slug === "digital-marketing"
+        ? "marketing"
+        : ["web", "mobile"].includes(slug)
+          ? "technology"
+          : "clients";
+
+  return (
+    <main id="main" className={"service-page " + slug}>
+      <Hero
+        {...service}
+        primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
+      >
+        {slug === "odoo" ? (
+          <div className="odoo-hero-badge odoo-partner">
+            <img src="/images/odoo-wordmark.png" alt="Odoo" />
+            <span>Gold Partner</span>
+          </div>
+        ) : slug === "cloud" ? (
+          <PartnerBadges cloud />
+        ) : null}
+      </Hero>
+
+      <Partners type={partnerType} />
+
+      <section className="section tinted" id="solutions">
+        <div className="container">
+          <SectionHeading
+            title={service.sectionTitle}
+            description={service.sectionDescription}
+          />
+          <Cards
+            items={service.cards}
+            columns={service.cards.length > 6 ? 4 : 3}
+            href={"/contact?solution=" + slug}
+          />
+        </div>
+      </section>
+
+      <section className="section service-context">
+        <div className="container split">
+          <div>
+            <SectionHeading
+              title={context.title}
+              description={context.description}
+            />
+            <div className="benefit-grid">
+              {context.points.map(([title, description, icon]) => (
+                <div key={title}>
+                  <Icon name={icon} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <Photo
+            className="rounded service-context-image"
+            name={context.image}
+            alt=""
+          />
+        </div>
+      </section>
+
+      <section className="section tinted">
+        <div className="container">
+          <Process title={service.processTitle} steps={service.steps} />
+        </div>
+      </section>
+
+      {slug === "odoo" && (
+        <section className="section">
+          <div className="container">
+            <SectionHeading
+              title="Business Solutions by Industry"
+              description="Apply the same connected platform to the workflows that make each sector different."
+              link="Explore All Industries"
+              href="/industries#expertise"
+            />
+            <IndustryBento items={industries} />
+          </div>
+        </section>
+      )}
+
+      <section className="section">
+        <div className="container service-faq">
+          <SectionHeading
+            title="Questions to Resolve Before You Start"
+            description="A useful first conversation should clarify scope, ownership, integrations and the path after launch."
+          />
+          <FAQ questions={service.questions} compact />
+        </div>
+      </section>
+
+      <CTA
+        title={service.cta}
+        button={service.primary}
+        href={"/contact?service=" + encodeURIComponent(service.title)}
+        description="Tell us about the current workflow, the systems involved and the outcome your team needs."
+      />
+    </main>
+  );
+}

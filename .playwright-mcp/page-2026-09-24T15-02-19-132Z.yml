@@ -1,0 +1,259 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "ETripleSoft home" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f6e6]
+      - generic [ref=f6e7]:
+        - button "Search website" [ref=f6e8] [cursor=pointer]
+        - button "Open navigation" [ref=f6e12] [cursor=pointer]
+  - main [ref=f6e14]:
+    - generic [ref=f6e15]:
+      - img "About — ETripleSoft solutions" [ref=f6e17]
+      - generic [ref=f6e19]:
+        - generic [ref=f6e20]: Our Story. A Stronger Tomorrow.
+        - heading [level=1] [ref=f6e21]:
+          - text: About
+          - emphasis [ref=f6e22]: ETripleSoft
+        - paragraph [ref=f6e23]: We are a technology company helping businesses across Egypt, Saudi Arabia, and the UAE transform, grow, and lead in the digital era.
+        - generic [ref=f6e24]:
+          - generic [ref=f6e26]:
+            - strong [ref=f6e27]: 250+
+            - generic [ref=f6e28]: Happy Clients
+          - generic [ref=f6e30]:
+            - strong [ref=f6e31]: "3"
+            - generic [ref=f6e32]: Strategic Locations
+          - generic [ref=f6e34]:
+            - strong [ref=f6e35]: 10+
+            - generic [ref=f6e36]: Years of Experience
+    - generic [ref=f6e38]:
+      - generic [ref=f6e40]:
+        - generic [ref=f6e41]: Our Purpose
+        - heading "Mission & Vision" [level=2] [ref=f6e42]
+        - paragraph [ref=f6e43]: We are driven by a clear purpose — to create lasting value for our clients, people, and communities through technology.
+      - article [ref=f6e44]:
+        - generic [ref=f6e50]:
+          - heading "Our Mission" [level=3] [ref=f6e51]
+          - paragraph [ref=f6e52]: To empower businesses with innovative, reliable, and scalable technology solutions that drive growth, efficiency, and long-term success.
+      - article [ref=f6e53]:
+        - generic [ref=f6e58]:
+          - heading "Our Vision" [level=3] [ref=f6e59]
+          - paragraph [ref=f6e60]: To be the most trusted digital transformation partner in Egypt, Saudi Arabia, and the UAE, recognized for our people, expertise, and positive impact.
+    - generic [ref=f6e62]:
+      - generic [ref=f6e64]:
+        - generic [ref=f6e65]: Our Journey
+        - heading "A Decade of Growth and Impact" [level=2] [ref=f6e66]
+        - paragraph [ref=f6e67]: From a bold idea to a regional technology partner, our journey has been shaped by our clients’ trust, our people’s dedication, and a relentless focus on a better tomorrow.
+      - generic [ref=f6e68]:
+        - article [ref=f6e69]:
+          - strong [ref=f6e76]: "2014"
+          - heading "The Beginning" [level=3] [ref=f6e77]
+          - paragraph [ref=f6e78]: ETripleSoft was founded in Cairo with a simple vision — to make a real difference through technology.
+        - article [ref=f6e79]:
+          - strong [ref=f6e86]: "2016"
+          - heading "Growing Together" [level=3] [ref=f6e87]
+          - paragraph [ref=f6e88]: Expanded our client base across Egypt and delivered our first enterprise Odoo projects.
+        - article [ref=f6e89]:
+          - strong [ref=f6e93]: "2019"
+          - heading "Regional Expansion" [level=3] [ref=f6e94]
+          - paragraph [ref=f6e95]: Started operations in Saudi Arabia, marking our regional growth journey.
+        - article [ref=f6e96]:
+          - strong [ref=f6e101]: "2022"
+          - heading "UAE Presence" [level=3] [ref=f6e102]
+          - paragraph [ref=f6e103]: Opened our Dubai office to serve clients across the UAE and wider GCC region.
+        - article [ref=f6e104]:
+          - strong [ref=f6e109]: "2024"
+          - heading "Stronger Than Ever" [level=3] [ref=f6e110]
+          - paragraph [ref=f6e111]: 250+ clients, 3 locations, and a growing team of experts driving digital transformation.
+    - generic [ref=f6e113]:
+      - generic [ref=f6e115]:
+        - generic [ref=f6e116]: Trusted Partnerships
+        - heading "Certifications & Alliances" [level=2] [ref=f6e117]
+        - paragraph [ref=f6e118]: We work with world-class technology partners to deliver the best solutions for our clients.
+      - generic [ref=f6e119]:
+        - generic [ref=f6e120]:
+          - img "Odoo" [ref=f6e121]
+          - generic [ref=f6e122]: Gold Partner
+        - generic [ref=f6e123]: MicrosoftPartner
+      - generic [ref=f6e125]: Certified. Trusted.Built for a Stronger Tomorrow.
+    - generic [ref=f6e131]:
+      - generic [ref=f6e133]:
+        - generic [ref=f6e134]: Our Values
+        - heading "What Drives Us" [level=2] [ref=f6e135]
+        - paragraph [ref=f6e136]: Our values guide everything we do — from how we work with clients to how we support our people and communities.
+      - generic [ref=f6e137]:
+        - article [ref=f6e138]:
+          - heading "Client Success" [level=3] [ref=f6e145]
+          - paragraph [ref=f6e146]: We put our clients’ success at the center of everything we do.
+        - article [ref=f6e147]:
+          - heading "Innovation" [level=3] [ref=f6e151]
+          - paragraph [ref=f6e152]: We embrace change and continuously seek better ways to solve challenges.
+        - article [ref=f6e153]:
+          - heading "Integrity" [level=3] [ref=f6e160]
+          - paragraph [ref=f6e161]: We believe in doing the right thing, always.
+        - article [ref=f6e162]:
+          - heading "Growth" [level=3] [ref=f6e166]
+          - paragraph [ref=f6e167]: We invest in our people, our partnerships, and a more sustainable future.
+    - generic [ref=f6e169]:
+      - generic [ref=f6e170]:
+        - generic [ref=f6e172]:
+          - generic [ref=f6e173]: Our People
+          - heading "A Team That Makes It Happen" [level=2] [ref=f6e174]
+          - paragraph [ref=f6e175]: Behind every successful project is a team of passionate experts. Our leadership team brings together deep industry experience, technical expertise, and a shared commitment to our clients’ success.
+        - link "Meet Our Team" [ref=f6e176] [cursor=pointer]:
+          - /url: /careers
+      - img "ETripleSoft team collaborating in the office" [ref=f6e179]
+      - blockquote [ref=f6e180]:
+        - text: “We believe technology should create opportunities, empower people, and build a better tomorrow for businesses across our region.”
+        - generic [ref=f6e181]: — ETripleSoft Leadership Team
+    - generic [ref=f6e183]:
+      - generic [ref=f6e184]: Our Impact
+      - heading "Numbers That Tell Our Story" [level=2] [ref=f6e188]
+      - generic [ref=f6e189]:
+        - generic [ref=f6e190]:
+          - strong [ref=f6e191]: 250+
+          - generic [ref=f6e192]: Happy Clients
+        - generic [ref=f6e193]:
+          - strong [ref=f6e194]: "3"
+          - generic [ref=f6e195]: Locations
+        - generic [ref=f6e196]:
+          - strong [ref=f6e197]: 100+
+          - generic [ref=f6e198]: Team Members
+        - generic [ref=f6e199]:
+          - strong [ref=f6e200]: 10+
+          - generic [ref=f6e201]: Years of Experience
+        - generic [ref=f6e202]:
+          - strong [ref=f6e203]: 98%
+          - generic [ref=f6e204]: Client Satisfaction
+      - generic [ref=f6e205]:
+        - generic [ref=f6e206]: Cairo, Egypt
+        - generic [ref=f6e211]: Riyadh, Saudi Arabia
+        - generic [ref=f6e216]: Dubai, UAE
+    - generic [ref=f6e222]:
+      - generic [ref=f6e224]:
+        - generic [ref=f6e225]: Our Locations
+        - heading "A Stronger Presence Across the Region" [level=2] [ref=f6e226]
+        - paragraph [ref=f6e227]: We proudly serve our clients from three strategic locations in Egypt, Saudi Arabia, and the UAE, with a unified team and a shared vision.
+      - generic [ref=f6e228]:
+        - article [ref=f6e229]:
+          - img "Cairo, Egypt" [ref=f6e230]
+          - generic [ref=f6e231]:
+            - heading "Cairo, Egypt" [level=3] [ref=f6e232]
+            - paragraph [ref=f6e236]: Nile Corniche, Maadi, Cairo, Egypt
+            - link "Get Directions" [ref=f6e237] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Nile%20Corniche%2C%20Maadi%2C%20Cairo%2C%20Egypt
+        - article [ref=f6e241]:
+          - img "Riyadh, Saudi Arabia" [ref=f6e242]
+          - generic [ref=f6e243]:
+            - heading "Riyadh, Saudi Arabia" [level=3] [ref=f6e244]
+            - paragraph [ref=f6e248]: King Fahd Road, Olaya, Riyadh, Saudi Arabia
+            - link "Get Directions" [ref=f6e249] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=King%20Fahd%20Road%2C%20Olaya%2C%20Riyadh%2C%20Saudi%20Arabia
+        - article [ref=f6e253]:
+          - img "Dubai, UAE" [ref=f6e254]
+          - generic [ref=f6e255]:
+            - heading "Dubai, UAE" [level=3] [ref=f6e256]
+            - paragraph [ref=f6e260]: Business Bay, Dubai, United Arab Emirates
+            - link "Get Directions" [ref=f6e261] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Business%20Bay%2C%20Dubai%2C%20United%20Arab%20Emirates
+    - generic [ref=f6e266]:
+      - generic [ref=f6e268]:
+        - generic [ref=f6e269]: Why Clients Choose ETripleSoft
+        - heading "More Than a Vendor — A True Partner" [level=2] [ref=f6e270]
+        - paragraph [ref=f6e271]: We combine deep technical expertise with a genuine commitment to your success.
+      - generic [ref=f6e272]:
+        - article [ref=f6e273]:
+          - heading "Proven Expertise" [level=3] [ref=f6e278]
+          - paragraph [ref=f6e279]: Certified Odoo & Microsoft solutions
+        - article [ref=f6e280]:
+          - heading "Regional Focus" [level=3] [ref=f6e287]
+          - paragraph [ref=f6e288]: On-the-ground support in Egypt, KSA, and UAE
+        - article [ref=f6e289]:
+          - heading "End-to-End Solutions" [level=3] [ref=f6e294]
+          - paragraph [ref=f6e295]: From strategy to execution
+        - article [ref=f6e296]:
+          - heading "Long-Term Partnership" [level=3] [ref=f6e300]
+          - paragraph [ref=f6e301]: We grow with your business
+    - generic [ref=f6e303]:
+      - generic [ref=f6e304]:
+        - heading "Ready to Transform Your Business?" [level=2] [ref=f6e305]
+        - paragraph [ref=f6e306]: Book a free consultation with our team and discover how we can help you achieve your goals.
+      - link "Talk To Our Experts" [ref=f6e307] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f6e310]:
+    - generic [ref=f6e311]:
+      - generic [ref=f6e312]:
+        - link [ref=f6e313] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f6e314]
+        - paragraph [ref=f6e315]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f6e316]:
+          - link "Email ETripleSoft" [ref=f6e317] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f6e321] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f6e325] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f6e328]:
+        - heading "Solutions" [level=4] [ref=f6e329]
+        - link "Odoo ERP" [ref=f6e330] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f6e331] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI Automation" [ref=f6e332] [cursor=pointer]:
+          - /url: /ai
+        - link "Web & Mobile Development" [ref=f6e333] [cursor=pointer]:
+          - /url: /web
+        - link "Digital Marketing" [ref=f6e334] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f6e335]:
+        - heading "Industries" [level=4] [ref=f6e336]
+        - link "Construction" [ref=f6e337] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f6e338] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f6e339] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f6e340] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f6e341] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f6e342] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f6e343]:
+        - heading "Company" [level=4] [ref=f6e344]
+        - link "About Us" [ref=f6e345] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f6e346] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f6e347] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f6e348] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f6e349] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f6e350]:
+        - heading "Resources" [level=4] [ref=f6e351]
+        - link "Blog" [ref=f6e352] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f6e353] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f6e354] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f6e355] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f6e356] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f6e357]:
+        - heading "Our Offices" [level=4] [ref=f6e358]
+        - link "🇪🇬 Cairo, Egypt" [ref=f6e359] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f6e360] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f6e361] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f6e362]:
+      - generic [ref=f6e363]: © 2026 ETripleSoft. All rights reserved.
+      - button "Back to top" [ref=f6e364] [cursor=pointer]

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T00:00:00.000Z",
+  "title": "Design System: ETripleSoft",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Royal Blue-Violet",
+        "canonical": "#4445ff",
+        "tonalRamp": ["#00004d", "#00018f", "#0001cc", "#0a0cff", "#4748ff", "#8585ff", "#c2c2ff", "#e5e6ff"]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Muted Teal",
+        "canonical": "#0f9488",
+        "tonalRamp": ["#074540", "#0d8277", "#13b9aa", "#21e8d6", "#58eee1", "#90f4eb", "#c7f9f5", "#e8fdfb"]
+      },
+      "violet": {
+        "role": "secondary",
+        "displayName": "Royal Violet",
+        "canonical": "#7c5cff",
+        "tonalRamp": ["#0f004d", "#1c008f", "#2800cc", "#3a0aff", "#6b47ff", "#9d85ff", "#cec2ff", "#ebe5ff"]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Warm Amber",
+        "canonical": "#c9790a",
+        "tonalRamp": ["#492c04", "#885207", "#c2750a", "#f39716", "#f6b150", "#f9cb8a", "#fce5c5", "#fef4e7"]
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "canonical": "#07163e",
+        "tonalRamp": ["#081845", "#0e2e80", "#1541b7", "#2358e6", "#5a82ec", "#91acf3", "#c8d5f9", "#e8eefc"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#101b40",
+        "tonalRamp": ["#0f1a3d", "#1d3072", "#2945a3", "#3b5dce", "#6c85da", "#9daee7", "#ced6f3", "#ebeefa"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#65718c",
+        "tonalRamp": ["#20242c", "#3c4353", "#556077", "#717d98", "#949db2", "#b8becc", "#dbdee5", "#f0f1f4"]
+      },
+      "pale": {
+        "role": "neutral",
+        "displayName": "Pale Sky",
+        "canonical": "#f4f8ff",
+        "tonalRamp": ["#001c4d", "#00348f", "#004acc", "#0a63ff", "#478aff", "#85b1ff", "#c2d8ff", "#e5efff"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e4ebf7",
+        "tonalRamp": ["#11213b", "#213d6e", "#2f579d", "#4273c7", "#7196d5", "#a1b9e3", "#d0dcf1", "#ebf0f9"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1s only; one emphasized phrase switches to Royal Blue-Violet via an inline <em>." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2 titles (SectionHeading component)." },
+      "title": { "displayName": "Title", "purpose": "Card and component H3s." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy; defaults to Muted Slate, not Ink." },
+      "label": { "displayName": "Eyebrow / Label", "purpose": "Uppercase kicker preceding nearly every section heading; primary wayfinding device." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 3px 10px #1a2a4b02", "purpose": "Barely-there resting elevation for static content cards." },
+      { "name": "button-rest", "value": "0 3px 7px #071c4410", "purpose": "Default button elevation before hover." },
+      { "name": "button-hover", "value": "0 6px 16px #182c5125", "purpose": "Button elevation on hover, paired with translateY(-2px)." },
+      { "name": "floating-panel", "value": "0 16px 34px #13234718", "purpose": "Dropdowns, search panel, and detached UI surfaces." },
+      { "name": "floating-badge", "value": "0 14px 26px -10px #0b224a33", "purpose": "Small floating cards overlapping photography (partner badges, quote callouts)." },
+      { "name": "hero-lift", "value": "0 30px 50px -24px #0b224a3d", "purpose": "The deepest tier, reserved for large hero-scale feature photography." }
+    ],
+    "motion": [
+      { "name": "lift-fast", "value": "transform 0.16s, background 0.16s, color 0.16s", "purpose": "Nav pill hover/active state transitions." },
+      { "name": "lift-standard", "value": "transform 0.18s, box-shadow 0.18s", "purpose": "Default button hover lift." },
+      { "name": "card-hover", "value": "border-color 0.2s, transform 0.2s", "purpose": "Card hover lift + border brighten." },
+      { "name": "image-zoom", "value": "transform 0.3s-0.4s", "purpose": "Photographic tile hover zoom (industry bento, portfolio)." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "1200px" },
+      { "name": "md", "value": "1000px" },
+      { "name": "sm", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default CTA: deep navy gradient with a trailing arrow icon.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a Free Consultation<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 14px 21px; min-height: 46px; border-radius: 6px; background: linear-gradient(115deg, #071d44, #04152f); color: #fff; font-size: 13px; font-weight: 650; border: 1px solid #102344; box-shadow: 0 3px 7px #071c4410; transition: transform 0.18s, box-shadow 0.18s; } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px #182c5125; } .ds-btn-primary:focus-visible { outline: 3px solid #777bff; outline-offset: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet alternative action beside a primary button.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Explore Our Solutions<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 14px 21px; min-height: 46px; border-radius: 6px; background: #eaf0ff; color: #07163e; font-size: 13px; font-weight: 650; border: 1px solid #eaf0ff; transition: transform 0.18s; } .ds-btn-secondary:hover { transform: translateY(-2px); } .ds-btn-secondary:focus-visible { outline: 3px solid #777bff; outline-offset: 4px; }"
+    },
+    {
+      "name": "Gradient Button",
+      "kind": "button",
+      "refersTo": "button-gradient",
+      "description": "Highest-priority single CTA per surface (e.g. header 'Book a Demo').",
+      "html": "<a class=\"ds-btn-gradient\" href=\"#\">Book a Demo<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-gradient { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 11px 16px; min-height: 39px; border-radius: 6px; background: linear-gradient(115deg, #4445ff, #35b8e0); color: #fff; font-size: 11px; font-weight: 650; border: 1px solid transparent; box-shadow: 0 4px 14px #4445ff2e; transition: box-shadow 0.18s; } .ds-btn-gradient:hover { box-shadow: 0 8px 20px #4445ff40; }"
+    },
+    {
+      "name": "Icon Chip",
+      "kind": "custom",
+      "refersTo": "icon-chip",
+      "description": "The system's signature reused decorative unit: a soft gradient rounded-square holding a stroke icon.",
+      "html": "<span class=\"ds-icon-chip\"><svg width=\"29\" height=\"29\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z\"/></svg></span>",
+      "css": ".ds-icon-chip { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border-radius: 11px; background: linear-gradient(130deg, #e8e4ff, #edf2ff); color: #4445ff; flex-shrink: 0; }"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White bordered card with near-invisible resting shadow, used for service/feature grids.",
+      "html": "<article class=\"ds-card\"><h3>Odoo ERP</h3><p>End-to-end business management on one powerful platform.</p></article>",
+      "css": ".ds-card { background: #fff; border: 1px solid #e4ebf7; border-radius: 10px; padding: 22px 20px; box-shadow: 0 3px 10px #1a2a4b02; transition: border-color 0.2s, transform 0.2s; } .ds-card:hover { border-color: #c5c8fb; transform: translateY(-3px); } .ds-card h3 { margin: 0 0 10px; color: #07163e; font-size: 16px; font-weight: 650; letter-spacing: -0.3px; } .ds-card p { margin: 0; color: #65718c; font-size: 13px; line-height: 1.55; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact/support form field with a hard-edged focus ring rather than a glow.",
+      "html": "<label class=\"ds-field\">Email<input type=\"email\" placeholder=\"you@company.com\"/></label>",
+      "css": ".ds-field { display: block; font-size: 12px; font-weight: 500; color: #101b40; } .ds-field input { display: block; width: 100%; margin-top: 5px; padding: 11px 12px; border: 1px solid #dbe3f2; border-radius: 5px; font-size: 12px; background: #fcfdff; color: #07163e; } .ds-field input::placeholder { color: #7a86a0; } .ds-field input:focus { outline: 2px solid #9699ff; outline-offset: 1px; }"
+    },
+    {
+      "name": "Nav Dropdown",
+      "kind": "nav",
+      "refersTo": "nav-dropdown",
+      "description": "Header navigation dropdown: pill-hover trigger, floating panel with row hover.",
+      "html": "<details class=\"ds-nav-dropdown\"><summary>Services<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M6 9l6 6 6-6\"/></svg></summary><div class=\"ds-dropdown-panel\"><a href=\"#\">Odoo ERP</a><a href=\"#\">Cloud &amp; Security</a></div></details>",
+      "css": ".ds-nav-dropdown summary { display: flex; gap: 6px; align-items: center; list-style: none; cursor: pointer; padding: 10px 14px; border-radius: 7px; color: #101b40; font-size: 12.5px; font-weight: 600; transition: background 0.16s, color 0.16s; } .ds-nav-dropdown summary::-webkit-details-marker { display: none; } .ds-nav-dropdown summary:hover, .ds-nav-dropdown[open] summary { background: #f4f8ff; color: #4445ff; } .ds-dropdown-panel { margin-top: 4px; min-width: 240px; background: #fff; padding: 8px; border: 1px solid #e4ebf7; box-shadow: 0 16px 34px #13234718; border-radius: 10px; } .ds-dropdown-panel a { display: block; padding: 10px 12px; border-radius: 6px; font-weight: 550; color: #101b40; } .ds-dropdown-panel a:hover { background: #f4f8ff; color: #4445ff; }"
+    },
+    {
+      "name": "Floating Badge",
+      "kind": "custom",
+      "refersTo": "floating-badge",
+      "description": "Small white card overlapping a photograph's edge — real DOM text, never baked into the image.",
+      "html": "<span class=\"ds-floating-quote\">“All your business needs in one integrated system.”</span>",
+      "css": ".ds-floating-quote { display: inline-block; max-width: 250px; background: #fff; border-radius: 12px; padding: 16px 19px; font-size: 14px; font-weight: 650; color: #07163e; line-height: 1.45; box-shadow: 0 18px 34px -12px #0b224a33, 0 2px 8px -2px #0b224a1a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Chartered Advisor",
+    "overview": "ETripleSoft's site reads like a credentialed professional-services firm that happens to build software: composed, evidence-led, and never hypey. Every surface leans on verified authority — the Odoo Gold Partner and Microsoft Partner marks, a consistent navy-and-white palette, soft ambient shadows instead of loud effects — rather than on generic SaaS energy (bouncy gradients, giant blobs, neon glow, dark-mode-by-default). The system is bright-first: white and pale-blue surfaces carry the weight, with a single royal blue-violet accent doing almost all of the interactive signaling.\n\nDensity is calm, not sparse: generous section padding (34px+) and a 1240px container give copy and photography room, but the layout stays information-dense where it matters (checklists, bento industry grids, stat cards) rather than padding out empty space for effect. Photography is real product/business imagery (dashboards, offices, job sites) — never decorative stock people, never AI-generated filler.\n\nConfirmed visual rejections: no dark-first UI, no cyberpunk/neon gradients, no oversized blurred blob shapes, no glassmorphism-as-decoration, no generic templated SaaS layout.",
+    "keyCharacteristics": [
+      "Bright, white/pale-blue-first surfaces with deep navy headings and a single blue-violet accent",
+      "Soft, colored (never black) ambient shadows that deepen on hover — nothing sits flat, nothing floats aggressively",
+      "A reused lavender-to-pale-blue gradient icon chip as the system's signature small component",
+      "Real floating HTML badges/quote cards over photography, instead of baking text into images",
+      "One deliberate dark surface (the \"Our Impact\" stats band) as the sole controlled exception to the bright-first rule"
+    ],
+    "rules": [
+      { "name": "The Single Accent Rule", "body": "Royal Blue-Violet is the only color that means \"interactive\" or \"emphasized.\" The three signature accents exist purely to differentiate icons within a small card set and must never appear on a link, button, or active state.", "section": "colors" },
+      { "name": "The Colored Shadow Rule", "body": "No shadow in the system is pure black. Every box-shadow tints from navy or blue, so even resting elevation reads as part of the palette.", "section": "colors" },
+      { "name": "The Uppercase Eyebrow Rule", "body": "Every major section opens with a small, uppercase, letter-spaced label before its heading — the site's primary rhythm device for scanning a long page quickly.", "section": "typography" },
+      { "name": "The Hover-Deepens Rule", "body": "Elevation is a state response, not a static decoration: every shadowed element's blur and offset increase on hover/focus rather than staying constant.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Royal Blue-Violet (#4445ff) as the only color that signals \"interactive\" or \"emphasized\" anywhere in the product.",
+      "Do tint every shadow from navy or blue — never introduce a pure-black shadow or border.",
+      "Do pair photography with real floating HTML badges/quote cards rather than baking text into an image asset.",
+      "Do keep card/button radius inside the 6–16px family; reserve 50%/99px strictly for icon circles and pill badges.",
+      "Do lift on hover (translateY(-2px) to -3px) for buttons and cards; reserve scale transforms for photographic tiles specifically.",
+      "Do alternate .tinted and white section backgrounds — never place two tinted sections back-to-back."
+    ],
+    "donts": [
+      "Don't introduce a second dark-first or neon/cyberpunk section — the Stats/\"Our Impact\" band is the one deliberate dark exception, and it still tints navy, not neon.",
+      "Don't add a fourth signature accent color without a documented icon-only role; the three extensions are deliberately capped.",
+      "Don't redraw, recolor, or approximate the logo mark — it is a fixed brand asset, not a themeable token.",
+      "Don't invent new statistics, testimonials, or client names to fill a card or stat band."
+    ]
+  }
+}

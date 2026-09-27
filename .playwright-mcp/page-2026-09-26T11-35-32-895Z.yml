@@ -1,0 +1,300 @@
+- generic [active] [ref=f5e1]:
+  - link "Skip to content" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - link "ETripleSoft home" [ref=f5e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f5e6]
+      - navigation "Main navigation" [ref=f5e7]:
+        - link "Home" [ref=f5e8] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=f5e9] [cursor=pointer]:
+          - /url: /about
+        - group [ref=f5e10]:
+          - generic "Services" [ref=f5e11] [cursor=pointer]
+        - group [ref=f5e14]:
+          - generic "Industries" [ref=f5e15] [cursor=pointer]
+        - group [ref=f5e18]:
+          - generic "Resources" [ref=f5e19] [cursor=pointer]
+        - link "Careers" [ref=f5e22] [cursor=pointer]:
+          - /url: /careers
+      - generic [ref=f5e23]:
+        - button "Search website" [ref=f5e24] [cursor=pointer]
+        - generic [ref=f5e28]: EN
+        - link "Book a Demo" [ref=f5e32] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f5e35]:
+    - generic [ref=f5e36]:
+      - img "Web Design Company — ETripleSoft solutions" [ref=f5e38]
+      - generic [ref=f5e39]:
+        - generic [ref=f5e40]:
+          - generic [ref=f5e41]: PROFESSIONAL WEB DESIGN SERVICES
+          - heading [level=1] [ref=f5e42]:
+            - text: Web Design Company
+            - emphasis [ref=f5e43]: in Egypt
+          - paragraph [ref=f5e44]: We design modern, high-performing websites that help Egyptian businesses grow, build trust, and stand out in the digital world.
+          - generic [ref=f5e45]:
+            - generic [ref=f5e46]: Modern Design
+            - generic [ref=f5e50]: Mobile Responsive
+            - generic [ref=f5e54]: Results Driven
+          - generic [ref=f5e58]:
+            - link "Get a Free Quote" [ref=f5e59] [cursor=pointer]:
+              - /url: /contact?service=Web%20Design%20Company
+            - link "View Our Work" [ref=f5e62] [cursor=pointer]:
+              - /url: "#work"
+        - generic [ref=f5e65]: Modern Websites Real Business Growth
+    - generic [ref=f5e69]:
+      - generic [ref=f5e70]: Trusted by growing businesses
+      - img "Odoo, Microsoft, Shopify, WordPress and Egypt" [ref=f5e71]
+    - generic [ref=f5e73]:
+      - generic [ref=f5e75]:
+        - generic [ref=f5e76]: About Our Web Design Services
+        - heading "A Website That Works for Your Business" [level=2] [ref=f5e77]
+        - paragraph [ref=f5e78]: At ETripleSoft, we combine creative design with advanced technology to build websites that are beautiful, fast, and conversion-focused. We help startups, SMEs, and enterprises establish a strong digital presence.
+      - generic [ref=f5e79]:
+        - generic [ref=f5e80]:
+          - strong [ref=f5e85]: 250+
+          - generic [ref=f5e86]: Projects Delivered
+        - generic [ref=f5e87]:
+          - strong [ref=f5e92]: 98%
+          - generic [ref=f5e93]: Client Satisfaction
+        - generic [ref=f5e94]:
+          - strong [ref=f5e99]: 10+
+          - generic [ref=f5e100]: Years of Experience
+        - generic [ref=f5e101]:
+          - strong [ref=f5e106]: 24/7
+          - generic [ref=f5e107]: Expert Support
+    - generic [ref=f5e109]:
+      - generic [ref=f5e111]:
+        - heading "Complete Web Design Solutions" [level=2] [ref=f5e112]
+        - paragraph [ref=f5e113]: Modern, thoughtful websites built around your business and your customers.
+      - generic [ref=f5e114]:
+        - article [ref=f5e115]:
+          - heading "UI/UX Design" [level=3] [ref=f5e122]
+          - paragraph [ref=f5e123]: Modern, user-centered designs that create amazing experiences.
+          - link "Learn More" [ref=f5e124] [cursor=pointer]:
+            - /url: /contact?solution=web&service=UI%2FUX%20Design
+        - article [ref=f5e127]:
+          - heading "Corporate Websites" [level=3] [ref=f5e131]
+          - paragraph [ref=f5e132]: Professional websites that build credibility and drive growth.
+          - link "Learn More" [ref=f5e133] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Corporate%20Websites
+        - article [ref=f5e136]:
+          - heading "E-Commerce Websites" [level=3] [ref=f5e142]
+          - paragraph [ref=f5e143]: Powerful online stores with smooth shopping experiences.
+          - link "Learn More" [ref=f5e144] [cursor=pointer]:
+            - /url: /contact?solution=web&service=E-Commerce%20Websites
+        - article [ref=f5e147]:
+          - heading "WordPress Development" [level=3] [ref=f5e152]
+          - paragraph [ref=f5e153]: Custom WordPress websites, themes and plugin development.
+          - link "Learn More" [ref=f5e154] [cursor=pointer]:
+            - /url: /contact?solution=web&service=WordPress%20Development
+        - article [ref=f5e157]:
+          - heading "Shopify Development" [level=3] [ref=f5e162]
+          - paragraph [ref=f5e163]: High-converting Shopify stores for growing businesses.
+          - link "Learn More" [ref=f5e164] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Shopify%20Development
+        - article [ref=f5e167]:
+          - heading "Odoo Integration" [level=3] [ref=f5e172]
+          - paragraph [ref=f5e173]: Integrate your website with Odoo for a unified business ecosystem.
+          - link "Learn More" [ref=f5e174] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Odoo%20Integration
+        - article [ref=f5e177]:
+          - heading "Website Maintenance" [level=3] [ref=f5e182]
+          - paragraph [ref=f5e183]: Keep your website secure, updated and running at its best.
+          - link "Learn More" [ref=f5e184] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Website%20Maintenance
+    - generic [ref=f5e189]:
+      - generic [ref=f5e191]:
+        - generic [ref=f5e192]: Our Process
+        - heading "From Idea to Launch" [level=2] [ref=f5e193]
+        - paragraph [ref=f5e194]: We follow a proven approach to deliver real results.
+      - generic [ref=f5e195]:
+        - generic [ref=f5e196]:
+          - generic [ref=f5e197]: "01"
+          - heading "Discover" [level=3] [ref=f5e198]
+          - paragraph [ref=f5e199]: Understand your business goals and opportunities.
+        - generic [ref=f5e200]:
+          - generic [ref=f5e201]: "02"
+          - heading "Plan" [level=3] [ref=f5e202]
+          - paragraph [ref=f5e203]: Create a strategy and sitemap.
+        - generic [ref=f5e204]:
+          - generic [ref=f5e205]: "03"
+          - heading "Design" [level=3] [ref=f5e206]
+          - paragraph [ref=f5e207]: Create the right solution for your needs.
+        - generic [ref=f5e208]:
+          - generic [ref=f5e209]: "04"
+          - heading "Develop" [level=3] [ref=f5e210]
+          - paragraph [ref=f5e211]: Build with clean, scalable code.
+        - generic [ref=f5e212]:
+          - generic [ref=f5e213]: "05"
+          - heading "Test" [level=3] [ref=f5e214]
+          - paragraph [ref=f5e215]: Ensure quality, performance and security.
+        - generic [ref=f5e216]:
+          - generic [ref=f5e217]: "06"
+          - heading "Launch" [level=3] [ref=f5e218]
+          - paragraph [ref=f5e219]: Your website goes live — and we’re here for you.
+    - generic [ref=f5e221]:
+      - generic [ref=f5e222]:
+        - generic [ref=f5e223]:
+          - generic [ref=f5e224]: Our Work
+          - heading "Featured Website Projects" [level=2] [ref=f5e225]
+        - link "View All Projects" [ref=f5e226] [cursor=pointer]:
+          - /url: /portfolio
+      - generic [ref=f5e229]:
+        - link [ref=f5e230] [cursor=pointer]:
+          - /url: /portfolio
+          - img "Corporate Website" [ref=f5e231]
+          - heading "Corporate Website" [level=3] [ref=f5e232]
+        - link [ref=f5e233] [cursor=pointer]:
+          - /url: /portfolio
+          - img "E-Commerce Store" [ref=f5e234]
+          - heading "E-Commerce Store" [level=3] [ref=f5e235]
+        - link [ref=f5e236] [cursor=pointer]:
+          - /url: /portfolio
+          - img "Real Estate Platform" [ref=f5e237]
+          - heading "Real Estate Platform" [level=3] [ref=f5e238]
+        - link [ref=f5e239] [cursor=pointer]:
+          - /url: /portfolio
+          - img "Odoo Integrated Website" [ref=f5e240]
+          - heading "Odoo Integrated Website" [level=3] [ref=f5e241]
+        - link [ref=f5e242] [cursor=pointer]:
+          - /url: /portfolio
+          - img "Educational Website" [ref=f5e243]
+          - heading "Educational Website" [level=3] [ref=f5e244]
+        - link [ref=f5e245] [cursor=pointer]:
+          - /url: /portfolio
+          - img "Restaurant Website" [ref=f5e246]
+          - heading "Restaurant Website" [level=3] [ref=f5e247]
+    - generic [ref=f5e249]:
+      - generic [ref=f5e250]:
+        - generic [ref=f5e252]:
+          - generic [ref=f5e253]: Why Choose ETripleSoft
+          - heading "Your Trusted Web Design Partner in Egypt" [level=2] [ref=f5e254]
+        - generic [ref=f5e255]:
+          - generic [ref=f5e261]:
+            - heading "Local Expertise" [level=3] [ref=f5e262]
+            - paragraph [ref=f5e263]: We understand the Egyptian market and business culture.
+          - generic [ref=f5e269]:
+            - heading "Modern Technologies" [level=3] [ref=f5e270]
+            - paragraph [ref=f5e271]: We use the latest tools and standards.
+          - generic [ref=f5e276]:
+            - heading "Dedicated Support" [level=3] [ref=f5e277]
+            - paragraph [ref=f5e278]: We’re here before, during and after launch.
+          - generic [ref=f5e283]:
+            - heading "Scalable Solutions" [level=3] [ref=f5e284]
+            - paragraph [ref=f5e285]: Solutions that grow with your business.
+      - img "ETripleSoft developer building a website" [ref=f5e286]
+    - generic [ref=f5e288]:
+      - generic [ref=f5e289]:
+        - generic [ref=f5e290]:
+          - generic [ref=f5e292]:
+            - generic [ref=f5e293]: What Our Clients Say
+            - heading "Real Partners. Real Results." [level=2] [ref=f5e294]
+            - paragraph [ref=f5e295]: Trusted by forward-thinking businesses across the MENA region to turn ideas into impact with Odoo and beyond.
+          - generic [ref=f5e296]:
+            - button "Previous testimonial" [ref=f5e297] [cursor=pointer]
+            - button "Next testimonial" [ref=f5e300] [cursor=pointer]
+        - article [ref=f5e304]:
+          - paragraph [ref=f5e305]: “Professional, responsive, and truly understand our business needs.”
+          - generic [ref=f5e313]:
+            - strong [ref=f5e314]: Marco Youssef
+            - generic [ref=f5e315]: CEO, Manufacturing Company
+      - generic [ref=f5e316]:
+        - generic [ref=f5e318]:
+          - generic [ref=f5e319]: Frequently Asked Questions
+          - heading "Your Questions, Answered" [level=2] [ref=f5e320]
+        - generic [ref=f5e321]:
+          - group [ref=f5e322]:
+            - generic "How long does it take to design a website?" [ref=f5e323] [cursor=pointer]
+          - group [ref=f5e326]:
+            - generic "Do you provide domain and hosting?" [ref=f5e327] [cursor=pointer]
+          - group [ref=f5e330]:
+            - generic "Will my website be mobile-friendly?" [ref=f5e331] [cursor=pointer]
+          - group [ref=f5e334]:
+            - generic "Can you integrate my website with Odoo or other systems?" [ref=f5e335] [cursor=pointer]
+          - group [ref=f5e338]:
+            - generic "Do you provide ongoing maintenance?" [ref=f5e339] [cursor=pointer]
+    - generic [ref=f5e343]:
+      - generic [ref=f5e344]:
+        - heading "Let’s Create Something Amazing Together" [level=2] [ref=f5e345]
+        - paragraph [ref=f5e346]: Talk to our experts and discover how the right technology can move your business forward.
+      - link "Get a Free Quote" [ref=f5e347] [cursor=pointer]:
+        - /url: /contact?service=Web%20Design%20Company
+  - contentinfo [ref=f5e350]:
+    - generic [ref=f5e351]:
+      - generic [ref=f5e352]:
+        - link [ref=f5e353] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f5e354]
+        - paragraph [ref=f5e355]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f5e356]:
+          - link "Email ETripleSoft" [ref=f5e357] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f5e361] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f5e365] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f5e368]:
+        - heading "Solutions" [level=4] [ref=f5e369]
+        - link "Odoo ERP" [ref=f5e370] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f5e371] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI Automation" [ref=f5e372] [cursor=pointer]:
+          - /url: /ai
+        - link "Web & Mobile Development" [ref=f5e373] [cursor=pointer]:
+          - /url: /web
+        - link "Digital Marketing" [ref=f5e374] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f5e375]:
+        - heading "Industries" [level=4] [ref=f5e376]
+        - link "Construction" [ref=f5e377] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f5e378] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f5e379] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f5e380] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f5e381] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f5e382] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f5e383]:
+        - heading "Company" [level=4] [ref=f5e384]
+        - link "About Us" [ref=f5e385] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f5e386] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f5e387] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f5e388] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f5e389] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f5e390]:
+        - heading "Resources" [level=4] [ref=f5e391]
+        - link "Blog" [ref=f5e392] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f5e393] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f5e394] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f5e395] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f5e396] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f5e397]:
+        - heading "Our Offices" [level=4] [ref=f5e398]
+        - link "🇪🇬 Cairo, Egypt" [ref=f5e399] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f5e400] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f5e401] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f5e402]:
+      - generic [ref=f5e403]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f5e404]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f5e405] [cursor=pointer]
