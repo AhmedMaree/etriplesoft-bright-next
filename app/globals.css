@@ -742,6 +742,229 @@ textarea:focus {
     margin-top: 26px;
   }
 }
+
+/* Shared site header and viewport-calibrated homepage rhythm. */
+:root {
+  --site-header-height: 74px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fffffffa;
+  border-bottom: 1px solid #edf2fa;
+  box-shadow: 0 8px 26px -24px #102a6340;
+  backdrop-filter: blur(12px);
+}
+
+.site-header .header-inner {
+  width: min(var(--container), calc(100% - 96px));
+  height: var(--site-header-height);
+  gap: 28px;
+}
+
+.site-header .brand {
+  width: 178px;
+}
+
+.site-header .brand img {
+  height: 48px;
+}
+
+.site-header .navigation {
+  gap: 2px;
+  font-size: 12.5px;
+}
+
+.site-header .navigation > a,
+.site-header .nav-dropdown summary {
+  padding-inline: 11px;
+}
+
+.site-header .header-tools {
+  gap: 13px;
+}
+
+.site-header .header-tools .button {
+  min-height: 44px;
+  padding-inline: 20px;
+  font-size: 12px;
+}
+
+.site-header .search-panel {
+  top: calc(100% + 8px);
+}
+
+.homepage .container,
+.home-hero .hero-inner,
+.home-hero-services {
+  width: min(var(--container), calc(100% - 96px));
+}
+
+@media (min-width: 1001px) {
+  .homepage .home-stage,
+  .homepage > .stats-band {
+    min-height: min(940px, calc(100svh - var(--site-header-height)));
+    padding-block: clamp(42px, 6.5svh, 72px);
+  }
+
+  .homepage .value-props {
+    min-height: min(710px, calc(100svh - 200px));
+    padding-block: clamp(44px, 6svh, 66px);
+  }
+
+  .homepage .tech-trust {
+    padding-block: clamp(30px, 4svh, 42px);
+  }
+
+  .homepage .home-odoo-stage,
+  .homepage .home-solutions-process-stage,
+  .homepage > .stats-band {
+    min-height: min(940px, calc(100svh - var(--site-header-height)));
+  }
+
+  .homepage .odoo-reference-visual {
+    min-height: clamp(470px, 67svh, 640px);
+  }
+
+  .homepage .home-solutions-process-stage {
+    padding-block: clamp(34px, 5svh, 58px);
+  }
+
+  .homepage .home-solutions-reference .section-heading {
+    margin-bottom: clamp(20px, 3svh, 30px);
+  }
+
+  .homepage .home-solution-card {
+    min-height: clamp(260px, 34svh, 350px);
+    padding: clamp(20px, 2.3svh, 28px);
+  }
+
+  .homepage .home-solution-card .icon {
+    width: clamp(62px, 7svh, 78px);
+    height: clamp(62px, 7svh, 78px);
+    margin-bottom: clamp(14px, 2svh, 22px);
+  }
+
+  .homepage .home-process-reference {
+    margin-top: clamp(24px, 4svh, 42px);
+    padding-top: clamp(22px, 3.5svh, 36px);
+  }
+
+  .homepage > .stats-band .stats-cards {
+    margin-top: clamp(26px, 4.5svh, 42px);
+  }
+
+  .homepage > .stats-band .stat-card {
+    min-height: clamp(270px, 39svh, 365px);
+    padding-block: clamp(26px, 3.6svh, 38px);
+  }
+
+  .homepage > .stats-band .stats-offices {
+    margin-top: clamp(26px, 4.5svh, 42px);
+  }
+
+  .homepage .home-industries-stage .industry-bento-tile {
+    max-height: min(290px, 30svh);
+  }
+
+  .homepage .home-testimonials-stage,
+  .homepage .home-insights-stage {
+    min-height: auto;
+    padding-block: clamp(58px, 8svh, 82px);
+  }
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --site-header-height: 68px;
+  }
+
+  .site-header .header-inner {
+    justify-content: space-between;
+    height: var(--site-header-height);
+  }
+
+  .site-header .header-tools {
+    margin-left: auto;
+  }
+
+  .site-header .mobile-toggle {
+    display: flex;
+  }
+
+  .site-header .navigation {
+    display: none;
+    position: absolute;
+    top: var(--site-header-height);
+    right: 0;
+    left: 0;
+    max-height: calc(100svh - var(--site-header-height));
+    padding: 12px 24px;
+    overflow: auto;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 20px #071c4310;
+  }
+
+  .site-header .navigation.is-open {
+    display: block;
+  }
+
+  .site-header .navigation > a,
+  .site-header .nav-dropdown summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .site-header .navigation > a.active::after {
+    display: none;
+  }
+
+  .site-header .dropdown-panel {
+    position: static;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+    background: #f7f9ff;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --site-header-height: 65px;
+  }
+
+  .site-header .header-inner,
+  .homepage .container,
+  .home-hero .hero-inner,
+  .home-hero-services {
+    width: calc(100% - 36px);
+  }
+
+  .site-header .brand {
+    width: 145px;
+  }
+
+  .site-header .brand img {
+    height: 44px;
+  }
+
+  .site-header .header-tools .button,
+  .site-header .language {
+    display: none;
+  }
+
+  .homepage .home-odoo-stage,
+  .homepage .home-solutions-process-stage,
+  .homepage > .stats-band {
+    min-height: auto;
+    padding-block: 58px;
+  }
+}
 .tech-trust {
   padding: 38px 0;
   background: #fff;
@@ -1281,7 +1504,7 @@ textarea:focus {
   color: #fff;
   line-height: 1.15;
 }
-.stat-card > span {
+.stat-card > span:not(.icon) {
   display: block;
   font-size: 13px;
   font-weight: 600;
@@ -4815,7 +5038,7 @@ blockquote small {
   font-size: 38px;
 }
 
-.homepage > .stats-band .stat-card > span {
+.homepage > .stats-band .stat-card > span:not(.icon) {
   font-size: 15px;
 }
 
@@ -5158,39 +5381,6 @@ blockquote small {
     min-height: 220px;
     padding: 26px 24px;
   }
-}
-
-/* Odoo flagship module board, adapted from the supplied light reference. */
-.homepage .home-odoo-stage {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 10%, var(--pale) 0, transparent 32%),
-    radial-gradient(circle at 92% 72%, #e8e4ff 0, transparent 36%),
-    linear-gradient(135deg, #fff 18%, var(--pale) 58%, #fff 100%);
-}
-
-.homepage .home-odoo-stage::before,
-.homepage .home-odoo-stage::after {
-  content: "";
-  position: absolute;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.homepage .home-odoo-stage::before {
-  width: 760px;
-  height: 360px;
-  top: -250px;
-  left: -120px;
-}
-
-.homepage .home-odoo-stage::after {
-  width: 680px;
-  height: 300px;
-  right: -260px;
-  bottom: -210px;
 }
 
 .homepage .home-odoo-stage .odoo-feature {
@@ -6123,9 +6313,33 @@ blockquote small {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(44px, 5vw, 84px);
+  gap: clamp(40px, 4.5vw, 64px);
+}
+
+.homepage .odoo-dot-grid {
+  position: absolute;
+  z-index: 0;
+  width: 168px;
+  height: 168px;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #b9c9e6 1.6px, transparent 1.8px);
+  background-size: 18px 18px;
+}
+
+.homepage .odoo-dot-grid--top {
+  top: 0;
+  right: 0;
+  opacity: 0.55;
+  mask-image: radial-gradient(circle at 100% 0%, #000 55%, transparent 78%);
+}
+
+.homepage .odoo-dot-grid--bottom {
+  bottom: 0;
+  left: 0;
+  opacity: 0.55;
+  mask-image: radial-gradient(circle at 0% 100%, #000 55%, transparent 78%);
 }
 
 .homepage .odoo-reference-copy .eyebrow {
@@ -6138,10 +6352,10 @@ blockquote small {
 }
 
 .homepage .odoo-reference-copy h2 {
-  max-width: 700px;
-  font-size: clamp(48px, 4.2vw, 68px);
-  line-height: 1.06;
-  letter-spacing: -0.035em;
+  max-width: 620px;
+  font-size: clamp(36px, 2.9vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
 }
 
 .homepage .odoo-reference-copy h2 em,
@@ -6224,6 +6438,30 @@ blockquote small {
   overflow: visible;
 }
 
+.homepage .odoo-reference-arc {
+  position: absolute;
+  z-index: 0;
+  top: -120px;
+  right: -60px;
+  width: 480px;
+  height: 480px;
+  border: 1px solid #cfdcf0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.homepage .odoo-reference-arc-dot {
+  position: absolute;
+  z-index: 0;
+  top: -22px;
+  right: 190px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2f8fe8;
+  pointer-events: none;
+}
+
 .homepage .odoo-reference-visual > img {
   border-radius: 18px;
   object-fit: cover;
@@ -6276,9 +6514,12 @@ blockquote small {
 }
 
 .homepage .odoo-reference-quote .icon {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   margin: 0;
+  border-radius: 12px;
+  background: #e6f0ff;
+  color: #2f6df6;
 }
 
 .homepage .odoo-reference-quote strong {
@@ -6525,10 +6766,10 @@ blockquote small {
 .homepage > .stats-band .stat-card::before {
   content: "";
   position: absolute;
-  top: -65px;
-  right: -65px;
-  width: 150px;
-  height: 150px;
+  top: 31px;
+  left: 33px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   background: #eaf5ff;
 }
@@ -6543,6 +6784,8 @@ blockquote small {
 }
 
 .homepage > .stats-band .stat-card .icon {
+  position: relative;
+  z-index: 1;
   width: 74px;
   height: 74px;
   margin-bottom: 26px;
@@ -6571,7 +6814,7 @@ blockquote small {
   line-height: 1;
 }
 
-.homepage > .stats-band .stat-card > span {
+.homepage > .stats-band .stat-card > span:not(.icon) {
   margin-top: 10px;
   color: var(--navy);
   font-size: 20px;
@@ -6616,7 +6859,7 @@ blockquote small {
   }
 
   .homepage .odoo-reference-copy h2 {
-    font-size: 50px;
+    font-size: clamp(34px, 3.6vw, 44px);
   }
 
   .homepage .odoo-reference-copy > p {
@@ -6651,6 +6894,10 @@ blockquote small {
   .homepage > .stats-band .stat-card {
     padding-inline: 28px;
   }
+
+  .homepage > .stats-band .stat-card::before {
+    left: 14px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -6670,6 +6917,12 @@ blockquote small {
 
   .homepage .odoo-reference-quote {
     left: 24px;
+  }
+
+  .homepage .odoo-reference-arc,
+  .homepage .odoo-reference-arc-dot,
+  .homepage .odoo-dot-grid {
+    display: none;
   }
 
   .homepage .home-solutions-grid {
@@ -6800,5 +7053,102 @@ blockquote small {
   .homepage > .stats-band .stats-offices span {
     padding-inline: 0;
     border-right: 0;
+  }
+}
+
+/* Final cascade: all homepage stages share the header grid and reference viewport. */
+.homepage .container,
+.home-hero .hero-inner,
+.home-hero-services {
+  width: min(var(--container), calc(100% - 96px));
+}
+
+@media (min-width: 1001px) {
+  .homepage .home-stage,
+  .homepage .home-odoo-stage,
+  .homepage .home-solutions-process-stage,
+  .homepage > .stats-band {
+    min-height: min(940px, calc(100svh - var(--site-header-height)));
+  }
+
+  .homepage .home-stage,
+  .homepage > .stats-band {
+    padding-block: clamp(42px, 6.5svh, 72px);
+  }
+
+  .homepage .value-props {
+    min-height: min(710px, calc(100svh - 200px));
+    padding-block: clamp(44px, 6svh, 66px);
+  }
+
+  .homepage .tech-trust {
+    padding-block: clamp(30px, 4svh, 42px);
+  }
+
+  .homepage .odoo-reference-visual {
+    min-height: clamp(470px, 67svh, 640px);
+  }
+
+  .homepage .home-solutions-process-stage {
+    padding-block: clamp(34px, 5svh, 58px);
+  }
+
+  .homepage .home-solutions-reference .section-heading {
+    margin-bottom: clamp(20px, 3svh, 30px);
+  }
+
+  .homepage .home-solution-card {
+    min-height: clamp(260px, 34svh, 350px);
+    padding: clamp(20px, 2.3svh, 28px);
+  }
+
+  .homepage .home-solution-card .icon {
+    width: clamp(62px, 7svh, 78px);
+    height: clamp(62px, 7svh, 78px);
+    margin-bottom: clamp(14px, 2svh, 22px);
+  }
+
+  .homepage .home-process-reference {
+    margin-top: clamp(24px, 4svh, 42px);
+    padding-top: clamp(22px, 3.5svh, 36px);
+  }
+
+  .homepage > .stats-band .stats-cards {
+    margin-top: clamp(26px, 4.5svh, 42px);
+  }
+
+  .homepage > .stats-band .stat-card {
+    min-height: clamp(270px, 39svh, 365px);
+    padding-block: clamp(26px, 3.6svh, 38px);
+  }
+
+  .homepage > .stats-band .stats-offices {
+    margin-top: clamp(26px, 4.5svh, 42px);
+  }
+
+  .homepage .home-industries-stage .industry-bento-tile {
+    max-height: min(290px, 30svh);
+  }
+
+  .homepage .home-testimonials-stage,
+  .homepage .home-insights-stage {
+    min-height: auto;
+    padding-block: clamp(58px, 8svh, 82px);
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header .header-inner,
+  .homepage .container,
+  .home-hero .hero-inner,
+  .home-hero-services {
+    width: calc(100% - 36px);
+  }
+
+  .homepage .home-odoo-stage,
+  .homepage .home-solutions-process-stage,
+  .homepage > .stats-band {
+    min-height: auto;
+    padding-block: 58px;
   }
 }

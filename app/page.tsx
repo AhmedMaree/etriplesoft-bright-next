@@ -35,6 +35,8 @@ export default function Home() {
       <ValueProps />
       <TechTrust />
       <section className="section home-stage home-odoo-stage">
+        <span className="odoo-dot-grid odoo-dot-grid--top" aria-hidden="true" />
+        <span className="odoo-dot-grid odoo-dot-grid--bottom" aria-hidden="true" />
         <div className="container odoo-reference-layout">
           <div className="odoo-reference-copy">
             <span className="eyebrow">Flagship Solution</span>
@@ -73,6 +75,8 @@ export default function Home() {
             </div>
           </div>
           <div className="odoo-reference-visual">
+            <span className="odoo-reference-arc" aria-hidden="true" />
+            <span className="odoo-reference-arc-dot" aria-hidden="true" />
             <Image
               src="/images/odoo-hero.webp"
               alt="Odoo dashboard showing connected business operations"
@@ -84,7 +88,7 @@ export default function Home() {
               <span>Gold Partner</span>
             </div>
             <div className="odoo-reference-quote">
-              <Icon name="sparkles" />
+              <Icon name="zap" />
               <strong>
                 “All your business needs
                 <br />

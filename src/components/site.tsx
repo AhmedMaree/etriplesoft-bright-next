@@ -53,6 +53,7 @@ import {
   Download,
   CheckCircle,
   ArrowUpRight,
+  Zap,
 } from "lucide-react";
 import { services } from "@/lib/data";
 const icons: Record<string, typeof Settings> = {
@@ -84,6 +85,7 @@ const icons: Record<string, typeof Settings> = {
   message: MessageCircle,
   plug: Plug,
   sparkles: Sparkles,
+  zap: Zap,
   pen: PenTool,
   cart: ShoppingCart,
   bag: ShoppingBag,
@@ -175,7 +177,7 @@ export function Header() {
   const [query, setQuery] = useState("");
   const groups = [
     {
-      label: path === "/odoo" ? "Odoo" : "Odoo ERP",
+      label: "Odoo ERP",
       links: [
         ["Odoo Implementation", "/odoo"],
         ["Request a Demo", "/contact?service=Odoo%20ERP"],
@@ -207,26 +209,8 @@ export function Header() {
       ],
     },
   ];
-  const simpleNav = [
-    "/ai",
-    "/web",
-    "/digital-marketing",
-    "/contact",
-    "/careers",
-    "/industries",
-    "/portfolio",
-  ].includes(path);
-  const aboutHeader = path === "/about" || path === "/about-us";
   return (
-    <header
-      className={
-        path === "/"
-          ? "site-header homepage-header"
-          : aboutHeader
-            ? "site-header about-header"
-            : "site-header"
-      }
-    >
+    <header className="site-header">
       <div className="container header-inner">
         <Link href="/" aria-label="ETripleSoft home" className="brand">
           <img src="/images/logo-header.png" alt="ETripleSoft" />
@@ -242,52 +226,30 @@ export function Header() {
           >
             Home
           </Link>
-          {simpleNav && (
-            <Link
-              onClick={() => setOpen(false)}
-              className={path === "/about" ? "active" : ""}
-              href="/about"
-            >
-              About Us
-            </Link>
-          )}
-          {groups
-            .filter(
-              (g) => !simpleNav || !["Odoo ERP", "Company"].includes(g.label),
-            )
-            .map((g) => (
-              <details className="nav-dropdown" key={g.label}>
-                <summary>
-                  {g.label}
-                  <ChevronDown size={12} />
-                </summary>
-                <div className="dropdown-panel">
-                  {g.links.map(([label, href]) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      onClick={(e) => {
-                        setOpen(false);
-                        e.currentTarget
-                          .closest("details")
-                          ?.removeAttribute("open");
-                      }}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </details>
-            ))}
-          {simpleNav && (
-            <Link
-              onClick={() => setOpen(false)}
-              className={path === "/careers" ? "active" : ""}
-              href="/careers"
-            >
-              Careers
-            </Link>
-          )}
+          {groups.map((g) => (
+            <details className="nav-dropdown" key={g.label}>
+              <summary>
+                {g.label}
+                <ChevronDown size={12} />
+              </summary>
+              <div className="dropdown-panel">
+                {g.links.map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={(e) => {
+                      setOpen(false);
+                      e.currentTarget
+                        .closest("details")
+                        ?.removeAttribute("open");
+                    }}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+          ))}
         </nav>
         <div className="header-tools">
           <button
@@ -300,9 +262,7 @@ export function Header() {
           <span className="language">
             <Globe size={16} /> EN
           </span>
-          <Button gradient href="/contact">
-            {aboutHeader ? "Talk to Our Experts" : "Book a Demo"}
-          </Button>
+          <Button gradient href="/contact">Book a Demo</Button>
           <button
             className="icon-button mobile-toggle"
             aria-label={open ? "Close navigation" : "Open navigation"}
