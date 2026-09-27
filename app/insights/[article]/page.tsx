@@ -10,6 +10,69 @@ const articles: Record<
     sections: [string, string][];
   }
 > = {
+  "odoo-kpi-dashboard-real-time-business-insights": {
+    title: "Odoo KPI Dashboards for Real-Time Business Insights",
+    category: "Odoo ERP",
+    image: "odoo-hero",
+    intro:
+      "A useful KPI dashboard connects decisions to reliable operational data. The goal is not to show every available number, but to give each role the information needed to act.",
+    sections: [
+      [
+        "Start with the decision",
+        "Define what the user needs to notice, compare or approve before choosing a metric or visualization.",
+      ],
+      [
+        "Connect the source workflow",
+        "A dashboard is only as useful as the records behind it. Confirm ownership, data quality and update timing for sales, finance, inventory and project information.",
+      ],
+      [
+        "Design for different roles",
+        "Executives, managers and operational teams need different levels of detail. Use role-based views and provide a clear path from a summary to the underlying record.",
+      ],
+    ],
+  },
+  "odoo-roi-return-on-investment": {
+    title: "Understanding the Return on an Odoo ERP Investment",
+    category: "Odoo ERP",
+    image: "growth-chart",
+    intro:
+      "ERP value should be assessed against the work it changes: manual handoffs, duplicated data, reporting effort, process delays and the cost of maintaining disconnected tools.",
+    sections: [
+      [
+        "Establish the current baseline",
+        "Document the time, systems and responsibilities involved in the existing process before estimating the value of a new platform.",
+      ],
+      [
+        "Include the full implementation scope",
+        "Evaluate configuration, migration, integrations, training, support and internal team involvement—not software licenses alone.",
+      ],
+      [
+        "Measure adoption and operational change",
+        "Review whether teams are using the intended workflow and whether information reaches the next decision faster and with fewer corrections.",
+      ],
+    ],
+  },
+  "signs-you-need-erp-system": {
+    title: "Signs Your Business Is Ready for an ERP System",
+    category: "ERP Planning",
+    image: "professional",
+    intro:
+      "Businesses often begin evaluating ERP when growth makes disconnected tools and informal handoffs difficult to control.",
+    sections: [
+      [
+        "Teams maintain the same data in different places",
+        "Repeated entry across spreadsheets and separate tools creates conflicting records and makes ownership unclear.",
+      ],
+      [
+        "Reporting requires manual reconciliation",
+        "When routine reports depend on collecting and correcting information from several teams, decisions arrive later than the work they describe.",
+      ],
+      [
+        "Processes depend on individual memory",
+        "Approvals, follow-up and exceptions become harder to manage when the workflow is not visible in a shared system.",
+      ],
+    ],
+  },
   "odoo-construction": {
     title: "How Odoo Helps Construction Companies Improve Efficiency",
     category: "Odoo ERP",

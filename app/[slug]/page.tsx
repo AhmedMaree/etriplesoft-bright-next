@@ -111,19 +111,19 @@ export default async function Page({
             <div className="card-grid cols-2 mt">
               {[
                 [
-                  "How Odoo Helps Construction Companies Improve Efficiency",
-                  "odoo-construction",
+                  "Odoo KPI Dashboards for Real-Time Business Insights",
+                  "odoo-kpi-dashboard-real-time-business-insights",
                   "Odoo",
                 ],
                 [
-                  "5 Ways AI Can Transform Your Business Operations",
-                  "ai-business",
-                  "AI & Automation",
+                  "Understanding the Return on an Odoo ERP Investment",
+                  "odoo-roi-return-on-investment",
+                  "Odoo",
                 ],
                 [
-                  "SEO Strategies for Businesses in Egypt, UAE and Saudi Arabia",
-                  "seo-strategies",
-                  "Digital Marketing",
+                  "Signs Your Business Is Ready for an ERP System",
+                  "signs-you-need-erp-system",
+                  "ERP Planning",
                 ],
               ].map(([t, s, c]) => (
                 <article className="article-card" key={s}>

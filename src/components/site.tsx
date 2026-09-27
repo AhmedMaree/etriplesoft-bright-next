@@ -921,8 +921,7 @@ export function Stats({
   items = [
     ["250+", "Projects Delivered", "briefcase", "Real work, real outcomes."],
     ["3", "Countries", "globe", "Egypt, UAE & Saudi Arabia."],
-    ["10+", "Years of Experience", "clock", "Building since day one."],
-    ["9+", "Industries Served", "building", "Deep sector expertise."],
+    ["10+", "Years of Experience", "clock", "Regional technology experience."],
   ],
 }: {
   title?: string;

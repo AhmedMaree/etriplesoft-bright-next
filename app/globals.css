@@ -5156,16 +5156,16 @@ blockquote small {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 10%, #dff2ff 0, transparent 32%),
-    radial-gradient(circle at 92% 72%, #c9fbff 0, transparent 36%),
-    linear-gradient(135deg, #ffffff 18%, #f3faff 58%, #ecfcff 100%);
+    radial-gradient(circle at 18% 10%, var(--pale) 0, transparent 32%),
+    radial-gradient(circle at 92% 72%, #e8e4ff 0, transparent 36%),
+    linear-gradient(135deg, #fff 18%, var(--pale) 58%, #fff 100%);
 }
 
 .homepage .home-odoo-stage::before,
 .homepage .home-odoo-stage::after {
   content: "";
   position: absolute;
-  border: 1px solid #8ad9f0;
+  border: 1px solid var(--line);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -5191,10 +5191,10 @@ blockquote small {
 
 .odoo-module-board {
   padding: 26px;
-  border: 1px solid #ffffff;
-  border-radius: 28px;
-  background: #eef9ffcc;
-  box-shadow: 0 30px 60px -36px #0b5b8a66;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #f4f8ff;
+  box-shadow: 0 30px 50px -24px #0b224a3d;
 }
 
 .odoo-module-board-head {
@@ -5212,8 +5212,8 @@ blockquote small {
 }
 
 .odoo-module-board-head span {
-  color: #526786;
-  font-size: 12px;
+  color: var(--muted);
+  font-size: 11px;
   font-weight: 650;
 }
 
@@ -5230,9 +5230,9 @@ blockquote small {
   gap: 16px;
   min-height: 106px;
   padding: 18px;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 14px 30px -26px #0b224a70;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 16px 34px -28px #13234718;
   transition:
     transform 0.2s,
     box-shadow 0.2s;
@@ -5240,7 +5240,7 @@ blockquote small {
 
 .odoo-module-grid > span:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 38px -26px #0b4c7c70;
+  box-shadow: 0 18px 34px -24px #13234718;
 }
 
 .odoo-module-grid .icon {
@@ -5257,17 +5257,17 @@ blockquote small {
 }
 
 .odoo-module-grid > span:nth-child(4n + 2) .icon {
-  background: #e3f3ff;
-  color: #2475db;
+  background: var(--pale);
+  color: var(--blue);
 }
 
 .odoo-module-grid > span:nth-child(4n + 3) .icon {
-  background: #e4fbf6;
+  background: var(--pale);
   color: #0f9488;
 }
 
 .odoo-module-grid > span:nth-child(4n + 4) .icon {
-  background: #fff2df;
+  background: var(--pale);
   color: #c9790a;
 }
 
@@ -5276,7 +5276,7 @@ blockquote small {
   min-height: 480px;
   aspect-ratio: 1.1;
   object-fit: cover;
-  box-shadow: 0 30px 50px -32px #0b224a5c;
+  box-shadow: 0 30px 50px -24px #0b224a3d;
 }
 
 .service-context .section-heading {
@@ -5311,7 +5311,7 @@ blockquote small {
 @media (max-width: 760px) {
   .odoo-module-board {
     padding: 16px;
-    border-radius: 20px;
+    border-radius: 16px;
   }
 
   .odoo-module-board-head {
