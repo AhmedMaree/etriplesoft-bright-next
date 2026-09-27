@@ -208,8 +208,6 @@ export function Header() {
     },
   ];
   const simpleNav = [
-    "/about",
-    "/about-us",
     "/ai",
     "/web",
     "/digital-marketing",
@@ -218,9 +216,16 @@ export function Header() {
     "/industries",
     "/portfolio",
   ].includes(path);
+  const aboutHeader = path === "/about" || path === "/about-us";
   return (
     <header
-      className={path === "/" ? "site-header homepage-header" : "site-header"}
+      className={
+        path === "/"
+          ? "site-header homepage-header"
+          : aboutHeader
+            ? "site-header about-header"
+            : "site-header"
+      }
     >
       <div className="container header-inner">
         <Link href="/" aria-label="ETripleSoft home" className="brand">
@@ -296,7 +301,7 @@ export function Header() {
             <Globe size={16} /> EN
           </span>
           <Button gradient href="/contact">
-            Book a Demo
+            {aboutHeader ? "Talk to Our Experts" : "Book a Demo"}
           </Button>
           <button
             className="icon-button mobile-toggle"
@@ -445,7 +450,7 @@ export function SectionHeading({
   href,
 }: {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   description?: string;
   center?: boolean;
   link?: string;
@@ -723,23 +728,18 @@ export function Hero({
         </div>
         {image === "skyline" && (
           <div className="region-callout">
-            <h3>
-              Empowering
-              <br />
-              Businesses Across
-              <br />a Stronger Region
-            </h3>
-            <div>
+            <div className="region-countries">
               <span>
-                ????<small>Egypt</small>
+                <i className="flag flag-eg" aria-hidden="true" /> Egypt
               </span>
               <span>
-                ????<small>Saudi Arabia</small>
+                <i className="flag flag-sa" aria-hidden="true" /> Saudi Arabia
               </span>
               <span>
-                ????<small>UAE</small>
+                <i className="flag flag-ae" aria-hidden="true" /> UAE
               </span>
             </div>
+            <p>Local teams. Regional delivery.</p>
           </div>
         )}
         {image === "support-hero" && (
@@ -964,7 +964,17 @@ export function Process({
     <div className={`process ${inline ? "inline" : ""}`}>
       <SectionHeading
         eyebrow="Our Process"
-        title={title}
+        title={
+          inline && title === "A Clear Path to Your Success" ? (
+            <>
+              A Clear Path to
+              <br />
+              <em>Your Success</em>
+            </>
+          ) : (
+            title
+          )
+        }
         description="We follow a proven approach to deliver real results."
       />
       <div className="steps">
@@ -984,13 +994,15 @@ export function Process({
 }
 export function Stats({
   title = "Numbers That Tell Our Story",
+  description,
   items = [
     ["250+", "Projects Delivered", "briefcase", "Real work, real outcomes."],
     ["3", "Countries", "globe", "Egypt, UAE & Saudi Arabia."],
     ["10+", "Years of Experience", "clock", "Regional technology experience."],
   ],
 }: {
-  title?: string;
+  title?: React.ReactNode;
+  description?: string;
   items?: string[][];
 }) {
   return (
@@ -1001,6 +1013,7 @@ export function Stats({
           Our Impact
         </span>
         <h2>{title}</h2>
+        {description && <p className="stats-description">{description}</p>}
         <div className="stats-cards">
           {items.map(([number, label, icon, description]) => (
             <div className="stat-card" key={label}>

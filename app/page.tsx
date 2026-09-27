@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Hero,
   PartnerBadges,
@@ -13,7 +14,7 @@ import {
   CTA,
   Testimonials,
 } from "@/components/site";
-import { services, industries } from "@/lib/data";
+import { industries } from "@/lib/data";
 export default function Home() {
   return (
     <main id="main" className="homepage">
@@ -34,26 +35,20 @@ export default function Home() {
       <ValueProps />
       <TechTrust />
       <section className="section home-stage home-odoo-stage">
-        <div className="container split odoo-feature">
-          <div>
-            <SectionHeading
-              eyebrow="Odoo ERP"
-              title="Connect Every Business Function on One Platform."
-              description="Bring finance, sales, inventory, projects, people and customer operations into one adaptable Odoo platform, implemented around the way your business works."
-            />
-            <div className="button-row">
-              <Button href="/odoo">Explore Odoo ERP</Button>
-              <Button secondary href="/contact?service=Odoo%20ERP">
-                Request a Demo
-              </Button>
-            </div>
-          </div>
-          <div className="odoo-module-board">
-            <div className="odoo-module-board-head">
-              <img src="/images/odoo-wordmark.png" alt="Odoo" />
-              <span>Connected business applications</span>
-            </div>
-            <div className="odoo-module-grid">
+        <div className="container odoo-reference-layout">
+          <div className="odoo-reference-copy">
+            <span className="eyebrow">Flagship Solution</span>
+            <h2>
+              Run Your Entire Business
+              <br />
+              on <em>One Platform.</em>
+            </h2>
+            <p>
+              Streamline your operations, increase productivity, and get
+              complete visibility with Odoo — fully customized for your business
+              needs.
+            </p>
+            <div className="odoo-reference-modules">
               {[
                 ["coins", "Accounting & Finance"],
                 ["check", "Projects & Tasks"],
@@ -61,15 +56,104 @@ export default function Home() {
                 ["factory", "Manufacturing"],
                 ["box", "Inventory & Procurement"],
                 ["cart", "E-commerce"],
-                ["briefcase", "HR & Payroll"],
-                ["sparkles", "And More…"],
-              ].map(([icon, t]) => (
-                <span key={t}>
+                ["users", "HR & Payroll"],
+                ["sparkles", "And More..."],
+              ].map(([icon, label]) => (
+                <span key={label}>
                   <Icon name={icon} />
-                  <strong>{t}</strong>
+                  <strong>{label}</strong>
                 </span>
               ))}
             </div>
+            <div className="button-row">
+              <Button href="/odoo">Explore Odoo ERP</Button>
+              <Button secondary href="/contact?service=Odoo%20ERP">
+                Request a Demo
+              </Button>
+            </div>
+          </div>
+          <div className="odoo-reference-visual">
+            <Image
+              src="/images/odoo-hero.webp"
+              alt="Odoo dashboard showing connected business operations"
+              fill
+              sizes="(max-width: 760px) 100vw, 54vw"
+            />
+            <div className="odoo-reference-badge">
+              <img src="/images/odoo-wordmark.png" alt="Odoo" />
+              <span>Gold Partner</span>
+            </div>
+            <div className="odoo-reference-quote">
+              <Icon name="sparkles" />
+              <strong>
+                “All your business needs
+                <br />
+                in one system.”
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="solutions"
+        className="section home-stage home-solutions-process-stage"
+      >
+        <div className="container">
+          <div className="home-solutions-reference">
+            <SectionHeading
+              center
+              eyebrow="Our Solutions"
+              title={
+                <>
+                  Technology Solutions for a <em>Stronger Tomorrow</em>
+                </>
+              }
+              description="From ERP and cloud to AI and digital experiences — we deliver end-to-end solutions that help you work smarter, grow faster, and stay ahead."
+            />
+            <div className="home-solutions-grid">
+              {[
+                [
+                  "odoo",
+                  "coins",
+                  "Odoo ERP",
+                  "End-to-end business management on one powerful platform.",
+                ],
+                [
+                  "cloud",
+                  "cloud",
+                  "Cloud & Security",
+                  "Secure, scalable and reliable cloud solutions for your business.",
+                ],
+                [
+                  "ai",
+                  "brain",
+                  "AI Automation",
+                  "Automate processes and unlock new opportunities with AI.",
+                ],
+                [
+                  "web",
+                  "monitor",
+                  "Web & Mobile Development",
+                  "Modern websites and applications that grow with your business.",
+                ],
+                [
+                  "digital-marketing",
+                  "chart",
+                  "Digital Marketing",
+                  "Data-driven marketing to increase your visibility and sales.",
+                ],
+              ].map(([slug, icon, title, description]) => (
+                <article className="home-solution-card" key={slug}>
+                  <Icon name={icon} />
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <TextLink href={"/" + slug}>Learn More</TextLink>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="home-process-reference">
+            <Process inline />
           </div>
         </div>
       </section>
@@ -85,54 +169,23 @@ export default function Home() {
           <IndustryBento items={industries} />
         </div>
       </section>
-      <section
-        id="solutions"
-        className="section home-stage home-solutions-stage"
-      >
-        <div className="container">
-          <SectionHeading
-            center
-            eyebrow="Our Solutions"
-            title="Technology Solutions for a Stronger Tomorrow"
-            description="From ERP and cloud to AI and digital experiences — we deliver end-to-end solutions that help you work smarter, grow faster, and stay ahead."
-          />
-          <div className="card-grid cols-6 home-services">
-            {services.map((s) => (
-              <article className="service-card" key={s.slug}>
-                <Icon name={s.icon} />
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <TextLink href={"/" + s.slug}>Learn More</TextLink>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section tinted home-stage home-process-stage">
-        <div className="container">
-          <Process inline />
-        </div>
-      </section>
       <Stats
+        title={
+          <>
+            Numbers That Tell <em>Our Story</em>
+          </>
+        }
+        description="Real outcomes. Lasting partnerships. A growing impact across Egypt, UAE and Saudi Arabia."
         items={[
           [
             "250+",
             "Projects Delivered",
             "briefcase",
-            "Real work across business systems and digital services.",
+            "Real work, real outcomes for ambitious businesses.",
           ],
-          [
-            "3",
-            "Countries",
-            "globe",
-            "Local presence in Egypt, Saudi Arabia and the UAE.",
-          ],
-          [
-            "10+",
-            "Years of Experience",
-            "clock",
-            "Regional implementation and technology experience.",
-          ],
+          ["3", "Countries", "globe", "Egypt, UAE & Saudi Arabia."],
+          ["10+", "Years of Experience", "clock", "Building since day one."],
+          ["9+", "Industries Served", "building", "Deep sector expertise."],
         ]}
       />
       <section className="section tinted home-stage home-testimonials-stage">

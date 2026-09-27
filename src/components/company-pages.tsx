@@ -14,38 +14,23 @@ import { industries } from "@/lib/data";
 
 export function AboutPage() {
   return (
-    <main id="main">
+    <main id="main" className="about-page">
       <Hero
         className="about-hero"
-        eyebrow="About ETripleSoft"
-        title="Technology That Supports"
-        accent="Business Growth"
-        description="ETripleSoft designs and delivers connected software, cloud and digital services for businesses across Egypt, Saudi Arabia and the UAE."
+        eyebrow="Who We Are"
+        title="Technology That Moves"
+        accent="Business Forward."
+        description="We are a technology company helping businesses across Egypt, UAE and Saudi Arabia transform, grow, and lead with Odoo ERP and digital solutions."
         image="skyline"
-        primary="Talk to Our Team"
+        primary="Talk to Our Experts"
         primaryHref="/contact"
-        secondary="Explore Our Services"
-        secondaryHref="/#solutions"
-        note={"Regional expertise\nConnected delivery"}
+        secondary="Explore Our Story"
+        secondaryHref="#purpose"
       >
-        <div className="hero-metrics">
-          {[
-            ["250+", "Projects Delivered", "briefcase"],
-            ["3", "Countries", "building"],
-            ["10+", "Years of Experience", "award"],
-          ].map(([number, label, icon]) => (
-            <div key={label}>
-              <Icon name={icon} />
-              <div>
-                <strong>{number}</strong>
-                <small>{label}</small>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PartnerBadges />
       </Hero>
 
-      <section className="section">
+      <section className="section" id="purpose">
         <div className="container about-purpose">
           <SectionHeading
             title="A Practical Digital-Transformation Partner"
