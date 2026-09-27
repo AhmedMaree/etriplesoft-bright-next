@@ -26,7 +26,7 @@ const serviceContext: Record<
     title: "An ERP implementation should connect work, not copy old silos.",
     description:
       "We map the flow between teams before configuration begins, then shape Odoo around the information, approvals and responsibilities that keep the business moving.",
-    image: "odoo-expert",
+    image: "odoo-hero",
     points: [
       [
         "Process first",
@@ -49,7 +49,7 @@ const serviceContext: Record<
     title: "Security works best when ownership and recovery are clear.",
     description:
       "We connect infrastructure, identity, devices, backup and support into an operating model your team can understand and maintain.",
-    image: "professional",
+    image: "cloud-hero",
     points: [
       [
         "Know the environment",
@@ -72,7 +72,7 @@ const serviceContext: Record<
     title: "Useful automation starts with a specific operational problem.",
     description:
       "We begin with the task, data and exceptions—not a generic AI feature—then define where people review, approve or intervene.",
-    image: "ai-robot",
+    image: "ai-hero",
     points: [
       [
         "Grounded use case",
@@ -95,7 +95,7 @@ const serviceContext: Record<
     title: "The website should support the operation behind the screen.",
     description:
       "Content, commerce, enquiries and customer service work better when the website is designed with the systems and people responsible for the next step.",
-    image: "developer",
+    image: "web-hero",
     points: [
       [
         "Content clarity",
@@ -118,7 +118,7 @@ const serviceContext: Record<
     title: "A mobile product should make one important journey easier.",
     description:
       "We define the user, environment and system dependencies before choosing the platform or implementation approach.",
-    image: "web-shop",
+    image: "web-hero",
     points: [
       [
         "Journey definition",
@@ -141,7 +141,7 @@ const serviceContext: Record<
     title: "Marketing becomes more useful when campaigns connect to follow-up.",
     description:
       "We align channels, content and measurement with the enquiries your team can qualify, respond to and learn from.",
-    image: "growth-chart",
+    image: "marketing-hero",
     points: [
       [
         "Audience context",

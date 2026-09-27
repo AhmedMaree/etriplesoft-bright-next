@@ -331,7 +331,7 @@ export const servicePages: Record<string, ServiceData> = {
     accent: "Real User Journeys",
     description:
       "Design and build customer-facing and internal applications that connect securely with your APIs, ERP and operational systems.",
-    image: "developer",
+    image: "web-hero",
     primary: "Discuss Your App",
     secondary: "Explore Capabilities",
     secondaryHref: "#solutions",

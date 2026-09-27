@@ -19,15 +19,15 @@ export default function Home() {
     <main id="main" className="homepage">
       <Hero
         className="home-hero"
-        eyebrow="Odoo Gold Partner · Microsoft Partner"
-        title={"Connected Technology\nBuilt Around"}
+        eyebrow="Built for Smarter Growth"
+        title={"Digital Transformation\nBuilt Around"}
         accent="Your Business."
-        description="Odoo ERP, cloud and security, AI automation, web, mobile and digital marketing services for businesses across Egypt, the UAE and Saudi Arabia."
+        description="Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, UAE and Saudi Arabia."
         image="hero-image"
         primary="Book a Free Consultation"
-        secondary="Explore Our Solutions"
+        secondary="Explore Solutions"
         secondaryHref="#solutions"
-        note={"One platform\nfor a smarter business"}
+        note={"One platform.\nBetter decisions."}
       >
         <PartnerBadges />
       </Hero>

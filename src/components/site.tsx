@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -163,6 +164,7 @@ export function Photo({
       src={`/images/${name}.webp`}
       alt={alt}
       loading="lazy"
+      decoding="async"
     />
   );
 }
@@ -217,7 +219,9 @@ export function Header() {
     "/portfolio",
   ].includes(path);
   return (
-    <header className="site-header">
+    <header
+      className={path === "/" ? "site-header homepage-header" : "site-header"}
+    >
       <div className="container header-inner">
         <Link href="/" aria-label="ETripleSoft home" className="brand">
           <img src="/images/logo-header.png" alt="ETripleSoft" />
@@ -655,10 +659,12 @@ export function Hero({
   return (
     <section className={`hero ${className}`}>
       <div className="hero-image">
-        <img
+        <Image
           src={`/images/${image}.webp`}
           alt={`${title} — ETripleSoft solutions`}
-          fetchPriority="high"
+          fill
+          sizes="100vw"
+          preload={image === "hero-image"}
         />
       </div>
       <div className="container hero-inner">
@@ -784,7 +790,67 @@ export function Hero({
             </svg>
           </div>
         )}
+        {image === "hero-image" && (
+          <div className="home-hero-callouts" aria-label="Platform benefits">
+            <span className="operations-callout">
+              <Icon name="chart" />
+              <strong>Streamline Operations</strong>
+            </span>
+            <span className="automation-callout">
+              <Icon name="sparkles" />
+              <strong>AI-Powered Automation</strong>
+            </span>
+            <span className="security-callout">
+              <Icon name="shield" />
+              <strong>Secure &amp; Scalable</strong>
+            </span>
+          </div>
+        )}
       </div>
+      {image === "hero-image" && (
+        <nav className="home-hero-services" aria-label="Core solutions">
+          {[
+            [
+              "coins",
+              "Odoo ERP",
+              "Run your entire business on one platform",
+              "/odoo",
+            ],
+            [
+              "cloud",
+              "Cloud & Security",
+              "Secure, scalable infrastructure",
+              "/cloud",
+            ],
+            [
+              "brain",
+              "AI Automation",
+              "Automate and unlock new opportunities",
+              "/ai",
+            ],
+            [
+              "monitor",
+              "Web & Mobile Solutions",
+              "Modern apps that grow with you",
+              "/web",
+            ],
+            [
+              "chart",
+              "Digital Marketing",
+              "Increase your visibility and sales",
+              "/digital-marketing",
+            ],
+          ].map(([icon, label, copy, href]) => (
+            <Link href={href} key={label}>
+              <Icon name={icon} />
+              <span>
+                <strong>{label}</strong>
+                <small>{copy}</small>
+              </span>
+            </Link>
+          ))}
+        </nav>
+      )}
     </section>
   );
 }
