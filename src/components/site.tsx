@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUp,
@@ -58,7 +58,6 @@ import {
   LayoutGrid,
 } from "lucide-react";
 import { services } from "@/lib/data";
-import OdooReferenceFooter from "./odoo/OdooReferenceFooter";
 const icons: Record<string, typeof Settings> = {
   globe: Globe,
   settings: Settings,
@@ -180,6 +179,29 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
   const [query, setQuery] = useState("");
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearCloseTimer = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+  const scheduleClose = (label: string) => {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => {
+      setOpenGroup((cur) => (cur === label ? null : cur));
+    }, 120);
+  };
+  useEffect(() => {
+    if (!openGroup) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenGroup(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openGroup]);
+  useEffect(() => {
+    setOpen(false);
+    setOpenGroup(null);
+  }, [path]);
   const groups = [
     {
       label: "Odoo ERP",
@@ -232,28 +254,48 @@ export function Header() {
             Home
           </Link>
           {groups.map((g) => (
-            <details className="nav-dropdown" key={g.label}>
-              <summary>
+            <div
+              className={
+                openGroup === g.label ? "nav-dropdown is-open" : "nav-dropdown"
+              }
+              key={g.label}
+              onMouseEnter={() => {
+                clearCloseTimer();
+                setOpenGroup(g.label);
+              }}
+              onMouseLeave={() => scheduleClose(g.label)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setOpenGroup((cur) => (cur === g.label ? null : cur));
+                }
+              }}
+            >
+              <button
+                type="button"
+                className="nav-dropdown-trigger"
+                aria-expanded={openGroup === g.label}
+                onClick={() =>
+                  setOpenGroup((cur) => (cur === g.label ? null : g.label))
+                }
+              >
                 {g.label}
-                <ChevronDown size={12} />
-              </summary>
+                <ChevronDown size={12} aria-hidden="true" />
+              </button>
               <div className="dropdown-panel">
                 {g.links.map(([label, href]) => (
                   <Link
                     key={href}
                     href={href}
-                    onClick={(e) => {
+                    onClick={() => {
                       setOpen(false);
-                      e.currentTarget
-                        .closest("details")
-                        ?.removeAttribute("open");
+                      setOpenGroup(null);
                     }}
                   >
                     {label}
                   </Link>
                 ))}
               </div>
-            </details>
+            </div>
           ))}
         </nav>
         <div className="header-tools">
@@ -318,14 +360,12 @@ export function Header() {
   );
 }
 export function Footer() {
-  const path = usePathname();
-  if (path === "/odoo" || path === "/odoo-erp-egypt") return <OdooReferenceFooter />;
   return (
-    <footer>
+    <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link href="/">
-            <img src="/images/logo.png" alt="ETripleSoft" />
+          <Link href="/" aria-label="ETripleSoft home">
+            <img src="/images/logo-white.png" alt="ETripleSoft" />
           </Link>
           <p>
             We empower businesses across Egypt, UAE and Saudi Arabia with
@@ -389,9 +429,15 @@ export function Footer() {
         ))}
         <div>
           <h4>Our Offices</h4>
-          <Link href="/contact#offices">🇪🇬 &nbsp; Cairo, Egypt</Link>
-          <Link href="/contact#offices">🇸🇦 &nbsp; Riyadh, Saudi Arabia</Link>
-          <Link href="/contact#offices">🇦🇪 &nbsp; Dubai, UAE</Link>
+          <Link href="/contact#offices">
+            <MapPin size={14} aria-hidden="true" /> Cairo, Egypt
+          </Link>
+          <Link href="/contact#offices">
+            <MapPin size={14} aria-hidden="true" /> Riyadh, Saudi Arabia
+          </Link>
+          <Link href="/contact#offices">
+            <MapPin size={14} aria-hidden="true" /> Dubai, UAE
+          </Link>
         </div>
       </div>
       <div className="footer-bottom container">

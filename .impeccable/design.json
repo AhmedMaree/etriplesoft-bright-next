@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-26T00:00:00.000Z",
+  "generatedAt": "2026-09-28T00:00:00.000Z",
   "title": "Design System: ETripleSoft",
   "extensions": {
     "colorMeta": {
@@ -57,6 +57,42 @@
         "displayName": "Hairline",
         "canonical": "#e4ebf7",
         "tonalRamp": ["#11213b", "#213d6e", "#2f579d", "#4273c7", "#7196d5", "#a1b9e3", "#d0dcf1", "#ebf0f9"]
+      },
+      "mobile-blue": {
+        "role": "primary",
+        "displayName": "Mobile Sky Blue",
+        "canonical": "#087cf4",
+        "tonalRamp": ["#052a52", "#06427f", "#0759ad", "#0870db", "#248df7", "#65b0fa", "#a6d3fc", "#e8f5ff"]
+      },
+      "mobile-cyan": {
+        "role": "secondary",
+        "displayName": "Mobile Cyan",
+        "canonical": "#03b8d9",
+        "tonalRamp": ["#01424e", "#026273", "#028399", "#03a0bb", "#16bad6", "#59cee2", "#9ce1ee", "#e5f9fc"]
+      },
+      "mobile-ink": {
+        "role": "neutral",
+        "displayName": "Mobile Navy",
+        "canonical": "#091b4d",
+        "tonalRamp": ["#040c22", "#071435", "#091b4d", "#20376f", "#50679b", "#8395bd", "#bac6df", "#edf1f8"]
+      },
+      "mobile-muted": {
+        "role": "neutral",
+        "displayName": "Mobile Muted Slate",
+        "canonical": "#526486",
+        "tonalRamp": ["#19202b", "#303b51", "#526486", "#7384a3", "#95a2b8", "#b6bfce", "#d6dbe3", "#f2f4f7"]
+      },
+      "mobile-line": {
+        "role": "neutral",
+        "displayName": "Mobile Hairline",
+        "canonical": "#d9ebfb",
+        "tonalRamp": ["#1b3b5b", "#426b91", "#7395b4", "#a6c0d6", "#d9ebfb", "#e3f1fc", "#edf7fe", "#f9fcff"]
+      },
+      "mobile-pale": {
+        "role": "neutral",
+        "displayName": "Mobile Pale Sky",
+        "canonical": "#eef8ff",
+        "tonalRamp": ["#153347", "#35627d", "#6191ae", "#a4c7dc", "#cfe8f7", "#dff1fc", "#eef8ff", "#fbfdff"]
       }
     },
     "typographyMeta": {
@@ -150,6 +186,22 @@
       "description": "Small white card overlapping a photograph's edge — real DOM text, never baked into the image.",
       "html": "<span class=\"ds-floating-quote\">“All your business needs in one integrated system.”</span>",
       "css": ".ds-floating-quote { display: inline-block; max-width: 250px; background: #fff; border-radius: 12px; padding: 16px 19px; font-size: 14px; font-weight: 650; color: #07163e; line-height: 1.45; box-shadow: 0 18px 34px -12px #0b224a33, 0 2px 8px -2px #0b224a1a; }"
+    },
+    {
+      "name": "Mobile Action",
+      "kind": "button",
+      "refersTo": "mobile-action",
+      "description": "Route-local pill CTA from the approved Mobile Apps reference.",
+      "html": "<a class=\"ds-mobile-action\" href=\"#\">Build an App<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-mobile-action { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 12px; padding: 11px 20px; border: 1px solid #087cf4; border-radius: 999px; background: linear-gradient(120deg, #0799f5, #075ff0); box-shadow: 0 8px 20px #0786f438; color: #fff; font: 700 14px/1.2 Inter, Arial, sans-serif; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease; } .ds-mobile-action:hover { transform: translateY(-2px); box-shadow: 0 12px 24px #0786f44c; } .ds-mobile-action:focus-visible { outline: 3px solid #087cf4; outline-offset: 4px; }"
+    },
+    {
+      "name": "Mobile Service Link Card",
+      "kind": "card",
+      "refersTo": "mobile-service-card",
+      "description": "Compact three-part service link with an icon tile, short copy and circular arrow.",
+      "html": "<a class=\"ds-mobile-service\" href=\"#\"><span class=\"ds-mobile-service-icon\"><svg width=\"25\" height=\"25\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 7h6M9 11h6M9 15h3\"/></svg></span><span><strong>Business Apps</strong><small>Internal tools to streamline operations.</small></span><span class=\"ds-mobile-service-arrow\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-mobile-service { display: grid; grid-template-columns: 52px minmax(0, 1fr) 30px; align-items: center; gap: 12px; min-height: 104px; padding: 13px 14px; border: 1px solid #d9ebfb; border-radius: 14px; background: #ffffffde; box-shadow: 0 5px 14px #318dd111; color: #091b4d; text-decoration: none; transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; } .ds-mobile-service:hover { transform: translateY(-2px); border-color: #a9d8fb; box-shadow: 0 10px 22px #318dd122; } .ds-mobile-service-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 13px; background: #eff8ff; color: #087cf4; } .ds-mobile-service > span:nth-child(2) { display: grid; gap: 5px; } .ds-mobile-service strong { font: 700 14px/1.25 Inter, Arial, sans-serif; } .ds-mobile-service small { color: #526486; font: 400 12px/1.35 Inter, Arial, sans-serif; } .ds-mobile-service-arrow { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid #c9e5fb; border-radius: 50%; color: #087cf4; } .ds-mobile-service:focus-visible { outline: 3px solid #087cf4; outline-offset: 3px; }"
     }
   ],
   "narrative": {
@@ -166,7 +218,8 @@
       { "name": "The Single Accent Rule", "body": "Royal Blue-Violet is the only color that means \"interactive\" or \"emphasized.\" The three signature accents exist purely to differentiate icons within a small card set and must never appear on a link, button, or active state.", "section": "colors" },
       { "name": "The Colored Shadow Rule", "body": "No shadow in the system is pure black. Every box-shadow tints from navy or blue, so even resting elevation reads as part of the palette.", "section": "colors" },
       { "name": "The Uppercase Eyebrow Rule", "body": "Every major section opens with a small, uppercase, letter-spaced label before its heading — the site's primary rhythm device for scanning a long page quickly.", "section": "typography" },
-      { "name": "The Hover-Deepens Rule", "body": "Elevation is a state response, not a static decoration: every shadowed element's blur and offset increase on hover/focus rather than staying constant.", "section": "elevation" }
+      { "name": "The Hover-Deepens Rule", "body": "Elevation is a state response, not a static decoration: every shadowed element's blur and offset increase on hover/focus rather than staying constant.", "section": "elevation" },
+      { "name": "The Mobile Apps Surface Exception", "body": "On the /mobile service route and its aliases only, the approved mobile service reference assigns sky blue and cyan to local links, emphasis, focus treatment, section markers and CTA. Keep this contained to the page module; it does not change the global accent rule or shared navigation/footer.", "section": "colors" }
     ],
     "dos": [
       "Do keep Royal Blue-Violet (#4445ff) as the only color that signals \"interactive\" or \"emphasized\" anywhere in the product.",

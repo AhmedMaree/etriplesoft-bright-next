@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillFolderHash": "",
+      "installedAt": "2026-09-28T11:35:38.047Z",
+      "updatedAt": "2026-09-28T11:35:38.047Z"
+    }
+  },
+  "dismissed": {}
+}

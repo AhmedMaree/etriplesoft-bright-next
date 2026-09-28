@@ -1,0 +1,385 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "ETripleSoft home" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f4e6]
+      - navigation "Main navigation" [ref=f4e7]:
+        - link "Home" [ref=f4e8] [cursor=pointer]:
+          - /url: /
+        - button "Odoo ERP" [ref=f4e10] [cursor=pointer]
+        - button "Services" [ref=f4e14] [cursor=pointer]
+        - button "Industries" [ref=f4e18] [cursor=pointer]
+        - button "Resources" [ref=f4e22] [cursor=pointer]
+        - button "Company" [ref=f4e26] [cursor=pointer]
+      - generic [ref=f4e29]:
+        - button "Search website" [ref=f4e30] [cursor=pointer]
+        - generic [ref=f4e34]: EN
+        - link "Book a Free Demo" [ref=f4e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f4e41]:
+    - generic [ref=f4e42]:
+      - img "Digital Transformation Built Around — ETripleSoft solutions" [ref=f4e44]
+      - generic [ref=f4e45]:
+        - generic [ref=f4e46]:
+          - generic [ref=f4e47]: Built for Smarter Growth
+          - heading [level=1] [ref=f4e48]:
+            - text: Digital Transformation
+            - generic [ref=f4e49]: Built Around
+            - emphasis [ref=f4e50]: Your Business.
+          - paragraph [ref=f4e51]: Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, UAE and Saudi Arabia.
+          - generic [ref=f4e52]:
+            - link "Book a Free Consultation" [ref=f4e53] [cursor=pointer]:
+              - /url: /contact
+            - link "Explore Solutions" [ref=f4e56] [cursor=pointer]:
+              - /url: "#solutions"
+          - generic [ref=f4e59]:
+            - generic [ref=f4e60]:
+              - img "Odoo" [ref=f4e61]
+              - generic [ref=f4e62]: Gold Partner
+            - generic [ref=f4e63]: MicrosoftPartner
+        - generic [ref=f4e65]: One platform. Better decisions.
+        - generic "Platform benefits":
+          - strong [ref=f4e72]: Streamline Operations
+          - strong [ref=f4e77]: AI-Powered Automation
+          - strong [ref=f4e83]: Secure & Scalable
+      - navigation "Core solutions" [ref=f4e84]:
+        - link "Odoo ERP Run your entire business on one platform" [ref=f4e85] [cursor=pointer]:
+          - /url: /odoo
+          - generic [ref=f4e92]:
+            - strong [ref=f4e93]: Odoo ERP
+            - generic [ref=f4e94]: Run your entire business on one platform
+        - link "Cloud & Security Secure, scalable infrastructure" [ref=f4e95] [cursor=pointer]:
+          - /url: /cloud
+          - generic [ref=f4e99]:
+            - strong [ref=f4e100]: Cloud & Security
+            - generic [ref=f4e101]: Secure, scalable infrastructure
+        - link "AI Automation Automate and unlock new opportunities" [ref=f4e102] [cursor=pointer]:
+          - /url: /ai
+          - generic [ref=f4e114]:
+            - strong [ref=f4e115]: AI Automation
+            - generic [ref=f4e116]: Automate and unlock new opportunities
+        - link "Web & Mobile Solutions Modern apps that grow with you" [ref=f4e117] [cursor=pointer]:
+          - /url: /web
+          - generic [ref=f4e121]:
+            - strong [ref=f4e122]: Web & Mobile Solutions
+            - generic [ref=f4e123]: Modern apps that grow with you
+        - link "Digital Marketing Increase your visibility and sales" [ref=f4e124] [cursor=pointer]:
+          - /url: /digital-marketing
+          - generic [ref=f4e128]:
+            - strong [ref=f4e129]: Digital Marketing
+            - generic [ref=f4e130]: Increase your visibility and sales
+    - generic [ref=f4e132]:
+      - generic [ref=f4e133]:
+        - generic [ref=f4e134]: Built for a Smarter Tomorrow
+        - heading [level=2] [ref=f4e135]:
+          - text: Technology That
+          - emphasis [ref=f4e136]: Empowers Your Business
+        - paragraph [ref=f4e137]: Smart solutions. Modern technology. Real business impact.
+      - generic [ref=f4e139]:
+        - generic [ref=f4e140]:
+          - generic [ref=f4e148]: Unify
+          - heading "ERP & Digital" [level=3] [ref=f4e149]
+          - paragraph [ref=f4e150]: Business systems, apps and automation.
+        - generic [ref=f4e152]:
+          - generic [ref=f4e160]: Growth
+          - heading "From A to Z" [level=3] [ref=f4e161]
+          - paragraph [ref=f4e162]: We take you from start to finish.
+        - generic [ref=f4e164]:
+          - generic [ref=f4e170]: MENA
+          - heading "Regional Experts" [level=3] [ref=f4e171]
+          - paragraph [ref=f4e172]: Egypt, United Arab Emirates and Saudi Arabia.
+        - generic [ref=f4e174]:
+          - generic [ref=f4e182]: People
+          - heading "Solutions, Not Features" [level=3] [ref=f4e183]
+          - paragraph [ref=f4e184]: Every solution is built around real business outcomes.
+    - generic [ref=f4e188]:
+      - generic [ref=f4e189]:
+        - generic [ref=f4e190]: Odoo ERP Solution
+        - heading "Run Your Entire Business on One Platform." [level=2] [ref=f4e192]:
+          - generic [aria-hidden] [ref=f4e193]: Run Your Entire
+          - generic [aria-hidden] [ref=f4e194]: Business on
+          - generic [aria-hidden] [ref=f4e195]: One Platform.
+        - paragraph [ref=f4e196]: Streamline your operations, increase productivity, and get complete visibility with Odoo — tailored for your business needs.
+        - generic [ref=f4e197]:
+          - link "Explore Odoo ERP" [ref=f4e198] [cursor=pointer]:
+            - /url: /odoo
+          - link "Request a Demo" [ref=f4e202] [cursor=pointer]:
+            - /url: /contact?service=Odoo%20ERP%20Demo
+        - generic "Technology partnerships" [ref=f4e206]:
+          - img "Odoo Gold Partner" [ref=f4e207]
+          - img "Microsoft Certified Partner" [ref=f4e209]
+      - generic [ref=f4e210]:
+        - img "Odoo ERP dashboard displayed on a laptop" [ref=f4e214]
+        - 'img "Odoo Addons: Sales, CRM, Accounting, Inventory, Manufacturing, Website, E-commerce and Projects" [ref=f4e216]'
+    - generic [ref=f4e218]:
+      - generic [ref=f4e219]:
+        - generic [ref=f4e221]:
+          - generic [ref=f4e222]: Our Solutions
+          - heading [level=2] [ref=f4e223]:
+            - text: Technology Solutions for a
+            - emphasis [ref=f4e224]: Stronger Tomorrow
+          - paragraph [ref=f4e225]: From ERP and cloud to AI and digital experiences — we deliver end-to-end solutions that help you work smarter, grow faster, and stay ahead.
+        - generic [ref=f4e226]:
+          - article [ref=f4e227]:
+            - heading "Odoo ERP" [level=3] [ref=f4e234]
+            - paragraph [ref=f4e235]: End-to-end business management on one powerful platform.
+            - link "Learn More" [ref=f4e236] [cursor=pointer]:
+              - /url: /odoo
+          - article [ref=f4e239]:
+            - heading "Cloud & Security" [level=3] [ref=f4e243]
+            - paragraph [ref=f4e244]: Secure, scalable and reliable cloud solutions for your business.
+            - link "Learn More" [ref=f4e245] [cursor=pointer]:
+              - /url: /cloud
+          - article [ref=f4e248]:
+            - heading "AI Automation" [level=3] [ref=f4e260]
+            - paragraph [ref=f4e261]: Automate processes and unlock new opportunities with AI.
+            - link "Learn More" [ref=f4e262] [cursor=pointer]:
+              - /url: /ai
+          - article [ref=f4e265]:
+            - heading "Web & Mobile Development" [level=3] [ref=f4e269]
+            - paragraph [ref=f4e270]: Modern websites and applications that grow with your business.
+            - link "Learn More" [ref=f4e271] [cursor=pointer]:
+              - /url: /web
+          - article [ref=f4e274]:
+            - heading "Digital Marketing" [level=3] [ref=f4e278]
+            - paragraph [ref=f4e279]: Data-driven marketing to increase your visibility and sales.
+            - link "Learn More" [ref=f4e280] [cursor=pointer]:
+              - /url: /digital-marketing
+      - generic [ref=f4e284]:
+        - generic [ref=f4e286]:
+          - generic [ref=f4e287]: Our Process
+          - heading [level=2] [ref=f4e288]:
+            - text: A Clear Path to
+            - emphasis [ref=f4e289]: Your Success
+          - paragraph [ref=f4e290]: We follow a proven approach to deliver real results.
+        - generic [ref=f4e291]:
+          - generic [ref=f4e292]:
+            - generic [ref=f4e293]: "01"
+            - heading "Discover" [level=3] [ref=f4e294]
+            - paragraph [ref=f4e295]: Understand your business goals and opportunities.
+          - generic [ref=f4e296]:
+            - generic [ref=f4e297]: "02"
+            - heading "Design" [level=3] [ref=f4e298]
+            - paragraph [ref=f4e299]: Create the right solution for your needs.
+          - generic [ref=f4e300]:
+            - generic [ref=f4e301]: "03"
+            - heading "Implement" [level=3] [ref=f4e302]
+            - paragraph [ref=f4e303]: Configure, test and launch.
+          - generic [ref=f4e304]:
+            - generic [ref=f4e305]: "04"
+            - heading "Support" [level=3] [ref=f4e306]
+            - paragraph [ref=f4e307]: Train, optimize and grow together.
+    - generic [ref=f4e309]:
+      - generic [ref=f4e310]:
+        - generic [ref=f4e311]:
+          - generic [ref=f4e312]: Industries
+          - heading "Deep Industry Expertise" [level=2] [ref=f4e313]
+          - paragraph [ref=f4e314]: We understand your industry. Our tailored solutions help you overcome challenges and achieve sustainable growth.
+        - link "Explore All Industries" [ref=f4e315] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f4e318]:
+        - link [ref=f4e319] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Construction" [ref=f4e320]
+          - generic [ref=f4e321]:
+            - strong [ref=f4e322]: Construction
+            - emphasis [ref=f4e323]: Project tracking, procurement and site cost control.
+        - link [ref=f4e324] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Retail" [ref=f4e325]
+          - generic [ref=f4e326]:
+            - strong [ref=f4e327]: Retail
+            - emphasis [ref=f4e328]: Multi-branch POS, inventory and customer loyalty.
+        - link [ref=f4e329] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Education" [ref=f4e330]
+          - generic [ref=f4e331]:
+            - strong [ref=f4e332]: Education
+            - emphasis [ref=f4e333]: Student records, admissions and campus operations.
+        - link [ref=f4e334] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Real Estate" [ref=f4e335]
+          - generic [ref=f4e336]:
+            - strong [ref=f4e337]: Real Estate
+            - emphasis [ref=f4e338]: Property, leasing and sales pipeline management.
+        - link [ref=f4e339] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Healthcare" [ref=f4e340]
+          - generic [ref=f4e341]:
+            - strong [ref=f4e342]: Healthcare
+            - emphasis [ref=f4e343]: Patient records, scheduling and operational workflows.
+        - link [ref=f4e344] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Logistics" [ref=f4e345]
+          - generic [ref=f4e346]:
+            - strong [ref=f4e347]: Logistics
+            - emphasis [ref=f4e348]: Fleet, warehouse and shipment visibility.
+    - generic [ref=f4e350]:
+      - generic [ref=f4e351]: Our Impact
+      - heading [level=2] [ref=f4e355]:
+        - text: Numbers That Tell
+        - emphasis [ref=f4e356]: Our Story
+      - paragraph [ref=f4e357]: Real outcomes. Lasting partnerships. A growing impact across Egypt, UAE and Saudi Arabia.
+      - generic [ref=f4e358]:
+        - generic [ref=f4e359]:
+          - strong [ref=f4e364]: 250+
+          - generic [ref=f4e365]: Projects Delivered
+          - paragraph [ref=f4e366]: Real work, real outcomes for ambitious businesses.
+        - generic [ref=f4e367]:
+          - strong [ref=f4e372]: "3"
+          - generic [ref=f4e373]: Countries
+          - paragraph [ref=f4e374]: Egypt, UAE & Saudi Arabia.
+        - generic [ref=f4e375]:
+          - strong [ref=f4e380]: 10+
+          - generic [ref=f4e381]: Years of Experience
+          - paragraph [ref=f4e382]: Building since day one.
+        - generic [ref=f4e383]:
+          - strong [ref=f4e388]: 9+
+          - generic [ref=f4e389]: Industries Served
+          - paragraph [ref=f4e390]: Deep sector expertise.
+      - generic [ref=f4e391]:
+        - generic [ref=f4e392]: Cairo, Egypt
+        - generic [ref=f4e397]: Riyadh, Saudi Arabia
+        - generic [ref=f4e402]: Dubai, UAE
+    - generic [ref=f4e409]:
+      - generic [ref=f4e410]:
+        - generic [ref=f4e412]:
+          - generic [ref=f4e413]: What Our Clients Say
+          - heading "Real Partners. Real Results." [level=2] [ref=f4e414]
+          - paragraph [ref=f4e415]: Trusted by forward-thinking businesses across the MENA region to turn ideas into impact with Odoo and beyond.
+        - generic [ref=f4e416]:
+          - button "Previous testimonial" [ref=f4e417] [cursor=pointer]
+          - button "Next testimonial" [ref=f4e420] [cursor=pointer]
+      - generic [ref=f4e423]:
+        - article [ref=f4e424]:
+          - paragraph [ref=f4e425]: “Professional, responsive, and truly understand our business needs.”
+          - generic [ref=f4e433]:
+            - strong [ref=f4e434]: Marco Youssef
+            - generic [ref=f4e435]: CEO, Manufacturing Company
+        - article [ref=f4e436]:
+          - paragraph [ref=f4e437]: “ETripleSoft delivered our Odoo system with great expertise and support.”
+          - generic [ref=f4e445]:
+            - strong [ref=f4e446]: Waled El Ganzory
+            - generic [ref=f4e447]: Operations Manager, Trading Company
+        - article [ref=f4e448]:
+          - paragraph [ref=f4e449]: “A reliable partner for our digital transformation journey.”
+          - generic [ref=f4e457]:
+            - strong [ref=f4e458]: Eng. Mahmoud Hamdy
+            - generic [ref=f4e459]: CTO, Services Company
+    - generic [ref=f4e461]:
+      - generic [ref=f4e462]:
+        - generic [ref=f4e463]:
+          - generic [ref=f4e464]: Our Insights
+          - heading "Latest Articles & Insights" [level=2] [ref=f4e465]
+          - paragraph [ref=f4e466]: Stay updated with the latest trends, tips and success stories.
+        - link "View All Articles" [ref=f4e467] [cursor=pointer]:
+          - /url: /insights
+      - generic [ref=f4e470]:
+        - article [ref=f4e471]:
+          - generic [ref=f4e472]:
+            - generic [ref=f4e473]: Odoo
+            - generic [ref=f4e474]: May 12, 2025
+          - heading "Odoo KPI Dashboards for Real-Time Business Insights" [level=3] [ref=f4e475]
+          - link "Read More" [ref=f4e476] [cursor=pointer]:
+            - /url: /insights/odoo-kpi-dashboard-real-time-business-insights
+        - article [ref=f4e479]:
+          - generic [ref=f4e480]:
+            - generic [ref=f4e481]: Odoo
+            - generic [ref=f4e482]: Apr 28, 2025
+          - heading "Understanding the Return on an Odoo ERP Investment" [level=3] [ref=f4e483]
+          - link "Read More" [ref=f4e484] [cursor=pointer]:
+            - /url: /insights/odoo-roi-return-on-investment
+        - article [ref=f4e487]:
+          - generic [ref=f4e488]:
+            - generic [ref=f4e489]: ERP Planning
+            - generic [ref=f4e490]: Apr 15, 2025
+          - heading "Signs Your Business Is Ready for an ERP System" [level=3] [ref=f4e491]
+          - link "Read More" [ref=f4e492] [cursor=pointer]:
+            - /url: /insights/signs-you-need-erp-system
+    - generic [ref=f4e496]:
+      - generic [ref=f4e497]:
+        - heading "Ready to Transform Your Business?" [level=2] [ref=f4e498]
+        - paragraph [ref=f4e499]: Book a free consultation with our team and discover how we can help you achieve your goals.
+      - link "Book Your Consultation" [ref=f4e500] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f4e503]:
+    - generic [ref=f4e504]:
+      - generic [ref=f4e505]:
+        - link "ETripleSoft home" [ref=f4e506] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f4e507]
+        - paragraph [ref=f4e508]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f4e509]:
+          - link "Email ETripleSoft" [ref=f4e510] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f4e514] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f4e518] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f4e521]:
+        - heading "Solutions" [level=4] [ref=f4e522]
+        - link "Odoo ERP" [ref=f4e523] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f4e524] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f4e525] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f4e526] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f4e527] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f4e528] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f4e529]:
+        - heading "Industries" [level=4] [ref=f4e530]
+        - link "Construction" [ref=f4e531] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f4e532] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f4e533] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f4e534] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f4e535] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f4e536] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f4e537]:
+        - heading "Company" [level=4] [ref=f4e538]
+        - link "About Us" [ref=f4e539] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f4e540] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f4e541] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f4e542] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f4e543] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f4e544]:
+        - heading "Resources" [level=4] [ref=f4e545]
+        - link "Blog" [ref=f4e546] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f4e547] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f4e548] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f4e549] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f4e550] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f4e551]:
+        - heading "Our Offices" [level=4] [ref=f4e552]
+        - link "Cairo, Egypt" [ref=f4e553] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "Riyadh, Saudi Arabia" [ref=f4e557] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "Dubai, UAE" [ref=f4e561] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f4e565]:
+      - generic [ref=f4e566]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f4e567]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f4e568] [cursor=pointer]

@@ -220,3 +220,37 @@ Buttons use a tighter 6px radius than cards (10–16px) — a deliberate distinc
 - **Don't** add a fourth signature accent color without a documented icon-only role; the three extensions (Muted Teal, Royal Violet, Warm Amber) are deliberately capped.
 - **Don't** redraw, recolor, or approximate the logo mark — it is a fixed brand asset (see `assets/logo.png`), not a themeable token.
 - **Don't** invent new statistics, testimonials, or client names to fill a card or stat band; see PRODUCT.md's Evidence on Hand for what is confirmed versus placeholder.
+
+## Mobile Apps page surface: `/mobile` (also `/mobile-apps-services` aliases)
+
+This route follows the user-approved `assets/images/services/mobile/total-mobile-page.png` and supporting `01.png`â€“`08.png` references. The decisions below are intentionally local to the page module. The global palette, header, footer, and sitewide components above remain authoritative elsewhere.
+
+### Colors
+
+The page keeps bright white and pale-blue surfaces, with a page-local sky-blue/cyan accent pair around navy copy. In `MobileReferencePage.module.css`, the scoped tokens are Mobile Navy (`#091b4d`), Mobile Sky Blue (`#087cf4`), Mobile Cyan (`#03b8d9`), Mobile Muted Slate (`#526486`), Mobile Hairline (`#d9ebfb`), and Mobile Pale Sky (`#eef8ff`). Use the local blue for emphasized words, labels, focus rings, and CTA; cyan supports section markers and timeline details. This is a documented route exception to the global Royal Blue-Violet rule, not a brand-token replacement.
+
+### Typography
+
+Inter Variable remains in use. The page gives its H1 a heavier, larger display treatment (800 weight, 48â€“82px), uses 750 weight for section headings (26â€“42px), and 700 weight for compact card titles (12â€“17px). Body text remains 15px/1.5, with uppercase, widely tracked 11â€“12px labels.
+
+### Layout
+
+Keep this section sequence: paired-phone hero; iOS/Android platforms; six service links; four-step delivery timeline; four-step process; benefits; testimonial and FAQ; final CTA. The desktop hero pairs copy with the mobile phone artwork in two columns. Compact cards organize the information between pale blue-white and white areas. At 1080px, tighten the hero and card density; at 760px, stack the hero, platform and proof areas and reduce service, process, benefits and timeline grids to two columns; at 420px, collapse service cards to one column and reduce platform marks. The page container narrows to 36px total viewport gutter on mobile. Keep the shared site header and footer intact.
+
+**The Mobile Page Sequence Rule.** Preserve the reference-led section order, responsive stacking, and paired phone artwork as one hero visual.
+
+### Elevation & Depth
+
+Use quiet blue-tinted shadows under white card surfaces. Service links lift 2px and strengthen their border/shadow on hover; the primary CTA deepens its blue shadow. Pale gradient fields and a small dotted texture remain background accents.
+
+### Shapes
+
+Actions are pill-shaped (999px). Service and process cards use 14px corners; platform and proof cards use 15â€“16px corners; the final CTA panel uses 18px corners. Borders use the route's pale-blue hairline.
+
+### Components
+
+- **Mobile action:** 44px high, sky-blue gradient, white label, and soft blue shadow. The secondary action is translucent white with navy text. Both have a visible focus outline.
+- **Service link card:** White, 1px pale-blue border, three-part icon/copy/arrow arrangement, and compact padding. The supplied service icon sits in a 52px pale tile; the circular arrow signals navigation.
+- **Platform card:** Paired iOS/Android cards with the supplied marks and concise supporting copy.
+- **Process and benefit cards:** Compact informational cards with the same border/surface language; blue/cyan identify icons and timeline markers.
+- **Final CTA panel:** A wide pale-blue gradient with a fine blue border, copy beside actions on desktop, and vertical stacking on mobile.

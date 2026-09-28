@@ -1,0 +1,325 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "ETripleSoft home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=e6]
+      - navigation "Main navigation" [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=e9]:
+          - generic "Odoo ERP" [ref=e10] [cursor=pointer]
+        - group [ref=e13]:
+          - generic "Services" [ref=e14] [cursor=pointer]
+        - group [ref=e17]:
+          - generic "Industries" [ref=e18] [cursor=pointer]
+        - group [ref=e21]:
+          - generic "Resources" [ref=e22] [cursor=pointer]
+        - group [ref=e25]:
+          - generic "Company" [ref=e26] [cursor=pointer]
+      - generic [ref=e29]:
+        - button "Search website" [ref=e30] [cursor=pointer]
+        - generic [ref=e34]: EN
+        - link "Book a Free Demo" [ref=e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e41]:
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: Secure cloud. Stronger businesses.
+        - heading [level=1] [ref=e46]:
+          - text: Cloud SecuritySolutions in
+          - emphasis [ref=e47]: Egypt
+        - paragraph [ref=e48]: Protect your cloud, data and business with enterprise-grade cloud security solutions. ETripleSoft helps organizations in Egypt design, secure and manage modern cloud environments with confidence.
+        - generic [ref=e49]:
+          - link "Get a Free Security Assessment" [ref=e50] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security%20Assessment
+          - link "Talk to Our Experts" [ref=e53] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security%20Consultation
+        - generic [ref=e56]:
+          - generic [ref=e58]:
+            - text: Microsoft
+            - generic [ref=e59]: Solutions Partner
+          - generic [ref=e60]:
+            - generic [ref=e61]: aws
+            - generic [ref=e62]: Partner Network
+          - generic [ref=e64]:
+            - generic [ref=e65]: vmware
+            - generic [ref=e66]: Partner
+      - generic [ref=e68]:
+        - img "Encrypted cloud protected above a secure server stack" [ref=e69]
+        - generic [ref=e70]: SecureYour Cloud
+        - list [ref=e75]:
+          - listitem [ref=e76]: Detect
+          - listitem [ref=e80]: Prevent
+          - listitem [ref=e84]: Protect
+          - listitem [ref=e88]: Stay Compliant
+        - generic [ref=e92]: A SaferTomorrow
+    - generic [ref=e97]:
+      - paragraph [ref=e98]: Trusted by leadingorganizations across Egypt
+      - img "Orascom Construction, Elsewedy Electric, CIB, Vodafone, Samsung and etisalat" [ref=e99]
+      - link "See All Clients" [ref=e100] [cursor=pointer]:
+        - /url: /portfolio
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: Our solutions
+            - heading "Complete Cloud Security for a Stronger Tomorrow" [level=2] [ref=e108]
+            - paragraph [ref=e109]: Modern security for modern businesses. Integrated, scalable and built for growth.
+          - link "Talk to an Expert" [ref=e110] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&subject=Talk%20to%20an%20Expert
+        - generic [ref=e113]:
+          - article [ref=e114]:
+            - heading "Microsoft 365" [level=3] [ref=e115]
+            - paragraph [ref=e116]: Secure collaboration and productivity.
+            - link "Learn More" [ref=e117] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Microsoft%20365
+          - article [ref=e120]:
+            - heading "Azure" [level=3] [ref=e125]
+            - paragraph [ref=e126]: Cloud security and governance.
+            - link "Learn More" [ref=e127] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Azure
+          - article [ref=e130]:
+            - heading "Identity & Access" [level=3] [ref=e137]
+            - paragraph [ref=e138]: Right access, greater control.
+            - link "Learn More" [ref=e139] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Identity%20%26%20Access
+          - article [ref=e142]:
+            - heading "Endpoint Protection" [level=3] [ref=e146]
+            - paragraph [ref=e147]: Devices secure. Teams productive.
+            - link "Learn More" [ref=e148] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Endpoint%20Protection
+          - article [ref=e151]:
+            - heading "Backup & Recovery" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Your data. Always available.
+            - link "Learn More" [ref=e159] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Backup%20%26%20Recovery
+          - article [ref=e162]:
+            - heading "Compliance" [level=3] [ref=e167]
+            - paragraph [ref=e168]: Meet today’s requirements.
+            - link "Learn More" [ref=e169] [cursor=pointer]:
+              - /url: /contact?service=Cloud%20Security&solution=Compliance
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - generic [ref=e175]: Our process
+          - heading "A Clear Path to a More Secure Cloud" [level=2] [ref=e176]
+          - paragraph [ref=e177]: We follow a proven, structured approach to ensure your cloud environment is secure, compliant and optimized for your business.
+          - list [ref=e178]:
+            - listitem [ref=e179]:
+              - generic [ref=e180]: "01"
+              - heading "Assess" [level=3] [ref=e181]
+              - paragraph [ref=e182]: Understand your current environment and risks.
+            - listitem [ref=e185]:
+              - generic [ref=e186]: "02"
+              - heading "Design" [level=3] [ref=e187]
+              - paragraph [ref=e188]: Create a tailored security architecture.
+            - listitem [ref=e191]:
+              - generic [ref=e192]: "03"
+              - heading "Implement" [level=3] [ref=e193]
+              - paragraph [ref=e194]: Deploy and integrate security solutions.
+            - listitem [ref=e197]:
+              - generic [ref=e198]: "04"
+              - heading "Monitor" [level=3] [ref=e199]
+              - paragraph [ref=e200]: 24/7 threat detection and response.
+            - listitem [ref=e203]:
+              - generic [ref=e204]: "05"
+              - heading "Optimize" [level=3] [ref=e205]
+              - paragraph [ref=e206]: Continuous improvement and compliance.
+        - generic [ref=e207]:
+          - heading "From Strategy to a Safer Tomorrow" [level=3] [ref=e209]: From Strategyto a Safer Tomorrow
+          - paragraph [ref=e210]: We don’t just secure your cloud. We help you unlock its full potential.
+      - generic [ref=e211]:
+        - generic [ref=e212]: Why ETripleSoft
+        - heading "A Trusted Partner in Cloud Security" [level=2] [ref=e213]
+        - paragraph [ref=e214]: Global technology. Local expertise. Real business outcomes.
+        - generic [ref=e215]:
+          - article [ref=e216]:
+            - heading "Proven Expertise" [level=3] [ref=e221]
+            - paragraph [ref=e222]: Years of experience in cloud and security solutions.
+          - article [ref=e223]:
+            - heading "Certified Professionals" [level=3] [ref=e228]
+            - paragraph [ref=e229]: AWS, Microsoft, and industry-certified team members.
+          - article [ref=e230]:
+            - heading "24/7 Support" [level=3] [ref=e234]
+            - paragraph [ref=e235]: Always-on monitoring and expert assistance.
+          - article [ref=e236]:
+            - heading "Local Presence" [level=3] [ref=e241]
+            - paragraph [ref=e242]: In-depth understanding of the Egyptian market.
+          - article [ref=e243]:
+            - heading "Business-Focused" [level=3] [ref=e248]
+            - paragraph [ref=e249]: Security strategies aligned with your business goals.
+    - generic [ref=e251]:
+      - heading "Numbers That Tell Our Story" [level=2] [ref=e252]: Numbers ThatTell Our Story
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - strong [ref=e255]: 250+
+          - generic [ref=e256]: Projects Delivered
+        - generic [ref=e257]:
+          - strong [ref=e258]: 100+
+          - generic [ref=e259]: Happy Clients
+        - generic [ref=e260]:
+          - strong [ref=e261]: 99.9%
+          - generic [ref=e262]: Uptime Achieved
+        - generic [ref=e263]:
+          - strong [ref=e264]: 40+
+          - generic [ref=e265]: Certified Experts
+      - figure "— IT Director, Leading Egyptian Bank" [ref=e266]:
+        - blockquote [ref=e270]: “ETripleSoft has been a strategic partner in our cloud journey, helping us stay secure and compliant.”
+    - generic [ref=e272]:
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - generic [ref=e276]: Solution architecture
+          - heading "A More Secure Cloud Environment" [level=2] [ref=e277]
+          - paragraph [ref=e278]: People. Devices. Data. Protected everywhere.
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - generic [ref=e288]:
+                - heading "Users" [level=4] [ref=e289]
+                - paragraph [ref=e290]: Any Device
+              - generic [ref=e295]:
+                - heading "Endpoints" [level=4] [ref=e296]
+                - paragraph [ref=e297]: Secure Access
+              - generic [ref=e305]:
+                - heading "Applications" [level=4] [ref=e306]
+                - paragraph [ref=e307]: Controlled Access
+            - generic [ref=e308]: Microsoft 365Azure
+            - generic [ref=e310]:
+              - generic [ref=e317]:
+                - heading "Data" [level=4] [ref=e318]
+                - paragraph [ref=e319]: Encrypted
+              - generic [ref=e325]:
+                - heading "Threat Protection" [level=4] [ref=e326]
+                - paragraph [ref=e327]: Real-time
+              - generic [ref=e333]:
+                - heading "Compliance" [level=4] [ref=e334]
+                - paragraph [ref=e335]: Policies & Reports
+        - generic [ref=e336]:
+          - generic [ref=e337]: What our clients say
+          - generic "5 out of 5 stars" [ref=e338]
+          - figure [ref=e349]:
+            - blockquote [ref=e353]: “ETripleSoft helped us strengthen our Microsoft 365 security and achieve compliance with confidence.”
+            - generic [ref=e354]:
+              - img "Ahmed Al Mansouri" [ref=e355]
+              - generic [ref=e356]:
+                - strong [ref=e357]: Ahmed Al Mansouri
+                - text: IT Manager, Financial Enterprise
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - heading "Frequently Asked Questions" [level=3] [ref=e360]
+              - link "View All FAQs" [ref=e361] [cursor=pointer]:
+                - /url: /faqs
+            - group [ref=e364]:
+              - generic "How do you secure Microsoft 365?" [ref=e365] [cursor=pointer]
+            - group [ref=e367]:
+              - generic "Can you help with compliance (ISO, NCA)?" [ref=e368] [cursor=pointer]
+            - group [ref=e370]:
+              - generic "Do you support ongoing monitoring?" [ref=e371] [cursor=pointer]
+            - group [ref=e373]:
+              - generic "What industries do you work with?" [ref=e374] [cursor=pointer]
+      - generic [ref=e376]:
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - generic [ref=e379]: Industries & use cases
+            - heading "Cloud Security Across Every Industry" [level=2] [ref=e380]
+            - paragraph [ref=e381]: We help organizations in Egypt across multiple sectors secure their cloud environments and accelerate digital transformation.
+          - link "Explore All Industries" [ref=e382] [cursor=pointer]:
+            - /url: /industries#expertise
+        - generic [ref=e385]:
+          - link "Banking & Financial Services" [ref=e386] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Banking%20%26%20Financial%20Services
+          - link "Telecommunications" [ref=e388] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Telecommunications
+          - link "Government & Public Sector" [ref=e390] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Government%20%26%20Public%20Sector
+          - link "Healthcare" [ref=e392] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Healthcare
+          - link "Manufacturing" [ref=e394] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Manufacturing
+          - link "Retail & E-commerce" [ref=e396] [cursor=pointer]:
+            - /url: /contact?service=Cloud%20Security&industry=Retail%20%26%20E-commerce
+    - generic [ref=e400]:
+      - generic [ref=e401]:
+        - heading "Ready to Secure Your Cloud?" [level=2] [ref=e402]
+        - paragraph [ref=e403]: Let’s build a safer, stronger and more resilient future for your business in Egypt.
+      - link "Get Started Today" [ref=e404] [cursor=pointer]:
+        - /url: /contact?service=Cloud%20Security
+  - contentinfo [ref=e407]:
+    - generic [ref=e408]:
+      - generic [ref=e409]:
+        - link [ref=e410] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=e411]
+        - paragraph [ref=e412]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=e413]:
+          - link "Email ETripleSoft" [ref=e414] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=e418] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=e422] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=e425]:
+        - heading "Solutions" [level=4] [ref=e426]
+        - link "Odoo ERP" [ref=e427] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=e428] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=e429] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=e430] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=e431] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=e432] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=e433]:
+        - heading "Industries" [level=4] [ref=e434]
+        - link "Construction" [ref=e435] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=e436] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=e437] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=e438] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=e439] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=e440] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=e441]:
+        - heading "Company" [level=4] [ref=e442]
+        - link "About Us" [ref=e443] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=e444] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=e445] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=e446] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=e447] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=e448]:
+        - heading "Resources" [level=4] [ref=e449]
+        - link "Blog" [ref=e450] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=e451] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=e452] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=e453] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=e454] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=e455]:
+        - heading "Our Offices" [level=4] [ref=e456]
+        - link "🇪🇬 Cairo, Egypt" [ref=e457] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=e458] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=e459] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=e460]:
+      - generic [ref=e461]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=e462]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=e463] [cursor=pointer]

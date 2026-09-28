@@ -15,6 +15,8 @@ import {
 } from "./site";
 import OdooReferencePage from "./odoo/OdooReferencePage";
 import AIReferencePage from "./ai/AIReferencePage";
+import CloudReferencePage from "./cloud/CloudReferencePage";
+import MobileReferencePage from "./mobile/MobileReferencePage";
 import { servicePages, industries } from "@/lib/data";
 
 const serviceContext: Record<
@@ -169,16 +171,18 @@ const serviceContext: Record<
 export default function ServicePage({ slug }: { slug: string }) {
   if (slug === "ai") return <AIReferencePage />;
   if (slug === "odoo") return <OdooReferencePage />;
+  if (slug === "cloud") return <CloudReferencePage />;
+  if (slug === "mobile") return <MobileReferencePage />;
   const service = servicePages[slug];
   const context = serviceContext[slug];
 
   return (
     <main id="main" className={"service-page " + slug}>
       <Hero
-          {...service}
-          primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
-        >
-          {slug === "cloud" ? <PartnerBadges cloud /> : null}
+        {...service}
+        primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
+      >
+        {slug === "cloud" ? <PartnerBadges cloud /> : null}
       </Hero>
 
       <TechTrust />
