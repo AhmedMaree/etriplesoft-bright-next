@@ -61,6 +61,9 @@ export type ServiceData = {
   steps: string[];
   cta: string;
   questions: string[];
+  whyTitle: string;
+  whyDescription: string;
+  whyPoints: [string, string, string][];
 };
 
 export const servicePages: Record<string, ServiceData> = {
@@ -140,6 +143,36 @@ export const servicePages: Record<string, ServiceData> = {
       "Do you train our team before go-live?",
       "What support is available after implementation?",
     ],
+    whyTitle: "Your Trusted Odoo Implementation Partner",
+    whyDescription:
+      "Certified expertise and regional experience, focused on outcomes your team can rely on.",
+    whyPoints: [
+      [
+        "Certified Expertise",
+        "Odoo Gold Partner with hands-on implementation experience.",
+        "award",
+      ],
+      [
+        "Regional Presence",
+        "Local teams supporting clients across Egypt, Saudi Arabia and the UAE.",
+        "pin",
+      ],
+      [
+        "Full Lifecycle Support",
+        "From discovery and configuration to training and ongoing support.",
+        "handshake",
+      ],
+      [
+        "Practical Configuration",
+        "Solutions built around how your business already works.",
+        "target",
+      ],
+      [
+        "Scalable Platform",
+        "Add modules and users as your operations grow.",
+        "rocket",
+      ],
+    ],
   },
   cloud: {
     eyebrow: "CLOUD · SECURITY · MANAGED SUPPORT",
@@ -194,6 +227,36 @@ export const servicePages: Record<string, ServiceData> = {
       "Do you support Microsoft 365 and hybrid environments?",
       "How do backup and recovery planning work?",
       "Can cloud services integrate with our ERP environment?",
+    ],
+    whyTitle: "Your Trusted Cloud Security Partner",
+    whyDescription:
+      "Certified professionals and a business-focused approach to keeping your environment secure.",
+    whyPoints: [
+      [
+        "Proven Expertise",
+        "Years of experience across cloud and security engagements.",
+        "award",
+      ],
+      [
+        "Certified Professionals",
+        "Microsoft, AWS and VMware certified team members.",
+        "shield",
+      ],
+      [
+        "Round-the-Clock Support",
+        "Monitoring and expert assistance when you need it.",
+        "headphones",
+      ],
+      [
+        "Regional Presence",
+        "In-depth understanding of the markets we serve.",
+        "pin",
+      ],
+      [
+        "Business-Focused",
+        "Security decisions that support growth, not just compliance.",
+        "chart",
+      ],
     ],
   },
   ai: {
@@ -261,6 +324,36 @@ export const servicePages: Record<string, ServiceData> = {
       "How do you handle human review and exceptions?",
       "How will we measure whether the automation is working?",
     ],
+    whyTitle: "Why Automate with ETripleSoft?",
+    whyDescription:
+      "We combine technical expertise with real business understanding to deliver automation that creates measurable value.",
+    whyPoints: [
+      [
+        "Higher Productivity",
+        "Automate repetitive tasks and free up your team.",
+        "chart",
+      ],
+      [
+        "Cost Reduction",
+        "Minimize manual work and operational overhead.",
+        "coins",
+      ],
+      [
+        "Improved Accuracy",
+        "Reduce human error with consistent, rule-based execution.",
+        "check",
+      ],
+      [
+        "Human Oversight",
+        "Keep people in control of exceptions and sensitive decisions.",
+        "users",
+      ],
+      [
+        "Scalable by Design",
+        "Extend automation as your business grows.",
+        "rocket",
+      ],
+    ],
   },
   web: {
     eyebrow: "WEB DESIGN · COMMERCE · PORTALS",
@@ -324,6 +417,36 @@ export const servicePages: Record<string, ServiceData> = {
       "Will our team be able to edit content after launch?",
       "What support is available after launch?",
     ],
+    whyTitle: "Your Trusted Web Design Partner",
+    whyDescription:
+      "Local expertise and modern technology, focused on websites that support the business behind them.",
+    whyPoints: [
+      [
+        "Local Expertise",
+        "We understand the markets and audiences you serve.",
+        "pin",
+      ],
+      [
+        "Modern Technologies",
+        "Built with current tools, frameworks and standards.",
+        "code",
+      ],
+      [
+        "SEO-Friendly",
+        "Structured for visibility from the first release.",
+        "search",
+      ],
+      [
+        "Conversion Focused",
+        "Designed around the decisions your visitors need to make.",
+        "target",
+      ],
+      [
+        "Ongoing Support",
+        "Available before, during and after launch.",
+        "headphones",
+      ],
+    ],
   },
   mobile: {
     eyebrow: "IOS · ANDROID · CROSS-PLATFORM",
@@ -384,6 +507,36 @@ export const servicePages: Record<string, ServiceData> = {
       "Can the app connect to our ERP or existing APIs?",
       "How do you test the app before release?",
       "Can you support the app after launch?",
+    ],
+    whyTitle: "Why Build Your App with ETripleSoft?",
+    whyDescription:
+      "A structured approach to mobile delivery, from platform choice to post-launch support.",
+    whyPoints: [
+      [
+        "Platform Flexibility",
+        "Native or cross-platform, chosen to fit the product.",
+        "code",
+      ],
+      [
+        "Secure Integration",
+        "Safe connections to your ERP and business APIs.",
+        "shield",
+      ],
+      [
+        "User-Centered Design",
+        "Interfaces built around real tasks and environments.",
+        "pen",
+      ],
+      [
+        "Tested Releases",
+        "Structured QA before every store submission.",
+        "check",
+      ],
+      [
+        "Ongoing Support",
+        "Monitoring and iteration after launch.",
+        "headphones",
+      ],
     ],
   },
   "digital-marketing": {
@@ -452,6 +605,36 @@ export const servicePages: Record<string, ServiceData> = {
       "How do you report performance?",
       "Can marketing enquiries connect to our CRM or Odoo?",
       "How do you improve campaigns over time?",
+    ],
+    whyTitle: "Why Grow Your Marketing with ETripleSoft?",
+    whyDescription:
+      "A data-driven, multi-channel approach connected to the enquiries your sales team can act on.",
+    whyPoints: [
+      [
+        "Data-Driven",
+        "Decisions grounded in measurable performance, not guesswork.",
+        "chart",
+      ],
+      [
+        "Multi-Channel Expertise",
+        "SEO, paid media, social and content under one strategy.",
+        "megaphone",
+      ],
+      [
+        "Transparent Reporting",
+        "Clear, regular reporting tied to business outcomes.",
+        "file",
+      ],
+      [
+        "CRM-Connected",
+        "Campaign activity linked to enquiries and follow-up.",
+        "plug",
+      ],
+      [
+        "Continuous Improvement",
+        "Campaigns refined on an ongoing cycle, not set-and-forget.",
+        "rocket",
+      ],
     ],
   },
 };

@@ -1,0 +1,164 @@
+{
+    "about\/brand-orbit": [
+        1402,
+        12
+    ],
+    "about\/mena-earth": [
+        1402,
+        12
+    ],
+    "ai\/automation-network": [
+        1408,
+        1212
+    ],
+    "cloud\/cloud-architecture": [
+        1407,
+        1210
+    ],
+    "cloud\/security-dashboard": [
+        1407,
+        1210
+    ],
+    "insights\/ai-intelligence": [
+        1408,
+        1212
+    ],
+    "insights\/business-workspace": [
+        1403,
+        9
+    ],
+    "insights\/digital-marketing": [
+        1409,
+        1214
+    ],
+    "insights\/erp-strategy": [
+        1365
+    ],
+    "insights\/growth-chart": [
+        1362
+    ],
+    "insights\/implementation-roadmap": [
+        1405,
+        1198,
+        1374
+    ],
+    "insights\/kpi-laptop": [
+        1361
+    ],
+    "insights\/odoo-17": [
+        1422,
+        1202
+    ],
+    "insights\/odoo-devices": [
+        1405,
+        1198
+    ],
+    "marketing\/analytics-tablet": [
+        1409,
+        1214
+    ],
+    "marketing\/marketing-dashboard": [
+        1409,
+        1214
+    ],
+    "marketing\/social-media": [
+        1409,
+        1214
+    ],
+    "mobile\/business-apps": [
+        1411,
+        1218
+    ],
+    "odoo\/erp-dashboard": [
+        1401,
+        1405,
+        1198,
+        2
+    ],
+    "regional\/egypt-landmark": [
+        1404,
+        1402,
+        1401,
+        16,
+        12,
+        2
+    ],
+    "regional\/saudi-landmark": [
+        1404,
+        1402,
+        1401,
+        16,
+        12,
+        2
+    ],
+    "regional\/uae-landmark": [
+        1404,
+        1402,
+        1401,
+        16,
+        12,
+        2
+    ],
+    "shared\/earth-horizon": [
+        1422,
+        1408,
+        1418,
+        1417,
+        1416,
+        1415,
+        1409,
+        1410,
+        1411,
+        1404,
+        1413,
+        1402,
+        1414,
+        1412,
+        1403,
+        1405,
+        1406,
+        1407,
+        1419,
+        1420,
+        1252,
+        1258,
+        1256,
+        1254,
+        1250,
+        1248,
+        1246,
+        1244,
+        1242,
+        1216,
+        1218,
+        1202,
+        1206,
+        1210,
+        1214,
+        1212,
+        1198,
+        16,
+        12,
+        9,
+        2
+    ],
+    "shared\/flow-background": [
+        "Global CSS atmosphere"
+    ],
+    "web\/corporate-concept": [
+        1410,
+        1216
+    ],
+    "web\/ecommerce-concept": [
+        1410,
+        1216
+    ],
+    "web\/landing-concept": [
+        1410,
+        1216
+    ],
+    "web\/responsive-devices": [
+        1410,
+        1216
+    ]
+}

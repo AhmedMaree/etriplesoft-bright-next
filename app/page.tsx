@@ -1,19 +1,17 @@
-import Image from "next/image";
 import {
   Hero,
   PartnerBadges,
   ValueProps,
-  TechTrust,
   SectionHeading,
   Icon,
   TextLink,
-  Button,
   IndustryBento,
   Process,
   Stats,
   CTA,
   Testimonials,
 } from "@/components/site";
+import OdooHero from "@/components/odoo/OdooHero";
 import { industries } from "@/lib/data";
 export default function Home() {
   return (
@@ -33,71 +31,7 @@ export default function Home() {
         <PartnerBadges />
       </Hero>
       <ValueProps />
-      <TechTrust />
-      <section className="section home-stage home-odoo-stage">
-        <span className="odoo-dot-grid odoo-dot-grid--top" aria-hidden="true" />
-        <span className="odoo-dot-grid odoo-dot-grid--bottom" aria-hidden="true" />
-        <div className="container odoo-reference-layout">
-          <div className="odoo-reference-copy">
-            <span className="eyebrow">Flagship Solution</span>
-            <h2>
-              Run Your Entire Business
-              <br />
-              on <em>One Platform.</em>
-            </h2>
-            <p>
-              Streamline your operations, increase productivity, and get
-              complete visibility with Odoo — fully customized for your business
-              needs.
-            </p>
-            <div className="odoo-reference-modules">
-              {[
-                ["coins", "Accounting & Finance"],
-                ["check", "Projects & Tasks"],
-                ["users", "CRM & Sales"],
-                ["factory", "Manufacturing"],
-                ["box", "Inventory & Procurement"],
-                ["cart", "E-commerce"],
-                ["users", "HR & Payroll"],
-                ["sparkles", "And More..."],
-              ].map(([icon, label]) => (
-                <span key={label}>
-                  <Icon name={icon} />
-                  <strong>{label}</strong>
-                </span>
-              ))}
-            </div>
-            <div className="button-row">
-              <Button href="/odoo">Explore Odoo ERP</Button>
-              <Button secondary href="/contact?service=Odoo%20ERP">
-                Request a Demo
-              </Button>
-            </div>
-          </div>
-          <div className="odoo-reference-visual">
-            <span className="odoo-reference-arc" aria-hidden="true" />
-            <span className="odoo-reference-arc-dot" aria-hidden="true" />
-            <Image
-              src="/images/odoo-hero.webp"
-              alt="Odoo dashboard showing connected business operations"
-              fill
-              sizes="(max-width: 760px) 100vw, 54vw"
-            />
-            <div className="odoo-reference-badge">
-              <img src="/images/odoo-wordmark.png" alt="Odoo" />
-              <span>Gold Partner</span>
-            </div>
-            <div className="odoo-reference-quote">
-              <Icon name="zap" />
-              <strong>
-                “All your business needs
-                <br />
-                in one system.”
-              </strong>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OdooHero headingLevel="h2" primaryHref="/odoo" />
       <section
         id="solutions"
         className="section home-stage home-solutions-process-stage"

@@ -1,0 +1,214 @@
+- generic [active] [ref=f17e1]:
+  - link "Skip to content" [ref=f17e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f17e3]:
+    - generic [ref=f17e4]:
+      - link "ETripleSoft home" [ref=f17e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f17e6]
+      - navigation "Main navigation" [ref=f17e7]:
+        - link "Home" [ref=f17e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f17e9]:
+          - generic "Odoo ERP" [ref=f17e10] [cursor=pointer]
+        - group [ref=f17e13]:
+          - generic "Services" [ref=f17e14] [cursor=pointer]
+        - group [ref=f17e17]:
+          - generic "Industries" [ref=f17e18] [cursor=pointer]
+        - group [ref=f17e21]:
+          - generic "Resources" [ref=f17e22] [cursor=pointer]
+        - group [ref=f17e25]:
+          - generic "Company" [ref=f17e26] [cursor=pointer]
+      - generic [ref=f17e29]:
+        - button "Search website" [ref=f17e30] [cursor=pointer]
+        - generic [ref=f17e34]: EN
+        - link "Book a Demo" [ref=f17e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f17e41]:
+    - generic [ref=f17e43]:
+      - generic [ref=f17e44]:
+        - generic [ref=f17e45]: Contact ETripleSoft
+        - heading [level=1] [ref=f17e46]:
+          - text: Let's Start a
+          - emphasis [ref=f17e47]: Conversation
+        - heading "Tell us what you are trying to improve." [level=2] [ref=f17e48]
+        - paragraph [ref=f17e49]: Whether you are exploring Odoo ERP, cloud and security, AI automation, a digital product or marketing support, share the current situation and the outcome your team needs.
+        - generic [ref=f17e50]:
+          - generic [ref=f17e51]:
+            - heading "Clear Routing" [level=3] [ref=f17e57]
+            - paragraph [ref=f17e58]: Your enquiry goes to the relevant service team.
+          - generic [ref=f17e59]:
+            - heading "Regional Team" [level=3] [ref=f17e64]
+            - paragraph [ref=f17e65]: Support across Egypt, Saudi Arabia and the UAE.
+          - generic [ref=f17e66]:
+            - heading "Practical Next Step" [level=3] [ref=f17e71]
+            - paragraph [ref=f17e72]: We clarify scope before recommending a solution.
+      - generic [ref=f17e73]:
+        - generic [ref=f17e74]: Send Us a Message
+        - heading "Get in Touch" [level=2] [ref=f17e75]
+        - generic [ref=f17e76]:
+          - generic [ref=f17e77]:
+            - generic [ref=f17e78]: Full Name *
+            - textbox "Full Name *" [ref=f17e79]
+          - generic [ref=f17e80]:
+            - generic [ref=f17e81]: Business Email *
+            - textbox "Business Email *" [ref=f17e82]
+          - generic [ref=f17e83]:
+            - generic [ref=f17e84]: Company Name
+            - textbox "Company Name" [ref=f17e85]
+          - generic [ref=f17e86]:
+            - generic [ref=f17e87]: Phone Number
+            - textbox "Phone Number" [ref=f17e88]
+          - generic [ref=f17e89]:
+            - generic [ref=f17e90]: Select a Service
+            - combobox "Select a Service" [ref=f17e91]:
+              - option "Select a Service" [selected]
+              - option "Odoo ERP"
+              - option "Cloud & Security"
+              - option "AI & Automation"
+              - option "Web Development"
+              - option "Mobile Applications"
+              - option "Digital Marketing"
+          - generic [ref=f17e92]:
+            - generic [ref=f17e93]: Your message
+            - textbox "Your message" [ref=f17e94]:
+              - /placeholder: Tell us about your project or inquiry…
+        - button "Send Message" [ref=f17e95] [cursor=pointer]
+        - paragraph [ref=f17e98]: Your information is secure and will never be shared.
+    - generic [ref=f17e101]:
+      - generic [ref=f17e107]:
+        - heading "General Enquiries" [level=3] [ref=f17e108]
+        - link "info@etriplesoft.com" [ref=f17e109] [cursor=pointer]:
+          - /url: mailto:info@etriplesoft.com
+      - generic [ref=f17e114]:
+        - heading "Support" [level=3] [ref=f17e115]
+        - link "support@etriplesoft.com" [ref=f17e116] [cursor=pointer]:
+          - /url: mailto:support@etriplesoft.com
+      - generic [ref=f17e122]:
+        - heading "Working Hours" [level=3] [ref=f17e123]
+        - paragraph [ref=f17e124]: Sunday – Thursday, 9 AM – 6 PM (EET)
+    - generic [ref=f17e126]:
+      - generic [ref=f17e128]:
+        - heading "Three Offices. One Regional Team." [level=2] [ref=f17e129]
+        - paragraph [ref=f17e130]: Connect with ETripleSoft through Cairo, Riyadh or Dubai. Detailed office and phone information should be confirmed with our team before travel.
+      - generic [ref=f17e131]:
+        - article [ref=f17e132]:
+          - img "Cairo, Egypt" [ref=f17e133]
+          - generic [ref=f17e134]:
+            - heading "Cairo, Egypt" [level=3] [ref=f17e135]
+            - paragraph [ref=f17e139]: Nile Corniche, Maadi, Cairo, Egypt
+            - link "Get Directions" [ref=f17e140] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Nile%20Corniche%2C%20Maadi%2C%20Cairo%2C%20Egypt
+        - article [ref=f17e144]:
+          - img "Riyadh, Saudi Arabia" [ref=f17e145]
+          - generic [ref=f17e146]:
+            - heading "Riyadh, Saudi Arabia" [level=3] [ref=f17e147]
+            - paragraph [ref=f17e151]: King Fahd Road, Olaya, Riyadh, Saudi Arabia
+            - link "Get Directions" [ref=f17e152] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=King%20Fahd%20Road%2C%20Olaya%2C%20Riyadh%2C%20Saudi%20Arabia
+        - article [ref=f17e156]:
+          - img "Dubai, UAE" [ref=f17e157]
+          - generic [ref=f17e158]:
+            - heading "Dubai, UAE" [level=3] [ref=f17e159]
+            - paragraph [ref=f17e163]: Business Bay, Dubai, United Arab Emirates
+            - link "Get Directions" [ref=f17e164] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Business%20Bay%2C%20Dubai%2C%20United%20Arab%20Emirates
+    - generic [ref=f17e169]:
+      - generic [ref=f17e171]:
+        - heading "You Have Questions. We Have Answers." [level=2] [ref=f17e172]
+        - paragraph [ref=f17e173]: Find quick answers to common questions about our services, support and working with ETripleSoft.
+      - generic [ref=f17e174]:
+        - group [ref=f17e175]:
+          - generic "How quickly will you respond to my inquiry?" [ref=f17e176] [cursor=pointer]
+        - group [ref=f17e179]:
+          - generic "Can you help with existing systems upgrades?" [ref=f17e180] [cursor=pointer]
+        - group [ref=f17e183]:
+          - generic "Do you provide support after project delivery?" [ref=f17e184] [cursor=pointer]
+        - group [ref=f17e187]:
+          - generic "Can I schedule a consultation call?" [ref=f17e188] [cursor=pointer]
+        - group [ref=f17e191]:
+          - generic "Do you work with international clients?" [ref=f17e192] [cursor=pointer]
+    - generic [ref=f17e196]:
+      - generic [ref=f17e197]:
+        - heading "Ready to Transform Your Business?" [level=2] [ref=f17e198]
+        - paragraph [ref=f17e199]: Get in touch today and let's create a smarter, more efficient tomorrow — together.
+      - link "Start a Conversation" [ref=f17e200] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f17e203]:
+    - generic [ref=f17e204]:
+      - generic [ref=f17e205]:
+        - link [ref=f17e206] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f17e207]
+        - paragraph [ref=f17e208]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f17e209]:
+          - link "Email ETripleSoft" [ref=f17e210] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f17e214] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f17e218] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f17e221]:
+        - heading "Solutions" [level=4] [ref=f17e222]
+        - link "Odoo ERP" [ref=f17e223] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f17e224] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f17e225] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f17e226] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f17e227] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f17e228] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f17e229]:
+        - heading "Industries" [level=4] [ref=f17e230]
+        - link "Construction" [ref=f17e231] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f17e232] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f17e233] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f17e234] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f17e235] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f17e236] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f17e237]:
+        - heading "Company" [level=4] [ref=f17e238]
+        - link "About Us" [ref=f17e239] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f17e240] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f17e241] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f17e242] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f17e243] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f17e244]:
+        - heading "Resources" [level=4] [ref=f17e245]
+        - link "Blog" [ref=f17e246] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f17e247] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f17e248] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f17e249] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f17e250] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f17e251]:
+        - heading "Our Offices" [level=4] [ref=f17e252]
+        - link "🇪🇬 Cairo, Egypt" [ref=f17e253] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f17e254] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f17e255] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f17e256]:
+      - generic [ref=f17e257]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f17e258]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f17e259] [cursor=pointer]

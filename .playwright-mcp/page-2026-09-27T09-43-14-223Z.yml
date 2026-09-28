@@ -1,0 +1,233 @@
+- generic [active] [ref=f13e1]:
+  - link "Skip to content" [ref=f13e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f13e3]:
+    - generic [ref=f13e4]:
+      - link "ETripleSoft home" [ref=f13e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f13e6]
+      - navigation "Main navigation" [ref=f13e7]:
+        - link "Home" [ref=f13e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f13e9]:
+          - generic "Odoo ERP" [ref=f13e10] [cursor=pointer]
+        - group [ref=f13e13]:
+          - generic "Services" [ref=f13e14] [cursor=pointer]
+        - group [ref=f13e17]:
+          - generic "Industries" [ref=f13e18] [cursor=pointer]
+        - group [ref=f13e21]:
+          - generic "Resources" [ref=f13e22] [cursor=pointer]
+        - group [ref=f13e25]:
+          - generic "Company" [ref=f13e26] [cursor=pointer]
+      - generic [ref=f13e29]:
+        - button "Search website" [ref=f13e30] [cursor=pointer]
+        - generic [ref=f13e34]: EN
+        - link "Book a Demo" [ref=f13e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f13e41]:
+    - generic [ref=f13e42]:
+      - img "Marketing Connected to — ETripleSoft solutions" [ref=f13e44]
+      - generic [ref=f13e45]:
+        - generic [ref=f13e46]:
+          - generic [ref=f13e47]: SEO · PAID MEDIA · CONTENT
+          - heading [level=1] [ref=f13e48]:
+            - text: Marketing Connected to
+            - emphasis [ref=f13e49]: Business Outcomes
+          - paragraph [ref=f13e50]: Build a practical acquisition system across search, paid media, social and content, with reporting connected to enquiries and sales workflows.
+          - generic [ref=f13e51]:
+            - generic [ref=f13e52]: Arabic & English
+            - generic [ref=f13e56]: Channel reporting
+            - generic [ref=f13e60]: CRM handoff
+          - generic [ref=f13e64]:
+            - link "Request a Marketing Consultation" [ref=f13e65] [cursor=pointer]:
+              - /url: /contact?service=Marketing%20Connected%20to
+            - link "Explore Services" [ref=f13e68] [cursor=pointer]:
+              - /url: "#solutions"
+        - generic [ref=f13e71]: Strategy. Execution. Learning. Improvement.
+    - generic [ref=f13e75]:
+      - generic [ref=f13e76]: Trusted by growing businesses
+      - img "Odoo, Microsoft, Shopify, AWS, Samsung, Intel, Dell and HubSpot" [ref=f13e77]
+    - generic [ref=f13e79]:
+      - generic [ref=f13e81]:
+        - heading "What We Offer" [level=2] [ref=f13e82]
+        - paragraph [ref=f13e83]: Combine the channels your audience uses with the research, content and measurement your team needs.
+      - generic [ref=f13e84]:
+        - article [ref=f13e85]:
+          - heading "SEO" [level=3] [ref=f13e90]
+          - paragraph [ref=f13e91]: Improve technical foundations, content relevance and search visibility.
+          - link "Learn More" [ref=f13e92] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=SEO
+        - article [ref=f13e95]:
+          - heading "Paid Advertising" [level=3] [ref=f13e100]
+          - paragraph [ref=f13e101]: Plan, launch and improve paid search and social campaigns.
+          - link "Learn More" [ref=f13e102] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Paid%20Advertising
+        - article [ref=f13e105]:
+          - heading "Social Media" [level=3] [ref=f13e112]
+          - paragraph [ref=f13e113]: Build a consistent publishing and engagement rhythm.
+          - link "Learn More" [ref=f13e114] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Social%20Media
+        - article [ref=f13e117]:
+          - heading "Content Creation" [level=3] [ref=f13e122]
+          - paragraph [ref=f13e123]: Create useful Arabic and English content for each stage of the journey.
+          - link "Learn More" [ref=f13e124] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Content%20Creation
+        - article [ref=f13e127]:
+          - heading "Marketing Strategy" [level=3] [ref=f13e133]
+          - paragraph [ref=f13e134]: Turn business goals into priorities, channels and a working plan.
+          - link "Learn More" [ref=f13e135] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Marketing%20Strategy
+        - article [ref=f13e138]:
+          - heading "Market Research" [level=3] [ref=f13e143]
+          - paragraph [ref=f13e144]: Understand audiences, competitors and buying context.
+          - link "Learn More" [ref=f13e145] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Market%20Research
+        - article [ref=f13e148]:
+          - heading "Creative & Design" [level=3] [ref=f13e155]
+          - paragraph [ref=f13e156]: Develop campaign assets that communicate one clear message.
+          - link "Learn More" [ref=f13e157] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Creative%20%26%20Design
+        - article [ref=f13e160]:
+          - heading "Analytics & CRM Handoff" [level=3] [ref=f13e164]
+          - paragraph [ref=f13e165]: Connect campaign activity with enquiries and follow-up.
+          - link "Learn More" [ref=f13e166] [cursor=pointer]:
+            - /url: /contact?solution=digital-marketing&service=Analytics%20%26%20CRM%20Handoff
+    - generic [ref=f13e171]:
+      - generic [ref=f13e173]:
+        - heading "Marketing becomes more useful when campaigns connect to follow-up." [level=2] [ref=f13e174]
+        - paragraph [ref=f13e175]: We align channels, content and measurement with the enquiries your team can qualify, respond to and learn from.
+      - generic [ref=f13e176]:
+        - generic [ref=f13e182]:
+          - heading "Audience context" [level=3] [ref=f13e183]
+          - paragraph [ref=f13e184]: Use research to understand the market and buying journey.
+        - generic [ref=f13e190]:
+          - heading "Coordinated execution" [level=3] [ref=f13e191]
+          - paragraph [ref=f13e192]: Connect search, paid media, social and content priorities.
+        - generic [ref=f13e197]:
+          - heading "Sales handoff" [level=3] [ref=f13e198]
+          - paragraph [ref=f13e199]: Make campaign reporting useful beyond clicks and impressions.
+    - generic [ref=f13e202]:
+      - generic [ref=f13e204]:
+        - generic [ref=f13e205]: Our Process
+        - heading "A Repeatable Marketing Cycle" [level=2] [ref=f13e206]
+        - paragraph [ref=f13e207]: We follow a proven approach to deliver real results.
+      - generic [ref=f13e208]:
+        - generic [ref=f13e209]:
+          - generic [ref=f13e210]: "01"
+          - heading "Discover" [level=3] [ref=f13e211]
+          - paragraph [ref=f13e212]: Understand your business goals and opportunities.
+        - generic [ref=f13e213]:
+          - generic [ref=f13e214]: "02"
+          - heading "Plan" [level=3] [ref=f13e215]
+          - paragraph [ref=f13e216]: Create a strategy and sitemap.
+        - generic [ref=f13e217]:
+          - generic [ref=f13e218]: "03"
+          - heading "Execute" [level=3] [ref=f13e219]
+          - paragraph [ref=f13e220]: Launch and optimize campaigns across channels.
+        - generic [ref=f13e221]:
+          - generic [ref=f13e222]: "04"
+          - heading "Measure" [level=3] [ref=f13e223]
+          - paragraph [ref=f13e224]: Analyze results and share transparent reports.
+        - generic [ref=f13e225]:
+          - generic [ref=f13e226]: "05"
+          - heading "Improve" [level=3] [ref=f13e227]
+          - paragraph [ref=f13e228]: Work with our team for a successful next step.
+    - generic [ref=f13e230]:
+      - generic [ref=f13e232]:
+        - heading "Questions to Resolve Before You Start" [level=2] [ref=f13e233]
+        - paragraph [ref=f13e234]: A useful first conversation should clarify scope, ownership, integrations and the path after launch.
+      - generic [ref=f13e235]:
+        - group [ref=f13e236]:
+          - generic "Which marketing channels should we prioritize?" [ref=f13e237] [cursor=pointer]
+        - group [ref=f13e240]:
+          - generic "Can you create Arabic and English campaigns?" [ref=f13e241] [cursor=pointer]
+        - group [ref=f13e244]:
+          - generic "How do you report performance?" [ref=f13e245] [cursor=pointer]
+        - group [ref=f13e248]:
+          - generic "Can marketing enquiries connect to our CRM or Odoo?" [ref=f13e249] [cursor=pointer]
+        - group [ref=f13e252]:
+          - generic "How do you improve campaigns over time?" [ref=f13e253] [cursor=pointer]
+    - generic [ref=f13e257]:
+      - generic [ref=f13e258]:
+        - heading "Build a More Connected Marketing System" [level=2] [ref=f13e259]
+        - paragraph [ref=f13e260]: Tell us about the current workflow, the systems involved and the outcome your team needs.
+      - link "Request a Marketing Consultation" [ref=f13e261] [cursor=pointer]:
+        - /url: /contact?service=Marketing%20Connected%20to
+  - contentinfo [ref=f13e264]:
+    - generic [ref=f13e265]:
+      - generic [ref=f13e266]:
+        - link [ref=f13e267] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f13e268]
+        - paragraph [ref=f13e269]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f13e270]:
+          - link "Email ETripleSoft" [ref=f13e271] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f13e275] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f13e279] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f13e282]:
+        - heading "Solutions" [level=4] [ref=f13e283]
+        - link "Odoo ERP" [ref=f13e284] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f13e285] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f13e286] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f13e287] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f13e288] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f13e289] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f13e290]:
+        - heading "Industries" [level=4] [ref=f13e291]
+        - link "Construction" [ref=f13e292] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f13e293] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f13e294] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f13e295] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f13e296] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f13e297] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f13e298]:
+        - heading "Company" [level=4] [ref=f13e299]
+        - link "About Us" [ref=f13e300] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f13e301] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f13e302] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f13e303] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f13e304] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f13e305]:
+        - heading "Resources" [level=4] [ref=f13e306]
+        - link "Blog" [ref=f13e307] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f13e308] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f13e309] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f13e310] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f13e311] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f13e312]:
+        - heading "Our Offices" [level=4] [ref=f13e313]
+        - link "🇪🇬 Cairo, Egypt" [ref=f13e314] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f13e315] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f13e316] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f13e317]:
+      - generic [ref=f13e318]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f13e319]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f13e320] [cursor=pointer]

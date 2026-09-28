@@ -1,0 +1,190 @@
+- generic [active] [ref=f18e1]:
+  - link "Skip to content" [ref=f18e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f18e3]:
+    - generic [ref=f18e4]:
+      - link "ETripleSoft home" [ref=f18e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f18e6]
+      - navigation "Main navigation" [ref=f18e7]:
+        - link "Home" [ref=f18e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f18e9]:
+          - generic "Odoo ERP" [ref=f18e10] [cursor=pointer]
+        - group [ref=f18e13]:
+          - generic "Services" [ref=f18e14] [cursor=pointer]
+        - group [ref=f18e17]:
+          - generic "Industries" [ref=f18e18] [cursor=pointer]
+        - group [ref=f18e21]:
+          - generic "Resources" [ref=f18e22] [cursor=pointer]
+        - group [ref=f18e25]:
+          - generic "Company" [ref=f18e26] [cursor=pointer]
+      - generic [ref=f18e29]:
+        - button "Search website" [ref=f18e30] [cursor=pointer]
+        - generic [ref=f18e34]: EN
+        - link "Book a Demo" [ref=f18e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f18e41]:
+    - generic [ref=f18e42]:
+      - img "Submit a — ETripleSoft solutions" [ref=f18e44]
+      - generic [ref=f18e45]:
+        - generic [ref=f18e46]:
+          - generic [ref=f18e47]: Customer Support
+          - heading [level=1] [ref=f18e48]:
+            - text: Submit a
+            - emphasis [ref=f18e49]: Support Ticket
+          - paragraph [ref=f18e50]: Use the ETripleSoft support portal to report an issue, share relevant details and follow the ticket with the support team.
+          - generic [ref=f18e51]:
+            - link "Open the Support Portal" [ref=f18e52] [cursor=pointer]:
+              - /url: https://etriple.odoo.com/helpdesk/support-tickets-1
+            - link "Email Support" [ref=f18e55] [cursor=pointer]:
+              - /url: mailto:support@etriplesoft.com
+        - generic [ref=f18e58]:
+          - heading "Support You Can Trust" [level=3] [ref=f18e62]: SupportYou Can Trust
+          - generic [ref=f18e63]: Real People
+          - generic [ref=f18e67]: Expert Solutions
+          - generic [ref=f18e71]: Faster Resolution
+          - generic [ref=f18e75]: Business Continuity
+        - generic [ref=f18e79]: One request. A clear support path.
+    - generic [ref=f18e83]:
+      - generic [ref=f18e85]:
+        - heading "The Ticket Portal Opens in ETripleSoft's Odoo Helpdesk" [level=2] [ref=f18e86]
+        - paragraph [ref=f18e87]: Include the affected system, what happened, when it started and any screenshots or error messages that can help the team investigate.
+      - generic [ref=f18e92]:
+        - heading "Cannot open the portal?" [level=2] [ref=f18e93]
+        - paragraph [ref=f18e94]: Send the same information to support@etriplesoft.com and include a contact name and company.
+        - link "Email Support" [ref=f18e95] [cursor=pointer]:
+          - /url: mailto:support@etriplesoft.com
+    - generic [ref=f18e99]:
+      - generic [ref=f18e101]:
+        - heading "Choose the Right Category" [level=2] [ref=f18e102]
+        - paragraph [ref=f18e103]: Selecting a category in the portal helps our team route and resolve your ticket faster.
+      - generic [ref=f18e104]:
+        - generic [ref=f18e110]:
+          - heading "Technical Support" [level=3] [ref=f18e111]
+          - paragraph [ref=f18e112]: Software issues, bugs and error resolution.
+        - generic [ref=f18e118]:
+          - heading "Account & Billing" [level=3] [ref=f18e119]
+          - paragraph [ref=f18e120]: Account access, billing and subscription enquiries.
+        - generic [ref=f18e125]:
+          - heading "Feature Request" [level=3] [ref=f18e126]
+          - paragraph [ref=f18e127]: Suggest new features or enhancements.
+        - generic [ref=f18e132]:
+          - heading "Consultation" [level=3] [ref=f18e133]
+          - paragraph [ref=f18e134]: Get expert advice and guidance.
+        - generic [ref=f18e142]:
+          - heading "Partnership" [level=3] [ref=f18e143]
+          - paragraph [ref=f18e144]: Partnership opportunities and business enquiries.
+        - generic [ref=f18e149]:
+          - heading "Other" [level=3] [ref=f18e150]
+          - paragraph [ref=f18e151]: General enquiries and other requests.
+    - generic [ref=f18e154]:
+      - generic [ref=f18e156]:
+        - generic [ref=f18e157]: Our Process
+        - heading "How Our Support Works" [level=2] [ref=f18e158]
+        - paragraph [ref=f18e159]: We follow a proven approach to deliver real results.
+      - generic [ref=f18e160]:
+        - generic [ref=f18e161]:
+          - generic [ref=f18e162]: "01"
+          - heading "Submit Ticket" [level=3] [ref=f18e163]
+          - paragraph [ref=f18e164]: Fill out the support form with details.
+        - generic [ref=f18e165]:
+          - generic [ref=f18e166]: "02"
+          - heading "Ticket Acknowledged" [level=3] [ref=f18e167]
+          - paragraph [ref=f18e168]: Get an instant confirmation via email.
+        - generic [ref=f18e169]:
+          - generic [ref=f18e170]: "03"
+          - heading "We Investigate" [level=3] [ref=f18e171]
+          - paragraph [ref=f18e172]: Our experts analyze your issue.
+        - generic [ref=f18e173]:
+          - generic [ref=f18e174]: "04"
+          - heading "Get Update" [level=3] [ref=f18e175]
+          - paragraph [ref=f18e176]: We'll keep you informed on the progress.
+        - generic [ref=f18e177]:
+          - generic [ref=f18e178]: "05"
+          - heading "Resolution" [level=3] [ref=f18e179]
+          - paragraph [ref=f18e180]: Issue resolved and you're back on track.
+    - generic [ref=f18e182]:
+      - generic [ref=f18e183]:
+        - heading "Ready to Create a Ticket?" [level=2] [ref=f18e184]
+        - paragraph [ref=f18e185]: Open the support portal to submit and track your request.
+      - link "Open Support Portal" [ref=f18e186] [cursor=pointer]:
+        - /url: https://etriple.odoo.com/helpdesk/support-tickets-1
+  - contentinfo [ref=f18e189]:
+    - generic [ref=f18e190]:
+      - generic [ref=f18e191]:
+        - link [ref=f18e192] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f18e193]
+        - paragraph [ref=f18e194]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f18e195]:
+          - link "Email ETripleSoft" [ref=f18e196] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f18e200] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f18e204] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f18e207]:
+        - heading "Solutions" [level=4] [ref=f18e208]
+        - link "Odoo ERP" [ref=f18e209] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f18e210] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f18e211] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f18e212] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f18e213] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f18e214] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f18e215]:
+        - heading "Industries" [level=4] [ref=f18e216]
+        - link "Construction" [ref=f18e217] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f18e218] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f18e219] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f18e220] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f18e221] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f18e222] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f18e223]:
+        - heading "Company" [level=4] [ref=f18e224]
+        - link "About Us" [ref=f18e225] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f18e226] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f18e227] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f18e228] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f18e229] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f18e230]:
+        - heading "Resources" [level=4] [ref=f18e231]
+        - link "Blog" [ref=f18e232] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f18e233] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f18e234] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f18e235] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f18e236] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f18e237]:
+        - heading "Our Offices" [level=4] [ref=f18e238]
+        - link "🇪🇬 Cairo, Egypt" [ref=f18e239] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f18e240] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f18e241] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f18e242]:
+      - generic [ref=f18e243]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f18e244]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f18e245] [cursor=pointer]

@@ -1,16 +1,20 @@
 import {
   Hero,
   PartnerBadges,
-  Partners,
+  TechTrust,
   SectionHeading,
   Cards,
   IndustryBento,
   Process,
+  Stats,
   CTA,
   FAQ,
   Photo,
   Icon,
+  Button,
 } from "./site";
+import OdooReferencePage from "./odoo/OdooReferencePage";
+import AIReferencePage from "./ai/AIReferencePage";
 import { servicePages, industries } from "@/lib/data";
 
 const serviceContext: Record<
@@ -163,34 +167,21 @@ const serviceContext: Record<
 };
 
 export default function ServicePage({ slug }: { slug: string }) {
+  if (slug === "ai") return <AIReferencePage />;
+  if (slug === "odoo") return <OdooReferencePage />;
   const service = servicePages[slug];
   const context = serviceContext[slug];
-  const partnerType =
-    slug === "ai"
-      ? "ai"
-      : slug === "digital-marketing"
-        ? "marketing"
-        : ["web", "mobile"].includes(slug)
-          ? "technology"
-          : "clients";
 
   return (
     <main id="main" className={"service-page " + slug}>
       <Hero
-        {...service}
-        primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
-      >
-        {slug === "odoo" ? (
-          <div className="odoo-hero-badge odoo-partner">
-            <img src="/images/odoo-wordmark.png" alt="Odoo" />
-            <span>Gold Partner</span>
-          </div>
-        ) : slug === "cloud" ? (
-          <PartnerBadges cloud />
-        ) : null}
+          {...service}
+          primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
+        >
+          {slug === "cloud" ? <PartnerBadges cloud /> : null}
       </Hero>
 
-      <Partners type={partnerType} />
+      <TechTrust />
 
       <section className="section tinted" id="solutions">
         <div className="container">
@@ -238,6 +229,28 @@ export default function ServicePage({ slug }: { slug: string }) {
           <Process title={service.processTitle} steps={service.steps} />
         </div>
       </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            title={service.whyTitle}
+            description={service.whyDescription}
+          />
+          <div className="why-grid">
+            {service.whyPoints.map(([title, description, icon]) => (
+              <div key={title}>
+                <Icon name={icon} />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Stats />
 
       {slug === "odoo" && (
         <section className="section">

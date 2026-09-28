@@ -1,0 +1,271 @@
+- generic [active] [ref=f14e1]:
+  - link "Skip to content" [ref=f14e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - link "ETripleSoft home" [ref=f14e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f14e6]
+      - navigation "Main navigation" [ref=f14e7]:
+        - link "Home" [ref=f14e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f14e9]:
+          - generic "Odoo ERP" [ref=f14e10] [cursor=pointer]
+        - group [ref=f14e13]:
+          - generic "Services" [ref=f14e14] [cursor=pointer]
+        - group [ref=f14e17]:
+          - generic "Industries" [ref=f14e18] [cursor=pointer]
+        - group [ref=f14e21]:
+          - generic "Resources" [ref=f14e22] [cursor=pointer]
+        - group [ref=f14e25]:
+          - generic "Company" [ref=f14e26] [cursor=pointer]
+      - generic [ref=f14e29]:
+        - button "Search website" [ref=f14e30] [cursor=pointer]
+        - generic [ref=f14e34]: EN
+        - link "Book a Demo" [ref=f14e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f14e41]:
+    - generic [ref=f14e42]:
+      - img "Turn Repetitive Work into — ETripleSoft solutions" [ref=f14e44]
+      - generic [ref=f14e45]:
+        - generic [ref=f14e46]:
+          - generic [ref=f14e47]: AI · AUTOMATION · INTEGRATION
+          - heading [level=1] [ref=f14e48]:
+            - text: Turn Repetitive Work into
+            - emphasis [ref=f14e49]: Reliable Workflows
+          - paragraph [ref=f14e50]: Identify high-value automation opportunities, connect the right data and systems, and keep people in control of important decisions.
+          - generic [ref=f14e51]:
+            - link "Request an Automation Assessment" [ref=f14e52] [cursor=pointer]:
+              - /url: /contact?service=Turn%20Repetitive%20Work%20into
+            - link "Talk to an Expert" [ref=f14e55] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f14e58]:
+            - generic [ref=f14e59]: Human review
+            - generic [ref=f14e64]: System integration
+            - generic [ref=f14e69]: Measurable operations
+        - generic [ref=f14e74]: From manual steps to connected workflows
+    - generic [ref=f14e78]:
+      - generic [ref=f14e79]: Trusted by growing businesses
+      - img "Odoo, Microsoft, AWS, Google Cloud, SAP, Salesforce, OpenAI and UiPath" [ref=f14e80]
+    - generic [ref=f14e82]:
+      - generic [ref=f14e84]:
+        - heading "Automation for Real Business Problems" [level=2] [ref=f14e85]
+        - paragraph [ref=f14e86]: "Focus automation on the work that slows teams down: documents, handoffs, reporting, customer requests and disconnected data."
+      - generic [ref=f14e87]:
+        - article [ref=f14e88]:
+          - heading "Workflow Automation" [level=3] [ref=f14e93]
+          - paragraph [ref=f14e94]: Coordinate repeatable tasks, approvals and system actions.
+          - link "Learn More" [ref=f14e95] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Workflow%20Automation
+        - article [ref=f14e98]:
+          - heading "Document Intelligence" [level=3] [ref=f14e103]
+          - paragraph [ref=f14e104]: Extract, classify and route information from business documents.
+          - link "Learn More" [ref=f14e105] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Document%20Intelligence
+        - article [ref=f14e108]:
+          - heading "AI Assistants" [level=3] [ref=f14e112]
+          - paragraph [ref=f14e113]: Help teams find information and complete guided internal tasks.
+          - link "Learn More" [ref=f14e114] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=AI%20Assistants
+        - article [ref=f14e117]:
+          - heading "Customer Service Automation" [level=3] [ref=f14e121]
+          - paragraph [ref=f14e122]: Triage requests and support faster, consistent responses.
+          - link "Learn More" [ref=f14e123] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Customer%20Service%20Automation
+        - article [ref=f14e126]:
+          - heading "Analytics & Forecasting" [level=3] [ref=f14e130]
+          - paragraph [ref=f14e131]: Turn operational data into useful signals for decisions.
+          - link "Learn More" [ref=f14e132] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Analytics%20%26%20Forecasting
+        - article [ref=f14e135]:
+          - heading "Lead Scoring" [level=3] [ref=f14e141]
+          - paragraph [ref=f14e142]: Prioritize opportunities using agreed business criteria and data.
+          - link "Learn More" [ref=f14e143] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Lead%20Scoring
+        - article [ref=f14e146]:
+          - heading "System Integration & APIs" [level=3] [ref=f14e150]
+          - paragraph [ref=f14e151]: Connect automation with ERP, CRM and business tools.
+          - link "Learn More" [ref=f14e152] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=System%20Integration%20%26%20APIs
+        - article [ref=f14e155]:
+          - heading "Controls & Monitoring" [level=3] [ref=f14e160]
+          - paragraph [ref=f14e161]: Track exceptions, access and performance after launch.
+          - link "Learn More" [ref=f14e162] [cursor=pointer]:
+            - /url: /contact?solution=ai&service=Controls%20%26%20Monitoring
+    - generic [ref=f14e167]:
+      - generic [ref=f14e169]:
+        - heading "Useful automation starts with a specific operational problem." [level=2] [ref=f14e170]
+        - paragraph [ref=f14e171]: We begin with the task, data and exceptions—not a generic AI feature—then define where people review, approve or intervene.
+      - generic [ref=f14e172]:
+        - generic [ref=f14e179]:
+          - heading "Grounded use case" [level=3] [ref=f14e180]
+          - paragraph [ref=f14e181]: Choose a workflow with clear inputs, outputs and owners.
+        - generic [ref=f14e189]:
+          - heading "Human control" [level=3] [ref=f14e190]
+          - paragraph [ref=f14e191]: Design review points for uncertainty, exceptions and sensitive actions.
+        - generic [ref=f14e196]:
+          - heading "Measured operation" [level=3] [ref=f14e197]
+          - paragraph [ref=f14e198]: Track quality, cycle time and adoption after release.
+    - generic [ref=f14e201]:
+      - generic [ref=f14e203]:
+        - generic [ref=f14e204]: Our Process
+        - heading "From Use Case to Measured Improvement" [level=2] [ref=f14e205]
+        - paragraph [ref=f14e206]: We follow a proven approach to deliver real results.
+      - generic [ref=f14e207]:
+        - generic [ref=f14e208]:
+          - generic [ref=f14e209]: "01"
+          - heading "Discover" [level=3] [ref=f14e210]
+          - paragraph [ref=f14e211]: Understand your business goals and opportunities.
+        - generic [ref=f14e212]:
+          - generic [ref=f14e213]: "02"
+          - heading "Prototype" [level=3] [ref=f14e214]
+          - paragraph [ref=f14e215]: Build and validate a working proof of concept.
+        - generic [ref=f14e216]:
+          - generic [ref=f14e217]: "03"
+          - heading "Integrate" [level=3] [ref=f14e218]
+          - paragraph [ref=f14e219]: Connect the automation with your existing systems and data.
+        - generic [ref=f14e220]:
+          - generic [ref=f14e221]: "04"
+          - heading "Review" [level=3] [ref=f14e222]
+          - paragraph [ref=f14e223]: Test outcomes with your team and refine before rollout.
+        - generic [ref=f14e224]:
+          - generic [ref=f14e225]: "05"
+          - heading "Improve" [level=3] [ref=f14e226]
+          - paragraph [ref=f14e227]: Track results and scale what works for long-term impact.
+    - generic [ref=f14e229]:
+      - generic [ref=f14e231]:
+        - heading "Why Automate with ETripleSoft?" [level=2] [ref=f14e232]
+        - paragraph [ref=f14e233]: We combine technical expertise with real business understanding to deliver automation that creates measurable value.
+      - generic [ref=f14e234]:
+        - generic [ref=f14e239]:
+          - heading "Higher Productivity" [level=3] [ref=f14e240]
+          - paragraph [ref=f14e241]: Automate repetitive tasks and free up your team.
+        - generic [ref=f14e249]:
+          - heading "Cost Reduction" [level=3] [ref=f14e250]
+          - paragraph [ref=f14e251]: Minimize manual work and operational overhead.
+        - generic [ref=f14e257]:
+          - heading "Improved Accuracy" [level=3] [ref=f14e258]
+          - paragraph [ref=f14e259]: Reduce human error with consistent, rule-based execution.
+        - generic [ref=f14e267]:
+          - heading "Human Oversight" [level=3] [ref=f14e268]
+          - paragraph [ref=f14e269]: Keep people in control of exceptions and sensitive decisions.
+        - generic [ref=f14e277]:
+          - heading "Scalable by Design" [level=3] [ref=f14e278]
+          - paragraph [ref=f14e279]: Extend automation as your business grows.
+    - generic [ref=f14e281]:
+      - generic [ref=f14e282]: Our Impact
+      - heading "Numbers That Tell Our Story" [level=2] [ref=f14e286]
+      - generic [ref=f14e287]:
+        - generic [ref=f14e288]:
+          - strong [ref=f14e293]: 250+
+          - generic [ref=f14e294]: Projects Delivered
+          - paragraph [ref=f14e295]: Real work, real outcomes.
+        - generic [ref=f14e296]:
+          - strong [ref=f14e301]: "3"
+          - generic [ref=f14e302]: Countries
+          - paragraph [ref=f14e303]: Egypt, UAE & Saudi Arabia.
+        - generic [ref=f14e304]:
+          - strong [ref=f14e309]: 10+
+          - generic [ref=f14e310]: Years of Experience
+          - paragraph [ref=f14e311]: Regional technology experience.
+      - generic [ref=f14e312]:
+        - generic [ref=f14e313]: Cairo, Egypt
+        - generic [ref=f14e318]: Riyadh, Saudi Arabia
+        - generic [ref=f14e323]: Dubai, UAE
+    - generic [ref=f14e329]:
+      - generic [ref=f14e331]:
+        - heading "Questions to Resolve Before You Start" [level=2] [ref=f14e332]
+        - paragraph [ref=f14e333]: A useful first conversation should clarify scope, ownership, integrations and the path after launch.
+      - generic [ref=f14e334]:
+        - group [ref=f14e335]:
+          - generic "Which processes are good candidates for automation?" [ref=f14e336] [cursor=pointer]
+        - group [ref=f14e339]:
+          - generic "Can automation work with our existing ERP and tools?" [ref=f14e340] [cursor=pointer]
+        - group [ref=f14e343]:
+          - generic "How do you handle human review and exceptions?" [ref=f14e344] [cursor=pointer]
+        - group [ref=f14e347]:
+          - generic "How will we measure whether the automation is working?" [ref=f14e348] [cursor=pointer]
+    - generic [ref=f14e352]:
+      - generic [ref=f14e353]:
+        - heading "Explore a Practical Automation Use Case" [level=2] [ref=f14e354]
+        - paragraph [ref=f14e355]: Tell us about the current workflow, the systems involved and the outcome your team needs.
+      - link "Request an Automation Assessment" [ref=f14e356] [cursor=pointer]:
+        - /url: /contact?service=Turn%20Repetitive%20Work%20into
+  - contentinfo [ref=f14e359]:
+    - generic [ref=f14e360]:
+      - generic [ref=f14e361]:
+        - link [ref=f14e362] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f14e363]
+        - paragraph [ref=f14e364]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f14e365]:
+          - link "Email ETripleSoft" [ref=f14e366] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f14e370] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f14e374] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f14e377]:
+        - heading "Solutions" [level=4] [ref=f14e378]
+        - link "Odoo ERP" [ref=f14e379] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f14e380] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f14e381] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f14e382] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f14e383] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f14e384] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f14e385]:
+        - heading "Industries" [level=4] [ref=f14e386]
+        - link "Construction" [ref=f14e387] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f14e388] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f14e389] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f14e390] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f14e391] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f14e392] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f14e393]:
+        - heading "Company" [level=4] [ref=f14e394]
+        - link "About Us" [ref=f14e395] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f14e396] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f14e397] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f14e398] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f14e399] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f14e400]:
+        - heading "Resources" [level=4] [ref=f14e401]
+        - link "Blog" [ref=f14e402] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f14e403] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f14e404] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f14e405] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f14e406] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f14e407]:
+        - heading "Our Offices" [level=4] [ref=f14e408]
+        - link "🇪🇬 Cairo, Egypt" [ref=f14e409] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f14e410] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f14e411] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f14e412]:
+      - generic [ref=f14e413]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f14e414]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f14e415] [cursor=pointer]

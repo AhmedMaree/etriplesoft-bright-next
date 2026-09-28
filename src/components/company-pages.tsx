@@ -5,148 +5,19 @@ import {
   Cards,
   Photo,
   Button,
-  TextLink,
   CTA,
-  PartnerBadges,
+  Offices,
+  Process,
+  Stats,
+  Testimonials,
+  FAQ,
 } from "./site";
 import { ContactForm } from "./widgets";
 import { industries } from "@/lib/data";
+import { AboutReferencePage } from "./about-reference-page";
 
 export function AboutPage() {
-  return (
-    <main id="main" className="about-page">
-      <Hero
-        className="about-hero"
-        eyebrow="Who We Are"
-        title="Technology That Moves"
-        accent="Business Forward."
-        description="We are a technology company helping businesses across Egypt, UAE and Saudi Arabia transform, grow, and lead with Odoo ERP and digital solutions."
-        image="skyline"
-        primary="Talk to Our Experts"
-        primaryHref="/contact"
-        secondary="Explore Our Story"
-        secondaryHref="#purpose"
-      >
-        <PartnerBadges />
-      </Hero>
-
-      <section className="section" id="purpose">
-        <div className="container about-purpose">
-          <SectionHeading
-            title="A Practical Digital-Transformation Partner"
-            description="We specialize in software and technology solutions designed around the operational challenges, teams and systems that make each business different."
-          />
-          <article className="purpose-card">
-            <Icon name="target" />
-            <div>
-              <h3>Our Mission</h3>
-              <p>
-                Empower businesses with tailored technology that connects
-                operations, supports better decisions and remains practical to
-                run.
-              </p>
-            </div>
-          </article>
-          <article className="purpose-card">
-            <Icon name="eye" />
-            <div>
-              <h3>Our Vision</h3>
-              <p>
-                Help organizations across the region use technology with greater
-                clarity, confidence and long-term value.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="section tinted">
-        <div className="container split">
-          <div>
-            <SectionHeading
-              title="Expertise That Connects the Whole Business"
-              description="Odoo remains our flagship platform, supported by cloud and security, AI automation, web and mobile development, and digital marketing."
-            />
-            <Cards
-              columns={2}
-              compact
-              items={[
-                [
-                  "Business Systems",
-                  "ERP implementation, integration, training and support.",
-                  "settings",
-                ],
-                [
-                  "Digital Products",
-                  "Websites, portals and mobile applications.",
-                  "monitor",
-                ],
-                [
-                  "Secure Operations",
-                  "Cloud, identity, endpoint, backup and managed support.",
-                  "shield",
-                ],
-                [
-                  "Connected Growth",
-                  "Automation and marketing connected to business workflows.",
-                  "chart",
-                ],
-              ]}
-            />
-          </div>
-          <Photo
-            className="rounded"
-            name="team"
-            alt="ETripleSoft team collaborating"
-          />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container partnership-row">
-          <SectionHeading
-            title="Platform Partnerships"
-            description="Verified platform depth supports our delivery across ERP, productivity and connected business systems."
-          />
-          <PartnerBadges />
-          <blockquote>
-            “We don&apos;t just adapt to the future; we shape it with
-            innovation.”
-            <strong>Khaled Ahmed Magdy</strong>
-          </blockquote>
-        </div>
-      </section>
-
-      <section className="section tinted">
-        <div className="container">
-          <SectionHeading
-            title="Local Teams Across the Region"
-            description="Work with ETripleSoft through our presence in Cairo, Riyadh and Dubai."
-          />
-          <div className="card-grid cols-3">
-            {[
-              ["Cairo", "Egypt"],
-              ["Riyadh", "Saudi Arabia"],
-              ["Dubai", "United Arab Emirates"],
-            ].map(([city, country]) => (
-              <article className="service-card" key={city}>
-                <Icon name="pin" />
-                <h3>{city}</h3>
-                <p>{country}</p>
-                <TextLink href="/contact">Contact this office</TextLink>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTA
-        title="Discuss the Systems Behind Your Next Stage of Growth"
-        description="Tell us where work is disconnected today and what your team needs to improve."
-        button="Talk to Our Team"
-      />
-    </main>
-  );
+  return <AboutReferencePage />;
 }
 
 export function PortfolioPage() {
@@ -218,6 +89,14 @@ export function PortfolioPage() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <Stats />
+
+      <section className="section">
+        <div className="container">
+          <Testimonials />
         </div>
       </section>
 
@@ -311,21 +190,25 @@ export function ContactPage() {
             title="Three Offices. One Regional Team."
             description="Connect with ETripleSoft through Cairo, Riyadh or Dubai. Detailed office and phone information should be confirmed with our team before travel."
           />
-          <div className="card-grid cols-3">
-            {[
-              ["Cairo", "Egypt"],
-              ["Riyadh", "Saudi Arabia"],
-              ["Dubai", "United Arab Emirates"],
-            ].map(([city, country]) => (
-              <article className="service-card" key={city}>
-                <Icon name="pin" />
-                <h3>{city}</h3>
-                <p>{country}</p>
-              </article>
-            ))}
-          </div>
+          <Offices contact />
         </div>
       </section>
+
+      <section className="section tinted">
+        <div className="container">
+          <SectionHeading
+            title="You Have Questions. We Have Answers."
+            description="Find quick answers to common questions about our services, support and working with ETripleSoft."
+          />
+          <FAQ />
+        </div>
+      </section>
+
+      <CTA
+        title="Ready to Transform Your Business?"
+        description="Get in touch today and let's create a smarter, more efficient tomorrow — together."
+        button="Start a Conversation"
+      />
     </main>
   );
 }
@@ -367,6 +250,69 @@ export function SupportPage() {
           </div>
         </div>
       </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            title="Choose the Right Category"
+            description="Selecting a category in the portal helps our team route and resolve your ticket faster."
+          />
+          <div className="why-grid">
+            {[
+              [
+                "Technical Support",
+                "Software issues, bugs and error resolution.",
+                "settings",
+              ],
+              [
+                "Account & Billing",
+                "Account access, billing and subscription enquiries.",
+                "file",
+              ],
+              [
+                "Feature Request",
+                "Suggest new features or enhancements.",
+                "sparkles",
+              ],
+              [
+                "Consultation",
+                "Get expert advice and guidance.",
+                "message",
+              ],
+              [
+                "Partnership",
+                "Partnership opportunities and business enquiries.",
+                "handshake",
+              ],
+              ["Other", "General enquiries and other requests.", "headphones"],
+            ].map(([title, description, icon]) => (
+              <div key={title}>
+                <Icon name={icon} />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section tinted">
+        <div className="container">
+          <Process
+            title="How Our Support Works"
+            steps={[
+              "Submit Ticket",
+              "Ticket Acknowledged",
+              "We Investigate",
+              "Get Update",
+              "Resolution",
+            ]}
+          />
+        </div>
+      </section>
+
       <CTA
         title="Ready to Create a Ticket?"
         description="Open the support portal to submit and track your request."
@@ -393,7 +339,74 @@ export function CareersPage() {
         secondaryHref="mailto:info@etriplesoft.com?subject=Career%20enquiry"
         note={"Current roles.\nOne application portal."}
       />
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            title="Why Work With Us"
+            description="Be part of a purpose-driven team that values people, innovation and meaningful work."
+          />
+          <div className="why-grid">
+            {[
+              [
+                "Meaningful Impact",
+                "Work on real-world solutions that create value for our clients.",
+                "target",
+              ],
+              [
+                "Growth Mindset",
+                "Continuous learning, mentorship and clear career paths.",
+                "rocket",
+              ],
+              [
+                "Collaborative Teams",
+                "Work with talented people who support and inspire each other.",
+                "users",
+              ],
+              [
+                "A Culture of Trust",
+                "Open communication, flexibility and a people-first environment.",
+                "handshake",
+              ],
+            ].map(([title, description, icon]) => (
+              <div key={title}>
+                <Icon name={icon} />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section tinted">
+        <div className="container">
+          <SectionHeading
+            title="Employee Benefits"
+            description="We take care of our people so they can do their best work."
+          />
+          <div className="tag-grid">
+            {[
+              ["Competitive Compensation", "heart"],
+              ["Health & Wellness Coverage", "shield"],
+              ["Remote & Flexible Options", "monitor"],
+              ["Learning & Development", "graduation"],
+              ["Team Activities & Events", "users"],
+              ["Paid Time Off & Leave", "leaf"],
+              ["Supportive Work Environment", "check"],
+              ["Special Rewards & Recognition", "gift"],
+            ].map(([label, icon]) => (
+              <div key={label}>
+                <Icon name={icon} />
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container split">
           <SectionHeading
             title="Apply Through the Recruitment Portal"
@@ -414,6 +427,31 @@ export function CareersPage() {
           </div>
         </div>
       </section>
+
+      <section className="section tinted">
+        <div className="container">
+          <Process
+            title="Our Hiring Process"
+            steps={["Apply", "Screening", "Interview", "Offer"]}
+          />
+        </div>
+      </section>
+
+      <Stats
+        title="ETripleSoft in Numbers"
+        items={[
+          ["250+", "Team Members", "users", "A growing regional team."],
+          ["4", "Global Offices", "pin", "Egypt, Saudi Arabia and the UAE."],
+          [
+            "∞",
+            "Growth Opportunities",
+            "rocket",
+            "Room to learn and advance.",
+          ],
+          ["1", "Amazing Team", "handshake", "Working toward one goal."],
+        ]}
+      />
+
       <CTA
         title="Explore Current Opportunities"
         description="Vacancies are published and managed in the ETripleSoft recruitment portal."

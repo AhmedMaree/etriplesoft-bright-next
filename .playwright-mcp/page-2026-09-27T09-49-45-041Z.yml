@@ -1,0 +1,267 @@
+- generic [active] [ref=f15e1]:
+  - link "Skip to content" [ref=f15e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f15e3]:
+    - generic [ref=f15e4]:
+      - link "ETripleSoft home" [ref=f15e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f15e6]
+      - navigation "Main navigation" [ref=f15e7]:
+        - link "Home" [ref=f15e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f15e9]:
+          - generic "Odoo ERP" [ref=f15e10] [cursor=pointer]
+        - group [ref=f15e13]:
+          - generic "Services" [ref=f15e14] [cursor=pointer]
+        - group [ref=f15e17]:
+          - generic "Industries" [ref=f15e18] [cursor=pointer]
+        - group [ref=f15e21]:
+          - generic "Resources" [ref=f15e22] [cursor=pointer]
+        - group [ref=f15e25]:
+          - generic "Company" [ref=f15e26] [cursor=pointer]
+      - generic [ref=f15e29]:
+        - button "Search website" [ref=f15e30] [cursor=pointer]
+        - generic [ref=f15e34]: EN
+        - link "Book a Demo" [ref=f15e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f15e41]:
+    - generic [ref=f15e42]:
+      - img "Build a Secure, Resilient — ETripleSoft solutions" [ref=f15e44]
+      - generic [ref=f15e45]:
+        - generic [ref=f15e46]:
+          - generic [ref=f15e47]: CLOUD · SECURITY · MANAGED SUPPORT
+          - heading [level=1] [ref=f15e48]:
+            - text: Build a Secure, Resilient
+            - emphasis [ref=f15e49]: Cloud Foundation
+          - paragraph [ref=f15e50]: Modernize infrastructure, protect identities and endpoints, and keep critical data recoverable with a practical cloud and security roadmap.
+          - generic [ref=f15e51]:
+            - link "Request a Security Assessment" [ref=f15e52] [cursor=pointer]:
+              - /url: /contact?service=Build%20a%20Secure%2C%20Resilient
+            - link "Talk to Our Experts" [ref=f15e55] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f15e58]:
+            - generic [ref=f15e59]: MicrosoftPartner
+            - generic [ref=f15e61]:
+              - generic [ref=f15e62]: aws
+              - generic [ref=f15e63]: Partner Network
+            - generic [ref=f15e64]:
+              - generic [ref=f15e65]: vmware
+              - generic [ref=f15e66]: Partner
+        - generic [ref=f15e67]:
+          - heading [level=3] [ref=f15e68]
+          - generic [ref=f15e73]: Detect
+          - generic [ref=f15e77]: Prevent
+          - generic [ref=f15e81]: Protect
+          - generic [ref=f15e85]: Stay Compliant
+        - generic [ref=f15e89]: Secure systems. Clear ownership.
+    - generic [ref=f15e93]:
+      - generic [ref=f15e94]: Trusted by forward-thinking companies
+      - img "Orascom, Elsewedy Electric, CIB, Vodafone, Samsung and Etisalat" [ref=f15e95]
+    - generic [ref=f15e97]:
+      - generic [ref=f15e99]:
+        - heading "What We Deliver" [level=2] [ref=f15e100]
+        - paragraph [ref=f15e101]: A connected service covering infrastructure, collaboration, protection, recovery and day-to-day operations.
+      - generic [ref=f15e102]:
+        - article [ref=f15e103]:
+          - heading "Cloud Infrastructure" [level=3] [ref=f15e107]
+          - paragraph [ref=f15e108]: Plan, migrate and operate scalable cloud environments.
+          - link "Learn More" [ref=f15e109] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Cloud%20Infrastructure
+        - article [ref=f15e112]:
+          - heading "Cybersecurity Protection" [level=3] [ref=f15e117]
+          - paragraph [ref=f15e118]: Strengthen identity, devices, networks and access controls.
+          - link "Learn More" [ref=f15e119] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Cybersecurity%20Protection
+        - article [ref=f15e122]:
+          - heading "Microsoft 365 & Collaboration" [level=3] [ref=f15e129]
+          - paragraph [ref=f15e130]: Configure email, Teams, SharePoint and secure access.
+          - link "Learn More" [ref=f15e131] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Microsoft%20365%20%26%20Collaboration
+        - article [ref=f15e134]:
+          - heading "Backup & Recovery" [level=3] [ref=f15e140]
+          - paragraph [ref=f15e141]: Protect business data and prepare practical recovery procedures.
+          - link "Learn More" [ref=f15e142] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Backup%20%26%20Recovery
+        - article [ref=f15e145]:
+          - heading "Governance & Readiness" [level=3] [ref=f15e150]
+          - paragraph [ref=f15e151]: Organize policies, controls and evidence for your requirements.
+          - link "Learn More" [ref=f15e152] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Governance%20%26%20Readiness
+        - article [ref=f15e155]:
+          - heading "Managed IT Support" [level=3] [ref=f15e159]
+          - paragraph [ref=f15e160]: Monitor systems, resolve issues and maintain a clear support path.
+          - link "Learn More" [ref=f15e161] [cursor=pointer]:
+            - /url: /contact?solution=cloud&service=Managed%20IT%20Support
+    - generic [ref=f15e166]:
+      - generic [ref=f15e168]:
+        - heading "Security works best when ownership and recovery are clear." [level=2] [ref=f15e169]
+        - paragraph [ref=f15e170]: We connect infrastructure, identity, devices, backup and support into an operating model your team can understand and maintain.
+      - generic [ref=f15e171]:
+        - generic [ref=f15e177]:
+          - heading "Know the environment" [level=3] [ref=f15e178]
+          - paragraph [ref=f15e179]: Assess systems, access, dependencies and operational risks.
+        - generic [ref=f15e185]:
+          - heading "Prioritize controls" [level=3] [ref=f15e186]
+          - paragraph [ref=f15e187]: Apply the protections that matter most to the way your business works.
+        - generic [ref=f15e194]:
+          - heading "Plan recovery" [level=3] [ref=f15e195]
+          - paragraph [ref=f15e196]: Document practical backup, recovery and support responsibilities.
+    - generic [ref=f15e199]:
+      - generic [ref=f15e201]:
+        - generic [ref=f15e202]: Our Process
+        - heading "A Clear Path to Safer Operations" [level=2] [ref=f15e203]
+        - paragraph [ref=f15e204]: We follow a proven approach to deliver real results.
+      - generic [ref=f15e205]:
+        - generic [ref=f15e206]:
+          - generic [ref=f15e207]: "01"
+          - heading "Assessment" [level=3] [ref=f15e208]
+          - paragraph [ref=f15e209]: Understand your current environment and risks.
+        - generic [ref=f15e210]:
+          - generic [ref=f15e211]: "02"
+          - heading "Planning" [level=3] [ref=f15e212]
+          - paragraph [ref=f15e213]: Define the right solution and implementation roadmap.
+        - generic [ref=f15e214]:
+          - generic [ref=f15e215]: "03"
+          - heading "Implementation" [level=3] [ref=f15e216]
+          - paragraph [ref=f15e217]: Configure, develop and migrate data.
+        - generic [ref=f15e218]:
+          - generic [ref=f15e219]: "04"
+          - heading "Support" [level=3] [ref=f15e220]
+          - paragraph [ref=f15e221]: Train, optimize and grow together.
+    - generic [ref=f15e223]:
+      - generic [ref=f15e225]:
+        - heading "Your Trusted Cloud Security Partner" [level=2] [ref=f15e226]
+        - paragraph [ref=f15e227]: Certified professionals and a business-focused approach to keeping your environment secure.
+      - generic [ref=f15e228]:
+        - generic [ref=f15e234]:
+          - heading "Proven Expertise" [level=3] [ref=f15e235]
+          - paragraph [ref=f15e236]: Years of experience across cloud and security engagements.
+        - generic [ref=f15e242]:
+          - heading "Certified Professionals" [level=3] [ref=f15e243]
+          - paragraph [ref=f15e244]: Microsoft, AWS and VMware certified team members.
+        - generic [ref=f15e249]:
+          - heading "Round-the-Clock Support" [level=3] [ref=f15e250]
+          - paragraph [ref=f15e251]: Monitoring and expert assistance when you need it.
+        - generic [ref=f15e257]:
+          - heading "Regional Presence" [level=3] [ref=f15e258]
+          - paragraph [ref=f15e259]: In-depth understanding of the markets we serve.
+        - generic [ref=f15e264]:
+          - heading "Business-Focused" [level=3] [ref=f15e265]
+          - paragraph [ref=f15e266]: Security decisions that support growth, not just compliance.
+    - generic [ref=f15e268]:
+      - generic [ref=f15e269]: Our Impact
+      - heading "Numbers That Tell Our Story" [level=2] [ref=f15e273]
+      - generic [ref=f15e274]:
+        - generic [ref=f15e275]:
+          - strong [ref=f15e280]: 250+
+          - generic [ref=f15e281]: Projects Delivered
+          - paragraph [ref=f15e282]: Real work, real outcomes.
+        - generic [ref=f15e283]:
+          - strong [ref=f15e288]: "3"
+          - generic [ref=f15e289]: Countries
+          - paragraph [ref=f15e290]: Egypt, UAE & Saudi Arabia.
+        - generic [ref=f15e291]:
+          - strong [ref=f15e296]: 10+
+          - generic [ref=f15e297]: Years of Experience
+          - paragraph [ref=f15e298]: Regional technology experience.
+      - generic [ref=f15e299]:
+        - generic [ref=f15e300]: Cairo, Egypt
+        - generic [ref=f15e305]: Riyadh, Saudi Arabia
+        - generic [ref=f15e310]: Dubai, UAE
+    - generic [ref=f15e316]:
+      - generic [ref=f15e318]:
+        - heading "Questions to Resolve Before You Start" [level=2] [ref=f15e319]
+        - paragraph [ref=f15e320]: A useful first conversation should clarify scope, ownership, integrations and the path after launch.
+      - generic [ref=f15e321]:
+        - group [ref=f15e322]:
+          - generic "Can you assess our current cloud and security setup?" [ref=f15e323] [cursor=pointer]
+        - group [ref=f15e326]:
+          - generic "Do you support Microsoft 365 and hybrid environments?" [ref=f15e327] [cursor=pointer]
+        - group [ref=f15e330]:
+          - generic "How do backup and recovery planning work?" [ref=f15e331] [cursor=pointer]
+        - group [ref=f15e334]:
+          - generic "Can cloud services integrate with our ERP environment?" [ref=f15e335] [cursor=pointer]
+    - generic [ref=f15e339]:
+      - generic [ref=f15e340]:
+        - heading "Plan Your Cloud and Security Next Step" [level=2] [ref=f15e341]
+        - paragraph [ref=f15e342]: Tell us about the current workflow, the systems involved and the outcome your team needs.
+      - link "Request a Security Assessment" [ref=f15e343] [cursor=pointer]:
+        - /url: /contact?service=Build%20a%20Secure%2C%20Resilient
+  - contentinfo [ref=f15e346]:
+    - generic [ref=f15e347]:
+      - generic [ref=f15e348]:
+        - link [ref=f15e349] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f15e350]
+        - paragraph [ref=f15e351]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f15e352]:
+          - link "Email ETripleSoft" [ref=f15e353] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f15e357] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f15e361] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f15e364]:
+        - heading "Solutions" [level=4] [ref=f15e365]
+        - link "Odoo ERP" [ref=f15e366] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f15e367] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f15e368] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f15e369] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f15e370] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f15e371] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f15e372]:
+        - heading "Industries" [level=4] [ref=f15e373]
+        - link "Construction" [ref=f15e374] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f15e375] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f15e376] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f15e377] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f15e378] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f15e379] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f15e380]:
+        - heading "Company" [level=4] [ref=f15e381]
+        - link "About Us" [ref=f15e382] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f15e383] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f15e384] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f15e385] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f15e386] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f15e387]:
+        - heading "Resources" [level=4] [ref=f15e388]
+        - link "Blog" [ref=f15e389] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f15e390] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f15e391] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f15e392] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f15e393] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f15e394]:
+        - heading "Our Offices" [level=4] [ref=f15e395]
+        - link "🇪🇬 Cairo, Egypt" [ref=f15e396] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f15e397] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f15e398] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f15e399]:
+      - generic [ref=f15e400]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f15e401]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f15e402] [cursor=pointer]

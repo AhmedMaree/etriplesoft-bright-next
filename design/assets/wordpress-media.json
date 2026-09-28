@@ -1,0 +1,142 @@
+{
+    "about/brand-orbit": {
+        "id": 1597,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-about-brand-orbit.webp",
+        "alt": "Illustrative about brand orbit; any dashboard values are examples."
+    },
+    "about/mena-earth": {
+        "id": 1598,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-about-mena-earth.webp",
+        "alt": "Illustrative about mena earth; any dashboard values are examples."
+    },
+    "ai/automation-network": {
+        "id": 1599,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-ai-automation-network.webp",
+        "alt": "Illustrative ai automation network; any dashboard values are examples."
+    },
+    "cloud/cloud-architecture": {
+        "id": 1600,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-cloud-cloud-architecture.webp",
+        "alt": "Illustrative cloud cloud architecture; any dashboard values are examples."
+    },
+    "cloud/security-dashboard": {
+        "id": 1601,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-cloud-security-dashboard.webp",
+        "alt": "Illustrative cloud security dashboard; any dashboard values are examples."
+    },
+    "insights/ai-intelligence": {
+        "id": 1602,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-ai-intelligence.webp",
+        "alt": "Illustrative insights ai intelligence; any dashboard values are examples."
+    },
+    "insights/business-workspace": {
+        "id": 1603,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-business-workspace.webp",
+        "alt": "Illustrative insights business workspace; any dashboard values are examples."
+    },
+    "insights/digital-marketing": {
+        "id": 1604,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-digital-marketing.webp",
+        "alt": "Illustrative insights digital marketing; any dashboard values are examples."
+    },
+    "insights/erp-strategy": {
+        "id": 1605,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-erp-strategy.webp",
+        "alt": "Illustrative insights erp strategy; any dashboard values are examples."
+    },
+    "insights/growth-chart": {
+        "id": 1606,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-growth-chart.webp",
+        "alt": "Illustrative insights growth chart; any dashboard values are examples."
+    },
+    "insights/implementation-roadmap": {
+        "id": 1607,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-implementation-roadmap.webp",
+        "alt": "Illustrative insights implementation roadmap; any dashboard values are examples."
+    },
+    "insights/kpi-laptop": {
+        "id": 1608,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-kpi-laptop.webp",
+        "alt": "Illustrative insights kpi laptop; any dashboard values are examples."
+    },
+    "insights/odoo-17": {
+        "id": 1609,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-odoo-17.webp",
+        "alt": "Illustrative insights odoo 17; any dashboard values are examples."
+    },
+    "insights/odoo-devices": {
+        "id": 1610,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-insights-odoo-devices.webp",
+        "alt": "Illustrative insights odoo devices; any dashboard values are examples."
+    },
+    "marketing/analytics-tablet": {
+        "id": 1611,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-marketing-analytics-tablet.webp",
+        "alt": "Illustrative marketing analytics tablet; any dashboard values are examples."
+    },
+    "marketing/marketing-dashboard": {
+        "id": 1612,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-marketing-marketing-dashboard.webp",
+        "alt": "Illustrative marketing marketing dashboard; any dashboard values are examples."
+    },
+    "marketing/social-media": {
+        "id": 1613,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-marketing-social-media.webp",
+        "alt": "Illustrative marketing social media; any dashboard values are examples."
+    },
+    "mobile/business-apps": {
+        "id": 1614,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-mobile-business-apps.webp",
+        "alt": "Illustrative mobile business apps; any dashboard values are examples."
+    },
+    "odoo/erp-dashboard": {
+        "id": 1615,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-odoo-erp-dashboard.webp",
+        "alt": "Illustrative odoo erp dashboard; any dashboard values are examples."
+    },
+    "regional/egypt-landmark": {
+        "id": 1616,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-regional-egypt-landmark.webp",
+        "alt": "Illustrative regional egypt landmark; any dashboard values are examples."
+    },
+    "regional/saudi-landmark": {
+        "id": 1617,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-regional-saudi-landmark.webp",
+        "alt": "Illustrative regional saudi landmark; any dashboard values are examples."
+    },
+    "regional/uae-landmark": {
+        "id": 1690,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-regional-uae-landmark-1.webp",
+        "alt": "Illustrative regional uae landmark; any dashboard values are examples."
+    },
+    "shared/earth-horizon": {
+        "id": 1619,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-shared-earth-horizon.webp",
+        "alt": "Illustrative shared earth horizon; any dashboard values are examples."
+    },
+    "shared/flow-background": {
+        "id": 1620,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-shared-flow-background.webp",
+        "alt": "Illustrative shared flow background; any dashboard values are examples."
+    },
+    "web/corporate-concept": {
+        "id": 1621,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-web-corporate-concept.webp",
+        "alt": "Illustrative web corporate concept; any dashboard values are examples."
+    },
+    "web/ecommerce-concept": {
+        "id": 1622,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-web-ecommerce-concept.webp",
+        "alt": "Illustrative web ecommerce concept; any dashboard values are examples."
+    },
+    "web/landing-concept": {
+        "id": 1623,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-web-landing-concept.webp",
+        "alt": "Illustrative web landing concept; any dashboard values are examples."
+    },
+    "web/responsive-devices": {
+        "id": 1624,
+        "url": "http://etriplesoft.local/wp-content/uploads/2025/09/ets-hq-web-responsive-devices.webp",
+        "alt": "Illustrative web responsive devices; any dashboard values are examples."
+    }
+}

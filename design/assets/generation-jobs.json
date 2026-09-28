@@ -1,0 +1,122 @@
+[
+  [
+    "marketing/marketing-dashboard",
+    "marketing/digital-marketing.png",
+    "A complete dark marketing analytics dashboard with sidebar, campaign metric cards, dual line graph and channel donut. Minimal legible labels."
+  ],
+  [
+    "web/responsive-devices",
+    "web/web-platforms.png",
+    "Complete desktop monitor behind tablet at left and smartphone at right. All screens show a matching modern dark blue company website with abstract folded mountain."
+  ],
+  [
+    "mobile/business-apps",
+    "mobile/mobile.png",
+    "Two complete premium smartphones, one dark blue business dashboard with charts, one white shopping app featuring headphones and watches with restrained violet product accents."
+  ],
+  [
+    "about/mena-earth",
+    "about/about-us.png",
+    "Earth viewed from orbit at night accurately centered on Egypt, Red Sea and Arabian peninsula. Golden urban lights, thin cyan connections linking Cairo Riyadh Dubai. No text."
+  ],
+  [
+    "shared/earth-horizon",
+    "about/about-us.png",
+    "Wide Earth horizon occupying right half, Africa and Arabia night lights, cyan atmospheric rim, very faint teal aurora. Left half quiet dark navy. No text."
+  ],
+  [
+    "shared/flow-background",
+    "homepage/home1.png",
+    "Wide flowing satin ribbons of blue and teal light confined to left and right edges. Quiet almost black navy center, all outer edges fade seamlessly to #020D18. No objects or text."
+  ],
+  [
+    "insights/odoo-17",
+    "insights/insights.png",
+    "Upright luminous glass panel with small odoo lettering, large cyan 17, four floating app tiles for analytics people settings cube."
+  ],
+  [
+    "cloud/cloud-architecture",
+    "cloud/cloud-security.png",
+    "Central blue cloud Microsoft 365 and Azure connected by thin dotted lines to six glass panels: Users, Endpoints, Applications, Data, Threat Protection, Compliance."
+  ],
+  [
+    "insights/implementation-roadmap",
+    "insights/insights.png",
+    "A cyan luminous path across a subtle dark city, four milestone pins labeled Plan, Implement, Optimize, Grow."
+  ],
+  [
+    "insights/odoo-devices",
+    "insights/insights.png",
+    "Complete laptop tablet and phone on dark desk displaying colorful Odoo app tiles, cinematic blue rim light."
+  ],
+  [
+    "insights/growth-chart",
+    "insights/insights.png",
+    "Cyan glass 3D bars with ascending arrow on dark reflective plane, distant city skyline. No text."
+  ],
+  [
+    "insights/ai-intelligence",
+    "insights/insights.png",
+    "Dark metallic blue robotic head in profile on left with intricate circuit detail, neural network nodes on right. No text."
+  ],
+  [
+    "insights/digital-marketing",
+    "insights/insights.png",
+    "Blue megaphone surrounded by email and social media icon tiles and ascending analytics bars. No text."
+  ],
+  [
+    "insights/business-workspace",
+    "insights/insights.png",
+    "Photoreal anonymous Middle Eastern professional in pale blue shirt using a laptop in elegant naturally lit office. Editorial stock illustration, no real customer identity. No text."
+  ],
+  [
+    "insights/erp-strategy",
+    "homepage/home8.png",
+    "Photoreal dark glass chess king with precise cyan rim on reflective chessboard, defocused pieces behind. No text."
+  ],
+  [
+    "insights/kpi-laptop",
+    "homepage/home8.png",
+    "Photoreal complete laptop showing dark KPI dashboard with cyan charts on elegant desk, soft plant and office window bokeh."
+  ],
+  [
+    "marketing/social-media",
+    "marketing/digital-marketing.png",
+    "Premium 3D Instagram and LinkedIn tiles floating just above navy reflective surface, cyan and blue lighting, full objects inside frame."
+  ],
+  [
+    "marketing/analytics-tablet",
+    "marketing/digital-marketing.png",
+    "Photoreal hand holding a complete tablet showing white analytics dashboard and blue bar charts at an elegant office desk."
+  ],
+  [
+    "web/corporate-concept",
+    "web/web-platforms.png",
+    "Complete straight-on browser mockup, ivory corporate website with Dubai skyline and small headline Building a Brighter Tomorrow. Fictional design example."
+  ],
+  [
+    "web/ecommerce-concept",
+    "web/web-platforms.png",
+    "Complete straight-on browser mockup of ivory furniture shop, elegant chair photograph, small headline Style Lives Here. Fictional design example."
+  ],
+  [
+    "web/landing-concept",
+    "web/web-platforms.png",
+    "Complete straight-on browser mockup with dark rocket launch illustration and small headline Ideas Into Reality and cyan button. Fictional design example."
+  ],
+  [
+    "regional/egypt-landmark",
+    "homepage/home3.png",
+    "Refined luminous blue cyan glass-wireframe Egyptian pyramids miniature, no card border, no text."
+  ],
+  [
+    "regional/uae-landmark",
+    "homepage/home3.png",
+    "Refined luminous blue cyan Dubai skyline miniature with recognizable Burj Khalifa, no card border, no text."
+  ],
+  [
+    "regional/saudi-landmark",
+    "homepage/home3.png",
+    "Refined luminous cyan teal Riyadh skyline miniature with Kingdom Centre and palms, no card border, no text."
+  ]
+]

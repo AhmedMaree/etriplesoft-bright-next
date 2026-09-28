@@ -1,0 +1,290 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "ETripleSoft home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=e6]
+      - generic [ref=e7]:
+        - button "Search website" [ref=e8] [cursor=pointer]
+        - button "Open navigation" [ref=e12] [cursor=pointer]
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Odoo ERP Solution
+        - heading [level=1] [ref=e19]:
+          - text: Run Your Entire Businesson
+          - emphasis [ref=e20]: One Platform.
+        - paragraph [ref=e21]: Streamline your operations, increase productivity, and get complete visibility with Odoo — fully customized for your business needs.
+        - generic [ref=e22]:
+          - link "Explore Odoo ERP" [ref=e23] [cursor=pointer]:
+            - /url: /contact?service=Connect%20Every%20Part%20of%20Your%20Business
+          - link "Request a Demo" [ref=e26] [cursor=pointer]:
+            - /url: /contact?service=Odoo%20ERP%20Demo
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - img "Odoo" [ref=e31]
+            - generic [ref=e32]: Gold Partner
+          - generic [ref=e33]: MicrosoftPartner
+      - generic [ref=e35]:
+        - img "Odoo dashboard showing connected business operations" [ref=e36]
+        - strong [ref=e41]: All your business needsin one system.
+    - generic [ref=e43]:
+      - generic [ref=e44]: Trusted by forward-thinking companies
+      - img "Orascom, Elsewedy Electric, CIB, Vodafone, Samsung and Etisalat" [ref=e45]
+    - generic [ref=e47]:
+      - generic [ref=e49]:
+        - heading "One Platform. Every Business Function." [level=2] [ref=e50]
+        - paragraph [ref=e51]: Start with the applications you need today, then extend the platform as your teams and processes evolve.
+      - generic [ref=e52]:
+        - article [ref=e53]:
+          - heading "Accounting & Finance" [level=3] [ref=e60]
+          - paragraph [ref=e61]: Financial operations, reporting and controls in one place.
+          - link "Learn More" [ref=e62] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Accounting%20%26%20Finance
+        - article [ref=e65]:
+          - heading "Sales & CRM" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Move from lead management to quotation, sale and follow-up.
+          - link "Learn More" [ref=e74] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Sales%20%26%20CRM
+        - article [ref=e77]:
+          - heading "Inventory & Purchasing" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Coordinate stock, suppliers, warehouses and replenishment.
+          - link "Learn More" [ref=e84] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Inventory%20%26%20Purchasing
+        - article [ref=e87]:
+          - heading "Projects & Services" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Plan work, track delivery and connect time with costs.
+          - link "Learn More" [ref=e94] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Projects%20%26%20Services
+        - article [ref=e97]:
+          - heading "Manufacturing" [level=3] [ref=e101]
+          - paragraph [ref=e102]: Coordinate production, materials, quality and maintenance.
+          - link "Learn More" [ref=e103] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Manufacturing
+        - article [ref=e106]:
+          - heading "HR & Payroll" [level=3] [ref=e111]
+          - paragraph [ref=e112]: Support employee records, attendance, leave and payroll workflows.
+          - link "Learn More" [ref=e113] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=HR%20%26%20Payroll
+        - article [ref=e116]:
+          - heading "E-commerce" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Connect online orders with inventory, customers and accounting.
+          - link "Learn More" [ref=e124] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=E-commerce
+        - article [ref=e127]:
+          - heading "Integrations" [level=3] [ref=e131]
+          - paragraph [ref=e132]: Link Odoo with the tools and data your teams already use.
+          - link "Learn More" [ref=e133] [cursor=pointer]:
+            - /url: /contact?solution=odoo&service=Integrations
+    - generic [ref=e138]:
+      - generic [ref=e140]:
+        - heading "An ERP implementation should connect work, not copy old silos." [level=2] [ref=e141]
+        - paragraph [ref=e142]: We map the flow between teams before configuration begins, then shape Odoo around the information, approvals and responsibilities that keep the business moving.
+      - generic [ref=e143]:
+        - generic [ref=e150]:
+          - heading "Process first" [level=3] [ref=e151]
+          - paragraph [ref=e152]: Define the workflow, owners and decisions before configuring modules.
+        - generic [ref=e157]:
+          - heading "Connected delivery" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Coordinate configuration, migration, integrations and testing as one program.
+        - generic [ref=e167]:
+          - heading "Adoption built in" [level=3] [ref=e168]
+          - paragraph [ref=e169]: Prepare users with practical testing, training and post-launch support.
+    - generic [ref=e172]:
+      - generic [ref=e174]:
+        - generic [ref=e175]: Our Process
+        - heading "From Discovery to Ongoing Support" [level=2] [ref=e176]
+        - paragraph [ref=e177]: We follow a proven approach to deliver real results.
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - generic [ref=e180]: "01"
+          - heading "Discovery & Analysis" [level=3] [ref=e181]
+          - paragraph [ref=e182]: Understand your business goals, processes and requirements.
+        - generic [ref=e183]:
+          - generic [ref=e184]: "02"
+          - heading "Planning & Design" [level=3] [ref=e185]
+          - paragraph [ref=e186]: Define the solution architecture and implementation roadmap.
+        - generic [ref=e187]:
+          - generic [ref=e188]: "03"
+          - heading "Implementation" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Configure, develop and migrate data.
+        - generic [ref=e191]:
+          - generic [ref=e192]: "04"
+          - heading "Training & Testing" [level=3] [ref=e193]
+          - paragraph [ref=e194]: Validate configuration and prepare your team to use it confidently.
+        - generic [ref=e195]:
+          - generic [ref=e196]: "05"
+          - heading "Go Live & Support" [level=3] [ref=e197]
+          - paragraph [ref=e198]: Launch with confidence and continue with ongoing support.
+    - generic [ref=e200]:
+      - generic [ref=e202]:
+        - heading "Your Trusted Odoo Implementation Partner" [level=2] [ref=e203]
+        - paragraph [ref=e204]: Certified expertise and regional experience, focused on outcomes your team can rely on.
+      - generic [ref=e205]:
+        - generic [ref=e211]:
+          - heading "Certified Expertise" [level=3] [ref=e212]
+          - paragraph [ref=e213]: Odoo Gold Partner with hands-on implementation experience.
+        - generic [ref=e219]:
+          - heading "Regional Presence" [level=3] [ref=e220]
+          - paragraph [ref=e221]: Local teams supporting clients across Egypt, Saudi Arabia and the UAE.
+        - generic [ref=e229]:
+          - heading "Full Lifecycle Support" [level=3] [ref=e230]
+          - paragraph [ref=e231]: From discovery and configuration to training and ongoing support.
+        - generic [ref=e238]:
+          - heading "Practical Configuration" [level=3] [ref=e239]
+          - paragraph [ref=e240]: Solutions built around how your business already works.
+        - generic [ref=e248]:
+          - heading "Scalable Platform" [level=3] [ref=e249]
+          - paragraph [ref=e250]: Add modules and users as your operations grow.
+    - generic [ref=e252]:
+      - generic [ref=e253]: Our Impact
+      - heading "Numbers That Tell Our Story" [level=2] [ref=e257]
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - strong [ref=e264]: 250+
+          - generic [ref=e265]: Projects Delivered
+          - paragraph [ref=e266]: Real work, real outcomes.
+        - generic [ref=e267]:
+          - strong [ref=e272]: "3"
+          - generic [ref=e273]: Countries
+          - paragraph [ref=e274]: Egypt, UAE & Saudi Arabia.
+        - generic [ref=e275]:
+          - strong [ref=e280]: 10+
+          - generic [ref=e281]: Years of Experience
+          - paragraph [ref=e282]: Regional technology experience.
+      - generic [ref=e283]:
+        - generic [ref=e284]: Cairo, Egypt
+        - generic [ref=e289]: Riyadh, Saudi Arabia
+        - generic [ref=e294]: Dubai, UAE
+    - generic [ref=e300]:
+      - generic [ref=e301]:
+        - generic [ref=e302]:
+          - heading "Business Solutions by Industry" [level=2] [ref=e303]
+          - paragraph [ref=e304]: Apply the same connected platform to the workflows that make each sector different.
+        - link "Explore All Industries" [ref=e305] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=e308]:
+        - link [ref=e309] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Construction" [ref=e310]
+          - strong [ref=e312]: Construction
+        - link [ref=e313] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Retail" [ref=e314]
+          - strong [ref=e316]: Retail
+        - link [ref=e317] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Education" [ref=e318]
+          - strong [ref=e320]: Education
+        - link [ref=e321] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Real Estate" [ref=e322]
+          - strong [ref=e324]: Real Estate
+        - link [ref=e325] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Healthcare" [ref=e326]
+          - strong [ref=e328]: Healthcare
+        - link [ref=e329] [cursor=pointer]:
+          - /url: /industries#expertise
+          - img "Logistics" [ref=e330]
+          - strong [ref=e332]: Logistics
+    - generic [ref=e334]:
+      - generic [ref=e336]:
+        - heading "Questions to Resolve Before You Start" [level=2] [ref=e337]
+        - paragraph [ref=e338]: A useful first conversation should clarify scope, ownership, integrations and the path after launch.
+      - generic [ref=e339]:
+        - group [ref=e340]:
+          - generic "What business functions can Odoo manage?" [ref=e341] [cursor=pointer]
+        - group [ref=e344]:
+          - generic "Can Odoo connect with our existing systems?" [ref=e345] [cursor=pointer]
+        - group [ref=e348]:
+          - generic "How do you approach data migration and configuration?" [ref=e349] [cursor=pointer]
+        - group [ref=e352]:
+          - generic "Do you train our team before go-live?" [ref=e353] [cursor=pointer]
+        - group [ref=e356]:
+          - generic "What support is available after implementation?" [ref=e357] [cursor=pointer]
+    - generic [ref=e361]:
+      - generic [ref=e362]:
+        - heading "See How Odoo Can Fit Your Business" [level=2] [ref=e363]
+        - paragraph [ref=e364]: Tell us about the current workflow, the systems involved and the outcome your team needs.
+      - link "Book an Odoo Demo" [ref=e365] [cursor=pointer]:
+        - /url: /contact?service=Connect%20Every%20Part%20of%20Your%20Business
+  - contentinfo [ref=e368]:
+    - generic [ref=e369]:
+      - generic [ref=e370]:
+        - link [ref=e371] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=e372]
+        - paragraph [ref=e373]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=e374]:
+          - link "Email ETripleSoft" [ref=e375] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=e379] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=e383] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=e386]:
+        - heading "Solutions" [level=4] [ref=e387]
+        - link "Odoo ERP" [ref=e388] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=e389] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=e390] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=e391] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=e392] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=e393] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=e394]:
+        - heading "Industries" [level=4] [ref=e395]
+        - link "Construction" [ref=e396] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=e397] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=e398] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=e399] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=e400] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=e401] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=e402]:
+        - heading "Company" [level=4] [ref=e403]
+        - link "About Us" [ref=e404] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=e405] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=e406] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=e407] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=e408] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=e409]:
+        - heading "Resources" [level=4] [ref=e410]
+        - link "Blog" [ref=e411] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=e412] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=e413] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=e414] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=e415] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=e416]:
+        - heading "Our Offices" [level=4] [ref=e417]
+        - link "🇪🇬 Cairo, Egypt" [ref=e418] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=e419] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=e420] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=e421]:
+      - generic [ref=e422]: © 2026 ETripleSoft. All rights reserved.
+      - button "Back to top" [ref=e423] [cursor=pointer]

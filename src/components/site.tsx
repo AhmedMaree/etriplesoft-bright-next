@@ -54,8 +54,11 @@ import {
   CheckCircle,
   ArrowUpRight,
   Zap,
+  Bell,
+  LayoutGrid,
 } from "lucide-react";
 import { services } from "@/lib/data";
+import OdooReferenceFooter from "./odoo/OdooReferenceFooter";
 const icons: Record<string, typeof Settings> = {
   globe: Globe,
   settings: Settings,
@@ -86,6 +89,8 @@ const icons: Record<string, typeof Settings> = {
   plug: Plug,
   sparkles: Sparkles,
   zap: Zap,
+  bell: Bell,
+  grid: LayoutGrid,
   pen: PenTool,
   cart: ShoppingCart,
   bag: ShoppingBag,
@@ -262,7 +267,9 @@ export function Header() {
           <span className="language">
             <Globe size={16} /> EN
           </span>
-          <Button gradient href="/contact">Book a Demo</Button>
+          <Button gradient={!["/about", "/about-us"].includes(path)} href="/contact">
+            {["/about", "/about-us"].includes(path) ? "Talk To Our Experts" : "Book a Free Demo"}
+          </Button>
           <button
             className="icon-button mobile-toggle"
             aria-label={open ? "Close navigation" : "Open navigation"}
@@ -311,6 +318,8 @@ export function Header() {
   );
 }
 export function Footer() {
+  const path = usePathname();
+  if (path === "/odoo" || path === "/odoo-erp-egypt") return <OdooReferenceFooter />;
   return (
     <footer>
       <div className="container footer-grid">
@@ -919,6 +928,23 @@ export function Process({
     "Ongoing Support": "Continuous improvement.",
     "Solution Design": "Plan and customize your Odoo solution.",
     Implementation: "Configure, develop and migrate data.",
+    "Discovery & Analysis":
+      "Understand your business goals, processes and requirements.",
+    "Planning & Design":
+      "Define the solution architecture and implementation roadmap.",
+    "Training & Testing":
+      "Validate configuration and prepare your team to use it confidently.",
+    "Go Live & Support":
+      "Launch with confidence and continue with ongoing support.",
+    Assessment: "Understand your current environment and risks.",
+    Planning: "Define the right solution and implementation roadmap.",
+    Prototype: "Build and validate a working proof of concept.",
+    Integrate: "Connect the automation with your existing systems and data.",
+    Review: "Test outcomes with your team and refine before rollout.",
+    Improve: "Track results and scale what works for long-term impact.",
+    "Launch & Support": "Go live with training and continued support.",
+    "Release & Support":
+      "Publish to the app stores and support ongoing improvement.",
   };
   return (
     <div className={`process ${inline ? "inline" : ""}`}>

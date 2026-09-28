@@ -1,0 +1,228 @@
+- generic [active] [ref=f12e1]:
+  - link "Skip to content" [ref=f12e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f12e3]:
+    - generic [ref=f12e4]:
+      - link "ETripleSoft home" [ref=f12e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f12e6]
+      - navigation "Main navigation" [ref=f12e7]:
+        - link "Home" [ref=f12e8] [cursor=pointer]:
+          - /url: /
+        - group [ref=f12e9]:
+          - generic "Odoo ERP" [ref=f12e10] [cursor=pointer]
+        - group [ref=f12e13]:
+          - generic "Services" [ref=f12e14] [cursor=pointer]
+        - group [ref=f12e17]:
+          - generic "Industries" [ref=f12e18] [cursor=pointer]
+        - group [ref=f12e21]:
+          - generic "Resources" [ref=f12e22] [cursor=pointer]
+        - group [ref=f12e25]:
+          - generic "Company" [ref=f12e26] [cursor=pointer]
+      - generic [ref=f12e29]:
+        - button "Search website" [ref=f12e30] [cursor=pointer]
+        - generic [ref=f12e34]: EN
+        - link "Book a Demo" [ref=f12e38] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f12e41]:
+    - generic [ref=f12e42]:
+      - img "Digital Experiences That Connect — ETripleSoft solutions" [ref=f12e44]
+      - generic [ref=f12e45]:
+        - generic [ref=f12e46]:
+          - generic [ref=f12e47]: WEB DESIGN · COMMERCE · PORTALS
+          - heading [level=1] [ref=f12e48]:
+            - text: Digital Experiences That Connect
+            - emphasis [ref=f12e49]: with Your Business
+          - paragraph [ref=f12e50]: Create a clear, responsive website, online store or service portal that is easy to manage and ready to connect with your CRM, ERP and marketing workflows.
+          - generic [ref=f12e51]:
+            - generic [ref=f12e52]: Arabic & English
+            - generic [ref=f12e56]: Accessible layouts
+            - generic [ref=f12e60]: Business integrations
+          - generic [ref=f12e64]:
+            - link "Discuss Your Website" [ref=f12e65] [cursor=pointer]:
+              - /url: /contact?service=Digital%20Experiences%20That%20Connect
+            - link "Explore Capabilities" [ref=f12e68] [cursor=pointer]:
+              - /url: "#solutions"
+        - generic [ref=f12e71]: Clear content. Useful experiences.
+    - generic [ref=f12e75]:
+      - generic [ref=f12e76]: Trusted by growing businesses
+      - img "Odoo, Microsoft, Shopify, WordPress and Egypt" [ref=f12e77]
+    - generic [ref=f12e79]:
+      - generic [ref=f12e81]:
+        - heading "What We Build" [level=2] [ref=f12e82]
+        - paragraph [ref=f12e83]: Choose the platform and delivery approach around your content, commerce, integration and editing needs.
+      - generic [ref=f12e84]:
+        - article [ref=f12e85]:
+          - heading "Business Websites" [level=3] [ref=f12e89]
+          - paragraph [ref=f12e90]: Credible, editable websites structured around customer decisions.
+          - link "Learn More" [ref=f12e91] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Business%20Websites
+        - article [ref=f12e94]:
+          - heading "E-commerce Stores" [level=3] [ref=f12e100]
+          - paragraph [ref=f12e101]: Connected catalog, ordering and customer experiences.
+          - link "Learn More" [ref=f12e102] [cursor=pointer]:
+            - /url: /contact?solution=web&service=E-commerce%20Stores
+        - article [ref=f12e105]:
+          - heading "Service Portals" [level=3] [ref=f12e110]
+          - paragraph [ref=f12e111]: Secure customer and partner journeys connected to business systems.
+          - link "Learn More" [ref=f12e112] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Service%20Portals
+        - article [ref=f12e115]:
+          - heading "WordPress" [level=3] [ref=f12e120]
+          - paragraph [ref=f12e121]: Flexible publishing and content operations for marketing teams.
+          - link "Learn More" [ref=f12e122] [cursor=pointer]:
+            - /url: /contact?solution=web&service=WordPress
+        - article [ref=f12e125]:
+          - heading "Shopify & WooCommerce" [level=3] [ref=f12e130]
+          - paragraph [ref=f12e131]: Commerce platforms configured around products and operations.
+          - link "Learn More" [ref=f12e132] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Shopify%20%26%20WooCommerce
+        - article [ref=f12e135]:
+          - heading "Arabic & English" [level=3] [ref=f12e140]
+          - paragraph [ref=f12e141]: Responsive bilingual experiences prepared for RTL content.
+          - link "Learn More" [ref=f12e142] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Arabic%20%26%20English
+        - article [ref=f12e145]:
+          - heading "Odoo & API Integration" [level=3] [ref=f12e149]
+          - paragraph [ref=f12e150]: Connect enquiries, orders, inventory and customer records.
+          - link "Learn More" [ref=f12e151] [cursor=pointer]:
+            - /url: /contact?solution=web&service=Odoo%20%26%20API%20Integration
+    - generic [ref=f12e156]:
+      - generic [ref=f12e158]:
+        - heading "The website should support the operation behind the screen." [level=2] [ref=f12e159]
+        - paragraph [ref=f12e160]: Content, commerce, enquiries and customer service work better when the website is designed with the systems and people responsible for the next step.
+      - generic [ref=f12e161]:
+        - generic [ref=f12e167]:
+          - heading "Content clarity" [level=3] [ref=f12e168]
+          - paragraph [ref=f12e169]: Structure pages around customer questions and decisions.
+        - generic [ref=f12e175]:
+          - heading "Accessible delivery" [level=3] [ref=f12e176]
+          - paragraph [ref=f12e177]: Design responsive Arabic and English journeys for real devices.
+        - generic [ref=f12e182]:
+          - heading "Connected systems" [level=3] [ref=f12e183]
+          - paragraph [ref=f12e184]: Send enquiries, orders and customer data to the right tools.
+    - generic [ref=f12e187]:
+      - generic [ref=f12e189]:
+        - generic [ref=f12e190]: Our Process
+        - heading "From Discovery to Launch and Support" [level=2] [ref=f12e191]
+        - paragraph [ref=f12e192]: We follow a proven approach to deliver real results.
+      - generic [ref=f12e193]:
+        - generic [ref=f12e194]:
+          - generic [ref=f12e195]: "01"
+          - heading "Discover" [level=3] [ref=f12e196]
+          - paragraph [ref=f12e197]: Understand your business goals and opportunities.
+        - generic [ref=f12e198]:
+          - generic [ref=f12e199]: "02"
+          - heading "Plan" [level=3] [ref=f12e200]
+          - paragraph [ref=f12e201]: Create a strategy and sitemap.
+        - generic [ref=f12e202]:
+          - generic [ref=f12e203]: "03"
+          - heading "Design" [level=3] [ref=f12e204]
+          - paragraph [ref=f12e205]: Create the right solution for your needs.
+        - generic [ref=f12e206]:
+          - generic [ref=f12e207]: "04"
+          - heading "Build" [level=3] [ref=f12e208]
+          - paragraph [ref=f12e209]: Develop, integrate and test your solution.
+        - generic [ref=f12e210]:
+          - generic [ref=f12e211]: "05"
+          - heading "Launch & Support" [level=3] [ref=f12e212]
+          - paragraph [ref=f12e213]: Work with our team for a successful next step.
+    - generic [ref=f12e215]:
+      - generic [ref=f12e217]:
+        - heading "Questions to Resolve Before You Start" [level=2] [ref=f12e218]
+        - paragraph [ref=f12e219]: A useful first conversation should clarify scope, ownership, integrations and the path after launch.
+      - generic [ref=f12e220]:
+        - group [ref=f12e221]:
+          - generic "Which platform is right for our website or store?" [ref=f12e222] [cursor=pointer]
+        - group [ref=f12e225]:
+          - generic "Can you build Arabic and English experiences?" [ref=f12e226] [cursor=pointer]
+        - group [ref=f12e229]:
+          - generic "Can the website connect with Odoo or another CRM?" [ref=f12e230] [cursor=pointer]
+        - group [ref=f12e233]:
+          - generic "Will our team be able to edit content after launch?" [ref=f12e234] [cursor=pointer]
+        - group [ref=f12e237]:
+          - generic "What support is available after launch?" [ref=f12e238] [cursor=pointer]
+    - generic [ref=f12e242]:
+      - generic [ref=f12e243]:
+        - heading "Build a Website That Supports the Business Behind It" [level=2] [ref=f12e244]
+        - paragraph [ref=f12e245]: Tell us about the current workflow, the systems involved and the outcome your team needs.
+      - link "Discuss Your Website" [ref=f12e246] [cursor=pointer]:
+        - /url: /contact?service=Digital%20Experiences%20That%20Connect
+  - contentinfo [ref=f12e249]:
+    - generic [ref=f12e250]:
+      - generic [ref=f12e251]:
+        - link [ref=f12e252] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f12e253]
+        - paragraph [ref=f12e254]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - generic "Contact channels" [ref=f12e255]:
+          - link "Email ETripleSoft" [ref=f12e256] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f12e260] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f12e264] [cursor=pointer]:
+            - /url: /support-ticket
+      - generic [ref=f12e267]:
+        - heading "Solutions" [level=4] [ref=f12e268]
+        - link "Odoo ERP" [ref=f12e269] [cursor=pointer]:
+          - /url: /odoo
+        - link "Cloud & Security" [ref=f12e270] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f12e271] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f12e272] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f12e273] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f12e274] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f12e275]:
+        - heading "Industries" [level=4] [ref=f12e276]
+        - link "Construction" [ref=f12e277] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Retail" [ref=f12e278] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Real Estate" [ref=f12e279] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Education" [ref=f12e280] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Healthcare" [ref=f12e281] [cursor=pointer]:
+          - /url: /industries#expertise
+        - link "Logistics" [ref=f12e282] [cursor=pointer]:
+          - /url: /industries#expertise
+      - generic [ref=f12e283]:
+        - heading "Company" [level=4] [ref=f12e284]
+        - link "About Us" [ref=f12e285] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f12e286] [cursor=pointer]:
+          - /url: /careers
+        - link "Portfolio" [ref=f12e287] [cursor=pointer]:
+          - /url: /portfolio
+        - link "Contact Us" [ref=f12e288] [cursor=pointer]:
+          - /url: /contact
+        - link "Support Ticket" [ref=f12e289] [cursor=pointer]:
+          - /url: /support-ticket
+      - generic [ref=f12e290]:
+        - heading "Resources" [level=4] [ref=f12e291]
+        - link "Blog" [ref=f12e292] [cursor=pointer]:
+          - /url: /insights
+        - link "Case Studies" [ref=f12e293] [cursor=pointer]:
+          - /url: /portfolio
+        - link "FAQs" [ref=f12e294] [cursor=pointer]:
+          - /url: /faqs
+        - link "Privacy Policy" [ref=f12e295] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=f12e296] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f12e297]:
+        - heading "Our Offices" [level=4] [ref=f12e298]
+        - link "🇪🇬 Cairo, Egypt" [ref=f12e299] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇸🇦 Riyadh, Saudi Arabia" [ref=f12e300] [cursor=pointer]:
+          - /url: /contact#offices
+        - link "🇦🇪 Dubai, UAE" [ref=f12e301] [cursor=pointer]:
+          - /url: /contact#offices
+    - generic [ref=f12e302]:
+      - generic [ref=f12e303]: © 2026 ETripleSoft. All rights reserved.
+      - generic [ref=f12e304]: Technology for a smarter tomorrow.
+      - button "Back to top" [ref=f12e305] [cursor=pointer]
