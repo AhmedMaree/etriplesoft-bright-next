@@ -522,8 +522,9 @@ textarea:focus {
   position: absolute;
   left: 55%;
   top: 27px;
-  color: #4345d8;
-  font-family: "Comic Sans MS", cursive;
+  color: var(--blue);
+  font-family: inherit;
+  font-style: italic;
   font-size: 16px;
   line-height: 1.2;
   white-space: pre-line;
