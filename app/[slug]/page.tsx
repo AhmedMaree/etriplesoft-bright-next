@@ -10,6 +10,7 @@ import {
 } from "@/components/company-pages";
 import { SectionHeading, CTA, FAQ, TextLink } from "@/components/site";
 import { servicePages } from "@/lib/data";
+import InsightsReferencePage from "@/components/insights/InsightsReferencePage";
 const names: Record<string, string> = {
   about: "About Us",
   "about-us": "About Us",
@@ -96,48 +97,7 @@ export default async function Page({
         <CTA title="Still Have a Question?" button="Talk to Our Team" />
       </main>
     );
-  if (slug === "insights")
-    return (
-      <main id="main">
-        <section className="section tinted">
-          <div className="container article-content">
-            <span className="eyebrow">Our Insights</span>
-            <h1>
-              Latest Articles <em>& Insights</em>
-            </h1>
-            <p>
-              Ideas and practical guidance for a stronger, smarter business.
-            </p>
-            <div className="card-grid cols-2 mt">
-              {[
-                [
-                  "Odoo KPI Dashboards for Real-Time Business Insights",
-                  "odoo-kpi-dashboard-real-time-business-insights",
-                  "Odoo",
-                ],
-                [
-                  "Understanding the Return on an Odoo ERP Investment",
-                  "odoo-roi-return-on-investment",
-                  "Odoo",
-                ],
-                [
-                  "Signs Your Business Is Ready for an ERP System",
-                  "signs-you-need-erp-system",
-                  "ERP Planning",
-                ],
-              ].map(([t, s, c]) => (
-                <article className="article-card" key={s}>
-                  <span className="tag">{c}</span>
-                  <h2>{t}</h2>
-                  <TextLink href={"/insights/" + s}>Read Article</TextLink>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-        <CTA />
-      </main>
-    );
+  if (slug === "insights") return <InsightsReferencePage />;
   if (slug === "privacy" || slug === "terms")
     return (
       <main id="main">

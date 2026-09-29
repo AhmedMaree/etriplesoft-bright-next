@@ -148,6 +148,123 @@ const articles: Record<
       ],
     ],
   },
+  "measure-marketing-performance": {
+    title: "Make Marketing Reports Useful to the Whole Team",
+    category: "Digital Marketing",
+    image: "marketing-hero",
+    intro:
+      "A useful marketing report helps a team understand what happened, what it means for the business and what to review next. Start with the decisions the report should support, then choose the measures and sources that answer those questions.",
+    sections: [
+      [
+        "Start with the business question",
+        "Agree whether the team needs to understand qualified enquiries, campaign reach, channel contribution or the next step in a customer journey. A clear question keeps a report focused.",
+      ],
+      [
+        "Document the source and definition",
+        "Record where each measure comes from and how the team defines it. Consistent definitions make comparisons easier and help people spot gaps in the data.",
+      ],
+      [
+        "Turn observations into next steps",
+        "Use the report to identify what needs further review. Share the context, owner and follow-up question alongside the numbers, then revisit them in the next reporting cycle.",
+      ],
+    ],
+  },
+  "integrated-digital-campaigns": {
+    title: "Plan Digital Campaigns Around Real Customer Journeys",
+    category: "Digital Marketing",
+    image: "marketing-hero",
+    intro:
+      "Search, paid media, social and content can support different parts of a customer's decision. Coordinating those channels starts with understanding the audience and what the business wants each campaign to help people do.",
+    sections: [
+      [
+        "Understand the audience and context",
+        "Review the questions customers ask, the locations and languages you serve, and the information people need before they contact your team.",
+      ],
+      [
+        "Give each channel a clear role",
+        "Plan how search, advertising, social and content work together. Align messages and landing pages so a person can continue their journey without having to start over.",
+      ],
+      [
+        "Review and improve as a team",
+        "Choose measures that match the campaign goal, check the quality of enquiries with the people handling follow-up, and use those observations to guide the next iteration.",
+      ],
+    ],
+  },
+  "erp-benefits-for-growing-businesses": {
+    title: "ERP Benefits to Consider as Your Business Grows",
+    category: "ERP Planning",
+    image: "growth-chart",
+    intro:
+      "An ERP system can help connect information and workflows across a business. The useful benefits depend on the problems a team needs to solve, the quality of its processes and how well the system is adopted.",
+    sections: [
+      [
+        "Work from shared information",
+        "Connecting records across finance, sales, inventory and operations can reduce repeated data entry and make ownership clearer. Begin by understanding how information moves between teams today.",
+      ],
+      [
+        "Make routine processes easier to follow",
+        "A mapped workflow can show who owns a task, what approvals it needs and what should happen when an exception appears. Keep the process clear before automating it.",
+      ],
+      [
+        "Build reports around real decisions",
+        "Choose the measures managers need to review, then confirm where the data comes from and who maintains it. Reliable definitions matter more than filling a dashboard with metrics.",
+      ],
+      [
+        "Plan for adoption and ongoing support",
+        "Training, testing and clear responsibilities help teams use the system consistently. Include the time and support needed to introduce new workflows when planning the project.",
+      ],
+    ],
+  },
+  "modern-seo-friendly-website": {
+    title: "Why Your Business Needs a Modern, SEO-Friendly Website",
+    category: "Web Development",
+    image: "web-hero",
+    intro:
+      "A business website should make it easy for people to understand what you offer, find useful information and choose a next step. Clear structure and a responsive experience also help search engines interpret the content.",
+    sections: [
+      [
+        "Organize pages around customer questions",
+        "Use plain headings, helpful service details and descriptive links. A visitor should be able to scan a page and understand whether it answers their question.",
+      ],
+      [
+        "Make the experience work on mobile",
+        "Check that text, navigation, images and forms remain clear on smaller screens. A responsive layout should make the same important actions easy to find across devices.",
+      ],
+      [
+        "Build a sound search foundation",
+        "Use accurate page titles, accessible markup, descriptive URLs and useful content. For regional audiences, plan Arabic and English experiences with the right language and reading direction.",
+      ],
+      [
+        "Connect enquiries to the next step",
+        "Make contact options clear and agree who follows up. When the process needs it, connect website forms to the systems that manage enquiries and customer records.",
+      ],
+    ],
+  },
+  "b2b-marketing-strategies-middle-east": {
+    title: "Digital Marketing Strategies for B2B Growth in the Middle East",
+    category: "Digital Marketing",
+    image: "marketing-hero",
+    intro:
+      "B2B marketing works best when channel choices, useful content and follow-up reflect how customers make decisions. In the Middle East, businesses may also need to account for different local markets and Arabic- and English-speaking audiences.",
+    sections: [
+      [
+        "Understand the buying context",
+        "Identify the roles involved, the questions they ask and what they need to evaluate a supplier. Use conversations with sales and customer-facing teams to shape the plan.",
+      ],
+      [
+        "Choose channels for their role",
+        "Search can help people find information, paid campaigns can test a specific offer, and useful content can support longer decisions. Set a clear purpose for each channel.",
+      ],
+      [
+        "Plan for regional language and context",
+        "Decide where Arabic and English content is useful and adapt examples and terminology for the audiences you serve. Translation alone may not answer local questions.",
+      ],
+      [
+        "Measure and learn with the sales team",
+        "Agree how to identify a qualified enquiry and how campaign information reaches the people following up. Review what happened and use it to guide the next campaign.",
+      ],
+    ],
+  },
 };
 export function generateStaticParams() {
   return Object.keys(articles).map((article) => ({ article }));

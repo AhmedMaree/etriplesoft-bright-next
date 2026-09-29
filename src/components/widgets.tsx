@@ -101,16 +101,23 @@ export function ProjectGrid() {
     </>
   );
 }
-export function ContactForm({ support = false }: { support?: boolean }) {
+export function ContactForm({
+  support = false,
+  initialService = "",
+}: {
+  support?: boolean;
+  initialService?: string;
+}) {
   const [status, setStatus] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(initialService);
   const [file, setFile] = useState("");
   const [busy, setBusy] = useState(false);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");
     if (service) setCategory(service);
-  }, []);
+    else if (initialService) setCategory(initialService);
+  }, [initialService]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setBusy(true);

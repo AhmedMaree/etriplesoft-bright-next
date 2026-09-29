@@ -17,6 +17,8 @@ import OdooReferencePage from "./odoo/OdooReferencePage";
 import AIReferencePage from "./ai/AIReferencePage";
 import CloudReferencePage from "./cloud/CloudReferencePage";
 import MobileReferencePage from "./mobile/MobileReferencePage";
+import WebReferencePage from "./web/WebReferencePage";
+import DigitalMarketingReferencePage from "./digital-marketing/DigitalMarketingReferencePage";
 import { servicePages, industries } from "@/lib/data";
 
 const serviceContext: Record<
@@ -173,6 +175,8 @@ export default function ServicePage({ slug }: { slug: string }) {
   if (slug === "odoo") return <OdooReferencePage />;
   if (slug === "cloud") return <CloudReferencePage />;
   if (slug === "mobile") return <MobileReferencePage />;
+  if (slug === "web") return <WebReferencePage />;
+  if (slug === "digital-marketing") return <DigitalMarketingReferencePage />;
   const service = servicePages[slug];
   const context = serviceContext[slug];
 

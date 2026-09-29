@@ -35,11 +35,18 @@ export async function POST(request: NextRequest) {
       email = value("email", 254),
       message = value("message", 10000),
       kind = value("kind", 20);
-    if (!name || !/^\S+@\S+\.\S+$/.test(email) || message.length < 10)
+    const newsletter = kind === "newsletter";
+    const validEmail = /^\S+@\S+\.\S+$/.test(email);
+    if (
+      newsletter
+        ? !validEmail || form.get("consent") !== "on"
+        : !name || !validEmail || message.length < 10
+    )
       return NextResponse.json(
         {
-          message:
-            "Please provide your name, a valid email address, and a message of at least 10 characters.",
+          message: newsletter
+            ? "Enter a valid email address and agree to receive occasional updates."
+            : "Please provide your name, a valid email address, and a message of at least 10 characters.",
         },
         { status: 400 },
       );
@@ -79,14 +86,17 @@ export async function POST(request: NextRequest) {
       id,
       createdAt: new Date().toISOString(),
       kind,
-      name,
+      name: name || (newsletter ? "Insights newsletter subscriber" : ""),
       email,
       company: value("company", 150),
       phone: value("phone", 40),
       service: value("service", 150),
       priority: value("priority", 20),
       subject: value("subject", 200),
-      message,
+      message: newsletter
+        ? "Request to receive the ETripleSoft insights newsletter."
+        : message,
+      consent: newsletter ? form.get("consent") === "on" : null,
       attachmentName:
         attachment instanceof File && attachment.size ? attachment.name : null,
     };
@@ -105,17 +115,20 @@ export async function POST(request: NextRequest) {
       });
       if (!result.ok) throw new Error("Delivery failed");
       return NextResponse.json({
-        message: `Your ${kind === "support" ? "support ticket" : "message"} has been submitted. Reference: ${id.slice(0, 8)}.`,
+        message: newsletter
+          ? `Your newsletter request has been submitted. Reference: ${id.slice(0, 8)}.`
+          : `Your ${kind === "support" ? "support ticket" : "message"} has been submitted. Reference: ${id.slice(0, 8)}.`,
         id,
       });
     }
     if (process.env.NODE_ENV === "production")
       return NextResponse.json(
         {
-          message:
-            "Online submission is not configured yet. Please email " +
-            (kind === "support" ? "support" : "info") +
-            "@etriplesoft.com directly.",
+          message: newsletter
+            ? "Newsletter delivery is not configured yet. Please try again later."
+            : "Online submission is not configured yet. Please email " +
+              (kind === "support" ? "support" : "info") +
+              "@etriplesoft.com directly.",
         },
         { status: 503 },
       );
@@ -134,7 +147,9 @@ export async function POST(request: NextRequest) {
         Buffer.from(await attachment.arrayBuffer()),
       );
     return NextResponse.json({
-      message: `Saved in this local preview (reference ${id.slice(0, 8)}). This has not been sent to ETripleSoft. For delivery, email ${kind === "support" ? "support" : "info"}@etriplesoft.com.`,
+      message: newsletter
+        ? `Saved in this local preview (reference ${id.slice(0, 8)}). Your address has not been subscribed; the request was not sent to ETripleSoft.`
+        : `Saved in this local preview (reference ${id.slice(0, 8)}). This has not been sent to ETripleSoft. For delivery, email ${kind === "support" ? "support" : "info"}@etriplesoft.com.`,
       id,
     });
   } catch {

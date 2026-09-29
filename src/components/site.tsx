@@ -240,7 +240,14 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" aria-label="ETripleSoft home" className="brand">
-          <img src="/images/logo-header.png" alt="ETripleSoft" />
+          <Image
+            src="/images/logo-header-hq.png"
+            alt="ETripleSoft"
+            width={1600}
+            height={393}
+            sizes="178px"
+            priority
+          />
         </Link>
         <nav
           className={open ? "navigation is-open" : "navigation"}

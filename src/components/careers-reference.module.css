@@ -1,0 +1,205 @@
+.page {
+  --navy: #08164d;
+  --blue: #243dff;
+  --muted: #52638a;
+  --line: #e0ebff;
+  color: var(--navy);
+  overflow: clip;
+  background: #fff;
+}
+.container { width: min(var(--container), calc(100% - 96px)); margin-inline: auto; }
+.page h1, .page h2, .page h3, .page p, .page figure { margin: 0; }
+.page h1, .page h2, .page h3 { color: var(--navy); letter-spacing: -.035em; }
+.page h2 { font-size: clamp(28px, 2.75vw, 42px); line-height: 1.15; font-weight: 750; }
+.page h3 { font-size: 18px; line-height: 1.25; font-weight: 700; }
+.page p { color: var(--muted); font-size: 16px; line-height: 1.5; }
+.page .eyebrow { color: var(--blue); font-size: 13px; line-height: 1.5; letter-spacing: .065em; text-transform: uppercase; margin-bottom: 12px; }
+.page section[id] { scroll-margin-top: 110px; }
+.section { padding-block: 48px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 48px; padding: 13px 22px; border-radius: 11px; background: #051c62; color: #fff; font-size: 14px; font-weight: 650; line-height: 1.35; text-decoration: none; }
+.button svg { flex-shrink: 0; }
+.button:hover { box-shadow: 0 6px 18px #142e6820; }
+.page a:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+.lightButton { color: #0b22b7; background: #edf3ff; }
+.whiteButton { color: var(--navy); background: #fff; box-shadow: 0 3px 12px #376cc31a; border: 1px solid #e9f0ff; }
+.hero { position: relative; background: #f7fbff; min-height: clamp(580px, 46vw, 800px); display: flex; align-items: center; padding-block: 70px 64px; }
+.heroPhoto { position: absolute; inset: 0; width: 100%; mask-image: linear-gradient(#000 90%, transparent); }
+.heroPhoto img { object-fit: cover; object-position: center; }
+.heroPhoto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #f7fbff80 0%, #f7fbff60 40%, transparent 59%); backdrop-filter: blur(7px); mask-image: linear-gradient(90deg, #000 25%, #0009 43%, transparent 60%); }
+.heroCopy { position: relative; z-index: 1; width: 55%; }
+.heroCopy h1 { font-size: clamp(64px, 7vw, 96px); line-height: 1.03; font-weight: 800; margin-bottom: 10px; }
+.heroCopy h2 { color: var(--blue); font-size: clamp(25px, 2.45vw, 35px); line-height: 1.2; }
+.heroCopy .heroDescription { max-width: 600px; margin-top: 18px; font-size: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+.play { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; background: var(--navy); }
+.stats { display: grid; grid-template-columns: 1fr 1fr 1.4fr 1fr; margin: 40px 0 0; }
+.stats > div { padding-inline: 12px; border-right: 1px solid #d2e3ff; text-align: center; }
+.stats > div:first-child { padding-left: 0; }
+.stats > div:last-child { border: 0; padding-right: 0; }
+.stats dt { font-size: 28px; font-weight: 750; line-height: 1.15; }
+.stats dd { margin: 8px 0 0; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.valuesLayout { display: grid; grid-template-columns: 1.05fr 2.15fr; gap: 32px; align-items: center; }
+.intro > p:not(.eyebrow) { margin-top: 18px; }
+.intro .button { margin-top: 20px; }
+.valuesGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.valueCard { padding: 20px 16px; border: 1px solid var(--line); border-radius: 13px; min-height: 245px; }
+.artworkIcon { display: block; object-fit: contain; width: 76px; height: 76px; mix-blend-mode: multiply; }
+.valueCard h3 { margin-top: 12px; font-size: 17px; letter-spacing: -.04em; }
+.valueCard p { margin-top: 12px; font-size: 15px; }
+.cultureGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pictureCard { position: relative; isolation: isolate; overflow: hidden; border-radius: 15px; min-height: 360px; padding: 36px 30px; }
+.pictureCard > img { z-index: -2; object-fit: cover; }
+.pictureCard::before { content: ""; position: absolute; inset: 0; z-index: -1; backdrop-filter: blur(7px); mask-image: linear-gradient(90deg, #000 28%, #0009 45%, transparent 65%); pointer-events: none; }
+.pictureCard::after { content: ""; position: absolute; inset: 0; z-index: -1; }
+.pictureCopy { max-width: 64%; }
+.pictureCopy > p:not(.eyebrow) { margin-top: 18px; }
+.pictureCopy .button { margin-top: 26px; }
+.purpose { background: #031b55; }
+.purpose > img { object-position: center; }
+.purpose::after { background: linear-gradient(90deg, #031b5580 0%, #031b5550 34%, transparent 64%); }
+.purpose h2, .purpose p { color: #fff; }
+.purpose .pictureCopy { max-width: 57%; }
+.purpose .lightButton { background: #fff; }
+.culture { border: 1px solid var(--line); background: #f6faff; }
+.culture > img { object-position: center; }
+.culture::after { background: linear-gradient(90deg, #f6faffb0 24%, #f6faff90 43%, #f6faff30 60%, transparent 72%); }
+.culture .pictureCopy { max-width: 66%; }
+.culture .pictureCopy p { font-size: 15px; }
+.sectionHeading { margin-bottom: 30px; }
+.sectionHeading > p:not(.eyebrow), .sectionHeading > div > p:not(.eyebrow) { margin-top: 12px; font-size: 19px; }
+.benefitsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.benefitCard { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 16px; min-height: 175px; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 22px #3a71b905; }
+.benefitCard .artworkIcon { width: 82px; height: 70px; margin-bottom: 16px; }
+.benefitCard p { text-align: center; font-size: 18px; }
+.hiringLayout { display: grid; grid-template-columns: 1.65fr 1fr; gap: 40px; align-items: center; }
+.hiringLayout .sectionHeading > p:not(.eyebrow) { font-size: 17px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0; margin: 34px 0 0; gap: 24px; list-style: none; }
+.steps li { position: relative; text-align: center; }
+.steps .artworkIcon { margin: 0 auto 12px; width: 78px; height: 78px; border-radius: 50%; }
+.steps strong { font-size: 24px; }
+.steps h3 { margin: 2px 0 6px; font-size: 20px; }
+.steps p { font-size: 15px; }
+.stepArrow { position: absolute; top: 28px; right: -26px; color: var(--blue); width: 30px; }
+.testimonial { background: #f3f8ff; border-radius: 16px; padding: 28px; }
+.testimonial > svg { color: #cbdcff; fill: #cbdcff; transform: rotate(180deg); }
+.testimonial blockquote { margin: 12px 0 24px; font-size: 18px; line-height: 1.5; color: var(--muted); }
+.testimonial figcaption { display: flex; align-items: center; gap: 20px; }
+.testimonial figcaption img { width: 74px; height: 74px; border-radius: 50%; }
+.testimonial strong, .testimonial span { display: block; }
+.testimonial strong { font-size: 18px; }
+.testimonial span { color: var(--muted); margin-top: 6px; font-size: 16px; }
+.positionsHeading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.positionsHeading .button { flex-shrink: 0; }
+.jobsGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.jobCard { padding: 24px 20px; border: 1px solid #d8e8ff; border-radius: 14px; display: flex; flex-direction: column; }
+.jobCard h3 { font-size: 21px; }
+.tags { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 16px 0; gap: 6px; }
+.tags li { font-size: 11px; background: #edf3fc; padding: 6px 9px; border-radius: 12px; }
+.tags li:first-child { color: var(--blue); background: #e7f1ff; }
+.jobCard p { margin-bottom: 24px; }
+.jobCard > a { display: inline-flex; align-items: center; gap: 14px; margin-top: auto; color: var(--blue); font-size: 17px; font-weight: 650; }
+.opportunitiesGrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; }
+.internships { background: #f4f9fd; }
+.internships > img { object-position: center; }
+.internships::after { background: linear-gradient(90deg, #f4f9fdb0 20%, #f4f9fd90 42%, #f4f9fd20 62%, transparent 72%); }
+.internships .pictureCopy { max-width: 67%; }
+.internships h2 { font-size: 33px; }
+.cvCard { position: relative; isolation: isolate; display: flex; overflow: hidden; align-items: center; padding: 32px; border-radius: 15px; background: linear-gradient(150deg, #05245e 50%, #0645b6); }
+.cvCard > div { position: relative; z-index: 1; max-width: 78%; }
+.cvCard h2 { color: #fff; font-size: 32px; }
+.cvCard p { color: #e1edff; margin-top: 18px; }
+.cvCard .eyebrow { color: #a8ceff; margin: 0 0 12px; }
+.cvCard .button { background: #fff; margin-top: 24px; }
+.cvIcon { position: absolute; width: 118px; height: 145px; right: 10px; top: 105px; color: #a9b7ff; fill: #eef0ff; opacity: .95; z-index: 0; }
+.cvCard > div > p:not(.eyebrow) { max-width: 85%; }
+.locationsSection { padding-bottom: 40px; }
+.locationsLayout { display: grid; grid-template-columns: 1fr 3.25fr; gap: 24px; align-items: center; }
+.locationsLayout h2 { font-size: 30px; }
+.locationsGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.locationCard { display: flex; overflow: hidden; border: 1px solid #d3e3ff; border-radius: 12px; min-height: 145px; }
+.locationCard > img { width: 43%; object-fit: cover; height: auto; }
+.locationVisual { display: grid; width: 40%; min-width: 66px; place-items: center; background: linear-gradient(145deg, #e2f2ff, #f3f7ff); color: var(--blue); }
+.locationCard > div { padding: 20px 12px; align-self: center; }
+.locationCard h3 { font-size: 17px; }
+.locationCard p { font-size: 13px; margin-top: 5px; }
+.locationCard svg { color: var(--blue); margin-top: 16px; }
+.closing { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 36px; margin-top: 40px; padding: 36px; border-radius: 14px; background: radial-gradient(ellipse at 63% 130%, #0878ff 0%, transparent 48%), linear-gradient(110deg, #051d60, #034acb 65%, #061e59); }
+.closing h2 { color: #fff; font-size: clamp(24px, 2.1vw, 32px); }
+.closing p { color: #ecf3ff; margin-top: 14px; }
+.closing .eyebrow { color: #e2edff; margin: 0 0 14px; font-size: 12px; letter-spacing: .16em; }
+.closing .button { background: #fff; flex-shrink: 0; }
+@media (max-width: 1150px) {
+  .valuesLayout { grid-template-columns: 1fr; }
+  .intro { max-width: 660px; }
+  .valueCard { min-height: 210px; }
+  .heroCopy { width: 62%; }
+  .hiringLayout { gap: 24px; grid-template-columns: 1.5fr 1fr; }
+  .pictureCard { padding: 28px 24px; }
+  .pictureCopy, .culture .pictureCopy { max-width: 78%; }
+  .locationsLayout { grid-template-columns: 1fr; }
+  .jobsGrid { grid-template-columns: repeat(2, 1fr); }
+  .cvIcon { width: 85px; right: 8px; opacity: .45; }
+  .cvCard > div { max-width: 100%; }
+}
+@media (max-width: 900px) {
+  .heroPhoto { width: 100%; }
+  .heroCopy { width: 70%; }
+  .cultureGrid, .hiringLayout, .opportunitiesGrid { grid-template-columns: 1fr; }
+  .pictureCard { min-height: 360px; }
+  .pictureCopy, .culture .pictureCopy { max-width: 60%; }
+  .cvCard { min-height: 300px; }
+  .cvCard > div { max-width: 70%; }
+  .cvIcon { width: 130px; right: 30px; opacity: 1; }
+  .closing { flex-direction: column; align-items: flex-start; gap: 22px; }
+}
+@media (max-width: 760px) {
+  .container { width: calc(100% - 36px); }
+  .section { padding-block: 30px; }
+  .hero { min-height: 0; padding: 38px 0 0; display: flex; flex-direction: column; }
+  .hero > .container { order: 0; }
+  .heroPhoto { position: relative; order: 1; width: 100%; height: 330px; opacity: 1; margin-top: 18px; mask-image: linear-gradient(transparent, #000 15%, #000 86%, transparent); mask-composite: add; }
+  .heroPhoto img { object-position: right center; }
+  .heroPhoto::after { display: none; }
+  .heroCopy { width: 100%; }
+  .heroCopy h1 { font-size: 64px; }
+  .heroCopy h2 { font-size: 27px; }
+  .page .eyebrow { font-size: 11px; }
+  .heroCopy .heroDescription { font-size: 15px; }
+  .actions { gap: 10px; margin-top: 22px; }
+  .button { font-size: 12px; padding: 12px 16px; gap: 8px; min-height: 46px; }
+  .stats { margin-top: 28px; grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+  .stats > div:nth-child(2) { border: 0; }
+  .stats dt { font-size: 27px; }
+  .stats dd { font-size: 12px; }
+  .valuesGrid, .benefitsGrid, .locationsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .valueCard { padding: 18px 14px; }
+  .valueCard h3 { font-size: 16px; }
+  .valueCard p { font-size: 14px; }
+  .artworkIcon { width: 66px; height: 66px; }
+  .pictureCard { min-height: 345px; padding: 26px 22px; }
+  .pictureCopy, .culture .pictureCopy, .internships .pictureCopy { max-width: 78%; }
+  .purpose .pictureCopy { max-width: 70%; }
+  .pictureCopy h2, .internships h2 { font-size: 29px; }
+  .pictureCopy p { font-size: 15px; }
+  .benefitCard { min-height: 160px; padding: 18px 10px; }
+  .benefitCard p { font-size: 15px; }
+  .benefitCard .artworkIcon { width: 70px; height: 60px; }
+  .sectionHeading > p:not(.eyebrow), .sectionHeading > div > p:not(.eyebrow) { font-size: 16px; }
+  .steps { gap: 26px 16px; grid-template-columns: repeat(2, 1fr); }
+  .steps li:nth-child(2) .stepArrow { display: none; }
+  .testimonial { padding: 24px; }
+  .testimonial blockquote { font-size: 17px; }
+  .positionsHeading { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .jobsGrid { grid-template-columns: 1fr; }
+  .jobCard { padding: 24px; }
+  .jobCard h3 { font-size: 22px; }
+  .tags li { font-size: 12px; }
+  .cvCard { padding: 26px 22px; }
+  .cvCard > div { max-width: 84%; }
+  .cvCard h2 { font-size: 29px; }
+  .cvIcon { right: -12px; width: 92px; opacity: .6; }
+  .locationCard { flex-direction: column; }
+  .locationVisual { width: 100%; height: 95px; }
+  .locationCard > div { align-self: flex-start; padding: 16px; }
+  .closing { padding: 28px 22px; margin-top: 28px; }
+}
