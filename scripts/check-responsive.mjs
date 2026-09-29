@@ -168,6 +168,9 @@ for (const width of widths) {
   page.setDefaultTimeout(10000);
   try {
     await page.goto(base + "/", { waitUntil: "load" });
+    // Next may finish loading the document before the client navigation
+    // controls hydrate. Give the toggle a brief window before interacting.
+    await page.waitForTimeout(300);
     const mobile = await page.locator(".mobile-toggle").isVisible();
     const fail = (type, detail) => report.add(type, "error", { source: "/ (navigation)", width, detail });
     if (mobile) {
