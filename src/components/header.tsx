@@ -12,7 +12,7 @@ export function Header() {
       <div className="container header-inner">
         <Link href="/" aria-label="ETripleSoft home" className="brand">
           <Image
-            src="/images/logo-header-hq.png"
+            src="/images/logo-header.svg"
             alt="ETripleSoft"
             width={1600}
             height={393}

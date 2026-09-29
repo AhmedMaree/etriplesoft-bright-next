@@ -11,14 +11,18 @@ import {
   CTA,
   Testimonials,
 } from "@/components/site";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { organizationJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import OdooHero from "@/components/odoo/OdooHero";
-import { industries } from "@/lib/data";
+import { insightCards } from "@/content/insights";
+import { industryCardItems } from "@/data/industries/hub";
 export const metadata: Metadata = pageMetadata({
-  title: siteConfig.defaultTitle,
+  title: "Odoo Partner in Egypt, UAE & KSA | ETripleSoft",
   absoluteTitle: true,
   description: siteConfig.defaultDescription,
   path: "/",
@@ -30,7 +34,7 @@ export default function Home() {
       <JsonLd data={organizationJsonLd()} />
       <Hero
         className="home-hero"
-        eyebrow="Built for Smarter Growth"
+        eyebrow="Odoo Partner in Egypt, UAE & KSA"
         title={"Digital Transformation\nBuilt Around"}
         accent="Your Business."
         description="Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, UAE and Saudi Arabia."
@@ -97,7 +101,9 @@ export default function Home() {
                   <Icon name={icon} />
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <TextLink href={"/" + slug}>Learn More</TextLink>
+                  <TextLink href={"/" + slug} prefetch={false}>
+                    Learn More
+                  </TextLink>
                 </article>
               ))}
             </div>
@@ -116,7 +122,7 @@ export default function Home() {
             link="Explore All Industries"
             href="/industries"
           />
-          <IndustryBento items={industries} />
+          <IndustryBento items={industryCardItems} />
         </div>
       </section>
       <Stats
@@ -153,34 +159,27 @@ export default function Home() {
             href="/insights"
           />
           <div className="card-grid cols-3">
-            {[
-              [
-                "Odoo",
-                "Odoo KPI Dashboards for Real-Time Business Insights",
-                "May 12, 2025",
-                "odoo-kpi-dashboard-real-time-business-insights",
-              ],
-              [
-                "Odoo",
-                "Understanding the Return on an Odoo ERP Investment",
-                "Apr 28, 2025",
-                "odoo-roi-return-on-investment",
-              ],
-              [
-                "ERP Planning",
-                "Signs Your Business Is Ready for an ERP System",
-                "Apr 15, 2025",
-                "signs-you-need-erp-system",
-              ],
-            ].map(([tag, title, date, slug]) => (
-              <article className="article-card" key={slug}>
+            {insightCards().slice(0, 3).map((article) => (
+              <Link className="article-card" href={"/insights/" + article.slug} prefetch={false} key={article.slug}>
+                {article.image && (
+                  <Image
+                    className="home-article-image"
+                    src={article.image.src}
+                    alt={article.image.alt}
+                    width={article.image.width}
+                    height={article.image.height}
+                    sizes="(min-width: 1000px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    loading="lazy"
+                  />
+                )}
                 <div>
-                  <span className="tag">{tag}</span>
-                  <small>{date}</small>
+                  <span className="tag">{article.category}</span>
+                  <small>{article.dateLabel}</small>
                 </div>
-                <h3>{title}</h3>
-                <TextLink href={"/insights/" + slug}>Read More</TextLink>
-              </article>
+                <h3>{article.title}</h3>
+                <p className="home-article-summary">{article.summary}</p>
+                <span className="text-link">Read More <ArrowRight size={15} aria-hidden="true" /></span>
+              </Link>
             ))}
           </div>
         </div>

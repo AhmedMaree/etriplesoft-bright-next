@@ -283,3 +283,6 @@
     transition: none;
   }
 }
+@media (max-width: 760px) {
+  .anchors a { min-height: 44px; }
+}

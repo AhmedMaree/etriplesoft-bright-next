@@ -39,7 +39,7 @@ const legacyText = (items: Item[]) =>
     .map((item) => item.text.replace(/\s*\(link to [^)]*\)/, ""));
 
 export const accountingMetadata = {
-  title: "Odoo Accounting & E-Invoicing in Egypt, UAE & Saudi Arabia",
+  title: "Odoo Accounting & E-Invoicing in Egypt, UAE & KSA",
   description:
     "Odoo accounting for Egypt, the UAE and Saudi Arabia: invoicing, expenses, reconciliation and reporting, plus e-invoicing connections for ETA and ZATCA.",
 };

@@ -217,6 +217,10 @@ for (const { source, destination } of activeRedirects) {
 }
 for (const destination of new Set(activeRedirects.map((r) => r.destination))) {
   const path = destination.split("#")[0];
+  // Binary file destinations (such as the company profile PDF) cannot expose
+  // HTML canonical tags; their content type and redirect target are checked
+  // by check-redirects.mjs instead.
+  if (/\.pdf$/i.test(path)) continue;
   const info = pages.get(path) ?? analyse(path, await (await get(path)).text());
   if (!info.canonical || info.canonical !== prod + (path === "/" ? "" : path))
     err("redirects", `destination ${destination} is not self-canonical (${info.canonical})`);

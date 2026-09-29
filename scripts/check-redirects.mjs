@@ -7,8 +7,8 @@
 //   npm run check-redirects -- --verbose              (print passing redirects too)
 //
 // Every legacy URL must go through exactly ONE permanent redirect (301/308) to
-// the expected destination, which must return 200, be indexable and canonicalise
-// to itself. The single source of truth is src/lib/redirects.ts (served by
+// the expected destination. Pages must be indexable and canonical; known static
+// files are checked against their expected MIME type. The single source of truth is src/lib/redirects.ts (served by
 // next.config.ts). Exit codes: 0 pass, 1 failures, 2 server unreachable.
 import { existsSync, readFileSync } from "node:fs";
 import http from "node:http";
@@ -114,12 +114,25 @@ async function checkOne({ source, destination, variant, requestPath, expectedFin
     if (rec.finalUrl !== expectedFinal) fail("WRONG_DESTINATION", `expected ${expectedFinal}, landed on ${rec.finalUrl}`);
     if (rec.finalStatus !== 200) fail(rec.redirectCount === 0 ? "REDIRECT_DESTINATION_NOT_FINAL" : "FINAL_NOT_200", `final status ${rec.finalStatus}`);
     else {
+      const destinationPath = new URL(destination, base).pathname;
+      const expectedAssetType = destinationPath.endsWith(".pdf")
+        ? "application/pdf"
+        : destinationPath.endsWith(".html")
+          ? "text/html"
+          : null;
+      if (expectedAssetType) {
+        const actualType = result.final.res.headers.get("content-type") || "";
+        rec.canonicalMatches = true;
+        if (!actualType.includes(expectedAssetType))
+          fail("REDIRECT_ASSET_TYPE_MISMATCH", `expected ${expectedAssetType}; got ${actualType || "no content type"}`);
+      } else {
       const page = await inspectFinal(base + new URL(result.final.url).pathname);
       rec.canonical = page.canonical ?? null;
       const wanted = PROD_ORIGIN + (destination === "/" ? "" : destination);
       rec.canonicalMatches = page.canonical === wanted;
       if (page.status === 200 && !rec.canonicalMatches) fail("CANONICAL_REDIRECT_MISMATCH", `canonical is ${page.canonical ?? "missing"}, expected ${wanted}`);
       if (/noindex/i.test(page.robots || "")) fail("REDIRECT_TO_NOINDEX", "destination page is noindex");
+      }
     }
   }
   results.push(rec);

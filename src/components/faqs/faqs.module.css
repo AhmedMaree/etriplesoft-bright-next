@@ -76,3 +76,6 @@
     transition: none;
   }
 }
+@media (max-width: 760px) {
+  .chips a { min-width: 44px; min-height: 44px; }
+}

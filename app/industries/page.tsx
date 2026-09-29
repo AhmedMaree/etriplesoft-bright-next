@@ -8,7 +8,7 @@ import { industryHubItems } from "@/data/industries/hub";
 import styles from "@/components/industries/industries.module.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Industries",
+  title: "Industries We Serve with Odoo ERP in Egypt",
   description:
     "Explore how ETripleSoft maps Odoo to construction, real estate, facility management, restaurants, education, retail, healthcare and logistics workflows.",
   path: "/industries",
@@ -48,7 +48,6 @@ export default function IndustriesPage() {
               <div className={styles.hubIndustryTitle}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <h2>{industry.name}</h2>
-                {!industry.dedicated && <span className={styles.contactOnly}>Dedicated page planned</span>}
               </div>
               <div className={styles.hubIndustryBody}>
                 <div className={styles.challenge}>

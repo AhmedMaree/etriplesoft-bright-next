@@ -19,7 +19,8 @@ import CloudReferencePage from "./cloud/CloudReferencePage";
 import MobileReferencePage from "./mobile/MobileReferencePage";
 import WebReferencePage from "./web/WebReferencePage";
 import DigitalMarketingReferencePage from "./digital-marketing/DigitalMarketingReferencePage";
-import { servicePages, industries } from "@/lib/data";
+import { servicePages } from "@/lib/data";
+import { industryCardItems } from "@/data/industries/hub";
 
 const serviceContext: Record<
   string,
@@ -269,7 +270,7 @@ export default function ServicePage({ slug }: { slug: string }) {
               link="Explore All Industries"
               href="/industries"
             />
-            <IndustryBento items={industries} />
+            <IndustryBento items={industryCardItems} />
           </div>
         </section>
       )}

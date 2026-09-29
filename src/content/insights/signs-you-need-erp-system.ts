@@ -6,7 +6,7 @@ const article: ArticleSource = {
   slug: "signs-you-need-erp-system",
   title: "10 Signs Your Business Has Outgrown Spreadsheets and Needs an ERP System",
   metaTitle: "10 Signs You Need an ERP System, Not More Spreadsheets",
-  description: "Ten signs your business has outgrown spreadsheets — data errors, reporting delays, and when to switch to an ERP system.",
+  description: "Ten signs your business has outgrown spreadsheets, from data errors and reporting delays to disconnected teams, and when to switch to an ERP system.",
   datePublished: "2026-08-15T21:51:04",
   category: "ERP",
   image: {

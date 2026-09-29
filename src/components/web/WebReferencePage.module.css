@@ -244,3 +244,6 @@
 @media (prefers-reduced-motion: reduce) {
   .page *, .page *::before, .page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+@media (max-width: 760px) {
+  .action, .outlineLink, .ctaCopy .action { min-width: 44px; min-height: 44px; }
+}

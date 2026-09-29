@@ -3,7 +3,7 @@
   --ink: #101b40;
   --blue: #4445ff;
   --cyan: #0ea9c9;
-  --muted: #65718c;
+  --muted: #59657d;
   --pale: #f4f8ff;
   --line: #e4ebf7;
   --radius-sm: 6px;
@@ -160,7 +160,7 @@ textarea:focus {
   margin-bottom: 9px;
 }
 .eyebrow.muted {
-  color: #7b879e;
+  color: var(--muted);
   font-size: 11px;
 }
 .section-heading {
@@ -191,9 +191,15 @@ textarea:focus {
   align-items: flex-end;
   gap: 32px;
 }
+.section-heading h1,
 .section-heading h2 {
   max-width: 19ch;
   text-wrap: balance;
+}
+.section-heading h1 {
+  font-size: clamp(30px, 3.2vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 .section-heading p {
   max-width: 58ch;
@@ -756,6 +762,12 @@ textarea:focus {
 }
 .value-card.amber .value-card-bar {
   background: #c9790a;
+}
+.value-card.blue .value-card-eyebrow,
+.value-card.teal .value-card-eyebrow,
+.value-card.violet .value-card-eyebrow,
+.value-card.amber .value-card-eyebrow {
+  color: var(--navy);
 }
 @media (max-width: 1000px) {
   .value-props-grid {
@@ -2247,7 +2259,7 @@ blockquote small {
 }
 .article-card small {
   font-size: 11px;
-  color: #8090a8;
+  color: var(--muted);
 }
 .tag {
   display: inline-block;
@@ -2316,6 +2328,22 @@ blockquote small {
   margin-top: 20px;
   color: #a9bdd8;
 }
+.footer-email {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: #dce7f7;
+  font-size: 13px;
+}
+.footer-email:hover {
+  color: #fff;
+}
+.footer-email svg {
+  color: #6ea8ff;
+  flex: 0 0 auto;
+}
 .footer-grid h4,
 .footer-grid .footer-heading {
   font-size: 13px;
@@ -2330,7 +2358,6 @@ blockquote small {
   gap: 7px;
   font-size: 13px;
   color: #a9bdd8;
-  /* 24px+ target height without changing the visual rhythm */
   padding-block: 4px;
   margin-bottom: 6px;
   transition: color 0.15s;
@@ -2341,6 +2368,36 @@ blockquote small {
 .footer-grid > div > a svg {
   color: #6ea8ff;
   flex-shrink: 0;
+}
+.footer-office {
+  margin-bottom: 10px;
+}
+.footer-office > a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding-block: 4px;
+  color: #dce7f7;
+  font-size: 13px;
+}
+.footer-office .footer-office-phone {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 4px 0 4px 21px;
+  color: #a9bdd8;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.footer-office > a:hover,
+.footer-office .footer-office-phone:hover {
+  color: #fff;
+}
+.footer-office svg {
+  flex: 0 0 auto;
+  color: #6ea8ff;
 }
 .socials {
   display: flex;
@@ -3236,6 +3293,12 @@ blockquote small {
 .contact-strip a {
   font-size: 12px;
 }
+.office-phones {
+  margin: 9px 0 13px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.office-phones span:not(:last-child)::after { content: " · "; }
 .region-map {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -4524,8 +4587,8 @@ blockquote small {
     font-size: 14px;
   }
   .carousel-buttons button {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
   }
   .article-card {
     padding: 16px;
@@ -5887,6 +5950,21 @@ blockquote small {
   font-size: 20px;
   line-height: 1.4;
 }
+.home-article-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 20px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+.homepage .home-insights-stage .home-article-summary {
+  margin: -10px 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
 
 .homepage .home-insights-stage .article-card .text-link {
   margin-top: auto;
@@ -6977,7 +7055,7 @@ blockquote small {
 .home-hero .hero-copy > p {
   max-width: 650px;
   margin-top: 22px;
-  color: #61708f;
+  color: var(--muted);
   font-size: 20px;
   line-height: 1.45;
 }
@@ -8636,6 +8714,10 @@ blockquote small {
 }
 
 /* Contact / support form: field-level validation, states, honeypot */
+.form-verification {
+  margin: 18px 0;
+  min-height: 80px;
+}
 .contact-form .field {
   min-width: 0;
 }
@@ -8726,6 +8808,81 @@ blockquote small {
 .form-success .button {
   margin-top: 8px;
 }
+.whatsapp-float {
+  position: fixed;
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 8px 24px #05271a3d;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px #05271a4a;
+}
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 4px;
+}
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.2;
+}
+.resource-card > a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  color: inherit;
+}
+.resource-card h2 {
+  margin: 18px 0 10px;
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1.3;
+}
+.resource-card p {
+  flex: 1;
+  color: var(--muted);
+  font-size: 14px;
+}
+.resource-card-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 7px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+}
+.resource-card a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+@media (max-width: 760px) {
+  .home-hero .hero-image {
+    display: none;
+  }
+  .home-hero .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .whatsapp-float {
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 56px;
+    height: 56px;
+  }
+}
 @media (max-width: 640px) {
   .contact-form .form-grid {
     grid-template-columns: 1fr;
@@ -8736,4 +8893,25 @@ blockquote small {
 .crumb-strip {
   padding-top: 14px;
   padding-bottom: 12px;
+}
+
+@media (max-width: 760px) {
+  .button, .text-link, .icon-button, .carousel-buttons button,
+  .footer-grid > div > a, .footer-office > a, .footer-office .footer-office-phone,
+  .socials a, .back-top, .search-panel a {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .text-link { padding-block: 10px; }
+  .icon-button { width: 44px; height: 44px; }
+  .footer-grid > div > a { padding-block: 9px; margin-bottom: 2px; }
+  .footer-office > a, .footer-office .footer-office-phone { padding-block: 9px; }
+  .socials a, .back-top { width: 44px; height: 44px; }
+  .contact-strip a, #general .purpose-card p a, .office-phones a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+  .office-phones { display: flex; flex-wrap: wrap; gap: 0 12px; }
+  .office-phones span:not(:last-child)::after { content: none; }
 }

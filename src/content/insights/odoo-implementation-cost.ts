@@ -5,7 +5,7 @@ import type { ArticleSource } from "./types";
 const article: ArticleSource = {
   slug: "odoo-implementation-cost",
   title: "How Much Does Odoo ERP Implementation Cost in Egypt, UAE & Saudi Arabia?",
-  metaTitle: "Odoo Implementation Cost in Egypt, UAE & Saudi Arabia (2026)",
+  metaTitle: "Odoo Implementation Cost in Egypt, UAE & KSA (2026)",
   description: "Odoo ERP implementation cost in Egypt, UAE & Saudi Arabia — licensing, customization, and how to budget accurately in 2026.",
   datePublished: "2026-08-15T15:39:20",
   category: "Odoo",

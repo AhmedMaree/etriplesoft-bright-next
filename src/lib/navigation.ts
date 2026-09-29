@@ -2,6 +2,7 @@
 // footer all read from this file so labels/links never drift out of sync.
 
 import { company } from "./company";
+import { industryHubItems } from "@/data/industries/hub";
 
 export type NavLink = {
   label: string;
@@ -36,17 +37,17 @@ export const serviceLinks: NavLink[] = [
 
 export const industryLinks: NavLink[] = [
   { label: "Industries Overview", href: "/industries" },
-  { label: "Construction", href: "/industries/construction" },
-  { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "Facility Management", href: "/industries/facility-management" },
-  { label: "Restaurants / F&B", href: "/industries/restaurants" },
-  { label: "Education", href: "/industries/education" },
+  ...industryHubItems.filter((industry) => industry.hasPage).map((industry) => ({
+    label: industry.name,
+    href: industry.href,
+  })),
 ];
 
 export const companyLinks: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
+  { label: "Resources", href: "/resources" },
 ];
 
 // Primary header navigation, in display order.
@@ -70,16 +71,10 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
   { title: "Services", links: serviceLinks },
   {
     title: "Industries",
-    links: [
-      { label: "Construction", href: "/industries/construction" },
-      { label: "Real Estate", href: "/industries/real-estate" },
-      { label: "Facility Management", href: "/industries/facility-management" },
-      { label: "Restaurants / F&B", href: "/industries/restaurants" },
-      { label: "Education", href: "/industries/education" },
-      { label: "Retail", href: "/industries#retail" },
-      { label: "Healthcare", href: "/industries#healthcare" },
-      { label: "Logistics", href: "/industries#logistics" },
-    ],
+    links: industryHubItems.map((industry) => ({
+      label: industry.name,
+      href: industry.href,
+    })),
   },
   {
     title: "Company",

@@ -1,12 +1,7 @@
-// Success Stories gallery. Seeded from the legacy /portfolio page in
-// old-content.xml (an Elementor image gallery). The export gives only an image
-// and a lightbox title per entry: no descriptions, industries, services,
-// technologies or outcomes. It has NOT been verified that every image is a
-// client logo rather than a project screenshot, or that every client has
-// approved public display, so every entry starts as approved: false.
-//
-// To publish an item, set approved: true. Optional fields render only when
-// they have a value. Nothing is rendered for an item that is not approved.
+// Public gallery migrated from the legacy /portfolio page. The export gives
+// only an image and its visible label; it does not supply verified project
+// outcomes, quotations or descriptions. Only those existing gallery entries
+// are shown until additional case-study details are approved.
 
 export type PortfolioItem = {
   id: string;
@@ -14,7 +9,7 @@ export type PortfolioItem = {
   name: string;
   /** Self-hosted image (see scripts/build-portfolio-images.mjs). */
   image?: string;
-  /** Only items with approved: true are rendered. */
+  /** Kept for future case-study review; no extra claims are inferred from it. */
   approved: boolean;
   industry?: string;
   servicesDelivered?: string[];

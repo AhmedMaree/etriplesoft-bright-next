@@ -11,7 +11,7 @@ const config: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.etriplesoft.com" }],
         destination: "https://etriplesoft.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       ...redirectRules,
       trailingSlashRule,

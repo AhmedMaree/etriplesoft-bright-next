@@ -7,7 +7,7 @@ import type { LegalDocument } from "./types";
 export const privacy: LegalDocument = {
   title: "Privacy Policy",
   metaDescription:
-    "How ETripleSoft collects, uses and discloses your information when you use our website, and your privacy rights.",
+    "Read how ETripleSoft collects, uses and discloses information when you use our website, the choices available to you and your privacy rights.",
   path: "/privacy",
   intro: [
     {

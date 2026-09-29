@@ -72,6 +72,7 @@ export function NavDropdown({
             key={item.href}
             href={item.href}
             onClick={onNavigate}
+            prefetch={false}
           >
             {item.label}
           </Link>

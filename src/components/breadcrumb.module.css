@@ -16,8 +16,11 @@
   color: var(--line);
 }
 .breadcrumb a {
-  display: inline-block;
-  padding-block: 4px;
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  padding-inline: 2px;
   color: var(--blue);
   font-weight: 600;
 }

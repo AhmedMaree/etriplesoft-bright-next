@@ -136,18 +136,18 @@ export default function InsightsReferencePage({ articles }: { articles: InsightC
           <label className={s.searchBox}><Search aria-hidden="true" /><span className={s.srOnly}>Search articles</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search articles…" type="search" /></label>
         </nav>
 
-        {featured && activeCategory === "all" && !query.trim() && <article className={s.featured}>
-          <Link href={`/insights/${featured.slug}`} className={s.featuredImage}><CardImage image={featured.image} /></Link>
+        {featured && activeCategory === "all" && !query.trim() && <Link href={`/insights/${featured.slug}`} className={s.featured}>
+          <span className={s.featuredImage}><CardImage image={featured.image} /></span>
           <div className={s.featuredCopy}>
             <span className={s.featuredLabel}><span aria-hidden="true">★</span> Featured article</span>
-            <h2><Link href={`/insights/${featured.slug}`}>{featured.title}</Link></h2>
+            <h2>{featured.title}</h2>
             <p>{featured.summary}</p>
             <div className={s.articleMeta}>
               <span><CalendarDays aria-hidden="true" /><time dateTime={featured.date}>{featured.dateLabel}</time> · {featured.minutes} min read</span>
-              <Link href={`/insights/${featured.slug}`}>Read Article<ArrowRight aria-hidden="true" /></Link>
+              <span className={s.readArticle}>Read Article<ArrowRight aria-hidden="true" /></span>
             </div>
           </div>
-        </article>}
+        </Link>}
 
         <section className={s.latest} id="articles" aria-labelledby="latest-heading">
           <div className={s.sectionHeading}>
@@ -155,20 +155,20 @@ export default function InsightsReferencePage({ articles }: { articles: InsightC
             <span className={s.resultCount}>{filteredArticles.length} {filteredArticles.length === 1 ? "article" : "articles"}</span>
           </div>
           {displayedArticles.length ? <div className={s.articleGrid}>
-            {displayedArticles.map((article) => <article className={s.articleCard} key={article.slug}>
-              <Link href={`/insights/${article.slug}`} className={s.cardImage}>
+            {displayedArticles.map((article) => <Link href={`/insights/${article.slug}`} className={s.articleCard} key={article.slug}>
+              <span className={s.cardImage}>
                 <CardImage image={article.image} />
                 <span className={`${s.categoryTag} ${s[`tag${article.category}`] ?? ""}`}>{article.category}</span>
-              </Link>
+              </span>
               <div className={s.cardBody}>
-                <h3><Link href={`/insights/${article.slug}`}>{article.title}</Link></h3>
+                <h3>{article.title}</h3>
                 <p>{article.summary}</p>
                 <div className={s.cardFooter}>
                   <span className={s.cardDate}><CalendarDays aria-hidden="true" /><time dateTime={article.date}>{article.dateLabel}</time> · {article.minutes} min read</span>
-                  <Link href={`/insights/${article.slug}`}>Read More<ArrowRight aria-hidden="true" /></Link>
+                  <span className={s.readMore}>Read More<ArrowRight aria-hidden="true" /></span>
                 </div>
               </div>
-            </article>)}
+            </Link>)}
           </div> : <p className={s.emptyState}>No articles match that search. Try a different title or topic.</p>}
           {activeCategory === "all" && !query.trim() && filteredArticles.length > 6 && <button type="button" className={s.moreButton} onClick={() => setShowAll((value) => !value)}>{showAll ? "Show latest articles" : "Browse all articles"}<ArrowRight aria-hidden="true" /></button>}
         </section>

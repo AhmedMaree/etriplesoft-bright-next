@@ -89,8 +89,7 @@ export const realEstate: IndustryPageData = {
     button: "Discuss real estate Odoo",
   },
   seo: {
-    title: "Odoo Real Estate Software",
+    title: "Odoo Real Estate Software in Egypt & the Gulf",
     description: "Connect property records, CRM, sales or leasing, contracts, billing, collections and maintenance with an Odoo solution for Egypt, Saudi Arabia and the UAE.",
   },
 };
-

@@ -3,7 +3,10 @@ export type IndustrySlug =
   | "real-estate"
   | "facility-management"
   | "restaurants"
-  | "education";
+  | "education"
+  | "retail"
+  | "healthcare"
+  | "logistics";
 
 export type IndustryCard = {
   title: string;
@@ -56,4 +59,3 @@ export type IndustryPageData = {
     description: string;
   };
 };
-

@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Globe, Headphones, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
+import { Globe, Headphones, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { company, mailto } from "@/lib/company";
-import { footerColumns, siteContact } from "@/lib/navigation";
+import { footerColumns } from "@/lib/navigation";
 import { BackToTop } from "./back-to-top";
 
 export function Footer() {
@@ -10,13 +11,22 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <Link href="/" aria-label="ETripleSoft home">
-            <img src="/images/logo-white.png" alt="ETripleSoft" />
+            <Image
+              src="/images/logo-white.svg"
+              alt="ETripleSoft"
+              width={1600}
+              height={393}
+              sizes="200px"
+            />
           </Link>
           <p>
             We empower businesses across Egypt, UAE and Saudi Arabia with
             innovative technology solutions to build a smarter, more connected
             future.
           </p>
+          <a className="footer-email" href={mailto()}>
+            <Mail size={15} aria-hidden="true" /> {company.primaryEmail}
+          </a>
           <div className="socials" aria-label="Contact channels">
             <a href={mailto()} aria-label="Email ETripleSoft">
               <Mail size={17} />
@@ -56,10 +66,22 @@ export function Footer() {
         ))}
         <div>
           <p className="footer-heading">Our Offices</p>
-          {siteContact.offices.map((office) => (
-            <Link key={office.label} href={office.href}>
-              <MapPin size={14} aria-hidden="true" /> {office.label}
-            </Link>
+          {company.offices.map((office) => (
+            <div className="footer-office" key={office.id}>
+              <Link href="/contact#offices">
+                <MapPin size={14} aria-hidden="true" /> {office.label}
+              </Link>
+              {office.phones.map((phone) => (
+                <a
+                  className="footer-office-phone"
+                  href={phone.href}
+                  key={phone.href}
+                  aria-label={`Call ${office.label}: ${phone.display}`}
+                >
+                  <Phone size={13} aria-hidden="true" /> {phone.display}
+                </a>
+              ))}
+            </div>
           ))}
         </div>
       </div>

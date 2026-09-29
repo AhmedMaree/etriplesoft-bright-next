@@ -989,3 +989,6 @@
     align-items: flex-start;
   }
 }
+@media (max-width: 760px) {
+  .learnMore, .outlineLink, .trusted a { min-width: 44px; min-height: 44px; padding-block: 10px; }
+}

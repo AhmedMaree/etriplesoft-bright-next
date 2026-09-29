@@ -836,13 +836,7 @@ const heldForVerification: FaqEntry[] = [
     sourceUrl: "https://etriplesoft.com/cloud-security-solutions/",
     language: "en",
     note: "not selected for publication (module-specific; verify with the delivery team)",
-    alsoOn: [
-      "https://etriplesoft.com/cloud-security-solutions/",
-      "https://etriplesoft.com/cloud-security-solutions/",
-      "https://etriplesoft.com/cloud-security-solutions/",
-      "https://etriplesoft.com/cloud-security-solutions/",
-      "https://etriplesoft.com/cloud-security-solutions/",
-    ],
+    alsoOn: ["/cloud"],
   },
   {
     id: "held-012",

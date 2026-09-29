@@ -155,8 +155,16 @@ export const activeRedirects: Redirect[] = [
   // Primary legacy site pages and old navigation URLs.
   { source: "/solutions", destination: "/insights" },
   { source: "/request-demo", destination: "/contact" },
-  { source: "/courses", destination: "/services" },
-  { source: "/profile", destination: "/about" },
+  { source: "/courses", destination: "/resources" },
+  { source: "/profile", destination: "/resources" },
+  {
+    source: "/wp-content/uploads/2025/10/E-TripleSoft-Company-Profile.pdf",
+    destination: "/downloads/etriplesoft-company-profile.pdf",
+  },
+  {
+    source: "/wp-content/uploads/2026/04/Etriplesoft_COA-generator.html",
+    destination: "/tools/chart-of-accounts-generator.html",
+  },
   { source: "/odoo-erpp", destination: "/odoo" },
   { source: "/cloud-security-solutions", destination: "/cloud" },
   { source: "/ar", destination: "/" },
@@ -303,10 +311,10 @@ export const pendingRedirects: Redirect[] = [];
 
 // Each legacy URL is registered with and without its trailing slash so that
 // either form reaches the destination in a single hop.
-export const redirectRules: (Redirect & { permanent: true })[] =
+export const redirectRules: (Redirect & { statusCode: 301 })[] =
   activeRedirects.flatMap(({ source, destination }) => [
-    { source, destination, permanent: true },
-    { source: `${source}/`, destination, permanent: true },
+    { source, destination, statusCode: 301 },
+    { source: `${source}/`, destination, statusCode: 301 },
   ]);
 
 // Next.js normally strips trailing slashes itself *before* custom redirects
@@ -318,5 +326,5 @@ export const redirectRules: (Redirect & { permanent: true })[] =
 export const trailingSlashRule = {
   source: "/:path+/",
   destination: "/:path+",
-  permanent: true as const,
+  statusCode: 301 as const,
 };

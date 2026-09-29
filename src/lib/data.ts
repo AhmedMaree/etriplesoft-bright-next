@@ -639,27 +639,6 @@ export const servicePages: Record<string, ServiceData> = {
   },
 };
 
-export const industries = [
-  [
-    "Construction",
-    "construction",
-    "Project tracking, procurement and site cost control.",
-  ],
-  ["Retail", "retail", "Multi-branch POS, inventory and customer loyalty."],
-  ["Real Estate", "dubai", "Property, leasing and sales pipeline management."],
-  [
-    "Education",
-    "education",
-    "Student records, admissions and campus operations.",
-  ],
-  [
-    "Healthcare",
-    "healthcare",
-    "Patient records, scheduling and operational workflows.",
-  ],
-  ["Logistics", "distribution", "Fleet, warehouse and shipment visibility."],
-];
-
 // Compatibility data for the existing project-grid widget. These layouts are
 // illustrative and are not presented as verified client case studies.
 export const projects = [

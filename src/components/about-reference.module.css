@@ -1155,6 +1155,7 @@
 @media (max-width: 390px) {
   .heroActions :global(.button) {
     font-size: 11px;
+    min-height: 44px;
   }
 
   .countryList > span {

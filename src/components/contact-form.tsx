@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Script from "next/script";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { company } from "@/lib/company";
 import {
@@ -17,6 +18,18 @@ type State =
   | { phase: "submitting" }
   | { phase: "success"; message: string }
   | { phase: "error"; message: string };
+
+type TurnstileApi = {
+  render: (container: HTMLElement, options: Record<string, unknown>) => string;
+  reset: (widgetId: string) => void;
+  remove: (widgetId: string) => void;
+};
+
+declare global {
+  interface Window { turnstile?: TurnstileApi }
+}
+
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const fieldNames = [
   "name",
@@ -44,6 +57,11 @@ export function ContactForm({
   const id = (name: string) => `${uid}-${name}`;
   const formRef = useRef<HTMLFormElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | null>(null);
+  const tokenRef = useRef("");
+  const [turnstileReady, setTurnstileReady] = useState(false);
+  const [verificationError, setVerificationError] = useState("");
   const [state, setState] = useState<State>({ phase: "idle" });
   const [errors, setErrors] = useState<InquiryErrors>({});
   const [service, setService] = useState(initialService);
@@ -58,6 +76,41 @@ export function ContactForm({
   useEffect(() => {
     if (Object.keys(errors).length) summaryRef.current?.focus();
   }, [errors]);
+
+  useEffect(() => {
+    if (!turnstileSiteKey || !turnstileReady || !widgetRef.current || !window.turnstile) return;
+    const api = window.turnstile;
+    const rendered = api.render(widgetRef.current, {
+      sitekey: turnstileSiteKey,
+      action: kind,
+      theme: "light",
+      size: "flexible",
+      "response-field": false,
+      callback: (token: string) => {
+        tokenRef.current = token;
+        setVerificationError("");
+      },
+      "expired-callback": () => {
+        tokenRef.current = "";
+        setVerificationError("Verification expired. Please try again.");
+      },
+      "error-callback": () => {
+        tokenRef.current = "";
+        setVerificationError("Verification could not load. Please try again.");
+      },
+    });
+    widgetId.current = rendered;
+    return () => {
+      api.remove(rendered);
+      widgetId.current = null;
+      tokenRef.current = "";
+    };
+  }, [kind, turnstileReady]);
+
+  function resetVerification() {
+    tokenRef.current = "";
+    if (widgetId.current) window.turnstile?.reset(widgetId.current);
+  }
 
   function read(form: HTMLFormElement) {
     const data = new FormData(form);
@@ -87,6 +140,13 @@ export function ContactForm({
     setErrors(found);
     if (Object.keys(found).length) return;
 
+    if (turnstileSiteKey && !tokenRef.current) {
+      setVerificationError("Please complete the verification before sending.");
+      widgetRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+      return;
+    }
+    if (turnstileSiteKey) data.set("cf-turnstile-response", tokenRef.current);
+
     setState({ phase: "submitting" });
     try {
       const response = await fetch("/api/inquiries", {
@@ -97,6 +157,7 @@ export function ContactForm({
         .json()
         .catch(() => ({}));
       if (response.ok) {
+        resetVerification();
         form.reset();
         setService("");
         setErrors({});
@@ -107,6 +168,7 @@ export function ContactForm({
         return;
       }
       if (result.errors) setErrors(result.errors);
+      resetVerification();
       setState({
         phase: "error",
         message:
@@ -114,6 +176,7 @@ export function ContactForm({
           `We could not send your message. Please try again, or email ${company.primaryEmail}.`,
       });
     } catch {
+      resetVerification();
       // Entered values stay in the form so the visitor can retry.
       setState({
         phase: "error",
@@ -316,7 +379,24 @@ export function ContactForm({
         </div>
       </div>
 
-      <button type="submit" className="button" disabled={submitting}>
+      {turnstileSiteKey ? (
+        <div className="form-verification">
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+            strategy="afterInteractive"
+            onReady={() => setTurnstileReady(true)}
+            onError={() => setVerificationError("Verification could not load. Please try again.")}
+          />
+          <div ref={widgetRef} aria-label="Security verification" />
+          {verificationError && <p className="field-error" role="alert">{verificationError}</p>}
+        </div>
+      ) : (
+        <p className="form-status form-status-error" role="status">
+          Online verification is temporarily unavailable. Please email {company.primaryEmail} instead.
+        </p>
+      )}
+
+      <button type="submit" className="button" disabled={submitting || !turnstileSiteKey}>
         {submitting ? (
           <>
             <Loader2 size={17} className="spin" aria-hidden="true" />

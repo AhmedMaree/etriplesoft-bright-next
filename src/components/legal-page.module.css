@@ -77,6 +77,12 @@
   line-height: 1.5;
   break-inside: avoid;
 }
+.toc a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding-block: 3px;
+}
 .related {
   margin-top: 40px !important;
   padding-top: 20px;
@@ -86,4 +92,6 @@
   .toc ol {
     columns: 1;
   }
+  .toc a { min-width: 44px; min-height: 44px; }
+  .doc p a, .doc li a, .related a { display: inline-block; min-width: 44px; min-height: 44px; padding-block: 10px; max-width: 100%; overflow-wrap: anywhere; }
 }

@@ -134,6 +134,10 @@
   color: var(--line);
 }
 .breadcrumb a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding-inline: 2px;
   color: var(--blue);
   font-weight: 600;
 }
@@ -848,4 +852,7 @@
   .faq summary svg {
     transition: none;
   }
+}
+@media (max-width: 760px) {
+  .breadcrumb a, .anchors a, .stageNav a, .sequence a { min-width: 44px; min-height: 44px; }
 }

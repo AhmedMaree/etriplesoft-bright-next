@@ -103,6 +103,7 @@ export function HeaderNav() {
           onClick={() => setOpen(false)}
           className={pathname === "/" ? "active" : ""}
           href="/"
+          prefetch={false}
         >
           Home
         </Link>
@@ -134,6 +135,7 @@ export function HeaderNav() {
               href={group.href!}
               onClick={() => setOpen(false)}
               className={matchesPath(pathname, group.href!) ? "active" : ""}
+              prefetch={false}
             >
               {group.label}
             </Link>
@@ -152,7 +154,7 @@ export function HeaderNav() {
         <span className="language">
           <Globe size={16} /> EN
         </span>
-        <Link className="button gradient" href={bookADemo.href}>
+        <Link className="button gradient" href={bookADemo.href} prefetch={false}>
           {bookADemo.label}
           <ArrowRight size={17} />
         </Link>
@@ -178,7 +180,7 @@ export function HeaderNav() {
           />
           <div>
             {searchResults.map((s) => (
-              <Link key={s.href} href={s.href} onClick={() => setSearch(false)}>
+              <Link key={s.href} href={s.href} onClick={() => setSearch(false)} prefetch={false}>
                 {s.label}
                 <ArrowRight size={15} />
               </Link>

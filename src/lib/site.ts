@@ -10,7 +10,7 @@ export const siteConfig = {
   locale: "en_US",
   defaultTitle: "ETripleSoft — Digital Transformation Built Around Your Business",
   defaultDescription:
-    "Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, the UAE and Saudi Arabia.",
+    "ETripleSoft is an Odoo partner delivering ERP, cloud, AI, web, mobile and digital marketing solutions for businesses across Egypt, the UAE and Saudi Arabia.",
   /** Self-hosted 1200x630 fallback, built by scripts/build-og-image.mjs. */
   ogImage: {
     url: "/images/og-default.png",
@@ -18,7 +18,7 @@ export const siteConfig = {
     height: 630,
     alt: "ETripleSoft: digital transformation built around your business",
   },
-  logo: "/images/logo-header-hq.png",
+  logo: "/images/logo-header.svg",
 } as const;
 
 /** Absolute URL for a site-relative path. */

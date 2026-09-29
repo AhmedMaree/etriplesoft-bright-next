@@ -1066,3 +1066,6 @@
     transition-duration: 0.01ms !important;
   }
 }
+@media (max-width: 760px) {
+  .action, .outlineLink { min-width: 44px; min-height: 44px; }
+}

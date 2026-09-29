@@ -6,7 +6,7 @@ import type { LegalDocument } from "./types";
 export const terms: LegalDocument = {
   title: "Terms & Conditions",
   metaDescription:
-    "The terms and conditions that govern your use of the ETripleSoft website.",
+    "Read the terms and conditions for using the ETripleSoft website, including site content, permitted use, limitations and how to contact us with questions.",
   path: "/terms",
   intro: [
     {

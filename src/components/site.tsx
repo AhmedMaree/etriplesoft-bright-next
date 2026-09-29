@@ -148,12 +148,14 @@ export function Button({
 export function TextLink({
   children,
   href = "/contact",
+  prefetch,
 }: {
   children: React.ReactNode;
   href?: string;
+  prefetch?: boolean;
 }) {
   return (
-    <Link className="text-link" href={href}>
+    <Link className="text-link" href={href} prefetch={prefetch}>
       {children}
       <ArrowRight size={15} />
     </Link>
@@ -182,6 +184,7 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
+  headingLevel = 2,
   center = false,
   link,
   href,
@@ -189,15 +192,17 @@ export function SectionHeading({
   eyebrow?: string;
   title: React.ReactNode;
   description?: string;
+  headingLevel?: 1 | 2;
   center?: boolean;
   link?: string;
   href?: string;
 }) {
+  const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
     <div className={`section-heading ${center ? "center" : ""}`}>
       <div>
         {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-        <h2>{title}</h2>
+        <Heading>{title}</Heading>
         {description && <p>{description}</p>}
       </div>
       {link && <TextLink href={href}>{link}</TextLink>}
@@ -577,7 +582,7 @@ export function Hero({
               "/digital-marketing",
             ],
           ].map(([icon, label, copy, href]) => (
-            <Link href={href} key={label}>
+            <Link href={href} key={label} prefetch={false}>
               <Icon name={icon} />
               <span>
                 <strong>{label}</strong>
@@ -592,31 +597,32 @@ export function Hero({
 }
 export function IndustryBento({
   items,
-  href = "/industries",
 }: {
-  items: string[][];
-  href?: string;
+  items: {
+    id: string;
+    name: string;
+    image: string;
+    description: string;
+    href: string;
+  }[];
 }) {
-  const order =
-    items.length >= 6
-      ? [items[0], items[1], items[3], items[2], items[4], items[5]]
-      : items;
   return (
     <div className="industry-bento">
-      {order.map(([title, image, description], i) => (
-        <a
+      {items.map(({ id, name, image, description, href }, i) => (
+        <Link
           href={href}
+          prefetch={false}
           className={
             "industry-bento-tile" + (i === 0 || i === 3 ? " wide" : "")
           }
-          key={title}
+          key={id}
         >
-          <Photo name={image} alt={title} />
+          <Photo name={image} alt="" />
           <span className="industry-bento-copy">
-            <strong>{title}</strong>
+            <strong>{name}</strong>
             {description && <em>{description}</em>}
           </span>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -924,14 +930,13 @@ export function Offices({ contact = false }: { contact?: boolean }) {
               </h3>
               {office.address && <p>{office.address}</p>}
               {office.phones.length > 0 && (
-                <p>
-                  {office.phones.map((phone, index) => (
+                <div className="office-phones">
+                  {office.phones.map((phone) => (
                     <span key={phone.href}>
-                      {index > 0 && " · "}
                       <a href={phone.href}>{phone.display}</a>
                     </span>
                   ))}
-                </p>
+                </div>
               )}
               {mapUrl && (
                 <a

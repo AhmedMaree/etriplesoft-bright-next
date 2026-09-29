@@ -31,7 +31,7 @@ export const minMessageLength = 10;
 
 /** Every field a form may send. Anything else is rejected by the server. */
 export const allowedFields: Record<InquiryKind, readonly string[]> = {
-  contact: ["kind", "name", "email", "company", "phone", "service", "message", "website"],
+  contact: ["kind", "name", "email", "company", "phone", "service", "message", "website", "cf-turnstile-response"],
   support: [
     "kind",
     "name",
@@ -42,6 +42,7 @@ export const allowedFields: Record<InquiryKind, readonly string[]> = {
     "subject",
     "message",
     "website",
+    "cf-turnstile-response",
   ],
   newsletter: ["kind", "email", "consent", "website"],
 };

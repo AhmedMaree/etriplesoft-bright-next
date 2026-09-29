@@ -1116,3 +1116,6 @@
     transition: none;
   }
 }
+@media (max-width: 760px) {
+  .outlineLink { min-width: 44px; min-height: 44px; }
+}

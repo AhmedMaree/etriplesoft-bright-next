@@ -39,10 +39,10 @@ export default function OdooHero({
             visibility with Odoo &mdash; tailored for your business needs.
           </p>
           <div className={styles.actions}>
-            <Link className={`${styles.button} ${styles.primaryButton}`} href={primaryHref}>
+            <Link className={`${styles.button} ${styles.primaryButton}`} href={primaryHref} prefetch={false}>
               Explore Odoo ERP <ArrowRight aria-hidden="true" />
             </Link>
-            <Link className={`${styles.button} ${styles.secondaryButton}`} href="/contact?service=Odoo%20ERP%20Demo">
+            <Link className={`${styles.button} ${styles.secondaryButton}`} href="/contact?service=Odoo%20ERP%20Demo" prefetch={false}>
               Request a Demo <ArrowRight aria-hidden="true" />
             </Link>
           </div>
@@ -54,7 +54,7 @@ export default function OdooHero({
         </div>
         <div className={styles.visual}>
           <div className={styles.laptopAngle}>
-            <Image src="/images/odoo/odoo-laptop-perspective.png" alt="Illustrative Odoo dashboard with revenue, leads, invoices, active users, and a sales overview chart" width={1536} height={1024} className={styles.laptop} sizes="(max-width: 760px) 100vw, (max-width: 1000px) 90vw, 850px" />
+          <Image src="/images/odoo/odoo-laptop-perspective.webp" alt="Illustrative Odoo dashboard with revenue, leads, invoices, active users, and a sales overview chart" width={1536} height={1024} className={styles.laptop} sizes="(max-width: 760px) 100vw, (max-width: 1000px) 90vw, 850px" />
           </div>
           <span className={`${styles.floatingIcon} ${styles.iconSales}`} aria-hidden="true">
             <Image src="/images/odoo/icon-sales.webp" alt="" width={160} height={160} sizes="64px" />
@@ -65,7 +65,7 @@ export default function OdooHero({
           <span className={`${styles.floatingIcon} ${styles.iconInventory}`} aria-hidden="true">
             <Image src="/images/odoo/icon-inventory.webp" alt="" width={160} height={160} sizes="64px" />
           </span>
-          <Link className={styles.addonsPanel} href="/odoo" aria-label="View all Odoo addons: Sales, CRM, Accounting, Inventory, Manufacturing, Website, E-commerce, and Projects">
+          <Link className={styles.addonsPanel} href="/odoo" prefetch={false} aria-label="View all Odoo addons: Sales, CRM, Accounting, Inventory, Manufacturing, Website, E-commerce, and Projects">
             <Image src="/images/odoo/odoo-addons.webp" alt="Odoo Addons: Sales, CRM, Accounting, Inventory, Manufacturing, Website, E-commerce, and Projects" width={980} height={670} sizes="(max-width: 760px) 46vw, 310px" />
           </Link>
         </div>

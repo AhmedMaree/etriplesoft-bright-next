@@ -522,7 +522,7 @@
   max-width: 690px;
 }
 .regionTop .eyebrow {
-  font-size: clamp(10px, 0.95vw, 16px);
+  font-size: clamp(11px, 0.95vw, 16px);
 }
 .regionTop > img {
   width: 100%;
@@ -1401,4 +1401,7 @@
     right: 18px;
     width: calc((100% - 36px) * 0.5);
   }
+}
+@media (max-width: 760px) {
+  .learnMore { min-width: 44px; min-height: 44px; padding-block: 10px; }
 }

@@ -7,8 +7,9 @@ import { services } from "@/lib/data";
 import { portfolioItems } from "@/data/portfolio";
 import styles from "./portfolio.module.css";
 
-// Only approved items are ever rendered; optional fields render only when set.
-const approved = portfolioItems.filter((item) => item.approved);
+// Migrate the public legacy gallery as image/name entries only. No outcomes,
+// client quotations or other unverified case-study details are added.
+const galleryItems = portfolioItems.filter((item) => item.image && item.source);
 
 // Service pages are linked as capabilities, not tied to any named client.
 const capabilityHref: Record<string, string> = {
@@ -50,14 +51,14 @@ export function PortfolioPage() {
           <p>
             ETripleSoft delivers Odoo ERP, cloud and security, AI automation,
             web, mobile and digital marketing.
-            {approved.length > 0
+            {galleryItems.length > 0
               ? " Selected work is shown below, followed by the capabilities that made it possible."
               : " Explore the capabilities behind our projects and talk to us about yours."}
           </p>
         </div>
       </section>
 
-      {approved.length > 0 && (
+      {galleryItems.length > 0 && (
         <section
           className={styles.work}
           id="selected-work"
@@ -66,7 +67,7 @@ export function PortfolioPage() {
           <div className="container">
             <h2 id="portfolio-work">Selected Work</h2>
             <ul className={styles.grid}>
-              {approved.map((item) => (
+              {galleryItems.map((item) => (
                 <li key={item.id}>
                   <article className={styles.card}>
                     {item.image && (

@@ -53,6 +53,10 @@
   font-size: 14px;
 }
 .toc a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding-block: 3px;
   color: var(--blue);
   font-weight: 600;
 }
@@ -251,4 +255,8 @@
   .relatedList a {
     transition: none;
   }
+}
+@media (max-width: 760px) {
+  .toc a { min-width: 44px; min-height: 44px; }
+  .body p a, .body li a { display: inline-block; min-width: 44px; min-height: 44px; padding-block: 10px; max-width: 100%; overflow-wrap: anywhere; }
 }

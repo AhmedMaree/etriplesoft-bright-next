@@ -114,6 +114,28 @@ export async function POST(request: NextRequest) {
         400,
       );
 
+    if (kind !== "newsletter") {
+      const secret = process.env.TURNSTILE_SECRET_KEY;
+      if (!secret)
+        return respond({ message: "Verification is temporarily unavailable. Please email us instead." }, 503);
+      const token = values["cf-turnstile-response"] || "";
+      if (!token || token.length > 2048)
+        return respond({ message: "Please complete the verification and try again." }, 403);
+      const body = new URLSearchParams({ secret, response: token });
+      if (ip !== "unknown") body.set("remoteip", ip);
+      const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        body,
+        cache: "no-store",
+        signal: AbortSignal.timeout(10000),
+      });
+      if (!verification.ok)
+        return respond({ message: "Verification is temporarily unavailable. Please try again." }, 503);
+      const result: { success?: boolean; action?: string } = await verification.json();
+      if (!result.success || (result.action && result.action !== kind))
+        return respond({ message: "Verification failed. Please try again." }, 403);
+    }
+
     const cap = (key: keyof typeof limits) =>
       (values[key] ?? "").slice(0, limits[key]);
     const newsletter = kind === "newsletter";
