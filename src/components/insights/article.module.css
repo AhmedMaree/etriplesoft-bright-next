@@ -1,0 +1,254 @@
+.page {
+  padding-bottom: 8px;
+}
+.wrap {
+  width: min(760px, calc(100% - 36px));
+  margin-inline: auto;
+}
+.head {
+  padding-block: 28px 12px;
+}
+.crumb {
+  margin-bottom: 20px;
+}
+.category {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.head h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  text-wrap: balance;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.toc {
+  margin-block: 24px 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--pale);
+}
+.toc h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.toc ol {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.toc a {
+  color: var(--blue);
+  font-weight: 600;
+}
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* Article body */
+.body {
+  padding-bottom: 8px;
+}
+.body h2 {
+  margin-top: 40px;
+  font-size: clamp(24px, 3.6vw, 30px);
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 16px);
+  text-wrap: balance;
+}
+.body h3 {
+  margin-top: 28px;
+  font-size: 20px;
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 16px);
+}
+.body p,
+.body li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.body p {
+  margin-top: 14px;
+}
+.body ul,
+.body ol {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-left: 22px;
+}
+.body a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.body blockquote {
+  margin: 18px 0 0;
+  padding: 4px 0 4px 18px;
+  border-left: 4px solid var(--blue);
+  color: var(--muted);
+}
+.note {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+}
+.figure {
+  margin: 24px 0 0;
+}
+.figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+.tableWrap {
+  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.tableWrap table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tableWrap th,
+.tableWrap td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.tableWrap thead th {
+  background: var(--pale);
+  font-weight: 650;
+  color: var(--navy);
+}
+.tableWrap tbody th {
+  font-weight: 600;
+  color: var(--navy);
+}
+.tableWrap tr:last-child th,
+.tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.cta {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius-lg);
+  background: var(--pale);
+}
+.cta strong {
+  display: block;
+  font-size: 17px;
+  color: var(--navy);
+}
+.cta p {
+  margin-top: 6px !important;
+  font-size: 15px !important;
+}
+.cta div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.cta :global(.button) {
+  text-decoration: none;
+}
+.body .cta a {
+  text-decoration: none;
+}
+.body .cta :global(.button.gradient) {
+  color: #fff;
+}
+.body .cta :global(.button.secondary) {
+  color: var(--navy);
+}
+
+/* FAQ, related */
+.faq {
+  margin-top: 44px;
+}
+.faq h2 {
+  margin-bottom: 18px;
+  font-size: clamp(24px, 3.6vw, 30px);
+}
+.faqNote {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.related {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.related h2 {
+  font-size: 22px;
+}
+.relatedList {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.relatedList a {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  font-weight: 650;
+  color: var(--navy);
+  transition:
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
+}
+.relatedList a:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+}
+.relatedList span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.endCta {
+  margin-top: 48px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .relatedList a {
+    transition: none;
+  }
+}

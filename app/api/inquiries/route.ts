@@ -2,110 +2,144 @@ import { NextRequest, NextResponse } from "next/server";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
+import { company } from "@/lib/company";
+import {
+  allowedFields,
+  limits,
+  validateInquiry,
+  type InquiryKind,
+} from "@/lib/inquiry";
+
 export const runtime = "nodejs";
+
+const MAX_BODY_BYTES = 64 * 1024;
+const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
+
+// Best-effort, per-instance rate limit. On multi-instance or serverless hosting
+// each instance keeps its own counter; add an edge/WAF limit for a hard cap.
+const hits = new Map<string, number[]>();
+function rateLimited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT.windowMs,
+  );
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) {
+    for (const [key, times] of hits)
+      if (!times.some((t) => now - t < RATE_LIMIT.windowMs)) hits.delete(key);
+  }
+  return recent.length > RATE_LIMIT.max;
+}
+
+const respond = (
+  body: { message: string; errors?: Record<string, string> },
+  status = 200,
+) => NextResponse.json(body, { status });
+
+const unavailable = `We could not send your message. Please try again, or email ${company.primaryEmail}.`;
+
 export async function POST(request: NextRequest) {
-  if (Number(request.headers.get("content-length") || 0) > 11 * 1024 * 1024)
-    return NextResponse.json(
-      { message: "The upload is too large. Maximum attachment size is 10 MB." },
-      { status: 413 },
-    );
+  if (Number(request.headers.get("content-length") || 0) > MAX_BODY_BYTES)
+    return respond({ message: "Your message is too large." }, 413);
+
   const origin = request.headers.get("origin");
   const host = request.headers.get("host") || request.nextUrl.host;
   if (origin) {
+    let sameOrigin = false;
     try {
-      if (new URL(origin).host !== host)
-        return NextResponse.json(
-          { message: "This submission could not be verified." },
-          { status: 403 },
-        );
-    } catch {
-      return NextResponse.json(
+      sameOrigin = new URL(origin).host === host;
+    } catch {}
+    if (!sameOrigin)
+      return respond(
         { message: "This submission could not be verified." },
-        { status: 403 },
+        403,
       );
-    }
   }
+
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (rateLimited(ip))
+    return respond(
+      {
+        message:
+          "Too many submissions. Please wait a few minutes and try again.",
+      },
+      429,
+    );
+
   try {
     const form = await request.formData();
-    const value = (name: string, max = 1000) =>
-      String(form.get(name) || "")
-        .trim()
-        .slice(0, max);
-    const name = value("name", 120),
-      email = value("email", 254),
-      message = value("message", 10000),
-      kind = value("kind", 20);
-    const newsletter = kind === "newsletter";
-    const validEmail = /^\S+@\S+\.\S+$/.test(email);
+    const rawKind = String(form.get("kind") || "");
     if (
-      newsletter
-        ? !validEmail || form.get("consent") !== "on"
-        : !name || !validEmail || message.length < 10
+      rawKind !== "contact" &&
+      rawKind !== "support" &&
+      rawKind !== "newsletter"
     )
-      return NextResponse.json(
-        {
-          message: newsletter
-            ? "Enter a valid email address and agree to receive occasional updates."
-            : "Please provide your name, a valid email address, and a message of at least 10 characters.",
-        },
-        { status: 400 },
+      return respond(
+        { message: "This submission could not be processed." },
+        400,
       );
-    if (
-      kind === "support" &&
-      (!value("subject") ||
-        !value("service") ||
-        !["Low", "Medium", "High", "Critical"].includes(value("priority")) ||
-        form.get("consent") !== "on")
-    )
-      return NextResponse.json(
+    const kind: InquiryKind = rawKind;
+
+    const allowed = new Set(allowedFields[kind]);
+    for (const key of form.keys())
+      if (!allowed.has(key))
+        return respond(
+          { message: "This submission could not be processed." },
+          400,
+        );
+
+    // Honeypot: real visitors never see or fill this field. Answer as if it
+    // worked so bots learn nothing, but deliver nothing.
+    if (String(form.get("website") || "").trim())
+      return respond({ message: "Thank you. Your message has been received." });
+
+    const values: Record<string, string> = {};
+    for (const key of allowed) {
+      const value = form.get(key);
+      if (typeof value === "string") values[key] = value.trim();
+    }
+
+    const errors = validateInquiry(kind, values);
+    if (Object.keys(errors).length)
+      return respond(
         {
           message:
-            "Please complete all required ticket fields and accept the support terms.",
+            kind === "newsletter"
+              ? Object.values(errors)[0]!
+              : "Please correct the highlighted fields.",
+          errors: errors as Record<string, string>,
         },
-        { status: 400 },
+        400,
       );
-    const attachment = form.get("attachment");
-    if (attachment instanceof File && attachment.size > 10 * 1024 * 1024)
-      return NextResponse.json(
-        { message: "Please choose a file smaller than 10 MB." },
-        { status: 413 },
-      );
-    if (
-      attachment instanceof File &&
-      attachment.size &&
-      !/\.(jpe?g|png|pdf|docx?|zip)$/i.test(attachment.name)
-    )
-      return NextResponse.json(
-        {
-          message: "Please use a JPG, PNG, PDF, DOC, DOCX, or ZIP attachment.",
-        },
-        { status: 400 },
-      );
+
+    const cap = (key: keyof typeof limits) =>
+      (values[key] ?? "").slice(0, limits[key]);
+    const newsletter = kind === "newsletter";
     const id = randomUUID();
     const data = {
       id,
       createdAt: new Date().toISOString(),
       kind,
-      name: name || (newsletter ? "Insights newsletter subscriber" : ""),
-      email,
-      company: value("company", 150),
-      phone: value("phone", 40),
-      service: value("service", 150),
-      priority: value("priority", 20),
-      subject: value("subject", 200),
+      name: newsletter ? "Insights newsletter subscriber" : cap("name"),
+      email: cap("email"),
+      company: cap("company"),
+      phone: cap("phone"),
+      service: cap("service"),
+      subject: cap("subject"),
       message: newsletter
         ? "Request to receive the ETripleSoft insights newsletter."
-        : message,
-      consent: newsletter ? form.get("consent") === "on" : null,
-      attachmentName:
-        attachment instanceof File && attachment.size ? attachment.name : null,
+        : cap("message"),
+      consent: newsletter ? values.consent === "on" : null,
     };
-    if (process.env.INQUIRY_WEBHOOK_URL) {
+
+    const webhook = process.env.INQUIRY_WEBHOOK_URL;
+    if (webhook) {
+      // Same multipart shape the endpoint has always received.
       const outbound = new FormData();
       outbound.set("inquiry", JSON.stringify(data));
-      if (attachment instanceof File && attachment.size)
-        outbound.set("attachment", attachment);
-      const result = await fetch(process.env.INQUIRY_WEBHOOK_URL, {
+      const result = await fetch(webhook, {
         method: "POST",
         headers: process.env.INQUIRY_WEBHOOK_TOKEN
           ? { Authorization: `Bearer ${process.env.INQUIRY_WEBHOOK_TOKEN}` }
@@ -114,51 +148,36 @@ export async function POST(request: NextRequest) {
         signal: AbortSignal.timeout(15000),
       });
       if (!result.ok) throw new Error("Delivery failed");
-      return NextResponse.json({
+      return respond({
         message: newsletter
-          ? `Your newsletter request has been submitted. Reference: ${id.slice(0, 8)}.`
-          : `Your ${kind === "support" ? "support ticket" : "message"} has been submitted. Reference: ${id.slice(0, 8)}.`,
-        id,
+          ? "Thank you. Your newsletter request has been received."
+          : kind === "support"
+            ? "Thank you. Your support request has been received."
+            : "Thank you. Your message has been received.",
       });
     }
+
     if (process.env.NODE_ENV === "production")
-      return NextResponse.json(
+      return respond(
         {
-          message: newsletter
-            ? "Newsletter delivery is not configured yet. Please try again later."
-            : "Online submission is not configured yet. Please email " +
-              (kind === "support" ? "support" : "info") +
-              "@etriplesoft.com directly.",
+          message: `Online submission is not available right now. Please email ${company.primaryEmail}.`,
         },
-        { status: 503 },
+        503,
       );
+
+    // Development only: keep the submission on disk so the form can be
+    // exercised without a delivery endpoint. Never reached in production.
     const dir = path.join(process.cwd(), ".local-inquiries", id);
     await mkdir(dir, { recursive: true });
     await writeFile(
       path.join(dir, "inquiry.json"),
       JSON.stringify(data, null, 2),
     );
-    if (attachment instanceof File && attachment.size)
-      await writeFile(
-        path.join(
-          dir,
-          "attachment" + path.extname(attachment.name).toLowerCase(),
-        ),
-        Buffer.from(await attachment.arrayBuffer()),
-      );
-    return NextResponse.json({
-      message: newsletter
-        ? `Saved in this local preview (reference ${id.slice(0, 8)}). Your address has not been subscribed; the request was not sent to ETripleSoft.`
-        : `Saved in this local preview (reference ${id.slice(0, 8)}). This has not been sent to ETripleSoft. For delivery, email ${kind === "support" ? "support" : "info"}@etriplesoft.com.`,
-      id,
+    return respond({
+      message:
+        "Development mode: saved to .local-inquiries only. INQUIRY_WEBHOOK_URL is not set, so nothing was delivered.",
     });
   } catch {
-    return NextResponse.json(
-      {
-        message:
-          "We could not submit your inquiry. Please try again or email info@etriplesoft.com.",
-      },
-      { status: 503 },
-    );
+    return respond({ message: unavailable }, 503);
   }
 }

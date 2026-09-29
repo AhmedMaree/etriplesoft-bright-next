@@ -11,11 +11,23 @@ import {
   CTA,
   Testimonials,
 } from "@/components/site";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import OdooHero from "@/components/odoo/OdooHero";
 import { industries } from "@/lib/data";
+export const metadata: Metadata = pageMetadata({
+  title: siteConfig.defaultTitle,
+  absoluteTitle: true,
+  description: siteConfig.defaultDescription,
+  path: "/",
+});
+
 export default function Home() {
   return (
     <main id="main" className="homepage">
+      <JsonLd data={organizationJsonLd()} />
       <Hero
         className="home-hero"
         eyebrow="Built for Smarter Growth"
@@ -102,7 +114,7 @@ export default function Home() {
             title="Deep Industry Expertise"
             description="We understand your industry. Our tailored solutions help you overcome challenges and achieve sustainable growth."
             link="Explore All Industries"
-            href="/industries#expertise"
+            href="/industries"
           />
           <IndustryBento items={industries} />
         </div>

@@ -267,22 +267,12 @@ export default function ServicePage({ slug }: { slug: string }) {
               title="Business Solutions by Industry"
               description="Apply the same connected platform to the workflows that make each sector different."
               link="Explore All Industries"
-              href="/industries#expertise"
+              href="/industries"
             />
             <IndustryBento items={industries} />
           </div>
         </section>
       )}
-
-      <section className="section">
-        <div className="container service-faq">
-          <SectionHeading
-            title="Questions to Resolve Before You Start"
-            description="A useful first conversation should clarify scope, ownership, integrations and the path after launch."
-          />
-          <FAQ questions={service.questions} compact />
-        </div>
-      </section>
 
       <CTA
         title={service.cta}

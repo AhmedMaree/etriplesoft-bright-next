@@ -68,10 +68,6 @@ const faqs = [
     "Do you support ongoing monitoring?",
     "Monitoring and response coverage can be included in an agreed support scope based on your systems and operational requirements.",
   ],
-  [
-    "What industries do you work with?",
-    "We support banking, telecom, government, healthcare, manufacturing and retail, with scope tailored to each environment.",
-  ],
 ] as const;
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -346,7 +342,7 @@ export default function CloudReferencePage() {
                 their cloud environments and accelerate digital transformation.
               </p>
             </div>
-            <Link className={s.outlineLink} href="/industries#expertise">
+            <Link className={s.outlineLink} href="/industries">
               Explore All Industries
               <ArrowRight aria-hidden="true" />
             </Link>

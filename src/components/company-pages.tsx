@@ -3,120 +3,70 @@ import {
   Hero,
   SectionHeading,
   Icon,
-  Cards,
   Photo,
   Button,
   CTA,
   Offices,
-  Process,
-  Stats,
-  Testimonials,
-  FAQ,
+  TextLink,
 } from "./site";
-import { ContactForm } from "./widgets";
-import { industries } from "@/lib/data";
+import { ContactForm } from "./contact-form";
+import { FaqAccordion } from "./faq-accordion";
+import { publishedFaqs } from "@/data/faqs";
+import Link from "next/link";
+import { services } from "@/lib/data";
+import { Breadcrumb, CrumbStrip } from "./breadcrumb";
+import { company, mailto, primaryPhone } from "@/lib/company";
 import { AboutReferencePage } from "./about-reference-page";
+
+// Contact-page FAQ: real published answers (see src/data/faqs.ts), no generic filler.
+const contactFaqIds = ["support-01", "support-02", "implementation-01", "pricing-01"];
+const contactFaqs = contactFaqIds.flatMap((id) => {
+  const entry = publishedFaqs.find((faq) => faq.id === id);
+  return entry ? [entry] : [];
+});
 
 export function AboutPage() {
   return <AboutReferencePage />;
 }
 
-export function PortfolioPage() {
-  return (
-    <main id="main">
-      <Hero
-        eyebrow="Portfolio"
-        title="Real Work Deserves"
-        accent="Real Evidence"
-        description="We are preparing detailed project stories with approved scope, imagery and outcomes. Until then, this page focuses on the work we can discuss responsibly."
-        image="portfolio-hero"
-        primary="Discuss a Similar Project"
-        primaryHref="/contact?service=Project%20enquiry"
-        secondary="Explore Industries"
-        secondaryHref="#expertise"
-        note={"Clear scope.\nVerified outcomes."}
-      />
-
-      <section className="section">
-        <div className="container split">
-          <SectionHeading
-            title="What a Published Case Study Should Show"
-            description="A useful project story explains the client context, the challenge, the agreed scope, the delivered solution and outcomes the client has approved for publication."
-          />
-          <Cards
-            columns={2}
-            compact
-            items={[
-              [
-                "Business Context",
-                "The industry, workflow and operational environment.",
-                "building",
-              ],
-              [
-                "Project Scope",
-                "The systems, teams and responsibilities included.",
-                "file",
-              ],
-              [
-                "Delivered Solution",
-                "What was configured, built, integrated or migrated.",
-                "settings",
-              ],
-              [
-                "Approved Outcomes",
-                "Evidence the client has reviewed and permitted us to share.",
-                "check",
-              ],
-            ]}
-          />
-        </div>
-      </section>
-
-      <section id="expertise" className="section tinted">
-        <div className="container">
-          <SectionHeading
-            title="Industry Workflows We Understand"
-            description="Our conversations start with the operational details that make each sector different."
-          />
-          <div className="industry-strip">
-            {industries.map(([title, image]) => (
-              <a
-                className="industry-tile"
-                href={"/contact?industry=" + encodeURIComponent(title)}
-                key={title}
-              >
-                <Photo name={image} alt={title} />
-                <span>{title}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Stats />
-
-      <section className="section">
-        <div className="container">
-          <Testimonials />
-        </div>
-      </section>
-
-      <CTA
-        title="Planning a Similar Transformation?"
-        description="Share the workflow, systems and outcome you want to improve. We will help you frame the next step."
-        button="Start a Project Conversation"
-      />
-    </main>
-  );
-}
+export { PortfolioPage } from "./portfolio/PortfolioPage";
 
 export function ContactPage() {
+  const methods: { title: string; icon: string; node: React.ReactNode }[] = [
+    {
+      title: "General Enquiries",
+      icon: "mail",
+      node: <a href={mailto()}>{company.primaryEmail}</a>,
+    },
+    {
+      title: "Phone",
+      icon: "headphones",
+      node: <a href={primaryPhone.href}>{primaryPhone.display}</a>,
+    },
+    {
+      title: "Existing Customers",
+      icon: "headphones",
+      node: <Link href="/support-ticket">Get support</Link>,
+    },
+    ...(company.businessHours
+      ? [
+          {
+            title: "Business Hours",
+            icon: "clock",
+            node: <p>{company.businessHours}</p>,
+          },
+        ]
+      : []),
+  ];
   return (
     <main id="main">
       <section className="contact-hero">
         <Photo name="contact-hero" alt="" />
         <div className="container contact-layout">
           <div className="contact-copy">
+            <Breadcrumb
+              items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+            />
             <span className="eyebrow">Contact ETripleSoft</span>
             <h1>
               Let&apos;s Start a <em>Conversation</em>
@@ -136,7 +86,7 @@ export function ContactPage() {
                 ],
                 [
                   "Regional Team",
-                  "Support across Egypt, Saudi Arabia and the UAE.",
+                  "Offices in Egypt, Saudi Arabia and the UAE.",
                   "pin",
                 ],
                 [
@@ -159,25 +109,18 @@ export function ContactPage() {
 
       <section className="section tinted">
         <div className="container">
-          <div className="contact-strip">
-            {[
-              ["General Enquiries", "info@etriplesoft.com", "mail"],
-              ["Support", "support@etriplesoft.com", "headphones"],
-              [
-                "Working Hours",
-                "Sunday – Thursday, 9 AM – 6 PM (EET)",
-                "clock",
-              ],
-            ].map(([title, value, icon]) => (
+          <div
+            className="contact-strip"
+            style={{
+              gridTemplateColumns: `repeat(${methods.length}, minmax(0, 1fr))`,
+            }}
+          >
+            {methods.map(({ title, icon, node }) => (
               <div key={title}>
                 <Icon name={icon} />
                 <div>
                   <h3>{title}</h3>
-                  {value.includes("@") ? (
-                    <a href={"mailto:" + value}>{value}</a>
-                  ) : (
-                    <p>{value}</p>
-                  )}
+                  {node}
                 </div>
               </div>
             ))}
@@ -189,7 +132,7 @@ export function ContactPage() {
         <div className="container">
           <SectionHeading
             title="Three Offices. One Regional Team."
-            description="Connect with ETripleSoft through Cairo, Riyadh or Dubai. Detailed office and phone information should be confirmed with our team before travel."
+            description="Connect with ETripleSoft through our offices in Cairo, Riyadh and Dubai."
           />
           <Offices contact />
         </div>
@@ -201,97 +144,74 @@ export function ContactPage() {
             title="You Have Questions. We Have Answers."
             description="Find quick answers to common questions about our services, support and working with ETripleSoft."
           />
-          <FAQ />
+          <FaqAccordion items={contactFaqs} />
         </div>
       </section>
 
       <CTA
-        title="Ready to Transform Your Business?"
-        description="Get in touch today and let's create a smarter, more efficient tomorrow — together."
-        button="Start a Conversation"
+        title="Already an ETripleSoft customer?"
+        description="Report an issue or ask for help with a service you already use."
+        button="Get Support"
+        href="/support-ticket"
       />
     </main>
   );
 }
 
 export function SupportPage() {
+  const paths = [
+    {
+      icon: "headphones",
+      title: "Existing Customer Support",
+      text: "You already use ETripleSoft services and need help with an issue.",
+      href: "#customer-support",
+      link: "Get support",
+    },
+    {
+      icon: "handshake",
+      title: "Sales Enquiries",
+      text: "You are considering Odoo, AI, cloud, web, mobile or marketing services.",
+      href: "#sales",
+      link: "Talk to sales",
+    },
+    {
+      icon: "message",
+      title: "General Contact",
+      text: "Your question is neither a support issue nor a sales enquiry.",
+      href: "#general",
+      link: "Contact us",
+    },
+  ];
   return (
     <main id="main">
+      <CrumbStrip items={[{ label: "Home", href: "/" }, { label: "Support" }]} />
       <Hero
         className="support-hero"
-        eyebrow="Customer Support"
-        title="Submit a"
-        accent="Support Ticket"
-        description="Use the ETripleSoft support portal to report an issue, share relevant details and follow the ticket with the support team."
+        eyebrow="Support"
+        title="How can we"
+        accent="help?"
+        description="Choose the option that matches your request so it reaches the right team."
         image="support-hero"
-        primary="Open the Support Portal"
-        primaryHref="https://etriple.odoo.com/helpdesk/support-tickets-1"
-        secondary="Email Support"
-        secondaryHref="mailto:support@etriplesoft.com"
-        note={"One request.\nA clear support path."}
+        primary="Existing Customer Support"
+        primaryHref="#customer-support"
+        secondary="Sales & General Enquiries"
+        secondaryHref="/contact"
       />
-      <section className="section tinted">
-        <div className="container split">
-          <SectionHeading
-            title="The Ticket Portal Opens in ETripleSoft's Odoo Helpdesk"
-            description="Include the affected system, what happened, when it started and any screenshots or error messages that can help the team investigate."
-          />
-          <div className="purpose-card">
-            <Icon name="headphones" />
-            <div>
-              <h2>Cannot open the portal?</h2>
-              <p>
-                Send the same information to support@etriplesoft.com and include
-                a contact name and company.
-              </p>
-              <Button href="mailto:support@etriplesoft.com">
-                Email Support
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section">
+      <section className="section tinted">
         <div className="container">
           <SectionHeading
-            title="Choose the Right Category"
-            description="Selecting a category in the portal helps our team route and resolve your ticket faster."
+            title="Choose How We Can Help"
+            description="Each request type has its own path."
           />
           <div className="why-grid">
-            {[
-              [
-                "Technical Support",
-                "Software issues, bugs and error resolution.",
-                "settings",
-              ],
-              [
-                "Account & Billing",
-                "Account access, billing and subscription enquiries.",
-                "file",
-              ],
-              [
-                "Feature Request",
-                "Suggest new features or enhancements.",
-                "sparkles",
-              ],
-              [
-                "Consultation",
-                "Get expert advice and guidance.",
-                "message",
-              ],
-              [
-                "Partnership",
-                "Partnership opportunities and business enquiries.",
-                "handshake",
-              ],
-              ["Other", "General enquiries and other requests.", "headphones"],
-            ].map(([title, description, icon]) => (
+            {paths.map(({ icon, title, text, href, link }) => (
               <div key={title}>
                 <Icon name={icon} />
                 <div>
                   <h3>{title}</h3>
-                  <p>{description}</p>
+                  <p>{text}</p>
+                  <TextLink href={href}>{link}</TextLink>
                 </div>
               </div>
             ))}
@@ -299,27 +219,77 @@ export function SupportPage() {
         </div>
       </section>
 
-      <section className="section tinted">
-        <div className="container">
-          <Process
-            title="How Our Support Works"
-            steps={[
-              "Submit Ticket",
-              "Ticket Acknowledged",
-              "We Investigate",
-              "Get Update",
-              "Resolution",
-            ]}
-          />
+      <section className="section" id="customer-support">
+        <div className="container split">
+          <div>
+            <SectionHeading
+              eyebrow="Existing customers"
+              title="Existing Customer Support"
+              description="Include the affected system, what happened, when it started and any error messages that can help the team investigate."
+            />
+            <div className="purpose-card">
+              <Icon name="headphones" />
+              <div>
+                <h3>Prefer the ticket portal?</h3>
+                <p>
+                  Open a ticket in the ETripleSoft helpdesk portal and follow
+                  it there.
+                </p>
+                <Button href={company.supportPortalUrl}>
+                  Open the Support Portal
+                </Button>
+              </div>
+            </div>
+          </div>
+          <ContactForm support />
         </div>
       </section>
 
-      <CTA
-        title="Ready to Create a Ticket?"
-        description="Open the support portal to submit and track your request."
-        button="Open Support Portal"
-        href="https://etriple.odoo.com/helpdesk/support-tickets-1"
-      />
+      <section className="section tinted" id="sales">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Prospective customers"
+            title="Sales Enquiries"
+            description="Considering a new project? Tell us about it through the contact form so it reaches the right service team. You do not need a support ticket."
+          />
+          <div className="why-grid">
+            {services.map((service) => (
+              <div key={service.slug}>
+                <Icon name={service.icon} />
+                <div>
+                  <h3>{service.title}</h3>
+                  <TextLink
+                    href={`/contact?service=${encodeURIComponent(service.title)}`}
+                  >
+                    Enquire
+                  </TextLink>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="general">
+        <div className="container split">
+          <SectionHeading
+            eyebrow="Everything else"
+            title="General Contact"
+            description="For partnerships, careers, media or any other question, use the contact page."
+          />
+          <div className="purpose-card">
+            <Icon name="mail" />
+            <div>
+              <h3>Contact ETripleSoft</h3>
+              <p>
+                You can also email <a href={mailto()}>{company.primaryEmail}</a>{" "}
+                or call <a href={primaryPhone.href}>{primaryPhone.display}</a>.
+              </p>
+              <Button href="/contact">Go to Contact</Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

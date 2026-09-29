@@ -1,0 +1,286 @@
+// Single source of truth for legacy-URL redirects. Imported by next.config.ts
+// (which serves them) and scripts/test-redirects.ts (which verifies them).
+// Keep this file free of imports so Node can load it directly.
+
+export type Redirect = { source: string; destination: string };
+
+// Legacy WordPress attachment pages for the gallery images on the old
+// /portfolio page (public URLs such as /hyper-one/). They carried no content of
+// their own, so they all go to the Success Stories page.
+const portfolioAttachmentSlugs = [
+  "abm",
+  "abm-2",
+  "abm-2-2",
+  "abodoh",
+  "abodoh-2",
+  "adss",
+  "adss-2",
+  "al-janobi",
+  "al-janobi-2",
+  "al-kanal",
+  "al-kanal-2",
+  "bbr",
+  "bbr-2",
+  "bbr-2-2",
+  "bonyan",
+  "bonyan-2",
+  "bonyan-2-2",
+  "brio-health-wellness",
+  "brio-health-wellness-2",
+  "buseet",
+  "buseet-2",
+  "buseet-driver",
+  "buseet-driver-2",
+  "choice-interiors",
+  "choice-interiors-2",
+  "cosmos-pr",
+  "cosmos-pr-2",
+  "creative-way-ad",
+  "creative-way-ad-2",
+  "etqani",
+  "etqani-2",
+  "etqani-2-2",
+  "express-tires",
+  "express-tires-2",
+  "fts-travel",
+  "gcfx",
+  "gcfx-2",
+  "gcfx-2-2",
+  "gift-concept",
+  "golden-vote",
+  "haibacon",
+  "haibacon-2",
+  "haibacon-2-2",
+  "has-mamul",
+  "has-mamul-2",
+  "has-mamul-2-2",
+  "hyper-one",
+  "hyper-one-2",
+  "ieight",
+  "ieight-2",
+  "ieight-2-2",
+  "infiniti-motors",
+  "infiniti-motors-2",
+  "itq",
+  "itq-2",
+  "lmasar",
+  "lmasar-2",
+  "lmasar-2-2",
+  "mapy",
+  "mapy-2",
+  "mazaya",
+  "mazaya-2",
+  "meat-bun",
+  "meat-bun-2",
+  "megharbel",
+  "megharbel-2",
+  "megharbel-2-2",
+  "melton-protection-solutions",
+  "melton-protection-solutions-2",
+  "metal-exchange-group",
+  "metal-exchange-group-2",
+  "moonland",
+  "moonland-2",
+  "newpack",
+  "newpack-2",
+  "onestack",
+  "onestack-2",
+  "panntone",
+  "panntone-2",
+  "ram",
+  "ram-2",
+  "ram-2-2",
+  "raya-shop",
+  "raya-shop-2",
+  "red-circle",
+  "red-circle-2",
+  "red-circle-2-2",
+  "rmg",
+  "rmg-2",
+  "rmg-2-2",
+  "roaz",
+  "roaz-2",
+  "sam-samouy",
+  "sam-samouy-2",
+  "seoudi",
+  "seoudi-2",
+  "sms",
+  "sms-2",
+  "speed-sanad",
+  "speed-sanad-2",
+  "spinneys",
+  "spinneys-2",
+  "sts",
+  "sts-2",
+  "sts-2-2",
+  "tawasl",
+  "tawasl-2",
+  "tawasl-2-2",
+  "technonet-fire-fighting",
+  "technonet-fire-fighting-2",
+  "too-locations",
+  "too-locations-2",
+  "uniarmour",
+  "uniarmour-2",
+  "uniarmour-2-2",
+  "uppercut",
+  "uppercut-2",
+  "vogue-holidays",
+  "vogue-holidays-2",
+  "x-rentals",
+  "x-rentals-2",
+  "x-rentals-2-2",
+  "xtcy",
+  "xtcy-2",
+  "xtcy-2-2",
+  "yacune-demo",
+  "yacune-demo-2",
+  "zahause-for-modern-home",
+  "zahause-for-modern-home-2",
+  "zeus-health-wellness",
+  "zeus-health-wellness-2",
+];
+
+export const portfolioRedirects: Redirect[] = [
+  { source: "/ar/portfolio", destination: "/portfolio" },
+  ...portfolioAttachmentSlugs.map((slug) => ({
+    source: "/" + slug,
+    destination: "/portfolio",
+  })),
+];
+
+// Legacy WordPress URLs whose destination route exists today. Sources are
+// written without a trailing slash; both variants are generated below.
+export const activeRedirects: Redirect[] = [
+  { source: "/about-us", destination: "/about" },
+  { source: "/odoo-erp-egypt", destination: "/odoo" },
+  { source: "/digital-marketing-agency", destination: "/digital-marketing" },
+  { source: "/cloud-security-solutions-in-egypt", destination: "/cloud" },
+  { source: "/ai-automation-services-etriplesoft", destination: "/ai" },
+  { source: "/web-design-company-in-egypt", destination: "/web" },
+  { source: "/mobile-apps-services", destination: "/mobile" },
+  { source: "/mobile-apps-services-2", destination: "/mobile" },
+  { source: "/contact-us", destination: "/contact" },
+  { source: "/blog", destination: "/insights" },
+  { source: "/faq", destination: "/faqs" },
+  { source: "/privacy-policy", destination: "/privacy" },
+  { source: "/terms-conditions", destination: "/terms" },
+  { source: "/ar/privacy-policy", destination: "/privacy" },
+  { source: "/ar/terms-conditions", destination: "/terms" },
+  {
+    source: "/odoo-implementation-process-by-etriplesoft",
+    destination: "/odoo/implementation",
+  },
+  { source: "/odoo-for-accounting", destination: "/odoo/accounting" },
+  { source: "/odoo-itsm-helpdesk-module", destination: "/odoo/itsm-helpdesk" },
+  {
+    source: "/odoo-dashboard-insights",
+    destination: "/odoo/dashboard-insights",
+  },
+  { source: "/odoo-for-construction", destination: "/industries/construction" },
+  { source: "/ar/odoo-for-construction", destination: "/industries/construction" },
+  {
+    source: "/odoo-real-estate-software",
+    destination: "/industries/real-estate",
+  },
+  { source: "/odoo-for-real-estate", destination: "/industries/real-estate" },
+  { source: "/ar/odoo-for-real-estate", destination: "/industries/real-estate" },
+  {
+    source: "/odoo-facility-management-software",
+    destination: "/industries/facility-management",
+  },
+  {
+    source: "/odoo-for-facility-management",
+    destination: "/industries/facility-management",
+  },
+  {
+    source: "/ar/odoo-for-facility-management",
+    destination: "/industries/facility-management",
+  },
+  {
+    source: "/odoo-restaurant-management-software",
+    destination: "/industries/restaurants",
+  },
+  {
+    source: "/ar/odoo-restaurant-management-software",
+    destination: "/industries/restaurants",
+  },
+  {
+    source: "/odoo-education-management-system",
+    destination: "/industries/education",
+  },
+  {
+    source: "/ar/odoo-education-management-system",
+    destination: "/industries/education",
+  },
+  // Insights articles migrated from WordPress root URLs (Phase 16).
+  {
+    source: "/odoo-roi-return-on-investment",
+    destination: "/insights/odoo-roi-return-on-investment",
+  },
+  {
+    source: "/signs-you-need-erp-system",
+    destination: "/insights/signs-you-need-erp-system",
+  },
+  {
+    source: "/odoo-implementation-cost-egypt",
+    destination: "/insights/odoo-implementation-cost",
+  },
+  {
+    source: "/erp-system-egypt-odoo-vs-sap-vs-dynamics",
+    destination: "/insights/erp-system-comparison",
+  },
+  {
+    source: "/odoo-implementation-timeline-how-long",
+    destination: "/insights/odoo-implementation-timeline",
+  },
+  {
+    source: "/odoo-vs-zoho-vs-quickbooks-comparison",
+    destination: "/insights/odoo-vs-zoho-vs-quickbooks",
+  },
+  {
+    source: "/facility-management-software-guide",
+    destination: "/insights/facility-management-software-guide",
+  },
+  {
+    source: "/odoo-kpi-dashboard-real-time-business-insights",
+    destination: "/insights/odoo-kpi-dashboard-real-time-business-insights",
+  },
+  {
+    source: "/how-to-choose-managed-it-services-provider-egypt",
+    destination: "/insights/how-to-choose-managed-it-services-provider-egypt",
+  },
+  {
+    source: "/data-protection-compliance-egypt-2026",
+    destination: "/insights/data-protection-compliance-egypt-2026",
+  },
+  {
+    source: "/odoo-hr-software",
+    destination: "/odoo",
+  },
+  ...portfolioRedirects,
+];
+
+// Unresolved source pages stay out of production until their content and route
+// are approved. Legacy URLs with no matching page go to the relevant hub.
+export const pendingRedirects: Redirect[] = [];
+
+// Each legacy URL is registered with and without its trailing slash so that
+// either form reaches the destination in a single hop.
+export const redirectRules: (Redirect & { permanent: true })[] =
+  activeRedirects.flatMap(({ source, destination }) => [
+    { source, destination, permanent: true },
+    { source: `${source}/`, destination, permanent: true },
+  ]);
+
+// Next.js normally strips trailing slashes itself *before* custom redirects
+// run, which would turn "/about-us/" into a two-hop chain
+// (/about-us/ -> /about-us -> /about). next.config.ts therefore sets
+// `skipTrailingSlashRedirect` and appends this catch-all, which restores the
+// default behaviour for every other URL. It must stay AFTER the legacy rules
+// so those match first and go straight to their destination.
+export const trailingSlashRule = {
+  source: "/:path+/",
+  destination: "/:path+",
+  permanent: true as const,
+};

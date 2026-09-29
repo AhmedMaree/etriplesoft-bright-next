@@ -1,8 +1,4 @@
 .page {
-  --navy: #08164d;
-  --blue: #243dff;
-  --muted: #52638a;
-  --line: #e0ebff;
   color: var(--navy);
   overflow: clip;
   background: #fff;
@@ -80,7 +76,7 @@
 .steps h3 { margin: 2px 0 6px; font-size: 20px; }
 .steps p { font-size: 15px; }
 .stepArrow { position: absolute; top: 28px; right: -26px; color: var(--blue); width: 30px; }
-.testimonial { background: #f3f8ff; border-radius: 16px; padding: 28px; }
+.testimonial { background: #f3f8ff; border-radius: var(--radius-lg); padding: 28px; }
 .testimonial > svg { color: #cbdcff; fill: #cbdcff; transform: rotate(180deg); }
 .testimonial blockquote { margin: 12px 0 24px; font-size: 18px; line-height: 1.5; color: var(--muted); }
 .testimonial figcaption { display: flex; align-items: center; gap: 20px; }
@@ -90,14 +86,6 @@
 .testimonial span { color: var(--muted); margin-top: 6px; font-size: 16px; }
 .positionsHeading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .positionsHeading .button { flex-shrink: 0; }
-.jobsGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.jobCard { padding: 24px 20px; border: 1px solid #d8e8ff; border-radius: 14px; display: flex; flex-direction: column; }
-.jobCard h3 { font-size: 21px; }
-.tags { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 16px 0; gap: 6px; }
-.tags li { font-size: 11px; background: #edf3fc; padding: 6px 9px; border-radius: 12px; }
-.tags li:first-child { color: var(--blue); background: #e7f1ff; }
-.jobCard p { margin-bottom: 24px; }
-.jobCard > a { display: inline-flex; align-items: center; gap: 14px; margin-top: auto; color: var(--blue); font-size: 17px; font-weight: 650; }
 .opportunitiesGrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; }
 .internships { background: #f4f9fd; }
 .internships > img { object-position: center; }
@@ -137,7 +125,6 @@
   .pictureCard { padding: 28px 24px; }
   .pictureCopy, .culture .pictureCopy { max-width: 78%; }
   .locationsLayout { grid-template-columns: 1fr; }
-  .jobsGrid { grid-template-columns: repeat(2, 1fr); }
   .cvIcon { width: 85px; right: 8px; opacity: .45; }
   .cvCard > div { max-width: 100%; }
 }
@@ -190,10 +177,6 @@
   .testimonial { padding: 24px; }
   .testimonial blockquote { font-size: 17px; }
   .positionsHeading { flex-direction: column; align-items: flex-start; gap: 18px; }
-  .jobsGrid { grid-template-columns: 1fr; }
-  .jobCard { padding: 24px; }
-  .jobCard h3 { font-size: 22px; }
-  .tags li { font-size: 12px; }
   .cvCard { padding: 26px 22px; }
   .cvCard > div { max-width: 84%; }
   .cvCard h2 { font-size: 29px; }

@@ -1,0 +1,851 @@
+/* Shared styles for every /odoo/<topic> child page. Mobile-first; colors, radii
+   and shadows come from the shared tokens in app/globals.css. This replaces the
+   near-identical Implementation.module.css and Accounting.module.css. */
+
+.page {
+  color: var(--ink);
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.page h2 {
+  text-wrap: balance;
+}
+.lead {
+  margin-top: 16px;
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.highlight {
+  margin-top: 12px;
+  font-weight: 650;
+  color: var(--navy);
+}
+.body {
+  margin-top: 14px;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.note {
+  margin-top: 20px;
+  max-width: 70ch;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.bullets {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.bullets li {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.bullets svg {
+  margin-top: 3px;
+  color: var(--blue);
+}
+.blocks > .flowPanel:not(:first-child) {
+  margin-top: 36px;
+}
+.blocks > .cards:not(:first-child) {
+  margin-top: 28px;
+}
+.blocks > .linkRow {
+  margin-top: 20px;
+}
+.moduleIntro {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Section shell ---------- */
+.section {
+  padding-block: 48px;
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 8px);
+}
+.tinted {
+  background: linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff);
+}
+.pale {
+  background: var(--pale);
+}
+.sectionHead {
+  max-width: 64ch;
+  margin-bottom: 28px;
+}
+.sectionHead h2 {
+  font-size: clamp(24px, 4vw, 32px);
+}
+.sectionHead p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: 32px 44px;
+  background: linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff);
+}
+.heroGrid {
+  display: grid;
+  gap: 28px;
+  align-items: end;
+}
+.hero h1 {
+  max-width: var(--title-max, 20ch);
+  text-wrap: balance;
+}
+.hero :global(.button-row) {
+  margin-top: 28px;
+}
+.breadcrumb {
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 6px;
+  color: var(--line);
+}
+.breadcrumb a {
+  color: var(--blue);
+  font-weight: 600;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 16px 10px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.trust img {
+  width: 96px;
+  height: auto;
+}
+.trust p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ---------- In-page anchor nav ---------- */
+.anchors {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.anchors ul {
+  display: flex;
+  gap: 8px;
+  margin-inline: auto;
+  padding: 10px 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.anchors a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+  transition:
+    background var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+.anchors a:hover {
+  background: var(--pale);
+  color: var(--blue);
+}
+
+/* ---------- Intro (text + two boxed lists) ---------- */
+.introGrid {
+  display: grid;
+  gap: 32px;
+}
+.intro h2 {
+  font-size: clamp(24px, 4vw, 32px);
+}
+.lists {
+  display: grid;
+  gap: 16px;
+}
+.lists > div {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.lists > div:first-child {
+  background: var(--pale);
+}
+.lists h3 {
+  font-size: 17px;
+}
+
+/* ---------- columns block: one panel, ruled columns ---------- */
+.columns {
+  display: grid;
+  padding: 8px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.columns article {
+  padding-block: 22px;
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 16px);
+}
+.columns article + article {
+  border-top: 1px solid var(--line);
+}
+.columns h3 {
+  font-size: 19px;
+}
+
+/* ---------- rows block: label left, list right ---------- */
+.rows {
+  display: grid;
+}
+.rows article {
+  display: grid;
+  gap: 10px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 16px);
+}
+.rows h3 {
+  font-size: 19px;
+}
+.entries {
+  display: grid;
+  gap: 16px;
+}
+.entries h4 {
+  font-size: 15px;
+  color: var(--navy);
+}
+
+/* ---------- flow block: numbered steps ---------- */
+.flowPanel {
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--pale);
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 16px);
+}
+.flowPanel h3 {
+  font-size: clamp(20px, 3.5vw, 26px);
+}
+.flowIntro {
+  margin-top: 12px;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.steps {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.steps li {
+  position: relative;
+  padding: 0 0 0 52px;
+}
+.steps li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 42px;
+  bottom: -18px;
+  width: 2px;
+  background: #b8c6ff;
+}
+.stepNumber {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  font-weight: 700;
+  color: #fff;
+}
+.steps h3 {
+  font-size: 16px;
+  color: var(--navy);
+}
+.steps p {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.callout {
+  margin-top: 22px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ---------- cards block ---------- */
+.cards {
+  display: grid;
+  gap: 14px;
+}
+.cards article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.cards h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+.cards p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.cards[data-bullets] h3 {
+  margin-bottom: 0;
+}
+
+/* ---------- callouts block (risk / mitigation pairs) ---------- */
+.callouts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.callouts li {
+  padding: 20px 22px;
+  border-left: 4px solid var(--blue);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.callouts h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+.callouts p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.callouts strong {
+  color: var(--navy);
+}
+
+/* ---------- link rows / lists ---------- */
+.linkRow,
+.relatedList {
+  display: grid;
+  gap: 4px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.linkRow li,
+.relatedList li {
+  padding-block: 10px;
+}
+.integrationList {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.integrationList li {
+  display: grid;
+  gap: 6px;
+  padding-block: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.integrationList li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- stages block (process timeline with stage nav) ---------- */
+.processGrid {
+  display: grid;
+  gap: 20px;
+}
+.stageNav {
+  position: sticky;
+  top: var(--site-header-height, 74px);
+  z-index: 5;
+  margin-inline: -18px;
+  padding: 8px 18px;
+  overflow-x: auto;
+  border-block: 1px solid var(--line);
+  background: #fffffff2;
+  backdrop-filter: blur(8px);
+  scrollbar-width: thin;
+}
+.stageNav ol {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stageNav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+  transition:
+    background var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+.stageNav a span {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--pale);
+  font-size: 11px;
+  color: var(--blue);
+}
+.stageNav a:hover {
+  background: var(--pale);
+  color: var(--blue);
+}
+.stageNav a[aria-current="step"] {
+  background: var(--blue);
+  color: #fff;
+}
+.stageNav a[aria-current="step"] span {
+  background: #ffffff33;
+  color: #fff;
+}
+.stages {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  column-gap: 14px;
+  padding: 20px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: calc(var(--site-header-height, 74px) + 64px);
+}
+.stage > header {
+  display: contents;
+}
+.number {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+.stage h3 {
+  font-size: 20px;
+}
+.stage header p {
+  margin-top: 6px;
+  max-width: 64ch;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.duration {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--blue);
+}
+.stageBody {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 20px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.stageBody h4 {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tiers {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0 0;
+}
+.tiers dt {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--navy);
+}
+.tiers dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- timeline block ---------- */
+.sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.sequence a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px 0 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.sequence a:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.sequence a span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--pale);
+  font-size: 11px;
+  color: var(--blue);
+}
+.timelineGrid {
+  display: grid;
+  gap: 16px;
+}
+.timelineGrid > div {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+}
+.timelineGrid h3 {
+  font-size: 17px;
+}
+
+/* ---------- Mid CTA and strip ---------- */
+.midCta {
+  padding-block: 32px;
+  background: var(--pale);
+  border-block: 1px solid var(--line);
+}
+.midCtaInner,
+.stripInner {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+}
+.midCta h2 {
+  font-size: clamp(20px, 3.5vw, 26px);
+}
+.midCta p {
+  margin-top: 6px;
+  font-size: 15px;
+}
+.strip {
+  padding-block: 28px;
+  background: var(--pale);
+  border-block: 1px solid var(--line);
+}
+.stripInner {
+  gap: 14px;
+}
+.strip h2 {
+  font-size: clamp(18px, 3vw, 22px);
+}
+.strip p {
+  margin-top: 6px;
+  max-width: 64ch;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------- FAQ ---------- */
+.faqWrap {
+  max-width: 920px;
+}
+.faq h2 {
+  margin-bottom: 22px;
+  font-size: clamp(24px, 4vw, 30px);
+}
+.faq > div > div {
+  display: grid;
+  gap: 12px;
+}
+.faq details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  list-style: none;
+  cursor: pointer;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary svg {
+  flex-shrink: 0;
+  color: var(--blue);
+  transition: transform var(--duration) var(--ease);
+}
+.faq details[open] summary svg {
+  transform: rotate(180deg);
+}
+.faq details p {
+  padding: 0 18px 18px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ---------- Related + closing CTA ---------- */
+.relatedSection {
+  padding-block: 40px 56px;
+}
+.relatedSection h2 {
+  font-size: clamp(22px, 4vw, 28px);
+}
+.relatedSection .relatedList {
+  margin-top: 18px;
+}
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 650;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 720px) {
+  .stage {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 20px;
+    padding: 26px 28px;
+  }
+  .number {
+    width: 44px;
+    height: 44px;
+    font-size: 17px;
+  }
+  .stage[data-layout="columns"] .stageBody {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .timelineGrid,
+  .cards[data-columns="2"],
+  .cards[data-columns="3"],
+  .callouts,
+  .relatedList,
+  .linkRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flowPanel {
+    padding: 32px;
+  }
+  .integrationList li {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+  .steps[data-columns="3"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .hero {
+    padding-block: 40px 64px;
+  }
+  .heroGrid {
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 64px;
+  }
+  .introGrid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .lists {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .columns {
+    grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+    padding: 8px 0;
+  }
+  .columns article {
+    padding: 28px;
+  }
+  .columns article + article {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+  .rows article {
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 48px;
+    padding-block: 32px;
+  }
+  .steps[data-columns="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .steps[data-columns="4"] li {
+    padding: 52px 0 0;
+  }
+  .steps[data-columns="4"] li:not(:last-child)::before {
+    left: 44px;
+    right: -20px;
+    top: 19px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+  .steps[data-columns="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cards[data-columns="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .processGrid {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+  .stageNav {
+    top: calc(var(--site-header-height, 74px) + 16px);
+    margin: 0;
+    padding: 12px;
+    overflow: visible;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+  }
+  .stageNav ol {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stageNav a {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+  .stage {
+    scroll-margin-top: calc(var(--site-header-height, 74px) + 20px);
+  }
+  .stage[data-layout="split"] .stageBody {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .stage[data-layout="split"] .stageBody > section:first-child {
+    grid-row: span 3;
+  }
+  .midCtaInner,
+  .stripInner {
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anchors a,
+  .stageNav a,
+  .faq summary svg {
+    transition: none;
+  }
+}

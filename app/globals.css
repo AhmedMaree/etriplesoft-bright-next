@@ -2,11 +2,21 @@
   --navy: #07163e;
   --ink: #101b40;
   --blue: #4445ff;
+  --cyan: #0ea9c9;
   --muted: #65718c;
   --pale: #f4f8ff;
   --line: #e4ebf7;
+  --radius-sm: 6px;
   --radius: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 8px rgba(7, 22, 62, 0.08);
+  --shadow: 0 8px 20px -8px rgba(7, 22, 62, 0.22);
+  --shadow-lg: 0 16px 32px -14px rgba(7, 22, 62, 0.28);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 0.18s;
   --container: 1240px;
+  --section-padding: 34px;
 }
 * {
   box-sizing: border-box;
@@ -151,7 +161,7 @@ textarea:focus {
 }
 .eyebrow.muted {
   color: #7b879e;
-  font-size: 10px;
+  font-size: 11px;
 }
 .section-heading {
   display: flex;
@@ -197,7 +207,7 @@ textarea:focus {
   gap: 14px;
   padding: 14px 21px;
   min-height: 46px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: linear-gradient(115deg, #071d44, #04152f);
   color: white;
   font-size: 13px;
@@ -347,7 +357,8 @@ textarea:focus {
     color 0.16s;
 }
 .nav-dropdown-trigger:hover,
-.nav-dropdown.is-open .nav-dropdown-trigger {
+.nav-dropdown.is-open .nav-dropdown-trigger,
+.nav-dropdown-trigger.active {
   background: var(--pale);
   color: var(--blue);
 }
@@ -366,7 +377,7 @@ textarea:focus {
   padding: 8px;
   border: 1px solid var(--line);
   box-shadow: 0 16px 34px #13234718;
-  border-radius: 10px;
+  border-radius: var(--radius);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -385,7 +396,7 @@ textarea:focus {
 .dropdown-panel a {
   display: block;
   padding: 10px 12px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-weight: 550;
   color: var(--ink);
   transition:
@@ -425,7 +436,7 @@ textarea:focus {
   background: #fff;
   box-shadow: 0 15px 40px #05143c20;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .search-panel label {
   font-weight: 650;
@@ -436,7 +447,7 @@ textarea:focus {
   width: 100%;
   padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 .search-panel a {
   display: flex;
@@ -821,7 +832,7 @@ textarea:focus {
   margin-bottom: 22px;
   padding: 7px 25px;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: #e7edff;
   color: #2456eb;
   font-size: 13px;
@@ -1751,7 +1762,7 @@ textarea:focus {
 }
 .odoo-visual > img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   aspect-ratio: 1.52;
   object-fit: cover;
   box-shadow:
@@ -2142,7 +2153,7 @@ blockquote {
   margin: 0;
   background: #f7faff;
   border: 1px solid #edf1fb;
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 22px;
   color: #3c4c71;
   font-size: 13px;
@@ -2234,7 +2245,7 @@ blockquote small {
   margin-bottom: 12px;
 }
 .article-card small {
-  font-size: 10px;
+  font-size: 11px;
   color: #8090a8;
 }
 .tag {
@@ -2304,7 +2315,8 @@ blockquote small {
   margin-top: 20px;
   color: #a9bdd8;
 }
-.footer-grid h4 {
+.footer-grid h4,
+.footer-grid .footer-heading {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.2px;
@@ -2317,7 +2329,9 @@ blockquote small {
   gap: 7px;
   font-size: 13px;
   color: #a9bdd8;
-  margin-bottom: 12px;
+  /* 24px+ target height without changing the visual rhythm */
+  padding-block: 4px;
+  margin-bottom: 6px;
   transition: color 0.15s;
 }
 .footer-grid > div > a:hover {
@@ -2504,7 +2518,7 @@ blockquote small {
 .robot-feature {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: var(--radius);
   min-height: 280px;
   background: #061c46;
 }
@@ -2528,7 +2542,7 @@ blockquote small {
 }
 .robot-feature .eyebrow {
   color: #d5e3ff;
-  font-size: 9px;
+  font-size: 11px;
 }
 .robot-feature p {
   font-size: 13px;
@@ -2547,7 +2561,7 @@ blockquote small {
 .faq details {
   background: #fff;
   border: 1px solid #e1e9f9;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   align-self: start;
 }
@@ -2655,7 +2669,7 @@ blockquote small {
 .workflow-steps .icon {
   width: 38px;
   height: 38px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 .workflow-steps .icon svg {
   width: 24px;
@@ -2663,7 +2677,7 @@ blockquote small {
 }
 .workflow-steps span:not(.icon) {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 7px;
   color: var(--muted);
 }
@@ -2677,7 +2691,7 @@ blockquote small {
   padding: 21px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: grid;
   grid-template-columns: 50px 1fr;
   column-gap: 18px;
@@ -2828,7 +2842,7 @@ blockquote small {
   gap: 16px;
   background: #f0f6ff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 13px;
   color: #4e5c82;
 }
@@ -2874,7 +2888,7 @@ blockquote small {
   width: 100%;
   height: 285px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .team-row blockquote {
   height: 100%;
@@ -2908,7 +2922,7 @@ blockquote small {
   height: 145px;
   width: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 .office-card > div {
   padding: 12px 13px;
@@ -3172,7 +3186,7 @@ blockquote small {
 }
 .contact-form .form-note {
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #74809a;
   margin: 15px 0 0;
 }
@@ -3180,7 +3194,7 @@ blockquote small {
   padding: 13px;
   background: #edf2ff;
   border: 1px solid #d8e2ff;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   margin-top: 15px !important;
   color: #223f77 !important;
   overflow-wrap: anywhere;
@@ -3191,7 +3205,7 @@ blockquote small {
   padding: 24px 28px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius);
   gap: 20px;
 }
 .contact-strip > div {
@@ -3204,7 +3218,7 @@ blockquote small {
 .contact-strip .icon {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .contact-strip .icon svg {
   width: 21px;
@@ -3282,7 +3296,7 @@ blockquote small {
 .panel {
   border: 1px solid #eaf0fa;
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 24px;
 }
 .panel h2 {
@@ -3316,7 +3330,7 @@ blockquote small {
   margin-bottom: 0;
 }
 .support-layout .service-card .text-link {
-  font-size: 10px;
+  font-size: 11px;
 }
 .upload {
   position: relative;
@@ -3372,7 +3386,7 @@ blockquote small {
 .priority-list > div:first-child {
   background: #f1f6ff;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .priority-list b {
   display: flex;
@@ -3476,14 +3490,14 @@ blockquote small {
   color: #617190;
   padding: 3px 9px;
   border-radius: 12px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .jobs button {
   margin-top: auto;
 }
 .internship {
   position: relative;
-  border-radius: 10px;
+  border-radius: var(--radius);
   overflow: hidden;
   min-height: 210px;
 }
@@ -3511,7 +3525,7 @@ blockquote small {
   padding: 27px;
   background: linear-gradient(115deg, #061333, #102b67);
   color: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius);
   position: relative;
 }
 .cv-panel .eyebrow {
@@ -3570,7 +3584,7 @@ blockquote small {
   font-size: 12px;
 }
 .career-locations p {
-  font-size: 10px;
+  font-size: 11px;
 }
 .career-locations .icon {
   width: 25px;
@@ -3639,7 +3653,7 @@ blockquote small {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin-top: 30px;
 }
 .article-content > img[src*="/images/project-"] {
@@ -3717,7 +3731,7 @@ blockquote small {
   }
   .hero-checks {
     gap: 12px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .hero .button {
     font-size: 11px;
@@ -3814,7 +3828,7 @@ blockquote small {
     gap: 10px;
   }
   .hero .button {
-    font-size: 10px;
+    font-size: 11px;
     padding: 11px 12px;
     gap: 7px;
   }
@@ -3973,7 +3987,7 @@ blockquote small {
   .priority-list > div {
     gap: 8px;
     padding-inline: 4px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .panel {
     padding: 20px;
@@ -4028,7 +4042,7 @@ blockquote small {
     font-size: 20px;
   }
   .hero-metrics small {
-    font-size: 9px;
+    font-size: 11px;
   }
   .portfolio-metrics {
     flex-wrap: wrap;
@@ -4038,7 +4052,7 @@ blockquote small {
     flex: 1 0 40%;
   }
   .portfolio-metrics small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .partner-list {
     flex-wrap: wrap;
@@ -4153,7 +4167,7 @@ blockquote small {
     margin-top: 15px;
   }
   .hero-copy .eyebrow {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.7px;
   }
   .hero-image,
@@ -4270,7 +4284,7 @@ blockquote small {
     margin-top: 12px;
   }
   .partners .eyebrow {
-    font-size: 8px;
+    font-size: 11px;
   }
   .partner-word {
     font-size: 18px;
@@ -4283,7 +4297,7 @@ blockquote small {
     width: 97px;
   }
   .partner-list small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .section {
     padding: 28px 0;
@@ -4303,13 +4317,13 @@ blockquote small {
     line-height: 1.5;
   }
   .section-heading .text-link {
-    font-size: 10px;
+    font-size: 11px;
     white-space: normal;
     min-width: 75px;
     align-self: center;
   }
   .eyebrow {
-    font-size: 9px;
+    font-size: 11px;
     margin-bottom: 7px;
   }
   .card-grid {
@@ -4556,7 +4570,8 @@ blockquote small {
   .footer-grid > div:nth-child(5) {
     grid-column: auto;
   }
-  .footer-grid h4 {
+  .footer-grid h4,
+  .footer-grid .footer-heading {
     font-size: 13px;
   }
   .footer-grid > div > a {
@@ -4564,7 +4579,7 @@ blockquote small {
     margin-bottom: 9px;
   }
   .footer-bottom {
-    font-size: 9px;
+    font-size: 11px;
     gap: 12px;
     padding-right: 32px;
   }
@@ -4681,7 +4696,7 @@ blockquote small {
     font-size: 24px;
   }
   .hero-metrics small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .portfolio-metrics > div {
     flex: 1 0 40%;
@@ -4811,7 +4826,7 @@ blockquote small {
   }
   .contact-strip p,
   .contact-strip a {
-    font-size: 10px;
+    font-size: 11px;
     overflow-wrap: anywhere;
   }
   .region-map {
@@ -4914,7 +4929,7 @@ blockquote small {
     height: 24px;
   }
   .benefits-strip p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .jobs {
     grid-template-columns: 1fr 1fr;
@@ -4929,7 +4944,7 @@ blockquote small {
     flex-wrap: wrap;
   }
   .job-tags span {
-    font-size: 9px;
+    font-size: 11px;
     padding: 2px 6px;
   }
   .internship > div {
@@ -5025,7 +5040,7 @@ blockquote small {
     height: 34px;
   }
   .workflow-steps span:not(.icon) {
-    font-size: 9px;
+    font-size: 11px;
   }
   .marketing-stats {
     display: grid;
@@ -5288,7 +5303,7 @@ blockquote small {
 }
 .region-callout small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
 }
 .support-callout {
   width: 175px;
@@ -5305,14 +5320,22 @@ blockquote small {
   width: 60px;
   height: 60px;
 }
-.support-callout h3 {
+.support-callout h3,
+.support-callout .callout-title {
   margin-bottom: 14px;
+}
+.support-callout .callout-title {
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  color: var(--navy);
 }
 .support-callout > span:not(.icon),
 .cloud-callout > span {
   display: flex;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 10px;
   align-items: center;
 }
@@ -5378,7 +5401,7 @@ blockquote small {
   border-radius: 7px;
   padding: 15px 7px;
   background: white;
-  font-size: 10px;
+  font-size: 11px;
 }
 .marketing-industries .icon {
   background: none;
@@ -5429,7 +5452,7 @@ blockquote small {
     gap: 8px;
   }
   .marketing-industries > a {
-    font-size: 9px;
+    font-size: 11px;
     padding: 12px 4px;
   }
   .hero-checks .icon {
@@ -5787,7 +5810,7 @@ blockquote small {
 .homepage .home-success-stage .success-row > img {
   width: 100%;
   height: clamp(430px, 52vh, 560px);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 30px 50px -28px #0b224a52;
 }
 
@@ -6118,7 +6141,7 @@ blockquote small {
 .odoo-module-board {
   padding: 26px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: #f4f8ff;
   box-shadow: 0 30px 50px -24px #0b224a3d;
 }
@@ -6229,7 +6252,7 @@ blockquote small {
   margin-bottom: 22px;
   padding: 8px 18px;
   border: 1px solid #d7e0f7;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: #fff;
   color: #3550e0;
   font-size: 12px;
@@ -6370,7 +6393,7 @@ blockquote small {
   justify-content: center;
   width: 56px;
   height: 56px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: var(--hpv-card);
   box-shadow: 0 12px 30px rgba(30, 70, 150, 0.1);
   animation: hpv-float 5s ease-in-out infinite;
@@ -6448,7 +6471,7 @@ blockquote small {
   aspect-ratio: 16 / 10.2;
   border: 10px solid var(--hpv-navy);
   border-bottom-width: 14px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: var(--hpv-card);
   box-shadow: 0 40px 80px rgba(22, 66, 160, 0.18);
 }
@@ -6554,7 +6577,7 @@ blockquote small {
   padding: clamp(4px, 1%, 8px) clamp(8px, 1.6%, 14px);
   background: var(--hpv-card);
   border: 1px solid var(--hpv-border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--hpv-muted);
   font-size: clamp(7px, 0.9vw, 11px);
 }
@@ -6651,7 +6674,7 @@ blockquote small {
   padding: clamp(6px, 1.6%, 12px);
   background: var(--hpv-card);
   border: 1px solid var(--hpv-border);
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 
 .chart-head {
@@ -6709,7 +6732,7 @@ blockquote small {
   padding: 4px 8px;
   transform: translate(-50%, -130%);
   background: var(--hpv-navy);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -6885,7 +6908,7 @@ blockquote small {
 @media (max-width: 760px) {
   .odoo-module-board {
     padding: 16px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
   }
 
   .odoo-module-board-head {
@@ -7489,7 +7512,7 @@ blockquote small {
   }
 
   .about-hero .region-countries span {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -8015,7 +8038,7 @@ blockquote small {
   overflow: hidden;
   background: #ffffffed;
   border: 1px solid #dfe9f7;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 16px 40px -34px #102a6352;
 }
 
@@ -8605,8 +8628,111 @@ blockquote small {
   .odoo-service-hero .odoo-hero-layout { width: calc(100% - 36px); }
   .homepage .odoo-reference-copy h2,
   .odoo-service-hero .odoo-hero-copy h1 { font-size: clamp(36px, 10.8vw, 60px); }
-  .hero-product-visual .laptop-screen { border-width: 5px; border-radius: 10px; }
+  .hero-product-visual .laptop-screen { border-width: 5px; border-radius: var(--radius); }
   .homepage .odoo-reference-visual .addons-card,
   .odoo-service-hero .addons-card { width: 100%; padding: 14px 10px; }
   .hero-product-visual .addon-item > span:last-child { font-size: 9px; }
+}
+
+/* Contact / support form: field-level validation, states, honeypot */
+.contact-form .field {
+  min-width: 0;
+}
+.contact-form .field.full {
+  grid-column: 1 / -1;
+}
+.contact-form .form-grid label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.contact-form .form-grid input:not([type="checkbox"]):not([type="file"]),
+.contact-form .form-grid select,
+.contact-form .form-grid textarea {
+  font-size: 16px;
+  padding: 11px 12px;
+}
+.contact-form .form-grid input:focus-visible,
+.contact-form .form-grid select:focus-visible,
+.contact-form .form-grid textarea:focus-visible,
+.contact-form .button:focus-visible,
+.form-error-summary a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+.contact-form [aria-invalid="true"] {
+  border-color: #b42318 !important;
+  background: #fffafa !important;
+}
+.field-error {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #b42318;
+}
+.form-required-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.form-error-summary {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #f1b8b3;
+  border-left: 4px solid #b42318;
+  border-radius: var(--radius-sm);
+  background: #fff5f4;
+  font-size: 14px;
+  color: #7a1a12;
+}
+.form-error-summary ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+.form-error-summary a {
+  color: inherit;
+  text-decoration: underline;
+}
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-status.form-status-error {
+  background: #fff5f4;
+  border-color: #f1b8b3;
+  color: #7a1a12 !important;
+}
+.contact-form .button[disabled] {
+  opacity: 0.75;
+  cursor: progress;
+}
+.contact-form .button .spin {
+  animation: form-spin 0.9s linear infinite;
+}
+@keyframes form-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-form .button .spin {
+    animation: none;
+  }
+}
+.form-success .button {
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .contact-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Breadcrumb strip for pages whose hero has no breadcrumb slot */
+.crumb-strip {
+  padding-top: 14px;
+  padding-bottom: 12px;
 }

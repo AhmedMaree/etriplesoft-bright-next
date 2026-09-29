@@ -1,15 +1,15 @@
 .page {
-  --about-navy: #091b4d;
-  --about-blue: #087cf4;
-  --about-sky: #eaf6ff;
-  --about-line: #dcecff;
-  --about-muted: #526486;
+  --about-navy: var(--navy);
+  --about-blue: var(--blue);
+  --about-sky: var(--pale);
+  --about-line: var(--line);
+  --about-muted: var(--muted);
   color: var(--about-navy);
   overflow: hidden;
 }
 
 .container {
-  width: min(1240px, calc(100% - 96px));
+  width: min(var(--container), calc(100% - 96px));
   margin-inline: auto;
 }
 
@@ -128,7 +128,7 @@
 .heroCopy > p {
   max-width: 56ch;
   margin-top: 20px;
-  color: #526486;
+  color: var(--about-muted);
   font-size: 18px;
   line-height: 1.55;
 }
@@ -799,7 +799,7 @@
   display: block;
   margin-bottom: 6px;
   color: #d5eaff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -947,7 +947,7 @@
 
   .countryList > span {
     gap: 4px;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .purpose,
@@ -1043,7 +1043,7 @@
     left: 10px;
     width: 28px;
     height: 28px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .reasonIcon {
@@ -1154,11 +1154,11 @@
 
 @media (max-width: 390px) {
   .heroActions :global(.button) {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .countryList > span {
-    font-size: 8px;
+    font-size: 11px;
   }
 
   .impactGrid b,

@@ -1,7 +1,7 @@
 .page {
-  --ink: #050b40;
-  --accent: #064bff;
-  --copy: #53658e;
+  --ink: var(--navy);
+  --accent: var(--blue);
+  --copy: var(--muted);
   color: var(--ink);
   background: white;
 }
@@ -10,7 +10,7 @@
 }
 .page ::selection {
   background: #d6e5ff;
-  color: #050b40;
+  color: var(--ink);
 }
 .page a:focus-visible,
 .page summary:focus-visible {
@@ -103,7 +103,7 @@
   min-height: 46px;
   color: white;
   background: linear-gradient(130deg, #146dff, #003bd5 70%, #052ca7);
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 5px 14px #1759e320;
@@ -411,7 +411,7 @@
 .industryCard {
   grid-column: span 3;
   border: 1px solid #e0eaff;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: white;
 }
@@ -477,13 +477,13 @@
   flex-direction: column;
   background: #ffffffdb;
   border: 1px solid #e1ecff;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 22px 16px;
 }
 .moduleGrid img {
   width: 58px;
   height: 58px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   margin-bottom: 22px;
 }
 .moduleGrid h3 {
@@ -1033,7 +1033,7 @@
     width: 100%;
   }
   .hero .eyebrow {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.5px;
   }
   .heroContent > p {
@@ -1084,7 +1084,7 @@
     padding-block: 20px;
   }
   .clients p {
-    font-size: 9px;
+    font-size: 11px;
   }
   .clients .container > div {
     flex-direction: column;
@@ -1283,7 +1283,7 @@
   .story,
   .faq {
     padding: 24px 18px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
   }
   .proof h2 {
     font-size: 29px;

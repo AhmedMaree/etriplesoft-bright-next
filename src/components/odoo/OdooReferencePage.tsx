@@ -1,22 +1,72 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Building2,
   Check,
+  CheckCircle,
   ChevronDown,
-  Users,
-  MapPin,
-  BriefcaseBusiness,
-  Star,
-  Factory,
-  Quote,
-  HardHat,
-  Settings,
-  Box,
-  ShoppingBag,
-  Stethoscope,
+  ChartNoAxesCombined,
+  Coins,
   GraduationCap,
+  HardHat,
+  Headphones,
+  Network,
+  Rocket,
+  Settings,
+  UtensilsCrossed,
+  Users,
+  Wrench,
 } from "lucide-react";
+import {
+  odooCapabilityPages,
+  odooPageByKey,
+  odooPageHref,
+  type OdooRelatedPage,
+} from "@/lib/odoo-pages";
+import {
+  anchorLinks,
+  benefits as benefitLinks,
+  closing,
+  einvoicing,
+  faqs,
+  implementation as implementationContent,
+  industries as industryContent,
+  integrations,
+  localization,
+  midCta,
+  modules as moduleContent,
+  outcomes,
+  partner,
+  related,
+} from "./content";
 import styles from "./OdooReferencePage.module.css";
+import hub from "./OdooHub.module.css";
+
+const glyphs = {
+  network: Network,
+  coins: Coins,
+  chart: ChartNoAxesCombined,
+  check: CheckCircle,
+  rocket: Rocket,
+  settings: Settings,
+  users: Users,
+  headphones: Headphones,
+  "hard-hat": HardHat,
+  building: Building2,
+  wrench: Wrench,
+  utensils: UtensilsCrossed,
+  graduation: GraduationCap,
+} as const;
+type Glyph = keyof typeof glyphs;
+function GlyphIcon({ name }: { name: string }) {
+  const Component = glyphs[name as Glyph] ?? Settings;
+  return (
+    <span className={hub.glyph} aria-hidden="true">
+      <Component />
+    </span>
+  );
+}
 
 const base = "/images/odoo/reference/";
 const demoHref = "/contact?service=Odoo%20ERP%20Demo";
@@ -69,53 +119,12 @@ const benefits = [
     "growth",
   ],
 ];
-const industries = [
-  ["Construction & Real Estate", "construction", HardHat],
-  ["Manufacturing", "manufacturing", Settings],
-  ["Trading & Distribution", "distribution", Box],
-  ["Retail & E-commerce", "retail", ShoppingBag],
-  ["Healthcare", "healthcare", Stethoscope],
-  ["Education", "education", GraduationCap],
-  ["Professional Services", "professional", Users],
-] as const;
-const modules = [
-  [
-    "Accounting",
-    "Full financial management with real-time reporting.",
-    "accounting",
-  ],
+const otherModules = [
   ["CRM", "Turn leads into loyal customers.", "crm"],
-  ["Inventory", "Optimize your stock and supply chain.", "inventory"],
+  ["Inventory & Purchasing", "Coordinate stock, suppliers, warehouses and replenishment.", "inventory"],
   ["Sales", "Boost your revenue with a modern sales flow.", "sales"],
-  [
-    "Manufacturing",
-    "Streamline production and operations.",
-    "manufacturing-icon",
-  ],
-  ["HR", "Manage your people and grow your team.", "hr"],
+  ["Manufacturing", "Streamline production and operations.", "manufacturing-icon"],
   ["Projects", "Deliver projects on time and within budget.", "projects"],
-];
-const faqs = [
-  [
-    "How long does an Odoo implementation take?",
-    "The timeline depends on your modules, data migration, integrations, and business processes. We agree a phased implementation plan after discovery, with clear milestones for testing, training, and go-live.",
-  ],
-  [
-    "Is Odoo suitable for small and medium businesses in Egypt?",
-    "Yes. Odoo’s modular structure lets you start with the applications your business needs and add capabilities as you grow. We help you choose a scope that fits your team and operations.",
-  ],
-  [
-    "Do you provide training for our team?",
-    "Yes. Training is part of our implementation approach, with practical sessions tailored to your team’s roles and daily workflows.",
-  ],
-  [
-    "Can you integrate Odoo with our existing systems?",
-    "We assess your current systems and available interfaces during discovery, then plan the integrations and data migration your workflows require.",
-  ],
-  [
-    "Do you offer ongoing support after go-live?",
-    "Yes. We offer ongoing support, consultation, upgrades, and improvements. Support scope and arrangements are agreed with your team.",
-  ],
 ];
 function Asset({
   name,
@@ -146,15 +155,52 @@ function DemoButton({ secondary = false }: { secondary?: boolean }) {
     </Link>
   );
 }
-function LearnMore({ subject }: { subject: string }) {
+/** Link to a related Odoo topic page (or its consultation fallback). */
+function TopicLink({
+  page,
+  children = "Learn more",
+}: {
+  page: OdooRelatedPage;
+  children?: React.ReactNode;
+}) {
   return (
     <Link
       className={styles.learnMore}
-      href={`/contact?service=${encodeURIComponent(`Odoo ${subject}`)}`}
-      aria-label={`Learn more about Odoo ${subject}`}
+      href={odooPageHref(page)}
+      aria-label={`${children} about Odoo ${page.label}`}
     >
-      Learn More <ArrowRight aria-hidden="true" />
+      {children} <ArrowRight aria-hidden="true" />
     </Link>
+  );
+}
+function PartnerBadge({ className = "" }: { className?: string }) {
+  return (
+    <div className={`${hub.trust} ${className}`}>
+      <Image
+        src={partner.badge.src}
+        width={partner.badge.width}
+        height={partner.badge.height}
+        alt={partner.badge.alt}
+        sizes="120px"
+      />
+      <p>{partner.statement}</p>
+    </div>
+  );
+}
+function MidCta() {
+  return (
+    <section className={hub.midCta} aria-labelledby="odoo-mid-cta">
+      <div className={`${styles.container} ${hub.midCtaInner}`}>
+        <div>
+          <h2 id="odoo-mid-cta">{midCta.title}</h2>
+          <p>{midCta.description}</p>
+        </div>
+        <div className={`${styles.actions} ${hub.wrapActions}`}>
+          <DemoButton />
+          <DemoButton secondary />
+        </div>
+      </div>
+    </section>
   );
 }
 function Checks({ items }: { items: string[] }) {
@@ -173,7 +219,7 @@ function Checks({ items }: { items: string[] }) {
 export default function OdooReferencePage() {
   return (
     <main id="main" className={styles.page}>
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="odoo-title">
         <img
           src={`${base}hero.webp`}
           className={styles.heroImage}
@@ -184,7 +230,7 @@ export default function OdooReferencePage() {
           <span className={styles.eyebrow}>
             Odoo ERP in Egypt | Licensed Partner | Local Experts
           </span>
-          <h1>
+          <h1 id="odoo-title">
             Odoo ERP
             <br />
             Implementation <em>in Egypt</em>
@@ -196,7 +242,7 @@ export default function OdooReferencePage() {
           </p>
           <Checks
             items={[
-              "Official Odoo Partner",
+              "Odoo Gold Partner",
               "Local Egyptian Team",
               "End-to-End Support",
             ]}
@@ -205,31 +251,54 @@ export default function OdooReferencePage() {
             <DemoButton />
             <DemoButton secondary />
           </div>
-          <Asset
-            name="gold-partner"
+          <Image
+            src={partner.badge.src}
+            width={partner.badge.width}
+            height={partner.badge.height}
+            alt={partner.badge.alt}
             className={styles.goldPartner}
-            alt="Odoo Gold Partner"
+            sizes="130px"
           />
         </div>
       </section>
-      <section className={styles.clients} aria-label="Trusted clients">
+
+      <nav className={hub.anchors} aria-label="On this page">
+        <ul className={styles.container}>
+          {anchorLinks.map(([label, href]) => (
+            <li key={href}>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <section
+        className={`${styles.section} ${hub.outcomes}`}
+        id="outcomes"
+        aria-labelledby="odoo-outcomes-title"
+      >
         <div className={styles.container}>
-          <p>Trusted by leading businesses in Egypt and the region</p>
-          <div>
-            <Asset
-              name="clients"
-              alt="Orascom Construction, Elsewedy Electric, CIB, Infinite, Juhayna, Carrier, and etisalat"
-            />
-            <Link href="/portfolio">
-              and more… <ArrowRight aria-hidden="true" />
-            </Link>
+          <div className={styles.centerHeading}>
+            <span className={styles.eyebrow}>{outcomes.eyebrow}</span>
+            <h2 id="odoo-outcomes-title">{outcomes.title}</h2>
+            <p>{outcomes.description}</p>
           </div>
+          <ul className={hub.outcomeGrid}>
+            {outcomes.items.map(([title, copy, icon]) => (
+              <li key={title}>
+                <GlyphIcon name={icon} />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       <section
         className={`${styles.section} ${styles.process}`}
         id="implementation"
+        aria-labelledby="odoo-process-title"
       >
         <div className={styles.processTop}>
           <Asset
@@ -242,7 +311,7 @@ export default function OdooReferencePage() {
               <span className={styles.eyebrow}>
                 A proven methodology <i />
               </span>
-              <h2>
+              <h2 id="odoo-process-title">
                 Our Implementation
                 <br />
                 <em>Process</em>
@@ -268,16 +337,113 @@ export default function OdooReferencePage() {
             </li>
           ))}
         </ol>
+        <div className={`${styles.container} ${hub.related}`}>
+          <TopicLink page={odooPageByKey("implementation")}>
+            {implementationContent.link}
+          </TopicLink>
+        </div>
+      </section>
+
+      <MidCta />
+
+      <section
+        className={`${styles.section} ${styles.modules}`}
+        id="solutions"
+        aria-labelledby="odoo-modules-title"
+      >
+        <div className={styles.container}>
+          <div className={styles.centerHeading}>
+            <span className={styles.eyebrow}>{moduleContent.eyebrow}</span>
+            <h2 id="odoo-modules-title">{moduleContent.title}</h2>
+            <p>{moduleContent.description}</p>
+          </div>
+          <ul className={hub.featuredGrid}>
+            {moduleContent.featured.map(([key, title, copy, icon]) => (
+              <li key={key}>
+                <GlyphIcon name={icon} />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <TopicLink page={odooPageByKey(key)} />
+              </li>
+            ))}
+          </ul>
+          <h3 className={hub.subhead}>{moduleContent.othersTitle}</h3>
+          <div className={styles.moduleGrid}>
+            {otherModules.map(([title, copy, asset]) => (
+              <article key={title}>
+                <Asset name={asset} />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.section} ${styles.industrySection}`}
+        id="industries"
+        aria-labelledby="odoo-industries-title"
+      >
+        <div className={styles.container}>
+          <div className={styles.industryHeading}>
+            <div>
+              <span className={styles.eyebrow}>{industryContent.eyebrow}</span>
+              <h2 id="odoo-industries-title">{industryContent.title}</h2>
+              <p>{industryContent.description}</p>
+            </div>
+            <Link href="/industries" className={styles.learnMore}>
+              View All Industries <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+          <ul className={hub.industryGrid}>
+            {industryContent.items.map(([key, copy, icon]) => {
+              const page = odooPageByKey(key);
+              return (
+                <li key={key}>
+                  <GlyphIcon name={icon} />
+                  <h3>{page.label}</h3>
+                  <p>{copy}</p>
+                  <TopicLink page={page} />
+                </li>
+              );
+            })}
+          </ul>
+          <p className={hub.alsoServe}>{industryContent.alsoServe}</p>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.section} ${hub.integrations}`}
+        id="integrations"
+        aria-labelledby="odoo-integrations-title"
+      >
+        <div className={styles.container}>
+          <div className={styles.centerHeading}>
+            <span className={styles.eyebrow}>{integrations.eyebrow}</span>
+            <h2 id="odoo-integrations-title">{integrations.title}</h2>
+            <p>{integrations.description}</p>
+          </div>
+          <ul className={hub.integrationGrid}>
+            {integrations.items.map(([title, copy]) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section
         className={`${styles.section} ${styles.benefits}`}
         id="why-etriplesoft"
+        aria-labelledby="odoo-why-title"
       >
         <div className={styles.container}>
           <div className={styles.centerHeading}>
             <span className={styles.eyebrow}>Why ETripleSoft</span>
-            <h2>
+            <h2 id="odoo-why-title">
               Built Around <em>Your Business</em>
             </h2>
             <p>
@@ -288,12 +454,18 @@ export default function OdooReferencePage() {
             </p>
           </div>
           <div className={styles.benefitGrid}>
-            {benefits.map(([title, copy, asset]) => (
+            {benefits.map(([title, copy, asset], index) => (
               <article key={title}>
                 <Asset name={asset} />
                 <h3>{title}</h3>
                 <p>{copy}</p>
-                <LearnMore subject={title} />
+                <a
+                  className={styles.learnMore}
+                  href={Object.values(benefitLinks.links)[index]}
+                  aria-label={`Learn more about ${title}`}
+                >
+                  Learn More <ArrowRight aria-hidden="true" />
+                </a>
               </article>
             ))}
           </div>
@@ -301,154 +473,67 @@ export default function OdooReferencePage() {
       </section>
 
       <section
-        className={`${styles.section} ${styles.industrySection}`}
-        id="industries"
+        className={`${styles.section} ${styles.region}`}
+        id="localization"
+        aria-labelledby="odoo-localization-title"
       >
-        <div className={styles.container}>
-          <div className={styles.industryHeading}>
-            <div>
-              <span className={styles.eyebrow}>Industries</span>
-              <h2>
-                Industry <em>Solutions</em>
-              </h2>
-              <p>
-                We understand your industry. Our Odoo solutions are tailored
-                <br className={styles.desktopBreak} /> to your sector’s unique
-                needs.
-              </p>
-            </div>
-            <Link href="/industries" className={styles.learnMore}>
-              View All Industries <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-          <div className={styles.industryGrid}>
-            {industries.map(([title, asset, Icon]) => (
-              <Link
-                className={styles.industryCard}
-                href={`/contact?service=Odoo%20ERP&industry=${encodeURIComponent(title)}`}
-                key={title}
-              >
-                <Asset name={asset} alt={title} />
-                <div>
-                  <span>
-                    <Icon aria-hidden="true" />
-                  </span>
-                  <h3>{title}</h3>
-                  <ArrowRight
-                    className={styles.industryArrow}
-                    aria-hidden="true"
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={`${styles.section} ${styles.modules}`} id="solutions">
-        <div className={styles.container}>
-          <div className={styles.centerHeading}>
-            <span className={styles.eyebrow}>ERP modules</span>
-            <h2>
-              A Complete ERP Solution
-              <br />
-              for <em>Your Business</em>
-            </h2>
-            <p>
-              Odoo integrates all your business processes in one platform,
-              helping you work
-              <br className={styles.desktopBreak} /> smarter, faster and more
-              efficiently.
-            </p>
-          </div>
-          <div className={styles.moduleGrid}>
-            {modules.map(([title, copy, asset]) => (
-              <article key={title}>
-                <Asset name={asset} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <LearnMore subject={title} />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={`${styles.section} ${styles.region}`}>
         <div className={styles.container}>
           <div className={styles.regionTop}>
             <div>
-              <span className={styles.eyebrow}>
-                Trusted partner | Egypt | Saudi Arabia | UAE
-              </span>
-              <h2>
-                Trusted Across
-                <br />
-                Egypt and the <em>Region</em>
-              </h2>
-              <p>
-                Helping businesses in Egypt, Saudi Arabia and UAE achieve more
-                with Odoo. Local expertise, regional presence, and a proven
-                track record you can rely on.
-              </p>
+              <span className={styles.eyebrow}>{localization.eyebrow}</span>
+              <h2 id="odoo-localization-title">{localization.title}</h2>
+              <p>{localization.description}</p>
             </div>
             <Asset
               name="region"
               alt="Regional presence in Egypt, Saudi Arabia, and the UAE"
             />
           </div>
-          <div className={styles.stats}>
-            {[
-              ["250+", "Happy Clients", Users],
-              ["3", "Countries", MapPin],
-              ["10+", "Years of Experience", BriefcaseBusiness],
-              ["98%", "Client Satisfaction", Star],
-            ].map(([number, label, Glyph]) => {
-              const Icon = Glyph as typeof Users;
-              return (
-                <div key={String(label)}>
-                  <span className={styles.statIcon}>
-                    <Icon aria-hidden="true" />
-                  </span>
-                  <div>
-                    <strong>{String(number)}</strong>
-                    <span>{String(label)}</span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className={hub.countryGrid}>
+            {localization.countries.map((country) => (
+              <article key={country.name}>
+                <h3>{country.name}</h3>
+                <ul>
+                  {country.points.map((point) => (
+                    <li key={point}>
+                      <Check aria-hidden="true" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
+          <p className={hub.note}>{localization.note}</p>
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.proof}`}>
-        <div className={`${styles.container} ${styles.proofGrid}`}>
-          <article className={styles.story}>
-            <h2>
-              Customer <em>Success Story</em>
-            </h2>
-            <span className={styles.storyTag}>
-              <Factory aria-hidden="true" />
-              Manufacturing <i /> Egypt
-            </span>
-            <blockquote>
-              <Quote aria-hidden="true" />
-              <p>
-                “ETripleSoft transformed our operations with Odoo. We now have
-                full visibility across our inventory, production, and finance,
-                which helped us <strong>increase efficiency by 40%.</strong>”
-              </p>
-            </blockquote>
-            <div className={styles.customer}>
-              <Asset name="customer" alt="Ahmed Mostafa" />
-              <div>
-                <h3>Ahmed Mostafa</h3>
-                <p>Operations Manager</p>
+      <section
+        className={`${styles.section} ${hub.einvoicing}`}
+        aria-labelledby="odoo-einvoicing-title"
+      >
+        <div className={styles.container}>
+          <span className={styles.eyebrow}>{einvoicing.eyebrow}</span>
+          <h2 id="odoo-einvoicing-title">{einvoicing.title}</h2>
+          <div className={hub.einvoiceGrid}>
+            {einvoicing.items.map(([country, copy]) => (
+              <div key={country}>
+                <h3>{country}</h3>
+                <p>{copy}</p>
               </div>
-              <Asset name="elsewedy" alt="Elsewedy Electric" />
-            </div>
-          </article>
-          <section className={styles.faq} aria-labelledby="odoo-faq-title">
+            ))}
+          </div>
+          <p className={hub.note}>{einvoicing.note}</p>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.section} ${hub.faqSection}`}
+        id="faqs"
+        aria-labelledby="odoo-faq-title"
+      >
+        <div className={`${styles.container} ${hub.faqWrap}`}>
+          <div className={styles.faq}>
             <h2 id="odoo-faq-title">
               Frequently <em>Asked Questions</em>
             </h2>
@@ -464,11 +549,34 @@ export default function OdooReferencePage() {
                 </details>
               ))}
             </div>
-          </section>
+          </div>
         </div>
       </section>
 
-      <section className={styles.demo}>
+      <section
+        className={`${styles.section} ${hub.relatedSection}`}
+        aria-labelledby="odoo-related-title"
+      >
+        <div className={styles.container}>
+          <h2 id="odoo-related-title">{related.title}</h2>
+          <ul className={hub.relatedList}>
+            {odooCapabilityPages.map((page) => (
+              <li key={page.key}>
+                <TopicLink page={page}>{page.label}</TopicLink>
+              </li>
+            ))}
+            {related.moreLinks.map(([label, href]) => (
+              <li key={href}>
+                <Link className={styles.learnMore} href={href}>
+                  {label} <ArrowRight aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className={styles.demo} aria-labelledby="odoo-demo-title">
         <Asset
           name="demo"
           className={styles.demoImage}
@@ -479,7 +587,7 @@ export default function OdooReferencePage() {
             <span className={styles.eyebrow}>
               Ready to transform your business?
             </span>
-            <h2>
+            <h2 id="odoo-demo-title">
               Book Your Free
               <br />
               <em>Odoo Demo Today</em>
@@ -490,6 +598,11 @@ export default function OdooReferencePage() {
             </p>
             <div className={styles.demoActions}>
               <DemoButton />
+              <Link className={styles.learnMore} href={closing.secondary.href}>
+                {closing.secondary.label} <ArrowRight aria-hidden="true" />
+              </Link>
+            </div>
+            <div className={hub.demoChecks}>
               <Checks
                 items={[
                   "No commitment",
@@ -498,6 +611,7 @@ export default function OdooReferencePage() {
                 ]}
               />
             </div>
+            <PartnerBadge className={hub.trustCompact} />
           </div>
         </div>
       </section>

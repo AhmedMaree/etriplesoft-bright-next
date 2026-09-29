@@ -4,7 +4,7 @@ import {
   ChartNoAxesColumnIncreasing, Zap, Compass, PenTool, Wrench, Rocket,
   MapPin, Star,
 } from "lucide-react";
-import { ContactForm } from "@/components/widgets";
+import { ContactForm } from "@/components/contact-form";
 import s from "./WebReferencePage.module.css";
 
 const contact = "/contact?service=Web%20Design%20and%20Development";

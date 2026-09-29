@@ -1,5 +1,6 @@
 "use client";
 
+import { company } from "@/lib/company";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
@@ -21,43 +22,32 @@ import {
 } from "lucide-react";
 import s from "./InsightsReferencePage.module.css";
 
-type Category = "Odoo" | "ERP" | "AI" | "Web" | "Marketing";
-type Article = { title: string; summary: string; category: Category; slug: string; image: string; date?: string; dateLabel?: string };
-
-const featured: Article = {
-  title: "Odoo KPI Dashboards for Real-Time Business Insights",
-  summary: "Explore practical ways to connect operational data with the decisions your team needs to make.",
-  category: "Odoo",
-  slug: "odoo-kpi-dashboard-real-time-business-insights",
-  image: "featured-article",
-  date: "2025-05-12",
-  dateLabel: "May 12, 2025",
+export type InsightCard = {
+  title: string;
+  summary: string;
+  category: string;
+  slug: string;
+  image?: { src: string; alt: string; width: number; height: number };
+  date: string;
+  dateLabel: string;
+  minutes: number;
 };
 
-const articles: Article[] = [
-  { title: "Understanding the Return on an Odoo ERP Investment", summary: "Assess a project against the workflows, handoffs and reporting it is meant to improve.", category: "Odoo", slug: "odoo-roi-return-on-investment", image: "article-odoo", date: "2025-04-28", dateLabel: "Apr 28, 2025" },
-  { title: "ERP Benefits to Consider as Your Business Grows", summary: "Understand where connected workflows and shared information can help your teams.", category: "ERP", slug: "erp-benefits-for-growing-businesses", image: "article-erp" },
-  { title: "5 Ways AI Can Transform Your Business Operations", summary: "Start with a specific task, clear success criteria and the right human review.", category: "AI", slug: "ai-business", image: "article-ai" },
-  { title: "Why Your Business Needs a Modern, SEO-Friendly Website", summary: "Learn how clear content, responsive pages and useful customer journeys work together.", category: "Web", slug: "modern-seo-friendly-website", image: "article-web" },
-  { title: "Digital Marketing Strategies for B2B Growth in the Middle East", summary: "Coordinate useful content, channel choices and measurement around your audience.", category: "Marketing", slug: "b2b-marketing-strategies-middle-east", image: "article-marketing" },
-  { title: "How Odoo Helps Construction Companies Improve Efficiency", summary: "Connect project costs, procurement and inventory in a more consistent workflow.", category: "Odoo", slug: "odoo-construction", image: "article-client-success" },
-  { title: "Signs Your Business Is Ready for an ERP System", summary: "Spot when disconnected tools and informal handoffs are getting difficult to manage.", category: "ERP", slug: "signs-you-need-erp-system", image: "article-erp", date: "2025-04-15", dateLabel: "Apr 15, 2025" },
-  { title: "SEO Strategies for Businesses in Egypt, UAE and Saudi Arabia", summary: "Build a search plan around customer questions, language and local context.", category: "Marketing", slug: "seo-strategies", image: "article-marketing" },
-  { title: "Make Marketing Reports Useful to the Whole Team", summary: "Connect campaign reporting with the questions the business needs to answer.", category: "Marketing", slug: "measure-marketing-performance", image: "article-erp" },
-  { title: "Plan Digital Campaigns Around Real Customer Journeys", summary: "Give search, paid media, social and content clear, complementary roles.", category: "Marketing", slug: "integrated-digital-campaigns", image: "article-marketing" },
-];
-
-const categories = [
-  ["All Articles", "all", Grid2X2],
-  ["Odoo", "Odoo", Database],
-  ["ERP", "ERP", Database],
-  ["AI", "AI", BrainCircuit],
-  ["Web", "Web", Globe2],
-  ["Marketing", "Marketing", Megaphone],
-] as const;
+const categoryIcons: Record<string, typeof Database> = {
+  Odoo: Database,
+  ERP: Database,
+  AI: BrainCircuit,
+  Web: Globe2,
+  Marketing: Megaphone,
+};
 
 function Artwork({ name, alt = "", className = "" }: { name: string; alt?: string; className?: string }) {
   return <img className={className} src={`/images/insights-reference/${name}.webp`} alt={alt} loading="lazy" decoding="async" />;
+}
+
+function CardImage({ image }: { image?: InsightCard["image"] }) {
+  if (!image) return null;
+  return <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />;
 }
 
 function NewsletterSignup() {
@@ -75,7 +65,7 @@ function NewsletterSignup() {
       setStatus(result.message);
       if (response.ok) form.reset();
     } catch {
-      setStatus("We could not submit your request. Please email info@etriplesoft.com.");
+      setStatus(`We could not submit your request. Please email ${company.primaryEmail}.`);
     } finally {
       setBusy(false);
     }
@@ -94,18 +84,26 @@ function NewsletterSignup() {
   );
 }
 
-export default function InsightsReferencePage() {
+export default function InsightsReferencePage({ articles }: { articles: InsightCard[] }) {
+  const featured = articles[0];
+  const rest = articles.slice(1);
+  const categories: readonly (readonly [string, string, typeof Database])[] = [
+    ["All Articles", "all", Grid2X2],
+    ...Array.from(new Set(articles.map((article) => article.category))).map(
+      (category) => [category, category, categoryIcons[category] ?? BookOpen] as const,
+    ),
+  ];
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [query, setQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
   const filteredArticles = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase();
-    return articles.filter((article) => {
+    return rest.filter((article) => {
       const categoryMatch = activeCategory === "all" || article.category === activeCategory;
       const queryMatch = !normalized || `${article.title} ${article.summary} ${article.category}`.toLocaleLowerCase().includes(normalized);
       return categoryMatch && queryMatch;
     });
-  }, [activeCategory, query]);
+  }, [activeCategory, query, rest]);
   const displayedArticles = showAll || activeCategory !== "all" || query.trim() ? filteredArticles : filteredArticles.slice(0, 6);
 
   function chooseCategory(category: string) {
@@ -138,14 +136,14 @@ export default function InsightsReferencePage() {
           <label className={s.searchBox}><Search aria-hidden="true" /><span className={s.srOnly}>Search articles</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search articles…" type="search" /></label>
         </nav>
 
-        {activeCategory === "all" && !query.trim() && <article className={s.featured}>
-          <Link href={`/insights/${featured.slug}`} className={s.featuredImage}><Artwork name={featured.image} alt="Illustrative business growth and dashboard artwork" /></Link>
+        {featured && activeCategory === "all" && !query.trim() && <article className={s.featured}>
+          <Link href={`/insights/${featured.slug}`} className={s.featuredImage}><CardImage image={featured.image} /></Link>
           <div className={s.featuredCopy}>
             <span className={s.featuredLabel}><span aria-hidden="true">★</span> Featured article</span>
             <h2><Link href={`/insights/${featured.slug}`}>{featured.title}</Link></h2>
             <p>{featured.summary}</p>
             <div className={s.articleMeta}>
-              <span><CalendarDays aria-hidden="true" />{featured.dateLabel}</span>
+              <span><CalendarDays aria-hidden="true" /><time dateTime={featured.date}>{featured.dateLabel}</time> · {featured.minutes} min read</span>
               <Link href={`/insights/${featured.slug}`}>Read Article<ArrowRight aria-hidden="true" /></Link>
             </div>
           </div>
@@ -159,14 +157,14 @@ export default function InsightsReferencePage() {
           {displayedArticles.length ? <div className={s.articleGrid}>
             {displayedArticles.map((article) => <article className={s.articleCard} key={article.slug}>
               <Link href={`/insights/${article.slug}`} className={s.cardImage}>
-                <Artwork name={article.image} alt={`Illustrative ${article.category} article artwork`} />
-                <span className={`${s.categoryTag} ${s[`tag${article.category}`]}`}>{article.category}</span>
+                <CardImage image={article.image} />
+                <span className={`${s.categoryTag} ${s[`tag${article.category}`] ?? ""}`}>{article.category}</span>
               </Link>
               <div className={s.cardBody}>
                 <h3><Link href={`/insights/${article.slug}`}>{article.title}</Link></h3>
                 <p>{article.summary}</p>
                 <div className={s.cardFooter}>
-                  {article.dateLabel ? <span className={s.cardDate}><CalendarDays aria-hidden="true" />{article.dateLabel}</span> : <span className={s.cardDate}>{article.category}</span>}
+                  <span className={s.cardDate}><CalendarDays aria-hidden="true" /><time dateTime={article.date}>{article.dateLabel}</time> · {article.minutes} min read</span>
                   <Link href={`/insights/${article.slug}`}>Read More<ArrowRight aria-hidden="true" /></Link>
                 </div>
               </div>

@@ -1,10 +1,5 @@
 .page {
-  --ink: #091b4d;
-  --blue: #087cf4;
-  --cyan: #03b8d9;
-  --muted: #526486;
-  --line: #d9ebfb;
-  --pale: #eef8ff;
+  --ink: var(--navy);
   color: var(--ink);
   overflow: hidden;
   background:
@@ -201,7 +196,7 @@
   gap: 12px;
   padding: 11px 20px;
   border: 1px solid var(--blue);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: linear-gradient(120deg, #0799f5, #075ff0);
   box-shadow: 0 8px 20px #0786f438;
   color: #fff;
@@ -307,7 +302,7 @@
   gap: 16px;
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: #ffffffd9;
   box-shadow: 0 7px 18px #328ad111;
 }
@@ -346,7 +341,7 @@
   min-height: 42px;
   padding: 9px 17px;
   border: 1px solid var(--blue);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
@@ -849,7 +844,7 @@
   .heroBenefits > div {
     gap: 6px;
     padding-right: 9px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .heroBenefits svg,
   .chartIcon {
@@ -916,7 +911,7 @@
     font-size: 12px;
   }
   .cardCopy > span {
-    font-size: 10.5px;
+    font-size: 11px;
   }
   .cardArrow {
     display: none;
@@ -965,7 +960,7 @@
     font-size: 12px;
   }
   .processGrid small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .processArrow {
     display: none;
@@ -988,10 +983,10 @@
     height: 43px;
   }
   .benefitGrid strong {
-    font-size: 10.5px;
+    font-size: 11px;
   }
   .benefitGrid small {
-    font-size: 9.5px;
+    font-size: 11px;
   }
   .proof {
     grid-template-columns: 1fr;

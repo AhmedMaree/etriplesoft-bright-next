@@ -21,7 +21,13 @@ export async function generateMetadata({
   const p = projects.find(
     (p) => p.image === "project-" + (aliases[project] || project),
   );
-  return { title: p?.title || "Project Not Found" };
+  // Illustrative project pages: not in the sitemap and not linked from the
+  // site, so they are kept out of search results.
+  return {
+    title: p?.title || "Project Not Found",
+    alternates: { canonical: `/portfolio/${project}` },
+    robots: { index: false, follow: true },
+  };
 }
 export default async function Project({
   params,

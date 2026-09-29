@@ -20,9 +20,9 @@
   display: inline-flex;
   margin-bottom: 18px;
   padding: 7px 18px;
-  border-radius: 99px;
-  background: #e2ebff;
-  color: #334bfa;
+  border-radius: var(--radius-pill);
+  background: var(--pale);
+  color: var(--blue);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -31,15 +31,15 @@
 }
 .heading {
   margin: 0;
-  color: #071b4a;
+  color: var(--navy);
   font-size: clamp(38px, 3.85vw, 56px);
   font-weight: 800;
   letter-spacing: -.04em;
   line-height: 1.02;
 }
 .heading > span { display: block; }
-.headingAccent { color: #364cff; }
-.description { margin: 22px 0 0; color: #62718d; font-size: 17px; line-height: 1.5; }
+.headingAccent { color: var(--blue); }
+.description { margin: 22px 0 0; color: var(--muted); font-size: 17px; line-height: 1.5; }
 .actions { display: flex; gap: 12px; margin-top: 24px; }
 .button {
   display: inline-flex;
@@ -49,19 +49,19 @@
   min-height: 48px;
   padding: 13px 18px;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 13px;
   font-weight: 650;
   line-height: 1.2;
   white-space: nowrap;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
 }
 .button svg { width: 18px; height: 18px; flex-shrink: 0; stroke-width: 1.7; }
 .button:hover { transform: translateY(-2px); }
-.button:focus-visible, .addonsPanel:focus-visible { outline: 3px solid #3156f5; outline-offset: 5px; }
-.primaryButton { background: linear-gradient(115deg, #304cff, #1237b5); color: #fff; }
-.primaryButton:hover { box-shadow: 0 8px 20px -8px #244ee580; }
-.secondaryButton { border-color: #d4e1ff; background: #fff; color: #071b4a; box-shadow: 0 2px 5px #2447850c; }
+.button:focus-visible, .addonsPanel:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+.primaryButton { background: linear-gradient(115deg, var(--blue), #1237b5); color: #fff; }
+.primaryButton:hover { box-shadow: var(--shadow); }
+.secondaryButton { border-color: #d4e1ff; background: #fff; color: var(--navy); box-shadow: var(--shadow-sm); }
 .partners { display: flex; align-items: center; gap: 22px; margin-top: 32px; }
 .odooPartner { width: 125px; height: auto; }
 .microsoftPartner { width: 176px; height: auto; }
@@ -135,7 +135,7 @@
 @media (max-width: 760px) {
   .hero { padding-block: 38px 24px; }
   .container { width: calc(100% - 36px); gap: 30px; }
-  .eyebrow { font-size: 10px; margin-bottom: 16px; }
+  .eyebrow { font-size: 11px; margin-bottom: 16px; }
   .heading { font-size: clamp(33px, 8.9vw, 49px); }
   .description { font-size: 15px; margin-top: 18px; }
   .actions { gap: 9px; margin-top: 20px; }
@@ -157,7 +157,7 @@
   .orbitDot { display: none; }
 }
 @media (max-width: 360px) {
-  .button { font-size: 10px; gap: 5px; }
+  .button { font-size: 11px; gap: 5px; }
   .partners { gap: 12px; }
   .microsoftPartner { width: 140px; }
 }

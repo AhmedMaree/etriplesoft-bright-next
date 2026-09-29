@@ -1,0 +1,479 @@
+/* /services hub. Mobile-first; colors, radii and shadows come from the
+   shared tokens in app/globals.css. The Odoo section is intentionally the
+   heaviest block on the page; supporting sections stay lighter and smaller. */
+
+.page {
+  color: var(--ink);
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.lead {
+  margin-top: 16px;
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.page h2 {
+  text-wrap: balance;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: 48px 40px;
+  background: linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff);
+}
+.heroGrid {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+.hero h1 {
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.hero :global(.button-row) {
+  margin-top: 28px;
+}
+.tiers {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid var(--line);
+}
+.tiers li {
+  display: grid;
+  gap: 2px;
+  padding: 14px 0 14px 20px;
+}
+.tiers span {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tiers strong {
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--navy);
+}
+.tiers li[data-core] {
+  border-left: 4px solid var(--blue);
+  margin-left: -3px;
+}
+.tiers li[data-core] strong {
+  font-size: 22px;
+  color: var(--blue);
+}
+
+/* ---------- Odoo flagship ---------- */
+.odoo {
+  position: relative;
+  overflow: hidden;
+  padding-block: 72px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 85% 10%, #1d2f8a 0%, transparent 55%),
+    linear-gradient(160deg, #0a1a52, var(--navy));
+  scroll-margin-top: var(--site-header-height, 74px);
+}
+.odooGrid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+.odoo h2 {
+  color: #fff;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 750;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+.odooEyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: #ffffff1a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #cfe0ff;
+}
+.odooCopy p {
+  margin-top: 18px;
+  max-width: 56ch;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #c9d6f2;
+}
+.odooCta {
+  margin-top: 28px;
+}
+.odooVisual img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.capabilities {
+  grid-column: 1 / -1;
+  padding-top: 32px;
+  border-top: 1px solid #ffffff26;
+}
+.capabilities h3 {
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #9fb4e6;
+}
+.capabilities ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.capabilities a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 12px 16px;
+  border: 1px solid #ffffff26;
+  border-radius: var(--radius);
+  background: #ffffff0d;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition:
+    background var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+.capabilities a:hover {
+  background: #ffffff1f;
+  border-color: #ffffff59;
+}
+.capabilities a svg {
+  transition: transform var(--duration) var(--ease);
+}
+.capabilities a:hover svg {
+  transform: translateX(3px);
+}
+
+/* ---------- Supporting services ---------- */
+.foundation,
+.channels {
+  padding-block: 44px;
+}
+.groupHead {
+  margin-bottom: 24px;
+  max-width: 62ch;
+}
+.groupHead h2 {
+  font-size: clamp(22px, 4vw, 28px);
+}
+.groupHead p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.connect {
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+/* Foundation: alternating text/icon rows. */
+.row {
+  display: grid;
+  gap: 16px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+}
+.rowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+  border-radius: var(--radius-lg);
+  background: var(--pale);
+}
+.rowIcon :global(.icon) {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.rowIcon :global(.icon svg) {
+  width: 34px;
+  height: 34px;
+}
+.rowCopy h3 {
+  margin-bottom: 8px;
+  font-size: 19px;
+}
+.rowCopy p {
+  max-width: 60ch;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.rowCopy :global(.text-link) {
+  margin-top: 14px;
+}
+
+/* Channels: one tinted band, three ruled columns rather than cards. */
+.channels {
+  background: linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff);
+}
+.columns {
+  display: grid;
+  gap: 0;
+}
+.columns article {
+  padding-block: 22px;
+  border-top: 1px solid var(--line);
+}
+.columns article > span {
+  display: block;
+  margin-bottom: 12px;
+}
+.columns h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+.columns p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.columns :global(.text-link) {
+  margin-top: 12px;
+}
+
+/* ---------- Why it works together ---------- */
+.together {
+  padding-block: 56px;
+}
+.togetherGrid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+.together h2 {
+  font-size: clamp(24px, 4.5vw, 32px);
+}
+.points {
+  display: grid;
+  gap: 18px;
+  margin: 28px 0 0;
+}
+.points > div {
+  padding-left: 16px;
+  border-left: 3px solid var(--blue);
+}
+.points dt {
+  font-weight: 650;
+  color: var(--navy);
+}
+.points dd {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.diagram {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin-inline: auto;
+  overflow: visible;
+}
+.ring {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+.spoke {
+  stroke: #b8c6ff;
+  stroke-width: 2;
+}
+.hub {
+  fill: var(--blue);
+}
+.hubText,
+.hubSub,
+.nodeText {
+  text-anchor: middle;
+  font-family: inherit;
+}
+.hubText {
+  fill: #fff;
+  font-size: 22px;
+  font-weight: 750;
+}
+.hubSub {
+  fill: #dfe4ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.node {
+  fill: #fff;
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.nodeText {
+  fill: var(--navy);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* ---------- Regional presence ---------- */
+.region {
+  padding-block: 44px;
+  background: var(--pale);
+}
+.regionHead {
+  max-width: 62ch;
+}
+.regionHead h2 {
+  font-size: clamp(22px, 4vw, 28px);
+}
+.regionHead p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.places {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+.places li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.places svg {
+  color: var(--blue);
+}
+.places span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Closing CTA ---------- */
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 650;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 720px) {
+  .capabilities ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .columns article {
+    padding: 8px 28px 8px 0;
+    border-top: 0;
+  }
+  .columns article + article {
+    padding-left: 28px;
+    border-left: 1px solid var(--line);
+  }
+  .places {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1000px) {
+  .hero {
+    padding-block: 72px 64px;
+  }
+  .heroGrid {
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 64px;
+  }
+  .odoo {
+    padding-block: 104px;
+  }
+  .odooGrid {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 56px;
+  }
+  .capabilities {
+    padding-top: 40px;
+  }
+  .capabilities ul {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .capabilities a {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 92px;
+  }
+  .foundation,
+  .channels,
+  .region {
+    padding-block: 56px;
+  }
+  .row {
+    grid-template-columns: 0.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .row[data-flip] {
+    grid-template-columns: 1fr 0.4fr;
+  }
+  .row[data-flip] .rowIcon {
+    order: 2;
+  }
+  .togetherGrid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 72px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .capabilities a,
+  .capabilities a svg {
+    transition: none;
+  }
+  .capabilities a:hover svg {
+    transform: none;
+  }
+}

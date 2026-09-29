@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "./globals.css";
-import { Header, Footer } from "@/components/site";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { siteConfig, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "ETripleSoft — Digital Transformation Built Around Your Business",
-    template: "%s | ETripleSoft",
+    default: siteConfig.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Odoo ERP, AI automation, cloud security, web development and digital marketing for businesses across Egypt, Saudi Arabia and the UAE.",
+  description: siteConfig.defaultDescription,
 };
 export default function RootLayout({
   children,

@@ -14,7 +14,7 @@ import {
   Target,
   UsersRound,
 } from "lucide-react";
-import { ContactForm } from "@/components/widgets";
+import { ContactForm } from "@/components/contact-form";
 import s from "./DigitalMarketingReferencePage.module.css";
 
 const services = [
@@ -37,12 +37,6 @@ const steps = [
   ["Launch", "Create and deploy campaigns", Rocket],
   ["Optimize", "Test, refine and scale", Settings],
   ["Report", "Share insights and next steps", BarChart3],
-] as const;
-
-const articles = [
-  ["SEO", "SEO strategies for businesses in Egypt, UAE and Saudi Arabia", "Support local audiences with useful content and a clear technical foundation.", "article-laptop", "/insights/seo-strategies"],
-  ["Analytics", "Make marketing reports useful to the whole team", "Connect campaign activity with the questions your business needs to answer.", "article-analytics", "/insights/measure-marketing-performance"],
-  ["Campaigns", "Plan digital campaigns around real customer journeys", "Bring search, paid media, social and content together around a shared goal.", "article-social", "/insights/integrated-digital-campaigns"],
 ] as const;
 
 const faqs = [
@@ -142,14 +136,6 @@ export default function DigitalMarketingReferencePage() {
             <blockquote>“Professional, responsive, and truly understand our business needs.”</blockquote>
             <figcaption><span className={s.avatar}>MY</span><span><strong>Marco Youssef</strong><small>CEO, Manufacturing Company</small></span></figcaption>
           </figure>
-        </section>
-
-        <section className={`${s.section} ${s.blog}`} id="insights">
-          <SectionHeading eyebrow="Latest from our blog" title="Insights for better marketing decisions" description="Practical ideas for reaching customers and learning from campaign performance." href="/insights" link="View All Articles" />
-          <div className={s.articleGrid}>{articles.map(([category, title, copy, image, href]) => <article key={title} className={s.articleCard}>
-            <Link className={s.articleImage} href={href}><Asset name={image} alt="Illustrative marketing analytics and social media imagery" /></Link>
-            <div className={s.articleBody}><span className={s.tag}>{category}</span><h3><Link href={href}>{title}</Link></h3><p>{copy}</p><div><Link href={href}>Read more <ArrowRight aria-hidden="true" /></Link></div></div>
-          </article>)}</div>
         </section>
 
         <section className={s.faq}>

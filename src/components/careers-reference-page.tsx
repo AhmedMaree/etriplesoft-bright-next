@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileUp, MapPin, Play, Quote } from "lucide-react";
 import styles from "./careers-reference.module.css";
+import { mailto } from "@/lib/company";
 
 const jobsPortal = "https://etriple.odoo.com/jobs";
 const values = [
@@ -19,12 +20,6 @@ const benefits = [
 const steps = [
   ["Apply", "Submit your application"], ["Screening", "Initial review of your profile"],
   ["Interview", "Technical & cultural conversation"], ["Offer", "Welcome to the team!"],
-];
-const jobs = [
-  ["Senior Software Engineer", "Dhaka, BD", "Engineering", "Build scalable web applications and work on cutting-edge technologies."],
-  ["IT Project Manager", "Dhaka, BD", "Management", "Lead digital transformation projects for global clients."],
-  ["Business Analyst", "Remote", "Business", "Bridge business needs with technology solutions."],
-  ["UI/UX Designer", "Dhaka, BD", "Design", "Create intuitive and impactful digital experiences."],
 ];
 const locations = ["Cairo", "Saudi Arabia", "United Arab Emirates"];
 
@@ -106,15 +101,14 @@ export function CareersReferencePage() {
 
       <section id="open-positions" className={styles.section} aria-labelledby="positions-title">
         <div className={styles.container}>
-          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Open Positions</h2><p>Find your next opportunity and help us build what’s next.</p></div><Action href={jobsPortal} light>View All Positions</Action></header>
-          <div className={styles.jobsGrid}>{jobs.map(([title, location, department, description]) => <article className={styles.jobCard} key={title}><h3>{title}</h3><ul className={styles.tags}><li>Full-time</li><li>{location}</li><li>{department}</li></ul><p>{description}</p><Link href={jobsPortal} aria-label={`View ${title} opportunities on our recruitment portal`}>View Details<ArrowRight size={20} aria-hidden="true" /></Link></article>)}</div>
+          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Current Opportunities</h2><p>See the roles currently listed on our recruitment portal.</p></div><Action href={jobsPortal} light>View Open Positions</Action></header>
         </div>
       </section>
 
       <section className={styles.section} aria-label="More ways to join our team">
         <div className={`${styles.container} ${styles.opportunitiesGrid}`}>
           <article className={`${styles.pictureCard} ${styles.internships}`}><Image src="/images/careers/team-generated.webp" alt="Colleagues learning and working together" fill sizes="(max-width: 900px) 100vw, 60vw" /><div className={styles.pictureCopy}><p className={styles.eyebrow}>Restart your journey</p><h2>Internship Opportunities</h2><p>Kickstart your career with hands-on experience, mentorship and real projects.</p><Action href={jobsPortal} light>Explore Internships</Action></div></article>
-          <article className={styles.cvCard}><div><p className={styles.eyebrow}>Don’t see the right fit?</p><h2>Send Us Your CV</h2><p>We’re always on the lookout for talented individuals. Share your CV and we’ll reach out when a suitable opportunity comes up.</p><Action href="mailto:info@etriplesoft.com?subject=Career%20application" light>Submit Your CV</Action></div><FileUp className={styles.cvIcon} strokeWidth={1.2} aria-hidden="true" /></article>
+          <article className={styles.cvCard}><div><p className={styles.eyebrow}>Don’t see the right fit?</p><h2>Send Us Your CV</h2><p>We’re always on the lookout for talented individuals. Share your CV and we’ll reach out when a suitable opportunity comes up.</p><Action href={mailto("Career application")} light>Submit Your CV</Action></div><FileUp className={styles.cvIcon} strokeWidth={1.2} aria-hidden="true" /></article>
         </div>
       </section>
 
