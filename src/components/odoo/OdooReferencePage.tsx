@@ -42,6 +42,7 @@ import {
 import styles from "./OdooReferencePage.module.css";
 import hub from "./OdooHub.module.css";
 import OdooSectionNav from "./OdooSectionNav";
+import OdooPageHero from "./OdooPageHero";
 
 const glyphs = {
   network: Network,
@@ -119,11 +120,21 @@ const benefits = [
     "growth",
   ],
 ];
+const priorityModules = [
+  [
+    "Manufacturing",
+    "Streamline production and operations.",
+    "manufacturing-icon",
+  ],
+  [
+    "Inventory & Purchasing",
+    "Coordinate stock, suppliers, warehouses and replenishment.",
+    "inventory",
+  ],
+];
 const otherModules = [
   ["CRM", "Turn leads into loyal customers.", "crm"],
-  ["Inventory & Purchasing", "Coordinate stock, suppliers, warehouses and replenishment.", "inventory"],
   ["Sales", "Boost your revenue with a modern sales flow.", "sales"],
-  ["Manufacturing", "Streamline production and operations.", "manufacturing-icon"],
   ["Projects", "Deliver projects on time and within budget.", "projects"],
 ];
 function Asset({
@@ -138,7 +149,11 @@ function Asset({
   return (
     <img
       className={className}
-      src={name === "professional" ? "/images/professional.webp" : `${base}${name}.webp`}
+      src={
+        name === "professional"
+          ? "/images/professional.webp"
+          : `${base}${name}.webp`
+      }
       alt={alt}
       loading="lazy"
     />
@@ -219,57 +234,7 @@ function Checks({ items }: { items: string[] }) {
 export default function OdooReferencePage() {
   return (
     <main id="main" className={styles.page}>
-      <section className={styles.hero} aria-labelledby="odoo-title">
-        <div className={`${styles.container} ${styles.heroGrid}`}>
-          <div className={styles.heroContent}>
-            <h1 id="odoo-title">
-              Odoo ERP
-              <br />
-              Implementation <em>in Egypt</em>
-            </h1>
-            <p>
-              Transform your business with Odoo, the all-in-one ERP solution.
-              ETripleSoft helps Egyptian businesses implement, customize and
-              scale Odoo for sustainable growth.
-            </p>
-            <Checks
-              items={[
-                "Odoo Gold Partner",
-                "Local Egyptian Team",
-                "End-to-End Support",
-              ]}
-            />
-            <div className={styles.actions}>
-              <DemoButton />
-              <DemoButton secondary />
-            </div>
-            <Image
-              src={partner.badge.src}
-              width={partner.badge.width}
-              height={partner.badge.height}
-              alt={partner.badge.alt}
-              className={styles.goldPartner}
-              sizes="130px"
-            />
-          </div>
-          <figure className={styles.heroVisual}>
-            <div className={styles.dashboardFrame}>
-              <Image
-                src="/images/odoo/operations-dashboard.webp"
-                alt="Illustrative Odoo operations dashboard with sample sales, invoice, inventory and project data"
-                width={1536}
-                height={1024}
-                preload
-                sizes="(max-width: 900px) 100vw, (max-width: 1240px) 56vw, 700px"
-                className={styles.heroDashboard}
-              />
-            </div>
-            <figcaption className={styles.heroCaption}>
-              Illustrative Odoo dashboard, sample data
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+      <OdooPageHero />
 
       <OdooSectionNav />
 
@@ -368,15 +333,35 @@ export default function OdooReferencePage() {
               </li>
             ))}
           </ul>
-          <h3 className={hub.subhead}>{moduleContent.othersTitle}</h3>
-          <div className={styles.moduleGrid}>
-            {otherModules.map(([title, copy, asset]) => (
-              <article key={title}>
-                <Asset name={asset} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </article>
-            ))}
+          <div className={hub.applications}>
+            <h3 className={hub.applicationsHeading}>
+              Manufacturing &amp; inventory
+            </h3>
+            <div className={hub.priorityModules}>
+              {priorityModules.map(([title, copy, asset]) => (
+                <article key={title}>
+                  <Asset name={asset} />
+                  <div>
+                    <h4>{title}</h4>
+                    <p>{copy}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <h3 className={hub.supportingHeading}>
+              {moduleContent.othersTitle}
+            </h3>
+            <div className={hub.supportingModules}>
+              {otherModules.map(([title, copy, asset]) => (
+                <article key={title}>
+                  <Asset name={asset} />
+                  <div>
+                    <h4>{title}</h4>
+                    <p>{copy}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -578,11 +563,6 @@ export default function OdooReferencePage() {
       </section>
 
       <section className={styles.demo} aria-labelledby="odoo-demo-title">
-        <Asset
-          name="demo"
-          className={styles.demoImage}
-          alt="Odoo dashboard ready for a personalized demonstration"
-        />
         <div className={styles.container}>
           <div className={styles.demoCopy}>
             <span className={styles.eyebrow}>

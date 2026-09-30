@@ -161,6 +161,10 @@ export const einvoicing = {
       "Saudi Arabia",
       "Saudi Arabia regulates e-invoicing through ZATCA. During discovery we scope how your Odoo configuration should meet the requirements that apply to your business.",
     ],
+    [
+      "United Arab Emirates",
+      "The UAE is introducing e-invoicing in phases for in-scope business and government transactions. Preparation includes structured invoice data, an Accredited Service Provider, and integration planning for your accounting system.",
+    ],
   ] as const,
   note: "Requirements differ by taxpayer and change over time. Confirm the rules that apply to you with your tax adviser.",
 };

@@ -376,6 +376,8 @@
   padding: 26px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .benefitGrid img {
   width: 68px;
@@ -391,7 +393,12 @@
   margin-bottom: 20px;
 }
 .benefitGrid p {
+  max-width: 38ch;
   margin-bottom: 24px;
+}
+.benefitGrid .learnMore {
+  justify-content: center;
+  min-height: 44px;
 }
 .learnMore {
   display: inline-flex;
@@ -733,43 +740,45 @@
 .demo {
   position: relative;
   overflow: hidden;
-  background: #f3f9ff;
-  padding-block: 44px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(226 237 255 / 70%), transparent 52%),
+    #f3f8ff;
+  padding-block: clamp(56px, 8vw, 92px);
   border-block: 1px solid #dbe8ff;
 }
-.demoImage {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 52%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
-}
-.demo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(90deg, #f5faff 35%, #f5faff00 58%);
-}
 .demo .container {
-  z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 .demoCopy {
-  width: 51%;
+  display: flex;
+  width: min(100%, 820px);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.demoCopy h2 {
+  max-width: 15ch;
+  margin-inline: auto;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.08;
+  text-wrap: balance;
 }
 .demoCopy p {
-  margin-top: 22px;
+  max-width: 62ch;
+  margin-top: 18px;
 }
 .demo .eyebrow {
+  margin-bottom: 14px;
   color: var(--accent);
 }
 .demoActions {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 26px;
-  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin-top: 30px;
 }
 .demoActions .button {
   flex-shrink: 0;
@@ -781,6 +790,15 @@
 }
 .demoActions .checks li {
   font-size: 13px;
+}
+.demoCopy .checks {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 26px;
+  margin: 26px 0 4px;
+}
+.demoCopy .checks li {
+  font-size: 14px;
 }
 @media (min-width: 1500px) {
   .heroContent {
@@ -1333,24 +1351,10 @@
     font-size: 14px;
   }
   .demo {
-    padding-block: 40px 290px;
-  }
-  .demoCopy {
-    width: 100%;
+    padding-block: 48px;
   }
   .demoCopy h2 {
-    font-size: 39px;
-  }
-  .demoImage {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 270px;
-    object-fit: contain;
-    object-position: right bottom;
-  }
-  .demo::after {
-    background: none;
+    font-size: clamp(34px, 9vw, 42px);
   }
   .demoActions {
     gap: 22px;
@@ -1375,8 +1379,7 @@
   }
 }
 @media (min-width: 601px) {
-  .processImage,
-  .demoImage {
+  .processImage {
     right: max(48px, calc((100% - var(--container)) / 2));
     width: min(657px, calc((100% - 96px) * 0.53));
   }
@@ -1394,8 +1397,7 @@
   }
 }
 @media (min-width: 601px) and (max-width: 760px) {
-  .processImage,
-  .demoImage {
+  .processImage {
     right: 18px;
     width: calc((100% - 36px) * 0.5);
   }
