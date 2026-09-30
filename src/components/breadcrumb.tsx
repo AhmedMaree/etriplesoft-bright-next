@@ -27,11 +27,17 @@ export function BreadcrumbSchema({ items }: { items: Crumb[] }) {
 }
 
 /** Visible breadcrumb plus matching BreadcrumbList JSON-LD. The last item is the current page. */
-export function Breadcrumb({ items }: { items: Crumb[] }) {
+export function Breadcrumb({
+  items,
+  label = "Breadcrumb",
+}: {
+  items: Crumb[];
+  label?: string;
+}) {
   return (
     <>
       <BreadcrumbSchema items={items} />
-      <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+      <nav aria-label={label} className={styles.breadcrumb}>
         <ol>
           {items.map((item, index) => (
             <li

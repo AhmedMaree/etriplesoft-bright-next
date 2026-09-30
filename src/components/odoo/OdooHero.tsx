@@ -42,8 +42,8 @@ export default function OdooHero({
             <Link className={`${styles.button} ${styles.primaryButton}`} href={primaryHref} prefetch={false}>
               Explore Odoo ERP <ArrowRight aria-hidden="true" />
             </Link>
-            <Link className={`${styles.button} ${styles.secondaryButton}`} href="/contact?service=Odoo%20ERP%20Demo" prefetch={false}>
-              Request a Demo <ArrowRight aria-hidden="true" />
+            <Link className={`${styles.button} ${styles.secondaryButton}`} href="/book-consultation" prefetch={false}>
+              Book a Free Consultation <ArrowRight aria-hidden="true" />
             </Link>
           </div>
           <div className={styles.partners} aria-label="Technology partnerships">

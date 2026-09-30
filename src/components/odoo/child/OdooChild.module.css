@@ -856,3 +856,17 @@
 @media (max-width: 760px) {
   .breadcrumb a, .anchors a, .stageNav a, .sequence a { min-width: 44px; min-height: 44px; }
 }
+
+/* ---------- comparison table ---------- */
+.tableWrap { display: grid; gap: 14px; }
+.tableScroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.tableScroll:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
+.compare caption { padding: 14px 18px; color: var(--muted); font-size: 13px; text-align: left; caption-side: bottom; }
+.compare th, .compare td { padding: 14px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.compare thead th { color: var(--navy); font-size: 13px; font-weight: 700; background: #f4f8ff; }
+.compare tbody th { width: 22%; color: var(--navy); font-weight: 650; }
+.compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
+.compare td { color: var(--ink); }
+.compare .highlightCol { background: #eef2ff; }
+.compare thead .highlightCol { color: var(--blue); background: #e2e8ff; }

@@ -10,6 +10,8 @@ export type IndustryHubItem = {
   href: string;
   linkLabel: string;
   hasPage: boolean;
+  /** Position in the homepage grid; omit to keep the industry off the homepage. */
+  homeRank?: number;
 };
 
 export const industryHubItems: IndustryHubItem[] = [
@@ -25,6 +27,7 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries/construction",
     linkLabel: "Explore construction",
     hasPage: true,
+    homeRank: 1,
   },
   {
     id: "real-estate",
@@ -38,6 +41,7 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries/real-estate",
     linkLabel: "Explore real estate",
     hasPage: true,
+    homeRank: 4,
   },
   {
     id: "facility-management",
@@ -77,6 +81,7 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries/education",
     linkLabel: "Explore education",
     hasPage: true,
+    homeRank: 3,
   },
   {
     id: "retail",
@@ -90,6 +95,7 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries#retail",
     linkLabel: "Explore retail",
     hasPage: false,
+    homeRank: 2,
   },
   {
     id: "healthcare",
@@ -103,6 +109,7 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries#healthcare",
     linkLabel: "Explore healthcare",
     hasPage: false,
+    homeRank: 5,
   },
   {
     id: "logistics",
@@ -116,13 +123,17 @@ export const industryHubItems: IndustryHubItem[] = [
     href: "/industries#logistics",
     linkLabel: "Explore logistics",
     hasPage: false,
+    homeRank: 6,
   },
 ];
 
-export const industryCardItems = ["construction", "retail", "education", "real-estate", "healthcare", "logistics"].map((id) => industryHubItems.find((industry) => industry.id === id)!).map((industry) => ({
-  id: industry.id,
-  name: industry.name,
-  image: industry.image,
-  description: industry.cardDescription,
-  href: industry.href,
-}));
+export const industryCardItems = industryHubItems
+  .filter((industry) => industry.homeRank !== undefined)
+  .sort((a, b) => a.homeRank! - b.homeRank!)
+  .map((industry) => ({
+    id: industry.id,
+    name: industry.name,
+    image: industry.image,
+    description: industry.cardDescription,
+    href: industry.href,
+  }));

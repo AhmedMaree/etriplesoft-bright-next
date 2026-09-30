@@ -1,0 +1,165 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "ETripleSoft home" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - img "ETripleSoft" [ref=f6e6]
+      - generic [ref=f6e7]:
+        - button "Search website" [ref=f6e8] [cursor=pointer]
+        - button "Open navigation" [ref=f6e12] [cursor=pointer]
+  - navigation "Breadcrumb" [ref=f6e15]:
+    - list [ref=f6e16]:
+      - listitem [ref=f6e17]:
+        - link "Home" [ref=f6e18] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f6e19]: /Resources
+  - main [ref=f6e20]:
+    - generic [ref=f6e21]:
+      - generic [ref=f6e23]:
+        - generic [ref=f6e24]: Resources
+        - heading "Company information and tools" [level=1] [ref=f6e25]
+        - paragraph [ref=f6e26]: Find our company profile, project portfolio, training portal and Odoo chart of accounts generator in one place.
+      - generic [ref=f6e27]:
+        - article [ref=f6e28]:
+          - link "Portfolio Browse the gallery of projects and organizations featured on the legacy ETripleSoft website. View portfolio" [ref=f6e29] [cursor=pointer]:
+            - /url: /portfolio
+            - heading "Portfolio" [level=2] [ref=f6e34]
+            - paragraph [ref=f6e35]: Browse the gallery of projects and organizations featured on the legacy ETripleSoft website.
+            - generic [ref=f6e36]: View portfolio
+        - article [ref=f6e37]:
+          - link "Company profile Download the ETripleSoft company profile as a PDF. Download profile PDF" [ref=f6e38] [cursor=pointer]:
+            - /url: /downloads/etriplesoft-company-profile.pdf
+            - heading "Company profile" [level=2] [ref=f6e43]
+            - paragraph [ref=f6e44]: Download the ETripleSoft company profile as a PDF.
+            - generic [ref=f6e45]: Download profile PDF
+        - article [ref=f6e46]:
+          - link [ref=f6e47] [cursor=pointer]:
+            - /url: https://learn.etriplesoft.com/
+            - heading "Courses" [level=2] [ref=f6e52]
+            - paragraph [ref=f6e53]: Open the ETripleSoft learning portal to browse available courses.
+            - generic [ref=f6e54]: Browse courses
+        - article [ref=f6e58]:
+          - link [ref=f6e59] [cursor=pointer]:
+            - /url: /tools/chart-of-accounts-generator.html
+            - heading "Chart of accounts generator" [level=2] [ref=f6e63]
+            - paragraph [ref=f6e64]: Open the interactive Odoo chart of accounts generator for Egypt, the UAE and Saudi Arabia.
+            - generic [ref=f6e65]: Open generator
+  - contentinfo [ref=f6e69]:
+    - generic [ref=f6e70]:
+      - generic [ref=f6e71]:
+        - link "ETripleSoft home" [ref=f6e72] [cursor=pointer]:
+          - /url: /
+          - img "ETripleSoft" [ref=f6e73]
+        - paragraph [ref=f6e74]: We empower businesses across Egypt, UAE and Saudi Arabia with innovative technology solutions to build a smarter, more connected future.
+        - link "info@etriplesoft.com" [ref=f6e75] [cursor=pointer]:
+          - /url: mailto:info@etriplesoft.com
+        - generic "Contact channels" [ref=f6e79]:
+          - link "Email ETripleSoft" [ref=f6e80] [cursor=pointer]:
+            - /url: mailto:info@etriplesoft.com
+          - link "Our locations" [ref=f6e84] [cursor=pointer]:
+            - /url: /contact
+          - link "Contact support" [ref=f6e88] [cursor=pointer]:
+            - /url: /support-ticket
+          - link "ETripleSoft on LinkedIn" [ref=f6e91] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/etriplesoft
+          - link "ETripleSoft on Instagram" [ref=f6e96] [cursor=pointer]:
+            - /url: https://www.instagram.com/etriplesoft
+      - generic [ref=f6e100]:
+        - paragraph [ref=f6e101]: Odoo
+        - link "Odoo Overview" [ref=f6e102] [cursor=pointer]:
+          - /url: /odoo
+        - link "Implementation" [ref=f6e103] [cursor=pointer]:
+          - /url: /odoo/implementation
+        - link "Accounting & E-Invoicing" [ref=f6e104] [cursor=pointer]:
+          - /url: /odoo/accounting
+        - link "HR & Payroll" [ref=f6e105] [cursor=pointer]:
+          - /url: /contact?service=Odoo%20HR%20%26%20Payroll
+        - link "ITSM & Helpdesk" [ref=f6e106] [cursor=pointer]:
+          - /url: /odoo/itsm-helpdesk
+        - link "Dashboard & Insights" [ref=f6e107] [cursor=pointer]:
+          - /url: /odoo/dashboard-insights
+      - generic [ref=f6e108]:
+        - paragraph [ref=f6e109]: Services
+        - link "Services Overview" [ref=f6e110] [cursor=pointer]:
+          - /url: /services
+        - link "Cloud & Security" [ref=f6e111] [cursor=pointer]:
+          - /url: /cloud
+        - link "AI & Automation" [ref=f6e112] [cursor=pointer]:
+          - /url: /ai
+        - link "Web Development" [ref=f6e113] [cursor=pointer]:
+          - /url: /web
+        - link "Mobile Applications" [ref=f6e114] [cursor=pointer]:
+          - /url: /mobile
+        - link "Digital Marketing" [ref=f6e115] [cursor=pointer]:
+          - /url: /digital-marketing
+      - generic [ref=f6e116]:
+        - paragraph [ref=f6e117]: Industries
+        - link "Construction" [ref=f6e118] [cursor=pointer]:
+          - /url: /industries/construction
+        - link "Real Estate" [ref=f6e119] [cursor=pointer]:
+          - /url: /industries/real-estate
+        - link "Facility Management" [ref=f6e120] [cursor=pointer]:
+          - /url: /industries/facility-management
+        - link "Restaurants / F&B" [ref=f6e121] [cursor=pointer]:
+          - /url: /industries/restaurants
+        - link "Education" [ref=f6e122] [cursor=pointer]:
+          - /url: /industries/education
+        - link "Retail" [ref=f6e123] [cursor=pointer]:
+          - /url: /industries#retail
+        - link "Healthcare" [ref=f6e124] [cursor=pointer]:
+          - /url: /industries#healthcare
+        - link "Logistics" [ref=f6e125] [cursor=pointer]:
+          - /url: /industries#logistics
+      - generic [ref=f6e126]:
+        - paragraph [ref=f6e127]: Company
+        - link "About" [ref=f6e128] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f6e129] [cursor=pointer]:
+          - /url: /careers
+        - link "Contact" [ref=f6e130] [cursor=pointer]:
+          - /url: /contact
+        - link "Resources" [ref=f6e131] [cursor=pointer]:
+          - /url: /resources
+        - link "Insights" [ref=f6e132] [cursor=pointer]:
+          - /url: /insights
+        - link "FAQs" [ref=f6e133] [cursor=pointer]:
+          - /url: /faqs
+        - link "Support Ticket" [ref=f6e134] [cursor=pointer]:
+          - /url: /support-ticket
+        - link "Privacy" [ref=f6e135] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=f6e136] [cursor=pointer]:
+          - /url: /terms
+      - generic [ref=f6e137]:
+        - paragraph [ref=f6e138]: Our Offices
+        - generic [ref=f6e139]:
+          - link "Cairo, Egypt" [ref=f6e140] [cursor=pointer]:
+            - /url: /contact#offices
+          - 'link "Call Cairo, Egypt: +20 100 210 6952" [ref=f6e144] [cursor=pointer]':
+            - /url: tel:+201002106952
+            - text: +20 100 210 6952
+          - 'link "Call Cairo, Egypt: +20 104 409 8406" [ref=f6e147] [cursor=pointer]':
+            - /url: tel:+201044098406
+            - text: +20 104 409 8406
+        - generic [ref=f6e150]:
+          - link "Riyadh, Saudi Arabia" [ref=f6e151] [cursor=pointer]:
+            - /url: /contact#offices
+          - 'link "Call Riyadh, Saudi Arabia: +966 508 547 071" [ref=f6e155] [cursor=pointer]':
+            - /url: tel:+966508547071
+            - text: +966 508 547 071
+        - generic [ref=f6e158]:
+          - link "Dubai, UAE" [ref=f6e159] [cursor=pointer]:
+            - /url: /contact#offices
+          - 'link "Call Dubai, UAE: +971 52 440 1992" [ref=f6e163] [cursor=pointer]':
+            - /url: tel:+971524401992
+            - text: +971 52 440 1992
+          - 'link "Call Dubai, UAE: +971 58 158 8214" [ref=f6e166] [cursor=pointer]':
+            - /url: tel:+971581588214
+            - text: +971 58 158 8214
+    - generic [ref=f6e169]:
+      - generic [ref=f6e170]: © 2026 ETripleSoft. All rights reserved.
+      - button "Back to top" [ref=f6e171] [cursor=pointer]
+  - link "Chat with ETripleSoft on WhatsApp" [ref=f6e174] [cursor=pointer]:
+    - /url: https://wa.me/201002106952

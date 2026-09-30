@@ -3,7 +3,18 @@
 // Keep this file free of imports that need a browser or Node runtime.
 import { services } from "./data";
 
-export type InquiryKind = "contact" | "support" | "newsletter";
+export type InquiryKind = "contact" | "support" | "demo" | "newsletter";
+
+/** What a visitor can ask to see in an Odoo demo. */
+export const demoTopics = [
+  "Sales & CRM",
+  "Accounting & e-invoicing",
+  "Inventory & manufacturing",
+  "HR & payroll",
+  "Helpdesk & ITSM",
+  "Dashboards & insights",
+  "Not sure yet",
+] as const;
 
 export const supportCategories = [
   "Technical Support",
@@ -44,6 +55,7 @@ export const allowedFields: Record<InquiryKind, readonly string[]> = {
     "website",
     "cf-turnstile-response",
   ],
+  demo: ["kind", "name", "email", "company", "phone", "service", "message", "website", "cf-turnstile-response"],
   newsletter: ["kind", "email", "consent", "website"],
 };
 
@@ -84,9 +96,14 @@ export function validateInquiry(
 
   const service = get("service");
   const allowed: readonly string[] =
-    kind === "support" ? supportCategories : contactServices;
+    kind === "support"
+      ? supportCategories
+      : kind === "demo"
+        ? demoTopics
+        : contactServices;
   if (!service) {
     if (kind === "support") errors.service = "Choose an issue category.";
+    if (kind === "demo") errors.service = "Choose what you would like to see.";
   } else if (!allowed.includes(service)) {
     errors.service = "Choose one of the listed options.";
   }

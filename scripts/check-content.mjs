@@ -54,7 +54,10 @@ for (const path of paths) {
     .replace(/&#39;|&apos;/gi, "'")
     .replace(/\s+/g, " ");
   for (const [type, pattern] of [...errors, ...review]) {
-    const match = pattern.exec(visible);
+    // "Work in Progress" is a standard inventory account, not placeholder copy.
+    const match = [...visible.matchAll(new RegExp(pattern.source, `${pattern.flags}g`))].find(
+      (candidate) => !(path === "/tools/chart-of-accounts" && type === "PUBLIC_PLACEHOLDER" && candidate[0].toLowerCase() === "work in progress"),
+    );
     if (!match) continue;
     const at = match.index;
     findings.push({

@@ -74,6 +74,7 @@ export async function POST(request: NextRequest) {
     if (
       rawKind !== "contact" &&
       rawKind !== "support" &&
+      rawKind !== "demo" &&
       rawKind !== "newsletter"
     )
       return respond(
@@ -173,7 +174,9 @@ export async function POST(request: NextRequest) {
       return respond({
         message: newsletter
           ? "Thank you. Your newsletter request has been received."
-          : kind === "support"
+          : kind === "demo"
+            ? "Thank you. Your demo request has been received. We will be in touch to confirm a time."
+            : kind === "support"
             ? "Thank you. Your support request has been received."
             : "Thank you. Your message has been received.",
       });

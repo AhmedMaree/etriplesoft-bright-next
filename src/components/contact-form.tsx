@@ -7,6 +7,7 @@ import { company } from "@/lib/company";
 import {
   contactServices,
   limits,
+  demoTopics,
   supportCategories,
   validateInquiry,
   type InquiryErrors,
@@ -47,12 +48,14 @@ const fieldNames = [
  */
 export function ContactForm({
   support = false,
+  demo = false,
   initialService = "",
 }: {
   support?: boolean;
+  demo?: boolean;
   initialService?: string;
 }) {
-  const kind: InquiryKind = support ? "support" : "contact";
+  const kind: InquiryKind = support ? "support" : demo ? "demo" : "contact";
   const uid = useId();
   const id = (name: string) => `${uid}-${name}`;
   const formRef = useRef<HTMLFormElement>(null);
@@ -65,7 +68,11 @@ export function ContactForm({
   const [state, setState] = useState<State>({ phase: "idle" });
   const [errors, setErrors] = useState<InquiryErrors>({});
   const [service, setService] = useState(initialService);
-  const options: readonly string[] = support ? supportCategories : contactServices;
+  const options: readonly string[] = support
+    ? supportCategories
+    : demo
+      ? demoTopics
+      : contactServices;
   const submitting = state.phase === "submitting";
 
   useEffect(() => {
@@ -218,17 +225,29 @@ export function ContactForm({
       onSubmit={submit}
       noValidate
       className="contact-form"
-      id={support ? "ticket-form" : "contact-form"}
+      id={support ? "ticket-form" : demo ? "demo-form" : "contact-form"}
       aria-busy={submitting}
     >
       <span className="eyebrow">
-        {support ? "Existing customers" : "Send us a message"}
+        {support
+          ? "Existing customers"
+          : demo
+            ? "Free Odoo demo"
+            : "Send us a message"}
       </span>
-      <h2>{support ? "Send a Support Request" : "Get in Touch"}</h2>
+      <h2>
+        {support
+          ? "Send a Support Request"
+          : demo
+            ? "Request Your Demo"
+            : "Get in Touch"}
+      </h2>
       <p>
         {support
           ? "Tell us what is happening and which service it relates to."
-          : "Send us your enquiry and our team will get back to you."}
+          : demo
+            ? "Tell us about your business and what you want to see. We will confirm a time and prepare the demo around it."
+            : "Send us your enquiry and our team will get back to you."}
       </p>
       <p className="form-required-note">Fields marked * are required.</p>
 
@@ -321,20 +340,28 @@ export function ContactForm({
         </div>
         <div className={support ? "field" : "field full"}>
           <label htmlFor={id("service")}>
-            {support ? "Issue category *" : "Service of interest"}
+            {support
+              ? "Issue category *"
+              : demo
+                ? "What would you like to see? *"
+                : "Service of interest"}
           </label>
           <select
             id={id("service")}
             name="service"
             value={service}
             onChange={(event) => setService(event.target.value)}
-            required={support}
-            aria-required={support || undefined}
+            required={support || demo}
+            aria-required={support || demo || undefined}
             aria-invalid={invalid("service")}
             aria-describedby={describe("service")}
           >
             <option value="">
-              {support ? "Select a category" : "Select a service (optional)"}
+              {support
+                ? "Select a category"
+                : demo
+                  ? "Select a topic"
+                  : "Select a service (optional)"}
             </option>
             {options.map((option) => (
               <option key={option} value={option}>
@@ -362,7 +389,11 @@ export function ContactForm({
         )}
         <div className="field full">
           <label htmlFor={id("message")}>
-            {support ? "Description *" : "How can we help? *"}
+            {support
+              ? "Description *"
+              : demo
+                ? "Tell us about your business *"
+                : "How can we help? *"}
           </label>
           <textarea
             id={id("message")}
@@ -404,7 +435,7 @@ export function ContactForm({
           </>
         ) : (
           <>
-            {support ? "Send request" : "Send message"}
+            {support ? "Send request" : demo ? "Request my demo" : "Send message"}
             <ArrowRight size={17} aria-hidden="true" />
           </>
         )}

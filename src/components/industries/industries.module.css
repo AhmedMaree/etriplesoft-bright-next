@@ -7,8 +7,8 @@
 .breadcrumb a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; padding-inline: 2px; text-decoration: underline; text-underline-offset: 3px; }
 .heroGrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr); gap: clamp(40px, 7vw, 96px); align-items: end; }
 .eyebrow, .sectionIntro > span, .heroPanel > span { display: block; color: var(--blue); font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
-.heroCopy h1 { max-width: 19ch; margin-top: 14px; font-size: clamp(42px, 5.7vw, 76px); line-height: 1.02; letter-spacing: -.055em; text-wrap: balance; }
-.heroCopy > p { max-width: 62ch; margin-top: 24px; color: #52617e; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; }
+.heroCopy h1 { max-width: 19ch; margin-top: 14px; font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -.03em; text-wrap: balance; }
+.heroCopy > p { max-width: 62ch; margin-top: 24px; color: var(--muted); font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; }
 .heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .primaryButton, .secondaryButton { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; padding: 0 22px; border: 1px solid var(--navy); border-radius: var(--radius-sm); font-size: 14px; font-weight: 700; }
 .primaryButton { background: var(--navy); color: #fff; }
@@ -21,7 +21,7 @@
 .compactSection { padding-block: clamp(56px, 6vw, 84px); }
 .softSection { background: var(--pale); }
 .sectionIntro { display: grid; grid-template-columns: minmax(10rem, .42fr) minmax(18rem, .8fr) minmax(20rem, 1fr); gap: 28px; align-items: start; margin-bottom: 48px; }
-.sectionIntro h2 { max-width: 17ch; font-size: clamp(30px, 3vw, 46px); line-height: 1.08; letter-spacing: -.04em; text-wrap: balance; }
+.sectionIntro h2 { max-width: 17ch; font-size: var(--fs-h2); line-height: 1.15; letter-spacing: -.025em; text-wrap: balance; }
 .sectionIntro p { max-width: 62ch; color: var(--muted); font-size: 16px; line-height: 1.7; }
 .problemGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .problemItem { min-height: 178px; padding-block: 28px; padding-inline-end: 28px; border-bottom: 1px solid var(--line); }
@@ -82,7 +82,7 @@
   .hero { padding: 28px 0 56px; }
   .breadcrumb ol { margin-bottom: 34px; }
   .heroGrid { gap: 36px; }
-  .heroCopy h1 { font-size: clamp(39px, 12vw, 54px); }
+  .heroCopy h1 { font-size: var(--fs-h1); }
   .heroActions { align-items: stretch; flex-direction: column; }
   .primaryButton, .secondaryButton { width: 100%; }
   .section { padding-block: 68px; }
@@ -102,8 +102,8 @@
 }
 
 .hubHero { padding: clamp(78px, 10vw, 138px) 0 clamp(70px, 9vw, 116px); background: radial-gradient(circle at 76% 20%, #dbefff 0, transparent 24%), linear-gradient(120deg, #f9fbff, #eef4ff); border-bottom: 1px solid var(--line); }
-.hubHero h1 { max-width: 18ch; margin-top: 14px; font-size: clamp(44px, 6.2vw, 82px); line-height: .99; letter-spacing: -.06em; text-wrap: balance; }
-.hubHero p { max-width: 66ch; margin-top: 28px; color: #52617e; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.7; }
+.hubHero h1 { max-width: 18ch; margin-top: 14px; font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -.03em; text-wrap: balance; }
+.hubHero p { max-width: 66ch; margin-top: 28px; color: var(--muted); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.7; }
 .hubIntro { position: sticky; z-index: 4; top: 0; padding: 34px 0; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(14px); }
 .hubIntro > div { display: grid; grid-template-columns: .75fr 1.25fr; gap: 50px; align-items: center; }
 .hubIntro h2 { font-size: 25px; }

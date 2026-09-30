@@ -30,7 +30,7 @@ const resources = [
       "Download the ETripleSoft company profile as a PDF.",
     icon: "file",
     label: "Download profile PDF",
-    href: "/downloads/etriplesoft-company-profile.pdf",
+    href: "/company-profile.pdf",
     download: true,
   },
   {
@@ -50,8 +50,8 @@ const resources = [
       "Open the interactive Odoo chart of accounts generator for Egypt, the UAE and Saudi Arabia.",
     icon: "chart",
     label: "Open generator",
-    href: "/tools/chart-of-accounts-generator.html",
-    external: true,
+    href: "/tools/chart-of-accounts",
+    internal: true,
   },
 ];
 

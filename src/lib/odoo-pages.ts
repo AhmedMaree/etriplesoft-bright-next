@@ -15,7 +15,7 @@ export type OdooRelatedPage = {
 export const odooCapabilityPages: OdooRelatedPage[] = [
   { key: "implementation", label: "Implementation", path: "/odoo/implementation", exists: true },
   { key: "accounting", label: "Accounting & E-Invoicing", path: "/odoo/accounting", exists: true },
-  { key: "hr", label: "HR & Payroll", path: "/odoo/hr", exists: false },
+  { key: "hr", label: "HR & Payroll", path: "/odoo/hr-payroll", exists: true },
   { key: "itsm-helpdesk", label: "ITSM & Helpdesk", path: "/odoo/itsm-helpdesk", exists: true },
   { key: "dashboard-insights", label: "Dashboard & Insights", path: "/odoo/dashboard-insights", exists: true },
 ];

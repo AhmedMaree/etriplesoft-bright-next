@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileUp, MapPin, Play, Quote } from "lucide-react";
 import styles from "./careers-reference.module.css";
-import { mailto } from "@/lib/company";
+import { company, mailto } from "@/lib/company";
 
-const jobsPortal = "https://etriple.odoo.com/jobs";
+const jobsPortal = company.jobsPortalUrl;
 const values = [
   ["Meaningful Impact", "Work on real-world solutions that create value for global clients."],
   ["Growth Mindset", "Continuous learning, mentorship and clear career paths."],
@@ -101,7 +101,8 @@ export function CareersReferencePage() {
 
       <section id="open-positions" className={styles.section} aria-labelledby="positions-title">
         <div className={styles.container}>
-          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Current Opportunities</h2><p>See the roles currently listed on our recruitment portal.</p></div><Action href={jobsPortal} light>View Open Positions</Action></header>
+          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Current Opportunities</h2><p>Explore the live positions from the ETripleSoft recruitment portal below.</p></div><Action href={jobsPortal} light>Open Jobs in a New Tab</Action></header>
+          <iframe className={styles.jobsFrame} src={jobsPortal} title="Current ETripleSoft job openings" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
         </div>
       </section>
 

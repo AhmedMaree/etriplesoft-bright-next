@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, Headphones, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Globe, Headphones, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { company, mailto } from "@/lib/company";
 import { footerColumns } from "@/lib/navigation";
 import { BackToTop } from "./back-to-top";
+import { FooterColumn } from "./footer-column";
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
         <div className="footer-brand">
           <Link href="/" aria-label="ETripleSoft home">
             <Image
-              src="/images/logo-white.svg"
+              src="/images/logo-white.png"
               alt="ETripleSoft"
               width={1600}
               height={393}
@@ -47,6 +48,8 @@ export function Footer() {
               >
                 {social.platform === "linkedin" ? (
                   <Linkedin size={17} />
+                ) : social.platform === "facebook" ? (
+                  <Facebook size={17} />
                 ) : (
                   <Instagram size={17} />
                 )}
@@ -55,22 +58,23 @@ export function Footer() {
           </div>
         </div>
         {footerColumns.map((column) => (
-          <div key={column.title}>
-            <p className="footer-heading">{column.title}</p>
+          <FooterColumn key={column.title} title={column.title}>
             {column.links.map((link) => (
               <Link key={link.label} href={link.href}>
                 {link.label}
               </Link>
             ))}
-          </div>
+          </FooterColumn>
         ))}
-        <div>
-          <p className="footer-heading">Our Offices</p>
+        <FooterColumn title="Our Offices">
           {company.offices.map((office) => (
             <div className="footer-office" key={office.id}>
-              <Link href="/contact#offices">
+              <p className="footer-office-name">
                 <MapPin size={14} aria-hidden="true" /> {office.label}
-              </Link>
+              </p>
+              {office.address && (
+                <address className="footer-office-address">{office.address}</address>
+              )}
               {office.phones.map((phone) => (
                 <a
                   className="footer-office-phone"
@@ -83,7 +87,10 @@ export function Footer() {
               ))}
             </div>
           ))}
-        </div>
+          <Link className="footer-all-offices" href="/contact#offices">
+            View all offices
+          </Link>
+        </FooterColumn>
       </div>
       <div className="footer-bottom container">
         <span>

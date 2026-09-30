@@ -50,8 +50,8 @@ export const hero = {
   description: heroSource.intro,
   // Narrower than the old "ETA Compliant ERP": we connect Odoo to ETA.
   highlight: "Including Odoo e-invoicing for Egypt: we connect Odoo to ETA.",
-  primary: "Book a Consultation",
-  primaryHref: "/contact?service=Odoo%20Accounting%20Consultation",
+  primary: "Book a Free Consultation",
+  primaryHref: "/book-consultation",
   secondary: "Explore the modules",
 };
 
@@ -61,6 +61,7 @@ export const anchors = [
   ["Tax & localization", "#localization"],
   ["E-invoicing", "#e-invoicing"],
   ["Integrations", "#integrations"],
+  ["Comparison", "#comparison"],
   ["FAQs", "#faqs"],
 ] as const;
 
@@ -181,6 +182,69 @@ export const integrations = {
     })),
 };
 
+// Every claim below is a sentence already published in the Odoo vs Zoho vs
+// QuickBooks guide (see docs/CLAIMS-REGISTER.md, "odoo-vs-zoho-vs-quickbooks").
+// Sage is left out: the old page's Sage claims were never verified.
+export const comparison = {
+  eyebrow: "Comparison",
+  title: "Odoo Accounting compared with QuickBooks Online and Zoho Books",
+  description:
+    "For businesses in Egypt, Saudi Arabia and the UAE, local e-invoicing and tax coverage usually decide the comparison before features do.",
+  caption: "Odoo Accounting, QuickBooks Online and Zoho Books at a glance",
+  columns: ["", "Odoo Accounting", "QuickBooks Online", "Zoho Books"],
+  rows: [
+    [
+      "E-invoicing in Egypt, Saudi Arabia and the UAE",
+      "Local configurations for all three markets",
+      "Not built natively around these markets' e-invoicing systems",
+      "Not built natively around these markets' e-invoicing systems",
+    ],
+    [
+      "Country and tax coverage",
+      "Local configurations for over 80 countries",
+      "Not built natively around Egypt, Saudi Arabia or the UAE",
+      "Native tax compliance in a limited set of countries",
+    ],
+    [
+      "As your team grows",
+      "Licensed per user; we recommend the right edition during discovery",
+      "The entry-level Essentials plan caps at three users",
+      "Per-user add-ons above the included seats",
+    ],
+    [
+      "Beyond accounting",
+      "Inventory, HR, CRM and manufacturing in the same ERP",
+      "Accounting-focused",
+      "Accounting-focused",
+    ],
+  ],
+  note: "Based on our Odoo vs Zoho vs QuickBooks guide. Vendor plans and features change, so confirm current details with each vendor.",
+  guide: {
+    text: "Read the full Odoo vs Zoho vs QuickBooks comparison",
+    href: "/insights/odoo-vs-zoho-vs-quickbooks",
+    ariaLabel: "Read the full Odoo vs Zoho vs QuickBooks comparison",
+  },
+};
+
+export const why = {
+  eyebrow: "Why ETripleSoft",
+  title: "Why finance teams choose ETripleSoft",
+  cards: [
+    {
+      title: "Odoo Gold Partner",
+      text: "We implement Odoo across Egypt, the UAE and Saudi Arabia as a certified Odoo Gold Partner.",
+    },
+    {
+      title: "Connected to ETA and ZATCA",
+      text: "We configure and test the Egypt ETA and Saudi ZATCA connections as part of the implementation.",
+    },
+    {
+      title: "Checked by finance before go-live",
+      text: "Your finance users verify migrated master data and opening balances before you go live.",
+    },
+  ],
+};
+
 export const implementation = {
   title: "How we implement this",
   description:
@@ -202,5 +266,5 @@ export const closing = {
   title: "Ready to plan your Odoo accounting setup?",
   description:
     "Book a consultation and we will talk through your entities, processes and next steps.",
-  secondary: { label: "Contact our team", href: "/contact" },
+  secondary: { label: "Explore Solutions", href: "/services" },
 };

@@ -1,0 +1,324 @@
+/* Homepage-only sections: Odoo apps grid and article cards. */
+.apps {
+  padding: 84px 0;
+  background: linear-gradient(180deg, #f4f9ff, #fff);
+}
+.appsHead {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.appsHead h2 {
+  margin-top: 10px;
+  font-size: 36px;
+  line-height: 1.15;
+}
+.appsHead h2 em {
+  font-style: normal;
+  color: var(--blue);
+}
+.appsHead p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.appsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 26px #13234708;
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s,
+    border-color 0.18s;
+}
+.app:hover,
+.app:focus-within {
+  transform: translateY(-3px);
+  border-color: #c5c8fb;
+  box-shadow: 0 16px 32px #13234714;
+}
+.appIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+.blue .appIcon { background: #e8efff; color: #2c52d8; }
+.teal .appIcon { background: #dcf5f0; color: #0f8a78; }
+.violet .appIcon { background: #ece8ff; color: #5b3fd0; }
+.amber .appIcon { background: #fff0d6; color: #b8730a; }
+.app h3 {
+  margin-top: 18px;
+  font-size: 18px;
+}
+.app p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.appLink,
+.articleLink {
+  display: inline-block;
+  padding-block: 12px;
+  margin-block: -12px;
+  color: inherit;
+}
+/* Stretch the heading link over the whole card. */
+.appLink::after,
+.articleLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.appLink:focus-visible::after,
+.articleLink:focus-visible::after {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+.appArrow {
+  margin-top: auto;
+  padding-top: 16px;
+  box-sizing: content-box;
+  color: var(--blue);
+  transition: transform 0.18s;
+}
+.app:hover .appArrow,
+.article:hover .appArrow {
+  transform: translateX(4px);
+}
+.appsCta {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.article:hover,
+.article:focus-within {
+  transform: translateY(-3px);
+  border-color: #c5c8fb;
+  box-shadow: 0 18px 36px -30px #0b224a52;
+}
+.articleThumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #eef3ff;
+}
+.articleThumb img {
+  object-fit: cover;
+}
+.articleBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+}
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+}
+.articleMeta small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.article h3 {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+.article p {
+  display: -webkit-box;
+  margin-top: 10px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 1000px) {
+  .appsGrid,
+  .articles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .apps {
+    padding: 56px 0;
+  }
+  .appsHead h2 {
+    font-size: 28px;
+  }
+  .appsGrid {
+    gap: 12px;
+  }
+  .app {
+    padding: 18px;
+  }
+  .app p {
+    font-size: 13px;
+  }
+  .articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones: keep the page short. Compact app tiles, swipeable articles. */
+@media (max-width: 760px) {
+  .app {
+    padding: 16px;
+  }
+  .app h3 {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+  .app p {
+    display: none;
+  }
+  .appArrow {
+    padding-top: 10px;
+  }
+  .articles {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 18px;
+    margin-inline: -18px;
+    padding: 2px 18px 8px;
+    scrollbar-width: none;
+  }
+  .articles::-webkit-scrollbar {
+    display: none;
+  }
+  .article {
+    flex: 0 0 min(82%, 320px);
+    scroll-snap-align: start;
+  }
+}
+
+/* Client logo strip: two rows drifting in opposite directions. */
+.clients {
+  padding: 28px 0 32px;
+  background: #fff;
+}
+.clientsTitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.clientRows {
+  display: grid;
+  gap: 14px;
+}
+.clientRow {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.clientTrack {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  margin: 0;
+  padding: 0 7px;
+  list-style: none;
+  animation: client-scroll 110s linear infinite;
+}
+.reverse .clientTrack {
+  animation-direction: reverse;
+}
+.clientRow:hover .clientTrack,
+.clientRow:focus-within .clientTrack {
+  animation-play-state: paused;
+}
+.clientLogo {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+.clientLogo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@keyframes client-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 760px) {
+  .appLink {
+    min-width: 44px;
+  }
+  .clientLogo {
+    width: 76px;
+    height: 76px;
+    border-radius: 12px;
+  }
+  .clientTrack {
+    animation-duration: 90s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clientRow {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .clientTrack {
+    animation: none;
+  }
+  .clientLogo[aria-hidden="true"] {
+    display: none;
+  }
+}

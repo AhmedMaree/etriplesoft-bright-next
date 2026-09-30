@@ -20,12 +20,12 @@
 .heroGrid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(365px, .82fr) minmax(0, 1.18fr); align-items: center; gap: 20px; min-height: 427px; padding-block: 30px 24px; }
 .heroCopy { position: relative; z-index: 1; padding-block: 12px; }
 .eyebrow { display: block; color: var(--blue); font-size: 11px; line-height: 1.25; letter-spacing: .15em; font-weight: 800; text-transform: uppercase; }
-.heroCopy h1 { margin-top: 11px; font-size: clamp(57px, 6.5vw, 86px); font-weight: 800; line-height: .88; letter-spacing: -.065em; }
+.heroCopy h1 { margin-top: 11px; font-size: var(--fs-h1); font-weight: 750; line-height: 1.08; letter-spacing: -.03em; }
 .heroCopy h1 em, .regionCopy h2 em, .testimonial h2 em, .cta h2 em { color: var(--blue); font-style: normal; }
 .heroCopy h2 { margin-top: 13px; font-size: clamp(21px, 2vw, 27px); font-weight: 680; line-height: 1.16; letter-spacing: -.035em; }
 .heroCopy > p { max-width: 40ch; margin-top: 8px; font-size: 14px; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.button { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 1px solid var(--blue); border-radius: var(--radius-pill); color: #fff; background: linear-gradient(110deg, #078df8, #065ef0 65%, #05bce8); box-shadow: 0 7px 18px #0786f433; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; transition: transform .16s ease, box-shadow .16s ease; }
+.button { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 1px solid #174da9; border-radius: var(--radius-pill); color: #fff; background: linear-gradient(110deg, #174da9, #103e91); box-shadow: 0 7px 18px #0786f433; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; transition: transform .16s ease, box-shadow .16s ease; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 10px 21px #0786f445; }
 .button svg { width: 15px; height: 15px; }
 .buttonSecondary { color: var(--ink); background: #ffffffdb; box-shadow: none; }
@@ -98,7 +98,7 @@
 .stars svg { width: 13px; height: 13px; }
 .testimonial blockquote { margin-top: 8px; color: var(--ink); font-size: 15px; line-height: 1.45; }
 .testimonial figcaption { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
-.avatar { display: grid; width: 37px; height: 37px; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(140deg, #078df8, #16bfdc); font-size: 11px; font-weight: 800; }
+.avatar { display: grid; width: 37px; height: 37px; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(140deg, #174da9, #103e91); font-size: 11px; font-weight: 800; }
 .testimonial figcaption > span:last-child { display: grid; gap: 2px; }
 .testimonial figcaption strong { color: var(--ink); font-size: 11px; }
 .testimonial figcaption small { color: var(--muted); font-size: 11px; }
@@ -138,9 +138,9 @@
 .form :global(.contact-form > .eyebrow) { color: var(--blue); font-size: 11px; letter-spacing: .13em; }
 .form :global(.contact-form h2) { margin: 2px 0 10px; font-size: 19px; }
 .form :global(.form-grid) { gap: 8px; }
-.form :global(.form-grid input:not([type="checkbox"]):not([type="file"])), .form :global(.form-grid select), .form :global(.form-grid textarea) { min-height: 36px; margin-top: 0; padding: 8px 10px; border-color: #dce8f5; border-radius: 8px; background: #fcfdff; font-size: 11px; }
+.form :global(.form-grid input:not([type="checkbox"]):not([type="file"])), .form :global(.form-grid select), .form :global(.form-grid textarea) { min-height: 44px; margin-top: 0; padding: 8px 10px; border-color: #dce8f5; border-radius: 8px; background: #fcfdff; font-size: 11px; }
 .form :global(.form-grid textarea) { min-height: 58px; }
-.form :global(.contact-form > .button) { margin-top: 9px; border: 1px solid var(--blue); border-radius: var(--radius-pill); color: #fff; background: linear-gradient(110deg, #078df8, #065ef0 65%, #05bce8); box-shadow: 0 6px 16px #0786f426; }
+.form :global(.contact-form > .button) { margin-top: 9px; border: 1px solid #174da9; border-radius: var(--radius-pill); color: #fff; background: linear-gradient(110deg, #174da9, #103e91); box-shadow: 0 6px 16px #0786f426; }
 .form :global(.contact-form .form-note) { margin-top: 7px; font-size: 11px; }
 .page :global(.contact-form > .eyebrow) { display: block; margin-bottom: 3px; }
 .page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .page input:focus-visible, .page select:focus-visible, .page textarea:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
@@ -160,7 +160,7 @@
   .hero { min-height: 0; }
   .heroGrid { grid-template-columns: 1fr; gap: 0; min-height: 0; padding-block: 17px 12px; }
   .heroCopy { padding-block: 15px 0; }
-  .heroCopy h1 { font-size: clamp(53px, 13vw, 72px); }
+  .heroCopy h1 { font-size: var(--fs-h1); }
   .heroCopy h2 { font-size: 22px; }
   .heroCopy > p { max-width: 50ch; font-size: 13px; }
   .actions { margin-top: 13px; }
@@ -228,7 +228,7 @@
   .form :global(.contact-form) { padding: 14px; }
 }
 @media (max-width: 420px) {
-  .heroCopy h1 { font-size: clamp(49px, 13vw, 58px); }
+  .heroCopy h1 { font-size: var(--fs-h1); }
   .heroCopy h2 { font-size: 19px; }
   .heroBenefits { gap: 6px; }
   .heroBenefits > span { gap: 5px; font-size: 11px; }

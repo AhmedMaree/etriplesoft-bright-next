@@ -138,8 +138,8 @@ export default function MobileReferencePage() {
                 operations, and turn ideas into real growth.
               </p>
               <div className={s.actions}>
-                <Action>Build an App</Action>
-                <Action secondary>Talk to an Expert</Action>
+                <Action href="/book-consultation">Book a Free Consultation</Action>
+                <Action secondary href="/services">Explore Solutions</Action>
               </div>
               <div className={s.heroBenefits}>
                 <div>
@@ -384,8 +384,8 @@ export default function MobileReferencePage() {
             <p>Let’s turn your idea into a powerful mobile experience.</p>
           </div>
           <div className={s.ctaActions}>
-            <Action>Build an App</Action>
-            <Action secondary>Talk to an Expert</Action>
+            <Action href="/book-consultation">Book a Free Consultation</Action>
+            <Action secondary href="/services">Explore Solutions</Action>
           </div>
         </section>
       </div>

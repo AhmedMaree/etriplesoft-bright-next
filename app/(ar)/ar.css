@@ -1,0 +1,81 @@
+/* Arabic (RTL) overrides. Loaded only by the Arabic root layout, so nothing
+   here can affect the English site. */
+
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+  line-height: 1.7;
+}
+
+/* Negative tracking breaks Arabic letter joining; the shared type system
+   sets it with !important, so reset it the same way. */
+html[lang="ar"] * {
+  letter-spacing: 0 !important;
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  line-height: 1.3 !important;
+}
+html[lang="ar"] .eyebrow {
+  text-transform: none;
+}
+
+/* Directional icons point the other way in RTL. */
+html[lang="ar"] .lucide-arrow-right,
+html[lang="ar"] .lucide-arrow-up-right,
+html[lang="ar"] .lucide-chevron-right,
+html[lang="ar"] .lucide-arrow-left {
+  transform: scaleX(-1);
+}
+html[lang="ar"] .button:hover .lucide-arrow-right,
+html[lang="ar"] .text-link:hover .lucide-arrow-right {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* Numbers, phone numbers and email addresses stay left-to-right. */
+html[lang="ar"] [dir="ltr"] {
+  unicode-bidi: isolate;
+}
+
+/* Header */
+html[lang="ar"] .site-header .brand {
+  margin-inline-end: auto;
+}
+html[lang="ar"] .navigation > a.active:after {
+  inset-inline: 14px;
+}
+
+/* Footer */
+html[lang="ar"] .ar-footer-grid {
+  grid-template-columns: 1.6fr 1fr 1.4fr;
+  gap: 40px;
+}
+html[lang="ar"] .footer-office-address,
+html[lang="ar"] .footer-office .footer-office-phone {
+  padding-inline: 21px 0;
+  padding-left: 0;
+}
+html[lang="ar"] .footer-office .footer-office-phone {
+  white-space: normal;
+}
+@media (max-width: 1000px) {
+  html[lang="ar"] .ar-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  html[lang="ar"] .ar-footer-grid .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 760px) {
+  html[lang="ar"] .ar-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Floating buttons sit on the opposite edge in RTL. */
+html[lang="ar"] .back-top {
+  left: 0;
+  right: auto;
+}

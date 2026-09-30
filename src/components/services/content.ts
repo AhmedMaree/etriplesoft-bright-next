@@ -4,7 +4,7 @@
 
 import { odooCapabilityPages, odooPageHref } from "@/lib/odoo-pages";
 
-export const demoHref = "/contact?service=Odoo%20ERP";
+export const demoHref = "/book-consultation";
 
 export const hero = {
   eyebrow: "Services",
@@ -158,7 +158,7 @@ export const closing = {
   title: "Ready to plan your transformation?",
   description:
     "Talk to our team about where Odoo fits your business and which supporting services make sense alongside it.",
-  secondary: { label: "Contact our team", href: "/contact" },
+  secondary: { label: "Explore Odoo ERP", href: "/odoo" },
 };
 
 export const metadataContent = {

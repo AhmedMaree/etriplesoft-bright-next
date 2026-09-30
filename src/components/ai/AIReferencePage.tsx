@@ -149,7 +149,7 @@ export default function AIReferencePage() {
             </p>
             <div className={s.actions}>
               <Action href="#solutions">Explore AI</Action>
-              <Action secondary>Talk to Us</Action>
+              <Action href="/book-consultation" secondary>Book a Free Consultation</Action>
             </div>
             <div className={s.heroBenefits}>
               {[
@@ -406,8 +406,8 @@ export default function AIReferencePage() {
               <Action href="#solutions" small>
                 Explore AI
               </Action>
-              <Action secondary small>
-                Talk to Us
+              <Action href="/book-consultation" secondary small>
+                Book a Free Consultation
               </Action>
             </div>
           </div>

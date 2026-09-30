@@ -50,7 +50,7 @@ function analyse(path, html) {
   const types = ld.flatMap((d) => (d["@graph"] ? d["@graph"] : [d])).map((d) => d["@type"]);
   const imgs = [...body.matchAll(/<img\b[^>]*>/gi)].map((m) => m[0]);
   const text = strip(body.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " "));
-  const crumbNav = (body.match(/<nav[^>]*aria-label="Breadcrumb"[^>]*>([\s\S]*?)<\/nav>/i) || [])[1];
+  const crumbNav = (body.match(/<nav[^>]*class="[^"]*breadcrumb[^"]*"[^>]*>([\s\S]*?)<\/nav>/i) || [])[1];
   const crumbLabels = crumbNav ? [...crumbNav.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => strip(m[1])) : [];
   const links = [...body.matchAll(/<a\b[^>]*href="([^"]*)"/gi)].map((m) => decode(m[1]));
   return {

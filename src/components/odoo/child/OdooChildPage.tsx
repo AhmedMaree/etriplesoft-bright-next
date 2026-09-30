@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/site";
-import { pageMetadata } from "@/lib/seo";
+import { faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { BreadcrumbSchema } from "@/components/breadcrumb";
+import { JsonLd } from "@/components/json-ld";
 import { partner } from "@/components/odoo/content";
 import { odooPageByKey, odooPageHref } from "@/lib/odoo-pages";
 import { StageNav } from "./StageNav";
@@ -22,6 +23,42 @@ export function odooChildMetadata(config: OdooChildPageConfig): Metadata {
   const { title, description } = config.metadata;
   return pageMetadata({ title, description, path: config.path });
 }
+
+type Locale = "en" | "ar";
+
+const UI = {
+  en: {
+    home: "Home",
+    odoo: "Odoo",
+    breadcrumb: "Breadcrumb",
+    onThisPage: "On this page",
+    whatHappens: "What happens",
+    whatWeNeed: "What we need from you",
+    whatYouReceive: "What you receive",
+    supportTiers: "Support tiers",
+    partnerAlt: "Odoo Gold Partner badge",
+    partnerStatement: null as string | null,
+    learnMore: (label: string, text?: string) =>
+      text ? `${text}: learn more about Odoo ${label}` : `Learn more about Odoo ${label}`,
+  },
+  ar: {
+    home: "الرئيسية",
+    odoo: "أودو",
+    breadcrumb: "مسار التنقل",
+    onThisPage: "في هذه الصفحة",
+    whatHappens: "ماذا يحدث",
+    whatWeNeed: "ما نحتاجه منك",
+    whatYouReceive: "ما ستحصل عليه",
+    supportTiers: "مستويات الدعم",
+    partnerAlt: "شارة شريك أودو الذهبي",
+    partnerStatement: "ETripleSoft شريك أودو الذهبي.",
+    learnMore: (label: string, text?: string) => text ?? label,
+  },
+} as const;
+
+/** Where a topic page lives in the given language. */
+const topicHref = (locale: Locale, page: ReturnType<typeof odooPageByKey>) =>
+  locale === "ar" ? `/ar${page.path}` : odooPageHref(page);
 
 const layouts = ["split", "columns", "stacked"] as const;
 
@@ -56,12 +93,12 @@ function ArrowLink({
 }
 
 /** Link to another Odoo topic page, or its consultation fallback. */
-function PageLinkView({ link }: { link: PageLink }) {
+function PageLinkView({ link, locale }: { link: PageLink; locale: Locale }) {
   const page = odooPageByKey(link.key);
   return (
     <ArrowLink
-      href={odooPageHref(page)}
-      ariaLabel={`${link.text}: learn more about Odoo ${page.label}`}
+      href={topicHref(locale, page)}
+      ariaLabel={UI[locale].learnMore(page.label, link.text)}
     >
       {link.text}
     </ArrowLink>
@@ -75,13 +112,13 @@ type LinkItem = {
   ariaLabel?: string;
 };
 
-function RelatedLink({ item }: { item: LinkItem }) {
+function RelatedLink({ item, locale }: { item: LinkItem; locale: Locale }) {
   if (item.pageKey) {
     const page = odooPageByKey(item.pageKey);
     return (
       <ArrowLink
-        href={odooPageHref(page)}
-        ariaLabel={item.ariaLabel ?? `Learn more about Odoo ${page.label}`}
+        href={topicHref(locale, page)}
+        ariaLabel={item.ariaLabel ?? UI[locale].learnMore(page.label)}
       >
         {item.text ?? page.label}
       </ArrowLink>
@@ -94,7 +131,7 @@ function RelatedLink({ item }: { item: LinkItem }) {
   );
 }
 
-function ModuleBody({ module }: { module: Module }) {
+function ModuleBody({ module, locale }: { module: Module; locale: Locale }) {
   return (
     <>
       {module.items && <Bullets items={module.items} />}
@@ -108,12 +145,12 @@ function ModuleBody({ module }: { module: Module }) {
           ))}
         </div>
       )}
-      {module.link && <PageLinkView link={module.link} />}
+      {module.link && <PageLinkView link={module.link} locale={locale} />}
     </>
   );
 }
 
-function BlockView({ block }: { block: Block }) {
+function BlockView({ block, locale }: { block: Block; locale: Locale }) {
   switch (block.type) {
     case "body":
       return (
@@ -129,6 +166,45 @@ function BlockView({ block }: { block: Block }) {
       return <Bullets items={block.items} />;
     case "note":
       return <p className={styles.note}>{block.text}</p>;
+    case "table":
+      return (
+        <div className={styles.tableWrap}>
+          <div className={styles.tableScroll} role="region" aria-label={block.caption} tabIndex={0}>
+            <table className={styles.compare}>
+              <caption>{block.caption}</caption>
+              <thead>
+                <tr>
+                  {block.columns.map((column, i) => (
+                    <th
+                      key={column}
+                      scope="col"
+                      className={i === block.highlight ? styles.highlightCol : undefined}
+                    >
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map(([label, ...cells]) => (
+                  <tr key={label}>
+                    <th scope="row">{label}</th>
+                    {cells.map((cell, i) => (
+                      <td
+                        key={i}
+                        className={i + 1 === block.highlight ? styles.highlightCol : undefined}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {block.note && <p className={styles.note}>{block.note}</p>}
+        </div>
+      );
     case "columns":
       return (
         <div
@@ -145,7 +221,7 @@ function BlockView({ block }: { block: Block }) {
               {module.intro && (
                 <p className={styles.moduleIntro}>{module.intro}</p>
               )}
-              <ModuleBody module={module} />
+              <ModuleBody module={module} locale={locale} />
             </article>
           ))}
         </div>
@@ -166,7 +242,7 @@ function BlockView({ block }: { block: Block }) {
                 )}
               </div>
               <div>
-                <ModuleBody module={module} />
+                <ModuleBody module={module} locale={locale} />
               </div>
             </article>
           ))}
@@ -246,7 +322,7 @@ function BlockView({ block }: { block: Block }) {
         <ul className={styles.linkRow}>
           {block.items.map((item) => (
             <li key={item.text}>
-              <RelatedLink item={item} />
+              <RelatedLink item={item} locale={locale} />
             </li>
           ))}
         </ul>
@@ -257,7 +333,7 @@ function BlockView({ block }: { block: Block }) {
           {block.items.map((item) => (
             <li key={item.text}>
               <span>{item.text}</span>
-              {item.link && <PageLinkView link={item.link} />}
+              {item.link && <PageLinkView link={item.link} locale={locale} />}
             </li>
           ))}
         </ul>
@@ -327,25 +403,25 @@ function BlockView({ block }: { block: Block }) {
                     </div>
                   </header>
                   <div className={styles.stageBody}>
-                    <section aria-label={`${stage.title}: what happens`}>
-                      <h4>What happens</h4>
+                    <section aria-label={`${stage.title}: ${UI[locale].whatHappens}`}>
+                      <h4>{UI[locale].whatHappens}</h4>
                       <Bullets items={stage.whatHappens} />
                     </section>
                     <section
-                      aria-label={`${stage.title}: what we need from you`}
+                      aria-label={`${stage.title}: ${UI[locale].whatWeNeed}`}
                     >
-                      <h4>What we need from you</h4>
+                      <h4>{UI[locale].whatWeNeed}</h4>
                       <Bullets items={stage.clientContributes} />
                     </section>
                     {stage.deliverables.length > 0 && (
-                      <section aria-label={`${stage.title}: what you receive`}>
-                        <h4>What you receive</h4>
+                      <section aria-label={`${stage.title}: ${UI[locale].whatYouReceive}`}>
+                        <h4>{UI[locale].whatYouReceive}</h4>
                         <Bullets items={stage.deliverables} />
                       </section>
                     )}
                     {stage.id === "support" && block.supportTiers.length > 0 && (
-                      <section aria-label="Support tiers">
-                        <h4>Support tiers</h4>
+                      <section aria-label={UI[locale].supportTiers}>
+                        <h4>{UI[locale].supportTiers}</h4>
                         <dl className={styles.tiers}>
                           {block.supportTiers.map((tier) => (
                             <div key={tier.name}>
@@ -427,7 +503,7 @@ function SectionView({
             </header>
             <div className={styles.blocks}>
               {section.blocks.map((block, index) => (
-                <BlockView key={index} block={block} />
+                <BlockView key={index} block={block} locale={config.locale ?? "en"} />
               ))}
             </div>
           </div>
@@ -496,7 +572,7 @@ function SectionView({
             <ul className={styles.relatedList}>
               {section.links.map((link) => (
                 <li key={link.text ?? link.pageKey ?? link.href}>
-                  <RelatedLink item={link} />
+                  <RelatedLink item={link} locale={config.locale ?? "en"} />
                 </li>
               ))}
             </ul>
@@ -509,27 +585,43 @@ function SectionView({
 /** One template for every /odoo/<topic> child page. */
 export function OdooChildPage({ config }: { config: OdooChildPageConfig }) {
   const { hero, closing } = config;
+  const locale: Locale = config.locale ?? "en";
+  const ui = UI[locale];
+  const crumbs = config.breadcrumbs ?? [
+    { label: ui.home, href: locale === "ar" ? "/ar" : "/" },
+    { label: ui.odoo, href: locale === "ar" ? "/ar/odoo" : "/odoo" },
+  ];
   const prefix = config.path.split("/").filter(Boolean).join("-");
+  const faqSection = config.sections.find((section) => section.type === "faq");
   return (
     <main id="main" className={styles.page}>
+      <JsonLd
+        data={serviceJsonLd({
+          path: config.path,
+          name: config.serviceName ?? config.breadcrumbLabel,
+          description: config.metadata.description,
+        })}
+      />
+      {faqSection && faqSection.type === "faq" && (
+        <JsonLd
+          data={faqJsonLd(
+            faqSection.items.map(([question, answer]) => ({ question, answer })),
+          )}
+        />
+      )}
       <BreadcrumbSchema
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Odoo", href: "/odoo" },
-          { label: config.breadcrumbLabel },
-        ]}
+        items={[...crumbs, { label: config.breadcrumbLabel }]}
       />
       <section className={styles.hero} aria-labelledby={`${prefix}-h1`}>
         <div className={`container ${styles.heroGrid}`}>
           <div>
-            <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+            <nav aria-label={ui.breadcrumb} className={styles.breadcrumb}>
               <ol>
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/odoo">Odoo</Link>
-                </li>
+                {crumbs.map((crumb) => (
+                  <li key={crumb.href}>
+                    <Link href={crumb.href}>{crumb.label}</Link>
+                  </li>
+                ))}
                 <li aria-current="page">{config.breadcrumbLabel}</li>
               </ol>
             </nav>
@@ -564,16 +656,16 @@ export function OdooChildPage({ config }: { config: OdooChildPageConfig }) {
               src={partner.badge.src}
               width={partner.badge.width}
               height={partner.badge.height}
-              alt={partner.badge.alt}
+              alt={ui.partnerAlt}
               sizes="120px"
             />
-            <p>{partner.statement}</p>
+            <p>{ui.partnerStatement ?? partner.statement}</p>
           </div>
         </div>
       </section>
 
       {config.anchors && (
-        <nav className={styles.anchors} aria-label="On this page">
+        <nav className={styles.anchors} aria-label={ui.onThisPage}>
           <ul className="container">
             {config.anchors.map(([label, href]) => (
               <li key={href}>

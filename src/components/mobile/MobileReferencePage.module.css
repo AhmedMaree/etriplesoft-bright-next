@@ -34,16 +34,16 @@
   color: var(--ink);
 }
 .page h1 {
-  font-size: clamp(54px, 6vw, 82px);
-  line-height: 0.98;
-  font-weight: 800;
-  letter-spacing: -0.055em;
-}
-.page h2 {
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: var(--fs-h1);
   line-height: 1.08;
   font-weight: 750;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
+}
+.page h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 .page h3 {
   font-size: 17px;
@@ -197,7 +197,7 @@
   padding: 11px 20px;
   border: 1px solid var(--blue);
   border-radius: var(--radius-pill);
-  background: linear-gradient(120deg, #0799f5, #075ff0);
+  background: linear-gradient(120deg, #174da9, #103e91);
   box-shadow: 0 8px 20px #0786f438;
   color: #fff;
   font-size: 14px;
@@ -511,7 +511,7 @@
   font-weight: 700;
 }
 .milestones li:first-child .milestoneDot {
-  background: #04c7a3;
+  background: #007f68;
   box-shadow: 0 0 0 2px #9fead8;
 }
 .milestones li:last-child .milestoneDot {

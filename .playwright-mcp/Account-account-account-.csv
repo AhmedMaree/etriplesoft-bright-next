@@ -1,0 +1,72 @@
+﻿Code,Account Name,Type,Notes
+101401,البنك,Bank and Cash,Main operating bank account; reconcilable.
+101501,النقدية,Bank and Cash,Petty cash & cash-on-hand.
+500000,تكلفة البضاعة المباعة,Cost of Revenue,Direct cost of products sold.
+500100,تكاليف عمالة مباشرة,Cost of Revenue,Labor directly tied to construction projects.
+500200,مقاولي باطن مباشر,Cost of Revenue,Subcontractor costs charged to jobs.
+201100,بطاقة ائتمان,Credit Card,Company credit card liability.
+101000,الأصول المتداولة,Current Assets,Parent summary account for short-term assets.
+101402,حساب البنك المعلق,Current Assets,Holds unmatched imported bank statement lines.
+101403,إيصالات معلقة,Current Assets,Customer payments pending bank confirmation.
+101404,مدفوعات معلقة,Current Assets,Vendor payments issued but not yet cleared.
+101701,تحويل السيولة,Current Assets,Used for internal transfers between banks.
+110100,تقييم المخزون,Current Assets,Continental-style inventory valuation account.
+110200,مخزون مرحلي (مستلم),Current Assets,"Anglo-Saxon GR/IR — goods received, not invoiced."
+110300,مخزون مرحلي (مسلم),Current Assets,"Anglo-Saxon — goods delivered, not invoiced."
+110400,تكلفة الإنتاج,Current Assets,Manufacturing work-in-progress aggregation.
+110500,أعمال تحت التنفيذ,Current Assets,Unfinished production at period close.
+121200,تكاليف زائدة عن الفواتير,Current Assets,Unbilled work in progress (asset).
+128000,مصاريف مدفوعة مقدماً,Current Assets,Short-term prepayments to be amortised.
+131000,ضريبة مدفوعة,Current Assets,Input VAT / recoverable tax paid to vendors.
+610800,سلف وقروض الموظفين,Current Assets,Loans granted to employees.
+201000,خصوم متداولة,Current Liabilities,Parent summary for short-term liabilities.
+212000,فواتير زائدة عن التكاليف,Current Liabilities,Over‑billings on uncompleted work.
+220000,رواتب وأجور مستحقة الدفع,Current Liabilities,Net salaries owed to employees (Egypt/UAE/KSA)
+220100,مكافأة نهاية الخدمة مستحقة,Current Liabilities,Provision for gratuity as per UAE/KSA labor law.
+220200,التأمينات الاجتماعية مستحقة الدفع,Current Liabilities,Employee & employer contributions to social insurance (Egypt).
+220300,مستحقات المؤسسة العامة للتأمينات الاجتماعية,Current Liabilities,General Organization for Social Insurance contributions (KSA).
+220400,تأمين طبي مستحق الدفع,Current Liabilities,Group health insurance premiums payable (UAE/KSA mandatory).
+220500,مستحقات موظفين (إجازات/تذاكر),Current Liabilities,"Provision for annual leave, repatriation tickets."
+220600,ضرائب رواتب مستحقة,Current Liabilities,Employer payroll taxes / labor levies.
+230000,رواتب مستحقة,Current Liabilities,Net wages owed to employees (generic).
+230100,ضرائب رواتب الموظفين,Current Liabilities,Taxes withheld on employee side.
+230200,ضرائب رواتب رب العمل,Current Liabilities,Employer-side statutory contributions.
+251000,ضريبة محصلة,Current Liabilities,Output VAT collected from customers.
+999999,أرباح/خسائر غير موزعة,Current Year Earnings,Automated current-year P&L account.
+301000,رأس المال,Equity,Owner / shareholder contributed capital.
+302000,توزيعات أرباح,Equity,Dividend distributions.
+443000,خسائر خصم نقدي,Expense,Early-payment discount expense.
+600000,تكاليف غير مباشرة,Expense,Indirect project and office overhead.
+610000,رواتب وأجور,Expense,Gross payroll expense (basic + allowances).
+610100,مصاريف مكافأة نهاية الخدمة,Expense,Accrual for EOSB (UAE/KSA).
+610200,مصاريف التأمينات الاجتماعية – حصة صاحب العمل,Expense,Employer contribution to Egyptian social insurance.
+610300,مصاريف التأمينات الاجتماعية (GOSI) – حصة صاحب العمل,Expense,Employer GOSI contributions.
+610400,مصاريف التأمين الطبي,Expense,Company-paid health insurance.
+610500,مصاريف سكن الموظفين,Expense,Housing provided to staff (UAE/KSA).
+610600,مصاريف بدل نقل,Expense,Transportation provided/allowance.
+610700,مصاريف توظيف وتأشيرات,Expense,"Cost of hiring, visas, work permits."
+611000,شراء معدات,Expense,Small tools & equipment expensed.
+612000,إيجار,Expense,Operating lease / rent paid.
+620000,رسوم بنكية,Expense,Bank charges and wire fees.
+630000,مصاريف رواتب,Expense,Gross payroll expense (legacy).
+641000,خسائر فروق العملة,Expense,FX revaluation losses.
+642000,خسائر فروق النقدية,Expense,Negative till discrepancies.
+961000,مصاريف بحث وتطوير,Expense,Research & development costs.
+962000,مصاريف مبيعات,Expense,Sales-team OpEx.
+151000,معدات ثقيلة,Fixed Assets,Construction machinery and vehicles.
+400000,مبيعات المنتجات,Income,Revenue from sale of goods / services.
+400100,إيرادات أوامر تغيير,Income,Revenue from approved project changes.
+441000,أرباح فروق العملة,Income,FX revaluation gains.
+442000,أرباح فروق النقدية,Income,Positive till discrepancies.
+643000,أرباح خصم نقدي,Income,Early-payment discount earned.
+191000,أصول غير متداولة,Non-current Assets,Intangibles and long-term investments.
+291000,خصوم غير متداولة,Non-current Liabilities,Long-term loans and bonds.
+450000,إيرادات أخرى,Other Income,Non-operating revenue.
+211000,ذمم دائنة,Payable,Default vendor payables ledger.
+211100,ذمم دائنة مقاولي باطن,Payable,Amounts owed to subcontractors.
+252000,ضريبة مستحقة الدفع,Payable,Net tax due to authority.
+141000,دفعات مقدمة,Prepayments,Down-payments received from customers.
+101300,ذمم مدينة (نقاط البيع),Receivable,Receivables generated from Point of Sale.
+121000,ذمم مدينة,Receivable,Default customer receivables ledger.
+121100,محجوزات مدينة,Receivable,Amounts withheld by customers until project completion.
+132000,ضريبة مستحقة القبض,Receivable,Refundable tax from authority.

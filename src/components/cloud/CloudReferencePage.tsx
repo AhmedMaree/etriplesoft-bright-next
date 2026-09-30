@@ -119,10 +119,10 @@ export default function CloudReferencePage() {
               </Link>
               <Link
                 className={`${s.button} ${s.secondary}`}
-                href={`${contact}&subject=Cloud%20Consultation`}
+                href="/book-consultation"
               >
                 <Headphones aria-hidden="true" />
-                Talk to Our Experts
+                Book a Free Consultation
               </Link>
             </div>
             <div
@@ -178,7 +178,7 @@ export default function CloudReferencePage() {
                 built for growth.
               </p>
             </div>
-            <More subject="Cloud Security Consultation">Talk to an Expert</More>
+            <Link className={s.learnMore} href="/book-consultation">Book a Free Consultation <ArrowRight aria-hidden="true" /></Link>
           </div>
           <div className={s.solutionGrid}>
             {solutions.map(([title, copy, icon]) => (

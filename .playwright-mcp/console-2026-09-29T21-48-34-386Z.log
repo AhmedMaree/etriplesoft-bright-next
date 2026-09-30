@@ -1,0 +1,556 @@
+[   27636ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   27659ms] [LOG] [Fast Refresh] done in 124ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   34142ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   34284ms] [LOG] [Fast Refresh] done in 247ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   34716ms] [LOG] [Fast Refresh] done in 648ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   44214ms] [LOG] [Fast Refresh] done in 801ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   82183ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[   82191ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  146739ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  146838ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  173733ms] [LOG] [Fast Refresh] done in 852ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  179196ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  179208ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  209597ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  209610ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  238414ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  239529ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=BFUGO5tW4rfRUxrUU3fh6' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16321
+[  241426ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  242459ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  242790ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_cjs_react-dom-client_development_1nq9a-7.js:16702
+[  242884ms] Error: ./app/globals.css:8899:1
+Error: Parsing CSS source code failed
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Invalid empty selector
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:8899:1
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:8899:1)
+    at <unknown> (./app/globals.css:8899:1)
+    at Object.getCompilationErrors (file://E:\ETripleSoft\etriplesoft-test-light-mode\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1417:59)
+    at DevBundlerService.getCompilationError (file://E:\ETripleSoft\etriplesoft-test-light-mode\node_modules\next\dist\server\lib\dev-bundler-service.js:59:55)
+    at DevServer.getCompilationError (file://E:\ETripleSoft\etriplesoft-test-light-mode\node_modules\next\dist\server\dev\next-dev-server.js:754:42)
+    at DevServer.findPageComponents (file://E:\ETripleSoft\etriplesoft-test-light-mode\node_modules\next\dist\server\dev\next-dev-server.js:724:43)
+    at async DevServer.renderErrorToResponseImpl (file://E:\ETripleSoft\etriplesoft-test-light-mode\node_modules\next\dist\server\base-server.js:1828:26)
+[  242877ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  242959ms] [ERROR] ./app/globals.css:8899:1
+Error: Parsing CSS source code failed
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Invalid empty selector
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:8899:1
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./app/page.tsx:118:6
+Error: Expression expected
+  116 |                   </h3>
+  117 |                   <p>{description}</p>
+> 118 | <<<<<<< Updated upstream
+      |      ^^
+  119 |                   <TextLink href={"/" + slug} prefetch={fa...
+  120 |                     Learn More
+  121 |                   </TextLink>
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./src/components/footer.tsx:67:4
+Error: Expression expected
+  65 |           </FooterColumn>
+  66 |         ))}
+> 67 | <<<<<<< Updated upstream
+     |    ^^
+  68 |         <div>
+  69 |           <p className="footer-heading">Our Offices</p>
+  70 |           {company.offices.map((office) => (
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/footer.tsx
+    ./app/layout.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./src/components/nav-dropdown.tsx:114:4
+Error: Expression expected
+  112 |         }}
+  113 |       >
+> 114 | <<<<<<< Updated upstream
+      |    ^^
+  115 |         {group.items?.map((item) => (
+  116 |           <Link
+  117 |             key={item.href}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/nav-dropdown.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/nav-dropdown.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./src/components/site.tsx:552:4
+Error: Expression expected
+  550 |         )}
+  551 |       </div>
+> 552 | <<<<<<< Updated upstream
+      |    ^^
+  553 |       {image === "hero-image" && (
+  554 |         <nav className="home-hero-services" aria-label="Co...
+  555 |           {[
+
+Parsing ecmascript source code failed
+
+Import traces:
+  #1 [Server Component]:
+    ./src/components/site.tsx
+    ./app/not-found.tsx
+
+  #2 [Server Component]:
+    ./src/components/site.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./app/page.tsx:32:1
+Error: Merge conflict marker encountered.
+  30 | import { primaryPhone } from "@/lib/company";
+  31 | import { industries } from "@/lib/data";
+> 32 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  33 | export const metadata: Metadata = pageMetadata({
+  34 |   title: "Odoo Partner in Egypt, UAE & KSA | ETripleSoft",
+  35 |   absoluteTitle: true,
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242960ms] [ERROR] ./src/lib/navigation.ts:69:1
+Error: Merge conflict marker encountered.
+  67 |   { label: "Careers", href: "/careers", icon: "briefcase", ...
+  68 |   { label: "Contact", href: "/contact", icon: "mail", descr...
+> 69 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  70 | ];
+  71 |
+  72 | // Primary header navigation, in display order.
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./src/lib/navigation.ts
+    ./src/components/footer.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./src/lib/navigation.ts [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/navigation.ts [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242961ms] [ERROR] ./app/page.tsx:24:42
+Error: Export industries doesn't exist in target module
+  22 | import { siteConfig } from "@/lib/site";
+  23 | <<<<<<< Updated upstream
+> 24 | import OdooHero from "@/components/odoo/OdooHero";
+     |                                          ^^^^^^^^
+> 25 | import { insightCards } from "@/content/insights";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { industryCardItems } from "@/data/industries/hub";
+  27 | =======
+  28 | import { OdooAppsGrid } from "@/components/home/OdooAppsGrid";
+
+The export industries was not found in module [project]/src/lib/data.ts [app-rsc] (ecmascript).
+Did you mean to import services?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242965ms] [ERROR] ./app/globals.css:8899:1
+Error: Parsing CSS source code failed
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Invalid empty selector
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:8899:1
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242966ms] [ERROR] ./app/page.tsx:118:6
+Error: Expression expected
+  116 |                   </h3>
+  117 |                   <p>{description}</p>
+> 118 | <<<<<<< Updated upstream
+      |      ^^
+  119 |                   <TextLink href={"/" + slug} prefetch={fa...
+  120 |                     Learn More
+  121 |                   </TextLink>
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242966ms] [ERROR] ./src/components/footer.tsx:67:4
+Error: Expression expected
+  65 |           </FooterColumn>
+  66 |         ))}
+> 67 | <<<<<<< Updated upstream
+     |    ^^
+  68 |         <div>
+  69 |           <p className="footer-heading">Our Offices</p>
+  70 |           {company.offices.map((office) => (
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/footer.tsx
+    ./app/layout.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242966ms] [ERROR] ./src/components/nav-dropdown.tsx:114:4
+Error: Expression expected
+  112 |         }}
+  113 |       >
+> 114 | <<<<<<< Updated upstream
+      |    ^^
+  115 |         {group.items?.map((item) => (
+  116 |           <Link
+  117 |             key={item.href}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/nav-dropdown.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/nav-dropdown.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242966ms] [ERROR] ./src/components/site.tsx:552:4
+Error: Expression expected
+  550 |         )}
+  551 |       </div>
+> 552 | <<<<<<< Updated upstream
+      |    ^^
+  553 |       {image === "hero-image" && (
+  554 |         <nav className="home-hero-services" aria-label="Co...
+  555 |           {[
+
+Parsing ecmascript source code failed
+
+Import traces:
+  #1 [Server Component]:
+    ./src/components/site.tsx
+    ./app/not-found.tsx
+
+  #2 [Server Component]:
+    ./src/components/site.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242967ms] [ERROR] ./app/page.tsx:32:1
+Error: Merge conflict marker encountered.
+  30 | import { primaryPhone } from "@/lib/company";
+  31 | import { industries } from "@/lib/data";
+> 32 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  33 | export const metadata: Metadata = pageMetadata({
+  34 |   title: "Odoo Partner in Egypt, UAE & KSA | ETripleSoft",
+  35 |   absoluteTitle: true,
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242967ms] [ERROR] ./src/lib/navigation.ts:69:1
+Error: Merge conflict marker encountered.
+  67 |   { label: "Careers", href: "/careers", icon: "briefcase", ...
+  68 |   { label: "Contact", href: "/contact", icon: "mail", descr...
+> 69 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  70 | ];
+  71 |
+  72 | // Primary header navigation, in display order.
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./src/lib/navigation.ts
+    ./src/components/footer.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./src/lib/navigation.ts [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/navigation.ts [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  242967ms] [ERROR] ./app/page.tsx:24:42
+Error: Export industries doesn't exist in target module
+  22 | import { siteConfig } from "@/lib/site";
+  23 | <<<<<<< Updated upstream
+> 24 | import OdooHero from "@/components/odoo/OdooHero";
+     |                                          ^^^^^^^^
+> 25 | import { insightCards } from "@/content/insights";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { industryCardItems } from "@/data/industries/hub";
+  27 | =======
+  28 | import { OdooAppsGrid } from "@/components/home/OdooAppsGrid";
+
+The export industries was not found in module [project]/src/lib/data.ts [app-rsc] (ecmascript).
+Did you mean to import services?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243081ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/favicon.ico:0
+[  243100ms] [ERROR] ./app/globals.css:8899:1
+Error: Parsing CSS source code failed
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Invalid empty selector
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:8899:1
+  8897 | }
+  8898 |
+> 8899 | <<<<<<< Updated upstream
+       | ^
+  8900 | @media (max-width: 760px) {
+  8901 |   .button, .text-link, .icon-button, .carousel-buttons bu...
+  8902 |   .footer-grid > div > a, .footer-office > a, .footer-off...
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243100ms] [ERROR] ./app/page.tsx:118:6
+Error: Expression expected
+  116 |                   </h3>
+  117 |                   <p>{description}</p>
+> 118 | <<<<<<< Updated upstream
+      |      ^^
+  119 |                   <TextLink href={"/" + slug} prefetch={fa...
+  120 |                     Learn More
+  121 |                   </TextLink>
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243100ms] [ERROR] ./src/components/footer.tsx:67:4
+Error: Expression expected
+  65 |           </FooterColumn>
+  66 |         ))}
+> 67 | <<<<<<< Updated upstream
+     |    ^^
+  68 |         <div>
+  69 |           <p className="footer-heading">Our Offices</p>
+  70 |           {company.offices.map((office) => (
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/footer.tsx
+    ./app/layout.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243100ms] [ERROR] ./src/components/nav-dropdown.tsx:114:4
+Error: Expression expected
+  112 |         }}
+  113 |       >
+> 114 | <<<<<<< Updated upstream
+      |    ^^
+  115 |         {group.items?.map((item) => (
+  116 |           <Link
+  117 |             key={item.href}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/nav-dropdown.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/nav-dropdown.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243100ms] [ERROR] ./src/components/site.tsx:552:4
+Error: Expression expected
+  550 |         )}
+  551 |       </div>
+> 552 | <<<<<<< Updated upstream
+      |    ^^
+  553 |       {image === "hero-image" && (
+  554 |         <nav className="home-hero-services" aria-label="Co...
+  555 |           {[
+
+Parsing ecmascript source code failed
+
+Import traces:
+  #1 [Server Component]:
+    ./src/components/site.tsx
+    ./app/not-found.tsx
+
+  #2 [Server Component]:
+    ./src/components/site.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243100ms] [ERROR] ./app/page.tsx:32:1
+Error: Merge conflict marker encountered.
+  30 | import { primaryPhone } from "@/lib/company";
+  31 | import { industries } from "@/lib/data";
+> 32 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  33 | export const metadata: Metadata = pageMetadata({
+  34 |   title: "Odoo Partner in Egypt, UAE & KSA | ETripleSoft",
+  35 |   absoluteTitle: true,
+
+Parsing ecmascript source code failed @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243101ms] [ERROR] ./src/lib/navigation.ts:69:1
+Error: Merge conflict marker encountered.
+  67 |   { label: "Careers", href: "/careers", icon: "briefcase", ...
+  68 |   { label: "Contact", href: "/contact", icon: "mail", descr...
+> 69 | >>>>>>> Stashed changes
+     | ^^^^^^^
+  70 | ];
+  71 |
+  72 | // Primary header navigation, in display order.
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./src/lib/navigation.ts
+    ./src/components/footer.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./src/lib/navigation.ts [Client Component Browser]
+    ./src/components/header-nav.tsx [Client Component Browser]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/navigation.ts [Client Component SSR]
+    ./src/components/header-nav.tsx [Client Component SSR]
+    ./src/components/header-nav.tsx [Server Component]
+    ./src/components/header.tsx [Server Component]
+    ./app/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  243101ms] [ERROR] ./app/page.tsx:24:42
+Error: Export industries doesn't exist in target module
+  22 | import { siteConfig } from "@/lib/site";
+  23 | <<<<<<< Updated upstream
+> 24 | import OdooHero from "@/components/odoo/OdooHero";
+     |                                          ^^^^^^^^
+> 25 | import { insightCards } from "@/content/insights";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { industryCardItems } from "@/data/industries/hub";
+  27 | =======
+  28 | import { OdooAppsGrid } from "@/components/home/OdooAppsGrid";
+
+The export industries was not found in module [project]/src/lib/data.ts [app-rsc] (ecmascript).
+Did you mean to import services?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  286563ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  286866ms] [ERROR] ./app/page.tsx:19:10
+Error: the name `ArrowRight` is defined multiple times
+  17 | import type { Metadata } from "next";
+  18 | import Link from "next/link";
+> 19 | import { ArrowRight } from "lucide-react";
+     |          ^^^^^^^^^^
+  20 | import { JsonLd } from "@/components/json-ld";
+  21 | import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+  22 | import { siteConfig } from "@/lib/site";
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  286866ms] [ERROR] ./app/page.tsx:18:8
+Error: the name `Link` is defined multiple times
+  16 | import { ArrowRight } from "lucide-react";
+  17 | import type { Metadata } from "next";
+> 18 | import Link from "next/link";
+     |        ^^^^
+  19 | import { ArrowRight } from "lucide-react";
+  20 | import { JsonLd } from "@/components/json-ld";
+  21 | import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+
+Ecmascript file had an error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1817
+[  297649ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  297681ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  298115ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  298209ms] [LOG] [Fast Refresh] done in 200ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:756
+[  299112ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  299234ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  306864ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[  307009ms] [LOG] [Fast Refresh] done in 245ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776

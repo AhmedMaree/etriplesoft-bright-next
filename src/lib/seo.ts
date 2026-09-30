@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { absoluteUrl, siteConfig, siteName } from "./site";
-import { company } from "./company";
+import { company, type CompanyOffice } from "./company";
+import { isArabicPath, pairFor } from "@/i18n/paths";
 
 export const organizationId = siteConfig.url + "/#organization";
 const organizationRef = { "@id": organizationId };
@@ -86,6 +87,50 @@ export function organizationJsonLd() {
   };
 }
 
+/** One ProfessionalService per office, linked to the parent Organization. */
+export function officeJsonLd(office: CompanyOffice) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${siteConfig.url}/#office-${office.id}`,
+    name: `${company.name} ${office.city}`,
+    url: absoluteUrl("/contact"),
+    image: absoluteUrl(siteConfig.logo),
+    email: company.primaryEmail,
+    telephone: office.phones.map((phone) => phone.display),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: office.postal.streetAddress,
+      addressLocality: office.postal.locality,
+      ...(office.postal.postalCode
+        ? { postalCode: office.postal.postalCode }
+        : {}),
+      addressCountry: office.postal.countryCode,
+    },
+    areaServed: office.country,
+    parentOrganization: organizationRef,
+  };
+}
+
+/** Organization plus its three offices as one graph (homepage). */
+export function organizationGraphJsonLd() {
+  const strip = <T extends { "@context"?: string }>(node: T) => {
+    const { "@context": _context, ...rest } = node;
+    return rest;
+  };
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      strip(organizationJsonLd()),
+      ...company.offices.map((office) => strip(officeJsonLd(office))),
+    ],
+  };
+}
+
+export function officesJsonLd() {
+  return company.offices.map((office) => officeJsonLd(office));
+}
+
 /** Service JSON-LD for a genuine service page. Provider is the Organization. */
 export function serviceJsonLd(input: {
   path: string;
@@ -139,13 +184,23 @@ export function pageMetadata(input: PageMetadataInput): Metadata {
   return {
     title: input.absoluteTitle ? { absolute: input.title } : input.title,
     description: input.description,
-    alternates: { canonical: input.path },
+    alternates: {
+      canonical: input.path,
+      // hreflang only for pages that exist in both languages; each page in a
+      // pair emits the same set, so the annotations are reciprocal.
+      ...(() => {
+        const pair = pairFor(input.path);
+        return pair
+          ? { languages: { en: pair.en, ar: pair.ar, "x-default": pair.en } }
+          : {};
+      })(),
+    },
     ...(input.noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       type: input.type ?? "website",
       url: input.path,
       siteName,
-      locale: siteConfig.locale,
+      locale: isArabicPath(input.path) ? "ar_AR" : siteConfig.locale,
       title: socialTitle,
       description: input.description,
       images,

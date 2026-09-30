@@ -92,7 +92,7 @@ export function AboutReferencePage() {
               built for real work.
             </p>
             <div className={s.heroActions}>
-              <Button gradient href="/contact">Talk to Our Experts</Button>
+              <Button gradient href="/book-consultation">Book a Free Consultation</Button>
               <Button secondary href="#purpose">Explore Our Story</Button>
             </div>
             <div className={s.heroPartners} aria-label="Technology partnerships">
@@ -164,7 +164,7 @@ export function AboutReferencePage() {
             <Heading label="Why ETripleSoft" title={<>More Than a Vendor.<br /><em>A True Partner.</em></>}>
               We bring regional expertise, technical excellence, and a genuine commitment to your success. From strategy to execution, we stay by your side as a long-term partner.
             </Heading>
-            <Button gradient href="/contact">Talk to Our Experts</Button>
+            <Button gradient href="/book-consultation">Book a Free Consultation</Button>
           </div>
           <div className={s.reasonGrid}>
             {reasons.map(([title, copy, Glyph], i) => <article key={title}><span className={s.index}>{String(i + 1).padStart(2, "0")}</span><span className={s.reasonIcon}><Glyph aria-hidden="true" /></span><h3>{title}</h3><p>{copy}</p></article>)}
@@ -238,7 +238,12 @@ export function AboutReferencePage() {
       <section className={s.cta}>
         <div className={s.container}>
           <div><span>Let’s work together</span><h2>Let’s Build Something That Lasts.</h2><p>Talk with our team about the next step for your business.</p></div>
-          <Button white href="/contact">Book a Consultation</Button>
+          <div className={s.ctaActions}>
+            <Button white href="/book-consultation">Book a Free Consultation</Button>
+            <a className={s.profileLink} href="/company-profile.pdf" download>
+              Download our company profile (PDF)
+            </a>
+          </div>
         </div>
       </section>
     </main>

@@ -74,8 +74,8 @@ export const servicePages: Record<string, ServiceData> = {
     description:
       "Bring finance, sales, inventory, projects, people and customer operations into one adaptable ERP platform, implemented around the way your business works.",
     image: "odoo-hero",
-    primary: "Book an Odoo Demo",
-    secondary: "Talk to an Odoo Expert",
+    primary: "Book a Free Consultation",
+    secondary: "Explore Solutions",
     note: "One platform\nfor connected operations",
     checks: [
       "Odoo Gold Partner",
@@ -182,7 +182,7 @@ export const servicePages: Record<string, ServiceData> = {
       "Modernize infrastructure, protect identities and endpoints, and keep critical data recoverable with a practical cloud and security roadmap.",
     image: "cloud-hero",
     primary: "Request a Security Assessment",
-    secondary: "Talk to Our Experts",
+    secondary: "Explore Solutions",
     note: "Secure systems.\nClear ownership.",
     sectionTitle: "What We Deliver",
     sectionDescription:
@@ -267,7 +267,7 @@ export const servicePages: Record<string, ServiceData> = {
       "Identify high-value automation opportunities, connect the right data and systems, and keep people in control of important decisions.",
     image: "ai-hero",
     primary: "Request an Automation Assessment",
-    secondary: "Talk to an Expert",
+    secondary: "Explore Solutions",
     note: "From manual steps\nto connected workflows",
     checks: ["Human review", "System integration", "Measurable operations"],
     sectionTitle: "Automation for Real Business Problems",
@@ -546,7 +546,7 @@ export const servicePages: Record<string, ServiceData> = {
     description:
       "Build a practical acquisition system across search, paid media, social and content, with reporting connected to enquiries and sales workflows.",
     image: "marketing-hero",
-    primary: "Request a Marketing Consultation",
+    primary: "Book a Free Consultation",
     secondary: "Explore Services",
     secondaryHref: "#solutions",
     note: "Strategy. Execution.\nLearning. Improvement.",

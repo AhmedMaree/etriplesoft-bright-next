@@ -87,7 +87,7 @@ export function FaqsPage() {
         ))}
       </div>
 
-      <CTA title="Still have a question?" button="Talk to Our Team" />
+      <CTA title="Still have a question?" button="Book a Free Consultation" />
     </main>
   );
 }

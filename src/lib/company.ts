@@ -22,11 +22,20 @@ export type CompanyOffice = {
   label: string;
   /** Full street address. `null` when not confirmed: show the city only. */
   address: string | null;
+  /** Structured form of `address`, for schema.org PostalAddress. */
+  postal: {
+    streetAddress: string;
+    locality: string;
+    /** Only where both published sources agree. */
+    postalCode?: string;
+    /** ISO 3166-1 alpha-2. */
+    countryCode: string;
+  };
   phones: CompanyPhone[];
 };
 
 export type CompanySocialLink = {
-  platform: "linkedin" | "instagram";
+  platform: "linkedin" | "instagram" | "facebook";
   url: string;
   label: string;
 };
@@ -42,6 +51,8 @@ export const company = {
 
   primaryEmail: "info@etriplesoft.com",
   whatsappUrl: "https://wa.me/201002106952",
+  appointmentUrl: "https://etriple.odoo.com/appointment/3",
+  jobsPortalUrl: "https://etriple.odoo.com/jobs",
   // No published source confirms support@etriplesoft.com.
   supportEmail: null as string | null,
 
@@ -55,6 +66,11 @@ export const company = {
       city: "Cairo",
       label: "Cairo, Egypt",
       address: "Villa 350, South Academy B, New Cairo, Egypt",
+      postal: {
+        streetAddress: "Villa 350, South Academy B",
+        locality: "New Cairo",
+        countryCode: "EG",
+      },
       phones: [phone("+20 100 210 6952"), phone("+20 104 409 8406")],
     },
     {
@@ -64,8 +80,15 @@ export const company = {
       label: "Riyadh, Saudi Arabia",
       // SAUDI ADDRESS: NEEDS OWNER CONFIRMATION. Sources disagree
       // ("As Sulimaniyah, Al Olaya, Riyadh 12214, Saudi Arabia" vs
-      // "Al Olaya, Riyadh 12214"), so only the city is published.
-      address: null,
+      // "Al Olaya, Riyadh 12214"). Only the part both agree on is published:
+      // district and postcode. Add the street/"As Sulimaniyah" once confirmed.
+      address: "Al Olaya, Riyadh 12214, Saudi Arabia",
+      postal: {
+        streetAddress: "Al Olaya",
+        locality: "Riyadh",
+        postalCode: "12214",
+        countryCode: "SA",
+      },
       phones: [phone("+966 508 547 071")],
     },
     {
@@ -74,12 +97,16 @@ export const company = {
       city: "Dubai",
       label: "Dubai, UAE",
       address: "Latifa Tower, West Wing, Office 103, Sheikh Zayed Rd, Dubai, UAE",
+      postal: {
+        streetAddress: "Latifa Tower, West Wing, Office 103, Sheikh Zayed Rd",
+        locality: "Dubai",
+        countryCode: "AE",
+      },
       phones: [phone("+971 52 440 1992"), phone("+971 58 158 8214")],
     },
   ] as CompanyOffice[],
 
-  // Facebook is deliberately absent: the legacy footer links to a generic
-  // facebook.com/share/... URL (NEEDS-VERIFICATION).
+  // Facebook URL is the one on the legacy footer, supplied by the client.
   socialLinks: [
     {
       platform: "linkedin",
@@ -90,6 +117,11 @@ export const company = {
       platform: "instagram",
       url: "https://www.instagram.com/etriplesoft",
       label: "ETripleSoft on Instagram",
+    },
+    {
+      platform: "facebook",
+      url: "https://www.facebook.com/share/1Dca6xTt2i/",
+      label: "ETripleSoft on Facebook",
     },
   ] as CompanySocialLink[],
 

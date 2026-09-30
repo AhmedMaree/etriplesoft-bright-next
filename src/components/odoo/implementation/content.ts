@@ -39,8 +39,8 @@ export const hero = {
   title: "Odoo implementation, from discovery to support",
   description:
     "A clear, stage-by-stage approach to putting Odoo to work in your business: what happens at each step, what we need from your team, and what you receive.",
-  primary: "Book a Consultation",
-  primaryHref: "/contact?service=Odoo%20Implementation%20Consultation",
+  primary: "Book a Free Consultation",
+  primaryHref: "/book-consultation",
   secondary: "See the process",
 };
 
@@ -198,5 +198,5 @@ export const closing = {
   title: "Ready to plan your Odoo implementation?",
   description:
     "Book a consultation and we will talk through your processes, scope and next steps.",
-  secondary: { label: "Contact our team", href: "/contact" },
+  secondary: { label: "Explore Solutions", href: "/services" },
 };

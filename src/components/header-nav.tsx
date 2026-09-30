@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Globe, Menu, Search, X } from "lucide-react";
 import { primaryNav, bookADemo, companyLinks, serviceLinks } from "@/lib/navigation";
 import { NavDropdown } from "./nav-dropdown";
+import { arabicCounterpart } from "@/i18n/paths";
 
 /** True if `href` (ignoring any #hash) is or is under the current path. */
 function matchesPath(pathname: string, href: string) {
@@ -20,6 +21,7 @@ function matchesPath(pathname: string, href: string) {
  */
 export function HeaderNav() {
   const pathname = usePathname() || "/";
+  const arabic = arabicCounterpart(pathname);
   const [open, setOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [search, setSearch] = useState(false);
@@ -37,6 +39,18 @@ export function HeaderNav() {
       setOpenGroup((cur) => (cur === label ? null : cur));
     }, 120);
   };
+
+  // Shrink the header once the page has scrolled.
+  useEffect(() => {
+    const onScroll = () =>
+      document.documentElement.toggleAttribute("data-scrolled", window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.documentElement.removeAttribute("data-scrolled");
+    };
+  }, []);
 
   // Close everything on route change.
   useEffect(() => {
@@ -141,6 +155,14 @@ export function HeaderNav() {
             </Link>
           ),
         )}
+        <a
+          className="lang-switch lang-switch-mobile"
+          href={arabic}
+          hrefLang="ar"
+          lang="ar"
+        >
+          <Globe size={16} aria-hidden="true" /> العربية
+        </a>
       </nav>
       <div ref={toolsRef} className="header-tools">
         <button
@@ -151,9 +173,14 @@ export function HeaderNav() {
         >
           <Search size={19} />
         </button>
-        <span className="language">
-          <Globe size={16} /> EN
-        </span>
+        <a
+          className="lang-switch lang-switch-desktop"
+          href={arabic}
+          hrefLang="ar"
+          lang="ar"
+        >
+          <Globe size={16} aria-hidden="true" /> العربية
+        </a>
         <Link className="button gradient" href={bookADemo.href} prefetch={false}>
           {bookADemo.label}
           <ArrowRight size={17} />

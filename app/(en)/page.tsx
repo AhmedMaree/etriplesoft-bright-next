@@ -4,25 +4,26 @@ import {
   ValueProps,
   SectionHeading,
   Icon,
-  TextLink,
   IndustryBento,
   Process,
   Stats,
   CTA,
   Testimonials,
 } from "@/components/site";
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
-import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+import { organizationGraphJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import OdooHero from "@/components/odoo/OdooHero";
-import { insightCards } from "@/content/insights";
+import { ClientLogos } from "@/components/home/ClientLogos";
+import { HomeMotion } from "@/components/home/HomeMotion";
+import { OdooAppsGrid } from "@/components/home/OdooAppsGrid";
+import { HomeArticles } from "@/components/home/HomeArticles";
+import { company } from "@/lib/company";
 import { industryCardItems } from "@/data/industries/hub";
 export const metadata: Metadata = pageMetadata({
-  title: "Odoo Partner in Egypt, UAE & KSA | ETripleSoft",
+  title: "Odoo Gold Partner in Egypt, UAE & Saudi Arabia | ETripleSoft",
   absoluteTitle: true,
   description: siteConfig.defaultDescription,
   path: "/",
@@ -31,23 +32,26 @@ export const metadata: Metadata = pageMetadata({
 export default function Home() {
   return (
     <main id="main" className="homepage">
-      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={organizationGraphJsonLd()} />
+      <HomeMotion />
       <Hero
         className="home-hero"
-        eyebrow="Odoo Partner in Egypt, UAE & KSA"
+        eyebrow="Odoo Gold Partner · Egypt · UAE · Saudi Arabia"
         title={"Digital Transformation\nBuilt Around"}
         accent="Your Business."
         description="Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, UAE and Saudi Arabia."
         image="hero-image"
         primary="Book a Free Consultation"
+        primaryHref="/book-consultation"
         secondary="Explore Solutions"
-        secondaryHref="#solutions"
+        secondaryHref="/services"
         note={"One platform.\nBetter decisions."}
       >
         <PartnerBadges />
       </Hero>
+      <ClientLogos />
       <ValueProps />
-      <OdooHero headingLevel="h2" primaryHref="/odoo" />
+      <OdooAppsGrid />
       <section
         id="solutions"
         className="section home-stage home-solutions-process-stage"
@@ -99,11 +103,13 @@ export default function Home() {
               ].map(([slug, icon, title, description]) => (
                 <article className="home-solution-card" key={slug}>
                   <Icon name={icon} />
-                  <h3>{title}</h3>
+                  <h3>
+                    <Link className="card-link" href={"/" + slug}>
+                      {title}
+                    </Link>
+                  </h3>
                   <p>{description}</p>
-                  <TextLink href={"/" + slug} prefetch={false}>
-                    Learn More
-                  </TextLink>
+                  <ArrowRight className="card-arrow" size={18} aria-hidden="true" />
                 </article>
               ))}
             </div>
@@ -133,15 +139,10 @@ export default function Home() {
         }
         description="Real outcomes. Lasting partnerships. A growing impact across Egypt, UAE and Saudi Arabia."
         items={[
-          [
-            "250+",
-            "Projects Delivered",
-            "briefcase",
-            "Real work, real outcomes for ambitious businesses.",
-          ],
-          ["3", "Countries", "globe", "Egypt, UAE & Saudi Arabia."],
-          ["10+", "Years of Experience", "clock", "Building since day one."],
-          ["9+", "Industries Served", "building", "Deep sector expertise."],
+          ["250+", "Projects Delivered", "briefcase"],
+          ["3", "Countries", "globe"],
+          ["10+", "Years of Experience", "clock"],
+          ["9+", "Industries Served", "building"],
         ]}
       />
       <section className="section tinted home-stage home-testimonials-stage">
@@ -158,33 +159,19 @@ export default function Home() {
             link="View All Articles"
             href="/insights"
           />
-          <div className="card-grid cols-3">
-            {insightCards().slice(0, 3).map((article) => (
-              <Link className="article-card" href={"/insights/" + article.slug} prefetch={false} key={article.slug}>
-                {article.image && (
-                  <Image
-                    className="home-article-image"
-                    src={article.image.src}
-                    alt={article.image.alt}
-                    width={article.image.width}
-                    height={article.image.height}
-                    sizes="(min-width: 1000px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    loading="lazy"
-                  />
-                )}
-                <div>
-                  <span className="tag">{article.category}</span>
-                  <small>{article.dateLabel}</small>
-                </div>
-                <h3>{article.title}</h3>
-                <p className="home-article-summary">{article.summary}</p>
-                <span className="text-link">Read More <ArrowRight size={15} aria-hidden="true" /></span>
-              </Link>
-            ))}
-          </div>
+          <HomeArticles />
         </div>
       </section>
-      <CTA />
+      <CTA
+        title="Ready to Transform Your Business?"
+        description="Tell us where your operations are slowing you down. We will map the first steps with you — no pressure, no jargon."
+        secondary={{
+          label: "WhatsApp us",
+          href: company.whatsappUrl,
+          external: true,
+        }}
+        note="30 minutes, free, no obligation."
+      />
     </main>
   );
 }

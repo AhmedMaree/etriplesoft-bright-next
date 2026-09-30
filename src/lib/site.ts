@@ -18,7 +18,7 @@ export const siteConfig = {
     height: 630,
     alt: "ETripleSoft: digital transformation built around your business",
   },
-  logo: "/images/logo-header.svg",
+  logo: "/images/logo-header-hq.png",
 } as const;
 
 /** Absolute URL for a site-relative path. */

@@ -69,7 +69,7 @@ function GlyphIcon({ name }: { name: string }) {
 }
 
 const base = "/images/odoo/reference/";
-const demoHref = "/contact?service=Odoo%20ERP%20Demo";
+const demoHref = "/book-consultation";
 const steps = [
   [
     "Discovery",
@@ -148,9 +148,9 @@ function DemoButton({ secondary = false }: { secondary?: boolean }) {
   return (
     <Link
       className={`${styles.button} ${secondary ? styles.secondary : ""}`}
-      href={secondary ? "/contact?service=Odoo%20ERP%20Consultation" : demoHref}
+      href={secondary ? "/services" : demoHref}
     >
-      {secondary ? "Talk to an Odoo Expert" : "Book a Free Demo"}
+      {secondary ? "Explore Solutions" : "Book a Free Consultation"}
       {!secondary && <ArrowRight aria-hidden="true" />}
     </Link>
   );

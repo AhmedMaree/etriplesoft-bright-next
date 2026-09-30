@@ -17,6 +17,8 @@ import { services } from "@/lib/data";
 import { Breadcrumb, CrumbStrip } from "./breadcrumb";
 import { company, mailto, primaryPhone } from "@/lib/company";
 import { AboutReferencePage } from "./about-reference-page";
+import { JsonLd } from "./json-ld";
+import { officesJsonLd } from "@/lib/seo";
 
 // Contact-page FAQ: real published answers (see src/data/faqs.ts), no generic filler.
 const contactFaqIds = ["support-01", "support-02", "implementation-01", "pricing-01"];
@@ -60,6 +62,9 @@ export function ContactPage() {
   ];
   return (
     <main id="main">
+      {officesJsonLd().map((office) => (
+        <JsonLd key={office["@id"]} data={office} />
+      ))}
       <section className="contact-hero">
         <Photo name="contact-hero" alt="" />
         <div className="container contact-layout">
@@ -125,6 +130,11 @@ export function ContactPage() {
               </div>
             ))}
           </div>
+          <p className="profile-link">
+            <a href="/company-profile.pdf" download>
+              Download our company profile (PDF)
+            </a>
+          </p>
         </div>
       </section>
 

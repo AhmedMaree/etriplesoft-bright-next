@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { company, officeMapUrl } from "@/lib/company";
 import { useState } from "react";
+import { CountUp } from "./count-up";
+import blurDataJson from "@/lib/blur-data.json";
 import {
   ArrowRight,
   ChevronDown,
@@ -378,9 +380,9 @@ export function Hero({
   accent,
   description,
   image,
-  primary = "Get a Free Consultation",
-  secondary = "Talk to Our Experts",
-  secondaryHref = "/contact",
+  primary = "Book a Free Consultation",
+  secondary = "Explore Solutions",
+  secondaryHref = "/services",
   primaryHref = "/contact",
   note,
   checks,
@@ -440,7 +442,7 @@ export function Hero({
           )}
           {primary && (
             <div className="button-row">
-              <Button href={primaryHref}>{primary}</Button>
+              <Button href={primary === "Book a Free Consultation" && primaryHref === "/contact" ? "/book-consultation" : primaryHref}>{primary}</Button>
               {secondary && (
                 <Button secondary href={secondaryHref}>
                   {secondary}
@@ -548,53 +550,11 @@ export function Hero({
           </div>
         )}
       </div>
-      {image === "hero-image" && (
-        <nav className="home-hero-services" aria-label="Core solutions">
-          {[
-            [
-              "coins",
-              "Odoo ERP",
-              "Run your entire business on one platform",
-              "/odoo",
-            ],
-            [
-              "cloud",
-              "Cloud & Security",
-              "Secure, scalable infrastructure",
-              "/cloud",
-            ],
-            [
-              "brain",
-              "AI Automation",
-              "Automate and unlock new opportunities",
-              "/ai",
-            ],
-            [
-              "monitor",
-              "Web & Mobile Solutions",
-              "Modern apps that grow with you",
-              "/web",
-            ],
-            [
-              "chart",
-              "Digital Marketing",
-              "Increase your visibility and sales",
-              "/digital-marketing",
-            ],
-          ].map(([icon, label, copy, href]) => (
-            <Link href={href} key={label} prefetch={false}>
-              <Icon name={icon} />
-              <span>
-                <strong>{label}</strong>
-                <small>{copy}</small>
-              </span>
-            </Link>
-          ))}
-        </nav>
-      )}
     </section>
   );
 }
+const blurData: Record<string, string> = blurDataJson;
+
 export function IndustryBento({
   items,
 }: {
@@ -617,7 +577,14 @@ export function IndustryBento({
           }
           key={id}
         >
-          <Photo name={image} alt="" />
+          <Image
+            src={`/images/${image}.webp`}
+            alt=""
+            fill
+            sizes="(max-width: 760px) 78vw, (max-width: 1000px) 50vw, 33vw"
+            placeholder={blurData[image] ? "blur" : "empty"}
+            blurDataURL={blurData[image]}
+          />
           <span className="industry-bento-copy">
             <strong>{name}</strong>
             {description && <em>{description}</em>}
@@ -738,7 +705,11 @@ export function Process({
       />
       <div className="steps">
         {steps.map((s, i) => (
-          <div className="step" key={s}>
+          <div
+            className="step"
+            key={s}
+            style={{ "--i": i } as React.CSSProperties}
+          >
             <div className="step-number">{String(i + 1).padStart(2, "0")}</div>
             <h3>{s}</h3>
             <p>
@@ -777,7 +748,9 @@ export function Stats({
           {items.map(([number, label, icon, description]) => (
             <div className="stat-card" key={label}>
               {icon && <Icon name={icon} />}
-              <strong>{number}</strong>
+              <strong>
+                <CountUp value={number} />
+              </strong>
               <span>{label}</span>
               {description && <p>{description}</p>}
             </div>
@@ -804,24 +777,55 @@ export function Stats({
 export function CTA({
   title = "Ready to Transform Your Business?",
   description = "Book a free consultation with our team and discover how we can help you achieve your goals.",
-  button = "Book Your Consultation",
-  href = "/contact",
+  button = "Book a Free Consultation",
+  href = "/book-consultation",
+  secondary,
+  note,
 }: {
   title?: string;
   description?: string;
   button?: string;
   href?: string;
+  /** Second option; when present the band renders as a full section. */
+  secondary?: { label: string; href: string; external?: boolean };
+  /** Reassurance line under the buttons. */
+  note?: string;
 }) {
   return (
-    <section className="cta-band">
+    <section className={secondary ? "cta-band cta-full" : "cta-band"}>
       <div className="container">
         <div>
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <Button white href={href}>
-          {button}
-        </Button>
+        {secondary ? (
+          <div className="cta-actions">
+            <div className="cta-buttons">
+              <Button white href={href}>
+                {button}
+              </Button>
+              {secondary.external ? (
+                <a
+                  className="button cta-secondary"
+                  href={secondary.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {secondary.label}
+                </a>
+              ) : (
+                <Link className="button cta-secondary" href={secondary.href}>
+                  {secondary.label}
+                </Link>
+              )}
+            </div>
+            {note && <small className="cta-note">{note}</small>}
+          </div>
+        ) : (
+          <Button white href={href}>
+            {button}
+          </Button>
+        )}
       </div>
     </section>
   );
@@ -847,27 +851,52 @@ export function FAQ({
     </div>
   );
 }
+type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  /** Company name, once the client has agreed to be named. */
+  company?: string;
+  /** Path under /images/ to the client's logo. */
+  logo?: string;
+  /** One measurable, client-approved result, e.g. "Month-end close cut from 10 days to 3". */
+  result?: string;
+  /** Path under /images/ to a portrait. */
+  photo?: string;
+};
+
+// Only add company, logo, result and photo once the client has approved them
+// (see docs/CLAIMS-REGISTER.md); the card layout adapts to whatever is set.
+const testimonials: Testimonial[] = [
+  {
+    quote: "Professional, responsive, and truly understand our business needs.",
+    name: "Marco Youssef",
+    role: "CEO, Manufacturing Company",
+  },
+  {
+    quote: "ETripleSoft delivered our Odoo system with great expertise and support.",
+    name: "Waled El Ganzory",
+    role: "Operations Manager, Trading Company",
+  },
+  {
+    quote: "A reliable partner for our digital transformation journey.",
+    name: "Eng. Mahmoud Hamdy",
+    role: "CTO, Services Company",
+  },
+];
+
 export function Testimonials({ single = false }: { single?: boolean }) {
   const [index, setIndex] = useState(0);
-  const quotes = [
-    [
-      "Professional, responsive, and truly understand our business needs.",
-      "Marco Youssef",
-      "CEO, Manufacturing Company",
-    ],
-    [
-      "ETripleSoft delivered our Odoo system with great expertise and support.",
-      "Waled El Ganzory",
-      "Operations Manager, Trading Company",
-    ],
-    [
-      "A reliable partner for our digital transformation journey.",
-      "Eng. Mahmoud Hamdy",
-      "CTO, Services Company",
-    ],
-  ];
+  const total = testimonials.length;
+  const visible = single
+    ? [testimonials[index]]
+    : [0, 1, 2].map((offset) => testimonials[(index + offset) % total]);
   return (
-    <div>
+    <div
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Client testimonials"
+    >
       <div className="testimonial-heading">
         <SectionHeading
           eyebrow="What Our Clients Say"
@@ -877,27 +906,48 @@ export function Testimonials({ single = false }: { single?: boolean }) {
         <div className="carousel-buttons">
           <button
             aria-label="Previous testimonial"
-            onClick={() => setIndex((index + 2) % 3)}
+            onClick={() => setIndex((index + total - 1) % total)}
           >
             <ArrowRight className="reverse" size={19} />
           </button>
           <button
             aria-label="Next testimonial"
-            onClick={() => setIndex((index + 1) % 3)}
+            onClick={() => setIndex((index + 1) % total)}
           >
             <ArrowRight size={19} />
           </button>
         </div>
       </div>
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        Showing {visible.map((item) => item.name).join(", ")}
+      </p>
       <div className={`testimonials ${single ? "single" : ""}`}>
-        {(single
-          ? [quotes[index]]
-          : [quotes[index], quotes[(index + 1) % 3], quotes[(index + 2) % 3]]
-        ).map(([quote, name, role]) => (
+        {visible.map(({ quote, name, role, company: org, logo, result, photo }) => (
           <article key={name}>
+            {logo && (
+              <img
+                className="testimonial-logo"
+                src={`/images/${logo}`}
+                alt={org ?? ""}
+                loading="lazy"
+              />
+            )}
             <p>“{quote}”</p>
+            {result && (
+              <p className="testimonial-result">
+                <Icon name="chart" />
+                {result}
+              </p>
+            )}
             <div className="person">
-              <Icon name="users" />
+              {photo && (
+                <img
+                  className="person-photo"
+                  src={`/images/${photo}`}
+                  alt=""
+                  loading="lazy"
+                />
+              )}
               <div>
                 <strong>{name}</strong>
                 <small>{role}</small>

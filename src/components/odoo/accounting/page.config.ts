@@ -3,6 +3,7 @@ import {
   accountingMetadata,
   anchors,
   closing,
+  comparison,
   control,
   core,
   einvoicing,
@@ -13,6 +14,7 @@ import {
   localization,
   midCta,
   related,
+  why,
 } from "./content";
 
 export const accountingPage = defineOdooPage({
@@ -86,6 +88,32 @@ export const accountingPage = defineOdooPage({
       title: integrations.title,
       description: integrations.description,
       blocks: [{ type: "list", items: integrations.items }],
+    },
+    {
+      type: "section",
+      id: "comparison",
+      tone: "tinted",
+      eyebrow: comparison.eyebrow,
+      title: comparison.title,
+      description: comparison.description,
+      blocks: [
+        {
+          type: "table",
+          caption: comparison.caption,
+          columns: comparison.columns,
+          rows: comparison.rows,
+          highlight: 1,
+          note: comparison.note,
+        },
+        { type: "links", items: [comparison.guide] },
+      ],
+    },
+    {
+      type: "section",
+      id: "why",
+      eyebrow: why.eyebrow,
+      title: why.title,
+      blocks: [{ type: "cards", columns: 3, items: why.cards }],
     },
     {
       type: "strip",

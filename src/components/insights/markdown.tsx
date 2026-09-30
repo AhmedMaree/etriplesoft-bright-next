@@ -161,9 +161,17 @@ function inline(text: string, key = "i"): ReactNode {
   return nodes.map((node, index) => <Fragment key={index}>{node}</Fragment>);
 }
 
-const demoHref = "/contact?service=Odoo%20ERP%20Demo";
+const demoHref = "/book-consultation";
 
-export function Markdown({ source }: { source: string }) {
+export function Markdown({
+  source,
+  scrollableLabel = "(scrollable)",
+  tableLabel = "Table",
+}: {
+  source: string;
+  scrollableLabel?: string;
+  tableLabel?: string;
+}) {
   return (
     <>
       {parseBlocks(source).map((block, index) => {
@@ -218,7 +226,7 @@ export function Markdown({ source }: { source: string }) {
           case "table": {
             const [head, ...rows] = block.rows;
             return (
-              <div key={index} className={styles.tableWrap} tabIndex={0} role="region" aria-label={`${block.caption || "Table"} (scrollable)`}>
+              <div key={index} className={styles.tableWrap} tabIndex={0} role="region" aria-label={`${block.caption || tableLabel} ${scrollableLabel}`}>
                 <table>
                   {block.caption && <caption className={styles.srOnly}>{block.caption}</caption>}
                   <thead>
@@ -256,10 +264,10 @@ export function Markdown({ source }: { source: string }) {
                 <p>{inline(block.text)}</p>
                 <div>
                   <Link className="button gradient" href={demoHref}>
-                    Request a Free Demo
+                    Book a Free Consultation
                   </Link>
-                  <Link className="button secondary" href="/contact">
-                    Contact our team
+                  <Link className="button secondary" href="/services">
+                    Explore Solutions
                   </Link>
                 </div>
               </aside>

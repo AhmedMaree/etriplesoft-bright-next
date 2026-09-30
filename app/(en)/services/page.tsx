@@ -60,7 +60,7 @@ export default function ServicesPage() {
             <p className={styles.lead}>{hero.description}</p>
             <div className="button-row">
               <Button gradient href={demoHref}>
-                Book a Demo
+                Book a Free Consultation
               </Button>
               <Button secondary href="#odoo">
                 See the Odoo core
@@ -256,7 +256,7 @@ export default function ServicesPage() {
           </div>
           <div className={styles.ctaActions}>
             <Button white href={demoHref}>
-              Book a Demo
+              Book a Free Consultation
             </Button>
             <Link className={styles.ctaLink} href={closing.secondary.href}>
               {closing.secondary.label}

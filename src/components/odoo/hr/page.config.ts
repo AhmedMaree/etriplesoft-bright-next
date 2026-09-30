@@ -1,0 +1,138 @@
+import { defineOdooPage } from "../child/renderable";
+import {
+  anchors,
+  closing,
+  comparison,
+  core,
+  faqs,
+  fit,
+  hero,
+  hrMetadata,
+  implementation,
+  lifecycle,
+  midCta,
+  payroll,
+  related,
+  why,
+} from "./content";
+
+export const hrPage = defineOdooPage({
+  path: "/odoo/hr-payroll",
+  metadata: hrMetadata,
+  breadcrumbLabel: "HR & Payroll",
+  serviceName: "Odoo HR & Payroll",
+  hero: {
+    eyebrow: hero.eyebrow,
+    title: hero.title,
+    description: hero.description,
+    highlight: hero.highlight,
+    primary: { label: hero.primary, href: hero.primaryHref },
+    secondary: { label: hero.secondary, href: "#core" },
+    titleMaxCh: 22,
+  },
+  anchors,
+  sections: [
+    {
+      type: "section",
+      id: "core",
+      eyebrow: core.eyebrow,
+      title: core.title,
+      description: core.description,
+      blocks: [{ type: "columns", modules: core.modules }],
+    },
+    {
+      type: "section",
+      id: "lifecycle",
+      tone: "tinted",
+      eyebrow: lifecycle.eyebrow,
+      title: lifecycle.title,
+      blocks: [{ type: "rows", modules: lifecycle.modules }],
+    },
+    {
+      type: "section",
+      id: "payroll",
+      eyebrow: payroll.eyebrow,
+      title: payroll.title,
+      description: payroll.description,
+      blocks: [
+        { type: "bullets", items: payroll.items },
+        {
+          type: "cards",
+          columns: 2,
+          items: [
+            { title: payroll.egypt.title, text: payroll.egypt.text },
+            {
+              title: payroll.otherCountries.title,
+              text: payroll.otherCountries.text,
+            },
+          ],
+        },
+        { type: "note", text: payroll.note },
+      ],
+    },
+    { type: "midCta", title: midCta.title, description: midCta.description },
+    {
+      type: "section",
+      id: "comparison",
+      tone: "tinted",
+      eyebrow: comparison.eyebrow,
+      title: comparison.title,
+      description: comparison.description,
+      blocks: [
+        {
+          type: "table",
+          caption: comparison.caption,
+          columns: comparison.columns,
+          rows: comparison.rows,
+          highlight: 1,
+          note: comparison.note,
+        },
+      ],
+    },
+    {
+      type: "section",
+      id: "fit",
+      eyebrow: fit.eyebrow,
+      title: fit.title,
+      description: fit.description,
+      blocks: [{ type: "bullets", items: fit.items }],
+    },
+    {
+      type: "section",
+      id: "why",
+      tone: "tinted",
+      eyebrow: why.eyebrow,
+      title: why.title,
+      blocks: [{ type: "cards", columns: 3, items: why.cards }],
+    },
+    {
+      type: "strip",
+      title: implementation.title,
+      description: implementation.description,
+      link: {
+        text: implementation.link,
+        href: "/odoo/implementation",
+        ariaLabel: "Read about the Odoo implementation process",
+      },
+    },
+    { type: "faq", id: "faqs", title: "Odoo HR & Payroll questions", items: faqs },
+    {
+      type: "related",
+      title: related.title,
+      links: [
+        { text: related.overview.label, href: related.overview.href },
+        {
+          text: "Implementation",
+          pageKey: "implementation",
+          ariaLabel: "Learn more about Odoo Implementation",
+        },
+        ...related.siblingKeys.map((pageKey) => ({ pageKey })),
+      ],
+    },
+  ],
+  closing: {
+    title: closing.title,
+    description: closing.description,
+    secondary: closing.secondary,
+  },
+});

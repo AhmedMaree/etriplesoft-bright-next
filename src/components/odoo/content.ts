@@ -213,10 +213,10 @@ export const related = {
   title: "Explore more about Odoo",
   moreLinks: [
     ["All industries", "/industries"],
-    ["Contact our team", "/contact"],
+    ["Explore Solutions", "/services"],
   ],
 };
 
 export const closing = {
-  secondary: { label: "Contact our team", href: "/contact" },
+  secondary: { label: "Explore Solutions", href: "/services" },
 };

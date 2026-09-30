@@ -65,6 +65,16 @@ export type Block =
     }
   | { type: "list"; items: { text: string; link?: PageLink }[] }
   | {
+      type: "table";
+      caption: string;
+      /** First column names the row; the rest are the compared options. */
+      columns: string[];
+      rows: string[][];
+      /** Index (within `columns`) of the option to emphasise, e.g. Odoo. */
+      highlight?: number;
+      note?: string;
+    }
+  | {
       type: "timeline";
       sequence: { id: string; order: number; title: string }[];
       left: { title: string; items: string[] };
@@ -126,6 +136,12 @@ export type OdooChildPageConfig = {
   /** Optional chip navigation under the hero. */
   anchors?: readonly (readonly [label: string, href: string])[];
   sections: Section[];
+  /** Name used for Service structured data; defaults to the breadcrumb label. */
+  serviceName?: string;
+  /** Page language. Arabic pages get Arabic UI strings and /ar links. */
+  locale?: "en" | "ar";
+  /** Breadcrumb trail (excluding the current page); defaults to Home > Odoo. */
+  breadcrumbs?: { label: string; href: string }[];
   closing: {
     title: string;
     description: string;

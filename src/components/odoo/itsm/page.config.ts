@@ -25,8 +25,7 @@ import {
 const text = (items: { text: string; status: "legacy" | "confirm" }[]) =>
   renderable(items).map((item) => item.text);
 
-const primaryHref =
-  "/contact?service=Odoo%20ITSM%20%26%20Helpdesk%20Consultation";
+const primaryHref = "/book-consultation";
 
 // Grouping is presentational; component names and points are unchanged.
 const groupOf = (names: string[]) =>
@@ -47,7 +46,7 @@ export const itsmPage = defineOdooPage({
     title: heroSource.h1,
     description: heroSource.intro,
     highlight: "Built on Odoo Enterprise by ETripleSoft.",
-    primary: { label: "Book a Consultation", href: primaryHref },
+    primary: { label: "Book a Free Consultation", href: primaryHref },
     secondary: { label: "See the ticket lifecycle", href: "#lifecycle" },
     titleMaxCh: 20,
   },
@@ -205,6 +204,6 @@ export const itsmPage = defineOdooPage({
     title: "Ready to plan your ITSM setup?",
     description:
       "Book a consultation and we will talk through your IT service processes and next steps.",
-    secondary: { label: "Contact our team", href: "/contact" },
+    secondary: { label: "Explore Solutions", href: "/services" },
   },
 });

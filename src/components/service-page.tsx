@@ -185,7 +185,7 @@ export default function ServicePage({ slug }: { slug: string }) {
     <main id="main" className={"service-page " + slug}>
       <Hero
         {...service}
-        primaryHref={"/contact?service=" + encodeURIComponent(service.title)}
+        primaryHref={service.primary === "Book a Free Consultation" ? "/book-consultation" : "/contact?service=" + encodeURIComponent(service.title)}
       >
         {slug === "cloud" ? <PartnerBadges cloud /> : null}
       </Hero>

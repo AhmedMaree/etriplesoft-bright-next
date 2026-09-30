@@ -27,8 +27,7 @@ import {
 const text = (items: { text: string; status: "legacy" | "confirm" }[]) =>
   renderable(items).map((item) => item.text);
 
-const primaryHref =
-  "/contact?service=Odoo%20Dashboard%20%26%20Insights%20Consultation";
+const primaryHref = "/book-consultation";
 
 const aiItems = text(ai);
 const kpiArticle = "Odoo KPI Dashboards for Real-Time Business Insights";
@@ -47,7 +46,7 @@ export const dashboardPage = defineOdooPage({
     description: heroSource.intro,
     highlight:
       "Two modules built on Odoo by ETripleSoft: dashboards, and customised access management.",
-    primary: { label: "Book a Consultation", href: primaryHref },
+    primary: { label: "Book a Free Consultation", href: primaryHref },
     secondary: { label: "See the dashboards", href: "#dashboards" },
     titleMaxCh: 20,
   },
@@ -146,6 +145,6 @@ export const dashboardPage = defineOdooPage({
     title: "Ready to plan your dashboards and access rules?",
     description:
       "Book a consultation and we will talk through your data, users and next steps.",
-    secondary: { label: "Contact our team", href: "/contact" },
+    secondary: { label: "Explore Solutions", href: "/services" },
   },
 });
