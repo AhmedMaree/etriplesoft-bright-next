@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
 import { CTA } from "@/components/site";
@@ -35,15 +34,6 @@ export function ArticleView({ article }: { article: ArticleSource }) {
 
       <article className={styles.wrap}>
         <header className={styles.head}>
-          <div className={styles.crumb}>
-            <Breadcrumb
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Insights", href: "/insights" },
-                { label: article.title, href: path },
-              ]}
-            />
-          </div>
           <span className={styles.category}>{article.category}</span>
           <h1>{article.title}</h1>
           <p className={styles.meta}>

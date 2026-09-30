@@ -13,7 +13,6 @@ import {
   Database,
   Grid2X2,
   Globe2,
-  House,
   Lightbulb,
   Mail,
   Megaphone,
@@ -116,7 +115,6 @@ export default function InsightsReferencePage({ articles }: { articles: InsightC
       <div className={s.container}>
         <section className={s.hero} aria-labelledby="insights-heading">
           <div className={s.heroCopy}>
-            <Link className={s.breadcrumb} href="/"><House aria-hidden="true" /><span>Blog / Insights</span></Link>
             <h1 id="insights-heading">Insights</h1>
             <p>Ideas, guides, and Odoo expertise<br className={s.desktopBreak} /> for a smarter tomorrow.</p>
             <a className={s.primaryButton} href="#articles">View All Articles<ArrowRight aria-hidden="true" /></a>

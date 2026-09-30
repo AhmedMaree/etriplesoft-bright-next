@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/site";
 import { faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
-import { BreadcrumbSchema } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { partner } from "@/components/odoo/content";
 import { odooPageByKey, odooPageHref } from "@/lib/odoo-pages";
@@ -28,9 +27,6 @@ type Locale = "en" | "ar";
 
 const UI = {
   en: {
-    home: "Home",
-    odoo: "Odoo",
-    breadcrumb: "Breadcrumb",
     onThisPage: "On this page",
     whatHappens: "What happens",
     whatWeNeed: "What we need from you",
@@ -42,9 +38,6 @@ const UI = {
       text ? `${text}: learn more about Odoo ${label}` : `Learn more about Odoo ${label}`,
   },
   ar: {
-    home: "الرئيسية",
-    odoo: "أودو",
-    breadcrumb: "مسار التنقل",
     onThisPage: "في هذه الصفحة",
     whatHappens: "ماذا يحدث",
     whatWeNeed: "ما نحتاجه منك",
@@ -587,10 +580,6 @@ export function OdooChildPage({ config }: { config: OdooChildPageConfig }) {
   const { hero, closing } = config;
   const locale: Locale = config.locale ?? "en";
   const ui = UI[locale];
-  const crumbs = config.breadcrumbs ?? [
-    { label: ui.home, href: locale === "ar" ? "/ar" : "/" },
-    { label: ui.odoo, href: locale === "ar" ? "/ar/odoo" : "/odoo" },
-  ];
   const prefix = config.path.split("/").filter(Boolean).join("-");
   const faqSection = config.sections.find((section) => section.type === "faq");
   return (
@@ -609,22 +598,9 @@ export function OdooChildPage({ config }: { config: OdooChildPageConfig }) {
           )}
         />
       )}
-      <BreadcrumbSchema
-        items={[...crumbs, { label: config.breadcrumbLabel }]}
-      />
       <section className={styles.hero} aria-labelledby={`${prefix}-h1`}>
         <div className={`container ${styles.heroGrid}`}>
           <div>
-            <nav aria-label={ui.breadcrumb} className={styles.breadcrumb}>
-              <ol>
-                {crumbs.map((crumb) => (
-                  <li key={crumb.href}>
-                    <Link href={crumb.href}>{crumb.label}</Link>
-                  </li>
-                ))}
-                <li aria-current="page">{config.breadcrumbLabel}</li>
-              </ol>
-            </nav>
             <span className="eyebrow">{hero.eyebrow}</span>
             <h1
               id={`${prefix}-h1`}

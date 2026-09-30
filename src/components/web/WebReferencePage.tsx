@@ -2,10 +2,13 @@ import Link from "next/link";
 import {
   ArrowRight, Building2, PanelsTopLeft, Code2, Smartphone, UsersRound,
   ChartNoAxesColumnIncreasing, Zap, Compass, PenTool, Wrench, Rocket,
-  MapPin, Star,
+  MapPin,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import s from "./WebReferencePage.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
+
+const testimonial = featuredTestimonials.web;
 
 const contact = "/contact?service=Web%20Design%20and%20Development";
 const services = [
@@ -103,8 +106,8 @@ export default function WebReferencePage() {
         </section>
 
         <section className={`${s.section} ${s.proof}`}>
-          <div className={s.proofLead}><Heading label="What our clients say">Real partners.<br />Real results.</Heading></div>
-          <figure className={s.testimonial}><div className={s.stars} aria-label="Five stars">{Array.from({ length: 5 }, (_, i) => <Star key={i} fill="currentColor" aria-hidden="true" />)}</div><blockquote>Professional, responsive, and truly understand our business needs.</blockquote><figcaption><span className={s.avatar}>MY</span><span><strong>Marco Youssef</strong><small>CEO, Manufacturing Company</small></span></figcaption></figure>
+          <div className={s.proofLead}><Heading label="Client feedback">How clients describe our work</Heading></div>
+          <figure className={s.testimonial}><blockquote>“{testimonial.quote}”</blockquote><figcaption><span className={s.avatar} aria-hidden="true">TG</span><span><strong>{testimonial.name}</strong><small>{testimonial.role}, {testimonial.company}</small></span></figcaption></figure>
         </section>
 
         <section className={s.cta} id="contact">

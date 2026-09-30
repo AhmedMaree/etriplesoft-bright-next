@@ -1,5 +1,4 @@
 import { JsonLd } from "@/components/json-ld";
-import { BreadcrumbSchema } from "@/components/breadcrumb";
 import { faqJsonLd } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
@@ -34,23 +33,8 @@ export function IndustryPage({ data }: { data: IndustryPageData }) {
   return (
     <main id="main" className={styles.page}>
       <JsonLd data={faqJsonLd(data.faqs)} />
-      <BreadcrumbSchema
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Industries", href: "/industries" },
-          { label: data.name },
-        ]}
-      />
-
       <section className={styles.hero} aria-labelledby="industry-title">
         <div className={`container ${styles.heroInner}`}>
-          <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
-            <ol>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/industries">Industries</Link></li>
-              <li aria-current="page">{data.name}</li>
-            </ol>
-          </nav>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
               <span className={styles.eyebrow}>{data.eyebrow}</span>

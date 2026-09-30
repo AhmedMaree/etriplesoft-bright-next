@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleCards } from "@/components/ar/ArticleCards";
 import styles from "@/components/ar/ar.module.css";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -18,10 +17,6 @@ export default function ArabicInsights() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroInner}>
-            <Breadcrumb
-              label="مسار التنقل"
-              items={[{ label: "الرئيسية", href: "/ar" }, { label: "المدونة" }]}
-            />
             <span className="eyebrow">المدونة</span>
             <h1>أدلة عملية للشركات في مصر والخليج</h1>
             <p className={styles.lead}>

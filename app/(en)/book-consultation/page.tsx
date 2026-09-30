@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { company } from "@/lib/company";
 import { pageMetadata } from "@/lib/seo";
 import styles from "@/components/booking/booking.module.css";
@@ -18,7 +17,6 @@ export default function BookConsultationPage() {
     <main id="main" className={styles.page}>
       <section className={styles.intro}>
         <div className="container">
-          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Book a consultation" }]} />
           <span className="eyebrow">Plan your next step</span>
           <h1>Book a Free Consultation</h1>
           <p>

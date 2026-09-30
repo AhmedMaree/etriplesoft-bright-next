@@ -25,7 +25,6 @@ import {
   type OdooRelatedPage,
 } from "@/lib/odoo-pages";
 import {
-  anchorLinks,
   benefits as benefitLinks,
   closing,
   einvoicing,
@@ -42,6 +41,7 @@ import {
 } from "./content";
 import styles from "./OdooReferencePage.module.css";
 import hub from "./OdooHub.module.css";
+import OdooSectionNav from "./OdooSectionNav";
 
 const glyphs = {
   network: Network,
@@ -138,7 +138,7 @@ function Asset({
   return (
     <img
       className={className}
-      src={`${base}${name}.webp`}
+      src={name === "professional" ? "/images/professional.webp" : `${base}${name}.webp`}
       alt={alt}
       loading="lazy"
     />
@@ -220,57 +220,58 @@ export default function OdooReferencePage() {
   return (
     <main id="main" className={styles.page}>
       <section className={styles.hero} aria-labelledby="odoo-title">
-        <img
-          src={`${base}hero.webp`}
-          className={styles.heroImage}
-          alt="Odoo dashboard on a laptop in a bright office"
-          fetchPriority="high"
-        />
-        <div className={`${styles.container} ${styles.heroContent}`}>
-          <span className={styles.eyebrow}>
-            Odoo ERP in Egypt | Licensed Partner | Local Experts
-          </span>
-          <h1 id="odoo-title">
-            Odoo ERP
-            <br />
-            Implementation <em>in Egypt</em>
-          </h1>
-          <p>
-            Transform your business with Odoo, the all-in-one ERP solution.
-            ETripleSoft helps Egyptian businesses implement, customize and scale
-            Odoo for sustainable growth.
-          </p>
-          <Checks
-            items={[
-              "Odoo Gold Partner",
-              "Local Egyptian Team",
-              "End-to-End Support",
-            ]}
-          />
-          <div className={styles.actions}>
-            <DemoButton />
-            <DemoButton secondary />
+        <div className={`${styles.container} ${styles.heroGrid}`}>
+          <div className={styles.heroContent}>
+            <h1 id="odoo-title">
+              Odoo ERP
+              <br />
+              Implementation <em>in Egypt</em>
+            </h1>
+            <p>
+              Transform your business with Odoo, the all-in-one ERP solution.
+              ETripleSoft helps Egyptian businesses implement, customize and
+              scale Odoo for sustainable growth.
+            </p>
+            <Checks
+              items={[
+                "Odoo Gold Partner",
+                "Local Egyptian Team",
+                "End-to-End Support",
+              ]}
+            />
+            <div className={styles.actions}>
+              <DemoButton />
+              <DemoButton secondary />
+            </div>
+            <Image
+              src={partner.badge.src}
+              width={partner.badge.width}
+              height={partner.badge.height}
+              alt={partner.badge.alt}
+              className={styles.goldPartner}
+              sizes="130px"
+            />
           </div>
-          <Image
-            src={partner.badge.src}
-            width={partner.badge.width}
-            height={partner.badge.height}
-            alt={partner.badge.alt}
-            className={styles.goldPartner}
-            sizes="130px"
-          />
+          <figure className={styles.heroVisual}>
+            <div className={styles.dashboardFrame}>
+              <Image
+                src="/images/odoo/operations-dashboard.webp"
+                alt="Illustrative Odoo operations dashboard with sample sales, invoice, inventory and project data"
+                width={1536}
+                height={1024}
+                preload
+                sizes="(max-width: 900px) 100vw, (max-width: 1240px) 56vw, 700px"
+                className={styles.heroDashboard}
+              />
+            </div>
+            <figcaption className={styles.heroCaption}>
+              Illustrative Odoo dashboard, sample data
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <nav className={hub.anchors} aria-label="On this page">
-        <ul className={styles.container}>
-          {anchorLinks.map(([label, href]) => (
-            <li key={href}>
-              <a href={href}>{label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <OdooSectionNav />
 
       <section
         className={`${styles.section} ${hub.outcomes}`}

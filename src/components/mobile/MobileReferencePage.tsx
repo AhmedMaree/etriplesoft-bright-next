@@ -12,8 +12,10 @@ import {
   UsersRound,
 } from "lucide-react";
 import s from "./MobileReferencePage.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
 
 const contact = "/contact?service=Mobile%20Application%20Development";
+const testimonial = featuredTestimonials.mobile;
 const asset = (name: string) => `/images/mobile/reference/${name}.webp`;
 
 const services = [
@@ -333,22 +335,19 @@ export default function MobileReferencePage() {
 
         <section className={`${s.section} ${s.proof}`}>
           <div className={s.testimonialBlock}>
-            <SectionTitle label="Client success">
-              Real Partners. Real Results.
+            <SectionTitle label="Client feedback">
+              How clients describe our work
             </SectionTitle>
             <figure className={s.testimonial}>
               <Quote className={s.quoteMark} aria-hidden="true" />
-              <blockquote>
-                “Professional, responsive, and truly understand our business
-                needs.”
-              </blockquote>
+              <blockquote>“{testimonial.quote}”</blockquote>
               <figcaption>
                 <span className={s.clientBadge} aria-hidden="true">
-                  MY
+                  AE
                 </span>
                 <span>
-                  <strong>Marco Youssef</strong>
-                  <small>CEO, Manufacturing Company</small>
+                  <strong>{testimonial.name}</strong>
+                  <small>{testimonial.role}</small>
                 </span>
               </figcaption>
             </figure>

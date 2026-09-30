@@ -10,8 +10,8 @@ const article: ArticleSource = {
   datePublished: "2026-08-15T21:51:04",
   category: "ERP",
   image: {
-    src: "/images/insights/signs-you-need-erp-system/signs-you-need-erp-system.webp",
-    alt: "Woman reviewing paper spreadsheets and sticky notes next to a clean ERP system dashboard",
+    src: "/images/odoo-hero.webp",
+    alt: "Odoo business management dashboard on a laptop",
   },
   source: {
     kind: "old-content.xml",
@@ -22,7 +22,7 @@ const article: ArticleSource = {
 
 Here are 10 clear signs you need an ERP system — and what happens if you keep pushing spreadsheets past their limit.
 
-![Woman reviewing paper spreadsheets and sticky notes next to a clean ERP system dashboard](/images/insights/signs-you-need-erp-system/signs-you-need-erp-system.webp)
+![Odoo business management dashboard on a laptop](/images/odoo-hero.webp)
 
 ## 1. You're Re-Entering the Same Data in Multiple Places
 

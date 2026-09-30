@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import styles from "@/components/ar/ar.module.css";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { arOffices } from "@/i18n/ar";
 import { company, mailto } from "@/lib/company";
@@ -23,10 +22,6 @@ export default function ArabicContact() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroInner}>
-            <Breadcrumb
-              label="مسار التنقل"
-              items={[{ label: "الرئيسية", href: "/ar" }, { label: "تواصل معنا" }]}
-            />
             <span className="eyebrow">تواصل معنا</span>
             <h1>حلولك التقنية تبدأ من هنا</h1>
             <p className={styles.lead}>

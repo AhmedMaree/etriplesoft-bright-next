@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
-import { CrumbStrip } from "@/components/breadcrumb";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { CTA } from "@/components/site";
@@ -17,9 +16,6 @@ export const metadata: Metadata = pageMetadata({
 export default function IndustriesPage() {
   return (
     <>
-    <CrumbStrip
-      items={[{ label: "Home", href: "/" }, { label: "Industries" }]}
-    />
     <main id="main" className={`${styles.page} ${styles.hubPage}`}>
       <section className={styles.hubHero} aria-labelledby="industries-title">
         <div className="container">

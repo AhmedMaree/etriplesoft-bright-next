@@ -33,8 +33,8 @@ Credentialed Odoo Gold Partner and Microsoft Partner — the differentiator is v
 - Five core service lines: Odoo ERP, Cloud & Security, AI Automation, Web & Mobile Development, Digital Marketing (`src/lib/data.ts` → `services`/`servicePages`).
 - Named industries served: Construction, Retail, Real Estate, Education, Healthcare, Logistics (`industries` in `src/lib/data.ts`).
 - Routing is data-driven through a single `app/[slug]/page.tsx` catch-all keyed off `src/lib/data.ts` — new service/industry content should extend that data, not hardcode new one-off pages.
-- No external stock photography is used or should be introduced; supplied dashboard photography, partner branding, and neutral/empty scenes stand in for people-photography needs.
-- The published phone number (`+20 2 1234 5678`) is still a placeholder from the original reference mockups — do not present it as verified, and flag it for replacement once a real number is supplied.
+- No external stock photography is used or should be introduced. Do not use images of women on the website; use neutral dashboard imagery and people photography that meets this constraint.
+- `src/lib/company.ts` is the source of truth for confirmed public contact details; omit unconfirmed fields rather than guessing.
 
 ## Brand Commitments
 
@@ -50,16 +50,12 @@ Confirmed real facts (safe to build on):
 - 10+ years of experience; founded roughly 2018.
 - Operating in 3 countries: Egypt, UAE, Saudi Arabia.
 - Offices in Cairo, Riyadh, and Dubai.
-- Three real client testimonials (see `Testimonials` in `src/components/site.tsx`):
-  - "Professional, responsive, and truly understand our business needs." — Marco Youssef, CEO, Manufacturing Company.
-  - "ETripleSoft delivered our Odoo system with great expertise and support." — Waled El Ganzory, Operations Manager, Trading Company.
-  - "A reliable partner for our digital transformation journey." — Eng. Mahmoud Hamdy, CTO, Services Company.
+- Eight real client testimonials and attributions from the published home page in `old-content.xml` (stored in `src/data/testimonials.ts` and rendered by `Testimonials` in `src/components/site.tsx`). Use those source quotes; do not invent additional claims, roles, companies, star ratings or outcomes.
 
 Still unverified / placeholder — do not treat as fact or extend with new invented numbers:
-- Phone number `+20 2 1234 5678` (sequential placeholder digits).
 - Per `README.md`: the original supplied reference sheets contained "different branding variants, conflicting company statistics, ... sample contact details, job openings and customer claims" reproduced as design content; anything not explicitly confirmed above should be treated as unverified until the company confirms it.
 - Case-study-specific numbers (e.g. "320% revenue growth," "70% reduction in manual work," "99.9% accuracy," "125% traffic increase," "100+ Happy Clients," "99.9% Uptime," "40+ Certified Experts") and the unnamed "Operations Director, Construction Industry" quote on the homepage are still unconfirmed — flag before presenting as fact.
-- No real client logos beyond the confirmed partner marks (Odoo, Microsoft) and the named trusted-by client logos already in `public/images/client-logos.png` — do not fabricate new client names or logos beyond the three testimonials above.
+- No real client logos beyond the confirmed partner marks (Odoo, Microsoft) and the named trusted-by client logos already in `public/images/client-logos.png` — do not fabricate new client names or logos beyond the eight testimonials above.
 
 ## Product Principles
 

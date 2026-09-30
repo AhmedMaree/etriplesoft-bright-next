@@ -3,7 +3,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import articleStyles from "@/components/insights/article.module.css";
 import styles from "@/components/ar/ar.module.css";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Markdown } from "@/components/insights/markdown";
 import { JsonLd } from "@/components/json-ld";
@@ -59,14 +58,6 @@ export default async function ArabicArticlePage({
       />
       {article.faqs.length > 0 && <JsonLd data={faqJsonLd(article.faqs)} />}
       <article className={`container ${styles.wrap}`}>
-        <Breadcrumb
-          label="مسار التنقل"
-          items={[
-            { label: "الرئيسية", href: "/ar" },
-            { label: "المدونة", href: "/ar/insights" },
-            { label: article.title, href: path },
-          ]}
-        />
         <span className={styles.category}>{article.category}</span>
         <h1>{article.title}</h1>
         <p className={styles.meta}>

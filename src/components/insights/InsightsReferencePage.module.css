@@ -15,9 +15,7 @@
 .hero::before { top: -174px; right: -40px; width: 360px; height: 360px; box-shadow: 0 0 0 29px #dff5ff70, 0 0 0 73px #ecfaff8a; }
 .hero::after { bottom: -220px; left: 29%; width: 330px; height: 330px; box-shadow: 0 0 0 25px #e5f6ff70, 0 0 0 61px #eefaff8a; }
 .heroCopy { position: relative; z-index: 1; }
-.breadcrumb { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid #d8eafd; border-radius: var(--radius-pill); color: #165ac4; background: #eaf5ff; font-size: 11px; text-decoration: none; }
-.breadcrumb svg { width: 14px; height: 14px; fill: var(--blue); color: var(--blue); }
-.hero h1 { margin-top: 13px; font-size: var(--fs-h1); font-weight: 750; line-height: 1.08; letter-spacing: -.03em; }
+.hero h1 { font-size: var(--fs-h1); font-weight: 750; line-height: 1.08; letter-spacing: -.03em; }
 .heroCopy > p { margin-top: 7px; color: var(--ink); font-size: clamp(18px, 2vw, 23px); line-height: 1.14; letter-spacing: -.025em; }
 .primaryButton { display: inline-flex; min-height: 39px; align-items: center; gap: 10px; margin-top: 13px; padding: 9px 17px; border: 1px solid #174da9; border-radius: var(--radius-pill); color: #fff; background: linear-gradient(110deg, #174da9, #103e91); box-shadow: 0 7px 17px #0986ef32; font-size: 11px; font-weight: 750; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
 .primaryButton:hover { transform: translateY(-2px); box-shadow: 0 10px 20px #0986ef40; }
@@ -110,7 +108,7 @@
 .contactButton { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 8px; padding: 8px 14px; border: 1px solid #06bdd5; border-radius: var(--radius-pill); color: #07346b; background: #fff; font-size: 11px; font-weight: 740; text-decoration: none; transition: color .15s ease, background .15s ease; }
 .contactButton:hover { color: #fff; background: #0758b5; }
 .contactButton svg { width: 14px; height: 14px; }
-.breadcrumb, .primaryButton, .categoryTabs button, .moreButton, .contactButton { min-height: 44px; }
+.primaryButton, .categoryTabs button, .moreButton, .contactButton { min-height: 44px; }
 .cardBody h3 a { display: inline-flex; min-height: 44px; align-items: center; }
 .featured:focus-visible, .articleCard:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }

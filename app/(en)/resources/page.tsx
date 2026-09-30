@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Icon, SectionHeading } from "@/components/site";
-import { CrumbStrip } from "@/components/breadcrumb";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -58,9 +57,6 @@ const resources = [
 export default function ResourcesPage() {
   return (
     <>
-      <CrumbStrip
-        items={[{ label: "Home", href: "/" }, { label: "Resources" }]}
-      />
       <main id="main" className="section tinted">
         <div className="container">
           <SectionHeading

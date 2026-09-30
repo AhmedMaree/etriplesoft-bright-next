@@ -142,7 +142,7 @@ export default function Home() {
           ["250+", "Projects Delivered", "briefcase"],
           ["3", "Countries", "globe"],
           ["10+", "Years of Experience", "clock"],
-          ["9+", "Industries Served", "building"],
+          ["6", "Industries Served", "building"],
         ]}
       />
       <section className="section tinted home-stage home-testimonials-stage">
@@ -170,7 +170,7 @@ export default function Home() {
           href: company.whatsappUrl,
           external: true,
         }}
-        note="30 minutes, free, no obligation."
+        note="Free consultation. No obligation."
       />
     </main>
   );

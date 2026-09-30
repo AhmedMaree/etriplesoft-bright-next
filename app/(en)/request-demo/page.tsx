@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, ClipboardList, MonitorPlay, Route } from "lucide-react";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { ContactForm } from "@/components/contact-form";
 import styles from "@/components/demo/demo.module.css";
 import { FaqAccordion } from "@/components/faq-accordion";
@@ -73,9 +72,6 @@ export default function RequestDemoPage() {
       <JsonLd data={faqJsonLd(faqs)} />
       <section className={styles.hero}>
         <div className="container">
-          <Breadcrumb
-            items={[{ label: "Home", href: "/" }, { label: "Request a demo" }]}
-          />
           <div className={styles.heroGrid}>
             <div className={styles.copy}>
               <span className="eyebrow">Free Odoo demo</span>

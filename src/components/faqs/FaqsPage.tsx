@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
 import { CTA } from "@/components/site";
@@ -32,12 +31,6 @@ export function FaqsPage() {
 
       <section className={styles.head} aria-labelledby="faqs-title">
         <div className={`container ${styles.headInner}`}>
-          <Breadcrumb
-            items={[
-              { label: "Home", href: "/" },
-              { label: "FAQ", href: "/faqs" },
-            ]}
-          />
           <span className="eyebrow">Help &amp; Resources</span>
           <h1 id="faqs-title">Frequently asked questions</h1>
           <p>

@@ -115,35 +115,6 @@
 .hero :global(.button-row) {
   margin-top: 28px;
 }
-.breadcrumb {
-  margin-bottom: 20px;
-  font-size: 13px;
-}
-.breadcrumb ol {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: var(--muted);
-}
-.breadcrumb li + li::before {
-  content: "/";
-  margin-right: 6px;
-  color: var(--line);
-}
-.breadcrumb a {
-  display: inline-flex;
-  min-height: 28px;
-  align-items: center;
-  padding-inline: 2px;
-  color: var(--blue);
-  font-weight: 600;
-}
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
 .trust {
   display: flex;
   align-items: center;
@@ -854,7 +825,7 @@
   }
 }
 @media (max-width: 760px) {
-  .breadcrumb a, .anchors a, .stageNav a, .sequence a { min-width: 44px; min-height: 44px; }
+  .anchors a, .stageNav a, .sequence a { min-width: 44px; min-height: 44px; }
 }
 
 /* ---------- comparison table ---------- */

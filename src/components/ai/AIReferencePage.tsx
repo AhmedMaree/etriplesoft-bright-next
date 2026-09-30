@@ -3,15 +3,16 @@ import {
   ArrowRight,
   MessageCircle,
   Plus,
-  Star,
   CheckSquare,
   ChartNoAxesColumnIncreasing,
   Database,
   TrendingUp,
 } from "lucide-react";
 import s from "./AIReferencePage.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
 
 const contact = "/contact?service=AI%20Automation";
+const testimonial = featuredTestimonials.ai;
 const solutions = [
   [
     "Workflow Automation",
@@ -337,13 +338,13 @@ export default function AIReferencePage() {
         </section>
 
         <section className={s.section}>
-          <Heading label="Trusted impact">Real Numbers. Real Progress.</Heading>
+          <Heading label="Our experience">Experience across the region</Heading>
           <div className={s.metrics}>
             {[
-              ["60%", "Less manual work", "clock"],
-              ["3x", "Faster processes", "speed"],
-              ["40%", "Lower operational costs", "cost"],
-              ["200+", "Businesses empowered", "clients"],
+              ["250+", "Projects delivered", "clients"],
+              ["10+", "Years of experience", "clock"],
+              ["3", "Countries", "web"],
+              ["6", "Industries served", "clients"],
             ].map(([number, label, asset]) => (
               <div key={label}>
                 <Asset name={asset} />
@@ -360,22 +361,12 @@ export default function AIReferencePage() {
           <div>
             <span className={s.label}>What our clients say</span>
             <figure className={s.testimonial}>
-              <blockquote>
-                “ETripleSoft helped us automate key processes with AI inside
-                Odoo. We save hours every week and our team can focus on what
-                really matters.”
-              </blockquote>
+              <blockquote>“{testimonial.quote}”</blockquote>
               <figcaption>
-                <Asset name="customer" alt="Ahmed El-Masry" />
                 <div>
-                  <strong>Ahmed El-Masry</strong>
-                  <span>COO, Regional Trading Company</span>
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.role}, {testimonial.company}</span>
                 </div>
-                <span className={s.stars} aria-label="5 out of 5 stars">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Star key={i} aria-hidden="true" />
-                  ))}
-                </span>
               </figcaption>
             </figure>
           </div>

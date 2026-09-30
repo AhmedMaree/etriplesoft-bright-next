@@ -39,7 +39,7 @@ export const legacyDrafts: Record<
   "odoo-roi-return-on-investment-draft": {
     title: "Understanding the Return on an Odoo ERP Investment",
     category: "Odoo ERP",
-    image: "growth-chart",
+    image: "insights-reference/article-erp",
     intro:
       "ERP value should be assessed against the work it changes: manual handoffs, duplicated data, reporting effort, process delays and the cost of maintaining disconnected tools.",
     sections: [
@@ -198,7 +198,7 @@ export const legacyDrafts: Record<
   "erp-benefits-for-growing-businesses": {
     title: "ERP Benefits to Consider as Your Business Grows",
     category: "ERP Planning",
-    image: "growth-chart",
+    image: "insights-reference/article-erp",
     intro:
       "An ERP system can help connect information and workflows across a business. The useful benefits depend on the problems a team needs to solve, the quality of its processes and how well the system is adopted.",
     sections: [

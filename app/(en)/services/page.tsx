@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
-import { CrumbStrip } from "@/components/breadcrumb";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
@@ -48,9 +47,6 @@ const orbit = [
 export default function ServicesPage() {
   return (
     <>
-    <CrumbStrip
-      items={[{ label: "Home", href: "/" }, { label: "Services" }]}
-    />
     <main id="main" className={styles.page}>
       <section className={styles.hero} aria-labelledby="services-title">
         <div className={`container ${styles.heroGrid}`}>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Breadcrumb } from "./breadcrumb";
 import { company, mailto, primaryPhone } from "@/lib/company";
 import type {
   LegalBlock,
@@ -73,9 +72,6 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
   return (
     <main id="main" className={styles.page}>
       <div className="container">
-        <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: doc.title }]}
-        />
         <article className={styles.doc}>
           <h1>{doc.title}</h1>
           <div className={styles.intro}>

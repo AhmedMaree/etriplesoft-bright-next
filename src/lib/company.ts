@@ -52,7 +52,6 @@ export const company = {
   primaryEmail: "info@etriplesoft.com",
   whatsappUrl: "https://wa.me/201002106952",
   appointmentUrl: "https://etriple.odoo.com/appointment/3",
-  jobsPortalUrl: "https://etriple.odoo.com/jobs",
   // No published source confirms support@etriplesoft.com.
   supportEmail: null as string | null,
 

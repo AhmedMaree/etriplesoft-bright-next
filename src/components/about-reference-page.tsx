@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Button, PartnerBadges } from "./site";
 import s from "./about-reference.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
 
 const principles = [
   ["Outcomes Over Hours", "We focus on useful business outcomes, not billable time.", Target],
@@ -180,7 +181,7 @@ export function AboutReferencePage() {
                 Consultants, developers, and support specialists work together to turn business goals into practical solutions.
               </Heading>
             </div>
-            <Image src="/images/about/team.webp" alt="Colleagues collaborating around a laptop in a Dubai office" fill sizes="(max-width: 760px) 100vw, 70vw" />
+            <Image src="/images/team.webp" alt="Colleagues collaborating around a laptop in an office" fill sizes="(max-width: 760px) 100vw, 70vw" />
           </div>
           <div className={s.capabilityGrid}>
             {capabilities.map(([title, copy, Glyph]) => <article key={title}><span><Glyph aria-hidden="true" /></span><h3>{title}</h3><p>{copy}</p></article>)}
@@ -227,7 +228,7 @@ export function AboutReferencePage() {
           </div>
           <blockquote className={s.testimonial}>
             <Quote aria-hidden="true" />
-            <div><p>“ETripleSoft delivered our Odoo system with great expertise and support.”</p><cite><strong>Waled El Ganzory</strong><span>Operations Manager, Trading Company</span></cite></div>
+            <div><p>“{featuredTestimonials.about.quote}”</p><cite><strong>{featuredTestimonials.about.name}</strong><span>{featuredTestimonials.about.role}, {featuredTestimonials.about.company}</span></cite></div>
           </blockquote>
           <div className={s.clientMarks}>
             <Image src="/images/client-logos.png" alt="Orascom, Elsewedy Electric, CIB, Vodafone, Samsung, and Etisalat" width={690} height={32} sizes="(max-width: 760px) 100vw, 900px" />

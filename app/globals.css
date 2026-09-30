@@ -8896,11 +8896,6 @@ blockquote small {
   }
 }
 
-/* Breadcrumb strip for pages whose hero has no breadcrumb slot */
-.crumb-strip {
-  padding-top: 14px;
-  padding-bottom: 12px;
-}
 
 @media (max-width: 760px) {
   .button, .text-link, .icon-button, .carousel-buttons button,

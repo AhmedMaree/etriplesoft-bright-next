@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { company, officeMapUrl } from "@/lib/company";
+import { clientTestimonials } from "@/data/testimonials";
 import { useState } from "react";
 import { CountUp } from "./count-up";
 import blurDataJson from "@/lib/blur-data.json";
@@ -851,46 +852,12 @@ export function FAQ({
     </div>
   );
 }
-type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-  /** Company name, once the client has agreed to be named. */
-  company?: string;
-  /** Path under /images/ to the client's logo. */
-  logo?: string;
-  /** One measurable, client-approved result, e.g. "Month-end close cut from 10 days to 3". */
-  result?: string;
-  /** Path under /images/ to a portrait. */
-  photo?: string;
-};
-
-// Only add company, logo, result and photo once the client has approved them
-// (see docs/CLAIMS-REGISTER.md); the card layout adapts to whatever is set.
-const testimonials: Testimonial[] = [
-  {
-    quote: "Professional, responsive, and truly understand our business needs.",
-    name: "Marco Youssef",
-    role: "CEO, Manufacturing Company",
-  },
-  {
-    quote: "ETripleSoft delivered our Odoo system with great expertise and support.",
-    name: "Waled El Ganzory",
-    role: "Operations Manager, Trading Company",
-  },
-  {
-    quote: "A reliable partner for our digital transformation journey.",
-    name: "Eng. Mahmoud Hamdy",
-    role: "CTO, Services Company",
-  },
-];
-
 export function Testimonials({ single = false }: { single?: boolean }) {
   const [index, setIndex] = useState(0);
-  const total = testimonials.length;
+  const total = clientTestimonials.length;
   const visible = single
-    ? [testimonials[index]]
-    : [0, 1, 2].map((offset) => testimonials[(index + offset) % total]);
+    ? [clientTestimonials[index]]
+    : [0, 1, 2].map((offset) => clientTestimonials[(index + offset) % total]);
   return (
     <div
       role="region"
@@ -900,8 +867,8 @@ export function Testimonials({ single = false }: { single?: boolean }) {
       <div className="testimonial-heading">
         <SectionHeading
           eyebrow="What Our Clients Say"
-          title="Real Partners. Real Results."
-          description="Trusted by forward-thinking businesses across the MENA region to turn ideas into impact with Odoo and beyond."
+          title="Client experiences"
+          description="Hear from clients who have worked with the ETripleSoft team."
         />
         <div className="carousel-buttons">
           <button
@@ -922,35 +889,13 @@ export function Testimonials({ single = false }: { single?: boolean }) {
         Showing {visible.map((item) => item.name).join(", ")}
       </p>
       <div className={`testimonials ${single ? "single" : ""}`}>
-        {visible.map(({ quote, name, role, company: org, logo, result, photo }) => (
-          <article key={name}>
-            {logo && (
-              <img
-                className="testimonial-logo"
-                src={`/images/${logo}`}
-                alt={org ?? ""}
-                loading="lazy"
-              />
-            )}
+        {visible.map(({ id, quote, name, role, company: org }) => (
+          <article key={id}>
             <p>“{quote}”</p>
-            {result && (
-              <p className="testimonial-result">
-                <Icon name="chart" />
-                {result}
-              </p>
-            )}
             <div className="person">
-              {photo && (
-                <img
-                  className="person-photo"
-                  src={`/images/${photo}`}
-                  alt=""
-                  loading="lazy"
-                />
-              )}
               <div>
                 <strong>{name}</strong>
-                <small>{role}</small>
+                <small>{org ? `${role}, ${org}` : role}</small>
               </div>
             </div>
           </article>

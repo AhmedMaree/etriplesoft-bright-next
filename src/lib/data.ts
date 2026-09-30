@@ -239,7 +239,7 @@ export const servicePages: Record<string, ServiceData> = {
       ],
       [
         "Certified Professionals",
-        "Microsoft, AWS and VMware certified team members.",
+        "Microsoft Partner expertise for Azure, Microsoft 365 and cloud security.",
         "shield",
       ],
       [

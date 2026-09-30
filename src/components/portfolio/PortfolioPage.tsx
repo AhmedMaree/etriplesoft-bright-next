@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { CTA, Hero } from "@/components/site";
 import { services } from "@/lib/data";
 import { portfolioItems } from "@/data/portfolio";
@@ -35,15 +34,6 @@ export function PortfolioPage() {
         secondary="Explore Our Services"
         secondaryHref="/services"
       />
-
-      <div className={`container ${styles.crumb}`}>
-        <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Success Stories", href: "/portfolio" },
-          ]}
-        />
-      </div>
 
       <section className={styles.intro} aria-labelledby="portfolio-intro">
         <div className="container">

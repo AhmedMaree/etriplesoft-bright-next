@@ -213,7 +213,7 @@ const published: FaqEntry[] = [
     category: "Odoo",
     question: "How many KPIs should a dashboard actually show?",
     answer:
-      "Around 5 to 8 metrics tied directly to decisions your team makes daily. Dashboards with 15-20+ metrics tend to get ignored rather than used.",
+      "There is no universal number. Start with the decisions the dashboard should support, prioritize the measures users need to act on, and remove metrics that do not inform those decisions.",
     status: "published",
     sourceUrl:
       "https://etriplesoft.com/odoo-kpi-dashboard-real-time-business-insights/",
@@ -743,7 +743,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How does AI automation implementation work?",
     answer:
-      "Etriplesoft follows five stages: process discovery, AI model design, system integration, team training and testing, and live deployment with ongoing optimisation. The full process typically takes 4 to 12 weeks depending on scope.",
+      "Etriplesoft follows five stages: process discovery, solution design, system integration, team training and testing, and deployment with ongoing optimisation. Timing depends on scope and is agreed after discovery.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/ai-automation-services-etriplesoft/",
     language: "en",
@@ -875,9 +875,9 @@ const heldForVerification: FaqEntry[] = [
   {
     id: "held-015",
     category: "Regional operations",
-    question: "Why is Odoo the best ERP system for Egyptian SMEs in 2026?",
+    question: "What should Egyptian SMEs consider when evaluating Odoo?",
     answer:
-      "Odoo ERP Egypt is the top choice for Egyptian SMEs because it combines enterprise-grade features with SME-friendly pricing, full Arabic and RTL support, native ETA e-invoicing compliance, and a modular structure that lets you start small and scale. With 176 certified Odoo partners in Egypt — more than any other ERP platform — the local support ecosystem is unmatched. Etriplesoft, as a certified Odoo Gold Partner, delivers Odoo ERP for SMEs Egypt with fixed pricing, 4–16 week go-live timelines, and dedicated post-implementation support tailored to Egyptian business regulations. Odoo is also the #1 ERP system Egypt businesses choose for ETA compliance, making it the safest and most future-proof ERP investment for Egyptian companies in 2026.",
+      "Odoo is a modular ERP platform that can bring finance, sales, inventory and other business processes into one system. Its fit depends on your workflows, required applications, integrations and local requirements. ETripleSoft is an Odoo Gold Partner serving businesses across Egypt, the UAE and Saudi Arabia; implementation scope, pricing and timing are confirmed after discovery.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-erp-egypt/",
     language: "en",
@@ -888,7 +888,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "What makes Etriplesoft the right Odoo partner in Egypt?",
     answer:
-      "Etriplesoft is a certified Odoo Gold Partner in Egypt with 250+ successful Odoo implementations across 9+ industries — including construction, retail, real estate, education, HR, logistics, and healthcare. Unlike generic IT firms, Etriplesoft is the only Odoo partner Egypt businesses use that also delivers full-scale digital marketing — meaning your CRM data, ERP operations, and marketing campaigns are integrated from day one. Every Odoo implementation Egypt project includes ETA e-invoicing setup, Arabic interface configuration, ZATCA compliance for Saudi operations, and dedicated post-go-live support with a fixed SLA. For businesses seeking a trusted Odoo partner Egypt with proven results and regional compliance expertise, Etriplesoft is the partner of choice across Egypt, UAE, and Saudi Arabia.",
+      "ETripleSoft is an Odoo Gold Partner based in Egypt, serving businesses across Egypt, the UAE and Saudi Arabia. Our team implements and customizes Odoo, then provides training and ongoing support. We scope each project around the business's workflows and confirm applicable tax and e-invoicing needs during discovery.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-erp-egypt/",
     language: "en",
@@ -955,7 +955,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How Much Does Construction ERP Implementation Cost in Egypt?",
     answer:
-      "We don't offer fixed pricing packages because no two construction businesses are the same. Your implementation is scoped and priced based on the number of active projects, required modules, compliance markets (Egypt ETA, UAE VAT, or Saudi ZATCA), and team size. The best way to get an accurate picture is to book a free 45-minute discovery call with our team — we will scope your requirements and provide a detailed fixed-price proposal at no obligation.",
+      "Construction implementations are scoped around your active projects, required modules, integrations, data and operating markets. Contact our team to discuss your requirements and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-construction/",
     language: "en",
@@ -967,7 +967,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "Can It Replace Procore for Construction in Egypt, UAE & Saudi Arabia?",
     answer:
-      "Yes — and with significant advantages for Egypt, UAE, and Saudi Arabia contractors. The platform includes native Arabic interface, ETA e-invoicing, ZATCA Phase 2, UAE VAT 5%, GOSI payroll integration, and fully integrated accounting — none of which Procore offers natively for the GCC market. Odoo also covers BOQ management, Letters of Guarantee, and IPC billing in ways that Procore's standalone construction management approach does not match for MENA regulatory requirements.",
+      "Whether Odoo fits depends on the construction workflows, project controls, integrations and local requirements you need. Compare the required functions in each product and confirm which Odoo applications, configuration or integration would be needed for your use case.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-construction/",
     language: "en",
@@ -978,7 +978,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How Long Does a Construction ERP Implementation Take?",
     answer:
-      "A typical implementation by Etriplesoft takes 6 to 14 weeks depending on project size, number of active projects, subcontractor complexity, and compliance configuration. SME contractors can go live in as few as 6 weeks. Multi-project contractors with full BOQ, IPC, and compliance configuration typically require 90 days. Enterprise implementations with multi-country compliance across Egypt, UAE, and Saudi Arabia are scoped individually.",
+      "Timing depends on the number of projects, subcontractor workflows, data readiness, integrations and local requirements. We define a phased implementation plan after reviewing the scope with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-construction/",
     language: "en",
@@ -1059,7 +1059,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "How long before we're fully live?",
     answer:
-      "For most mid-sized deployments (20–150 users, 3–6 Odoo apps in scope), the full rollout — including discovery, dashboard design, access-rule configuration, Arabic localisation, and training — is 2 to 4 weeks. Very small deployments can be live in under a week.",
+      "Timing depends on the number of applications, user roles, data and integrations in scope. We confirm a rollout plan after reviewing your environment and requirements.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-dashboard-insights/",
     language: "en",
@@ -1184,7 +1184,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does cloud migration take for an Egyptian business?",
     answer:
-      "A typical cloud migration Egypt project takes 3–8 weeks depending on infrastructure complexity, data volume, and the number of systems being migrated. Microsoft 365 deployments for SMEs are typically complete in 1–2 weeks. Full cloud infrastructure migrations for enterprise clients with on-premise servers, legacy systems, and Odoo ERP integration take 4–8 weeks. Etriplesoft provides a fixed timeline and go-live date before any work begins — no open-ended projects.",
+      "Migration timing depends on your infrastructure, data volume, dependencies and testing needs. We assess these during discovery and agree on a phased plan and target dates before migration work begins.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/cloud-security-solutions-in-egypt/",
     language: "en",
@@ -1206,7 +1206,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much do digital marketing services cost in Egypt?",
     answer:
-      "Pricing depends entirely on your goals, channels, and scope. Etriplesoft offers flexible packages — from focused SEO retainers to full-channel campaigns covering Google Ads, social media, and content. Book a free strategy session and we will recommend the right package for your budget and growth targets.",
+      "Pricing depends on your goals, channels and scope. Contact our team to discuss the work you have in mind and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/digital-marketing-agency/",
     language: "en",
@@ -1217,7 +1217,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does it take to see results from digital marketing?",
     answer:
-      "Paid advertising (Google Ads, Meta) delivers results within days. SEO typically shows measurable ranking improvements within 60–90 days and significant traffic growth by month 4–6. Social media engagement builds within 30–60 days. A well-structured digital marketing strategy combines quick wins from paid channels with long-term organic growth from SEO and content.",
+      "Results depend on your audience, offer, channels, budget and starting point. Paid campaigns can generate early signals, while organic search and content usually require sustained work. We agree on measures with you and review performance as campaigns run.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/digital-marketing-agency/",
     language: "en",
@@ -1284,7 +1284,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does a website cost in Egypt?",
     answer:
-      "Website cost in Egypt depends on scope, platform, and features. A professional WordPress business website typically starts from 15,000–30,000 EGP. An e-commerce website on Shopify or WooCommerce starts from 25,000 EGP. Custom portals and Odoo-integrated platforms are priced based on complexity. Contact Etriplesoft for a fixed-price quote tailored to your project.",
+      "Website cost depends on the platform, design, content, integrations and functionality required. Contact our team to discuss the scope and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/web-design-company-in-egypt/",
     language: "en",
@@ -1317,7 +1317,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does it take to build a website in Egypt?",
     answer:
-      "A standard business website takes 3–5 weeks. An e-commerce store takes 4–8 weeks depending on product volume and payment integrations. Custom portals with Odoo integration take 6–12 weeks. All timelines are fixed and agreed before work begins.",
+      "Timing depends on the scope, content readiness, integrations and review cycles. We agree on a delivery plan after discussing your requirements.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/web-design-company-in-egypt/",
     language: "en",
@@ -1329,7 +1329,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "Why is Etriplesoft the best web design company in Egypt for B2B businesses?",
     answer:
-      "Etriplesoft is the only web design company in Egypt that is also a certified Odoo Gold Partner — meaning your website connects directly to your CRM, ERP, inventory, and marketing from day one. For B2B businesses, this means every lead from your website flows automatically into your sales pipeline with zero manual entry. No other web agency in Egypt offers this level of business system integration as a standard service.",
+      "ETripleSoft is an Odoo Gold Partner and can scope website integrations with business systems such as CRM or ERP where the required interfaces and workflows are supported. Integration details are confirmed during discovery.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/web-design-company-in-egypt/",
     language: "en",
@@ -1340,7 +1340,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "What makes a high-ranking business website in Egypt in 2026?",
     answer:
-      "In 2026, Google's ranking signals for Egyptian businesses prioritize: Core Web Vitals (LCP under 2.5 seconds, no layout shift), mobile-first responsive design, bilingual Arabic and English content with proper hreflang tags, structured data (LocalBusiness and Service schema), and a strong local backlink profile from Egyptian directories. Etriplesoft builds every website with all of these signals built in — not added later as an afterthought. This is why our clients see organic traffic from day one rather than months after launch.",
+      "Search visibility depends on technical setup, useful content, competition and ongoing work. We can discuss the relevant technical, content and measurement needs for your site, but rankings or traffic from a particular date cannot be guaranteed.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/web-design-company-in-egypt/",
     language: "en",
@@ -1420,7 +1420,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "How long does an Odoo restaurant management software implementation take?",
     answer:
-      "A typical Odoo restaurant implementation by Etriplesoft takes 6 to 10 weeks depending on branch count, delivery integrations, and modules required. Single-branch restaurants with standard POS and KDS configuration can go live in as few as 4 weeks. Multi-branch F&B groups with cloud kitchen management, loyalty programs, and multi-jurisdiction compliance typically require 8 to 12 weeks. The exact timeline is agreed at the discovery appointment before any work begins.",
+      "Timing depends on the number of branches, point-of-sale workflows, delivery integrations, data and local requirements. We agree on a phased plan after reviewing the scope with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-restaurant-management-software/",
     language: "en",
@@ -1454,7 +1454,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "What is the best real estate software for Egypt?",
     answer:
-      "For Egyptian property businesses, Odoo real estate software configured by an Odoo Gold Partner like Etriplesoft is the most comprehensive option available. It includes full ETA e-invoicing compliance for rental and sale transactions, Arabic UI, Egyptian tenancy law lease templates, and EGP pricing — with transparent implementation costs starting from EGP 65,000. No other real estate ERP offers all four capabilities for the Egyptian market in one platform.",
+      "Odoo can be configured around property listings, leasing, customer relationships and financial workflows. The right setup depends on your processes, integrations and local requirements. ETripleSoft is an Odoo Gold Partner; scope and pricing are confirmed after discussing your needs.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-real-estate-software/",
     language: "en",
@@ -1477,7 +1477,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "Does Odoo support Ejar registration in Saudi Arabia?",
     answer:
-      "Yes. Saudi Arabia's mandatory Ejar lease registration system is supported through Odoo's contract and document management modules. Etriplesoft configures Ejar-compliant lease templates, automated submission workflows, and REGA compliance tracking as part of every Saudi Arabia real estate implementation. ZATCA Phase 2 e-invoicing for property transactions is also included at no extra cost.",
+      "Odoo's contract and document tools can support lease workflows. Ejar registration, REGA requirements, and ZATCA e-invoicing need to be assessed against current rules, available integrations and your project scope before implementation commitments are made.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-real-estate-software/",
     language: "en",
@@ -1489,7 +1489,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "How much does Odoo real estate software implementation cost in Egypt?",
     answer:
-      "We don't offer fixed pricing tiers because every real estate business is different. Your implementation is scoped and priced based on your portfolio size, branch count, modules required, and compliance markets. Book a free 45-minute discovery call and we will provide a detailed fixed-price proposal within 48 hours — no obligation.",
+      "Real estate implementations are scoped around your portfolio, branches, required modules, integrations and operating markets. Contact our team to discuss your requirements and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-real-estate-software/",
     language: "en",
@@ -1512,7 +1512,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does an Odoo real estate software implementation take?",
     answer:
-      "A typical Odoo real estate software implementation by Etriplesoft takes 6 to 12 weeks depending on portfolio size, number of branches, and modules required. Single-branch brokerages can go live in as few as 45 days. Multi-branch developers with off-plan projects and full compliance configuration typically require 90 days. Enterprise implementations with multi-country compliance across Egypt, UAE, and Saudi Arabia are scoped individually.",
+      "Timing depends on your portfolio, branch structure, required modules, data readiness and integrations. We define the phases and target dates after reviewing the scope with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-real-estate-software/",
     language: "en",
@@ -1523,7 +1523,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Odoo",
     question: "How to automate lease renewals with Odoo real estate software?",
     answer:
-      "Odoo real estate software automates lease renewals through configurable renewal reminder workflows — sending alerts to both agents and tenants at 90, 60, and 30 days before expiry. Renewal terms, escalation rules, and updated pricing are applied automatically from the original contract template. Once the tenant confirms, the new contract is generated, sent for e-signature, and the invoice schedule is updated — all without manual intervention.",
+      "Lease renewal workflows can be configured around your notification schedule, approval steps, contract templates and billing process. The exact automation depends on your Odoo setup and the tools you use for communication and signatures.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-real-estate-software/",
     language: "en",
@@ -1602,7 +1602,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "How much does Odoo facility management software implementation cost in Egypt?",
     answer:
-      "We don't offer fixed pricing tiers because every FM operation is different. Your implementation is scoped and priced based on your building count, SLA contract structure, modules required, and compliance market. Book a free 45-minute discovery call and we will provide a detailed fixed-price proposal within 48 hours — no obligation.",
+      "Facility management implementations are scoped around your buildings, service workflows, required modules, integrations and operating markets. Contact our team to discuss the requirements and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-facility-management-software/",
     language: "en",
@@ -1613,7 +1613,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does an Odoo FM implementation take?",
     answer:
-      "Single-site FM implementations go live in a minimum of 6 weeks from kick-off — covering module configuration, asset data import, team training, and a full operational simulation before go-live. Multi-site implementations with complex SLA workflows and finance integration typically run 8–12 weeks. The exact timeline is agreed at the discovery appointment before any work begins.",
+      "Timing depends on the number of sites, asset data, service workflows, integrations and training needs. We agree on a phased rollout plan after reviewing the scope with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-facility-management-software/",
     language: "en",
@@ -1635,7 +1635,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Odoo",
     question: "Does Odoo HR calculate Egyptian social insurance automatically?",
     answer:
-      "Yes. Odoo's Egypt payroll localization automatically calculates the employee social insurance share (14% of the social insurance reference amount) and the employer share (26%) on every payslip. The Social Insurance Reference Amount is set per employee contract. No manual calculation is required — Odoo handles the deduction and employer contribution every payroll run.",
+      "Payroll calculations depend on current Egyptian rules and the localization version and configuration in use. Have the implementation team and your payroll advisor confirm the applicable rates, bases and calculations before relying on automated payslips.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-hr-software/",
     language: "en",
@@ -1646,7 +1646,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Odoo",
     question: "How does Odoo handle end-of-service benefits in Egypt?",
     answer:
-      "Odoo calculates Egyptian end-of-service benefits (EOSB) using the standard formula: (Wage + Allowances ÷ 30) × Number of Leave Days ÷ 12. The provision accrues monthly and is reported on each payslip automatically. When an employee leaves, the final EOSB calculation is generated based on their service period, contract type, and reason for leaving — all compliant with Egyptian Labor Law.",
+      "End-of-service calculations depend on the applicable law, employee contract and payroll setup. Confirm the formula with a qualified payroll advisor, then have the implementation team verify how the approved calculation is configured and tested in Odoo.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-hr-software/",
     language: "en",
@@ -1691,7 +1691,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does Odoo HR implementation cost in Egypt?",
     answer:
-      "Odoo HR software implementation fees start from EGP 60,000 for a single-entity HR setup covering payroll, attendance, and leave management. Multi-module scopes (adding recruitment, appraisals, and multi-branch) range from EGP 120,000 to 280,000. Multi-company group implementations start from EGP 280,000. All figures are implementation fees — Odoo Enterprise licensing is billed separately per user/month. The exact scope and investment are confirmed at your free discovery appointment.",
+      "Odoo HR implementation cost depends on your employee and entity structure, selected applications, payroll requirements, integrations and data migration needs. Contact our team to discuss the scope and request a tailored estimate; Odoo licensing is a separate cost.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-hr-software/",
     language: "en",
@@ -1713,7 +1713,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does Odoo HR implementation take?",
     answer:
-      "All Etriplesoft HR implementations go live in a minimum of 6 weeks from kick-off — this ensures proper payroll localization, biometric device integration, data migration, team training, and a full test payroll run before going live. Multi-entity or multi-country implementations with complex payroll structures typically run 10–14 weeks. The exact timeline is agreed at your discovery appointment before any work begins.",
+      "Timing depends on your entities, payroll rules, attendance devices, data quality, integrations and testing needs. We agree on a phased plan after reviewing these requirements with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-hr-software/",
     language: "en",
@@ -1724,7 +1724,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "Is Odoo free for accounting?",
     answer:
-      "Odoo Community is free and includes basic accounting features. The Enterprise edition — which includes full bank reconciliation, ETA e-invoicing, ZATCA Phase 2, AI-assisted matching, and mobile expense capture — requires a per-user monthly subscription. For most Egypt and GCC businesses, Enterprise is required for full compliance coverage. Etriplesoft will recommend the right edition during your discovery session.",
+      "Odoo's Community and Enterprise editions differ in features, hosting and support options. Check the current edition details against your accounting and localization needs, and confirm the required compliance workflow with your finance advisor and implementation team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-accounting/",
     language: "en",
@@ -1746,7 +1746,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Regional operations",
     question: "How does Odoo handle ETA e-invoicing in Egypt?",
     answer:
-      "Odoo integrates directly with the Egyptian Tax Authority (ETA) portal via API. Once configured, every confirmed invoice is automatically validated, digitally signed, assigned a UUID, and transmitted to ETA in real time. Etriplesoft configures your ETA Client ID, ETA Secret, branch codes, and activity codes during implementation — so ETA compliance is fully automatic from day one with no manual intervention required.",
+      "An Odoo e-invoicing workflow may require localization, integration credentials, branch and activity details, and validation against current Egyptian Tax Authority requirements. Confirm the supported workflow and responsibilities with the implementation team and your tax advisor before relying on automated invoice submission.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-accounting/",
     language: "en",
@@ -1757,7 +1757,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does Odoo accounting implementation cost?",
     answer:
-      "We don't offer fixed pricing tiers because every accounting operation is different. Your implementation is scoped and priced based on your entity structure, compliance markets, modules required, and data migration complexity. Book a free 45-minute discovery call and we will deliver a detailed fixed-price proposal within 48 hours — no obligation.",
+      "Accounting implementations are scoped around your entities, required applications, integrations, data migration and local requirements. Contact our team to discuss the scope and request a tailored estimate.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-accounting/",
     language: "en",
@@ -1768,7 +1768,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long does an Odoo accounting implementation take?",
     answer:
-      "All Odoo for Accounting implementations by Etriplesoft go live in a minimum of 6 weeks from kick-off — this ensures proper configuration, data migration, team training, and testing are completed without shortcuts. Multi-company or multi-jurisdiction projects typically run 10–16 weeks depending on complexity. The exact timeline is agreed with you at the discovery appointment before any work begins.",
+      "Timing depends on the number of entities, accounting workflows, data migration, integrations and local requirements. We agree on a rollout plan after reviewing the scope with your team.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-accounting/",
     language: "en",
@@ -1814,7 +1814,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "Why should businesses choose Etriplesoft for Odoo accounting implementation?",
     answer:
-      "Etriplesoft is a certified Odoo partner based in Cairo with 10+ years of ERP delivery experience across Egypt, UAE, and Saudi Arabia. Every implementation follows a structured From Setup To Success methodology covering discovery, system design, configuration, data migration, team training, and go-live support — with full local tax compliance from day one.",
+      "ETripleSoft is an Odoo Gold Partner serving businesses across Egypt, the UAE and Saudi Arabia. The implementation approach covers discovery, system design, configuration, data migration, training and go-live support. Local tax requirements are reviewed with the client and scoped for the project.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-for-accounting/",
     language: "en",
@@ -1882,7 +1882,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "Does it come with demo data so we can evaluate before committing?",
     answer:
-      "Yes — the ITSM platform includes 10 realistic tickets, 4 problems, 4 changes, 7 assets, 4 SLA policies, and 5 KB articles loaded automatically. You can walk the full ITIL lifecycle on day one — perfect for evaluating before committing to go-live.",
+      "The product may include sample records to demonstrate its workflows. Confirm the available demo data and scope with our team before evaluating the platform.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-itsm-helpdesk-module/",
     language: "en",
@@ -1893,7 +1893,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long until we go live?",
     answer:
-      "Typically 4–10 weeks depending on volume of legacy tickets, CMDB complexity, and integration needs. Etriplesoft deploys for ITSM software Egypt, UAE, and Saudi Arabia clients on the same structured timeline — Tickets + SLA + KB first, then Changes + CMDB in phase two.",
+      "Timing depends on ticket and asset data, service workflows, integrations and testing needs. We define an implementation sequence after reviewing your environment and requirements.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-itsm-helpdesk-module/",
     language: "en",
@@ -2047,7 +2047,7 @@ const heldForVerification: FaqEntry[] = [
     question:
       "How long does it take to go live with school ERP software Egypt or GCC?",
     answer:
-      "Typically 6–12 weeks depending on volume of legacy student data, fee structure complexity, branch count, and integrations (e.g. online payment gateways, SMS providers). Most schools go live with Enrollments, Students, Fees, and Portals first, then add Library and Transport in phase two.",
+      "Timing depends on student and fee data, branch structure, integrations and which school workflows are included. We can define a phased rollout after reviewing your requirements.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-education-management-system/",
     language: "en",
@@ -2058,7 +2058,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does managed IT support cost in Egypt?",
     answer:
-      "Costs vary based on company size, number of users, and the scope of services included, ranging from basic helpdesk support to full infrastructure and cybersecurity management. Most providers offer a free consultation to assess your needs and provide a tailored quote based on your specific environment.",
+      "Costs vary based on company size, users, infrastructure and the services in scope. Ask providers to assess your environment and explain what their estimate and support agreement include.",
     status: "needs-verification",
     sourceUrl:
       "https://etriplesoft.com/how-to-choose-managed-it-services-provider-egypt/",
@@ -2190,7 +2190,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does Odoo cost per month?",
     answer:
-      "Odoo's Standard plan starts around $9–$14 per user/month in the Middle East region, while the Custom (Enterprise) plan runs approximately $19–$24 per user/month. Community edition is free but self-hosted.",
+      "Licensing cost depends on the edition, number of users, region and current vendor terms. Check Odoo's current regional price list; implementation, hosting and support may add separate costs.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-implementation-cost-egypt/",
     language: "en",
@@ -2201,7 +2201,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Odoo",
     question: "Is Odoo cheaper than SAP?",
     answer:
-      "Yes, significantly. Odoo implementation typically costs roughly 15–25% of a comparable SAP Business One deployment, making it a common choice for SMEs that need enterprise-level functionality without enterprise-level pricing. See our full Odoo vs SAP comparison for a detailed breakdown.",
+      "The total cost depends on licensing, implementation scope, customization, hosting, training and ongoing support for each system. Compare written proposals using the same requirements. See our full Odoo vs SAP comparison for scope considerations.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-implementation-cost-egypt/",
     language: "en",
@@ -2212,7 +2212,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Pricing",
     question: "How much does a small business pay for Odoo implementation?",
     answer:
-      "For a small team (1–20 users) with standard modules and minimal customization, implementation typically costs between $3,000 and $8,000, plus annual licensing fees.",
+      "Cost depends on the modules, workflows, integrations, data migration, training and support in scope. A useful estimate requires those requirements to be reviewed.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-implementation-cost-egypt/",
     language: "en",
@@ -2234,7 +2234,7 @@ const heldForVerification: FaqEntry[] = [
     category: "Implementation",
     question: "How long until Odoo pays for itself?",
     answer:
-      "Most small businesses with heavily manual processes see payback within 6 to 12 months. Mid-sized businesses typically see payback in 12 to 24 months, and larger, more complex deployments can take 24 to 36 months.",
+      "There is no reliable payback period that applies to every business. Estimate it using your project cost and expected savings, then review the assumptions with finance and operations before making a decision.",
     status: "needs-verification",
     sourceUrl: "https://etriplesoft.com/odoo-roi-return-on-investment/",
     language: "en",

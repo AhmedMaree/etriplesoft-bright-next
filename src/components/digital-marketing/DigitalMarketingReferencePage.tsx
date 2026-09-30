@@ -10,12 +10,14 @@ import {
   Rocket,
   Search,
   Settings,
-  Star,
   Target,
   UsersRound,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import s from "./DigitalMarketingReferencePage.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
+
+const testimonial = featuredTestimonials.digitalMarketing;
 
 const services = [
   ["SEO", "Rank higher. Get found organically.", "icon-seo"],
@@ -49,7 +51,8 @@ const faqs = [
 ] as const;
 
 function Asset({ name, alt = "", className = "", eager = false }: { name: string; alt?: string; className?: string; eager?: boolean }) {
-  return <img className={className} src={`/images/digital-marketing/${name}.webp`} alt={alt} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : "auto"} decoding="async" />;
+  const src = name === "hero-dashboard" ? "/images/project-marketing.webp" : `/images/digital-marketing/${name}.webp`;
+  return <img className={className} src={src} alt={alt} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : "auto"} decoding="async" />;
 }
 
 function SectionHeading({ eyebrow, title, description, href, link }: { eyebrow?: string; title: React.ReactNode; description?: string; href?: string; link?: string }) {
@@ -88,7 +91,7 @@ export default function DigitalMarketingReferencePage() {
             </div>
           </div>
           <div className={s.heroVisual}>
-            <Asset name="hero-dashboard" alt="Illustrative marketing dashboard with example traffic, lead and conversion figures" className={s.heroArt} eager />
+            <Asset name="hero-dashboard" alt="Illustrative digital marketing campaign dashboard" className={s.heroArt} eager />
             <span className={s.imageLabel}>Illustrative dashboard</span>
             <div className={s.heroBadge}><BarChart3 aria-hidden="true" /><strong>Grow Your<br />Brand Online</strong></div>
           </div>
@@ -130,11 +133,10 @@ export default function DigitalMarketingReferencePage() {
         </section>
 
         <section className={`${s.section} ${s.testimonial}`}>
-          <div><SectionHeading eyebrow="Real work. Real impact." title={<>Real partners.<br /><em>Real results.</em></>} /></div>
+          <div><SectionHeading eyebrow="Client feedback" title={<>How clients describe<br /><em>working with us.</em></>} /></div>
           <figure>
-            <div className={s.stars} aria-label="Five stars">{Array.from({ length: 5 }, (_, i) => <Star key={i} fill="currentColor" aria-hidden="true" />)}</div>
-            <blockquote>“Professional, responsive, and truly understand our business needs.”</blockquote>
-            <figcaption><span className={s.avatar}>MY</span><span><strong>Marco Youssef</strong><small>CEO, Manufacturing Company</small></span></figcaption>
+            <blockquote>“{testimonial.quote}”</blockquote>
+            <figcaption><span className={s.avatar} aria-hidden="true">WE</span><span><strong>{testimonial.name}</strong><small>{testimonial.role}, {testimonial.company}</small></span></figcaption>
           </figure>
         </section>
 

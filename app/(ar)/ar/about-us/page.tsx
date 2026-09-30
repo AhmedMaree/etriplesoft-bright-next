@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "@/components/ar/ar.module.css";
-import { Breadcrumb } from "@/components/breadcrumb";
 import { CTA } from "@/components/site";
 import { arCta } from "@/i18n/ar";
 import { company } from "@/lib/company";
@@ -21,10 +20,6 @@ export default function ArabicAbout() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroInner}>
-            <Breadcrumb
-              label="مسار التنقل"
-              items={[{ label: "الرئيسية", href: "/ar" }, { label: "من نحن" }]}
-            />
             <span className="eyebrow">من نحن</span>
             <h1>التكنولوجيا التي تدعم نمو أعمالك</h1>
             <p className={styles.lead}>

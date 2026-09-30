@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, Headphones, Plus, Quote, Star } from "lucide-react";
+import { ArrowRight, Headphones, Plus, Quote } from "lucide-react";
 import s from "./CloudReferencePage.module.css";
+import { featuredTestimonials } from "@/data/testimonials";
 
 const contact = "/contact?service=Cloud%20Security";
 const asset = (name: string) => `/images/cloud/reference/${name}.webp`;
+const cloudTestimonial = featuredTestimonials.cloud;
+const cloudOverviewTestimonial = featuredTestimonials.cloudOverview;
 
 const solutions = [
   ["Microsoft 365", "Secure collaboration and productivity.", "microsoft"],
@@ -28,7 +31,7 @@ const reasons = [
   ],
   [
     "Certified Professionals",
-    "Microsoft and industry-certified team members.",
+    "Microsoft Partner expertise for cloud, identity and security.",
     "certified",
   ],
   [
@@ -269,10 +272,10 @@ export default function CloudReferencePage() {
           </div>
           <figure className={s.statsQuote}>
             <Quote aria-hidden="true" />
-            <blockquote>
-              “A reliable partner for our digital transformation journey.”
-            </blockquote>
-            <figcaption>— Eng. Mahmoud Hamdy, CTO, Services Company</figcaption>
+            <blockquote>“{cloudOverviewTestimonial.quote}”</blockquote>
+            <figcaption>
+              — {cloudOverviewTestimonial.name}, {cloudOverviewTestimonial.role}, {cloudOverviewTestimonial.company}
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -292,21 +295,13 @@ export default function CloudReferencePage() {
             </div>
             <div className={s.proof}>
               <Eyebrow>What our clients say</Eyebrow>
-              <div className={s.stars} aria-label="Client testimonial">
-                {Array.from({ length: 5 }, (_, i) => (
-                  <Star key={i} aria-hidden="true" />
-                ))}
-              </div>
               <figure className={s.testimonial}>
                 <Quote className={s.testimonialMark} aria-hidden="true" />
-                <blockquote>
-                  “A reliable partner for our digital transformation journey.”
-                </blockquote>
+                <blockquote>“{cloudTestimonial.quote}”</blockquote>
                 <figcaption>
-                  <img src={asset("customer")} alt="" />
                   <div>
-                    <strong>Eng. Mahmoud Hamdy</strong>
-                    <span>CTO, Services Company</span>
+                    <strong>{cloudTestimonial.name}</strong>
+                    <span>{cloudTestimonial.role}, {cloudTestimonial.company}</span>
                   </div>
                 </figcaption>
               </figure>

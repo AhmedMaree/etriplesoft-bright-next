@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CrumbStrip } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ChartOfAccountsTool } from "@/components/tools/ChartOfAccountsTool";
 import { organizationId, pageMetadata } from "@/lib/seo";
@@ -29,13 +28,6 @@ export default function ChartOfAccountsPage() {
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
           publisher: { "@id": organizationId },
         }}
-      />
-      <CrumbStrip
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
-          { label: "Chart of accounts generator" },
-        ]}
       />
       <main id="main" className="section tinted">
         <div className="container">

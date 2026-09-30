@@ -14,7 +14,6 @@ import { FaqAccordion } from "./faq-accordion";
 import { publishedFaqs } from "@/data/faqs";
 import Link from "next/link";
 import { services } from "@/lib/data";
-import { Breadcrumb, CrumbStrip } from "./breadcrumb";
 import { company, mailto, primaryPhone } from "@/lib/company";
 import { AboutReferencePage } from "./about-reference-page";
 import { JsonLd } from "./json-ld";
@@ -69,9 +68,6 @@ export function ContactPage() {
         <Photo name="contact-hero" alt="" />
         <div className="container contact-layout">
           <div className="contact-copy">
-            <Breadcrumb
-              items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-            />
             <span className="eyebrow">Contact ETripleSoft</span>
             <h1>
               Let&apos;s Start a <em>Conversation</em>
@@ -189,7 +185,6 @@ export function SupportPage() {
   ];
   return (
     <main id="main">
-      <CrumbStrip items={[{ label: "Home", href: "/" }, { label: "Support" }]} />
       <Hero
         className="support-hero"
         eyebrow="Support"
