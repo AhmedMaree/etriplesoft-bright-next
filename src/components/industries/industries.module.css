@@ -155,3 +155,4 @@
   .hubModules { padding-top: 28px !important; }
   .notListed .secondaryButton { width: 100%; }
 }
+.page :is(.primaryButton, .secondaryButton) { min-height: 48px; border-radius: var(--action-radius, 8px); padding: var(--action-padding, 13px 20px); font-size: var(--fs-control, 14px); line-height: 1.4; }

@@ -5,7 +5,7 @@ colors:
   navy: "#07163e"
   ink: "#101b40"
   blue: "#4445ff"
-  muted: "#65718c"
+  muted: "#4f5b73"
   pale: "#f4f8ff"
   hairline: "#e4ebf7"
   teal: "#0f9488"
@@ -14,13 +14,13 @@ colors:
 typography:
   display:
     fontFamily: "Inter Variable, Inter, Arial, sans-serif"
-    fontSize: "clamp(38px, 3.8vw, 56px)"
+    fontSize: "clamp(32px, 1.35rem + 2.6vw, 60px)"
     fontWeight: 750
     lineHeight: 1.08
     letterSpacing: "-1.7px"
   headline:
     fontFamily: "Inter Variable, Inter, Arial, sans-serif"
-    fontSize: "29px"
+    fontSize: "clamp(26px, 1.25rem + 1.25vw, 40px)"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.8px"
@@ -32,12 +32,12 @@ typography:
     letterSpacing: "-0.3px"
   body:
     fontFamily: "Inter Variable, Inter, Arial, sans-serif"
-    fontSize: "15px"
+    fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.65
   label:
     fontFamily: "Inter Variable, Inter, Arial, sans-serif"
-    fontSize: "11px"
+    fontSize: "12px"
     fontWeight: 650
     letterSpacing: "1px"
 rounded:
@@ -56,18 +56,18 @@ components:
   button-primary:
     backgroundColor: "{colors.navy}"
     textColor: "#ffffff"
-    rounded: "{rounded.sm}"
-    padding: "14px 21px"
+    rounded: "8px"
+    padding: "13px 20px"
   button-secondary:
-    backgroundColor: "#eaf0ff"
+    backgroundColor: "#edf0ff"
     textColor: "{colors.navy}"
-    rounded: "{rounded.sm}"
-    padding: "14px 21px"
+    rounded: "8px"
+    padding: "13px 20px"
   button-gradient:
     backgroundColor: "{colors.blue}"
     textColor: "#ffffff"
-    rounded: "{rounded.sm}"
-    padding: "14px 21px"
+    rounded: "8px"
+    padding: "13px 20px"
   icon-chip:
     backgroundColor: "#e8e4ff"
     textColor: "{colors.blue}"
@@ -108,17 +108,17 @@ Confirmed visual rejections: no dark-first UI, no cyberpunk/neon gradients, no o
 A restrained, mostly-neutral palette (white, pale blue, navy, ink) with exactly one interactive accent; three additional named accents exist solely for feature-icon variety, never for text, links, or actions.
 
 ### Primary
-- **Royal Blue-Violet** (`#4445ff`): The only color carrying interactive/emphasis meaning sitewide — links, active nav state, focus rings, emphasized heading spans (`<em>`), primary icon-chip tint, and the one "gradient" CTA button (paired with teal). If something is clickable or emphasized, it is this color; nothing else is.
+- **Royal Blue-Violet** (`#4445ff`): The only color carrying interactive/emphasis meaning sitewide — links, active nav state, focus rings, emphasized heading spans (`<em>`), primary icon-chip tint, and the header CTA. The legacy `gradient` class now uses a solid brand accent. If something is clickable or emphasized, it is this color; nothing else is.
 
 ### Secondary — Signature Accents (feature iconography only)
-- **Muted Teal** (`#0f9488`): "Growth" feature-card icon; also the second stop of the header's gradient CTA button.
+- **Muted Teal** (`#0f9488`): "Growth" feature-card icon; reserved for supporting feature iconography.
 - **Royal Violet** (`#7c5cff`): "Regional/MENA" feature-card icon.
 - **Warm Amber** (`#c9790a`): The single warm outlier, reserved for one feature-card icon ("People / Solutions, Not Features") for rhythm — never a second CTA color.
 
 ### Neutral
 - **Deep Navy** (`#07163e`): All heading color (h1–h4), and the background for the site's one intentional dark band (Stats/"Our Impact").
 - **Ink** (`#101b40`): Default body text color.
-- **Muted Slate** (`#65718c`): Secondary/supporting paragraph text — every `<p>` defaults here, not to ink.
+- **Muted Slate** (`#4f5b73`): Secondary/supporting paragraph text — every `<p>` defaults here, not to ink.
 - **Pale Sky** (`#f4f8ff`): Light section backgrounds, hover pills on nav, icon-chip fallback tint.
 - **Hairline** (`#e4ebf7`): The one border color used sitewide — card borders, dropdown borders, section dividers.
 - **White** (`#ffffff`): Primary card/surface background and the default page background.
@@ -135,20 +135,20 @@ A restrained, mostly-neutral palette (white, pale blue, navy, ink) with exactly 
 **Character:** A single functional grotesque carries every role; hierarchy comes entirely from size, weight, and letter-spacing steps, not from a display/body face pairing.
 
 ### Hierarchy
-- **Display** (750, `clamp(38px, 3.8vw, 56px)`, 1.08): Hero H1s only. Tight letter-spacing (-1.7px). An `<em>` span within it switches to Royal Blue-Violet for the emphasized phrase.
-- **Headline** (700, 29px–34px, 1.2): Section H2 titles (`SectionHeading`), letter-spacing -0.8px.
+- **Display** (750, `clamp(32px, 1.35rem + 2.6vw, 60px)`, 1.12): Hero H1s only. Relative letter-spacing (-0.035em). An `<em>` span within it switches to Royal Blue-Violet for the emphasized phrase.
+- **Headline** (700, 26px–40px, 1.2): Section H2 titles (`SectionHeading`), letter-spacing -0.025em.
 - **Title** (650–700, 16px–21px, 1.3): Card and component H3s (service cards, stat cards, industry-tile labels).
-- **Body** (400, 15px base, 1.5): Paragraph copy defaults to Muted Slate; description text under section headings caps at a max-width (660–780px) rather than a `ch` unit.
-- **Label** (650, 10–11px, uppercase, 0.8–2px tracking): The "eyebrow" kicker — Royal Blue-Violet by default, Muted Slate in its `.muted` variant. Precedes nearly every section heading and several card groups; it is a load-bearing wayfinding device across the whole site, not a one-off flourish.
+- **Body** (400, 16px base, 1.65): Paragraph copy defaults to Muted Slate; description text under section headings caps at a max-width (660–780px) rather than a `ch` unit.
+- **Label** (650, 12px, uppercase, 0.8–2px tracking): The "eyebrow" kicker — Royal Blue-Violet by default, Muted Slate in its `.muted` variant. Precedes nearly every section heading and several card groups; it is a load-bearing wayfinding device across the whole site, not a one-off flourish.
 
 ### Named Rules
 **The Uppercase Eyebrow Rule.** Every major section opens with a small, uppercase, letter-spaced label before its heading. It is the site's primary rhythm device for scanning a long page quickly — remove it from one section and the page reads as inconsistent, not minimal.
 
 ## Layout
 
-Container: `min(1240px, calc(100% - 96px))`, centered, narrowing to `calc(100% - 64px)` ≤1200px and `calc(100% - 36px)` ≤760px.
+Container: `min(1240px, calc(100% - 2 * var(--page-gutter)))`, centered. Gutters interpolate from 18px on phones to 48px on wide screens.
 
-Section rhythm: 34px vertical padding as the default `.section` unit. Sections alternate a plain white background and a `.tinted` soft blue-white gradient (`linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff)`) for visual separation — two tinted sections never sit back-to-back, or the seam disappears.
+Section rhythm: fluid 40–72px vertical padding as the default `.section` unit. Sections alternate a plain white background and a `.tinted` soft blue-white gradient (`linear-gradient(115deg, #f5faff, #fafbff 60%, #f4f9ff)`) for visual separation — two tinted sections never sit back-to-back, or the seam disappears.
 
 Two-column split layouts (`.split`, 1fr/1fr, 42–76px gap) collapse to a single column at ≤760px. Card grids (`.cols-2` through `.cols-7`) step down to 2 columns on small screens. Asymmetric "bento" grids (e.g. the homepage industries section) use explicit spanning tiles rather than uniform cards, sized so the grid always resolves without gaps at each breakpoint.
 

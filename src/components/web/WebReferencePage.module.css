@@ -16,7 +16,7 @@
 .page h1, .page h2, .page h3, .page p { margin: 0; }
 .page h1, .page h2, .page h3 { color: var(--ink); }
 .page p { color: var(--muted); line-height: 1.5; }
-.container { width: min(var(--container), calc(100% - 96px)); margin-inline: auto; }
+.container { width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px))); margin-inline: auto; }
 .hero {
   position: relative;
   overflow: hidden;
@@ -161,7 +161,7 @@
   .cta { gap: 17px; padding: 19px; }
 }
 @media (max-width: 760px) {
-  .container { width: calc(100% - 36px); }
+  .container { width: calc(100% - 2 * var(--page-gutter, 18px)); }
   .heroGrid { grid-template-columns: 1fr; gap: 0; min-height: 0; padding-block: 17px 15px; }
   .heroCopy { padding-block: 17px 0; }
   .heroCopy h1 { font-size: clamp(54px, 13vw, 72px); }
@@ -246,4 +246,45 @@
 }
 @media (max-width: 760px) {
   .action, .outlineLink, .ctaCopy .action { min-width: 44px; min-height: 44px; }
+}
+
+/* Shared English brand controls; keep page-specific artwork in this module. */
+.page .action {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding, 13px 20px);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius, 8px);
+  background: var(--action-bg, var(--navy));
+  color: #fff;
+  font-size: var(--fs-control, 14px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.page .action:hover { background: var(--action-hover, var(--navy)); }
+.page .secondary {
+  background: var(--action-soft, var(--pale));
+  color: var(--navy);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.page .secondary:hover { background: var(--pale); color: var(--navy); }
+.page .section { padding-block: var(--section-space, 48px); }
+
+
+.page .heroGrid { padding-block: var(--section-space); }
+.page .sectionIntro { gap: 24px; margin-bottom: 24px; }
+.page .serviceCard { padding: 18px; min-height: 120px; }
+.page .textLink { min-height: 44px; font-size: var(--fs-body-sm); }
+.page .form :global(.contact-form > .button) { border-radius: var(--action-radius); background: var(--action-bg); border-color: transparent; }
+.page .form :global(.form-grid input:not([type="checkbox"]):not([type="file"])),
+.page .form :global(.form-grid select), .page .form :global(.form-grid textarea) { font-size: 1rem; line-height: 1.5; padding: 12px; }
+@media (max-width: 760px) {
+  .page .sectionIntro { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+@media (max-width: 560px) {
+  .page .serviceGrid { grid-template-columns: 1fr; gap: 16px; }
+  .page .actions { flex-direction: column; align-items: stretch; }
 }

@@ -3,7 +3,7 @@
   overflow: clip;
   background: #fff;
 }
-.container { width: min(var(--container), calc(100% - 96px)); margin-inline: auto; }
+.container { width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px))); margin-inline: auto; }
 .page h1, .page h2, .page h3, .page p, .page figure { margin: 0; }
 .page h1, .page h2, .page h3 { color: var(--navy); letter-spacing: -.035em; }
 .page h2 { font-size: var(--fs-h2); line-height: 1.15; font-weight: 750; }
@@ -142,7 +142,7 @@
   .closing { flex-direction: column; align-items: flex-start; gap: 22px; }
 }
 @media (max-width: 760px) {
-  .container { width: calc(100% - 36px); }
+  .container { width: calc(100% - 2 * var(--page-gutter, 18px)); }
   .section { padding-block: 30px; }
   .hero { min-height: 0; padding: 38px 0 0; display: flex; flex-direction: column; }
   .hero > .container { order: 0; }
@@ -187,4 +187,48 @@
   .locationVisual { width: 100%; height: 95px; }
   .locationCard > div { align-self: flex-start; padding: 16px; }
   .closing { padding: 28px 22px; margin-top: 28px; }
+}
+
+/* Shared English brand controls; keep page-specific artwork in this module. */
+.page .button {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding, 13px 20px);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius, 8px);
+  background: var(--action-bg, var(--navy));
+  color: #fff;
+  font-size: var(--fs-control, 14px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.page .button:hover { background: var(--action-hover, var(--navy)); }
+.page .lightButton {
+  background: var(--action-soft, var(--pale));
+  color: var(--navy);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.page .lightButton:hover { background: var(--pale); color: var(--navy); }
+.page .section { padding-block: var(--section-space, 48px); }
+
+.page .whiteButton { background: #fff; color: var(--navy); border-color: var(--line); }
+.page .stats dd { white-space: normal; line-height: 1.45; }
+.frameHelp { margin-top: 16px; max-width: 65ch; }
+.frameHelp a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) {
+  .page .positionsHeading { align-items: flex-start; flex-direction: column; gap: 16px; }
+}
+/* Separate the illustration from copy before the tablet overlay gets crowded. */
+@media (min-width: 1001px) {
+  .page .heroPhoto::after { background: linear-gradient(90deg, #f7fbff 0%, #f7fbffed 42%, #f7fbff00 70%); }
+}
+@media (max-width: 1000px) {
+  .page .hero { display: flex; flex-direction: column; min-height: 0; padding-block: var(--section-space) 0; }
+  .page .heroCopy { width: 100%; }
+  .page .heroPhoto { position: relative; order: 2; width: 100%; height: clamp(280px, 48vw, 420px); margin-top: 32px; opacity: 1; mask-image: none; }
+  .page .heroPhoto::after { display: none; }
+  .page .heroPhoto img { object-position: center 40%; }
 }

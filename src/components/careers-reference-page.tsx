@@ -23,8 +23,8 @@ const steps = [
 ];
 const locations = ["Cairo", "Saudi Arabia", "United Arab Emirates"];
 
-function Action({ href, children, light = false }: { href: string; children: React.ReactNode; light?: boolean }) {
-  return <Link href={href} className={`${styles.button} ${light ? styles.lightButton : ""}`}>{children}<ArrowRight size={19} aria-hidden="true" /></Link>;
+function Action({ href, children, light = false, newTab = false }: { href: string; children: React.ReactNode; light?: boolean; newTab?: boolean }) {
+  return <Link href={href} target={newTab ? "_blank" : undefined} rel={newTab ? "noopener noreferrer" : undefined} className={`${styles.button} ${light ? styles.lightButton : ""}`}>{children}<ArrowRight size={19} aria-hidden="true" /></Link>;
 }
 function ArtworkIcon({ type, index }: { type: string; index: number }) {
   return <Image src={`/images/careers/${type}-${index}.webp`} alt="" width={128} height={type === "benefit" ? 110 : 128} className={styles.artworkIcon} sizes="80px" />;
@@ -101,8 +101,9 @@ export function CareersReferencePage() {
 
       <section id="open-positions" className={styles.section} aria-labelledby="positions-title">
         <div className={styles.container}>
-          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Current Opportunities</h2><p>Explore the live positions from the ETripleSoft recruitment portal below.</p></div><Action href={jobsPortal} light>Open Jobs in a New Tab</Action></header>
+          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Current Opportunities</h2><p>Explore the live positions from the ETripleSoft recruitment portal below.</p></div><Action href={jobsPortal} light newTab>Open Jobs in a New Tab</Action></header>
           <iframe className={styles.jobsFrame} src={jobsPortal} title="Current ETripleSoft job openings" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
+          <p className={styles.frameHelp}>If the job listings do not load, <a href={jobsPortal} target="_blank" rel="noopener noreferrer">open the recruitment portal in a new tab</a>.</p>
         </div>
       </section>
 
