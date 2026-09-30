@@ -2,7 +2,7 @@
   padding-bottom: 8px;
 }
 .wrap {
-  width: min(760px, calc(100% - 36px));
+  width: min(760px, calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
 }
 .head {

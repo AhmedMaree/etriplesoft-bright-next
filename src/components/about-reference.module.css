@@ -9,7 +9,7 @@
 }
 
 .container {
-  width: min(var(--container), calc(100% - 96px));
+  width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
 }
 
@@ -849,7 +849,7 @@
 
 @media (max-width: 760px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 2 * var(--page-gutter, 18px));
   }
 
   .section {

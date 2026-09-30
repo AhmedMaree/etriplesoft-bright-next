@@ -20,7 +20,7 @@
   outline-offset: 4px;
 }
 .container {
-  width: min(var(--container), calc(100% - 96px));
+  width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
 }
 .page h1,
@@ -949,7 +949,7 @@
 }
 @media (max-width: 720px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 2 * var(--page-gutter, 18px));
   }
   .heroCopy {
     padding-inline: 0;
@@ -991,4 +991,35 @@
 }
 @media (max-width: 760px) {
   .learnMore, .outlineLink, .trusted a { min-width: 44px; min-height: 44px; padding-block: 10px; }
+}
+
+/* Shared English brand controls; keep page-specific artwork in this module. */
+.page .button {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding, 13px 20px);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius, 8px);
+  background: var(--action-bg, var(--navy));
+  color: #fff;
+  font-size: var(--fs-control, 14px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.page .button:hover { background: var(--action-hover, var(--navy)); }
+.page .secondary {
+  background: var(--action-soft, var(--pale));
+  color: var(--navy);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.page .secondary:hover { background: var(--pale); color: var(--navy); }
+.page .section { padding-block: var(--section-space, 48px); }
+
+
+.page :is(.outlineButton, .ctaButton) { min-height: 48px; max-width: 100%; padding: var(--action-padding); border-radius: var(--action-radius); font-size: var(--fs-control); line-height: 1.4; white-space: normal; }
+@media (max-width: 760px) {
+  .page .headingRow { align-items: flex-start; flex-direction: column; }
 }

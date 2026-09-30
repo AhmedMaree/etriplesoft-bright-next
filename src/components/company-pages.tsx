@@ -114,12 +114,7 @@ export function ContactPage() {
 
       <section className="section tinted">
         <div className="container">
-          <div
-            className="contact-strip"
-            style={{
-              gridTemplateColumns: `repeat(${methods.length}, minmax(0, 1fr))`,
-            }}
-          >
+          <div className="contact-strip">
             {methods.map(({ title, icon, node }) => (
               <div key={title}>
                 <Icon name={icon} />

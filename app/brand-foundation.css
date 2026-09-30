@@ -1,0 +1,222 @@
+/* The English site's shared visual contract. Page artwork stays local to its
+   module; typography and controls use these semantic brand tokens. */
+.ets-english {
+  --fs-body: 1rem;
+  --fs-body-sm: 0.875rem;
+  --fs-label: 0.75rem;
+  --fs-control: 0.875rem;
+  --fs-h1: clamp(2rem, 1.35rem + 2.6vw, 3.75rem);
+  --fs-h2: clamp(1.625rem, 1.25rem + 1.25vw, 2.5rem);
+  --fs-h3: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --leading-body: 1.65;
+  --section-space: clamp(2.5rem, 1.75rem + 2.5vw, 4.5rem);
+  --page-gutter: clamp(1.125rem, 3.4vw, 3rem);
+  --surface: #fff;
+  --surface-soft: #f4f8ff;
+  --action-bg: var(--navy);
+  --action-hover: #122650;
+  --action-soft: #edf0ff;
+  --action-radius: 0.5rem;
+  --action-padding: 0.8125rem 1.25rem;
+  --muted: #4f5b73;
+  font-synthesis: none;
+  line-height: var(--leading-body);
+}
+
+.ets-english main h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.ets-english main h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.ets-english main h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.ets-english main p {
+  font-size: var(--fs-body);
+  line-height: var(--leading-body);
+  text-wrap: pretty;
+}
+
+.ets-english .container {
+  width: min(var(--container), calc(100% - 2 * var(--page-gutter)));
+}
+
+.ets-english .section {
+  padding-block: var(--section-space);
+}
+
+.ets-english .section-heading {
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.ets-english .section-heading p {
+  max-width: 62ch;
+  margin-top: 0.75rem;
+}
+
+.ets-english .button {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius);
+  background: var(--action-bg);
+  color: #fff;
+  font-size: var(--fs-control);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ets-english .button:hover {
+  background: var(--action-hover);
+  transform: translateY(-1px);
+}
+
+.ets-english .button.secondary {
+  background: var(--action-soft);
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+.ets-english .button.white {
+  background: #fff;
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+.ets-english .button.gradient {
+  background: var(--blue);
+  color: #fff;
+}
+
+.ets-english .button.gradient:hover {
+  background: #3435d9;
+}
+
+.ets-english .text-link {
+  min-height: 44px;
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+}
+
+.ets-english .icon-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Keep the desktop navigation compact without shrinking page copy. */
+.ets-english .header-tools .button {
+  padding-inline: 1rem;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 1381px) {
+  .ets-english .site-header .header-inner {
+    gap: 18px;
+  }
+}
+
+.ets-english .contact-form :is(input:not([type="checkbox"]):not([type="hidden"]), select, textarea),
+.ets-english .search-input {
+  min-width: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ets-english .contact-form :is(input:not([type="checkbox"]):not([type="hidden"]), select) {
+  min-height: 48px;
+}
+
+.ets-english :is(a, button, summary, input, select, textarea):focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.ets-english .site-footer :is(a, button):focus-visible {
+  outline-color: #b7bcff;
+}
+
+.ets-english .article-content p {
+  font-size: 1.0625rem;
+  max-width: 70ch;
+}
+
+.ets-english .contact-strip {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+}
+
+.ets-english .contact-strip > div {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.ets-english .contact-strip a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .ets-english .home-hero .partner-badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: min(100%, 340px);
+  }
+
+  .ets-english .home-hero .partner-badges > div {
+    width: auto;
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .ets-english .home-hero .partner-badges img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .ets-english .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ets-english .section-heading > .text-link {
+    align-self: flex-start;
+    white-space: normal;
+  }
+
+  .ets-english .button-row {
+    gap: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ets-english {
+    scroll-behavior: auto;
+  }
+
+  .ets-english .button:hover {
+    transform: none;
+  }
+}

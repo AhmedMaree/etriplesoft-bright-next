@@ -9,7 +9,7 @@
 .page h1, .page h2, .page h3, .page p, .page figure { margin: 0; }
 .page h1, .page h2, .page h3 { color: var(--ink); }
 .page p { color: var(--muted); line-height: 1.5; }
-.container { width: min(var(--container), calc(100% - 96px)); margin-inline: auto; }
+.container { width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px))); margin-inline: auto; }
 .hero {
   position: relative;
   overflow: hidden;
@@ -156,7 +156,7 @@
   .serviceIcon { width: 52px; height: 52px; }
 }
 @media (max-width: 760px) {
-  .container { width: calc(100% - 36px); }
+  .container { width: calc(100% - 2 * var(--page-gutter, 18px)); }
   .hero { min-height: 0; }
   .heroGrid { grid-template-columns: 1fr; gap: 0; min-height: 0; padding-block: 17px 12px; }
   .heroCopy { padding-block: 15px 0; }
@@ -248,4 +248,65 @@
 @media (max-width: 760px) {
   .button, .textLink { min-width: 44px; min-height: 44px; }
   .textLink { padding-block: 10px; }
+}
+
+/* Shared English brand controls; keep page-specific artwork in this module. */
+.page .button {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding, 13px 20px);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius, 8px);
+  background: var(--action-bg, var(--navy));
+  color: #fff;
+  font-size: var(--fs-control, 14px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.page .button:hover { background: var(--action-hover, var(--navy)); }
+.page .buttonSecondary {
+  background: var(--action-soft, var(--pale));
+  color: var(--navy);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.page .buttonSecondary:hover { background: var(--pale); color: var(--navy); }
+.page .section { padding-block: var(--section-space, 48px); }
+
+
+/* Give service copy room to read instead of shrinking it on phones. */
+.page .heroGrid { padding-block: var(--section-space); }
+.page .sectionHeading { gap: 24px; margin-bottom: 24px; }
+.page .serviceCopy strong { font-size: 1rem; line-height: 1.4; }
+.page .serviceCopy small { font-size: var(--fs-body-sm); line-height: 1.5; }
+.page .serviceCard { padding: 18px; gap: 14px; min-height: 120px; }
+.page .textLink { min-height: 44px; font-size: var(--fs-body-sm); white-space: normal; }
+.page .heroBenefits > span { font-size: var(--fs-label); line-height: 1.45; }
+.page .faqGrid summary { min-height: 52px; padding: 16px; font-size: 1rem; line-height: 1.5; }
+.page .articleBody { padding: 20px; }
+.page .articleGrid { gap: 24px; }
+.page .testimonial blockquote { font-size: 1rem; line-height: var(--leading-body); }
+.page :is(.region, .process, .proof, .testimonial, .blog, .faq) { padding-block: var(--section-space); }
+@media (max-width: 900px) {
+  .page .serviceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+}
+@media (max-width: 760px) {
+  .page .sectionHeading { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .page .heroBenefits { flex-wrap: wrap; gap: 12px; }
+  .page .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .page .stepArrow { display: none; }
+  .page .articleCard { display: flex; flex-direction: column; }
+  .page .articleImage { aspect-ratio: 16 / 9; min-height: 0; }
+  .page .proofGrid { grid-template-columns: 1fr; gap: 16px; }
+  .page .proofGrid article { padding: 20px; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
+  .page .officeCards { grid-template-columns: 1fr; gap: 12px; }
+  .page .officeCards article { min-height: 130px; padding: 20px; }
+}
+@media (max-width: 560px) {
+  .page .serviceGrid { grid-template-columns: 1fr; }
+  .page .serviceCard { grid-template-columns: 48px minmax(0, 1fr) 24px; }
+  .page .serviceIcon { width: 48px; height: 48px; }
+  .page .actions { flex-direction: column; align-items: stretch; gap: 12px; }
 }

@@ -129,7 +129,12 @@ function audit(viewport) {
   return findings;
 }
 
-const browser = await chromium.launch();
+// Optional executable override for CI images that provide their own Chromium.
+const browser = await chromium.launch({
+  ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE
+    ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }
+    : {}),
+});
 let checked = 0;
 if (shotsDir) mkdirSync(shotsDir, { recursive: true });
 for (const width of widths) {

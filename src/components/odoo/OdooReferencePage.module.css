@@ -18,7 +18,7 @@
   outline-offset: 5px;
 }
 .container {
-  width: min(var(--container), calc(100% - 96px));
+  width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
   position: relative;
 }
@@ -776,7 +776,7 @@
 }
 @media (max-width: 1200px) {
   .container {
-    width: min(var(--container), calc(100% - 96px));
+    width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px)));
   }
   .heroContent {
     padding-top: 55px;
@@ -1002,7 +1002,7 @@
 }
 @media (max-width: 600px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 2 * var(--page-gutter, 18px));
   }
   .section {
     padding-block: 32px;
@@ -1371,7 +1371,7 @@
 /* Match the shared header gutters at every breakpoint. */
 @media (max-width: 760px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 2 * var(--page-gutter, 18px));
   }
 }
 @media (min-width: 601px) {

@@ -19,7 +19,7 @@
   color: var(--ink);
 }
 .container {
-  width: min(var(--container), calc(100% - 96px));
+  width: min(var(--container), calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
 }
 .page h1,
@@ -813,7 +813,7 @@
 
 @media (max-width: 760px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 2 * var(--page-gutter, 18px));
   }
   .heroGrid {
     grid-template-columns: 1fr;
@@ -1068,4 +1068,35 @@
 }
 @media (max-width: 760px) {
   .action, .outlineLink { min-width: 44px; min-height: 44px; }
+}
+
+/* Shared English brand controls; keep page-specific artwork in this module. */
+.page .action {
+  min-height: 48px;
+  max-width: 100%;
+  padding: var(--action-padding, 13px 20px);
+  border: 1px solid transparent;
+  border-radius: var(--action-radius, 8px);
+  background: var(--action-bg, var(--navy));
+  color: #fff;
+  font-size: var(--fs-control, 14px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.page .action:hover { background: var(--action-hover, var(--navy)); }
+.page .secondary {
+  background: var(--action-soft, var(--pale));
+  color: var(--navy);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.page .secondary:hover { background: var(--pale); color: var(--navy); }
+.page .section { padding-block: var(--section-space, 48px); }
+
+
+.page .heroGrid { padding-block: var(--section-space); }
+@media (max-width: 560px) {
+  .page .actions { flex-direction: column; align-items: stretch; }
 }
