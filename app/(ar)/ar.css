@@ -13,6 +13,7 @@ html[lang="ar"] body {
 html[lang="ar"] * {
   letter-spacing: 0 !important;
 }
+
 html[lang="ar"] h1,
 html[lang="ar"] h2,
 html[lang="ar"] h3,
@@ -21,6 +22,7 @@ html[lang="ar"] h4 {
   line-height: 1.35 !important;
   text-align: inherit;
 }
+
 html[lang="ar"] p,
 html[lang="ar"] span,
 html[lang="ar"] li,
@@ -28,6 +30,7 @@ html[lang="ar"] a,
 html[lang="ar"] button {
   font-family: var(--font-arabic);
 }
+
 html[lang="ar"] .eyebrow {
   text-transform: none;
   font-family: var(--font-arabic);
@@ -73,7 +76,7 @@ html[lang="ar"] .site-header .brand img {
 }
 
 /* Active underline uses logical inset so it sits under the Arabic text. */
-html[lang="ar"] .navigation > a.active:after {
+html[lang="ar"] .navigation>a.active:after {
   inset-inline: 14px;
 }
 
@@ -91,6 +94,7 @@ html[lang="ar"] .dropdown-panel a {
   text-align: right;
   gap: 10px;
 }
+
 html[lang="ar"] .dropdown-text {
   text-align: right;
   flex: 1;
@@ -114,9 +118,11 @@ html[lang="ar"] .site-header .search-panel {
   overflow-y: auto;
   text-align: right;
 }
+
 html[lang="ar"] .search-panel label {
   text-align: right;
 }
+
 html[lang="ar"] .search-panel a {
   flex-direction: row-reverse;
 }
@@ -127,13 +133,15 @@ html[lang="ar"] .search-panel a {
     margin-right: auto;
     margin-left: 0;
   }
-  html[lang="ar"] .site-header .navigation > a,
+
+  html[lang="ar"] .site-header .navigation>a,
   html[lang="ar"] .site-header .nav-dropdown-trigger {
     flex-direction: row-reverse;
     justify-content: space-between;
     text-align: right;
     width: 100%;
   }
+
   html[lang="ar"] .site-header .dropdown-panel a {
     flex-direction: row-reverse;
   }
@@ -145,17 +153,29 @@ html[lang="ar"] .search-panel a {
 html[lang="ar"] .hero {
   text-align: right;
 }
+
 html[lang="ar"] .hero-copy {
   text-align: right;
   width: 53%;
 }
+
 html[lang="ar"] .hero-copy h1,
 html[lang="ar"] .hero-copy p {
   text-align: right;
 }
+
+html[lang="ar"] .hero .hero-image img {
+  object-position: left center !important;
+}
+
+html[lang="ar"] .hero .hero-image:after {
+  background: linear-gradient(270deg, #f6faff 0%, #f6faffee 30%, #f6faff00 65%);
+}
+
 html[lang="ar"] .hero .button-row {
   justify-content: flex-start;
 }
+
 html[lang="ar"] .home-hero .hero-image img {
   object-position: center center !important;
 }
@@ -164,31 +184,37 @@ html[lang="ar"] .home-hero-callouts {
   left: 0 !important;
   right: auto !important;
 }
+
 html[lang="ar"] .home-hero-callouts .operations-callout {
   top: 70px;
   left: 0 !important;
   right: auto !important;
 }
+
 html[lang="ar"] .home-hero-callouts .automation-callout {
   left: 36% !important;
   right: auto !important;
   bottom: 70px;
 }
+
 html[lang="ar"] .home-hero-callouts .security-callout {
-  left: -20px !important;
+  left: 20px !important;
   right: auto !important;
   bottom: 195px;
 }
+
 html[lang="ar"] .hand-note {
   right: auto !important;
   left: 36px !important;
   transform: rotate(5deg);
 }
+
 html[lang="ar"] .hand-note svg {
   transform: scaleX(-1);
   margin-left: 0 !important;
   margin-right: -15px !important;
 }
+
 html[lang="ar"] .partner-badges {
   justify-content: flex-start;
 }
@@ -197,13 +223,16 @@ html[lang="ar"] .partner-badges {
 html[lang="ar"] .value-props-head {
   text-align: center;
 }
+
 html[lang="ar"] .value-props-head h2,
 html[lang="ar"] .value-props-head p {
   text-align: center;
 }
+
 html[lang="ar"] .value-card {
   text-align: right;
 }
+
 html[lang="ar"] .value-card-eyebrow,
 html[lang="ar"] .value-card h3,
 html[lang="ar"] .value-card p {
@@ -214,31 +243,38 @@ html[lang="ar"] .value-card p {
 html[lang="ar"] .apps {
   text-align: right;
 }
+
 html[lang="ar"] .apps .intro h2,
-html[lang="ar"] .apps .intro > p {
+html[lang="ar"] .apps .intro>p {
   text-align: right;
 }
+
 html[lang="ar"] .apps .app {
   text-align: right;
 }
+
 html[lang="ar"] .apps .app h3,
 html[lang="ar"] .apps .app p {
   text-align: right;
 }
+
 html[lang="ar"] .motif {
   right: auto !important;
   left: 10px !important;
 }
+
 html[lang="ar"] .apps .visualNote {
   right: auto !important;
   left: -10px !important;
   transform: rotate(7deg) !important;
 }
+
 html[lang="ar"] .apps .visualArrow {
   right: auto !important;
   left: 24px !important;
   transform: scaleX(-1);
 }
+
 html[lang="ar"] .app:hover .go {
   transform: scale(1.08) translateX(-2px) !important;
 }
@@ -247,39 +283,49 @@ html[lang="ar"] .app:hover .go {
 html[lang="ar"] .home-solutions-reference .section-heading {
   text-align: center;
 }
+
 html[lang="ar"] .home-solutions-reference .section-heading h2,
 html[lang="ar"] .home-solutions-reference .section-heading p {
   text-align: center;
 }
+
 html[lang="ar"] .home-solution-card {
   text-align: right;
 }
+
 html[lang="ar"] .home-solution-card h3,
 html[lang="ar"] .home-solution-card p {
   text-align: right;
 }
+
 html[lang="ar"] .home-solution-card:hover .card-arrow {
   transform: scaleX(-1) translateX(4px);
 }
+
 html[lang="ar"] .process-intro {
   text-align: right;
 }
+
 html[lang="ar"] .process-intro h2,
 html[lang="ar"] .process-intro p {
   text-align: right;
 }
+
 html[lang="ar"] .homepage .home-process-reference .process-pill {
   display: flex;
   width: fit-content;
   margin-inline-end: auto;
 }
+
 html[lang="ar"] .step {
   text-align: right;
 }
+
 html[lang="ar"] .step h3,
 html[lang="ar"] .step p {
   text-align: right;
 }
+
 html[lang="ar"] .step-link {
   left: auto;
   right: 50%;
@@ -287,10 +333,12 @@ html[lang="ar"] .step-link {
   transform: scaleX(-1);
   transform-origin: center;
 }
+
 html[lang="ar"] .homepage .home-process-reference .step-link {
   right: 50%;
   width: calc(100% + 28px);
 }
+
 html[lang="ar"] .process-cta {
   display: flex;
   direction: rtl;
@@ -299,6 +347,7 @@ html[lang="ar"] .process-cta {
   margin-inline-end: auto;
   justify-content: flex-start;
 }
+
 html[lang="ar"] .step-growth {
   transform: scaleX(-1);
 }
@@ -307,88 +356,108 @@ html[lang="ar"] .step-growth {
 html[lang="ar"] .industrySection {
   text-align: right;
 }
+
 html[lang="ar"] .industryIntro {
   text-align: right;
   /* In RTL, move the text column to the right side */
   margin-inline-start: auto;
   margin-inline-end: 0;
 }
+
 html[lang="ar"] .industryEyebrow {
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
+
 html[lang="ar"] .industryEyebrow::after {
   margin-right: 14px;
   margin-left: 0;
 }
+
 html[lang="ar"] .industryTitle,
 html[lang="ar"] .industryLead {
   text-align: right;
 }
+
 html[lang="ar"] .industryCta {
   flex-direction: row-reverse;
   padding: 7px 24px 7px 7px;
 }
+
 html[lang="ar"] .industryStats {
   text-align: right;
   flex-direction: row-reverse;
 }
+
 html[lang="ar"] .industryChip {
   flex-direction: row;
 }
+
 html[lang="ar"] .industryChipLabel {
   margin-left: 0 !important;
   margin-right: -10px !important;
   padding: 9px 22px 9px 16px !important;
   border-radius: 12px 0 0 12px !important;
 }
+
 /* Mirror card positions for RTL: left → right */
 @media (min-width: 1101px) {
   html[lang="ar"] .industryconstruction {
     left: auto !important;
     right: 27% !important;
   }
+
   html[lang="ar"] .industryretail {
     left: auto !important;
     right: 62.2% !important;
   }
+
   html[lang="ar"] .industryeducation {
     left: auto !important;
     right: 66% !important;
     width: 34% !important;
   }
+
   html[lang="ar"] .industryrealestate {
     left: auto !important;
     right: 15.5% !important;
   }
+
   html[lang="ar"] .industryhealthcare {
     left: auto !important;
     right: 42.5% !important;
   }
+
   html[lang="ar"] .industrylogistics {
     left: auto !important;
     right: 71.5% !important;
     width: 28.5% !important;
   }
+
   html[lang="ar"] .industryGo {
     right: auto !important;
     left: 22px !important;
   }
+
   html[lang="ar"] .industryCard:hover .industryGo,
   html[lang="ar"] .industryCard:focus-within .industryGo {
     transform: translateX(-3px) !important;
   }
+
   html[lang="ar"] .industrySection::after {
     right: auto;
     left: -22px;
   }
+
   html[lang="ar"] .industrySection::before {
     inset: -8% -15% 20% 25%;
   }
 }
+
 html[lang="ar"] .industryBody {
   text-align: right;
 }
+
 html[lang="ar"] .industryBody h3,
 html[lang="ar"] .industryBody p {
   text-align: right;
@@ -398,18 +467,22 @@ html[lang="ar"] .industryBody p {
 html[lang="ar"] .stats-inner {
   text-align: center;
 }
+
 html[lang="ar"] .stats-inner h2,
 html[lang="ar"] .stats-inner .stats-description {
   text-align: center;
 }
+
 html[lang="ar"] .stat-card {
   text-align: right;
 }
+
 html[lang="ar"] .stat-card strong,
 html[lang="ar"] .stat-card .stat-label,
 html[lang="ar"] .stat-card p {
   text-align: right;
 }
+
 html[lang="ar"] .stats-offices {
   justify-content: center;
 }
@@ -418,41 +491,51 @@ html[lang="ar"] .stats-offices {
 html[lang="ar"] .testimonials {
   text-align: right;
 }
+
 html[lang="ar"] .testimonials .head {
   text-align: right;
 }
+
 html[lang="ar"] .testimonials .eyebrow::after {
   margin-right: 14px;
   margin-left: 0;
 }
+
 html[lang="ar"] .testimonials .title,
 html[lang="ar"] .testimonials .sub {
   text-align: right;
 }
+
 html[lang="ar"] .testimonials .card {
   text-align: right;
   border-left: 0 !important;
   border-right: 4px solid var(--c) !important;
 }
+
 html[lang="ar"] .testimonials .quote {
   text-align: right;
   padding: 0 44px 0 0 !important;
 }
+
 html[lang="ar"] .testimonials .quote::before {
   left: auto !important;
   right: 0 !important;
   content: "\201D";
 }
+
 html[lang="ar"] .testimonials .foot {
   flex-direction: row;
 }
+
 html[lang="ar"] .testimonials .who {
   text-align: right;
 }
+
 html[lang="ar"] .testimonials .deco {
   right: auto !important;
   left: 120px !important;
 }
+
 html[lang="ar"] .testimonials .deco .dots {
   margin-right: 0 !important;
   margin-left: -15px !important;
@@ -462,16 +545,20 @@ html[lang="ar"] .testimonials .deco .dots {
 html[lang="ar"] .insightsSection {
   text-align: right;
 }
+
 html[lang="ar"] .insightsHeader {
   text-align: right;
 }
+
 html[lang="ar"] .insightsTitle,
 html[lang="ar"] .insightsIntro {
   text-align: right;
 }
+
 html[lang="ar"] .insightCardBody {
   text-align: right;
 }
+
 html[lang="ar"] .insightCardTitle,
 html[lang="ar"] .insightCardDescription {
   text-align: right;
@@ -490,22 +577,27 @@ html[lang="ar"] .ar-footer-grid {
   row-gap: 34px;
   align-items: start;
 }
+
 html[lang="ar"] .footer-office-address,
 html[lang="ar"] .footer-office .footer-office-phone {
   padding-inline: 21px 0;
   padding-left: 0;
 }
+
 html[lang="ar"] .footer-office .footer-office-phone {
   white-space: normal;
 }
+
 html[lang="ar"] .footer-grid h4,
 html[lang="ar"] .footer-grid .footer-heading {
   text-align: right;
 }
-html[lang="ar"] .footer-grid > div > a {
+
+html[lang="ar"] .footer-grid>div>a {
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
+
 html[lang="ar"] .footer-office-name {
   flex-direction: row;
   display: flex;
@@ -514,6 +606,7 @@ html[lang="ar"] .footer-office-name {
   gap: 6px;
   text-align: right;
 }
+
 html[lang="ar"] .footer-office-phone {
   flex-direction: row;
   display: flex;
@@ -523,45 +616,55 @@ html[lang="ar"] .footer-office-phone {
   padding-inline: 0 21px !important;
   text-align: right;
 }
+
 html[lang="ar"] .footer-brand p {
   text-align: right;
 }
+
 html[lang="ar"] .footer-toggle {
   direction: rtl;
   text-align: right;
 }
+
 html[lang="ar"] .footer-email {
   flex-direction: row-reverse;
 }
+
 html[lang="ar"] .footer-all-offices {
   flex-direction: row-reverse !important;
   display: flex;
   align-items: center;
 }
+
 @media (max-width: 1100px) {
   html[lang="ar"] .ar-footer-grid {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 28px;
   }
+
   html[lang="ar"] .ar-footer-grid .footer-brand {
     grid-column: 1 / -1;
   }
 }
+
 html[lang="ar"] .footer-bottom {
   direction: rtl;
   justify-content: space-between;
   gap: clamp(16px, 2.5vw, 32px);
 }
+
 html[lang="ar"] .back-top {
   left: auto;
   right: -52px;
 }
+
 @media (max-width: 760px) {
   html[lang="ar"] .ar-footer-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
     padding-bottom: 20px;
   }
+
   html[lang="ar"] .footer-bottom {
     min-height: 76px;
     justify-content: space-between;
@@ -569,11 +672,13 @@ html[lang="ar"] .back-top {
     padding-left: 0;
     gap: 10px;
   }
+
   html[lang="ar"] .back-top {
     left: auto;
     right: 0;
   }
-  html[lang="ar"] .footer-bottom > span:first-child {
+
+  html[lang="ar"] .footer-bottom>span:first-child {
     max-width: calc(100% - 56px);
   }
 
@@ -613,15 +718,18 @@ html[lang="ar"] .back-top {
     width: 100%;
     max-width: none;
   }
+
   html[lang="ar"] .home-hero .button-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     width: 100%;
   }
+
   html[lang="ar"] .home-hero .button-row .button {
     width: 100%;
     justify-content: center;
   }
+
   html[lang="ar"] .home-hero .partner-badges {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -630,11 +738,13 @@ html[lang="ar"] .back-top {
     margin-inline-start: auto;
     margin-inline-end: 0;
   }
-  html[lang="ar"] .home-hero .partner-badges > div {
+
+  html[lang="ar"] .home-hero .partner-badges>div {
     width: auto;
     min-width: 0;
     padding: 12px;
   }
+
   html[lang="ar"] .home-hero .partner-badges img {
     max-width: 100%;
     object-fit: contain;
@@ -646,17 +756,21 @@ html[lang="ar"] .contact-form {
   text-align: right;
   direction: rtl;
 }
+
 html[lang="ar"] .contact-form h2,
-html[lang="ar"] .contact-form > p {
+html[lang="ar"] .contact-form>p {
   text-align: right;
 }
+
 html[lang="ar"] .contact-form .form-grid {
   direction: rtl;
 }
+
 html[lang="ar"] .contact-form .form-grid label {
   text-align: right;
   display: block;
 }
+
 html[lang="ar"] .contact-form :is(input:not([type="checkbox"]):not([type="hidden"]), select, textarea) {
   text-align: right;
   direction: rtl;
@@ -665,16 +779,20 @@ html[lang="ar"] .contact-form :is(input:not([type="checkbox"]):not([type="hidden
   line-height: 1.5;
   font-family: var(--font-arabic);
 }
+
 html[lang="ar"] .contact-form :is(input:not([type="checkbox"]):not([type="hidden"]), select) {
   min-height: 46px;
 }
+
 html[lang="ar"] .contact-form textarea {
   min-height: 110px;
 }
+
 html[lang="ar"] .contact-form .button {
   flex-direction: row-reverse;
   justify-content: center;
 }
+
 html[lang="ar"] .form-status {
   text-align: right;
 }
@@ -687,10 +805,12 @@ html[lang="ar"] details.card summary {
   list-style: none;
   cursor: pointer;
 }
+
 html[lang="ar"] .faq-accordion details summary::-webkit-details-marker,
 html[lang="ar"] details.card summary::-webkit-details-marker {
   display: none;
 }
+
 html[lang="ar"] .faq-accordion details p,
 html[lang="ar"] details.card p {
   text-align: right;
@@ -701,16 +821,20 @@ html[lang="ar"] .purpose-card {
   text-align: right;
   flex-direction: row-reverse;
 }
-html[lang="ar"] .purpose-card > div {
+
+html[lang="ar"] .purpose-card>div {
   text-align: right;
 }
-html[lang="ar"] .why-grid > div {
+
+html[lang="ar"] .why-grid>div {
   text-align: right;
   flex-direction: row-reverse;
 }
-html[lang="ar"] .why-grid > div > div {
+
+html[lang="ar"] .why-grid>div>div {
   text-align: right;
 }
+
 html[lang="ar"] .support-hero {
   text-align: right;
 }
@@ -719,27 +843,34 @@ html[lang="ar"] .support-hero {
 html[lang="ar"] .valueCard {
   text-align: right;
 }
+
 html[lang="ar"] .valueCard h3,
 html[lang="ar"] .valueCard p {
   text-align: right;
 }
+
 html[lang="ar"] .pictureCopy {
   text-align: right;
 }
+
 html[lang="ar"] .pictureCopy h2,
 html[lang="ar"] .pictureCopy p {
   text-align: right;
 }
+
 html[lang="ar"] .cvCard {
   text-align: right;
 }
+
 html[lang="ar"] .cvCard h2,
 html[lang="ar"] .cvCard p {
   text-align: right;
 }
+
 html[lang="ar"] .locationCard {
   text-align: right;
 }
+
 html[lang="ar"] .locationCard h3,
 html[lang="ar"] .locationCard p {
   text-align: right;
@@ -750,7 +881,8 @@ html[lang="ar"] .demoSteps li {
   text-align: right;
   flex-direction: row-reverse;
 }
-html[lang="ar"] .demoSteps li > div {
+
+html[lang="ar"] .demoSteps li>div {
   text-align: right;
 }
 
@@ -762,8 +894,8 @@ html[lang="ar"] main[dir="rtl"] {
 }
 
 /* Benefit pills and icons */
-html[lang="ar"] .heroBenefits > div,
-html[lang="ar"] .heroBenefits > span {
+html[lang="ar"] .heroBenefits>div,
+html[lang="ar"] .heroBenefits>span {
   text-align: right;
   direction: rtl;
 }
@@ -781,6 +913,7 @@ html[lang="ar"] .testimonial blockquote {
   text-align: right;
   direction: rtl;
 }
+
 html[lang="ar"] figure figcaption,
 html[lang="ar"] .testimonial figcaption,
 html[lang="ar"] .testimonialAuthor {
@@ -796,10 +929,12 @@ html[lang="ar"] .sectionIntro,
 html[lang="ar"] .headingRow {
   text-align: right;
 }
+
 html[lang="ar"] .headingRow {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
+
 html[lang="ar"] .outlineLink,
 html[lang="ar"] .learnMore,
 html[lang="ar"] .textLink {
@@ -858,7 +993,453 @@ html[lang="ar"] .textLink {
     gap: 0;
   }
 
-  html[lang="ar"] .home-hero .partner-badges > div:first-child {
+  html[lang="ar"] .home-hero .partner-badges>div:first-child {
     border-inline-end: 1px solid var(--line);
+  }
+}
+
+/* Keep the Arabic Success Stories hero balanced: image on the physical left,
+   Arabic copy on the right, with a stacked layout on tablet and mobile. */
+html[lang="ar"] .portfolio-ar-hero {
+  min-height: 540px;
+  background: var(--pale);
+}
+
+html[lang="ar"] .portfolio-ar-hero > .hero-image {
+  inset-block: 0;
+  inset-inline-start: 50%;
+  inset-inline-end: 0;
+  width: auto;
+  height: auto;
+}
+
+html[lang="ar"] .portfolio-ar-hero > .hero-image::after {
+  background: linear-gradient(90deg, transparent 64%, color-mix(in srgb, var(--pale) 92%, transparent) 100%);
+}
+
+html[lang="ar"] .portfolio-ar-hero > .hero-image img {
+  object-position: center;
+}
+
+html[lang="ar"] .portfolio-ar-hero .hero-inner {
+  width: min(var(--container), calc(100% - 96px));
+  min-height: 540px;
+  padding-block: 58px;
+}
+
+html[lang="ar"] .portfolio-ar-hero .hero-copy {
+  width: 46%;
+  max-width: 650px;
+  text-align: right;
+}
+
+html[lang="ar"] .portfolio-ar-hero h1 {
+  max-width: 100%;
+  font-size: clamp(48px, 4vw, 64px);
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] .portfolio-ar-hero .hero-copy > p {
+  max-width: 56ch;
+  margin-inline: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+html[lang="ar"] .portfolio-ar-hero .button-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  html[lang="ar"] .portfolio-ar-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero .hero-inner {
+    order: 0;
+    display: block;
+    width: min(var(--container), calc(100% - 48px));
+    min-height: 0;
+    padding-block: 48px 24px;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero .hero-copy {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero > .hero-image {
+    position: relative;
+    order: 1;
+    inset: auto;
+    width: min(calc(100% - 48px), 860px);
+    height: auto;
+    aspect-ratio: 16 / 10;
+    margin: 0 auto 32px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 18px 42px color-mix(in srgb, var(--navy) 10%, transparent);
+  }
+
+  html[lang="ar"] .portfolio-ar-hero > .hero-image::after {
+    background: linear-gradient(180deg, transparent 74%, color-mix(in srgb, var(--pale) 22%, transparent) 100%);
+  }
+}
+
+@media (max-width: 760px) {
+  html[lang="ar"] .portfolio-ar-hero .hero-inner {
+    width: calc(100% - 36px);
+    padding-block: 36px 20px;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero h1 {
+    font-size: clamp(38px, 10vw, 48px);
+    line-height: 1.2;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero .hero-copy > p {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero .button-row {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  html[lang="ar"] .portfolio-ar-hero > .hero-image {
+    width: calc(100% - 36px);
+    aspect-ratio: 4 / 3;
+    margin-bottom: 24px;
+    border-radius: 16px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Odoo Hub Page (/ar/odoo) — RTL overrides
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Hero: image sits on the LEFT in RTL (grid columns stay, dir=rtl reverses them) */
+html[lang="ar"] [id="main"][dir="rtl"] .heroVisual {
+  padding: 12px 12px 26px 0;          /* mirror LTR padding */
+}
+
+/* Dashboard caption aligns to the start (right in RTL) */
+html[lang="ar"] [dir="rtl"] .heroCaption {
+  text-align: start;
+}
+
+/* Step number badge: switch from left-anchored to inline-start */
+html[lang="ar"] [dir="rtl"] .stepNumber {
+  left: auto;
+  right: auto;
+  inset-inline-start: 14px;
+}
+
+/* Step arrows point the correct direction in RTL */
+html[lang="ar"] [dir="rtl"] .stepArrow {
+  transform: scaleX(-1);
+  right: auto;
+  left: -23px;
+}
+
+/* Process section: image on the left in LTR → in RTL it should be on the RIGHT
+   (i.e., flipped) — mirror the position */
+html[lang="ar"] [dir="rtl"] [class*="processImage"] {
+  right: auto !important;
+  left: 0;
+  object-position: left top;
+  mask-image: linear-gradient(270deg, transparent, black 12%);
+}
+
+/* Mirror the Odoo module's desktop image offset so the image remains left of
+   the RTL copy, even after its breakpoint-specific rule is applied. */
+@media (min-width: 601px) {
+  html[lang="ar"] [dir="rtl"] [class*="processImage"] {
+    right: auto !important;
+    left: max(48px, calc((100% - var(--container)) / 2)) !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 760px) {
+  html[lang="ar"] [dir="rtl"] [class*="processImage"] {
+    left: 18px !important;
+  }
+}
+
+/* Process copy occupies the visual right side of the RTL split layout. */
+html[lang="ar"] [dir="rtl"] [class*="processCopy"] {
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+/* E-invoice border: use logical border (inline-start) for RTL */
+html[lang="ar"] [dir="rtl"] [class*="einvoiceGrid"] > div {
+  border-left: 0;
+  border-right: 0;
+  border-inline-start: 4px solid var(--blue);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  border-start-start-radius: var(--radius-lg);
+  border-end-start-radius: var(--radius-lg);
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+/* Why cards: center heading & trust strip alignment */
+html[lang="ar"] [dir="rtl"] [class*="whyHeader"] {
+  text-align: center;
+}
+
+html[lang="ar"] [dir="rtl"] [class*="whyEyebrow"] {
+  justify-content: center;
+}
+
+/* Why link arrows flip in RTL (already handled by the module CSS for dir=rtl,
+   but force it here in case it was missed) */
+html[lang="ar"] [dir="rtl"] [class*="whyLink"] svg {
+  transform: scaleX(-1);
+}
+html[lang="ar"] [dir="rtl"] [class*="whyLink"]:hover svg {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+/* Region (localization) section: mirror the flex row */
+html[lang="ar"] [dir="rtl"] [class*="regionTop"] {
+  flex-direction: row-reverse;
+}
+
+/* Section nav anchor bar: RTL direction */
+html[lang="ar"] [dir="rtl"] [class*="anchors"] ul {
+  direction: rtl;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Odoo Child Pages (/ar/odoo/*) — RTL overrides
+   Uses the wrapper div[dir="rtl"] added by ArabicOdooDetailPage
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Hero grid: left column = copy, right = trust badge → reversed in RTL */
+html[lang="ar"] div[dir="rtl"] [class*="heroGrid"] {
+  direction: rtl;
+}
+
+/* Trust badge: align to inline-start (right in RTL) */
+html[lang="ar"] div[dir="rtl"] [class*="trust"] {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+/* Bullets: icon aligns to start */
+html[lang="ar"] div[dir="rtl"] [class*="bullets"] li {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="bullets"] svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Step numbers in flow blocks */
+html[lang="ar"] div[dir="rtl"] [class*="stepNumber"] {
+  inset-inline-start: auto;
+  inset-inline-end: auto;
+}
+
+/* FAQ (details/summary) in child pages */
+html[lang="ar"] div[dir="rtl"] details {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] details summary {
+  direction: rtl;
+  text-align: right;
+  list-style: none;
+}
+html[lang="ar"] div[dir="rtl"] details summary::-webkit-details-marker {
+  display: none;
+}
+html[lang="ar"] div[dir="rtl"] details summary .lucide-chevron-down {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+/* Section head: allow full width in Arabic (text-wrap: balance can make it too
+   narrow on short Arabic text) */
+html[lang="ar"] div[dir="rtl"] [class*="sectionHead"] {
+  max-width: 80ch;
+  text-align: right;
+}
+
+/* Columns block: text alignment */
+html[lang="ar"] div[dir="rtl"] [class*="columns"] article,
+html[lang="ar"] div[dir="rtl"] [class*="rows"] article {
+  text-align: right;
+}
+
+/* Cards block */
+html[lang="ar"] div[dir="rtl"] [class*="cards"] article {
+  text-align: right;
+}
+
+/* Mid-CTA and strip sections */
+html[lang="ar"] div[dir="rtl"] [class*="midCtaInner"],
+html[lang="ar"] div[dir="rtl"] [class*="stripInner"] {
+  direction: rtl;
+}
+
+/* CTA band at the bottom */
+html[lang="ar"] div[dir="rtl"] .cta-band {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="ctaActions"] {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Stage cards (implementation page) */
+html[lang="ar"] div[dir="rtl"] [class*="stage"] {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="stage"] header {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="number"] {
+  /* Stage order number: flip from absolute left to inline-start */
+  inset-inline-start: auto;
+}
+html[lang="ar"] div[dir="rtl"] [class*="stageBody"] section {
+  text-align: right;
+}
+
+/* Navigation anchor bar in child pages */
+html[lang="ar"] div[dir="rtl"] [class*="anchors"] {
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="anchors"] ul {
+  direction: rtl;
+  justify-content: center;
+}
+
+/* Stage nav sidebar */
+html[lang="ar"] div[dir="rtl"] [class*="stageNav"],
+html[lang="ar"] div[dir="rtl"] [class*="processGrid"] {
+  direction: rtl;
+}
+
+/* Related section links */
+html[lang="ar"] div[dir="rtl"] [class*="relatedList"] li a {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+/* Button row in hero */
+html[lang="ar"] div[dir="rtl"] .button-row {
+  direction: rtl;
+  flex-wrap: wrap;
+}
+
+/* Intro section grid */
+html[lang="ar"] div[dir="rtl"] [class*="introGrid"] {
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="introGrid"] > div {
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="lists"] h3 {
+  text-align: right;
+}
+
+/* Eyebrow text (no uppercase for Arabic) */
+html[lang="ar"] div[dir="rtl"] .eyebrow,
+html[lang="ar"] div[dir="rtl"] [class*="eyebrow"] {
+  text-transform: none;
+}
+
+/* Table: flip direction */
+html[lang="ar"] div[dir="rtl"] [class*="tableWrap"] {
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="compare"] {
+  text-align: right;
+}
+
+/* Duration label */
+html[lang="ar"] div[dir="rtl"] [class*="duration"] {
+  text-align: right;
+}
+
+/* Tiers (support tiers dl) */
+html[lang="ar"] div[dir="rtl"] [class*="tiers"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flow panel */
+html[lang="ar"] div[dir="rtl"] [class*="flowPanel"] {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="steps"] li {
+  text-align: right;
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="steps"] [class*="stepNumber"] {
+  inset-inline-start: auto;
+  inset-inline-end: auto;
+}
+
+/* Link rows */
+html[lang="ar"] div[dir="rtl"] [class*="linkRow"] li {
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="linkRow"] a {
+  flex-direction: row-reverse;
+}
+
+/* Integration list */
+html[lang="ar"] div[dir="rtl"] [class*="integrationList"] li {
+  direction: rtl;
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+/* Callout (paragraph note) */
+html[lang="ar"] div[dir="rtl"] [class*="callout"] {
+  text-align: right;
+}
+html[lang="ar"] div[dir="rtl"] [class*="callouts"] li {
+  text-align: right;
+}
+
+/* FAQ wrap */
+html[lang="ar"] div[dir="rtl"] [class*="faqWrap"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Sequence nav (timeline block) */
+html[lang="ar"] div[dir="rtl"] [class*="sequence"] {
+  direction: rtl;
+}
+html[lang="ar"] div[dir="rtl"] [class*="sequence"] li a {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] div[dir="rtl"] [class*="timelineGrid"] {
+  direction: rtl;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  html[lang="ar"] div[dir="rtl"] [class*="heroGrid"] {
+    grid-template-columns: 1fr;
   }
 }

@@ -96,6 +96,15 @@ const locations = [
   ["دبي", "الإمارات العربية المتحدة", "dubai"],
 ] as const;
 
+const realPartners = [
+  { name: "Hyper-One", image: "/images/portfolio/hyper-one.webp", href: "/ar/portfolio" },
+  { name: "Mazaya", image: "/images/portfolio/mazaya.webp", href: "/ar/portfolio" },
+  { name: "ITQ", image: "/images/portfolio/itq.webp", href: "/ar/portfolio" },
+  { name: "Mapy", image: "/images/portfolio/mapy.webp", href: "/ar/portfolio" },
+  { name: "Meat-Bun", image: "/images/portfolio/meat-bun.webp", href: "/ar/portfolio" },
+  { name: "OneStack", image: "/images/portfolio/onestack.webp", href: "/ar/portfolio" },
+];
+
 function Heading({
   label,
   title,
@@ -449,7 +458,7 @@ export function ArabicAboutPage() {
         </div>
       </section>
 
-      {/* Client Success Section */}
+      {/* Client Success Section with Real Portfolio Partners */}
       <section className={`${s.section} ${s.successSection}`}>
         <div className={`${s.container} ${s.success}`}>
           <div className={s.successCopy}>
@@ -483,14 +492,33 @@ export function ArabicAboutPage() {
               </cite>
             </div>
           </blockquote>
-          <div className={s.clientMarks}>
-            <Image
-              src="/images/client-logos.png"
-              alt="Orascom, Elsewedy Electric, CIB, Vodafone, Samsung, and Etisalat"
-              width={690}
-              height={32}
-              sizes="(max-width: 760px) 100vw, 900px"
-            />
+          
+          <div className={s.realPartnersShowcase}>
+            <div className={s.realPartnersHead}>
+              <span>شركاء النجاح ونماذج من مشروعاتنا المنجزة</span>
+              <Link href="/ar/portfolio">
+                استكشف جميع قصص النجاح <ArrowLeft size={14} aria-hidden="true" style={{ display: "inline-block", verticalAlign: "middle" }} />
+              </Link>
+            </div>
+            <div className={s.realPartnersGrid}>
+              {realPartners.map((partner) => (
+                <Link
+                  href={partner.href}
+                  key={partner.name}
+                  className={s.partnerCard}
+                  title={partner.name}
+                >
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    width={180}
+                    height={80}
+                    sizes="(max-width: 760px) 33vw, 150px"
+                  />
+                  <span>{partner.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

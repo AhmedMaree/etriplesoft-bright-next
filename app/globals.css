@@ -7497,8 +7497,13 @@ blockquote small {
 }
 
 .home-hero-callouts .security-callout {
-  right: -34px;
+  right: clamp(28px, 4vw, 78px);
   bottom: 195px;
+}
+
+/* Keep the lower callout balanced with the mirrored Arabic hero composition. */
+:is(html[dir="rtl"], html[lang="ar"]) .home-hero-callouts .security-callout {
+  right: clamp(0px, 1vw, 18px);
 }
 
 .home-hero-services {
@@ -7582,7 +7587,11 @@ blockquote small {
   }
 
   .home-hero-callouts .security-callout {
-    right: 0;
+    right: clamp(20px, 3vw, 42px);
+  }
+
+  :is(html[dir="rtl"], html[lang="ar"]) .home-hero-callouts .security-callout {
+    right: clamp(0px, 1vw, 14px);
   }
 
   .home-hero-services > a {

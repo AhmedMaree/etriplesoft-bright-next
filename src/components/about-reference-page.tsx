@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
@@ -230,8 +231,39 @@ export function AboutReferencePage() {
             <Quote aria-hidden="true" />
             <div><p>“{featuredTestimonials.about.quote}”</p><cite><strong>{featuredTestimonials.about.name}</strong><span>{featuredTestimonials.about.role}, {featuredTestimonials.about.company}</span></cite></div>
           </blockquote>
-          <div className={s.clientMarks}>
-            <Image src="/images/client-logos.png" alt="Orascom, Elsewedy Electric, CIB, Vodafone, Samsung, and Etisalat" width={690} height={32} sizes="(max-width: 760px) 100vw, 900px" />
+          <div className={s.realPartnersShowcase}>
+            <div className={s.realPartnersHead}>
+              <span>Featured Success Stories & Client Projects</span>
+              <Link href="/portfolio">
+                Explore all case studies <ArrowRight size={14} aria-hidden="true" style={{ display: "inline-block", verticalAlign: "middle" }} />
+              </Link>
+            </div>
+            <div className={s.realPartnersGrid}>
+              {[
+                { name: "Hyper-One", image: "/images/portfolio/hyper-one.webp" },
+                { name: "Mazaya", image: "/images/portfolio/mazaya.webp" },
+                { name: "ITQ", image: "/images/portfolio/itq.webp" },
+                { name: "Mapy", image: "/images/portfolio/mapy.webp" },
+                { name: "Meat-Bun", image: "/images/portfolio/meat-bun.webp" },
+                { name: "OneStack", image: "/images/portfolio/onestack.webp" },
+              ].map((partner) => (
+                <Link
+                  href="/portfolio"
+                  key={partner.name}
+                  className={s.partnerCard}
+                  title={partner.name}
+                >
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    width={180}
+                    height={80}
+                    sizes="(max-width: 760px) 33vw, 150px"
+                  />
+                  <span>{partner.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
