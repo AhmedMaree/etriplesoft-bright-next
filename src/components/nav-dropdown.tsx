@@ -56,6 +56,12 @@ function slug(label: string) {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
+function supportsDesktopHover() {
+  return window.matchMedia(
+    "(min-width: 1181px) and (hover: hover) and (pointer: fine)",
+  ).matches;
+}
+
 /**
  * One disclosure group in the main navigation. It opens by hover on pointer
  * devices and by button activation on touch and keyboard.
@@ -84,12 +90,10 @@ export function NavDropdown({
     <div
       className={isOpen ? "nav-dropdown is-open" : "nav-dropdown"}
       onMouseEnter={() => {
-        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches)
-          onOpen();
+        if (supportsDesktopHover()) onOpen();
       }}
       onMouseLeave={() => {
-        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches)
-          onClose();
+        if (supportsDesktopHover()) onClose();
       }}
     >
       <button

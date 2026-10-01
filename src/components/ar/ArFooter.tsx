@@ -2,10 +2,73 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { company, mailto } from "@/lib/company";
-import { arNav, arOffices } from "@/i18n/ar";
+import { arOffices } from "@/i18n/ar";
 import { BackToTop } from "../back-to-top";
+import { FooterColumn } from "../footer-column";
+import { EnglishCounterpartLink } from "./EnglishCounterpartLink";
 
 const icons = { linkedin: Linkedin, instagram: Instagram, facebook: Facebook };
+const socialLabels = {
+  linkedin: "حساب ETripleSoft على LinkedIn",
+  instagram: "حساب ETripleSoft على Instagram",
+  facebook: "صفحة ETripleSoft على Facebook",
+};
+
+/** Arabic footer columns — mirrors the English footer's four-column structure. */
+const arFooterColumns = [
+  {
+    title: "أودو",
+    links: [
+      { label: "نظرة عامة على أودو", href: "/ar/odoo" },
+      { label: "طلب عرض تجريبي", href: "/ar/request-demo" },
+      { label: "التنفيذ والإطلاق", href: "/ar/odoo/implementation" },
+      { label: "المحاسبة والفواتير الإلكترونية", href: "/ar/odoo/accounting" },
+      { label: "الموارد البشرية والرواتب", href: "/ar/odoo/hr-payroll" },
+      { label: "خدمة العملاء والدعم الفني", href: "/ar/odoo/itsm-helpdesk" },
+      { label: "لوحات المعلومات والتحليلات", href: "/ar/odoo/dashboard-insights" },
+    ],
+  },
+  {
+    title: "الخدمات",
+    links: [
+      { label: "نظرة عامة على الخدمات", href: "/ar/services" },
+      { label: "السحابة والأمن السيبراني", href: "/ar/cloud" },
+      { label: "الذكاء الاصطناعي والأتمتة", href: "/ar/ai" },
+      { label: "تطوير المواقع", href: "/ar/web" },
+      { label: "تطبيقات الجوال", href: "/ar/mobile" },
+      { label: "التسويق الرقمي", href: "/ar/digital-marketing" },
+      { label: "الموارد والأدوات", href: "/ar/resources" },
+    ],
+  },
+  {
+    title: "القطاعات",
+    links: [
+      { label: "نظرة عامة على القطاعات", href: "/ar/industries" },
+      { label: "البناء والمقاولات", href: "/ar/industries/construction" },
+      { label: "العقارات", href: "/ar/industries/real-estate" },
+      { label: "إدارة المرافق", href: "/ar/industries/facility-management" },
+      { label: "المطاعم والضيافة", href: "/ar/industries/restaurants" },
+      { label: "التعليم", href: "/ar/industries/education" },
+      { label: "التجزئة", href: "/ar/industries/retail" },
+      { label: "الرعاية الصحية", href: "/ar/industries/healthcare" },
+      { label: "الخدمات اللوجستية", href: "/ar/industries/logistics" },
+    ],
+  },
+  {
+    title: "الشركة",
+    links: [
+      { label: "من نحن", href: "/ar/about-us" },
+      { label: "المدونة والمقالات", href: "/ar/insights" },
+      { label: "قصص النجاح", href: "/ar/portfolio" },
+      { label: "الوظائف", href: "/ar/careers" },
+      { label: "الأسئلة الشائعة", href: "/ar/faqs" },
+      { label: "الدعم الفني", href: "/ar/support-ticket" },
+      { label: "تواصل معنا", href: "/ar/contact-us" },
+      { label: "الشروط والأحكام", href: "/ar/terms" },
+      { label: "سياسة الخصوصية", href: "/ar/privacy" },
+    ],
+  },
+];
 
 export function ArFooter() {
   return (
@@ -36,7 +99,7 @@ export function ArFooter() {
                 <a
                   key={social.platform}
                   href={social.url}
-                  aria-label={social.label}
+                  aria-label={socialLabels[social.platform]}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -46,16 +109,18 @@ export function ArFooter() {
             })}
           </div>
         </div>
-        <div>
-          <p className="footer-heading">روابط سريعة</p>
-          {arNav.map((item) => (
-            <Link key={item.href} href={item.href} prefetch={false}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-        <div className="ar-offices">
-          <p className="footer-heading">مكاتبنا</p>
+
+        {arFooterColumns.map((col) => (
+          <FooterColumn key={col.title} title={col.title}>
+            {col.links.map((link) => (
+              <Link key={link.label} href={link.href} prefetch={false}>
+                {link.label}
+              </Link>
+            ))}
+          </FooterColumn>
+        ))}
+
+        <FooterColumn title="مكاتبنا">
           {company.offices.map((office) => {
             const ar = arOffices[office.id];
             return (
@@ -78,14 +143,15 @@ export function ArFooter() {
               </div>
             );
           })}
-        </div>
+          <Link className="footer-all-offices" href="/ar/contact-us">
+            عرض جميع المكاتب
+          </Link>
+        </FooterColumn>
       </div>
       <div className="footer-bottom container">
         <span>© {new Date().getFullYear()} ETripleSoft. جميع الحقوق محفوظة.</span>
         <span>
-          <a href="/" hrefLang="en" lang="en">
-            English
-          </a>
+          <EnglishCounterpartLink />
         </span>
         <BackToTop label="العودة إلى الأعلى" />
       </div>

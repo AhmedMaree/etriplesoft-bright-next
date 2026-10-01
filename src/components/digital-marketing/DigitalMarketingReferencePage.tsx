@@ -124,10 +124,10 @@ export default function DigitalMarketingReferencePage() {
         </section>
 
         <section className={`${s.section} ${s.proof}`}>
-          <SectionHeading eyebrow="A regional team. A proven track record." title="Marketing connected to business." description="Our teams work across the region, bringing more than a decade of experience to digital transformation." />
+          <SectionHeading eyebrow="A regional team. A proven track record." title="Marketing connected to business." description="Our teams work across the region, bringing years of experience to digital transformation." />
           <div className={s.proofGrid}>
             <article><span><Rocket aria-hidden="true" /></span><strong>250+</strong><h3>Projects delivered</h3><p>Work across digital transformation and business systems.</p></article>
-            <article><span><BarChart3 aria-hidden="true" /></span><strong>10+</strong><h3>Years of experience</h3><p>Practical experience supporting growing businesses.</p></article>
+            <article><span><BarChart3 aria-hidden="true" /></span><strong>8+</strong><h3>Years of experience</h3><p>Practical experience supporting growing businesses.</p></article>
             <article><span><Globe2 aria-hidden="true" /></span><strong>3</strong><h3>Regional markets</h3><p>Teams in Egypt, the UAE and Saudi Arabia.</p></article>
           </div>
         </section>

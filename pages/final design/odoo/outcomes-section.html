@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business outcomes section</title>
+<style>
+  .global-bg { background: #fff; padding: 24px 0 32px; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8faff;
+  --card-bg: #ffffff;
+  --card-border: #eaf0fa;
+  --ink: #0c1438;
+  --ink-muted: #596579;
+  --primary: #4353ff;
+  --primary-soft: #edf2ff;
+  --radius-card: 20px;
+  --shadow-card: 0 8px 26px rgba(45, 62, 130, 0.05);
+  --font: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  padding: 16px 20px 24px;
+}
+
+/* ---------------- BACKGROUND ACCENTS ---------------- */
+.outcomes-wrapper {
+  position: relative;
+  max-width: 1240px;
+  width: min(1240px, calc(100% - 96px));
+  margin: 0 auto;
+}
+
+.bg-glow-left {
+  position: absolute;
+  top: -30px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(215, 228, 255, 0.65) 0%, rgba(248, 250, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-right {
+  position: absolute;
+  top: 10px;
+  right: -70px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(228, 232, 255, 0.6) 0%, rgba(248, 250, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-dots-left {
+  position: absolute;
+  top: 50px;
+  left: -15px;
+  width: 100px;
+  height: 80px;
+  background-image: radial-gradient(#cbd8f8 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-dots-right {
+  position: absolute;
+  top: 130px;
+  right: -15px;
+  width: 80px;
+  height: 70px;
+  background-image: radial-gradient(#cbd8f8 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------------- TABS NAV ---------------- */
+.nav-tabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.nav-tabs a {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a2238;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-tabs a:hover {
+  color: var(--primary);
+  background: rgba(237, 242, 255, 0.8);
+}
+
+.nav-tabs a.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ---------------- HEADER ---------------- */
+.section-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 22px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #5171f5;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(25px, 2.5vw, 35px);
+  font-weight: 800;
+  color: #0b132b;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: clamp(13px, 1.1vw, 14.5px);
+  line-height: 1.5;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+/* ---------------- CARDS CONTAINER ---------------- */
+.cards-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.row-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.row-mid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(45, 62, 130, 0.08);
+}
+
+/* Top 3 Cards */
+.top-card {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 20px 16px;
+  min-height: 198px;
+}
+
+.top-card .card-head {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.top-card .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6px;
+  width: 100%;
+}
+
+.top-card .card-text {
+  flex: 1;
+}
+
+.top-card .card-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0b132b;
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.top-card .card-desc {
+  font-size: 12.2px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+/* Mid 2 Cards */
+.mid-card {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  min-height: 124px;
+}
+
+.mid-card .mid-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+
+.mid-card .card-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0b132b;
+  margin-bottom: 5px;
+  letter-spacing: -0.015em;
+}
+
+.mid-card .card-desc {
+  font-size: 12.2px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+/* ---------------- ICON BOXES ---------------- */
+.icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-blue {
+  background: #eaf1ff;
+  color: #3b66f5;
+}
+
+.icon-purple {
+  background: #f1ecfe;
+  color: #724bf2;
+}
+
+.icon-pink {
+  background: #fdeaf2;
+  color: #d82b7d;
+}
+
+.icon-green {
+  background: #e2f7ed;
+  color: #10a86b;
+}
+
+/* ---------------- CARD ILLUSTRATIONS ---------------- */
+.art-box {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card 1: Orbit Odoo */
+.art-orbit {
+  width: 125px;
+  height: 110px;
+}
+
+.orbit-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(220, 235, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  border: 1.2px dashed #cfd9f6;
+  border-radius: 50%;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 11px;
+  box-shadow: 0 5px 14px rgba(45, 62, 130, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.odoo-text {
+  font-size: 13px;
+  font-weight: 800;
+  color: #714B67;
+  letter-spacing: -0.02em;
+}
+
+.orbit-badge {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+}
+
+.orbit-badge svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.badge-green {
+  top: 4px;
+  left: 10px;
+  background: #dcfce7;
+  color: #10b981;
+}
+
+.badge-purple {
+  top: 0px;
+  right: 14px;
+  background: #f3e8ff;
+  color: #8b5cf6;
+}
+
+.badge-amber {
+  bottom: 16px;
+  right: 4px;
+  background: #ffedd5;
+  color: #f59e0b;
+}
+
+.badge-blue {
+  bottom: 4px;
+  left: 16px;
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+/* Card 2: Financial Close Document */
+.art-finance {
+  width: 110px;
+  height: 110px;
+}
+
+.finance-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(235, 230, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.finance-sheet {
+  position: relative;
+  width: 70px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(60, 70, 140, 0.09);
+  padding: 10px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid #f0f3fa;
+  margin-top: 10px;
+}
+
+.finance-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 38px;
+  margin-bottom: 6px;
+}
+
+.f-bar {
+  flex: 1;
+  border-radius: 2.5px 2.5px 0 0;
+  background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.f-bar-1 { height: 35%; opacity: 0.85; }
+.f-bar-2 { height: 65%; opacity: 0.95; }
+.f-bar-3 { height: 100%; }
+
+.sheet-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.s-line {
+  height: 3px;
+  border-radius: 1.5px;
+  background: #e2e8f0;
+}
+
+.s-line-1 { width: 100%; }
+.s-line-2 { width: 65%; }
+
+.finance-check-badge {
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  background: #5061f6;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(80, 97, 246, 0.4);
+  z-index: 4;
+}
+
+.finance-check-badge svg {
+  width: 11px;
+  height: 11px;
+  stroke: #ffffff;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Card 3: Dashboard Window */
+.art-dashboard {
+  width: 115px;
+  height: 110px;
+}
+
+.dash-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(220, 235, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dash-window {
+  width: 106px;
+  height: 74px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(60, 70, 140, 0.09);
+  border: 1px solid #eef2f9;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.dash-header {
+  height: 13px;
+  background: #5b96f7;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 6px;
+}
+
+.dash-dot {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.dash-body {
+  flex: 1;
+  padding: 5px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dash-charts-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.dash-line-chart {
+  width: 44px;
+  height: 22px;
+}
+
+.dash-donut {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: conic-gradient(#f97316 0deg 90deg, #8b5cf6 90deg 240deg, #3b82f6 240deg 360deg);
+  -webkit-mask: radial-gradient(circle, transparent 6.5px, #000 7px);
+  mask: radial-gradient(circle, transparent 6.5px, #000 7px);
+}
+
+.dash-skeleton {
+  display: flex;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.d-line {
+  height: 2.5px;
+  border-radius: 1px;
+  background: #e5eaf5;
+}
+
+.d-line-1 { width: 50%; }
+.d-line-2 { width: 35%; }
+
+/* Card 4: Workflow Nodes */
+.art-workflow {
+  width: 145px;
+  height: 80px;
+  position: relative;
+}
+
+.wf-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(240, 230, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wf-svg-path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wf-node {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(45, 62, 130, 0.09);
+  z-index: 2;
+}
+
+.wf-node svg {
+  width: 13.5px;
+  height: 13.5px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wf-node-1 {
+  top: 5px;
+  left: 16px;
+  background: #fdf2f8;
+  color: #ec4899;
+}
+
+.wf-card-shadow {
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  width: 34px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #edf1f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  z-index: 1;
+}
+
+.wf-node-2 {
+  top: 26px;
+  left: 68px;
+  background: #f3e8ff;
+  color: #6366f1;
+}
+
+.wf-node-3 {
+  bottom: 6px;
+  right: 14px;
+  background: #60a5fa;
+  color: #ffffff;
+}
+
+.wf-node-3 svg {
+  stroke: #ffffff;
+  stroke-width: 2.6;
+}
+
+/* Card 5: Scale Graph */
+.art-scale {
+  width: 135px;
+  height: 80px;
+  position: relative;
+}
+
+.scale-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(220, 248, 235, 0.65) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.scale-bars {
+  position: absolute;
+  bottom: 6px;
+  right: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 50px;
+}
+
+.s-bar {
+  width: 14px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, #b8c9fb 0%, #d8e2fd 100%);
+}
+
+.s-bar-1 { height: 26%; }
+.s-bar-2 { height: 48%; }
+.s-bar-3 { height: 74%; }
+.s-bar-4 { 
+  height: 100%; 
+  background: linear-gradient(180deg, #5b8cf7 0%, #85aff9 100%);
+}
+
+.scale-arrow-svg {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 120px;
+  height: 60px;
+  pointer-events: none;
+}
+
+/* ---------------- BOTTOM SUMMARY STRIP ---------------- */
+.summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 13px 20px;
+  align-items: center;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 3px 12px;
+}
+
+.strip-item:not(:last-child) {
+  border-right: 1px solid #edf2f9;
+}
+
+.strip-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #edf3ff;
+  color: #3b68f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.strip-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.strip-text b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0b132b;
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.strip-text small {
+  display: block;
+  font-size: 11.8px;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+/* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+@media (max-width: 1040px) {
+  .row-top {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .row-mid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .top-card .card-text,
+  .mid-card .mid-left {
+    max-width: 65%;
+  }
+  .summary-strip {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+  .strip-item {
+    justify-content: flex-start;
+    padding: 4px 0;
+  }
+  .strip-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #edf2f9;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 12px 10px 24px;
+  }
+  .nav-tabs {
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+  .nav-tabs a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .section-header {
+    margin-bottom: 18px;
+  }
+  .top-card, .mid-card {
+    padding: 14px;
+  }
+  .top-card .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .top-card .card-text,
+  .mid-card .mid-left {
+    max-width: 100%;
+  }
+  .mid-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .art-box {
+    align-self: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="outcomes-wrapper">
+  <!-- Ambient background graphics -->
+  <div class="bg-glow-left" aria-hidden="true"></div>
+  <div class="bg-glow-right" aria-hidden="true"></div>
+  <div class="bg-dots-left" aria-hidden="true"></div>
+  <div class="bg-dots-right" aria-hidden="true"></div>
+
+  <!-- Navigation Tabs -->
+  <nav aria-label="Page sections">
+    <ul class="nav-tabs">
+      <li><a href="#outcomes" class="active" aria-current="page">Outcomes</a></li>
+      <li><a href="#implementation">Implementation</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#integrations">Integrations</a></li>
+      <li><a href="#localization">Localization</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Header -->
+  <header class="section-header">
+    <span class="eyebrow">BUSINESS OUTCOMES</span>
+    <h2 class="section-title">What a connected ERP changes</h2>
+    <p class="section-subtitle">
+      The goal of an Odoo project is not a new system; it is a business that runs with fewer gaps<br>between teams and data.
+    </p>
+  </header>
+
+  <!-- Main Cards Container -->
+  <div class="cards-container">
+    
+    <!-- Top Row: 3 Cards -->
+    <div class="row-top">
+      
+      <!-- Card 1: Unified operations -->
+      <article class="card top-card">
+        <div class="card-head">
+          <div class="icon-box icon-blue">
+            <!-- Org Hierarchy Tree Icon -->
+            <svg viewBox="0 0 24 24">
+              <rect x="9" y="3" width="6" height="5" rx="1.5"/>
+              <rect x="3" y="16" width="6" height="5" rx="1.5"/>
+              <rect x="15" y="16" width="6" height="5" rx="1.5"/>
+              <path d="M12 8v4M6 16v-4h12v4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <h3 class="card-title">Unified operations</h3>
+            <p class="card-desc">
+              Finance, sales, inventory, projects<br>
+              and people work from one platform<br>
+              instead of disconnected tools<br>
+              and spreadsheets.
+            </p>
+          </div>
+          <div class="art-box art-orbit" aria-hidden="true">
+            <div class="orbit-glow"></div>
+            <div class="orbit-ring"></div>
+            <div class="orbit-center">
+              <span class="odoo-text">odoo</span>
+            </div>
+            <!-- Floating orbit badges -->
+            <div class="orbit-badge badge-green">
+              <!-- Cart icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M3 4h2l2.2 10.5a1.5 1.5 0 001.5 1.2h8.6a1.5 1.5 0 001.5-1.2L20 7H6.5"/>
+                <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="orbit-badge badge-purple">
+              <!-- Bar chart icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M18 20V10M12 20V4M6 20v-6"/>
+              </svg>
+            </div>
+            <div class="orbit-badge badge-amber">
+              <!-- Cube/Package icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM4 7.5l8 4.5 8-4.5M12 12v9"/>
+              </svg>
+            </div>
+            <div class="orbit-badge badge-blue">
+              <!-- People icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: A faster financial close -->
+      <article class="card top-card">
+        <div class="card-head">
+          <div class="icon-box icon-purple">
+            <!-- Clock Icon -->
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3.2 2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <h3 class="card-title">A faster financial close</h3>
+            <p class="card-desc">
+              Accounting connected to sales,<br>
+              purchasing and inventory means<br>
+              less manual reconciliation<br>
+              at period end.
+            </p>
+          </div>
+          <div class="art-box art-finance" aria-hidden="true">
+            <div class="finance-glow"></div>
+            <div class="finance-sheet">
+              <div class="finance-bars">
+                <div class="f-bar f-bar-1"></div>
+                <div class="f-bar f-bar-2"></div>
+                <div class="f-bar f-bar-3"></div>
+              </div>
+              <div class="sheet-lines">
+                <div class="s-line s-line-1"></div>
+                <div class="s-line s-line-2"></div>
+              </div>
+            </div>
+            <div class="finance-check-badge">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Better visibility -->
+      <article class="card top-card">
+        <div class="card-head">
+          <div class="icon-box icon-blue">
+            <!-- Analytics Bars + Trend Line Icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M18 20V10M12 20V4M6 20v-6"/>
+              <path d="M4 14l5-5 4 4 7-7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <h3 class="card-title">Better visibility</h3>
+            <p class="card-desc">
+              Dashboards and reports draw<br>
+              on live operational data, so<br>
+              decisions rest on current<br>
+              numbers.
+            </p>
+          </div>
+          <div class="art-box art-dashboard" aria-hidden="true">
+            <div class="dash-glow"></div>
+            <div class="dash-window">
+              <div class="dash-header">
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+              </div>
+              <div class="dash-body">
+                <div class="dash-charts-row">
+                  <svg class="dash-line-chart" viewBox="0 0 44 22" fill="none">
+                    <path d="M2 18 L12 9 L21 14 L30 4 L42 11" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="dash-donut"></div>
+                </div>
+                <div class="dash-skeleton">
+                  <div class="d-line d-line-1"></div>
+                  <div class="d-line d-line-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Middle Row: 2 Cards -->
+    <div class="row-mid">
+      
+      <!-- Card 4: Less manual work -->
+      <article class="card mid-card">
+        <div class="mid-left">
+          <div class="icon-box icon-pink">
+            <!-- Pink Circular Check Icon with clean shape -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-width="1.8"/>
+              <path d="M8 12L11 15L16 9" stroke-width="2.2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="card-title">Less manual work</h3>
+            <p class="card-desc">
+              Repeated entry, approvals and follow-up move into<br>
+              defined workflows your teams no longer chase by hand.
+            </p>
+          </div>
+        </div>
+        <div class="art-box art-workflow" aria-hidden="true">
+          <div class="wf-glow"></div>
+          <div class="wf-card-shadow"></div>
+          <!-- SVG Connecting line with dotted styling -->
+          <svg class="wf-svg-path" viewBox="0 0 145 80" fill="none">
+            <path d="M30 18 L30 40 Q30 48 38 48 L80 48 Q80 48 80 40" stroke="#cbd7f6" stroke-width="1.8" stroke-dasharray="3 3" stroke-linecap="round"/>
+            <path d="M80 40 L80 52 Q80 60 88 60 L118 60" stroke="#cbd7f6" stroke-width="1.8" stroke-dasharray="3 3" stroke-linecap="round"/>
+          </svg>
+          <!-- Step 1: Doc -->
+          <div class="wf-node wf-node-1">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <!-- Step 2: Gear -->
+          <div class="wf-node wf-node-2">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <!-- Step 3: Check -->
+          <div class="wf-node wf-node-3">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5: Room to scale -->
+      <article class="card mid-card">
+        <div class="mid-left">
+          <div class="icon-box icon-green">
+            <!-- Sprout / Leaves icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M2 22s5.5-1.5 8.5-6.5C13 11 14 6 14 6s-5 1-9.5 4.5C2 13.5 2 22 2 22z"/>
+              <path d="M14 6s2.5 1.5 4.5 4.5c2 3 2.5 7.5 2.5 7.5s-4-.5-6.5-2.5C12 13 11.5 10 14 6z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="card-title">Room to scale</h3>
+            <p class="card-desc">
+              Start with the applications you need today,<br>
+              then add modules and users as your<br>
+              operations grow.
+            </p>
+          </div>
+        </div>
+        <div class="art-box art-scale" aria-hidden="true">
+          <div class="scale-glow"></div>
+          <div class="scale-bars">
+            <div class="s-bar s-bar-1"></div>
+            <div class="s-bar s-bar-2"></div>
+            <div class="s-bar s-bar-3"></div>
+            <div class="s-bar s-bar-4"></div>
+          </div>
+          <!-- Swooping curved growth arrow -->
+          <svg class="scale-arrow-svg" viewBox="0 0 120 60" fill="none">
+            <path d="M4 52 C 32 48, 68 36, 108 8" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M96 7 L108 8 L104 20" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Row: 3-column Summary Strip -->
+    <div class="summary-strip">
+      
+      <div class="strip-item">
+        <div class="strip-icon">
+          <!-- 3D Cube Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM4 7.5l8 4.5 8-4.5M12 12v9"/>
+          </svg>
+        </div>
+        <div class="strip-text">
+          <b>Finance + Sales + Inventory + HR</b>
+          <small>One connected platform</small>
+        </div>
+      </div>
+
+      <div class="strip-item">
+        <div class="strip-icon">
+          <!-- Live Operational Data Bar Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M18 20V10M12 20V4M6 20v-6"/>
+            <path d="M3 20h18"/>
+          </svg>
+        </div>
+        <div class="strip-text">
+          <b>Live operational data</b>
+          <small>Real-time dashboards</small>
+        </div>
+      </div>
+
+      <div class="strip-item">
+        <div class="strip-icon">
+          <!-- Scalable Workflows Layers Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="strip-text">
+          <b>Scalable workflows</b>
+          <small>Grow with your business</small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

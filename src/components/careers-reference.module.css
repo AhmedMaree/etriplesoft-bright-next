@@ -86,6 +86,8 @@
 .testimonial span { color: var(--muted); margin-top: 6px; font-size: 16px; }
 .positionsHeading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .positionsHeading .button { flex-shrink: 0; }
+.jobsFrame { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 14px 34px #142e6810; }
+.jobsIframe { display: block; width: 100%; height: clamp(1440px, 180vh, 2200px); border: 0; background: #fff; }
 .opportunitiesGrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; }
 .internships { background: #f4f9fd; }
 .internships > img { object-position: center; }
@@ -177,6 +179,7 @@
   .testimonial { padding: 24px; }
   .testimonial blockquote { font-size: 17px; }
   .positionsHeading { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .jobsIframe { height: 1800px; }
   .cvCard { padding: 26px 22px; }
   .cvCard > div { max-width: 84%; }
   .cvCard h2 { font-size: 29px; }
@@ -227,4 +230,19 @@
   .page .heroPhoto { position: relative; order: 2; width: 100%; height: clamp(280px, 48vw, 420px); margin-top: 32px; opacity: 1; mask-image: none; }
   .page .heroPhoto::after { display: none; }
   .page .heroPhoto img { object-position: center 40%; }
+}
+
+:global([dir="rtl"]) .page .heroPhoto::after { background: linear-gradient(270deg, #f7fbff 0%, #f7fbffed 42%, #f7fbff00 70%); }
+:global([dir="rtl"]) .page .stats > div { border-right: 0; border-left: 1px solid #d2e3ff; }
+:global([dir="rtl"]) .page .stats > div:first-child { padding-left: 12px; padding-right: 0; }
+:global([dir="rtl"]) .page .stats > div:last-child { border-left: 0; padding-left: 0; padding-right: 12px; }
+:global([dir="rtl"]) .page .cvIcon { right: auto; left: 10px; }
+:global([dir="rtl"]) .page .purpose::after { background: linear-gradient(270deg, #031b5580 0%, #031b5550 34%, transparent 64%); }
+:global([dir="rtl"]) .page .culture::after,
+:global([dir="rtl"]) .page .internships::after { background: linear-gradient(270deg, #f6faffb0 24%, #f6faff90 43%, #f6faff30 60%, transparent 72%); }
+@media (max-width: 900px) {
+  :global([dir="rtl"]) .page .cvIcon { right: auto; left: 30px; }
+}
+@media (max-width: 560px) {
+  :global([dir="rtl"]) .page .stats > div:nth-child(2) { border-left: 0; }
 }

@@ -1,0 +1,5 @@
+.rtl .tiers { border-left: 0; border-inline-start: 2px solid var(--line); }
+.rtl .tiers li { padding-left: 0; padding-inline-start: 20px; }
+.rtl .tiers li[data-core] { border-left: 0; border-inline-start: 4px solid var(--blue); margin-left: 0; margin-inline-start: -3px; }
+.rtl .odoo { scroll-margin-top: var(--site-header-height, 74px); }
+.rtl .industryLink svg { transform: scaleX(-1); }

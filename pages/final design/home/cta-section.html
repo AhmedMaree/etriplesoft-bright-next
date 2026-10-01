@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTA section</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-dark:#10168a; --accent:#7dd3fc; --white:#fff;
+  --text-soft:rgba(255,255,255,.78); --glass:rgba(255,255,255,.14);
+  --radius:32px;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:#f6f8fe;padding:40px 24px}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.cta{position:relative;overflow:hidden;isolation:isolate;max-width:1400px;margin:0 auto;
+  border-radius:var(--radius);color:var(--white);text-align:center;
+  padding:56px 32px 44px;
+  background:linear-gradient(100deg,#6a4cff 0%,#3a3fe0 30%,#1f3fd0 60%,#1565f5 100%);
+  box-shadow:0 24px 60px rgba(40,60,200,.25)}
+
+/* ---------- decoration (all behind content) ---------- */
+.cta::before,.cta::after,.wave,.dots,.orb{position:absolute;z-index:-1;pointer-events:none;content:""}
+.wave{border-radius:50%}
+.wave.l1{left:-12%;bottom:-70%;width:62%;height:120%;background:linear-gradient(160deg,rgba(170,140,255,.55),rgba(80,110,255,.15));}
+.wave.l2{left:-16%;bottom:-78%;width:66%;height:108%;background:linear-gradient(160deg,rgba(90,140,255,.75),rgba(60,120,255,.2))}
+.wave.r1{right:-14%;bottom:-78%;width:58%;height:112%;background:linear-gradient(200deg,rgba(40,150,255,.9),rgba(20,100,255,.3))}
+.orb{border-radius:50%;background:rgba(255,255,255,.08)}
+.orb.a{left:5%;bottom:14%;width:clamp(60px,5.5vw,110px);aspect-ratio:1}
+.orb.b{right:3%;top:22%;width:clamp(70px,6vw,120px);aspect-ratio:1;background:rgba(40,120,255,.45)}
+.dots{width:150px;height:150px;opacity:.6;
+  background-image:radial-gradient(circle,rgba(255,255,255,.8) 1.4px,transparent 1.6px);background-size:25px 25px}
+.dots.a{left:6%;top:14%}
+.dots.b{right:4%;top:46%}
+
+/* ---------- content ---------- */
+.badge{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:999px;
+  background:var(--glass);font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  backdrop-filter:blur(6px)}
+.badge .i{font-size:18px;fill:currentColor;stroke:none}
+h2{font-size:clamp(36px,4.6vw,66px);line-height:1.1;font-weight:700;letter-spacing:-.03em;margin:22px 0 18px}
+h2 span{display:block;color:var(--accent)}
+.sub{max-width:28em;margin:0 auto;font-size:clamp(17px,1.5vw,22px);line-height:1.7;color:var(--text-soft)}
+
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:72px;padding:0 42px;
+  border-radius:14px;font:700 21px var(--font);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn .i{font-size:24px}
+.btn.primary{background:#fff;color:var(--ink-dark);box-shadow:0 10px 28px rgba(10,20,120,.25)}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff;background:transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+.perks{list-style:none;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 0;margin-top:36px}
+.perks li{display:flex;align-items:center;gap:14px;padding:0 34px;font-size:17px;color:rgba(255,255,255,.88)}
+.perks li+li{border-left:1px solid rgba(255,255,255,.25)}
+.perks .ic{width:54px;height:54px;border-radius:50%;background:var(--glass);display:grid;place-items:center;font-size:26px;flex:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .cta{padding:44px 20px 36px;border-radius:24px}
+  .dots{display:none}
+  .btn{min-height:60px;padding:0 30px;font-size:18px;width:100%;max-width:360px}
+  .perks{flex-direction:column;align-items:flex-start;width:max-content;max-width:100%;margin-inline:auto;gap:14px}
+  .perks li{padding:0}
+  .perks li+li{border-left:0}
+}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 01-12.4 7.5L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+  <symbol id="people" viewBox="0 0 24 24"><path d="M9 11a3 3 0 100-6 3 3 0 000 6zM3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 11a2.5 2.5 0 100-5M18 14c1.8.6 3 2.3 3 4.5"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+</svg>
+
+<section class="cta" aria-labelledby="cta-title">
+  <i class="wave l1"></i><i class="wave l2"></i><i class="wave r1"></i>
+  <i class="orb a"></i><i class="orb b"></i>
+  <i class="dots a"></i><i class="dots b"></i>
+
+  <span class="badge"><svg class="i"><use href="#bolt"/></svg>Let’s get started</span>
+  <h2 id="cta-title">Ready to Transform <span>Your Business?</span></h2>
+  <p class="sub">Get expert guidance and tailored solutions that help you work smarter, grow faster, and stay ahead.</p>
+
+  <div class="actions">
+    <a class="btn primary" href="/contact">Book a Free Consultation <svg class="i"><use href="#arrow"/></svg></a>
+    <a class="btn ghost" href="/chat"><svg class="i"><use href="#chat"/></svg>Chat With Us</a>
+  </div>
+
+  <ul class="perks">
+    <li><span class="ic"><svg class="i"><use href="#cal"/></svg></span>Free 30-min consultation</li>
+    <li><span class="ic"><svg class="i"><use href="#people"/></svg></span>Tailored to your industry</li>
+    <li><span class="ic"><svg class="i"><use href="#shield"/></svg></span>No obligation, no pressure</li>
+  </ul>
+</section>
+
+</body>
+</html>

@@ -4,6 +4,7 @@ const config: NextConfig = {
   images: { unoptimized: true },
   devIndicators: false,
   skipTrailingSlashRedirect: true,
+  pageExtensions: ["tsx", "ts"],
   async redirects() {
     return [
       // Canonical host is the apex (see src/lib/company.ts websiteUrl).

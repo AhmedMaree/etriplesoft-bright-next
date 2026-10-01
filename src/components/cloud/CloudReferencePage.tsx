@@ -262,7 +262,7 @@ export default function CloudReferencePage() {
             {[
               ["250+", "Projects Delivered"],
               ["3", "Countries"],
-              ["10+", "Years of Experience"],
+              ["8+", "Years of Experience"],
             ].map(([number, label]) => (
               <div key={label}>
                 <strong>{number}</strong>

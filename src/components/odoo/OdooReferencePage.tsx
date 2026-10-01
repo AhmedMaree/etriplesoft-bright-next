@@ -1,23 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   ArrowRight,
+  BarChart3,
   Building2,
   Check,
   CheckCircle,
   ChevronDown,
   ChartNoAxesCombined,
   Coins,
+  Database,
   GraduationCap,
   HardHat,
   Headphones,
+  HeartPulse,
+  Home,
   Network,
   Rocket,
   Settings,
+  ShieldCheck,
+  Star,
   UtensilsCrossed,
   Users,
   Wrench,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { company } from "@/lib/company";
 import {
   odooCapabilityPages,
   odooPageByKey,
@@ -25,7 +34,6 @@ import {
   type OdooRelatedPage,
 } from "@/lib/odoo-pages";
 import {
-  benefits as benefitLinks,
   closing,
   einvoicing,
   faqs,
@@ -34,8 +42,6 @@ import {
   integrations,
   localization,
   midCta,
-  modules as moduleContent,
-  outcomes,
   partner,
   related,
 } from "./content";
@@ -43,6 +49,8 @@ import styles from "./OdooReferencePage.module.css";
 import hub from "./OdooHub.module.css";
 import OdooSectionNav from "./OdooSectionNav";
 import OdooPageHero from "./OdooPageHero";
+import OdooOutcomes from "./OdooOutcomes";
+import OdooSolutions from "./OdooSolutions";
 
 const glyphs = {
   network: Network,
@@ -103,40 +111,106 @@ const steps = [
     "ongoing",
   ],
 ];
-const benefits = [
-  [
-    "Customization & Integration",
-    "Tailor Odoo to fit your unique business processes. Integrate with your existing systems and third-party tools seamlessly.",
-    "customization",
-  ],
-  [
-    "Local Support in Egypt",
-    "Our Cairo-based team provides on-site and remote support, training, and consultation in Arabic and English.",
-    "support",
-  ],
-  [
-    "Ongoing Growth",
-    "We stay with you beyond go-live. Continuous support, upgrades, and new features to help you grow.",
-    "growth",
-  ],
+type WhyCardTint = "whyBlue" | "whyViolet";
+type WhyCardDecoration = "wave" | "cairo" | "growth";
+
+type WhyCard = {
+  number: string;
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+  tint: WhyCardTint;
+  decoration: WhyCardDecoration;
+};
+
+type WhyTrustItem = {
+  title: string;
+  caption: string;
+  icon: LucideIcon;
+};
+
+const cairoCity =
+  company.offices.find((office) => office.id === "egypt")?.city ?? "Cairo";
+
+const whyCards: WhyCard[] = [
+  {
+    number: "01",
+    title: "Customization & Integration",
+    description:
+      "Tailor Odoo to fit your unique business processes. Integrate with your existing systems and third-party tools seamlessly.",
+    // TODO: Replace this placeholder when the final route is provided.
+    href: "#",
+    icon: Settings,
+    tint: "whyBlue",
+    decoration: "wave",
+  },
+  {
+    number: "02",
+    title: "Local Support in Egypt",
+    // TODO: Confirm the Arabic and English support claim with the business owner.
+    description: `Our ${cairoCity}-based team provides on-site and remote support, training, and consultation in Arabic and English.`,
+    // TODO: Replace this placeholder when the final route is provided.
+    href: "#",
+    icon: Headphones,
+    tint: "whyViolet",
+    decoration: "cairo",
+  },
+  {
+    number: "03",
+    title: "Ongoing Growth",
+    description:
+      "We stay with you beyond go-live. Continuous support, upgrades, and new features to help your business grow.",
+    // TODO: Replace this placeholder when the final route is provided.
+    href: "#",
+    icon: BarChart3,
+    tint: "whyBlue",
+    decoration: "growth",
+  },
 ];
-const priorityModules = [
-  [
-    "Manufacturing",
-    "Streamline production and operations.",
-    "manufacturing-icon",
-  ],
-  [
-    "Inventory & Purchasing",
-    "Coordinate stock, suppliers, warehouses and replenishment.",
-    "inventory",
-  ],
+
+const whyTrustItems: WhyTrustItem[] = [
+  { title: "Local Expertise", caption: "In Egypt", icon: Star },
+  {
+    title: "Long-Term Partnership",
+    caption: "Beyond Go-Live",
+    icon: Users,
+  },
+  { title: "Proven Results", caption: "Across Industries", icon: ShieldCheck },
 ];
-const otherModules = [
-  ["CRM", "Turn leads into loyal customers.", "crm"],
-  ["Sales", "Boost your revenue with a modern sales flow.", "sales"],
-  ["Projects", "Deliver projects on time and within budget.", "projects"],
-];
+
+function WhyCardArtwork({ kind }: { kind: WhyCardDecoration }) {
+  if (kind === "wave") {
+    return (
+      <svg viewBox="0 0 270 150" aria-hidden="true">
+        <path d="M-8 126C41 84 85 143 136 104C178 72 203 53 278 72V158H-8Z" />
+        <path d="M-8 143C50 112 99 153 151 125C194 101 225 91 278 105V158H-8Z" />
+      </svg>
+    );
+  }
+
+  if (kind === "cairo") {
+    return (
+      <svg viewBox="0 0 300 170" aria-hidden="true">
+        <path d="m42 158 62-58 34 58Z" />
+        <path d="m91 158 75-82 71 82Z" />
+        <path d="m169 158 39-48 52 48Z" />
+        <path d="M225 158V61h7V40l5-20 5 20v21h7v97Z" />
+        <path d="M10 159c62-23 145-22 281 0" fill="none" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 270 170" aria-hidden="true">
+      <rect x="114" y="119" width="30" height="43" rx="7" />
+      <rect x="158" y="92" width="30" height="70" rx="7" />
+      <rect x="202" y="65" width="30" height="97" rx="7" />
+      <path d="M92 103c56-13 99-39 141-82" fill="none" />
+      <path d="m211 24 28-10-8 29" fill="none" />
+    </svg>
+  );
+}
 function Asset({
   name,
   className = "",
@@ -231,6 +305,537 @@ function Checks({ items }: { items: string[] }) {
   );
 }
 
+type ModuleTint = "implementation" | "accounting" | "hr" | "itsm" | "dashboard";
+
+type ModuleCard = {
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+  tint: ModuleTint;
+  illustration: () => ReactNode;
+};
+
+function ImplementationIllustration() {
+  return (
+    <svg viewBox="0 0 260 190" aria-hidden="true" focusable="false">
+      <rect
+        className={styles.illustrationPanel}
+        x="26"
+        y="16"
+        width="178"
+        height="144"
+        rx="17"
+      />
+      <circle className={styles.illustrationAccent} cx="53" cy="52" r="10" />
+      <path className={styles.illustrationTick} d="m49 52 3 3 6-7" />
+      <rect
+        className={styles.illustrationLine}
+        x="73"
+        y="45"
+        width="83"
+        height="10"
+        rx="5"
+      />
+      <circle className={styles.illustrationAccent} cx="53" cy="82" r="10" />
+      <path className={styles.illustrationTick} d="m49 82 3 3 6-7" />
+      <rect
+        className={styles.illustrationLine}
+        x="73"
+        y="75"
+        width="101"
+        height="10"
+        rx="5"
+      />
+      <circle className={styles.illustrationAccent} cx="53" cy="112" r="10" />
+      <path className={styles.illustrationTick} d="m49 112 3 3 6-7" />
+      <rect
+        className={styles.illustrationLine}
+        x="73"
+        y="105"
+        width="66"
+        height="10"
+        rx="5"
+      />
+      <circle className={styles.illustrationBadge} cx="198" cy="145" r="27" />
+      <path
+        className={styles.illustrationRocket}
+        d="M188 148c10-1 18-9 19-19-10 1-18 9-19 19Zm2-5-7 7m11-14 7-7m-16 19-4 1 1-4"
+      />
+    </svg>
+  );
+}
+
+function AccountingIllustration() {
+  return (
+    <svg viewBox="0 0 260 190" aria-hidden="true" focusable="false">
+      <rect
+        className={styles.illustrationPanel}
+        x="45"
+        y="17"
+        width="164"
+        height="150"
+        rx="17"
+      />
+      <rect
+        className={styles.illustrationAccentSoft}
+        x="65"
+        y="43"
+        width="82"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="65"
+        y="72"
+        width="119"
+        height="9"
+        rx="4.5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="65"
+        y="91"
+        width="92"
+        height="9"
+        rx="4.5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="65"
+        y="110"
+        width="106"
+        height="9"
+        rx="4.5"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="165"
+        y="104"
+        width="10"
+        height="28"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="181"
+        y="91"
+        width="10"
+        height="41"
+        rx="5"
+      />
+      <circle className={styles.illustrationBadge} cx="187" cy="143" r="28" />
+      <path
+        className={styles.illustrationDollar}
+        d="M187 129v28m10-23c-2-2-5-3-9-3-5 0-8 2-8 6 0 9 17 4 17 13 0 4-4 7-9 7-4 0-8-1-10-4"
+      />
+    </svg>
+  );
+}
+
+function HrIllustration() {
+  return (
+    <svg viewBox="0 0 260 190" aria-hidden="true" focusable="false">
+      <rect
+        className={styles.illustrationPanel}
+        x="23"
+        y="37"
+        width="209"
+        height="112"
+        rx="17"
+      />
+      <circle
+        className={styles.illustrationAccentSoft}
+        cx="64"
+        cy="79"
+        r="28"
+      />
+      <circle className={styles.illustrationAccent} cx="64" cy="70" r="9" />
+      <path
+        className={styles.illustrationAccent}
+        d="M47 97c2-11 10-16 17-16s15 5 17 16"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="105"
+        y="61"
+        width="86"
+        height="11"
+        rx="5.5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="105"
+        y="84"
+        width="58"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="43"
+        y="116"
+        width="34"
+        height="12"
+        rx="6"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="85"
+        y="116"
+        width="34"
+        height="12"
+        rx="6"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="127"
+        y="116"
+        width="34"
+        height="12"
+        rx="6"
+      />
+      <circle className={styles.illustrationBadge} cx="211" cy="35" r="16" />
+      <path className={styles.illustrationTick} d="m204 35 5 5 9-10" />
+    </svg>
+  );
+}
+
+function ItsmIllustration() {
+  return (
+    <svg viewBox="0 0 260 190" aria-hidden="true" focusable="false">
+      <rect
+        className={styles.illustrationPanel}
+        x="33"
+        y="32"
+        width="196"
+        height="124"
+        rx="17"
+      />
+      <circle
+        className={styles.illustrationAccentSoft}
+        cx="65"
+        cy="66"
+        r="12"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="88"
+        y="59"
+        width="77"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationStatus}
+        x="181"
+        y="57"
+        width="27"
+        height="12"
+        rx="6"
+      />
+      <circle
+        className={styles.illustrationAccentSoft}
+        cx="65"
+        cy="94"
+        r="12"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="88"
+        y="87"
+        width="64"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationStatus}
+        x="181"
+        y="85"
+        width="27"
+        height="12"
+        rx="6"
+      />
+      <circle
+        className={styles.illustrationAccentSoft}
+        cx="65"
+        cy="122"
+        r="12"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="88"
+        y="115"
+        width="84"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationStatus}
+        x="181"
+        y="113"
+        width="27"
+        height="12"
+        rx="6"
+      />
+      <circle className={styles.illustrationBadge} cx="207" cy="27" r="18" />
+      <path className={styles.illustrationMinus} d="M200 27h14" />
+    </svg>
+  );
+}
+
+function DashboardIllustration() {
+  return (
+    <svg viewBox="0 0 260 190" aria-hidden="true" focusable="false">
+      <rect
+        className={styles.illustrationPanel}
+        x="24"
+        y="24"
+        width="203"
+        height="139"
+        rx="17"
+      />
+      <rect
+        className={styles.illustrationAccentSoft}
+        x="46"
+        y="45"
+        width="89"
+        height="10"
+        rx="5"
+      />
+      <rect
+        className={styles.illustrationLine}
+        x="46"
+        y="75"
+        width="100"
+        height="57"
+        rx="9"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="60"
+        y="107"
+        width="13"
+        height="16"
+        rx="3"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="81"
+        y="93"
+        width="13"
+        height="30"
+        rx="3"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="102"
+        y="84"
+        width="13"
+        height="39"
+        rx="3"
+      />
+      <rect
+        className={styles.illustrationAccent}
+        x="123"
+        y="99"
+        width="13"
+        height="24"
+        rx="3"
+      />
+      <circle
+        className={styles.illustrationAccentSoft}
+        cx="179"
+        cy="103"
+        r="29"
+      />
+      <path
+        className={styles.illustrationDonut}
+        d="M179 76a27 27 0 1 1-24 15"
+      />
+      <path className={styles.illustrationDonut} d="M179 76v27h27" />
+      <rect
+        className={styles.illustrationLine}
+        x="157"
+        y="142"
+        width="43"
+        height="8"
+        rx="4"
+      />
+    </svg>
+  );
+}
+
+// ─── Industry solutions cards ────────────────────────────────────────────────
+type IndustryTint =
+  "indBlue" | "indViolet" | "indMint" | "indPeach" | "indSky" | "indPink";
+
+type IndustryCard = {
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+  tint: IndustryTint;
+  image: string;
+};
+
+const industryCards: IndustryCard[] = [
+  {
+    title: "Construction",
+    description: "Project tracking, procurement and site cost control.",
+    href: "/industries/construction",
+    icon: HardHat,
+    tint: "indBlue",
+    image: "/images/industries/construction.webp",
+  },
+  {
+    title: "Real Estate",
+    description: "Property, leasing and sales pipeline management.",
+    href: "/industries/real-estate",
+    icon: Home,
+    tint: "indViolet",
+    image: "/images/industries/real-estate.webp",
+  },
+  {
+    title: "Facility Management",
+    description: "Property, tenant and maintenance management.",
+    href: "/industries/facility-management",
+    icon: Settings,
+    tint: "indMint",
+    image: "/images/industries/facility-management.webp",
+  },
+  {
+    title: "Restaurants",
+    description: "Point of sale, ordering and kitchen operations.",
+    href: "/industries/restaurants",
+    icon: UtensilsCrossed,
+    tint: "indPeach",
+    image: "/images/industries/restaurants.webp",
+  },
+  {
+    title: "Education",
+    description: "Student records, admissions and campus operations.",
+    href: "/industries/education",
+    icon: GraduationCap,
+    tint: "indSky",
+    image: "/images/industries/education.webp",
+  },
+  {
+    // TODO: update href to /industries/healthcare when the dedicated page exists
+    title: "Healthcare",
+    description: "Patient records, appointments and facility management.",
+    href: "/industries",
+    icon: HeartPulse,
+    tint: "indPink",
+    image: "/images/industries/healthcare.webp",
+  },
+];
+
+function IndustryCardItem({ card }: { card: IndustryCard }) {
+  const Icon = card.icon;
+  return (
+    <li className={`${styles.indCard} ${styles[card.tint]}`}>
+      {/* Stretched-link: the <a> covers the whole card via ::after */}
+      <div className={styles.indCopy}>
+        <span className={styles.indIconTile} aria-hidden="true">
+          <Icon />
+        </span>
+        <h3 className={styles.indTitle}>{card.title}</h3>
+        <p className={styles.indDesc}>{card.description}</p>
+        <a
+          className={styles.indLink}
+          href={card.href}
+          aria-label={`Learn more about ${card.title}`}
+        >
+          Learn more <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+      {/*
+       * Photo area – rendered as a tinted gradient placeholder until the
+       * image files exist. Once /images/industries/*.webp are added, swap
+       * this <div> for:
+       *   <Image src={card.image} alt="" fill className={styles.indPhoto} />
+       * (remember to set sizes and add position:relative to indPhotoWrap)
+       */}
+      <div className={styles.indPhotoWrap} aria-hidden="true">
+        <div className={styles.indPhotoPlaceholder} />
+      </div>
+    </li>
+  );
+}
+// ─── End industry cards ───────────────────────────────────────────────────────
+
+const moduleCards: ModuleCard[] = [
+  {
+    title: "Implementation",
+    description:
+      "From discovery to go-live and support, delivered around how your business already works.",
+    href: "#", // TODO: replace with the implementation route.
+    icon: Settings,
+    tint: "implementation",
+    illustration: ImplementationIllustration,
+  },
+  {
+    title: "Accounting & E-Invoicing",
+    description:
+      "Financial operations, reporting and controls in one place, planned around local tax and e-invoicing requirements.",
+    href: "#", // TODO: replace with the accounting route.
+    icon: Database,
+    tint: "accounting",
+    illustration: AccountingIllustration,
+  },
+  {
+    title: "HR & Payroll",
+    description: "Employee records, attendance, leave and payroll workflows.",
+    href: "#", // TODO: replace with the HR and payroll route.
+    icon: Users,
+    tint: "hr",
+    illustration: HrIllustration,
+  },
+  {
+    title: "ITSM & Helpdesk",
+    description:
+      "Manage support requests, assignments and service follow-up in one place.",
+    href: "#", // TODO: replace with the ITSM and helpdesk route.
+    icon: Headphones,
+    tint: "itsm",
+    illustration: ItsmIllustration,
+  },
+  {
+    title: "Dashboard & Insights",
+    description:
+      "Bring operational data into dashboards and reports so teams can track what matters.",
+    href: "#", // TODO: replace with the dashboard and insights route.
+    icon: BarChart3,
+    tint: "dashboard",
+    illustration: DashboardIllustration,
+  },
+];
+
+function ModuleCardItem({ module }: { module: ModuleCard }) {
+  const Icon = module.icon;
+  const Illustration = module.illustration;
+
+  return (
+    <li className={`${styles.moduleCard} ${styles[module.tint]}`}>
+      <div className={styles.moduleCopy}>
+        <span className={styles.moduleIcon} aria-hidden="true">
+          <Icon />
+        </span>
+        <h3>{module.title}</h3>
+        <p>{module.description}</p>
+        <a className={styles.moduleLink} href={module.href}>
+          Learn more <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+      <div className={styles.moduleIllustration} aria-hidden="true">
+        <Illustration />
+      </div>
+    </li>
+  );
+}
+
 export default function OdooReferencePage() {
   return (
     <main id="main" className={styles.page}>
@@ -238,28 +843,7 @@ export default function OdooReferencePage() {
 
       <OdooSectionNav />
 
-      <section
-        className={`${styles.section} ${hub.outcomes}`}
-        id="outcomes"
-        aria-labelledby="odoo-outcomes-title"
-      >
-        <div className={styles.container}>
-          <div className={styles.centerHeading}>
-            <span className={styles.eyebrow}>{outcomes.eyebrow}</span>
-            <h2 id="odoo-outcomes-title">{outcomes.title}</h2>
-            <p>{outcomes.description}</p>
-          </div>
-          <ul className={hub.outcomeGrid}>
-            {outcomes.items.map(([title, copy, icon]) => (
-              <li key={title}>
-                <GlyphIcon name={icon} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <OdooOutcomes />
 
       <section
         className={`${styles.section} ${styles.process}`}
@@ -314,90 +898,70 @@ export default function OdooReferencePage() {
 
       <section
         className={`${styles.section} ${styles.modules}`}
-        id="solutions"
+        id="modules"
         aria-labelledby="odoo-modules-title"
       >
         <div className={styles.container}>
-          <div className={styles.centerHeading}>
-            <span className={styles.eyebrow}>{moduleContent.eyebrow}</span>
-            <h2 id="odoo-modules-title">{moduleContent.title}</h2>
-            <p>{moduleContent.description}</p>
+          <div className={styles.modulesIntro}>
+            <span className={styles.modulesEyebrow}>ERP modules</span>
+            <h2 id="odoo-modules-title" className={styles.modulesTitle}>
+              The Odoo capabilities <span>we deliver</span>
+            </h2>
+            <p>
+              Five areas most clients start with, each with its own page. Odoo
+              integrates all your business processes in one platform.
+            </p>
           </div>
-          <ul className={hub.featuredGrid}>
-            {moduleContent.featured.map(([key, title, copy, icon]) => (
-              <li key={key}>
-                <GlyphIcon name={icon} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <TopicLink page={odooPageByKey(key)} />
-              </li>
-            ))}
-          </ul>
-          <div className={hub.applications}>
-            <h3 className={hub.applicationsHeading}>
-              Manufacturing &amp; inventory
-            </h3>
-            <div className={hub.priorityModules}>
-              {priorityModules.map(([title, copy, asset]) => (
-                <article key={title}>
-                  <Asset name={asset} />
-                  <div>
-                    <h4>{title}</h4>
-                    <p>{copy}</p>
-                  </div>
-                </article>
+          <div className={styles.modulesRows}>
+            <ul className={`${styles.modulesGrid} ${styles.modulesTopRow}`}>
+              {moduleCards.slice(0, 3).map((module) => (
+                <ModuleCardItem key={module.title} module={module} />
               ))}
-            </div>
-            <h3 className={hub.supportingHeading}>
-              {moduleContent.othersTitle}
-            </h3>
-            <div className={hub.supportingModules}>
-              {otherModules.map(([title, copy, asset]) => (
-                <article key={title}>
-                  <Asset name={asset} />
-                  <div>
-                    <h4>{title}</h4>
-                    <p>{copy}</p>
-                  </div>
-                </article>
+            </ul>
+            <ul className={`${styles.modulesGrid} ${styles.modulesBottomRow}`}>
+              {moduleCards.slice(3).map((module) => (
+                <ModuleCardItem key={module.title} module={module} />
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
 
       <section
-        className={`${styles.section} ${styles.industrySection}`}
+        className={`${styles.section} ${styles.industrySection} ${styles.industrySectionV2}`}
         id="industries"
         aria-labelledby="odoo-industries-title"
       >
         <div className={styles.container}>
-          <div className={styles.industryHeading}>
-            <div>
-              <span className={styles.eyebrow}>{industryContent.eyebrow}</span>
-              <h2 id="odoo-industries-title">{industryContent.title}</h2>
-              <p>{industryContent.description}</p>
+          {/* ── Header ── */}
+          <div className={styles.indHeader}>
+            <div className={styles.indHeaderLeft}>
+              <span className={styles.indEyebrow}>
+                {industryContent.eyebrow}
+                <span className={styles.indEyebrowLine} aria-hidden="true" />
+              </span>
+              <h2 id="odoo-industries-title" className={styles.indH2}>
+                Industry <span className={styles.indGradient}>solutions</span>
+              </h2>
+              <p className={styles.indSubtitle}>
+                {industryContent.description}
+              </p>
             </div>
-            <Link href="/industries" className={styles.learnMore}>
+            <Link href="/industries" className={styles.indViewAll}>
               View All Industries <ArrowRight aria-hidden="true" />
             </Link>
           </div>
-          <ul className={hub.industryGrid}>
-            {industryContent.items.map(([key, copy, icon]) => {
-              const page = odooPageByKey(key);
-              return (
-                <li key={key}>
-                  <GlyphIcon name={icon} />
-                  <h3>{page.label}</h3>
-                  <p>{copy}</p>
-                  <TopicLink page={page} />
-                </li>
-              );
-            })}
+
+          {/* ── Card grid ── */}
+          <ul className={styles.indGrid}>
+            {industryCards.map((card) => (
+              <IndustryCardItem key={card.title} card={card} />
+            ))}
           </ul>
-          <p className={hub.alsoServe}>{industryContent.alsoServe}</p>
         </div>
       </section>
+
+      <OdooSolutions />
 
       <section
         className={`${styles.section} ${hub.integrations}`}
@@ -422,39 +986,97 @@ export default function OdooReferencePage() {
       </section>
 
       <section
-        className={`${styles.section} ${styles.benefits}`}
+        className={`${styles.section} ${styles.whySection}`}
         id="why-etriplesoft"
         aria-labelledby="odoo-why-title"
       >
-        <div className={styles.container}>
-          <div className={styles.centerHeading}>
-            <span className={styles.eyebrow}>Why ETripleSoft</span>
-            <h2 id="odoo-why-title">
-              Built Around <em>Your Business</em>
+        <div className={styles.whyBackdrop} aria-hidden="true">
+          <div className={`${styles.whyFloat} ${styles.whyFloatStart}`}>
+            <span className={styles.whyFloatTile}>
+              <BarChart3 />
+            </span>
+            <svg viewBox="0 0 210 150">
+              <path d="M8 12c96 5 157 50 192 130" />
+            </svg>
+          </div>
+          <div className={`${styles.whyFloat} ${styles.whyFloatEnd}`}>
+            <span className={styles.whyFloatTile}>
+              <CheckCircle />
+            </span>
+            <svg viewBox="0 0 210 150">
+              <path d="M202 12C106 17 45 62 10 142" />
+            </svg>
+          </div>
+        </div>
+
+        <div className={`${styles.container} ${styles.whyContainer}`}>
+          <header className={styles.whyHeader}>
+            <div className={styles.whyEyebrow}>
+              <span>Why ETripleSoft</span>
+            </div>
+            <h2 id="odoo-why-title" className={styles.whyTitle}>
+              Built Around <span>Your Business</span>
             </h2>
-            <p>
+            <p className={styles.whySubtitle}>
               More than an ERP implementation — we deliver long-term value with
-              solutions
-              <br className={styles.desktopBreak} /> that fit your needs, local
+              solutions that fit your needs, local
               expertise, and continuous support.
             </p>
-          </div>
-          <div className={styles.benefitGrid}>
-            {benefits.map(([title, copy, asset], index) => (
-              <article key={title}>
-                <Asset name={asset} />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <a
-                  className={styles.learnMore}
-                  href={Object.values(benefitLinks.links)[index]}
-                  aria-label={`Learn more about ${title}`}
+          </header>
+
+          <ul className={styles.whyCards}>
+            {whyCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <li
+                  className={`${styles.whyCard} ${styles[card.tint]} ${index === 1 ? styles.whyCardFeatured : ""}`}
+                  key={card.number}
                 >
-                  Learn More <ArrowRight aria-hidden="true" />
-                </a>
-              </article>
-            ))}
-          </div>
+                  <article>
+                    <div className={styles.whyCardTop}>
+                      <span className={styles.whyIconTile} aria-hidden="true">
+                        <Icon />
+                        <i />
+                      </span>
+                      <span className={styles.whyNumber}>{card.number}</span>
+                    </div>
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                    <Link
+                      className={styles.whyLink}
+                      href={card.href}
+                      aria-label={`Learn more about ${card.title}`}
+                    >
+                      Learn More <ArrowRight aria-hidden="true" />
+                    </Link>
+                    <span className={styles.whyCardArtwork} aria-hidden="true">
+                      <WhyCardArtwork kind={card.decoration} />
+                    </span>
+                  </article>
+                </li>
+              );
+            })}
+          </ul>
+
+          <ul
+            className={styles.whyTrustStrip}
+            aria-label="Why choose ETripleSoft"
+          >
+            {whyTrustItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li key={item.title}>
+                  <span className={styles.whyTrustIcon} aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className={styles.whyTrustCopy}>
+                    <strong>{item.title}</strong>
+                    <small>{item.caption}</small>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 

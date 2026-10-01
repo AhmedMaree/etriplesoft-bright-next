@@ -1,11 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { arabicArticles } from "@/content/insights-ar";
+import { articles } from "@/content/insights";
+import { arInsightSummaries } from "@/i18n/ar-routes";
 import { arDateFormat, arMinutesLabel, arReadingMinutes } from "@/i18n/ar";
 import styles from "./ar.module.css";
 
 export function ArticleCards({ count }: { count?: number }) {
-  const items = count ? arabicArticles.slice(0, count) : arabicArticles;
+  const adapted = articles.flatMap((source) => {
+    const translation = arInsightSummaries.find((item) => item.slug === source.slug);
+    return translation ? [{
+      ...translation,
+      datePublished: source.datePublished,
+      image: source.image.src,
+    }] : [];
+  });
+  const items = count ? [...arabicArticles, ...adapted].slice(0, count) : [...arabicArticles, ...adapted];
   return (
     <ul className={styles.articles}>
       {items.map((article) => (

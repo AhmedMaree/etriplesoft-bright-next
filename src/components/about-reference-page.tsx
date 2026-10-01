@@ -133,7 +133,7 @@ export function AboutReferencePage() {
             {[
               ["250+", "Projects Delivered", UsersRound],
               ["3", "Countries", Building2],
-              ["10+", "Years of Experience", Sparkles],
+              ["8+", "Years of Experience", Sparkles],
               ["6", "Industries Served", ChartNoAxesColumnIncreasing],
             ].map(([value, label, Glyph]) => {
               const Icon = Glyph as typeof UsersRound;

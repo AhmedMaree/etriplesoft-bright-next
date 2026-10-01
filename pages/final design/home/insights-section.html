@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights section</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f9fe; --ink:#0f1535; --muted:#5a6079; --brand:#3b3bf5; --brand-soft:#e9ebff;
+  --radius:24px; --gap:24px;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink)}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+.insights{position:relative;overflow:hidden;max-width:1500px;margin:0 auto;padding:40px 48px 64px;isolation:isolate}
+.insights::before{content:"";position:absolute;z-index:-1;right:-12%;top:-30%;width:60%;height:120%;border-radius:50%;
+  background:radial-gradient(circle at 40% 50%,#eef1fd,transparent 70%)}
+
+/* ---------- header ---------- */
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.eyebrow{display:flex;align-items:center;gap:16px;font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--brand)}
+.eyebrow::after{content:"";width:146px;height:1px;background:var(--brand)}
+h2{font-size:clamp(32px,3.6vw,52px);font-weight:700;letter-spacing:-.03em;margin:14px 0 10px}
+h2 span{color:var(--brand)}
+.sub{font-size:18px;color:var(--muted)}
+.view{position:relative;margin-top:44px;display:inline-flex;align-items:center;gap:12px;padding:20px 32px;border-radius:14px;
+  background:var(--brand-soft);border:1px solid #d9ddfb;color:var(--brand);font-weight:600;font-size:18px;text-decoration:none}
+.view::before{content:"";position:absolute;left:-36px;top:-18px;width:26px;height:26px;
+  background:
+   linear-gradient(-30deg,transparent 46%,var(--brand) 46% 54%,transparent 54%) 0 0/100% 100% no-repeat;opacity:.9;transform:rotate(10deg)}
+.view:hover{background:#dfe3ff}
+.view:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* ---------- layout ---------- */
+.grid{display:grid;grid-template-columns:1.36fr 1fr;gap:var(--gap);margin-top:34px;align-items:stretch}
+.side{display:flex;flex-direction:column;gap:var(--gap)}
+
+/* ---------- shared ---------- */
+.row{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.tag{padding:7px 16px;border-radius:999px;font-weight:600;font-size:14px}
+.blue{background:#dcdfff;color:var(--brand)} .green{background:#d6f5ec;color:#0f9f82} .amber{background:#ffe9c9;color:#d98a12}
+.m{display:inline-flex;align-items:center;gap:7px}.m .i{font-size:17px}
+.go{display:grid;place-items:center;border-radius:50%;background:var(--brand-soft);color:var(--brand);text-decoration:none;flex:none}
+.go .i{font-size:22px}
+.go:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* ---------- featured ---------- */
+.featured{position:relative;overflow:hidden;background:#fff;border-radius:var(--radius);
+  box-shadow:0 14px 40px rgba(50,60,140,.09);padding:42px 44px;min-height:512px;
+  display:flex;flex-direction:column;gap:26px}
+.featured .media{position:absolute;inset:0 0 0 38%;z-index:0;background:#dcd8fa center/cover no-repeat;
+  background-image:url(images/insights/odoo-comparison.jpg)}
+.featured .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff 0,rgba(255,255,255,.6) 22%,transparent 50%)}
+.featured>*:not(.media){position:relative;z-index:1}
+.featured .copy{max-width:52%}
+.featured h3{font-size:clamp(24px,2.4vw,34px);line-height:1.25;font-weight:700;letter-spacing:-.01em;margin:30px 0 22px}
+.featured p{font-size:20px;line-height:1.6;color:var(--muted)}
+.featured .read{margin-top:auto;display:inline-flex;align-items:center;gap:22px;color:var(--brand);font-weight:600;font-size:20px;text-decoration:none}
+.featured .read .go{width:68px;height:68px;background:var(--brand);color:#fff;box-shadow:0 10px 24px rgba(59,59,245,.35)}
+.badge{position:absolute!important;z-index:2;display:grid;place-items:center;border-radius:20px;background:#fff;
+  box-shadow:0 14px 30px rgba(50,60,140,.18);font-weight:800}
+.badge.odoo{right:14%;top:52px;width:94px;height:94px;background:#8a3f94;color:#fff;font-size:26px;letter-spacing:-.02em;transform:rotate(-7deg)}
+.badge.zoho{right:5%;top:112px;width:92px;height:80px;font-size:20px;color:#e42527;letter-spacing:.06em;transform:rotate(4deg)}
+.badge.qb{right:3%;top:208px;width:92px;height:92px;background:#2ca01c;color:#fff;font-size:34px;border-radius:50%}
+
+/* ---------- side cards ---------- */
+.card{flex:1;display:flex;gap:28px;align-items:center;background:#fff;border-radius:var(--radius);padding:20px;
+  box-shadow:0 14px 40px rgba(50,60,140,.08)}
+.thumb{flex:0 0 37%;align-self:stretch;min-height:190px;border-radius:16px;background:#cfd9ee center/cover no-repeat}
+.card .body{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card h3{font-size:clamp(19px,1.6vw,22px);line-height:1.3;font-weight:700;letter-spacing:-.01em}
+.card .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.card p{font-size:16px;line-height:1.65;color:var(--muted)}
+.card .go{width:58px;height:58px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .insights{padding:28px 20px 48px}
+  .grid{grid-template-columns:1fr}
+  .view{margin-top:8px}.view::before{display:none}
+}
+@media (max-width:700px){
+  .featured{padding:26px 22px;min-height:0}
+  .featured .media{position:relative;inset:auto;order:-1;height:220px;margin:-26px -22px 0}
+  .featured .media::after{background:linear-gradient(0deg,#fff 0,transparent 50%)}
+  .featured .copy{max-width:none}
+  .badge{display:none}
+  .card{flex-direction:column;align-items:stretch;gap:18px}
+  .thumb{flex:none;min-height:190px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<section class="insights" aria-labelledby="ins-title">
+  <header class="head">
+    <div>
+      <p class="eyebrow">OUR INSIGHTS</p>
+      <h2 id="ins-title">Latest Articles &amp; <span>Insights</span></h2>
+      <p class="sub">Stay updated with the latest trends, tips and success stories from our experts.</p>
+    </div>
+    <a class="view" href="/blog">View All Articles <svg class="i"><use href="#arrow"/></svg></a>
+  </header>
+
+  <div class="grid">
+    <!-- featured -->
+    <article class="featured">
+      <div class="media" style="background-image:url(/images/odoo/odoo-laptop-dashboard.webp)" aria-hidden="true"></div>
+      <span class="badge odoo" aria-hidden="true">odoo</span>
+      <span class="badge zoho" aria-hidden="true">ZOHO</span>
+      <span class="badge qb" aria-hidden="true">qb</span>
+      <div class="copy">
+        <div class="row">
+          <span class="tag blue">Odoo ERP</span>
+          <span class="m"><svg class="i"><use href="#cal"/></svg>26 Sept 2025</span>
+          <span class="m"><svg class="i"><use href="#clock"/></svg>5 min read</span>
+        </div>
+        <h3>Odoo vs Zoho vs QuickBooks: Which One Actually Fits Your Business?</h3>
+        <p>Compare Odoo, Zoho Books and QuickBooks by workflow, integrations, regional support and total cost of ownership.</p>
+      </div>
+      <a class="read" href="/insights/odoo-vs-zoho-vs-quickbooks"><span class="go"><svg class="i"><use href="#arrow"/></svg></span>Read Article</a>
+    </article>
+
+    <!-- side cards -->
+    <div class="side">
+      <article class="card">
+        <div class="thumb" style="background-image:url(/images/project-ai.webp)"></div>
+        <div class="body">
+          <div class="row">
+            <span class="tag green">AI &amp; Automation</span>
+            <span class="m"><svg class="i"><use href="#cal"/></svg>22 Sept 2025</span>
+            <span class="m"><svg class="i"><use href="#clock"/></svg>7 min read</span>
+          </div>
+          <h3>Odoo Implementation Timeline: How Long Does It Take?</h3>
+          <div class="foot">
+            <p>Learn how scope, data readiness, integrations and local requirements shape an Odoo project timeline.</p>
+            <a class="go" href="/insights/odoo-implementation-timeline" aria-label="Read: Odoo Implementation Timeline"><svg class="i"><use href="#arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" style="background-image:url(/images/insights/facility-management-software-guide/facility-management-software-guide-2026.webp)"></div>
+        <div class="body">
+          <div class="row">
+            <span class="tag amber">Facility Management</span>
+            <span class="m"><svg class="i"><use href="#cal"/></svg>18 Sept 2025</span>
+            <span class="m"><svg class="i"><use href="#clock"/></svg>6 min read</span>
+          </div>
+          <h3>Facility Management Software: Complete 2026 Guide for Egypt, Saudi Arabia, and the UAE</h3>
+          <div class="foot">
+            <p>Compare CAFM, CMMS and IWMS solutions and find the best fit for your organization.</p>
+            <a class="go" href="/insights/facility-management-software-guide" aria-label="Read: Facility Management Software guide"><svg class="i"><use href="#arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

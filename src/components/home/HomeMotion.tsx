@@ -7,7 +7,7 @@ import { useEffect } from "react";
 // elements that start below the fold. Skipped entirely for reduced motion.
 
 const GROUPS =
-  '.value-props-grid, .home-solutions-grid, .stats-cards, .testimonials, .industry-bento, [class*="__appsGrid"], [class*="__articles"]';
+  '.value-props-grid, .home-solutions-grid, .stats-cards, .testimonials, .industry-bento, [class*="__cardsTop"], [class*="__cardsBottom"], [class*="__showGrid"], [class*="__articles"], [class*="__insightsGrid"]';
 const SKIP = ".hero, .partners";
 
 type Unit = { el: HTMLElement; index: number };

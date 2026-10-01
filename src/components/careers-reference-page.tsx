@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, FileUp, MapPin, Play } from "lucide-react";
 import styles from "./careers-reference.module.css";
 import { mailto } from "@/lib/company";
+import { CareersJobsEmbed } from "./careers-jobs-embed";
 
 const values = [
   ["Regional work", "Build digital solutions for businesses in Egypt, the UAE and Saudi Arabia."],
@@ -37,7 +38,7 @@ export function CareersReferencePage() {
               <Link href="#life-at-etriplesoft" className={`${styles.button} ${styles.whiteButton}`}><span className={styles.play}><Play size={13} fill="currentColor" aria-hidden="true" /></span>Life at ETripleSoft</Link>
             </div>
             <dl className={styles.stats}>
-              {[["250+", "Projects Delivered"], ["3", "Regional Offices"], ["10+", "Years of Experience"], ["6", "Industries Served"]].map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}
+              {[["250+", "Projects Delivered"], ["3", "Regional Offices"], ["8+", "Years of Experience"], ["6", "Industries Served"]].map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}
             </dl>
           </div>
         </div>
@@ -70,11 +71,13 @@ export function CareersReferencePage() {
         </div>
       </section>
 
-      <section id="open-positions" className={styles.section} aria-labelledby="positions-title">
-        <div className={styles.container}>
-          <header className={`${styles.sectionHeading} ${styles.positionsHeading}`}><div><p className={styles.eyebrow}>Join our team</p><h2 id="positions-title">Career enquiries</h2><p>Email your CV to ask about current or future opportunities. We’ll follow up if a suitable role comes up.</p></div><Action href={mailto("Career application")} light>Email Your CV</Action></header>
-        </div>
-      </section>
+      <CareersJobsEmbed
+        eyebrow="Join our team"
+        title="Open positions"
+        description="Browse current roles and apply directly through our careers portal."
+        openPortalLabel="Open careers portal"
+        iframeTitle="ETripleSoft open positions"
+      />
 
       <section className={styles.section} aria-label="More ways to join our team">
         <div className={`${styles.container} ${styles.opportunitiesGrid}`}>

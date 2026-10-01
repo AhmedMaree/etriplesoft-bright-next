@@ -7,7 +7,7 @@ import {
   odooIndustryPages,
 } from "@/lib/odoo-pages";
 import { absoluteUrl } from "@/lib/site";
-import { arabicArticles } from "@/content/insights-ar";
+import { localizedInsightSlugs, localizedRoutePaths } from "@/i18n/localized-paths";
 import { localePairs } from "@/i18n/paths";
 
 // Built from the same sources that render the pages, so a page appears here
@@ -55,16 +55,25 @@ const withAlternates = (route: string) => {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const unique = [...new Set([...routes, ...localePairs.map((pair) => pair.ar)])];
+  const unique = [...new Set([
+    ...routes,
+    ...localePairs
+      .filter((pair) => !pair.en.startsWith("/portfolio/") && !pair.en.startsWith("/insights/"))
+      .map((pair) => pair.ar),
+    ...localizedRoutePaths.map((path) => `/ar${path}`),
+  ])];
   return [
     ...unique.map(withAlternates),
     ...articles.map((article) => ({
-      url: absoluteUrl(`/insights/${article.slug}`),
+      ...withAlternates(`/insights/${article.slug}`),
       lastModified: article.datePublished.slice(0, 10),
     })),
-    ...arabicArticles.map((article) => ({
-      url: absoluteUrl(`/ar/insights/${article.slug}`),
-      lastModified: article.datePublished,
-    })),
+    ...localizedInsightSlugs.map((slug) => {
+      const article = articles.find((item) => item.slug === slug);
+      return {
+        ...withAlternates(`/ar/insights/${slug}`),
+        ...(article ? { lastModified: article.datePublished.slice(0, 10) } : {}),
+      };
+    }),
   ];
 }

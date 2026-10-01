@@ -4,7 +4,6 @@ import {
   ValueProps,
   SectionHeading,
   Icon,
-  IndustryBento,
   Process,
   Stats,
   CTA,
@@ -19,9 +18,8 @@ import { siteConfig } from "@/lib/site";
 import { ClientLogos } from "@/components/home/ClientLogos";
 import { HomeMotion } from "@/components/home/HomeMotion";
 import { OdooAppsGrid } from "@/components/home/OdooAppsGrid";
+import { IndustriesShowcase } from "@/components/home/IndustriesShowcase";
 import { HomeArticles } from "@/components/home/HomeArticles";
-import { company } from "@/lib/company";
-import { industryCardItems } from "@/data/industries/hub";
 export const metadata: Metadata = pageMetadata({
   title: "Odoo Gold Partner in Egypt, UAE & Saudi Arabia | ETripleSoft",
   absoluteTitle: true,
@@ -41,6 +39,7 @@ export default function Home() {
         accent="Your Business."
         description="Odoo ERP, apps, AI and digital solutions for ambitious companies across Egypt, UAE and Saudi Arabia."
         image="hero-image"
+        mobileImage="hero-mobile-en"
         primary="Book a Free Consultation"
         primaryHref="/book-consultation"
         secondary="Explore Solutions"
@@ -121,14 +120,7 @@ export default function Home() {
       </section>
       <section className="section tinted home-stage home-industries-stage">
         <div className="container">
-          <SectionHeading
-            eyebrow="Industries"
-            title="Deep Industry Expertise"
-            description="We understand your industry. Our tailored solutions help you overcome challenges and achieve sustainable growth."
-            link="Explore All Industries"
-            href="/industries"
-          />
-          <IndustryBento items={industryCardItems} />
+          <IndustriesShowcase />
         </div>
       </section>
       <Stats
@@ -141,7 +133,7 @@ export default function Home() {
         items={[
           ["250+", "Projects Delivered", "briefcase"],
           ["3", "Countries", "globe"],
-          ["10+", "Years of Experience", "clock"],
+          ["8+", "Years of Experience", "clock"],
           ["6", "Industries Served", "building"],
         ]}
       />
@@ -152,26 +144,10 @@ export default function Home() {
       </section>
       <section className="section insights-home home-stage home-insights-stage">
         <div className="container">
-          <SectionHeading
-            eyebrow="Our Insights"
-            title="Latest Articles & Insights"
-            description="Stay updated with the latest trends, tips and success stories."
-            link="View All Articles"
-            href="/insights"
-          />
           <HomeArticles />
         </div>
       </section>
-      <CTA
-        title="Ready to Transform Your Business?"
-        description="Tell us where your operations are slowing you down. We will map the first steps with you — no pressure, no jargon."
-        secondary={{
-          label: "WhatsApp us",
-          href: company.whatsappUrl,
-          external: true,
-        }}
-        note="Free consultation. No obligation."
-      />
+      <CTA />
     </main>
   );
 }

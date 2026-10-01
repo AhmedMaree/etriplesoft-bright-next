@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odoo ERP – Apps section</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fd; --card:#fff; --border:#e8ebf5;
+  --ink:#0f1535; --muted:#5a6079; --brand:#3b3bf5; --brand-soft:#e9ebff;
+  --blue:#2f4bf2;  --blue-bg:#e8eeff;
+  --teal:#16a38a;  --teal-bg:#dcf5ef;
+  --violet:#6d3df0;--violet-bg:#eee9ff;
+  --amber:#f2971b; --amber-bg:#fff0d9;
+  --radius-card:22px; --radius-icon:14px;
+  --shadow:0 6px 24px rgba(40,50,120,.06);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d1020;--card:#151a30;--border:#252b47;--ink:#f1f3ff;--muted:#a3a9c4;--brand-soft:#23275a}
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink)}
+.section{max-width:1400px;margin:0 auto;padding:36px 40px 60px;
+  display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:56px;align-items:start}
+
+/* left column */
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--brand-soft);color:var(--brand);
+  font-size:13px;font-weight:700;letter-spacing:.14em;padding:9px 18px;border-radius:999px}
+.badge i{width:9px;height:9px;border-radius:50%;background:#7b83ff}
+h2{font-size:clamp(34px,3.4vw,50px);line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:22px 0 20px}
+h2 em{font-style:normal;color:var(--brand)}
+.lead{font-size:18px;line-height:1.8;color:var(--muted);max-width:26em}
+.cta{display:inline-flex;align-items:center;gap:14px;margin-top:34px;background:var(--brand);color:#fff;
+  font:600 17px var(--font);padding:15px 26px;border-radius:14px;text-decoration:none;box-shadow:0 8px 20px rgba(59,59,245,.28)}
+.hero-art{position:relative;height:300px;margin-top:10px}
+.note{position:absolute;left:44%;top:0;font-family:"Caveat",cursive;color:var(--brand);font-size:19px;line-height:1.2;transform:rotate(-8deg)}
+.platform{position:absolute;left:4%;bottom:0;width:80%;height:150px;background:linear-gradient(#fff,#eef0fb);
+  border-radius:28px;transform:perspective(600px) rotateX(58deg) rotateZ(-20deg);box-shadow:0 30px 50px rgba(80,90,200,.22)}
+.tile{position:absolute;border-radius:16px;display:grid;place-items:center;transform:rotate(-14deg) skewX(-8deg);box-shadow:0 12px 22px rgba(60,70,160,.18)}
+.t-odoo{left:16%;top:120px;width:150px;height:70px;background:linear-gradient(135deg,#8a4b9c,#5f2a73);color:#fff;font-weight:700;font-size:26px;letter-spacing:-.02em}
+.t-sales{left:6%;top:70px;width:96px;height:64px;background:var(--blue-bg)}
+.t-crm{left:25%;top:36px;width:96px;height:60px;background:var(--teal-bg)}
+.t-hr{left:47%;top:96px;width:76px;height:56px;background:var(--violet-bg)}
+.t-inv{left:58%;top:130px;width:84px;height:56px;background:var(--amber-bg)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-card);box-shadow:var(--shadow);padding:28px 30px 26px;
+  display:flex;flex-direction:column;min-height:320px}
+.top .card{grid-column:span 4}
+.top .card:nth-child(1){grid-column:span 4}
+.bottom .card{grid-column:span 3;min-height:328px}
+.row{display:contents}
+.icon{width:70px;height:68px;border-radius:var(--radius-icon);display:grid;place-items:center}
+.icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h3{font-size:24px;font-weight:700;margin:26px 0 10px;letter-spacing:-.01em}
+.card p{font-size:17px;line-height:1.75;color:var(--muted);max-width:15em}
+.bottom .card p{font-size:15.5px;line-height:1.75}
+.bottom h3{font-size:22px;margin-top:22px}
+.go{margin-top:auto;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;position:relative;z-index:1}
+.go svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.deco{position:absolute;right:18px;bottom:18px;width:38%;height:34%;border-radius:12px;opacity:.55}
+
+.c-blue .icon,.c-blue .go{background:var(--blue-bg);color:var(--blue)}
+.c-teal .icon,.c-teal .go{background:var(--teal-bg);color:var(--teal)}
+.c-violet .icon,.c-violet .go{background:var(--violet-bg);color:var(--violet)}
+.c-amber .icon,.c-amber .go{background:var(--amber-bg);color:var(--amber)}
+.c-blue .deco{background:linear-gradient(90deg,transparent 0 10%,var(--blue-bg) 10% 30%,transparent 30% 40%,var(--blue-bg) 40% 60%,transparent 60% 70%,var(--blue-bg) 70%)}
+.c-teal .deco{background:linear-gradient(135deg,transparent 55%,var(--teal-bg))}
+.c-violet .deco{background:var(--violet-bg)}
+.c-amber .deco{background:var(--amber-bg)}
+.card:focus-within,.go:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.go:hover{filter:brightness(.96)}
+
+@media (max-width:1100px){
+  .section{grid-template-columns:1fr;gap:40px;padding:28px 20px 48px}
+  .hero-art{height:260px;max-width:420px}
+  .top .card,.bottom .card{grid-column:span 6;min-height:280px}
+}
+@media (max-width:620px){
+  .top .card,.bottom .card{grid-column:span 12}
+  .card p{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<section class="section" aria-labelledby="apps-title">
+  <div class="intro">
+    <span class="badge"><i></i>ODOO ERP</span>
+    <h2 id="apps-title">All your business apps, <em>working together</em></h2>
+    <p class="lead">Start with the app that solves today’s bottleneck and add the rest as you grow — they already share the same data.</p>
+    <a class="cta" href="#">Explore all apps
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="hero-art" aria-hidden="true">
+      <div class="note">One platform<br>Endless possibilities</div>
+      <div class="platform"></div>
+      <div class="tile t-sales"></div><div class="tile t-crm"></div>
+      <div class="tile t-hr"></div><div class="tile t-inv"></div>
+      <div class="tile t-odoo">odoo</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="row top">
+      <article class="card c-blue">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h10L20 7H6.5"/><circle cx="9" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg></div>
+        <h3>Sales</h3><p>Quotes, orders and pipeline in one flow.</p>
+        <a class="go" href="#" aria-label="Open Sales"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+      <article class="card c-teal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4v16h16M9 16v-5M13 16V8M17 16v-3"/></svg></div>
+        <h3>CRM</h3><p>Track every lead from first touch to close.</p>
+        <a class="go" href="#" aria-label="Open CRM"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+      <article class="card c-violet">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <h3>Accounting</h3><p>Books, tax and e-invoicing without re-keying.</p>
+        <a class="go" href="#" aria-label="Open Accounting"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+    </div>
+    <div class="row bottom">
+      <article class="card c-amber">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div>
+        <h3>Inventory</h3><p>Stock, warehouses and deliveries in real time.</p>
+        <a class="go" href="#" aria-label="Open Inventory"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+      <article class="card c-blue">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4v16h16M7 15l3-4 3 2 4-6"/></svg></div>
+        <h3>Manufacturing</h3><p>Bills of materials, work orders and costing.</p>
+        <a class="go" href="#" aria-label="Open Manufacturing"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+      <article class="card c-teal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M9 11v4M12 10v5M15 12v3"/></svg></div>
+        <h3>Projects</h3><p>Plan work, log time and bill it accurately.</p>
+        <a class="go" href="#" aria-label="Open Projects"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+      <article class="card c-violet">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 010 6M18 14c1.8.6 3 2.3 3 4.5"/></svg></div>
+        <h3>HR &amp; Payroll</h3><p>People records, attendance and payroll.</p>
+        <a class="go" href="#" aria-label="Open HR and Payroll"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="deco"></span>
+      </article>
+    </div>
+  </div>
+</section>
+</body>
+</html>

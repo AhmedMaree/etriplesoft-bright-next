@@ -8,7 +8,7 @@ import "../globals.css";
 import "./ar.css";
 import { ArHeader } from "@/components/ar/ArHeader";
 import { ArFooter } from "@/components/ar/ArFooter";
-import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FloatingActions } from "@/components/whatsapp-button";
 import { siteConfig, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -31,9 +31,14 @@ export default function ArabicRootLayout({
         <ArHeader />
         {children}
         <ArFooter />
-        <WhatsAppButton
-          label="تواصل مع ETripleSoft عبر واتساب"
-          title="تواصل عبر واتساب"
+        <FloatingActions
+          toolHref="/ar/tools/chart-of-accounts"
+          toolLabel="فتح أداة إنشاء دليل الحسابات حسب القطاع"
+          toolTitle="منشئ دليل الحسابات"
+          whatsappLabel="تواصل مع ETripleSoft عبر واتساب"
+          whatsappTitle="تواصل عبر واتساب"
+          profileLabel="تحميل الملف التعريفي باللغة الإنجليزية (PDF)"
+          profileTitle="تحميل الملف التعريفي باللغة الإنجليزية"
         />
       </body>
     </html>

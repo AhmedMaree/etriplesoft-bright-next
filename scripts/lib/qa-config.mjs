@@ -13,7 +13,14 @@ export const builtinFragments = new Set(["top"]);
 
 // Documented exceptions. Each entry needs a reason; nothing is skipped silently.
 //   { type: "MISSING_ANCHOR", source: "/x", target: "/y#z", reason: "why this is safe" }
-export const allowlist = [];
+export const allowlist = [
+  {
+    type: "PLACEHOLDER_LINK",
+    source: "/odoo",
+    target: "#",
+    reason: "ERP module destinations are intentionally awaiting final routes, as documented inline in OdooReferencePage.tsx.",
+  },
+];
 
 // Source files whose URL strings are provenance notes (where copy was migrated
 // from), never rendered as links. The rendered-page crawl is the authority for

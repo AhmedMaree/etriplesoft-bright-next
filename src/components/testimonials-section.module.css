@@ -1,0 +1,321 @@
+/* Ported from pages/final design/home/testimonials-section.html.
+   Only page-level selectors were adapted for embedding as a component:
+   :root variables now live on .testimonials, svg.i became .i, bare h2
+   became .title, and the section's own max-width/padding were dropped
+   (the global container + stage provide them). Everything else is verbatim. */
+.testimonials {
+  --bg: #f7f9fe;
+  --ink: #0f1535;
+  --muted: #5a6079;
+  --brand: #3b3bf5;
+  --brand-soft: #e9ebff;
+  --blue: #1e90ff;
+  --violet: #8b7cf6;
+  --green: #22c79a;
+  --star: #f5b400;
+  --radius: 18px;
+  --gap: 18px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  font-family: var(--font);
+  color: var(--ink);
+}
+
+.i {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* decoration: big quote marks + dots (behind content) */
+.deco {
+  position: absolute;
+  top: 6px;
+  right: 120px;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.deco .q {
+  font: 700 220px/0.8 Georgia, serif;
+  color: #e7edfb;
+  height: 150px;
+  overflow: hidden;
+}
+.deco .dots {
+  width: 55px;
+  height: 100px;
+  margin-right: -15px;
+  background-image: radial-gradient(circle, #c9d3ee 2px, transparent 2.4px);
+  background-size: 20px 22px;
+}
+
+.head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--brand);
+  margin: 0;
+  text-transform: uppercase;
+}
+.eyebrow::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: var(--brand);
+  opacity: 0.6;
+}
+.title {
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 10px 0 10px;
+  color: var(--ink);
+}
+.title span {
+  color: var(--brand);
+}
+.sub {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 30em;
+  margin: 0;
+}
+.nav {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+.nav button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #dfe4f3;
+  background: #fff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(40, 50, 120, 0.06);
+  transition: transform 0.2s, background 0.2s;
+}
+.nav button svg {
+  display: block;
+  flex: none;
+}
+.nav button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.nav button.next {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.nav button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.nav button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* ---------- slider ---------- */
+.track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  gap: var(--gap);
+  margin-top: 18px;
+  padding: 4px 4px 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--c);
+  box-shadow: 0 8px 24px rgba(50, 60, 140, 0.06);
+  padding: 22px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 220px;
+  margin: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(50, 60, 140, 0.09);
+}
+.card.blue {
+  --c: var(--blue);
+}
+.card.violet {
+  --c: var(--violet);
+}
+.card.green {
+  --c: var(--green);
+}
+.quote {
+  position: relative;
+  padding: 0 0 0 44px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #3a4160;
+  flex: 1;
+  margin: 0;
+}
+.quote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font: 700 62px/1 Georgia, serif;
+  color: var(--c);
+  opacity: 0.3;
+}
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--avatar-bg, #c8d1ea) center/cover;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: var(--avatar-ink, #fff);
+  font-size: 15px;
+}
+.who {
+  flex: 1;
+  min-width: 0;
+}
+.who b {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+.who small {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+.stars {
+  color: var(--star);
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-top: 3px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--ink);
+  flex: none;
+}
+
+/* ---------- dots ---------- */
+.dotsNav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.dotsNav button {
+  width: 12px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: #dde2f5;
+  cursor: pointer;
+  transition: width 0.25s, background 0.25s;
+  padding: 0;
+}
+.dotsNav button[aria-current="true"] {
+  width: 36px;
+  background: var(--brand);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+  .card {
+    flex-basis: calc((100% - var(--gap)) / 2);
+  }
+  .deco {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav {
+    padding-bottom: 0;
+  }
+  .card {
+    flex-basis: 100%;
+    padding: 20px 18px 18px 22px;
+    min-height: auto;
+  }
+  .quote {
+    padding: 0 0 0 38px;
+    font-size: 14px;
+  }
+  .foot {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+}

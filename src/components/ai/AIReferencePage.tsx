@@ -342,7 +342,7 @@ export default function AIReferencePage() {
           <div className={s.metrics}>
             {[
               ["250+", "Projects delivered", "clients"],
-              ["10+", "Years of experience", "clock"],
+              ["8+", "Years of experience", "clock"],
               ["3", "Countries", "web"],
               ["6", "Industries served", "clients"],
             ].map(([number, label, asset]) => (

@@ -1,0 +1,338 @@
+/* Ported exactly from pages/final design/home/cta-section.html.
+   Aligned with the site header and homepage container grid from left and right. */
+
+.cta {
+  --ink-dark: #10168a;
+  --accent: #7dd3fc;
+  --white: #fff;
+  --text-soft: rgba(255, 255, 255, 0.78);
+  --glass: rgba(255, 255, 255, 0.14);
+  --radius: 24px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  width: min(var(--container, 1240px), calc(100% - 2 * var(--page-gutter, 24px)));
+  max-width: var(--container, 1240px);
+  margin: 32px auto;
+  border-radius: var(--radius);
+  color: var(--white);
+  text-align: center;
+  padding: 42px 28px 34px;
+  font-family: var(--font);
+  background: linear-gradient(100deg, #6a4cff 0%, #3a3fe0 30%, #1f3fd0 60%, #1565f5 100%);
+  box-shadow: 0 20px 50px rgba(40, 60, 200, 0.22);
+  box-sizing: border-box;
+}
+
+.cta * {
+  box-sizing: border-box;
+}
+
+.cta .i {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- decoration (all behind content) ---------- */
+.cta::before,
+.cta::after,
+.wave,
+.dots,
+.orb {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+.wave {
+  border-radius: 50%;
+}
+
+.wave.l1 {
+  left: -12%;
+  bottom: -70%;
+  width: 62%;
+  height: 120%;
+  background: linear-gradient(160deg, rgba(170, 140, 255, 0.55), rgba(80, 110, 255, 0.15));
+}
+
+.wave.l2 {
+  left: -16%;
+  bottom: -78%;
+  width: 66%;
+  height: 108%;
+  background: linear-gradient(160deg, rgba(90, 140, 255, 0.75), rgba(60, 120, 255, 0.2));
+}
+
+.wave.r1 {
+  right: -14%;
+  bottom: -78%;
+  width: 58%;
+  height: 112%;
+  background: linear-gradient(200deg, rgba(40, 150, 255, 0.9), rgba(20, 100, 255, 0.3));
+}
+
+.orb {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.orb.a {
+  left: 5%;
+  bottom: 14%;
+  width: clamp(50px, 4.5vw, 90px);
+  aspect-ratio: 1;
+}
+
+.orb.b {
+  right: 3%;
+  top: 22%;
+  width: clamp(60px, 5vw, 100px);
+  aspect-ratio: 1;
+  background: rgba(40, 120, 255, 0.45);
+}
+
+.dots {
+  width: 130px;
+  height: 130px;
+  opacity: 0.55;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1.4px, transparent 1.6px);
+  background-size: 22px 22px;
+}
+
+.dots.a {
+  left: 6%;
+  top: 14%;
+}
+
+.dots.b {
+  right: 4%;
+  top: 46%;
+}
+
+/* ---------- content ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: var(--glass);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.badge .i,
+.badge svg {
+  font-size: 14px;
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+.cta h2,
+:global(.ets-english) .cta h2 {
+  font-family: var(--font);
+  font-size: clamp(28px, 3.2vw, 42px) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin: 16px 0 12px !important;
+  color: var(--white) !important;
+  text-align: center;
+}
+
+.cta h2 span,
+:global(.ets-english) .cta h2 span {
+  display: block;
+  color: var(--accent) !important;
+}
+
+.sub,
+.cta .sub,
+:global(.ets-english) .cta .sub {
+  max-width: 30em;
+  margin: 0 auto;
+  font-family: var(--font);
+  font-size: clamp(14.5px, 1.2vw, 16.5px) !important;
+  line-height: 1.6 !important;
+  color: var(--text-soft) !important;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn,
+.cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 28px;
+  border-radius: 12px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.btn .i,
+.cta .btn .i {
+  font-size: 17px;
+  width: 1em;
+  height: 1em;
+}
+
+.btn.primary {
+  background: #fff;
+  color: var(--ink-dark) !important;
+  box-shadow: 0 8px 22px rgba(10, 20, 120, 0.22);
+  border: 1.5px solid transparent;
+}
+
+.btn.ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  color: #fff !important;
+  background: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary:hover {
+  background: #fff;
+  color: var(--ink-dark) !important;
+  box-shadow: 0 12px 28px rgba(10, 20, 120, 0.3);
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff !important;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.perks {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  margin-top: 24px;
+  padding: 0;
+}
+
+.perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px;
+  font-family: var(--font);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.4;
+}
+
+.perks li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+:global(html[dir="rtl"]) .perks li + li {
+  border-left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.perks .ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--glass);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex: none;
+  color: var(--white);
+}
+
+.perks .ic svg,
+.perks .ic .i {
+  font-size: 18px;
+  width: 1em;
+  height: 1em;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .cta {
+    padding: 34px 18px 28px;
+    border-radius: 20px;
+  }
+  .dots {
+    display: none;
+  }
+  .btn,
+  .cta .btn {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 14.5px;
+    width: 100%;
+    max-width: 340px;
+  }
+  .perks {
+    flex-direction: column;
+    align-items: flex-start;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+    gap: 12px;
+  }
+  .perks li {
+    padding: 0;
+  }
+  .perks li + li {
+    border-left: 0;
+  }
+  :global(html[dir="rtl"]) .perks li + li {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .cta {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .cta .btn {
+    transition: none;
+  }
+}
