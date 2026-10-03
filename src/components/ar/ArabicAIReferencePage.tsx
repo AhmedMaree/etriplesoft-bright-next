@@ -4,12 +4,11 @@ import {
   MessageCircle,
   Plus,
   CheckSquare,
-  ChartNoAxesColumnIncreasing,
-  Database,
-  TrendingUp,
 } from "lucide-react";
 import s from "../ai/AIReferencePage.module.css";
 import { featuredTestimonials } from "@/data/testimonials";
+import { AiAutomationHero } from "../ai/AiAutomationHero";
+import { WhyAutomationSection } from "../ai/WhyAutomationSection";
 
 const contact = "/ar/contact-us?service=الذكاء%20الاصطناعي%20والأتمتة";
 const testimonial = featuredTestimonials.ai;
@@ -42,21 +41,6 @@ const useCases = [
   ],
   ["الموارد البشرية وشؤون الموظفين", "أتمتة المهام الروتينية مثل تهيئة الموظفين الجدد والطلبات.", "people"],
   ["حلول ذكاء اصطناعي مخصصة", "مصممة وفق الاحتياجات الفريدة لقطاع عملك.", "custom"],
-];
-
-const benefits = [
-  [
-    "إنتاجية أعلى",
-    "أتمتة المهام الروتينية وتمكين الفرق من التركيز على القيمة الفعلية.",
-    "reporting",
-  ],
-  ["خفض التكاليف التشغيلية", "تقليل العمل اليدوي والأخطاء المكلفة.", "saving"],
-  ["دقة استثنائية", "تقليل الأخطاء البشرية بفضل دقة معالجة البيانات بالذكاء الاصطناعي.", "accuracy"],
-  [
-    "حلول قابلة للتوسع",
-    "توسيع نطاق الأتمتة بسلاسة مع نمو حجم أعمالك.",
-    "scalable",
-  ],
 ];
 
 const questions = [
@@ -140,51 +124,7 @@ function Heading({
 export function ArabicAIReferencePage() {
   return (
     <main id="main" className={`${s.page} ar-service-page`} dir="rtl">
-      <section className={s.hero}>
-        <div className={`${s.container} ${s.heroGrid}`}>
-          <div className={s.heroCopy}>
-            <span className={s.pill}>
-              <i />
-              أعمال مدعومة بالذكاء الاصطناعي
-            </span>
-            <h1>
-              أتمتة <em>الذكاء الاصطناعي</em>
-            </h1>
-            <h2>عمل أكثر ذكاءً. احتكاك أقل.</h2>
-            <p>
-              أتمت الإجراءات، ومكّن فرقك، وحقق نمواً متسارعاً مع حلول ذكاء اصطناعي عملية ومصممة للأعمال.
-            </p>
-            <div className={s.actions}>
-              <Action href="#solutions">استكشف حلول الذكاء الاصطناعي</Action>
-              <Action href="/ar/book-consultation" secondary>احجز استشارة مجانية</Action>
-            </div>
-            <div className={s.heroBenefits}>
-              {[
-                ["إنتاجية", "أعلى بكثير", ChartNoAxesColumnIncreasing],
-                ["تكاليف", "تشغيلية أقل", Database],
-                ["نمو", "قابل للتوسع", TrendingUp],
-              ].map(([title, text, Glyph]) => {
-                const Icon = Glyph as typeof Database;
-                return (
-                  <div key={String(title)}>
-                    <Icon aria-hidden="true" size={20} />
-                    <span>
-                      <strong>{String(title)}</strong>
-                      {String(text)}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <img
-            className={s.heroArt}
-            src="/images/ai/reference/hero.webp"
-            alt="الذكاء الاصطناعي يربط أنظمة الأعمال ومسارات العمل الآلية والمساعدين الذكيين والتقارير"
-            fetchPriority="high"
-          />
-        </div>
-      </section>
+      <AiAutomationHero locale="ar" />
 
       <div className={s.container}>
         <nav className={s.capabilities} aria-label="الخدمات المترابطة">
@@ -295,51 +235,11 @@ export function ArabicAIReferencePage() {
             ))}
           </div>
         </section>
+      </div>
 
-        <section className={`${s.section} ${s.outcomes}`}>
-          <div>
-            <div className={s.outcomeIntro}>
-              <Heading label="نتائج أعمال ملموسة" plain>
-                لماذا تختار ETripleSoft للأتمتة؟
-              </Heading>
-              <p>
-                نجمع بين الخبرة التقنية العميقة والفهم الواقعي لاحتياجات الأعمال لتقديم حلول أتمتة تصنع قيمة حقيقية وقابلة للقياس.
-              </p>
-            </div>
-            <div className={s.benefits}>
-              {benefits.map(([title, copy, icon]) => (
-                <article key={title}>
-                  <Asset name={icon} />
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div className={s.human}>
-            <div className={s.humanCopy}>
-              <span className={s.label}>عمل أكثر ذكاءً وسرعة معاً</span>
-              <h2>
-                الذكاء الاصطناعي + الخبرة البشرية
-                <br />= إمكانات لا محدودة
-              </h2>
-              <p>
-                نساعدك على تحديد الفرص المناسبة، وتنفيذ الحلول بدقة، وتحقيق نتائج تدوم.
-              </p>
-              <Action href={`${contact}&subject=مناقشة%20حالة%20الاستخدام`}>
-                ناقش احتياجات شركتك
-              </Action>
-            </div>
-            <Asset
-              name="robot"
-              className={s.robot}
-              alt="روبوت ذكاء اصطناعي يوضح خطوات التحليل والأتمتة والتكامل والنمو"
-            />
-          </div>
-        </section>
+        <WhyAutomationSection locale="ar" />
 
+      <div className={s.container}>
         <section className={s.section}>
           <Heading label="خبراتنا في المنطقة">سجل حافل في الشرق الأوسط</Heading>
           <div className={s.metrics}>

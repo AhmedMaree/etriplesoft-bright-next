@@ -1153,6 +1153,9 @@
   inset-inline-start: 0;
   object-position: left bottom;
 }
+:global(html[lang="ar"] main.ar-service-page) :global(.lucide-arrow-left) {
+  transform: none;
+}
 @media (max-width: 560px) {
   .page .actions { flex-direction: column; align-items: stretch; }
 }

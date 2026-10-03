@@ -3,6 +3,7 @@ import {
   ArrowRight,
   CalendarDays,
   Code2,
+  FileText,
   PenTool,
   Plus,
   Quote,
@@ -44,10 +45,10 @@ const services = [
 ] as const;
 
 const milestones = [
-  ["Discovery & Planning", "Goals, users and requirements"],
-  ["Design & Prototyping", "Journeys and interface concepts"],
-  ["Development & Testing", "Implementation and quality checks"],
-  ["Launch & Support", "Release and ongoing improvement"],
+  ["Discovery & Planning", "Goals, users and requirements", FileText],
+  ["Design & Prototyping", "Journeys and interface concepts", PenTool],
+  ["Development & Testing", "Implementation and quality checks", Code2],
+  ["Launch & Support", "Release and ongoing improvement", Rocket],
 ] as const;
 
 const process = [
@@ -257,11 +258,22 @@ export default function MobileReferencePage() {
           </div>
         </section>
 
-        <section className={`${s.section} ${s.timeline}`}>
+        <section
+          className={`${s.section} ${s.timeline}`}
+          aria-labelledby="delivery-timeline-title"
+        >
           <div className={s.timelineHeading}>
             <div>
               <SectionTitle label="Typical delivery timeline">
-                From Plan to <em>Launch</em>
+                <span
+                  id="delivery-timeline-title"
+                  className={s.timelineTitleLine}
+                >
+                  From Plan
+                </span>{" "}
+                <span className={s.timelineTitleLine}>
+                  to <em>Launch</em>
+                </span>
               </SectionTitle>
               <p>A clear and agile process to get your app to market.</p>
             </div>
@@ -276,11 +288,18 @@ export default function MobileReferencePage() {
             </div>
           </div>
           <ol className={s.milestones}>
-            {milestones.map(([title, copy], index) => (
+            {milestones.map(([title, copy, Glyph], index) => (
               <li key={title}>
                 <span className={s.milestoneDot}>{index + 1}</span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
+                <div className={s.milestoneCard}>
+                  <span className={s.milestoneIcon} aria-hidden="true">
+                    <Glyph />
+                  </span>
+                  <span className={s.milestoneCopy}>
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </span>
+                </div>
               </li>
             ))}
           </ol>

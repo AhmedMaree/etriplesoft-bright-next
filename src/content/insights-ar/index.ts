@@ -11,6 +11,8 @@ export type ArabicArticle = {
   category: string;
   image: string;
   body: string;
+  afterFaq?: string;
+  faqNote?: boolean;
   faqs: { question: string; answer: string }[];
 };
 

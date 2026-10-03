@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { CTA, Hero } from "@/components/site";
+import { CTA } from "@/components/site";
+import { PortfolioHero } from "./PortfolioHero";
 import { services } from "@/lib/data";
 import { portfolioItems } from "@/data/portfolio";
 import styles from "./portfolio.module.css";
@@ -23,17 +24,7 @@ const capabilityHref: Record<string, string> = {
 export function PortfolioPage() {
   return (
     <main id="main">
-      <Hero
-        eyebrow="Success Stories"
-        title="Success"
-        accent="Stories"
-        description="See the capabilities behind our projects, from Odoo ERP to cloud, AI, web, mobile and digital marketing, and how to start a conversation about yours."
-        image="portfolio-hero"
-        primary="Discuss Your Project"
-        primaryHref="/contact?service=Project%20enquiry"
-        secondary="Explore Our Services"
-        secondaryHref="/services"
-      />
+      <PortfolioHero locale="en" />
 
       <section className={styles.intro} aria-labelledby="portfolio-intro">
         <div className="container">

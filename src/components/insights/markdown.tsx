@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { Fragment, type ReactNode } from "react";
 import imageSizes from "@/content/insights/image-sizes.json";
 import styles from "./article.module.css";
@@ -21,7 +22,7 @@ export const slugify = (text: string) =>
   text
     .toLowerCase()
     .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-+|-+$/g, "");
 
 const plain = (text: string) =>
@@ -126,7 +127,7 @@ export const tableOfContents = (markdown: string) =>
 const inlinePattern =
   /\[([^\]]+)\]\(([^)\s]+)\)|\*\*(.+?)\*\*|(?<![\w])_(?!\s)(.+?)(?<!\s)_(?![\w])/;
 
-function inline(text: string, key = "i"): ReactNode {
+function inline(text: string, key = "i", locale: "en" | "ar" = "en"): ReactNode {
   const nodes: ReactNode[] = [];
   let rest = text;
   let n = 0;
@@ -139,22 +140,25 @@ function inline(text: string, key = "i"): ReactNode {
     if (match.index > 0) nodes.push(rest.slice(0, match.index));
     const k = `${key}-${n++}`;
     if (match[1] !== undefined) {
-      const href = match[2];
+      const rawHref = match[2];
+      const href = locale === "ar" && rawHref.startsWith("/") && !rawHref.startsWith("/ar/")
+        ? `/ar${rawHref}`
+        : rawHref;
       nodes.push(
         href.startsWith("/") ? (
           <Link key={k} href={href}>
-            {inline(match[1], k)}
+            {inline(match[1], k, locale)}
           </Link>
         ) : (
           <a key={k} href={href} rel="noopener noreferrer" target="_blank">
-            {inline(match[1], k)}
+            {inline(match[1], k, locale)}
           </a>
         ),
       );
     } else if (match[3] !== undefined) {
-      nodes.push(<strong key={k}>{inline(match[3], k)}</strong>);
+      nodes.push(<strong key={k}>{inline(match[3], k, locale)}</strong>);
     } else {
-      nodes.push(<em key={k}>{inline(match[4], k)}</em>);
+      nodes.push(<em key={k}>{inline(match[4], k, locale)}</em>);
     }
     rest = rest.slice(match.index + match[0].length);
   }
@@ -167,10 +171,20 @@ export function Markdown({
   source,
   scrollableLabel = "(scrollable)",
   tableLabel = "Table",
+  ctaPrimaryLabel = "Book a Free Consultation",
+  ctaPrimaryHref = demoHref,
+  ctaSecondaryLabel = "Explore Solutions",
+  ctaSecondaryHref = "/services",
+  locale = "en",
 }: {
   source: string;
   scrollableLabel?: string;
   tableLabel?: string;
+  ctaPrimaryLabel?: string;
+  ctaPrimaryHref?: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
+  locale?: "en" | "ar";
 }) {
   return (
     <>
@@ -179,29 +193,29 @@ export function Markdown({
           case "heading":
             return block.level === 2 ? (
               <h2 key={index} id={block.id}>
-                {inline(block.text)}
+                {inline(block.text, "heading", locale)}
               </h2>
             ) : (
               <h3 key={index} id={block.id}>
-                {inline(block.text)}
+                {inline(block.text, "heading", locale)}
               </h3>
             );
           case "paragraph":
-            return <p key={index}>{inline(block.text)}</p>;
+            return <p key={index}>{inline(block.text, "paragraph", locale)}</p>;
           case "note":
             return (
               <p key={index} className={styles.note}>
-                {inline(block.text)}
+                {inline(block.text, "note", locale)}
               </p>
             );
           case "quote":
-            return <blockquote key={index}>{inline(block.text)}</blockquote>;
+            return <blockquote key={index}>{inline(block.text, "quote", locale)}</blockquote>;
           case "list": {
             const Tag = block.ordered ? "ol" : "ul";
             return (
               <Tag key={index}>
                 {block.items.map((item) => (
-                  <li key={item}>{inline(item)}</li>
+                  <li key={item}>{inline(item, `list-${index}`, locale)}</li>
                 ))}
               </Tag>
             );
@@ -233,7 +247,7 @@ export function Markdown({
                     <tr>
                       {head.map((cell, c) => (
                         <th key={c} scope="col">
-                          {inline(cell.replace(/^\*\*(.*)\*\*$/, "$1"))}
+                          {inline(cell.replace(/^\*\*(.*)\*\*$/, "$1"), `head-${c}`, locale)}
                         </th>
                       ))}
                     </tr>
@@ -244,10 +258,10 @@ export function Markdown({
                         {row.map((cell, c) =>
                           c === 0 ? (
                             <th key={c} scope="row">
-                              {inline(cell.replace(/^\*\*(.*)\*\*$/, "$1"))}
+                              {inline(cell.replace(/^\*\*(.*)\*\*$/, "$1"), `row-${r}-${c}`, locale)}
                             </th>
                           ) : (
-                            <td key={c}>{inline(cell)}</td>
+                            <td key={c}>{inline(cell, `cell-${r}-${c}`, locale)}</td>
                           ),
                         )}
                       </tr>
@@ -261,13 +275,14 @@ export function Markdown({
             return (
               <aside key={index} className={styles.cta}>
                 {block.title && <strong>{block.title}</strong>}
-                <p>{inline(block.text)}</p>
+                <p>{inline(block.text, "cta-copy", locale)}</p>
                 <div>
-                  <Link className="button gradient" href={demoHref}>
-                    Book a Free Consultation
+                  <Link className="button gradient" href={ctaPrimaryHref}>
+                    {ctaPrimaryLabel}
+                    {locale === "ar" && <ArrowLeft size={15} aria-hidden="true" />}
                   </Link>
-                  <Link className="button secondary" href="/services">
-                    Explore Solutions
+                  <Link className="button secondary" href={ctaSecondaryHref}>
+                    {ctaSecondaryLabel}
                   </Link>
                 </div>
               </aside>

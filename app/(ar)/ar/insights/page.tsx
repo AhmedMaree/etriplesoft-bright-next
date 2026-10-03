@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArticleCards } from "@/components/ar/ArticleCards";
-import styles from "@/components/ar/ar.module.css";
+import InsightsReferencePage, { type InsightCard } from "@/components/insights/InsightsReferencePage";
+import { arabicArticles } from "@/content/insights-ar";
+import { insightCards } from "@/content/insights";
+import { arDateFormat, arReadingMinutes } from "@/i18n/ar";
+import { arInsightSummaries } from "@/i18n/ar-routes";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -11,34 +13,35 @@ export const metadata: Metadata = pageMetadata({
   path: "/ar/insights",
 });
 
+function arabicInsightCards(): InsightCard[] {
+  const original = arabicArticles.map((article) => ({
+    title: article.title,
+    summary: article.description,
+    category: article.category,
+    slug: article.slug,
+    image: { src: article.image, alt: article.title, width: 1200, height: 630 },
+    date: article.datePublished.slice(0, 10),
+    dateLabel: arDateFormat.format(new Date(`${article.datePublished.slice(0, 10)}T12:00:00Z`)),
+    minutes: arReadingMinutes(article.body),
+  }));
+
+  const translated = insightCards().flatMap((source) => {
+    const translation = arInsightSummaries.find((item) => item.slug === source.slug);
+    if (!translation) return [];
+    return [{
+      ...source,
+      title: translation.title,
+      summary: translation.description,
+      category: translation.category,
+      image: source.image ? { ...source.image, alt: translation.title } : undefined,
+      dateLabel: arDateFormat.format(new Date(`${source.date}T12:00:00Z`)),
+      minutes: arReadingMinutes(translation.body),
+    }];
+  });
+
+  return [...original, ...translated].sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export default function ArabicInsights() {
-  return (
-    <main id="main">
-      <section className={styles.hero}>
-        <div className="container">
-          <div className={styles.heroInner}>
-            <span className="eyebrow">المدونة</span>
-            <h1>أدلة عملية للشركات في مصر والخليج</h1>
-            <p className={styles.lead}>
-              مقالات من فريق ETripleSoft عن أودو وتخطيط الموارد وأمن البيانات،
-              مكتوبة لتساعدك على اتخاذ قرار أوضح.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.section} aria-label="المقالات">
-        <div className="container">
-          <h2 className={styles.articlesHeading}>المقالات</h2>
-          <ArticleCards />
-          <p className={styles.note}>
-            مقالات إضافية متاحة بالإنجليزية في{" "}
-            <Link href="/insights" hrefLang="en">
-              مدونة ETripleSoft
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-    </main>
-  );
+  return <InsightsReferencePage articles={arabicInsightCards()} locale="ar" />;
 }

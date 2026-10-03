@@ -4,12 +4,11 @@ import {
   MessageCircle,
   Plus,
   CheckSquare,
-  ChartNoAxesColumnIncreasing,
-  Database,
-  TrendingUp,
 } from "lucide-react";
 import s from "./AIReferencePage.module.css";
 import { featuredTestimonials } from "@/data/testimonials";
+import { AiAutomationHero } from "./AiAutomationHero";
+import { WhyAutomationSection } from "./WhyAutomationSection";
 
 const contact = "/contact?service=AI%20Automation";
 const testimonial = featuredTestimonials.ai;
@@ -40,20 +39,6 @@ const useCases = [
   ],
   ["HR & People Ops", "Automate routines like onboarding.", "people"],
   ["Custom AI Solutions", "Tailored to your industry.", "custom"],
-];
-const benefits = [
-  [
-    "Higher Productivity",
-    "Automate repetitive tasks and empower your teams.",
-    "reporting",
-  ],
-  ["Cost Reduction", "Minimize manual work and operational costs.", "saving"],
-  ["Improved Accuracy", "Reduce human error with AI precision.", "accuracy"],
-  [
-    "Scalable Solutions",
-    "Grow your automation as your business grows.",
-    "scalable",
-  ],
 ];
 const questions = [
   [
@@ -133,52 +118,7 @@ function Heading({
 export default function AIReferencePage() {
   return (
     <main id="main" className={s.page}>
-      <section className={s.hero}>
-        <div className={`${s.container} ${s.heroGrid}`}>
-          <div className={s.heroCopy}>
-            <span className={s.pill}>
-              <i />
-              AI-Powered Business
-            </span>
-            <h1>
-              <em>AI</em> Automation
-            </h1>
-            <h2>Smarter work. Less friction.</h2>
-            <p>
-              Automate processes, empower teams and unlock growth with practical
-              AI solutions built for business.
-            </p>
-            <div className={s.actions}>
-              <Action href="#solutions">Explore AI</Action>
-              <Action href="/book-consultation" secondary>Book a Free Consultation</Action>
-            </div>
-            <div className={s.heroBenefits}>
-              {[
-                ["Higher", "Productivity", ChartNoAxesColumnIncreasing],
-                ["Lower", "Operational Costs", Database],
-                ["Scalable", "Growth", TrendingUp],
-              ].map(([title, text, Glyph]) => {
-                const Icon = Glyph as typeof Database;
-                return (
-                  <div key={String(title)}>
-                    <Icon aria-hidden="true" />
-                    <span>
-                      <strong>{String(title)}</strong>
-                      {String(text)}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <img
-            className={s.heroArt}
-            src="/images/ai/reference/hero.webp"
-            alt="AI connecting business systems, automated workflows, AI assistants, and reporting insights"
-            fetchPriority="high"
-          />
-        </div>
-      </section>
+      <AiAutomationHero locale="en" />
       <div className={s.container}>
         <nav className={s.capabilities} aria-label="Connected services">
           {[
@@ -289,54 +229,11 @@ export default function AIReferencePage() {
             ))}
           </div>
         </section>
+      </div>
 
-        <section className={`${s.section} ${s.outcomes}`}>
-          <div>
-            <div className={s.outcomeIntro}>
-              <Heading label="Real business outcomes" plain>
-                Why Automate with ETripleSoft?
-              </Heading>
-              <p>
-                We combine deep technical expertise with real business
-                understanding to deliver AI automation solutions that create
-                measurable value.
-              </p>
-            </div>
-            <div className={s.benefits}>
-              {benefits.map(([title, copy, icon]) => (
-                <article key={title}>
-                  <Asset name={icon} />
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div className={s.human}>
-            <div className={s.humanCopy}>
-              <span className={s.label}>Work smarter, faster together</span>
-              <h2>
-                AI + Human Expertise
-                <br />= Greater Possibilities
-              </h2>
-              <p>
-                We help you identify the right opportunities, implement the
-                right solutions, and achieve lasting results.
-              </p>
-              <Action href={`${contact}&subject=Discuss%20Your%20Use%20Case`}>
-                Discuss Your Use Case
-              </Action>
-            </div>
-            <Asset
-              name="robot"
-              className={s.robot}
-              alt="Friendly AI robot with Analyze, Automate, Integrate, and Grow blocks"
-            />
-          </div>
-        </section>
+        <WhyAutomationSection locale="en" />
 
+      <div className={s.container}>
         <section className={s.section}>
           <Heading label="Our experience">Experience across the region</Heading>
           <div className={s.metrics}>

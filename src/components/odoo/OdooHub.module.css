@@ -27,6 +27,9 @@
   box-shadow: 0 10px 24px -22px rgb(16 42 99 / 50%);
   backdrop-filter: blur(12px);
 }
+:global([data-header-hidden]) .anchors {
+  top: 0;
+}
 .anchors ul {
   display: flex;
   gap: 8px;

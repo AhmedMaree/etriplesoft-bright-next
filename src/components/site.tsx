@@ -1236,6 +1236,7 @@ export function CTA({
     external: true,
   },
   badge = "Let’s get started",
+  arrowDirection = "right",
   perks = [
     "Free consultation",
     "Tailored to your industry",
@@ -1252,6 +1253,7 @@ export function CTA({
   /** Reassurance line under the buttons. */
   note?: string;
   badge?: string;
+  arrowDirection?: "left" | "right";
   perks?: string[];
 }) {
   const isExternalUrl = (url: string) => /^https?:\/\//i.test(url);
@@ -1263,6 +1265,9 @@ export function CTA({
         </symbol>
         <symbol id="cta-arrow" viewBox="0 0 24 24">
           <path d="M5 12h14M13 6l6 6-6 6" />
+        </symbol>
+        <symbol id="cta-arrow-left" viewBox="0 0 24 24">
+          <path d="M19 12H5m6-6-6 6 6 6" />
         </symbol>
         <symbol id="cta-chat" viewBox="0 0 24 24">
           <path d="M21 12a8.5 8.5 0 01-12.4 7.5L3 21l1.6-5.2A8.5 8.5 0 1121 12z" />
@@ -1301,14 +1306,14 @@ export function CTA({
           <a className={`${ctaStyles.btn} ${ctaStyles.primary}`} href={href}>
             {button}{" "}
             <svg className={ctaStyles.i} aria-hidden="true">
-              <use href="#cta-arrow" />
+              <use href={arrowDirection === "left" ? "#cta-arrow-left" : "#cta-arrow"} />
             </svg>
           </a>
         ) : (
           <Link className={`${ctaStyles.btn} ${ctaStyles.primary}`} href={href}>
             {button}{" "}
             <svg className={ctaStyles.i} aria-hidden="true">
-              <use href="#cta-arrow" />
+              <use href={arrowDirection === "left" ? "#cta-arrow-left" : "#cta-arrow"} />
             </svg>
           </Link>
         )}

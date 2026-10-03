@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { CTA, Hero } from "@/components/site";
+import { CTA } from "@/components/site";
+import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { portfolioItems } from "@/data/portfolio";
 import { arRouteContent } from "@/i18n/ar-routes";
 import { company } from "@/lib/company";
@@ -47,18 +48,7 @@ const capabilities = [
 export function ArabicPortfolioPage() {
   return (
     <main id="main" dir="rtl">
-      <Hero
-        eyebrow="قصص النجاح"
-        title="قصص"
-        accent="النجاح"
-        description="تعرّف على القدرات التقنية خلف مشروعاتنا، من أودو ERP إلى الحوسبة السحابية والذكاء الاصطناعي وتطوير الويب وتطبيقات الجوال والتسويق الرقمي، وابدأ حواراً مثمراً حول مشروعك."
-        image="portfolio-hero-ar-v2"
-        className="portfolio-ar-hero"
-        primary="ناقش مشروعك"
-        primaryHref="/ar/contact-us?service=استفسار%20عن%20مشروع"
-        secondary="استكشف خدماتنا"
-        secondaryHref="/ar/services"
-      />
+      <PortfolioHero locale="ar" />
 
       <section className={styles.intro} aria-labelledby="portfolio-intro">
         <div className="container">

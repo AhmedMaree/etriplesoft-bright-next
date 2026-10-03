@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   CalendarDays,
   Code2,
+  FileText,
   PenTool,
   Plus,
   Quote,
@@ -44,10 +45,10 @@ const services = [
 ] as const;
 
 const milestones = [
-  ["الاكتشاف والتخطيط", "تحديد الأهداف والمستخدمين والمتطلبات بدقة"],
-  ["التصميم والنماذج الأولية", "رسم رحلات المستخدم ومفاهيم واجهة الاستخدام"],
-  ["التطوير والاختبار", "بناء التطبيق وإجراء اختبارات الجودة والأداء"],
-  ["الإطلاق والدعم", "نشر التطبيق في المتاجر والتحسين المستمر"],
+  ["الاكتشاف والتخطيط", "الأهداف، المستخدمون والمتطلبات", FileText],
+  ["التصميم والنمذجة الأولية", "مسارات الاستخدام ومفاهيم الواجهة", PenTool],
+  ["التطوير والاختبار", "التنفيذ وفحوصات الجودة", Code2],
+  ["الإطلاق والدعم", "الإصدار والتحسين المستمر", Rocket],
 ] as const;
 
 const process = [
@@ -265,13 +266,24 @@ export function ArabicMobileReferencePage() {
           </div>
         </section>
 
-        <section className={`${s.section} ${s.timeline}`}>
+        <section
+          className={`${s.section} ${s.timeline}`}
+          aria-labelledby="delivery-timeline-title"
+        >
           <div className={s.timelineHeading}>
             <div>
-              <SectionTitle label="الجدول الزمني المعتاد">
-                من الخطة إلى <em>الإطلاق</em>
+              <SectionTitle label="الجدول الزمني المعتاد للتسليم">
+                <span
+                  id="delivery-timeline-title"
+                  className={s.timelineTitleLine}
+                >
+                  من التخطيط
+                </span>{" "}
+                <span className={s.timelineTitleLine}>
+                  إلى <em>الإطلاق</em>
+                </span>
               </SectionTitle>
-              <p>منهجية مرونة وواضحة لتسليم تطبيقك وتشغيله بنجاح.</p>
+              <p>عملية واضحة ومرنة لإيصال تطبيقك إلى السوق.</p>
             </div>
             <div className={s.scopeNote}>
               <span>
@@ -279,16 +291,23 @@ export function ArabicMobileReferencePage() {
               </span>
               <div>
                 <strong>خطة محددة النطاق</strong>
-                <small>مراحل متفق عليها معاً</small>
+                <small>معالم متفق عليها معًا</small>
               </div>
             </div>
           </div>
           <ol className={s.milestones}>
-            {milestones.map(([title, copy], index) => (
+            {milestones.map(([title, copy, Glyph], index) => (
               <li key={title}>
                 <span className={s.milestoneDot}>{index + 1}</span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
+                <div className={s.milestoneCard}>
+                  <span className={s.milestoneIcon} aria-hidden="true">
+                    <Glyph />
+                  </span>
+                  <span className={s.milestoneCopy}>
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </span>
+                </div>
               </li>
             ))}
           </ol>

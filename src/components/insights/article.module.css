@@ -5,6 +5,55 @@
   width: min(760px, calc(100% - 2 * var(--page-gutter, 18px)));
   margin-inline: auto;
 }
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+.body.rtl ul,
+.body.rtl ol {
+  padding-right: 22px;
+  padding-left: 0;
+}
+.body.rtl ul {
+  padding-right: 0;
+  list-style: none;
+}
+.body.rtl ul li {
+  position: relative;
+  padding-left: 24px;
+  padding-right: 0;
+}
+.body.rtl ul li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--blue);
+  content: "←";
+  font-weight: 700;
+}
+.body.rtl blockquote {
+  padding: 4px 18px 4px 0;
+  border-right: 4px solid var(--blue);
+  border-left: 0;
+}
+.rtl .tableWrap {
+  direction: rtl;
+}
+.rtl .tableWrap th,
+.rtl .tableWrap td {
+  text-align: right;
+}
+.rtl .cta {
+  border-right: 4px solid var(--blue);
+  border-left: 1px solid var(--line);
+}
+.rtl .cta div {
+  justify-content: flex-start;
+}
+.rtl.toc ol {
+  padding-right: 20px;
+  padding-left: 0;
+}
 .head {
   padding-block: 28px 12px;
 }
