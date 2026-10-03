@@ -103,17 +103,32 @@ export function ArHeader() {
     }, 120);
   };
 
-  /* Shrink header on scroll */
+  /* Shrink the header after scrolling and reveal it when the user scrolls up. */
   useEffect(() => {
-    const onScroll = () =>
-      document.documentElement.toggleAttribute("data-scrolled", window.scrollY > 24);
+    let previousY = window.scrollY;
+    const root = document.documentElement;
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      root.toggleAttribute("data-scrolled", currentY > 24);
+
+      if (open || openGroup || search || currentY <= 24) {
+        root.removeAttribute("data-header-hidden");
+      } else if (currentY > previousY + 4 && currentY > 100) {
+        root.setAttribute("data-header-hidden", "");
+      } else if (currentY < previousY - 4) {
+        root.removeAttribute("data-header-hidden");
+      }
+
+      previousY = currentY;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      document.documentElement.removeAttribute("data-scrolled");
+      root.removeAttribute("data-scrolled");
+      root.removeAttribute("data-header-hidden");
     };
-  }, []);
+  }, [open, openGroup, search]);
 
   /* Close everything on route change */
   useEffect(() => {

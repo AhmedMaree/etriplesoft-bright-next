@@ -23,8 +23,8 @@ const orbit = [
 
 export function ArabicServicesPage() {
   return <main id="main" dir="rtl" className={`${styles.page} ${local.rtl}`}>
-    <section className={styles.hero} aria-labelledby="ar-services-title">
-      <div className={`container ${styles.heroGrid}`}>
+    <section className={`${styles.hero} ${local.hero}`} aria-labelledby="ar-services-title">
+      <div className={`container ${styles.heroGrid} ${local.heroGrid}`}>
         <div>
           <span className="eyebrow">خدماتنا</span>
           <h1 id="ar-services-title">تحول رقمي يرتكز على أودو</h1>
@@ -34,7 +34,7 @@ export function ArabicServicesPage() {
             <Link className="button secondary" href="#odoo">تعرّف على أودو</Link>
           </div>
         </div>
-        <ol className={styles.tiers} aria-label="ترابط خدماتنا">
+        <ol className={`${styles.tiers} ${local.tiers}`} aria-label="ترابط خدماتنا">
           <li data-core><span>النواة</span><strong>أودو ERP</strong></li>
           <li><span>الأساس والتحليلات</span><strong>السحابة والأمن، والذكاء الاصطناعي</strong></li>
           <li><span>قنوات التواصل مع العملاء</span><strong>المواقع والجوال والتسويق الرقمي</strong></li>

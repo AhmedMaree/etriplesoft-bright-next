@@ -65,6 +65,10 @@ export const clientTestimonials = [
   },
 ] as const;
 
+export const cloudTestimonials = clientTestimonials.filter((testimonial) =>
+  /\bcloud\b/i.test(testimonial.quote),
+);
+
 export const featuredTestimonials = {
   ai: clientTestimonials[1],
   about: clientTestimonials[5],

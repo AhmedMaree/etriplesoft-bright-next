@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  ArrowLeft,
+  ArrowRight,
   BarChart3,
   Check,
   ChevronDown,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import s from "../digital-marketing/DigitalMarketingReferencePage.module.css";
+import { DigitalMarketingHero } from "@/components/digital-marketing/DigitalMarketingHero";
 import { featuredTestimonials } from "@/data/testimonials";
 
 const testimonial = featuredTestimonials.digitalMarketing;
@@ -62,41 +63,19 @@ function SectionHeading({ eyebrow, title, description, href, link }: { eyebrow?:
         <h2>{title}</h2>
         {description && <p>{description}</p>}
       </div>
-      {href && link && <Link className={s.textLink} href={href}>{link}<ArrowLeft aria-hidden="true" size={16} /></Link>}
+      {href && link && <Link className={s.textLink} href={href}>{link}<ArrowRight aria-hidden="true" size={16} /></Link>}
     </div>
   );
 }
 
 function Button({ children, href = "/ar/contact-us?service=التسويق%20الرقمي", secondary = false }: { children: React.ReactNode; href?: string; secondary?: boolean }) {
-  return <Link className={`${s.button} ${secondary ? s.buttonSecondary : ""}`} href={href}>{children}<ArrowLeft aria-hidden="true" size={17} /></Link>;
+  return <Link className={`${s.button} ${secondary ? s.buttonSecondary : ""}`} href={href}>{children}<ArrowRight aria-hidden="true" size={17} /></Link>;
 }
 
 export function ArabicDigitalMarketingReferencePage() {
   return (
-    <main id="main" className={s.page} dir="rtl">
-      <section className={s.hero}>
-        <div className={s.heroAura} aria-hidden="true" />
-        <div className={`${s.container} ${s.heroGrid}`}>
-          <div className={s.heroCopy}>
-            <span className={s.eyebrow}>التسويق الرقمي</span>
-            <h1>التسويق<br /><em>الرقمي</em></h1>
-            <h2>وصول أوسع. نتائج أفضل.</h2>
-            <p>تسويق مبني على البيانات لتنمية علامتك التجارية في مصر والإمارات والمملكة العربية السعودية.</p>
-            <div className={s.actions}><Button>نمِّ علامتك التجارية</Button><Button secondary href="#solutions">استكشف الخدمات</Button></div>
-            <div className={s.heroBenefits}>
-              <span><BarChart3 aria-hidden="true" size={20} /><b>زيارات<br />مؤهلة أكثر</b></span>
-              <span><UsersRound aria-hidden="true" size={20} /><b>معدلات<br />تحويل أعلى</b></span>
-              <span><Rocket aria-hidden="true" size={20} /><b>حضور أقوى<br />للعلامة التجارية</b></span>
-            </div>
-          </div>
-          <div className={s.heroVisual}>
-            <Asset name="hero-dashboard" alt="لوحة معلومات توضيحية لحملة تسويق رقمي" className={s.heroArt} eager />
-            <span className={s.imageLabel}>لوحة معلومات توضيحية</span>
-            <div className={s.heroBadge}><BarChart3 aria-hidden="true" size={20} /><strong>نمِّ علامتك<br />التجارية رقمياً</strong></div>
-          </div>
-        </div>
-      </section>
-
+    <main id="main" className={`${s.page} ar-service-page`} dir="rtl">
+      <DigitalMarketingHero locale="ar" />
       <div className={`${s.container} ${s.pageSections}`}>
         <section className={`${s.section} ${s.services}`} id="solutions">
           <SectionHeading eyebrow="خدماتنا في التسويق الرقمي" title="حلول تسويق رقمي متكاملة لتنمية نشاطك عبر الإنترنت." description="اختر القنوات وأدوات القياس التي تلائم جمهورك وأهدافك وفريق عملك." href="/ar/contact-us?service=التسويق%20الرقمي" link="عرض جميع الخدمات" />
@@ -104,7 +83,7 @@ export function ArabicDigitalMarketingReferencePage() {
             {services.map(([title, copy, image]) => <Link key={title} className={s.serviceCard} href={`/ar/contact-us?service=التسويق%20الرقمي&solution=${encodeURIComponent(title)}`}>
               <span className={s.serviceIcon}><Asset name={image} alt="" /></span>
               <span className={s.serviceCopy}><strong>{title}</strong><small>{copy}</small></span>
-              <span className={s.cardArrow}><ArrowLeft aria-hidden="true" size={17} /></span>
+              <span className={s.cardArrow}><ArrowRight aria-hidden="true" size={17} /></span>
             </Link>)}
           </div>
         </section>
@@ -119,7 +98,7 @@ export function ArabicDigitalMarketingReferencePage() {
 
         <section className={`${s.section} ${s.process}`} id="process">
           <div className={s.processIntro}><SectionHeading eyebrow="منهجية العمل" title="من الاستراتيجية إلى النتائج الفعلية" description="منهجية واضحة وقابلة للقياس لتنمية علامتك التجارية." /></div>
-          <ol className={s.steps}>{steps.map(([title, copy, Icon], index) => <li key={title}><span className={s.stepIcon}><Icon aria-hidden="true" size={22} /></span><span className={s.stepArrow}>{index < steps.length - 1 && <ArrowLeft aria-hidden="true" size={18} />}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
+          <ol className={s.steps}>{steps.map(([title, copy, Icon], index) => <li key={title}><span className={s.stepIcon}><Icon aria-hidden="true" size={22} /></span><span className={s.stepArrow}>{index < steps.length - 1 && <ArrowRight aria-hidden="true" size={18} />}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
         </section>
 
         <section className={`${s.section} ${s.proof}`}>

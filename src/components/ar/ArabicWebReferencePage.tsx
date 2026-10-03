@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   PanelsTopLeft,
   Code2,
   Smartphone,
-  UsersRound,
   ChartNoAxesColumnIncreasing,
+  Zap,
+  CirclePlay,
   Compass,
   PenTool,
   Wrench,
@@ -65,8 +67,9 @@ function Action({
 }) {
   return (
     <Link href={href} className={`${s.action} ${secondary ? s.secondary : ""}`}>
+      {secondary && <CirclePlay aria-hidden="true" />}
       {children}
-      {!secondary && <ArrowLeft aria-hidden="true" size={17} />}
+      {!secondary && <ArrowLeft className={s.ctaArrow} aria-hidden="true" size={17} />}
     </Link>
   );
 }
@@ -86,43 +89,50 @@ function Asset({ name, alt, className = "" }: { name: string; alt: string; class
 
 export function ArabicWebReferencePage() {
   return (
-    <main id="main" className={s.page} dir="rtl">
+    <main id="main" className={`${s.page} ar-service-page`} dir="rtl">
       <section className={s.hero}>
-        <div className={`${s.container} ${s.heroGrid}`}>
+        <div className={`container ${s.container} ${s.heroGrid}`}>
           <div className={s.heroCopy}>
             <span className={s.pill}>
-              <PanelsTopLeft aria-hidden="true" size={16} />
+              <Code2 aria-hidden="true" size={16} />
               تصميم وتطوير المواقع
             </span>
             <h1>
-              منصات
-              <br />
-              <em>الويب الحديثة</em>
+              <span><em>منصات الويب</em></span>
+              <span>التي تدفع أعمالك</span>
+              <span>للأمام</span>
             </h1>
-            <h2>سريعة. عصرية. ومصممة للتحويل.</h2>
             <p>
-              نصمم ونطور مواقع ويب عالية الأداء تبدو رائعة، وتعمل بكفاءة، وتدعم نمو أعمالك بشكل ملموس.
+              نصمم ونطور مواقع وتطبيقات ويب عالية الأداء تجمع بين التصميم الحديث، وتجربة المستخدم السلسة، والنتائج الحقيقية لنمو أعمالك.
             </p>
             <div className={s.actions}>
-              <Action>ابدأ مشروعك</Action>
-              <Action secondary href="#work">استكشف أعمالنا</Action>
+              <Action>ابدأ مشروعك الآن</Action>
+              <Action secondary href="#work">شاهد أعمالنا</Action>
             </div>
             <div className={s.heroBenefits}>
-              <div><ChartNoAxesColumnIncreasing aria-hidden="true" size={20} /><span>تصاميم<br />عصرية</span></div>
-              <div><Code2 aria-hidden="true" size={20} /><span>أداء<br />فائق السرعة</span></div>
-              <div><Smartphone aria-hidden="true" size={20} /><span>أولوية<br />للجوال</span></div>
-              <div><UsersRound aria-hidden="true" size={20} /><span>مبنية<br />لنمو الأعمال</span></div>
+              <div><span className={s.benefitIcon}><PanelsTopLeft aria-hidden="true" /></span><span>تصاميم<br />عصرية وحديثة</span></div>
+              <div><span className={s.benefitIcon}><Zap aria-hidden="true" /></span><span>أداء عالٍ<br />وسرعة فائقة</span></div>
+              <div><span className={s.benefitIcon}><Smartphone aria-hidden="true" /></span><span>مناسبة<br />لكل الأجهزة</span></div>
+              <div><span className={s.benefitIcon}><ChartNoAxesColumnIncreasing aria-hidden="true" /></span><span>مصممة لنمو<br />الأعمال</span></div>
             </div>
           </div>
           <div className={s.heroVisual}>
-            <Asset name="hero-scene" alt="شاشة حاسوب وهاتف يعرضان موقعاً متجاوباً في مساحة عمل مضيئة" className={s.heroArt} />
-            <span className={s.heroNote}>تصميم<br />تطوير<br />نمو <ArrowLeft aria-hidden="true" size={15} /></span>
+            <Image
+              src="/images/web/reference/hero-scene-ar.webp"
+              alt="حاسوب محمول وهاتف يعرضان موقع شركة، تحيط بهما بطاقات توضح جودة التصميم والتطوير والنتائج"
+              width={1448}
+              height={1086}
+              sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 820px) calc(100vw - 64px), (max-width: 1200px) 50vw, 48vw"
+              fetchPriority="high"
+              loading="eager"
+              className={s.heroArt}
+            />
           </div>
         </div>
       </section>
 
       <section className={s.regionStrip} aria-label="مكاتبنا الإقليمية">
-        <div className={`${s.container} ${s.regionInner}`}>
+        <div className={`container ${s.container} ${s.regionInner}`}>
           <div className={s.regionLead}>
             <MapPin aria-hidden="true" size={24} />
             <strong>فرق عمل محلية.<br />حضور إقليمي واسع.</strong>
@@ -141,7 +151,7 @@ export function ArabicWebReferencePage() {
         </div>
       </section>
 
-      <div className={s.container}>
+      <div className={`container ${s.container}`}>
         <section className={`${s.section} ${s.services}`} id="solutions">
           <div className={s.sectionIntro}>
             <div>

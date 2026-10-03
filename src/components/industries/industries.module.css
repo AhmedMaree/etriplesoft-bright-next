@@ -101,6 +101,10 @@
 .hubHero h1 { max-width: 18ch; margin-top: 14px; font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -.03em; text-wrap: balance; }
 .hubHero p { max-width: 66ch; margin-top: 28px; color: var(--muted); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.7; }
 .hubIntro { position: sticky; z-index: 20; top: var(--hub-sticky-header-height); padding: 34px 0; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(14px); }
+.hubIntro, .hubIndustryTitle { transition: top 200ms var(--motion-ease); }
+/* The header slides offscreen while scrolling down. Let the sticky intro and
+   the industry title beneath it rise with the header instead of leaving a gap. */
+:global(html[data-header-hidden]) .page { --hub-sticky-header-height: 0px; }
 .hubIntro > div { display: grid; grid-template-columns: .75fr 1.25fr; gap: 50px; align-items: center; }
 .hubIntro h2 { font-size: 25px; }
 .hubIntro p { max-width: 58ch; margin-top: 8px; color: var(--muted); }

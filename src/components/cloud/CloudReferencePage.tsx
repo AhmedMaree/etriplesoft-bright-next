@@ -1,12 +1,37 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Headphones, Plus, Quote } from "lucide-react";
+import {
+  ArrowRight,
+  ChartNoAxesColumnIncreasing,
+  Headphones,
+  Factory,
+  Hospital,
+  Landmark,
+  LockKeyhole,
+  Plus,
+  RadioTower,
+  ShoppingCart,
+  Settings,
+  ShieldCheck,
+} from "lucide-react";
+import { portfolioItems } from "@/data/portfolio";
 import s from "./CloudReferencePage.module.css";
-import { featuredTestimonials } from "@/data/testimonials";
+import { cloudTestimonials } from "@/data/testimonials";
+import { publishedFaqs } from "@/data/faqs";
+import { CloudSolutionsSection } from "./CloudSolutionsSection";
+import { CloudProcessSection } from "./CloudProcessSection";
+import { CloudTestimonialCarousel } from "./CloudTestimonialCarousel";
+import { CloudClosingCta } from "./CloudClosingCta";
 
 const contact = "/contact?service=Cloud%20Security";
 const asset = (name: string) => `/images/cloud/reference/${name}.webp`;
-const cloudTestimonial = featuredTestimonials.cloud;
-const cloudOverviewTestimonial = featuredTestimonials.cloudOverview;
+const cloudTestimonialItems = cloudTestimonials.map((item) => ({
+  ...item,
+  avatarSrc: item.id === "summit" ? asset("customer") : undefined,
+}));
+const trustLogos = portfolioItems
+  .filter((item): item is typeof item & { image: string; source: string } => Boolean(item.image && item.source))
+  .slice(0, 6);
 
 const solutions = [
   ["Microsoft 365", "Secure collaboration and productivity.", "microsoft"],
@@ -16,12 +41,12 @@ const solutions = [
   ["Backup & Recovery", "Your data. Always available.", "backup"],
   ["Compliance", "Meet today’s requirements.", "compliance"],
 ] as const;
-const process = [
-  ["Assess", "Understand your current environment and risks."],
-  ["Design", "Create a tailored security architecture."],
-  ["Implement", "Deploy and integrate security solutions."],
-  ["Monitor", "Detect threats and coordinate response."],
-  ["Optimize", "Improve controls and compliance."],
+
+const architectureBenefits = [
+  ["Stronger Security", LockKeyhole],
+  ["Higher Productivity", ChartNoAxesColumnIncreasing],
+  ["Simpler Management", Settings],
+  ["Full Compliance", ShieldCheck],
 ] as const;
 const reasons = [
   [
@@ -51,27 +76,17 @@ const reasons = [
   ],
 ] as const;
 const industries = [
-  ["Banking & Financial Services", "banking"],
-  ["Telecommunications", "telecom"],
-  ["Government & Public Sector", "government"],
-  ["Healthcare", "healthcare"],
-  ["Manufacturing", "manufacturing"],
-  ["Retail & E-commerce", "retail"],
+  { title: "Banking & Financial Services", description: "Secure operations and customer data.", image: "banking", alt: "Banking and financial services building", Icon: Landmark },
+  { title: "Telecommunications", description: "Reliable and secure connectivity.", image: "telecommunications", alt: "Telecommunications towers", Icon: RadioTower },
+  { title: "Government & Public Sector", description: "Trusted security for critical services.", image: "government", alt: "Government building in Egypt", Icon: Landmark },
+  { title: "Healthcare", description: "Protecting sensitive patient information.", image: "healthcare", alt: "Modern healthcare facility", Icon: Hospital },
+  { title: "Manufacturing", description: "Secure and resilient operations.", image: "manufacturing", alt: "Industrial manufacturing facility", Icon: Factory },
+  { title: "Retail & E-commerce", description: "Safe and seamless digital experiences.", image: "retail", alt: "Modern retail and e-commerce facility", Icon: ShoppingCart },
 ] as const;
-const faqs = [
-  [
-    "How do you secure Microsoft 365?",
-    "We review identity and access, data protection, mail security, Teams and SharePoint settings, then recommend controls for your environment.",
-  ],
-  [
-    "Can you help with compliance requirements?",
-    "We assess your environment against the requirements relevant to your organization and define the controls and evidence your team needs.",
-  ],
-  [
-    "Do you support ongoing monitoring?",
-    "Monitoring and response coverage can be included in an agreed support scope based on your systems and operational requirements.",
-  ],
-] as const;
+const cloudFaqIds = ["cloud-03", "cloud-04", "cloud-05", "cloud-01", "cloud-02"] as const;
+const faqs = cloudFaqIds
+  .map((id) => publishedFaqs.find((faq) => faq.id === id))
+  .filter((faq): faq is NonNullable<typeof faq> => faq !== undefined);
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return <span className={s.eyebrow}>{children}</span>;
@@ -128,41 +143,53 @@ export default function CloudReferencePage() {
                 Book a Free Consultation
               </Link>
             </div>
-            <div
-              className={s.partners}
-              aria-label="Cloud platforms and credentials"
-            >
-              <img
-                src={asset("microsoft-partner")}
-                alt="Microsoft Solutions Partner"
-              />
-              <div>
-                <strong>Microsoft 365</strong>
-                <span>Productivity and security</span>
+            <div className={s.partners} aria-label="Cloud platforms">
+              <div className={s.partnerCard}>
+                <Image src={asset("microsoft")} alt="" width={38} height={38} />
+                <span>
+                  <strong>Microsoft 365</strong>
+                  <small>Productivity and security</small>
+                </span>
+                <ArrowRight aria-hidden="true" />
               </div>
-              <div>
-                <strong>Microsoft Azure</strong>
-                <span>Cloud infrastructure</span>
+              <div className={s.partnerCard}>
+                <Image src={asset("azure")} alt="" width={38} height={38} />
+                <span>
+                  <strong>Microsoft Azure</strong>
+                  <small>Cloud infrastructure</small>
+                </span>
+                <ArrowRight aria-hidden="true" />
               </div>
             </div>
           </div>
-          <img
+          <Image
             className={s.heroImage}
-            src={asset("hero")}
-            alt="Secure cloud protected above a server stack"
-            fetchPriority="high"
+            src={asset("hero-english")}
+            alt="Cloud security, threat monitoring and compliance around protected servers"
+            width={1448}
+            height={1086}
+            sizes="(max-width: 900px) calc(100vw - 36px), (max-width: 1240px) 48vw, 600px"
+            preload
           />
         </div>
       </section>
 
-      <section className={s.trustedSection}>
+      <section className={s.trustedSection} aria-label="Cloud clients and success stories">
         <div className={`${s.container} ${s.trusted}`}>
           <p>Trusted by leading organizations across Egypt</p>
-          <img
-            className={s.clientLogos}
-            src={asset("clients")}
-            alt="Orascom Construction, Elsewedy Electric, CIB, Vodafone, Samsung, and Etisalat"
-          />
+          <ul className={s.clientLogos} aria-label="Selected clients from our success stories">
+            {trustLogos.map((client) => (
+              <li key={client.id}>
+                <Image
+                  src={client.image}
+                  alt={client.name}
+                  width={72}
+                  height={72}
+                  sizes="(max-width: 720px) 12vw, 48px"
+                />
+              </li>
+            ))}
+          </ul>
           <Link href="/portfolio">
             See All Clients
             <ArrowRight aria-hidden="true" />
@@ -171,69 +198,9 @@ export default function CloudReferencePage() {
       </section>
 
       <div className={s.container}>
-        <section className={`${s.section} ${s.solutions}`} id="solutions">
-          <div className={s.headingRow}>
-            <div>
-              <Eyebrow>Our solutions</Eyebrow>
-              <h2>Complete Cloud Security for a Stronger Tomorrow</h2>
-              <p>
-                Modern security for modern businesses. Integrated, scalable and
-                built for growth.
-              </p>
-            </div>
-            <Link className={s.learnMore} href="/book-consultation">Book a Free Consultation <ArrowRight aria-hidden="true" /></Link>
-          </div>
-          <div className={s.solutionGrid}>
-            {solutions.map(([title, copy, icon]) => (
-              <article className={s.solutionCard} key={title}>
-                <img src={asset(icon)} alt="" />
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <More subject={title} />
-              </article>
-            ))}
-          </div>
-        </section>
+        <CloudSolutionsSection locale="en" />
 
-        <section className={`${s.section} ${s.process}`} id="process">
-          <div className={s.processLayout}>
-            <div className={s.processCopy}>
-              <Eyebrow>Our process</Eyebrow>
-              <h2>A Clear Path to a More Secure Cloud</h2>
-              <p>
-                We follow a proven, structured approach to ensure your cloud
-                environment is secure, compliant and optimized for your
-                business.
-              </p>
-              <ol className={s.steps}>
-                {process.map(([title, copy], index) => (
-                  <li key={title}>
-                    <span className={s.stepNumber}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                    {index < process.length - 1 && (
-                      <ArrowRight className={s.stepArrow} aria-hidden="true" />
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <article className={s.processCard}>
-              <img src={asset("strategy")} alt="Abstract cloud illustration" />
-              <h3>
-                From Strategy
-                <br />
-                to a Safer Tomorrow
-              </h3>
-              <p>
-                We don’t just secure your cloud. We help you unlock its full
-                potential.
-              </p>
-            </article>
-          </div>
-        </section>
+        <CloudProcessSection locale="en" />
 
         <section className={`${s.section} ${s.why}`}>
           <Eyebrow>Why ETripleSoft</Eyebrow>
@@ -270,41 +237,40 @@ export default function CloudReferencePage() {
               </div>
             ))}
           </div>
-          <figure className={s.statsQuote}>
-            <Quote aria-hidden="true" />
-            <blockquote>“{cloudOverviewTestimonial.quote}”</blockquote>
-            <figcaption>
-              — {cloudOverviewTestimonial.name}, {cloudOverviewTestimonial.role}, {cloudOverviewTestimonial.company}
-            </figcaption>
-          </figure>
         </div>
       </section>
 
-      <div className={s.container}>
+      <div className="container">
         <section className={`${s.section} ${s.architectureSection}`}>
           <div className={s.architectureLayout}>
             <div className={s.architecture}>
               <Eyebrow>Solution architecture</Eyebrow>
-              <h2>A More Secure Cloud Environment</h2>
+              <h2>
+                A More Secure
+                <br />
+                <em>Cloud Environment</em>
+              </h2>
               <p>People. Devices. Data. Protected everywhere.</p>
-              <img
+              <Image
                 className={s.architectureImage}
-                src={asset("architecture")}
+                src="/images/cloud/reference/secure-en-image.webp"
                 alt="Microsoft 365 and Azure security architecture connecting users, endpoints, applications, encrypted data, threat protection, and compliance"
+                width={1672}
+                height={941}
+                quality={95}
+                sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 1279px) calc(100vw - 96px), 760px"
               />
+              <ul className={s.benefitStrip} aria-label="Cloud security benefits">
+                {architectureBenefits.map(([label, Icon]) => (
+                  <li key={label}>
+                    <span className={s.benefitIcon}><Icon aria-hidden="true" /></span>
+                    <span>{label}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className={s.proof}>
-              <Eyebrow>What our clients say</Eyebrow>
-              <figure className={s.testimonial}>
-                <Quote className={s.testimonialMark} aria-hidden="true" />
-                <blockquote>“{cloudTestimonial.quote}”</blockquote>
-                <figcaption>
-                  <div>
-                    <strong>{cloudTestimonial.name}</strong>
-                    <span>{cloudTestimonial.role}, {cloudTestimonial.company}</span>
-                  </div>
-                </figcaption>
-              </figure>
+              <CloudTestimonialCarousel items={cloudTestimonialItems} locale="en" />
               <div className={s.faq}>
                 <div className={s.headingRow}>
                   <h3>Frequently Asked Questions</h3>
@@ -313,8 +279,8 @@ export default function CloudReferencePage() {
                     <ArrowRight aria-hidden="true" />
                   </Link>
                 </div>
-                {faqs.map(([question, answer]) => (
-                  <details key={question}>
+                {faqs.map(({ id, question, answer }) => (
+                  <details key={id}>
                     <summary>
                       {question}
                       <Plus aria-hidden="true" />
@@ -328,50 +294,53 @@ export default function CloudReferencePage() {
         </section>
 
         <section className={`${s.section} ${s.industries}`}>
-          <div className={s.headingRow}>
-            <div>
-              <Eyebrow>Industries & use cases</Eyebrow>
-              <h2>Cloud Security Across Every Industry</h2>
-              <p>
-                We help organizations in Egypt across multiple sectors secure
-                their cloud environments and accelerate digital transformation.
-              </p>
-            </div>
-            <Link className={s.outlineLink} href="/industries">
-              Explore All Industries
-              <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-          <div className={s.industryGrid}>
-            {industries.map(([title, image]) => (
-              <Link
-                href={`/contact?service=Cloud%20Security&industry=${encodeURIComponent(title)}`}
-                className={s.industryCard}
-                key={title}
-              >
-                <img src={asset(image)} alt={title} />
-                <span>{title}</span>
+          <div className={s.industryContent}>
+            <div className={s.headingRow}>
+              <div className={s.industryIntro}>
+                <Eyebrow>Industries & use cases</Eyebrow>
+                <h2>
+                  Cloud Security Across
+                  <br />
+                  <em>Every Industry</em>
+                </h2>
+                <p>
+                  We help organizations in Egypt across multiple sectors secure
+                  their cloud environments and accelerate digital transformation.
+                </p>
+              </div>
+              <Link className={s.industryCta} href="/industries">
+                Explore All Industries
+                <ArrowRight aria-hidden="true" />
               </Link>
-            ))}
+            </div>
+            <div className={s.industryGrid}>
+              {industries.map(({ title, description, image, alt, Icon }) => (
+                <Link
+                  href={`/contact?service=Cloud%20Security&industry=${encodeURIComponent(title)}`}
+                  className={s.industryCard}
+                  key={title}
+                >
+                  <Image
+                    src={`/images/industries/${image}.webp`}
+                    alt={alt}
+                    fill
+                    quality={90}
+                    sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 1100px) 31vw, (max-width: 1279px) 15vw, 197px"
+                  />
+                  <span className={s.industryIcon}><Icon aria-hidden="true" /></span>
+                  <span className={s.industryCopy}>
+                    <strong>{title}</strong>
+                    <span>{description}</span>
+                  </span>
+                  <span className={s.industryArrow} aria-hidden="true"><ArrowRight /></span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </div>
 
-      <section className={s.cta}>
-        <div className={`${s.container} ${s.ctaInner}`}>
-          <div>
-            <h2>Ready to Secure Your Cloud?</h2>
-            <p>
-              Let’s build a safer, stronger and more resilient future for your
-              business in Egypt.
-            </p>
-          </div>
-          <Link className={s.ctaButton} href={contact}>
-            Get Started Today
-            <ArrowRight aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
+      <CloudClosingCta href={contact} />
     </main>
   );
 }

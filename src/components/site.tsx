@@ -1486,7 +1486,7 @@ export function Testimonials({
       className={tStyles.testimonials}
       role="region"
       aria-roledescription="carousel"
-      aria-label="Client testimonials"
+      aria-label={isArabic ? "آراء العملاء" : "Client testimonials"}
     >
       <div className={tStyles.deco} aria-hidden="true">
         <span className={tStyles.dots} />
@@ -1571,7 +1571,7 @@ export function Testimonials({
                   <div
                     className={tStyles.stars}
                     role="img"
-                    aria-label="Rated 5 out of 5 stars"
+                    aria-label={isArabic ? "التقييم: خمس نجوم من خمس" : "Rated 5 out of 5 stars"}
                   >
                     ★★★★★
                   </div>

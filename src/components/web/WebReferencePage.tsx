@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  ArrowRight, Building2, PanelsTopLeft, Code2, Smartphone, UsersRound,
+  ArrowRight, PanelsTopLeft, Smartphone, CirclePlay,
   ChartNoAxesColumnIncreasing, Zap, Compass, PenTool, Wrench, Rocket,
   MapPin,
 } from "lucide-react";
@@ -43,7 +44,11 @@ const regions = [
 ] as const;
 
 function Action({ children, secondary = false, href = contact }: { children: React.ReactNode; secondary?: boolean; href?: string }) {
-  return <Link href={href} className={`${s.action} ${secondary ? s.secondary : ""}`}>{children}{!secondary && <ArrowRight aria-hidden="true" />}</Link>;
+  return <Link href={href} className={`${s.action} ${secondary ? s.secondary : ""}`}>
+    {secondary ? <CirclePlay aria-hidden="true" /> : null}
+    {children}
+    {!secondary && <ArrowRight aria-hidden="true" />}
+  </Link>;
 }
 function Heading({ label, children }: { label: string; children: React.ReactNode }) {
   return <div className={s.heading}><span>{label}</span><h2>{children}</h2></div>;
@@ -56,35 +61,46 @@ export default function WebReferencePage() {
   return (
     <main id="main" className={s.page}>
       <section className={s.hero}>
-        <div className={`${s.container} ${s.heroGrid}`}>
+        <div className={`container ${s.container} ${s.heroGrid}`}>
           <div className={s.heroCopy}>
-            <span className={s.pill}><PanelsTopLeft aria-hidden="true" />Web design &amp; development</span>
-            <h1>Web<br /><em>Platforms</em></h1>
-            <h2>Fast. Modern. Built to convert.</h2>
-            <p>We design and develop high-performing websites that look great, work flawlessly and help your business grow.</p>
+            <span className={s.pill}><PanelsTopLeft aria-hidden="true" />Web Design &amp; Development</span>
+            <h1>
+              <span>Web<span className={s.desktopSpace}> </span><br className={s.mobileBreak} /><em>Platforms</em></span>
+              <span>That Move Your <span className={s.desktopCopy}>Business</span></span>
+              <span><span className={s.desktopCopy}>Forward</span><span className={s.mobileCopy}>Business Forward</span></span>
+            </h1>
+            <p>We design and develop high-performance websites and web applications that combine modern design, seamless user experience and real business results.</p>
             <div className={s.actions}><Action>Start a Project</Action><Action secondary href="#work">View Our Work</Action></div>
             <div className={s.heroBenefits}>
-              <div><ChartNoAxesColumnIncreasing aria-hidden="true" /><span>Modern<br />Designs</span></div>
-              <div><Code2 aria-hidden="true" /><span>High<br />Performance</span></div>
-              <div><Smartphone aria-hidden="true" /><span>Mobile<br />First</span></div>
-              <div><UsersRound aria-hidden="true" /><span>Built for<br />Business Growth</span></div>
+              <div><span className={s.benefitIcon}><PanelsTopLeft aria-hidden="true" /></span><span>Modern<br />Designs</span></div>
+              <div><span className={s.benefitIcon}><Zap aria-hidden="true" /></span><span>High<br />Performance</span></div>
+              <div><span className={s.benefitIcon}><Smartphone aria-hidden="true" /></span><span>Mobile<br />First</span></div>
+              <div><span className={s.benefitIcon}><ChartNoAxesColumnIncreasing aria-hidden="true" /></span><span>Built for<br />Business Growth</span></div>
             </div>
           </div>
           <div className={s.heroVisual}>
-            <Asset name="hero-scene" alt="Laptop and phone showing a responsive website in a bright workspace" className={s.heroArt} />
-            <span className={s.heroNote}>Design<br />Develop<br />Grow <ArrowRight aria-hidden="true" /></span>
+            <Image
+              src="/images/web/reference/hero-scene-en.webp"
+              alt="Laptop and phone displaying a business website, surrounded by design, development, and results cards"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 820px) calc(100vw - 64px), (max-width: 1200px) 50vw, 48vw"
+              fetchPriority="high"
+              loading="eager"
+              className={s.heroArt}
+            />
           </div>
         </div>
       </section>
 
       <section className={s.regionStrip} aria-label="Regional offices">
-        <div className={`${s.container} ${s.regionInner}`}>
+        <div className={`container ${s.container} ${s.regionInner}`}>
           <div className={s.regionLead}><MapPin aria-hidden="true" /><strong>Local teams.<br />Regional reach.</strong></div>
           <div className={s.regionCards}>{regions.map(([name, city, image]) => <div key={name}><Asset name={image} alt="" className={s.regionIcon} /><span><strong>{name}</strong><small>{city}</small></span></div>)}</div>
         </div>
       </section>
 
-      <div className={s.container}>
+      <div className={`container ${s.container}`}>
         <section className={`${s.section} ${s.services}`} id="solutions">
           <div className={s.sectionIntro}><div><Heading label="Our solutions">Web design &amp; development<br />for real business growth</Heading><p>From company websites to online stores, we build platforms that are clear, useful and manageable.</p></div><Link className={s.outlineLink} href={contact}>All Services <ArrowRight aria-hidden="true" /></Link></div>
           <div className={s.serviceGrid}>{services.map(([title, copy, image]) => <Link className={s.serviceCard} href={`${contact}&solution=${encodeURIComponent(title)}`} key={title}><span className={s.serviceIcon}><Asset name={image} alt="" /></span><span className={s.cardCopy}><strong>{title}</strong><small>{copy}</small></span><span className={s.cardArrow}><ArrowRight aria-hidden="true" /></span></Link>)}</div>

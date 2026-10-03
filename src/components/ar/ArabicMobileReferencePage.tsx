@@ -134,7 +134,7 @@ function ChartIcon() {
 
 export function ArabicMobileReferencePage() {
   return (
-    <main id="main" className={s.page} dir="rtl">
+    <main id="main" className={`${s.page} ar-service-page`} dir="rtl">
       <section className={s.hero}>
         <div className={`${s.container} ${s.heroContainer}`}>
           <div className={s.heroGrid}>
@@ -180,8 +180,10 @@ export function ArabicMobileReferencePage() {
             </div>
             <img
               className={s.heroArt}
-              src={asset("hero")}
-              alt="تطبيقا جوال: لوحة معلومات أعمال وتجربة تسوق للعملاء"
+              src={asset("hero-ar")}
+              width={1280}
+              height={960}
+              alt="هاتفان يعرضان تطبيق تسوق ولوحة معلومات للأعمال باللغة العربية"
               fetchPriority="high"
             />
           </div>

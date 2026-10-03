@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import s from "./DigitalMarketingReferencePage.module.css";
+import { DigitalMarketingHero } from "@/components/digital-marketing/DigitalMarketingHero";
 import { featuredTestimonials } from "@/data/testimonials";
 
 const testimonial = featuredTestimonials.digitalMarketing;
@@ -75,29 +76,7 @@ function Button({ children, href = "/contact?service=Digital%20Marketing", secon
 export default function DigitalMarketingReferencePage() {
   return (
     <main id="main" className={s.page}>
-      <section className={s.hero}>
-        <div className={s.heroAura} aria-hidden="true" />
-        <div className={`${s.container} ${s.heroGrid}`}>
-          <div className={s.heroCopy}>
-            <span className={s.eyebrow}>Digital marketing</span>
-            <h1>Digital<br /><em>Marketing</em></h1>
-            <h2>More reach. Better results.</h2>
-            <p>Data-driven marketing to grow your brand across Egypt, the UAE and Saudi Arabia.</p>
-            <div className={s.actions}><Button>Grow My Brand</Button><Button secondary href="#solutions">See Services</Button></div>
-            <div className={s.heroBenefits}>
-              <span><BarChart3 aria-hidden="true" /><b>More<br />Qualified Traffic</b></span>
-              <span><UsersRound aria-hidden="true" /><b>Higher<br />Conversions</b></span>
-              <span><Rocket aria-hidden="true" /><b>Stronger<br />Brand Presence</b></span>
-            </div>
-          </div>
-          <div className={s.heroVisual}>
-            <Asset name="hero-dashboard" alt="Illustrative digital marketing campaign dashboard" className={s.heroArt} eager />
-            <span className={s.imageLabel}>Illustrative dashboard</span>
-            <div className={s.heroBadge}><BarChart3 aria-hidden="true" /><strong>Grow Your<br />Brand Online</strong></div>
-          </div>
-        </div>
-      </section>
-
+      <DigitalMarketingHero locale="en" />
       <div className={`${s.container} ${s.pageSections}`}>
         <section className={`${s.section} ${s.services}`} id="solutions">
           <SectionHeading eyebrow="Our digital marketing services" title="A complete suite of digital marketing solutions to grow your business online." description="Choose the channels and measurement that fit your audience, goals and team." href="/contact?service=Digital%20Marketing" link="View All Services" />

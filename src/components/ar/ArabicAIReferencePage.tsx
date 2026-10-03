@@ -139,7 +139,7 @@ function Heading({
 
 export function ArabicAIReferencePage() {
   return (
-    <main id="main" className={s.page} dir="rtl">
+    <main id="main" className={`${s.page} ar-service-page`} dir="rtl">
       <section className={s.hero}>
         <div className={`${s.container} ${s.heroGrid}`}>
           <div className={s.heroCopy}>

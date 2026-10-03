@@ -171,6 +171,7 @@
   font-size: 16px;
 }
 .heroArt {
+  display: block;
   width: 112%;
   max-width: none;
   height: auto;
@@ -1099,4 +1100,110 @@
 .page .heroGrid { padding-block: var(--section-space); }
 @media (max-width: 560px) {
   .page .actions { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 760px) {
+  .page[dir="rtl"] .heroCopy {
+    text-align: start;
+  }
+
+  .page[dir="rtl"] .heroBenefits {
+    justify-content: flex-start;
+    direction: rtl;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .page[dir="rtl"] .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+    padding-block: 24px 26px;
+  }
+
+  .page[dir="rtl"] .heroCopy {
+    padding-block: 24px 4px;
+    text-align: start;
+  }
+
+}
+
+.page[dir="rtl"] .hero {
+  background:
+    radial-gradient(ellipse at 20% 52%, #e4f6ff 0, transparent 48%),
+    radial-gradient(ellipse at 88% 72%, #eaf8ff 0, transparent 38%),
+    linear-gradient(110deg, #f5fbff 0%, #fff 50%, #f4faff 100%);
+}
+
+.page[dir="rtl"] .heroArt {
+  width: 84%;
+  justify-self: center;
+  margin: 0;
+  transform: none;
+}
+
+.page[dir="rtl"] .sectionTitle {
+  padding-right: 18px;
+  padding-left: 0;
+}
+
+.page[dir="rtl"] .sectionTitle::before {
+  right: 0;
+  left: auto;
+}
+
+.page[dir="rtl"] .heroBenefits > div {
+  padding-right: 0;
+  padding-left: 13px;
+  border-right: 0;
+  border-left: 1px solid #c8e3f8;
+}
+
+.page[dir="rtl"] .heroBenefits > div:last-child {
+  padding-left: 0;
+  border: 0;
+}
+
+.page[dir="rtl"] .outlineLink {
+  flex-direction: row;
+}
+
+.page[dir="rtl"] :global(.lucide-arrow-left) {
+  transform: none;
+}
+
+.page[dir="rtl"] .cardArrow {
+  transform: none;
+}
+
+.page[dir="rtl"] .processArrow {
+  right: auto;
+  left: -17px;
+  transform: translateY(-50%);
+}
+
+.page[dir="rtl"] .milestones::before {
+  background: linear-gradient(270deg, #05c9a5, #087cf4 55%, #8348fc);
+}
+
+.page[dir="rtl"] .milestoneDot {
+  right: 0;
+  left: auto;
+}
+
+.page[dir="rtl"] .process > p,
+.page[dir="rtl"] .whyIntro > p {
+  margin-right: 18px;
+  margin-left: 0;
+}
+
+@media (max-width: 760px) {
+  .page[dir="rtl"] .heroBenefits > div {
+    padding-left: 9px;
+  }
+
+  .page[dir="rtl"] .milestones li {
+    padding-right: 42px;
+    padding-left: 0;
+  }
 }

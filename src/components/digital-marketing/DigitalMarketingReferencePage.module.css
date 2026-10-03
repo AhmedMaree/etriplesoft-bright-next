@@ -1,5 +1,6 @@
 .page {
   --ink: var(--navy);
+  --section-space: clamp(2.5rem, 1.75rem + 2.5vw, 4.5rem);
   position: relative;
   overflow: hidden;
   color: var(--ink);
@@ -79,6 +80,7 @@
 .stepIcon { display: grid; width: 56px; height: 56px; place-items: center; border: 1px solid #d8edfc; border-radius: 50%; color: var(--blue); background: radial-gradient(circle, #fff 12%, #eaf7ff 100%); box-shadow: 0 5px 16px #188bd117; }
 .stepIcon svg { width: 28px; height: 28px; stroke-width: 2.2; }
 .stepArrow { position: absolute; top: 20px; right: -13px; color: var(--blue); }
+.page[dir="rtl"] .stepArrow { right: auto; left: -13px; }
 .stepArrow svg { width: 21px; height: 21px; }
 .steps h3 { margin-top: 7px; font-size: 12px; }
 .steps p { max-width: 17ch; margin-top: 3px; font-size: 11px; line-height: 1.3; }

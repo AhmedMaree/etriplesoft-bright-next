@@ -893,6 +893,48 @@ html[lang="ar"] main[dir="rtl"] {
   direction: rtl;
 }
 
+/* Arabic service detail pages share legible Arabic heading rhythm while
+   retaining their individual artwork, color accents, and section layouts. */
+html[lang="ar"] main.ar-service-page :is(h1, h2, h3, h4) {
+  letter-spacing: 0;
+  line-height: 1.28;
+  text-wrap: balance;
+}
+
+html[lang="ar"] main.ar-service-page p {
+  line-height: 1.75;
+}
+
+html[lang="ar"] main.ar-service-page > section:first-child :is(h1, h2, p) {
+  text-align: start;
+}
+
+html[lang="ar"] main.ar-service-page > section:first-child h1 {
+  line-height: 1.24;
+}
+
+html[lang="ar"] main.ar-service-page > section:first-child p {
+  max-width: 58ch;
+  font-size: max(1rem, 1em);
+  line-height: 1.85;
+}
+
+html[lang="ar"] main.ar-service-page a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  html[lang="ar"] main.ar-service-page > section:first-child h1 {
+    line-height: 1.27;
+  }
+
+  html[lang="ar"] main.ar-service-page > section:first-child p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
 /* Benefit pills and icons */
 html[lang="ar"] .heroBenefits>div,
 html[lang="ar"] .heroBenefits>span {
